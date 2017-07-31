@@ -1,0 +1,1 @@
+mysql -usszj -pDR9m_wqsgF8a -P3306 data_stat_ss -e "select map_id, count(*) as role_count from money_state a, runoff_role b where a.role_id = b.role_id group by map_id order by role_count desc;" > /data/home/sszj/data_stat/runoff_role/runoff_role_146.txt

@@ -1,0 +1,43 @@
+import "msg_base.proto";
+
+message PBOneReward
+{
+	optional string item_sheet    = 1;
+	optional sint32 num 	    = 2;
+}
+enum EOpenState
+{
+	EOpenState_Open  = 1;
+	EOpenState_Close = 2;
+}
+enum EGetReward
+{
+	EGetReward_Pickup = 1;
+	EGetReward_Un_Pickup = 2;
+}
+message PBOneRewardInfo
+{
+	optional sint32      ret_code     		= 1;
+	repeated PBOneReward  reward       		= 2;
+	optional EGetReward  getreward 			= 4;
+	optional sint32      idx       			= 5;	
+	optional string      curbegintime   	= 6;
+	optional string      curendtime 		= 7;
+}
+message PBMsgQQGetRewardListNotice
+{
+	optional sint32 begintime    		   = 1;
+	optional sint32 endtime      		   = 2;
+	repeated PBOneRewardInfo onerewardinfo = 3;
+	optional sint32 nowused				   = 4;//当前应该显示哪组奖励
+	optional EOpenState openstate 	       = 5;
+}
+message PBMsgQQGetRewardRequest
+{
+
+}
+message PBMsgQQGetRewardResponse
+{
+	optional sint32 ret_code = 1; 
+	optional sint32	idx = 2;
+}

@@ -1,0 +1,1 @@
+mysql -usszj -pDR9m_wqsgF8a -P3306 data_stat_ss -e "select game_id, role_id, char_name, user_id, role, level, ss_camp_type, diamond_blue, diamond_red, unbuond_money, zhenqi, lingqi, vip_level from money_state order by game_id desc, diamond_blue desc" > ./money_state_20170615.txt

@@ -1,0 +1,510 @@
+import "msg_base.proto";
+import "msg_item.proto";
+
+
+//================================================================================
+// 召唤boss消息定义
+
+// 请求召唤boss状态
+// MSG_EventSummonBossStatus_Request
+message PBSummonBossStatusRequest
+{
+
+}
+
+// 响应召唤boss状态
+// MSG_EventSummonBossStatus_Response
+message PBSummonBossStatusResponse
+{
+	repeated PBEventSummonInfo summon_info	= 1; //召唤boss信息
+}
+
+// 请求开启召唤boss
+// MSG_EventSummonBossOpen_Request
+message PBSummonBossOpenRequest
+{
+	optional uint32 sheet_id			= 1; //活动id
+}
+
+//召唤boss信息
+message PBEventSummonInfo
+{
+	optional	sint32	summon_times 		= 1;				//召唤次数
+	optional	uint32	sheet_id 			= 2;				//活动sheetid
+}
+
+//请求鼓舞
+message PBSummonInspireRequest
+{
+	optional 	uint32 inspire_type 		= 1; 				//鼓舞类型
+}
+
+//响应鼓舞
+message PBSummonInspireResponse
+{
+
+}
+
+//召唤boss实时统计
+message PBSummonStatInform 
+{
+     optional uint32 boss_hp_max  			= 1; //boss总血量
+	 optional sint32 dungeon_type			= 2;//副本类型
+     repeated PBSummonStatInfo stat_info 	= 3; // 实时统计信息
+}
+
+message PBSummonStatInfo
+{
+	optional uint32 char_id 		= 1; //id 
+	optional string char_name 		= 2; //名字 
+	optional sint32 dmg_total		= 3;//伤害
+}
+
+
+
+//================================================================================
+// 仙盟boss消息定义
+
+// 请求仙盟boss状态
+// MSG_EventLeagueBossStatus_Request
+message PBEventLeagueBossStatusRequest
+{
+	optional uint32 sheet_id			= 1; //活动id
+}
+
+// 响应仙盟boss状态
+// MSG_EventLeagueBossStatus_Response
+message PBEventLeagueBossStatusResponse
+{
+	repeated PBEventLeagueInfo event_info 	= 1; //活动信息
+}
+
+//开启仙盟boss
+//MSG_EventLeagueBossOpen_Request
+message PBEventLeagueBossOpenRequest
+{
+	optional uint32 sheet_id			= 1; //活动id
+}
+
+//仙盟boss信息
+message PBEventLeagueInfo
+{
+	optional	sint32	boss_times 	= 1;				//完成活动次数
+	optional	uint32	sheet_id 	= 2;				//活动sheetid
+	optional	sint32	boss_cost	= 3;				//活动消耗
+	optional	sint32	open_status	= 4;				//开启状态
+}
+
+message PBSummonEndStatInform
+{
+	optional uint32 dungeon_type = 1; //副本类型
+	repeated PBSummonEndStatPlayerInfo stat_info  = 2;  // 结束统计信息
+}
+message PBSummonEndStatPlayerInfo
+{
+	optional uint32 char_id  = 1; //id 
+	optional string char_name  = 2; //名字 
+	optional sint32 dmg_total = 3;//伤害
+	optional PBMsgItemQuantity rewardItem = 4;//奖励物品
+}
+
+message PBEventLivenessInfoResponse
+{
+	optional sint32 ret_code 				= 1;
+	optional sint32 daily_score 			= 2;
+	optional sint32 max_daily_score			= 3;	// 待删除
+	optional uint64 reward_status 			= 4;
+	repeated PBLivenessGameOp daily_info  	= 5;	// 待删除
+}
+
+message PBLivenessGameOp
+{
+	optional sint32 gameop_id 				= 1; //完成操作的ID
+	optional sint32 gameop_times 			= 2; //次数
+	optional sint32 max_times 				= 3; //最大次数
+	optional sint32 daily_status			= 4; //状态
+}
+
+message PBEventLivenessGetRewardRequest
+{
+	optional sint32 reward_id 				= 1;
+}
+
+
+
+
+// 查询聚宝盆奖励领取状态;
+message PBJuBaoPenState_Request
+{
+	optional 	uint32 activity_id 		= 1;
+}
+
+message PBJBPReward
+{
+	optional uint32 day_th			= 1;
+	optional uint32 reward_status	= 2;
+};
+
+message PBJuBaoPenMsgData
+{
+	optional	sint32 jbp_token				= 1;
+	optional	sint32 jbp_state				= 2;
+	repeated	PBJBPReward jbp_rewards			= 3;
+};
+
+// 响应聚宝盆奖励查询;
+message PBJuBaoPenState_Response
+{
+	optional 	uint32 activity_id 			= 1;
+	optional 	sint32 ret_code 			= 2;
+	optional	sint32 max_charge			= 3;
+	optional 	uint32 days		 			= 4;
+	repeated	PBJuBaoPenMsgData jbp_data	= 5;
+}
+
+// 购买聚宝盆的请求;
+message PBJuBaoPenPurchase_Request
+{
+	optional 	uint32 activity_id 		= 1;
+	optional 	sint32 jbp_token		= 2;
+}
+
+// 回应聚宝盆奖励的查询;
+message PBJuBaoPenPurchase_Response
+{
+	optional 	uint32 activity_id 		= 1;
+	optional 	sint32 ret_code 		= 2;
+};
+
+// 领取聚宝盆奖励的请求;
+message PBJuBaoPenGetGift_Request
+{
+	optional 	uint32 activity_id 		= 1;
+	optional 	sint32 jbp_token		= 2;
+	optional 	uint32 jbp_day			= 3;
+}
+
+// 领取聚宝盆奖励的回应;
+message PBJuBaoPenGetGift_Response
+{
+	optional 	uint32 activity_id 		= 1;
+	optional 	sint32 ret_code 		= 2;
+};
+
+// 副本怪物波数;
+message PBMonsterWave
+{
+	optional 	sint32 cur_wave 		= 1;
+	optional 	sint32 total_wave 		= 2;
+	optional 	sint32 map_id 			= 3;
+};
+
+//======================== 答题 =============================================
+//请求日常题目信息
+//MSG_EventDailyQuestInform_Request
+message PBEvtDailyQuestInfo_Request
+{
+	optional sint32				act_id				= 1;
+};
+
+//响应日常题目信息
+//MSG_EventDailyQuestInform_Response
+message PBEvtDailyQuestInfo_Response
+{
+	optional sint32				ret_code			= 1;
+	optional sint32				act_id				= 2;
+	optional sint32				join_times			= 3;
+	optional PBQuestionInfo		quest_info			= 4;
+	optional sint32				right_count			= 5;
+};
+
+//回答日常题目请求
+//MSG_EventDailyQuestAnswer_Request
+message PBEvtDailyQuestAnswer_Request
+{
+	optional sint32				act_id				= 1;
+	optional sint32				quest_index			= 2;
+	optional sint32				answer_id			= 3;
+};
+
+//回答日常题目响应
+//MSG_EventDailyQuestAnswer_Response
+message PBEvtDailyQuestAnswer_Response
+{
+	optional sint32				ret_code			= 1;
+	optional sint32				act_id				= 2;
+	optional sint32				right_answer		= 3;
+	optional sint32				right_count			= 4;
+	optional sint32				answer_id			= 5;
+	repeated PBMsgItemQuantity	gain_item			= 6;
+};
+
+//---------------------------------------------------------------------
+message PBMsgWisdomQuestOpenNotice
+{
+	optional sint32		        act_id			    = 1;
+};
+
+//文曲题目请求
+//MSG_EventWisdomQuestInform_Request
+message PBEvtWisdomQuestInfo_Request
+{
+	optional sint32				act_id				= 1;
+};
+
+//文曲题目响应
+//MSG_EventWisdomQuestInform_Response
+message PBEvtWisdomQuestInfo_Response
+{
+	optional sint32				ret_code			= 1;
+	optional uint32				count_down_time     = 2;
+	optional sint32				predict_score		= 3;// 答对预测分
+	optional sint32				total_score		    = 4;// 玩家上线重新推送总分
+	optional sint32             total_quest_num     = 5;// 题目总数
+	repeated sint32             stage_time_len      = 6;// 每道题 各个答题阶段的 阶段时长(秒)
+	optional sint32				my_rank				= 7;// 玩家上线,重新推送我的排名，本场累计积分
+	optional sint32             quest_index         = 8;// 第几道题
+	optional sint32				last_commit_answer  = 9;// 恢复上次提交答案的选中状态（每次第一题选中项为-1）
+};
+
+//文曲题目推送
+//MSG_EventWisdomQuestInfo_Notice
+message PBEvtWisdomQuestInfo_Notice
+{
+	optional sint32				act_id				= 1;
+	optional sint32				left_time			= 2;
+	optional sint32				quest_stage			= 3;// 答题阶段
+	optional PBQuestionInfo		quest_info			= 4;
+	optional sint32             total_quest_num     = 5;// 题目总数
+	repeated sint32             stage_time_len      = 6;// 每道题 各个答题阶段的 阶段时长(秒)
+};
+
+//文曲统计推送
+//MSG_EventWisdomQuestStat_Notice
+message PBEvtWisdomQuestStat_Notice
+{
+	optional sint32				act_id				= 1;
+	optional sint32				left_time			= 2;
+	optional sint32				quest_stage			= 3;
+	optional PBQuestionInfo		quest_info			= 4;
+	optional PBOptionRateInfo	option_rate			= 5;
+};
+
+// 本场积分的实时榜信息
+message PBQuestRealRankData
+{
+	optional uint32	            role_id             = 1; // 玩家roleID
+	optional sint32				rank                = 2; // 本场排名
+	optional sint32				score               = 3; // 本场累计积分
+	optional uint32             gate_way_id         = 4; // 阵营ID  
+	optional string             char_name           = 5; // 玩家名字
+};
+
+message PBEvtQuestRealRankList_Notice
+{
+	repeated PBQuestRealRankData  real_rank_data    = 1; // 实时榜，上榜名单
+	optional sint32				  my_rank			= 2; // 推送我的排名，本场累计积分
+};
+
+//文曲结算推送
+//MSG_EventWisdomQuestResult_Notice
+message PBEvtWisdomQuestResult_Notice
+{
+	optional sint32				act_id				= 1;
+	optional sint32				left_time			= 2;
+	optional sint32				quest_stage			= 3;
+	optional sint32				right_answer		= 4;
+	optional sint32				answer_id			= 5;
+	optional sint32				total_score			= 6;//总分
+	optional sint32				right_count			= 7;
+	optional PBQuestionInfo		quest_info			= 8;
+	optional PBOptionRateInfo	option_rate			= 9;
+	repeated PBMsgItemQuantity	gain_item			= 10;
+	optional sint32				my_rank				= 11; // 我的排名，本场累计积分
+	//optional PBQuestRealRankList   real_rank_list   = 12; // 实时榜信息，本场累计积分
+};
+
+//文曲结束推送
+//MSG_EventWisdomQuesteEnd_Notice
+message PBEvtWisdomQuestEnd_Notice
+{
+	optional sint32				act_id				= 1;
+	optional sint32				wisdom_score		= 2;
+	optional string				title_sheet			= 3;
+	optional sint32				rank_rate			= 4;
+	repeated PBMsgItemQuantity	gain_item			= 5;
+};
+
+//文曲第一次答题请求
+//MSG_EventWisdomFirstAnswer_Request
+message PBEvtWisdomFirstAnswer_Request
+{
+	optional sint32				act_id				= 1;
+	optional sint32				quest_index			= 2;
+	optional sint32				answer_id			= 3;
+};
+
+//文曲第一次答题响应
+//MSG_EventWisdomFirstAnswer_Response
+message PBEvtWisdomFirstAnswer_Response
+{
+	optional sint32				ret_code			= 1;
+	optional sint32				answer_id			= 2;
+	optional sint32				first_score			= 3;
+};
+
+//文曲第二次答题请求
+//MSG_EventWisdomSecondAnswer_Request
+message PBEvtWisdomSecondAnswer_Request
+{
+	optional sint32				act_id				= 1;
+	optional sint32				quest_index			= 2;
+	optional sint32				answer_id			= 3;
+};
+
+//文曲第二次答题响应
+//MSG_EventWisdomSecondAnswer_Response
+message PBEvtWisdomSecondAnswer_Response
+{
+	optional sint32				ret_code			= 1;
+	optional sint32				answer_id			= 2;
+	optional sint32				second_score		= 3;
+};
+
+//文曲活动取消请求
+//MSG_EventWisdomCancel_Request
+message PBEvtWisdomCancel_Request
+{
+
+};
+//文曲活动取消响应
+//MSG_EventWisdomCancel_Response
+message PBEvtWisdomCancel_Response
+{
+	optional sint32				ret_code			= 1;
+};
+
+//题目
+message PBQuestionInfo
+{
+	optional sint32				quest_id			= 1;
+	optional sint32				quest_index			= 2;
+};
+
+//选项支持
+message PBOptionRateInfo
+{
+	repeated PBOptionInfo		option_info			= 1;
+};
+
+message PBOptionInfo
+{
+	optional sint32				option_id			= 1;
+	optional sint32				select_rate			= 2;
+};
+
+message PBEventPrompt
+{
+	optional string			prompt_key = 1; // 自定义推送Key
+	optional bool			is_open = 2; // 打开还是关闭
+};
+
+// Msg_EventJoinRecord
+message PBGlobalEventRecordImpulse
+{
+	optional	sint32		daily_quest_jointime = 1; //  日常答题参加次数
+	optional	sint32		wisdom_jointime = 2; // 文曲星参加次数
+}
+
+//=====================================================================
+
+
+//PVP请求返回
+message PBMatchPVP_Response
+{
+	optional	sint32  ret_code = 1;
+};
+//请求进入activity
+message PBJoinActivity_Request
+{
+	optional  uint32   sheetId  = 1;
+	optional  uint32   arg1     = 2;
+};
+
+// 回城请求
+message PBTeleportMainCityRequest
+{
+};
+message PBTeleportMainCityResponse
+{
+	optional	sint32  ret_code = 1;
+};
+
+// 排行榜前XX名上线通知
+message PBRankTopPlayerLoginNotice
+{
+	optional	uint32  rank_scope			= 1;	// 全服0，阵营1
+	optional	uint32  rank_type			= 2;	// 榜单类型
+	optional	uint32  rank_order			= 3;	// 名次
+	optional	uint32  char_camp			= 4;	// 角色所属阵营
+	optional	string  char_name			= 5;	// 角色名
+	optional	uint32  camp_id				= 6;	// 上线在的阵营
+	optional	uint32  map_id				= 7;	// 上线在的地图
+	optional	uint32  pos_x				= 8;	// 上线在的坐标
+	optional	uint32  pos_y				= 9;	// 上线在的坐标
+	optional	uint32  line_id				= 10;	// 上线在的线id
+};
+
+// 
+enum ECinemaOrder
+{
+	enAccCinema	  = 1;		// 触发前置剧情
+	enComCinema   = 2;		// 触发后置剧情
+};
+
+// 玩家以激活的奇遇事件（主要是控制动画播放顺序）
+message PBMsgActivateHappyEncountNotice
+{
+	optional uint32						sheet_id			= 1;		// 遭遇事件sheetID;
+	optional ECinemaOrder				cinema_order		= 2;		// 触发剧情
+
+};
+
+// （播完后置剧情）执行奇遇事件
+message PBMsgExcutingHappyEncountRequest
+{
+
+};
+
+message PBMsgExcutingHappyEncountResponse
+{
+	optional sint32						ret_code			= 1;
+};
+
+// 膜拜
+message PBEventWorship_Request
+{
+	optional uint32		worship_creature_dataset			= 1;// 膜拜的怪物dataset
+};
+
+message PBEventWorship_Response
+{
+	optional sint32		ret_code							= 1;// 结果
+};
+
+// 膜拜
+message PBEventPlayerStatusNotice
+{
+	optional uint32		status								= 1;// 玩家状态隐身
+};
+
+//帮派领地膜拜;
+message PBManorWorship_Request
+{
+	optional uint32		creature_dataset					= 1;// 膜拜的怪物dataset;
+};
+
+message PBManorWorship_Response
+{
+	optional sint32		ret_code							= 1;// 结果;
+};

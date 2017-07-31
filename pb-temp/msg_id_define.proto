@@ -1,0 +1,1657 @@
+/**
+ * 消息定义
+ */
+option optimize_for = SPEED;	
+
+/**
+ * 模块索引，该枚举值不可随意修改
+ */
+enum EGleoModuleIndex
+{
+	MOD_SceneManager		= 0x0001;
+	MOD_PlayerLobby			= 0x0002;
+	MOD_ItemManager			= 0x0003;
+	MOD_QuestManager		= 0x0004;
+	MOD_SkillManager		= 0x0005;
+	MOD_MagicWeaponManager	= 0x0006;
+	MOD_BattlefieldManager	= 0x0007;
+	MOD_VipManager			= 0x0008;
+	MOD_ShopManager			= 0x0009;
+	MOD_JobManager			= 0x000A;
+	MOD_GemManager			= 0x000B;
+	MOD_DungeonManager		= 0x000C;
+	MOD_MailManager			= 0x000D;
+	MOD_EventManager		= 0x000E;
+	MOD_IUManager			= 0x000F;
+	MOD_GuildManager		= 0x000F;	// 帮会系统模块，复用原仙盟模块
+	MOD_PositionManager		= 0x0010;
+	MOD_CommonManager		= 0x0011;
+	MOD_FashionManager		= 0x0012;
+	MOD_SpanIMBattleManager	= 0x0013;  // 跨服仙盟战模块
+	MOD_RedPacketManager	= 0x0014;	// 摇红包
+	MOD_MountManager		= 0x0015;
+	MOD_UIOpenManager		= 0x0016;
+	MOD_FightManager		= 0x0017;	// 战斗模块
+	MOD_SinglePvPManager	= 0x0018;	// 个人PVP（竞技场、切磋）
+	MOD_PetManager			= 0x0019;	// 宠物模块
+	MOD_TeamManager			= 0x001A;	// 队伍模块
+	MOD_MatchManager		= 0x001B;	// 匹配模块
+	MOD_Friend				= 0x001C;	// 好友相关
+	MOD_CangQiongPk			= 0x001D;	//大乱斗
+	MOD_SignActivity		= 0x001E;	//签到
+	MOD_Hold				= 0x0020;	//抱抱
+	MOD_RelationManager		= 0x0021;	// 关系模块
+	MOD_Channel				= 0x0022;	//渠道奖励
+	MOD_Rep					= 0x0023;   // 仓库模块
+	MOD_NewRoleAct			= 0x0024; //新手活动
+	MOD_GuildDayReward		= 0x0025; //每日帮派领取奖励
+	MOD_CharacterTitle		= 0x0026; //称号模块
+	MOD_ActivityEx          = 0x0027; //活动处理模块
+	MOD_Luck                = 0x0028; //幸运值模块
+	MOD_Potential			= 0x0029; //潜能模块
+	MOD_CouplePVP			= 0x0030; //夫妻跨服PVP模块
+	MOD_WingTrain           = 0x0031; //翅膀培养
+	MOD_GuildRedBag			= 0x0032; //帮派红包
+	MOD_Xinfa				= 0x0033; //心法;
+	MOD_Xiuzhen                     = 0x0034; //修真
+	MOD_DimensionExampler	= 0x4000;//以0x4开头的都是gateway模块;或许需要把定义拆到不同的文件中去，客户端生成的那份是不需要服务器之间的通信消息的;
+	
+	MOD_BigWorldBattle		= 0x5000;//跨服战模块;以0x5开头的模块都是全局模块;
+	
+	
+	
+	MOD_MsgToClient			= 0x7000;//以0x7000开头的消息都是发往客户端的消息;
+
+	
+}
+
+/**
+ * 通信消息ID，该枚举值不可随意修改
+ *
+ * Request需和Response成对出现 低12位的值必须一样 第13位的值分别为 0 和 1
+ * Response消息的低13-16位的值为0xC时，消息在PB消息体之前必须含有4字节的消息码
+ * 如果是客户端发往服务器的消息，消息ID的低1 6位将作为数组索引，需要尽量从0开始依次编排
+ *
+ * @author Deng Lichuan
+ */
+enum EGleoMessageId
+{
+	
+	MSG_CodeResponse_Mask		= 0xC000;		// response消息头中带 message code 的消息识别掩码
+	
+	MSG_SceneReady_Request		= 0x00100001;
+	MSG_CharPosSubmit_Request	= 0x00100002;
+	MSG_Teleport_Inform			= 0x00010003;
+
+	MSG_PLAYER_ROLE_BASE_INFO	= 0x00010004;
+	
+	MSG_MessageCode_Notice		= 0x0001C001;	// 通用消息码通知
+	
+	// ONLY 测试用，待报废
+	MSG_SelectChar_Request		= 0x00010000;
+	MSG_SelectChar_Response		= 0x00011000;
+	
+	//--------------------------------------------------------------------------------
+	// PlayerLobby
+	MSG_CreateChar_Request		= 0x00020001;
+	MSG_CharSummary_Notice		= 0x00020002;
+	MSG_StartPlay_Request		= 0x00020003;
+	MSG_StartPlay_Response		= 0x00021003;
+	MSG_RandomCharName_Request	= 0x00020004;
+	MSG_RandomCharName_Response	= 0x00021004;
+	MSG_LoginPos_Response		= 0x00021005;
+	MSG_CharCountInfo_Notice    	= 0x00020006;
+	MSG_PlayerKickSelf_Request	= 0x00020007;
+	MSG_PlayerKickSelt_Response	= 0x00021007;
+	MSG_PlayerBaseInfo_Notice	= 0x00020008;	// 发送玩家基础数据  以后只要是玩家的基础数据都尽量在这个地方加
+	MSG_CLIENT_DATABASE_INIT	= 0x00020009;//原database数据初始化
+	MSG_CLIENT_DATABASE_UPDATE	= 0x0002000A;//原database数据更新	
+	MSG_CharSignalDataNotice = 0x0020000B;  // 发送与其他模块关系不大的玩家单个数据
+	
+	//--------------------------------------------------------------------------------
+	// Player Inventory
+	MSG_Item_Request 		= 0x00030000;
+	MSG_Item_Response 		= 0x00030001;
+	MSG_Inv_Request 		= 0x00030002;
+	MSG_Inv_Response		= 0x00030003;
+	MSG_Equip_Request		= 0x00030004;
+	MSG_ItemAdd_Response	= 0x00030005;
+	MSG_UnEquip_Request		= 0x00030006;
+	MSG_ItemRm_Response		= 0x00030007;
+	MSG_ItemSell_Request	= 0x00030008;
+	MSG_ItemMove_Response	= 0x00030009;
+	MSG_ItemUse_Request		= 0x0003000A;
+	MSG_ItemDis_Response	= 0x0003000B;// 炼化结果
+	MSG_ItemDis_Request		= 0x0003000C;// 炼化请求
+	MSG_VitaInfo_Response	= 0x0003000D;// 注灵信息
+	MSG_VitaInfo_Request	= 0x0003000E;// 注灵信息请求
+	MSG_Vita_Response		= 0x0003000F;// 注灵结果
+	MSG_Vita_Request		= 0x00030010;// 注灵请求
+	MSG_EchInfo_Response	= 0x00030011;// 洗炼信息
+	MSG_EchInfo_Request		= 0x00030012;// 洗炼信息请求
+	MSG_Enchant_Response	= 0x00030013;// 洗炼结果
+	MSG_Enchant_Request		= 0x00030014;// 洗炼请求
+	MSG_EvaInfo_Response	= 0x00030015;// 鉴定信息
+	MSG_EvaInfo_Request		= 0x00030016;// 鉴定信息请求
+	MSG_Evaluate_Response	= 0x00030017;// 鉴定结果
+	MSG_Evaluate_Request	= 0x00030018;// 鉴定请求
+	MSG_Slot_Inform			= 0x00030019;// Slot信息刷新
+	MSG_Money_Inform		= 0x0003001A;// 货币刷新		//消息去掉 改为 MSG_UpdateCharMoney_Notice
+	MSG_Combine_Request		= 0x0003001B;// 合成装备请求
+	MSG_Combine_Response	= 0x0003001C;// 合成装备结果
+	MSG_Legacy_Request		= 0x0003001D;// 继承的请求
+	MSG_Legacy_Response		= 0x0003001E;// 继承的结果
+	MSG_EchOne_Request		= 0x0003001F;// 锻造请求
+	MSG_EchOne_Response		= 0x00030020;// 锻造结果
+	MSG_MatComb_Request		= 0x00030021;// 道具合成请求
+	MSG_MatComb_Response	= 0x00030022;// 道具合成结果
+	MSG_ExtenBag_Request	= 0x00030023;// 扩展包裹
+	MSG_ExtenBag_Response	= 0x00030024;// 扩展包裹结果
+	MSG_GoldenBagTimes_Response	= 0x00030025;//返回黄金福袋的开启次数
+	MSG_GoldenBagUse_Response	= 0x00030026;//返回黄金福袋的开启次数
+	
+	MSG_CharNameChange_Request	= 0x00030027; // 改名请求
+	MSG_CharNameChange_Response	= 0x00031027; // 改名回复		--谁加的，不按顺序--;
+	
+	MSG_ItemUse_Special_Request	= 0x00030028;//特殊物品使用
+	MSG_GoldenBagTimes_Request	= 0x00030029;//查询黄金福袋的开启次数
+	
+	MSG_CharInfo_Request		= 0x0003002A; // 查看玩家
+	MSG_CharInfo_Response		= 0x0003102A; // 玩家信息返回	--谁加的，不按顺序--;
+	
+	MSG_Item_RequestEX			= 0x0003002B; // 查看玩家
+	MSG_Item_ResponseEX			= 0x0003102B; // 玩家信息返回	--谁加的，不按顺序--;
+
+	MSG_CombineInfo_Request		= 0x0003002C;// 合成装备信息请求
+	MSG_CombineInfo_Response	= 0x0003102C;// 合成装备信息结果	--谁加的，不按顺序--;
+
+	MSG_ItemReNew_RequestEX		= 0x0003002D; //荣誉装续费请求;
+	MSG_ItemReNew_ResponseEX	= 0x0003002E; //荣誉装续费回应;
+	
+	MSG_RefreshProperty_Notice	= 0x0003002F;	// 玩家属性变化通知
+
+	MSG_ItemEnduranceNormal_Request	= 0x00030030;	// 耐力普通修理请求
+	MSG_ItemEnduranceNormal_Response	= 0x00031030;	// 耐力普通修理响应
+	MSG_ItemEnduranceXianfu_Request	= 0x00030031;	// 耐力仙府修理请求
+	MSG_ItemEnduranceXianfu_Response	= 0x00031031;	// 耐力仙府修理响应
+	MSG_ItemEnduranceReset_Request			= 0x00030032;	// 耐力重置请求
+	MSG_ItemEnduranceReset_Response			= 0x00031032;	// 耐力重置响应
+	MSG_ItemEndurance_Notice				= 0x00030033;	// 耐力值变化通知
+	MSG_ItemEndurance_Cost_Request			= 0x00030034;	// 耐久修复消耗请求
+	MSG_ItemEndurance_Cost_Response			= 0x00031034;	// 耐久修复消耗回应
+	
+	MSG_Item_Dye_Request = 0x00030035; // 染色请求
+	MSG_Item_Dye_Response = 0x00031035; // 染色回应
+	MSG_Item_Dye_Replace_Request = 0x00030036; // 染色替换
+	MSG_Item_Dye_Replace_Response = 0x00031036; // 染色替换回应
+	MSG_Item_Dye_Clear_Request = 0x00030037;
+	MSG_Item_Dye_Clear_Response = 0x00031037;
+
+	MSG_Item_Exp_Request	= 0x00030038;	// 请求 使用提取经验丹
+	MSG_Item_Exp_Response	= 0x00031038;	// 回应 使用提取经验丹
+	MSG_Item_OfflineExp_Notice	= 0x00030039;	// 离线经验通知
+	MSG_OpenGift_Notice			= 0x0003103A;	// 开礼包得到的物品推送
+	MSG_PropertyChange_Notice	= 0x0003103B;	// 属性变化差值通知
+	MSG_ReNew_Config_Notice		= 0x0003103C;	// 荣誉时装续费通知
+
+	//装备符文
+	MSG_EquipRune_Mount_Request		= 0x0003003D;	//装备符文镶嵌请求
+	MSG_EquipRune_Mount_Response	= 0x0003103D;	//装备符文镶嵌回应
+	MSG_EquipRune_Unmount_Request	= 0x0003003E;	//装备符文摘除请求
+	MSG_EquipRune_Unmount_Response	= 0x0003103E;	//装备符文摘除回应
+	MSG_EquipRune_Transfer_Request	= 0x0003003F;	//装备符文转换请求
+	MSG_EquipRune_Transfer_Response	= 0x0003103F;	//装备符文转换响应
+	MSG_EquipRune_OpenSlot_Request	= 0x00030040;	//装备符文开孔请求
+	MSG_EquipRune_OpenSlot_Response	= 0x00031040;	//装备符文开孔响应
+	
+	MSG_ExcuteTreasureMap_Notice = 0x00031041;  // 使用藏宝图结果;
+
+	MSG_IsSearchTreasury_Request = 0x00030042;	// 请求-是否进行寻宝寻路;
+	MSG_IsSearchTreasury_Response= 0x00031042;	// 响应-是否进行寻宝寻路;
+
+	MSG_RankPetInfo_Request		= 0x00030043;	//请求排行榜宠物信息
+	MSG_RankPetInfo_Response	= 0x00031043;	//请求排行榜宠物信息
+	
+	MSG_EquipTrans_Request    = 0x00030044;  //装备转换请求
+	MSG_EquipTrans_Response   = 0x00031044;  //装备转换回应
+	MSG_EquipTrans_Cost_Request = 0x00030045;  // 装备转换消费请求
+	MSG_EquipTrans_Cost_Response = 0x00031045;  // 装备转换消费响应
+	
+	//装备附魔
+	MSG_EquipAttach_Request   = 0x00030046;   //装备附魔请求
+	MSG_EquipAttach_Response  = 0x00031046;   //装备附魔响应
+
+	// 装备一键修理;
+	MSG_AllItemEnduranceNormal_Request	= 0x00030047;	// 耐力普通全部修理请求
+	MSG_AllItemEnduranceNormal_Response	= 0x00031047;	// 耐力普通全部修理响应
+	MSG_AllItemEnduranceXianfu_Request	= 0x00030048;	// 耐力帮派全部修理请求
+	MSG_AllItemEnduranceXianfu_Response	= 0x00031048;	// 耐力仙府全部修理响应
+
+	//Quest
+	MSG_NPCPos_Response			= 0x00040000;//发送所有的npc的位置信息
+	MSG_QuestAccept_Request		= 0x00040001;//发送接受任务;
+	MSG_QuestCommit_Request		= 0x00040002;//发送提交任务;
+	MSG_QuestAbandon_Request	= 0x00040003;//发送放弃任务;
+	MSG_QuestCanAcc_Response	= 0x00040004;//发送可接任务信息
+	MSG_QuestAccepted_Response	= 0x00040005;//发送已接任务信息
+	MSG_Daily_RESPONSE			= 0x00040006;//同步日常任务信息
+	MSG_DailyCommit_Request		= 0x00040007;//提交日常任务
+	MSG_QuestOther_Response   	= 0x00040008;//发送其他任务信息(成就，成长等)
+	MSG_QuestOther_Commit		= 0x00040009;//提交其他任务
+	MSG_QuestAward_Ruquest		= 0x00040010;//请求获取任务奖励(但是不删除这个任务)
+	MSG_QuestVIP_Response		= 0x00040011;//vip任务的初始化;
+	MSG_QuestVIPAward_Request	= 0x00040012;//vip任务获取奖励;
+	MSG_BindPhoneSuccess_Request= 0x00040013;//绑定手机号成功;
+	MSG_QuestCanAward_Request	= 0x00040014;//设置可领奖状态;
+	MSG_QuestCanAward_Response	= 0x00040015;//同步可领奖状态;
+	MSG_QuestGroup_Response		= 0x00040016;//同步任务组信息
+	MSG_QuestRand_Response		= 0x00040017;//同步随机任务信息
+	MSG_QuestGroupCanAcc_Response=0x00040018;//发送可接分组任务信息
+	MSG_QuestRandCanAcc_Response= 0x00040019;//发送可接随机任务信息
+	MSG_QuestTeleport_Request	= 0x0004001A;//任务传送
+	MSG_QuestTeleport_Response	= 0x0004101A;//任务传送
+	MSG_QuestOther_Request		= 0x0004001B;//请求发送其他任务信息(成就，成长等)
+
+
+	//================================================================================
+	// 技能
+	
+	MSG_SkillInfo_Notice_Request				= 0x00051010;	// debug 使用	
+	MSG_SkillInfo_Notice						= 0x00051001;	// 上线发技能信息
+	MSG_SkillLvUp_Request						= 0x00051002;	// 技能升级请求
+	MSG_SkillLvUp_Response						= 0x00051003;	//
+	MSG_SkillEquip_Request						= 0x00051004;	// 换技能请求
+	MSG_SkillEquip_Response						= 0x00051005;	
+	
+
+
+	//================================================================================
+	// 仙宠
+	MSG_MagicWeaponDecompose_Request			= 0x00060000;	//分解法宝
+	MSG_MagicWeaponDecompose_Response			= 0x00061000;	//分解法宝回应
+	MSG_MagicWeaponFosterInfo_Request			= 0x00060001;	//查询法宝培养信息请求
+	MSG_MagicWeaponFosterInfo_Response			= 0x00061001;	//查询法宝培养信息结果
+	MSG_MagicWeaponFoster_Request				= 0x00060002;	//法宝培养请求
+	MSG_MagicWeaponFoster_Response				= 0x00061002;	//法宝培养结果
+	MSG_MagicWeaponFosterAffirm_Request 		= 0x00060003;	//法宝培养确认请求
+	MSG_MagicWeaponFosterAffirm_Response		= 0x00061003;	//法宝培养确认结果
+	MSG_MagicWeaponSwallowPreview_Request		= 0x00060004;	//法宝吞噬预览请求
+	MSG_MagicWeaponSwallowPreview_Response		= 0x00061004;	//法宝吞噬预览回应
+	MSG_MagicWeaponSwallow_Request 				= 0x00060005;	//法宝吞噬请求
+	MSG_MagicWeaponSwallow_Response				= 0x00061005;	//法宝吞噬应答
+	MSG_MagicWeaponBookInfo_Request 			= 0x00060006;	//法宝图鉴请求
+	MSG_MagicWeaponBookInfo_Response			= 0x00061006;	//法宝图鉴应答
+	MSG_MagicWeaponBookActivateGroup_Request	= 0x00060007;	//法宝图鉴激活组请求
+	MSG_MagicWeaponBookActivateGroup_Response	= 0x00061007;	//法宝图鉴激活组应答
+	MSG_CallMagicWeaponUseStone_Request			= 0x00060008;	//使用召唤石进行卓越兑换请求
+	MSG_CallMagicWeaponUseStone_Response		= 0x00061008;	//	... 回应
+	MSG_MagicWeaponOp_Request					= 0x00060009;	//法宝操作请求
+	MSG_MagicWeaponOp_Response					= 0x00061009;	//法宝操作回应
+	MSG_MagicWeaponExchange_Request				= 0x0006000B;	//法宝兑换请求
+	MSG_MagicWeaponExchange_Response			= 0x0006100B;	//法宝兑换回应
+	MSG_MagicWeaponDebrisInfo_Request			= 0x0006000C;	//法宝碎片信息请求
+	MSG_MagicWeaponDebrisInfo_Response			= 0x0006100C;	//法宝碎片信息回应
+	MSG_MagicWeaponTryAdvance_Request			= 0x0006000D;	//法宝升阶预览请求
+	MSG_MagicWeaponTryAdvance_Response			= 0x0006100D;	//法宝升阶预览回复
+
+	//================================================================================
+	// 战场
+	MSG_BtlHarvest_Request			= 0x00070001;	// 请求采矿
+	MSG_BtlHarvestCancel_Request	= 0x00070002;	// 取消采矿
+	MSG_BtlHarvestStatus_Response	= 0x00071001;	// 响应采矿状态
+	
+	MSG_BtlMatch_Request			= 0x00070003;	// 请求匹配 
+	MSG_BtlMatchCancel_Request		= 0x00070004;	// 取消匹配
+	MSG_BtlMatchStatus_Response		= 0x00071003;	// 响应匹配
+	MSG_BtlStat_Inform				= 0x00070005;	// 实时信息通知
+	
+	MSG_BtlDeliver_Request			= 0x00070006;	// 请求交矿
+	MSG_BtlDeliver_Response			= 0x00071006;	// 响应交矿
+	
+	MSG_BtlEndStat_Inform			= 0x00070007;	// 结束统计通知（结算）
+	
+	MSG_BtlInspire_Request			= 0x00070008;	// 鼓舞请求
+	MSG_BtlInspire_Response			= 0x00071008;	// 鼓舞响应
+
+
+	//MSG_SinglePvPTimes_Request		= 0x00070009;	// 单人竞技场次数查询;
+	//MSG_SinglePvPTimes_Response		= 0x0007000A;	// 单人竞技场次数回应;
+	
+	MSG_BtlMatchRes					= 0x0007000B;//战场匹配结果;
+	MSG_BtlQuery_Request			= 0x0007000C;//请求报名人数
+
+	MSG_BtlMatchSendCallFriendURL	= 0x0007100D;	// 封魔战场和仙之斗的呼朋唤友
+
+	MSG_BtMatchAFK_Notice			= 0x0007000E;	// 封魔战场和仙之斗挂机警告;
+
+	//================================================================================
+	// VIP
+	MSG_LoginGift_Request			= 0x00080000;	// 查询VIP登录奖励的领取状态
+	MSG_LoginGift_Response			= 0x00081000;	// 回应VIP登录奖励的查询
+	MSG_GetLoginGift_Request		= 0x00080001;	// 领取每日VIP登录奖励的请求
+	MSG_Robolet_InfoImpulse			= 0x00080002;  // 月卡信息推送
+	MSG_QuarterCardGift_Request		= 0x00080003;	// 请求 领取季卡奖励
+	MSG_QuarterCardGift_Response	= 0x00081003;	// 响应 领取季卡奖励
+	MSG_QuarterCardInfo_Notice		= 0x00080004;	// 季卡信息通知
+	MSG_GiftCard_Notice				= 0x00080005;	// 各种福利卡消息通知（月卡 季卡等 便于后面增加年卡等就不用修改客户端了）
+	MSG_GiftCard_Reward_Request		= 0x00080006;	// 福利卡奖励领取请求
+	MSG_GiftCard_Reward_Response	= 0x00081006;	// 福利卡奖励领奖回应
+	
+	//================================================================================
+	// 商城
+	MSG_ShopList_Request			= 0x00090001;	// 请求商城列表
+	MSG_ShopList_Response			= 0x00091001;	// 商城列表信息
+	MSG_ShopBuy_Request				= 0x00090002;	// 请求购买物品
+	MSG_ShopBuy_Response			= 0x00091002;	// 购买物品响应
+	MSG_ShopGoodsSold_Notice		= 0x00091003;	// 商店物品出售通知
+	MSG_ShopInfo_Request			= 0x00090004;	// 请求商店信息
+	MSG_ShopInfo_Response			= 0x00091004;	// 回复商店信息
+	MSG_ShopGoodsBuy_Request		= 0x00090005;	// 请求商店商品购买
+	MSG_ShopGoodsBuy_Response		= 0x00091005;	// 回复商店商品购买
+	MSG_ShopRefresh_Request			= 0x00090006;	// 请求商店刷新
+	MSG_ShopRefresh_Response		= 0x00091006;	// 回复商店刷新
+	MSG_MallGoodsBuy_Request		= 0x00090007;	// 请求商城商品购买
+	MSG_MallGoodsBuy_Response		= 0x00091007;	// 回复商城商品购买
+	MSG_MallInfo_Request			= 0x00090008;	// 请求商城信息
+	MSG_MallInfo_Response			= 0x00091008;	// 回复商城信息
+	MSG_BackGoodsBuy_Request		= 0x00090009;	// 请求购买回购物品
+	MSG_BackGoodsBuy_Response		= 0x00091009;	// 回复购买回购物品
+	MSG_BuyBackInfo_Request			= 0x0009000A;	// 请求回购物品信息
+	MSG_BuyBackInfo_Response		= 0x0009100A;	// 回复回购物品信息
+	MSG_Consign_List_Request			= 0x0009000B; // 寄售道具列表
+	MSG_Consign_List_Response		= 0x0009100B; // 寄售道具列表
+	MSG_Consign_Up_Request			= 0x0009000C; // 上架
+	MSG_Consign_Up_Response			= 0x0009100C; //
+	MSG_Consign_Down_Request		= 0x0009000D; // 下架
+	MSG_Consign_Down_Response	= 0x0009100D; //
+	MSG_Consign_Buy_Request			= 0x0009000E; // 购买
+	MSG_Consign_Buy_Response		= 0x0009100E; //
+	MSG_Consign_MyList_Request		= 0x0009000F; // 我的列表
+	MSG_Consign_MyList_Response	= 0x0009100F; //
+	MSG_Consign_Tip_Request			= 0x00090010; // ToolTip
+	MSG_Consign_Tip_Response		= 0x00091010; //
+	MSG_Consign_GetReward_Request			= 0x00090011; // 获取交易金额（我知道了的按钮）
+	MSG_Consign_GetReward_Response		= 0x00091011; //
+	MSG_ExchangeShop_Info_Request	= 0x00090012; // 请求兑换商店
+	MSG_ExchangeShop_Info_Response	= 0x00091012; // 回复兑换商店
+	MSG_ExchangeShop_Ex_Request		= 0x00090013; // 请求兑换商店
+	MSG_ExchangeShop_Ex_Response	= 0x00091013; // 回复兑换商店
+	MSG_Consign_Search_Request		= 0x00090014; // 请求寄售搜索
+	MSG_Consign_Search_Response		= 0x00091014; // 响应寄售搜索
+	MSG_Consign_HotSale_Request		= 0x00090015; // 请求热销数据
+	MSG_Consign_HotSale_Response	= 0x00091015; // 响应热销数据
+	MSG_Consign_ShowInfo_Request	= 0x00090016; // 请求寄售展示请求
+	MSG_Consign_ShowInfo_Response	= 0x00091016; // 响应寄售展示回复
+	MSG_MallGoodsSendGift_Request	= 0x00090017; // 商店赠送请求
+	MSG_MallGoodsSendGift_Response	= 0x00091017; // 商店赠送响应
+	MSG_ExchangeShop_List_Request	= 0x00090018; // 请求兑换商店列表
+	MSG_ExchangeShop_List_Response	= 0x00091018; // 回复兑换商店列表
+
+	// 职业相关
+	MSG_ChangeJob_Request			= 0x000A0001;	// 请求转职
+	MSG_ChangeJob_Response			= 0x000A0002;	// 转职响应
+	MSG_CheckTransCamp_Request		= 0x000A0003;	// 阵营转换检查消息
+	MSG_CheckTransCamp_Response		= 0x000A1003;	// 阵营转换检查消息
+	MSG_TransCampSingle_Request		= 0x000A0004;	// 单人申请
+	MSG_TransCampSingle_Response	= 0x000A1004;	// 单人申请
+	MSG_TransCampLeader_Request		= 0x000A0005;	// 队长申请
+	MSG_TransCampLeader_Response	= 0x000A1005;	// 队长申请
+	MSG_TransCampWait_Notice		= 0x000A1006;	// 通知队长等待时间
+	MSG_TransMemberOk_Request		= 0x000A0007;	// 队员同意
+	MSG_TransMemberOk_Response		= 0x000A1007;	// 队员同意
+	MSG_TransMemberCancel_Request	= 0x000A0008;	// 队员拒绝
+	MSG_TransMemberCancel_Response	= 0x000A1008;	// 队员拒绝
+	MSG_TransCampSuccess_Notice		= 0x000A1009;	// 转阵营成功通知
+	MSG_TransCampMember_Notice		= 0x000A100A;	// 队员确认通知
+	MSG_ReadyTransCamp_Request		= 0x000A000B;	// 阵营转换准备消息
+	MSG_ReadyTransCamp_Response		= 0x000A100B;	// 阵营转换准备消息
+	MSG_ChangeJob_Query_Request		= 0x000A000C;	// 查询转职业请求
+	MSG_ChangeJob_Query_Response	= 0x000A100C;	// 查询转职业响应
+
+	//宝石
+	MSG_GemState_Request			= 0x000B0001;	// 查询宝石镶嵌开孔状态;
+	MSG_GemState_Response			= 0x000B0002;	// 回应宝石镶嵌开孔状态;
+	MSG_GemCompose_Request			= 0x000B0003;	// 宝石合成的消息;
+	MSG_GemCompose_Response			= 0x000BC003;	// 宝石合成的回复
+	MSG_GemQuickCompose_Request		= 0x000B0004;	// 宝石快速合成请求
+	MSG_GemQuickCompose_Response	= 0x000B0005;	// 
+	MSG_GemTransform_Request		= 0x000B0006;	// 宝石转换请求
+	MSG_GemTransform_Response		= 0x000B0007;
+	MSG_GemEnchase_Request			= 0x000B0008;	// 宝石镶嵌请求
+	MSG_GemEnchase_Response			= 0x000B0009;
+	MSG_GemRemove_Request			= 0x000B000A;	// 宝石卸下请求
+	MSG_GemRemove_Response			= 0x000B000B;
+	MSG_GemUnlock_Request			= 0x000B000C;	// 宝石槽开孔请求
+	MSG_GemUnlock_Response			= 0x000B000D;
+	MSG_GemComposeQuick_Query_Request	= 0x000B000E;	// 宝石一键合成的查询请求;
+	MSG_GemComposeQuick_Query_Response	= 0x000B000F;	// 宝石一键合成的查询响应;
+	MSG_GemComposeQuick_Compose_Request	= 0x000B0010;	// 宝石一键合成的合成请求;
+	MSG_GemComposeQuick_Compose_Response = 0x000B0011;	// 宝石一键合成的合成响应;
+	MSG_GemCutting_Base_Request        = 0x000B0012;     //宝石基础雕琢请求
+	MSG_GemCutting_Base_Response        = 0x000B1012;     //宝石基础雕琢回应
+	MSG_GemCutting_Element_Request        = 0x000B0013;     //宝石元素雕琢请求
+	MSG_GemCutting_Element_Response        = 0x000B1013;     //宝石元素雕琢请求
+	MSG_GemCutting_Base_Detail_Request        = 0x000B0014;     //宝石基础雕琢详情请求
+	MSG_GemCutting_Base_Detail_Response        = 0x000B1014;     //宝石基础雕琢详情回应
+	MSG_GemCutting_Element_Detail_Request        = 0x000B0015;     //宝石元素雕琢详情请求
+	MSG_GemCutting_Element_Detail_Response        = 0x000B1015;     //宝石元素雕琢详情回应
+	MSG_GemCutting_Reset_Request           = 0x000B0016;     //宝石雕琢重置请求
+	MSG_GemCutting_Reset_Response          = 0x000B1016;     //宝石雕琢重置响应 
+	
+	
+
+	//================================================================================
+	//副本
+	MSG_DungeonRestart_Request		= 0x000C0001;	//副本重新开始请求;
+	MSG_DungeonNext_Request			= 0x000C0002;	//进入下一个副本;
+	MSG_DungeonReward_Requrest		= 0x000C0003;   //请求获取通关副本奖励;		//TODOCHB:dungeon 去掉
+	MSG_DungeonState_Response		= 0x000C0004;	//同步副本状态;
+	
+	// 以下废弃掉
+	MSG_Callfriend_Request			= 0x000C0005;	//请求呼朋唤友;
+	MSG_Callfriend_Response			= 0x000C0006;	//呼朋唤友的结果;
+	MSG_ApplyTeam_Request			= 0x000C0007;	//通过队伍Id请求加入队伍;
+	MSG_ApplyTeam_Response			= 0x000C1007;	//通过队伍Id请求加入队伍的响应;
+	MSG_ActivityTeamList_Request	= 0x000C0008;	//请求活动队伍列表;
+	MSG_ActivityTeamList_Response	= 0x000C0009;	//活动队伍信息回应;
+	MSG_ForceApplyTeam_Request		= 0x000C0010;	//强制申请;
+	MSG_ForceApplyTeam_Response		= 0x000C1010;	//强制申请响应;
+	MSG_QuickBuildTeam_Request		= 0x000C0011;	//请求快速组队
+	MSG_QuickBuildTeam_Response		= 0x000C0012;	//响应快速组队
+
+
+	// 蜀山副本消息
+	MSG_DungeonEnter_Request  							 = 0x000C0013;	//  请求-进入副本
+	MSG_DungeonEnter_Response							 = 0x000C1013;	//	响应-进入副本
+	MSG_DungeonLeave_Request 							 = 0x000C0014;	//	请求-离开副本
+	MSG_DungeonLeave_Response 							 = 0x000C1014;	//	响应-离开副本
+	MSG_DungeonStart_Request 							 = 0x000C0015;	//	请求-副本开始请求（激活AI）
+	MSG_DungeonStart_Response 							 = 0x000C1015;	//	响应-副本开始请求（激活AI）
+	MSG_DungeonList_Request 							 = 0x000C0016;	//	请求-获取副本列表
+	MSG_DungeonList_Response 							 = 0x000C1016;	//	响应-获取副本列表
+	MSG_DungeonSettleUp_Notice 							 = 0x000C0017;	//	通知-副本结算消息
+	MSG_DungeonDraw_Request 							 = 0x000C0018;	//	请求-副本结束抽奖
+	MSG_DungeonDraw_Response 							 = 0x000C1018;	//	响应-副本结束抽奖
+	MSG_DungeonStat_Notice 								 = 0x000C0019;	//	通知-副本统计信息
+	MSG_DungeonMonsterWave_Notice 						 = 0x000C001A;	//	通知-副本怪物波数
+	MSG_DungeonRecoverMedicinePrice_Notice 				 = 0x000C001B;	//	通知-重置恢复药价格梯度
+	MSG_DungeonRush_Request 							 = 0x000C001C;	//	请求-副本扫荡
+	MSG_DungeonRush_Response 							 = 0x000C101C;	//	响应-副本扫荡
+	MSG_DungeonRun_Notice								 = 0x000C001D;	//	通知-通知进入副本的玩家副本运行信息
+	MSG_DungeonUnlock_Notice							 = 0x000C001E;	//	通知-副本解锁消息
+	MSG_DungeonResetCount_Request						 = 0x000C0020;	//  请求-重置副本次数
+	MSG_DungeonResetCount_Response						 = 0x000C1020;	//	响应-重置副本次数
+	MSG_DungeonGetRoadChest_Request						 = 0x000C0021;	//	请求-领取路线上小宝箱
+	MSG_DungeonGetRoadChest_Response					 = 0x000C1021;	//	响应-领取路线上小宝箱
+	MSG_DungeonGetRegionChest_Request					 = 0x000C0022;	//	请求-领取章节宝箱
+	MSG_DungeonGetRegionChest_Response					 = 0x000C1022;	//	响应-领取章节宝箱
+	MSG_DungeonOpposite_Notice							 = 0x000C1023;	//	通告-进副本冲突提示
+	MSG_DungeonGetInfo_Request							 = 0x000C0024;	//	请求-副本剩余次数
+	MSG_DungeonGetInfo_Response							 = 0x000C1024;	//	响应-副本剩余次数
+	MSG_DungeonListBuyEnterTimes_Request				 = 0x000C0025;	//	请求-购买副本进入次数
+	MSG_DungeonListBuyEnterTimes_Response				 = 0x000C1025;	//	响应-购买副本进入次数
+	MSG_DungeonTeamEnterVerify_Notice					 = 0x000C1026;	//	通知-检测队伍中玩家是否满足进入副本条件
+	MSG_DungeonPlayerConfirm_Request					 = 0x000C0027;	//	请求-队伍中玩家是否同意进入副本
+	MSG_DungeonPlayerConfirm_Response					 = 0x000C1027;	//	响应-队伍中玩家是否同意进入副本
+	MSG_DungeonPlayerRefuseEnterDungeon_Notice			 = 0x000C1028;	//	通知-队伍中玩家拒绝进入副本
+	MSG_DungeonPlayerInconformityEnterCondition_Notice   = 0x000C1029;	//	通知-队伍成员不满足进入副本条件
+	MSG_DungeonPlayerConfirmEnterOffline_Notice			 = 0x000C102A;  //	通知-队伍成员正在确认进入副本时掉线
+	MSG_DungeonStoryOp_Request							 = 0x000C002B;	//  请求-剧情暂停
+	MSG_DungeonStoryOp_Response							 = 0x000C102B;	//  响应-剧情暂停
+	MSG_DungeonClientEvent_Notice						 = 0x000C102C;	//  通知-客户端事件
+	MSG_EGSToAISEvent_Report							 = 0x000C102D;	//  通知-EGS向AIS事件
+	MSG_EnterDynamicPlace_Report						 = 0x000C002E;	//  上报-进入动态区域
+	MSG_TeleportPlayer_Notice							 = 0x000C102F;	//  通知-传送玩家实体
+	MSG_ProcessCollect_Report							 = 0x000C0030;	//  上报-采集
+	MSG_OpCollection_Request							 = 0x000C0031;	//  请求-采集操作
+	MSG_OpCollection_Response							 = 0x000C1031;	//  回复-采集操作
+	MSG_SpawnBot_Request								 = 0x000C0032;	//  请求-刷怪
+	MSG_SpawnBot_Response								 = 0x000C1032;	//  响应-刷怪
+	MSG_DungeonPlayerWildBossDmgRankNotice				 = 0x000C1033;  //  通知-发送野外BOSS伤害排行榜显示数据
+	MSG_DungeonPlayerWildBossDmgNotice					 = 0x000C1034;	//	通知-发送玩家对BOSS的伤害显示数据
+	MSG_DungeonDisPlayWildBossDmgTableNotice			 = 0x000C1035;	//  通知-玩家弹出野外BOSS伤害排行榜
+	MSG_DungeonWildBossLocation_Request					 = 0x000C0036;	//  请求-野外BOSS寻路
+	MSG_DungeonWildBossLocation_Response				 = 0x000C1037;  //  响应-野外BOSS寻路
+	MSG_DungeonIsSearchingWildBossNotice				 = 0x000C1038;  //  通知-是否激活野外BOSS寻路按钮
+	MSG_DungeonPlayerTooLongNotAttackWildBossNotice		 = 0x000C1039;  //  通知-玩家长时间未攻击BOSS伤害清零;
+	MSG_EntityKill_Report							     = 0x000C003A;	//  上报-实体死亡
+	MSG_SceneFail_Notice								 = 0x000C103B;	//  通知-强制副本失败
+	MSG_BotChangeHp_Notice								 = 0x000C103C;	//  通知-怪物实体血量
+	MSG_GroupSpawn_Notice								 = 0x000C103D;	//  通知-怪物组出生
+	MSG_NewGroupMonsterCome_Notice						 = 0x000C103E;	//	通知-副本-新的一波怪物到来	PBMsgNewGroupMonsterComeNotice
+	MSG_Respawn_Request									 = 0x000C003F;	//	请求-复活请求
+	MSG_Respawn_Response								 = 0x000C103F;	//	响应-复活响应
+	MSG_EntityExeSkill_Report							 = 0x000C0040;	//  上报-实体释放技能
+	MSG_AISystemBuff_Notice								 = 0x000C1041;	//	通知-怪物组添加buff
+	MSG_AISystemSkill_Notice							 = 0x000C1042;	//	通知-系统释放技能
+	MSG_AIDungeonSettle_Notice							 = 0x000C1043;	//	通知-副本结算影响数
+	MSG_StarRatingInfo_Notice							 = 0x000C0044;	//	通知-星级状态信息
+	MSG_EnterLinkDungeon_Request						 = 0x000C0045;	//  在三环副本中 请求进入写一个副本
+	MSG_LinkDungeon_Result_Notice						 = 0x000C1046;	// 通知三环副本结果
+	MSG_WorldBossRank_Notice							 = 0x000C1047;	//	通知-世界BOSS排行榜
+	MSG_WorldBossResult_Notice							 = 0x000C1048;	//	通知-世界BOSS结果
+	MSG_WorldBossEnterRequest							 = 0x000C0049;	//  请求进入世界 boss
+	MSG_WorldBossEnterResponse							 = 0x000C1049;	//  请求进入世界 boss
+	MSG_WorldBossOpen_Notice							 = 0x000C1050;	//  世界boss开启推送
+	MSG_DungeonContinueKill_Notice						 = 0x000C1051;	//	连续击杀数提示;
+	MSG_MatchEnter_Notice								 = 0x000C1052;	//	队伍人满,提示队长进入
+	MSG_CancelCollection_Notice							 = 0x000C1053;	//	取消自动采集通知
+	// 喜宴
+	MSG_DungeonEnterWeddingDungeonDialog_Notice			 = 0x000C1054;	//	通知-邀请喜宴弹窗
+	MSG_DungeonEnterWeddingDungeon_Request				 = 0x000C0055;	//	请求-进入喜宴副本
+	MSG_DungeonEnterWeddingDungeon_Response				 = 0x000C1055;	//	响应-进入喜宴副本
+	MSG_DungeonBuyWeddingPlayerNum_Request				 = 0x000C0056;	//	请求-购买喜宴进入次数
+	MSG_DungeonBuyWeddingPlayerNum_Response				 = 0x000C1056;	//	响应-购买喜宴进入次数
+	MSG_WeddingDungeonInfo_Notice						 = 0x000C1057;	//	通知-进入喜宴副本后通知喜宴信息
+	MSG_DungeonRequireFriendWeddingDungeon_Request		 = 0x000C0058;	//	请求-邀请好友进入喜宴
+	MSG_DungeonRequireFriendWeddingDungeon_Response		 = 0x000C1058;	//	响应-邀请好友进入喜宴
+	MSG_DungeonRequireGuildWeddingDungeon_Request		 = 0x000C0059;	//	请求-邀请帮派成员进入喜宴
+	MSG_DungeonRequireGuildWeddingDungeon_Response		 = 0x000C1059;	//	响应-邀请帮派成员进入喜宴
+	MSG_DungeonCreateWeddingDungeon_Request				 = 0x000C005A;	//	请求-创建喜宴副本
+	MSG_DungeonCreateWeddingDungeon_Response			 = 0x000C105A;	//	响应-创建喜宴副本
+	MSG_DungeonBeginPerformWedding_Request				 = 0x000C005B;	//	请求-开始拜堂
+	MSG_DungeonBeginPerformWedding_Response				 = 0x000C105B;	//	响应-开始拜堂
+	MSG_DungeonBeginPerformWedding_Notice				 = 0x000C105C;	//	通知-开始拜堂
+	MSG_DungeonBuyWeddingCandy_Request					 = 0x000C005D;	//	请求-购买喜糖
+	MSG_DungeonBuyWeddingCandy_Response					 = 0x000C105D;	//	响应-购买喜糖
+	MSG_DungeonWeddingDraw_Request						 = 0x000C005E;	//	请求-闹洞房
+	MSG_DungeonWeddingDraw_Response						 = 0x000C105E;	//	响应-购洞房
+	MSG_DungeonCreateWeddingDungeon_Notice				 = 0x000C105F;	//	通知-创建喜宴副本
+	MSG_CharDeathInfo_Notice							 = 0x000C1060;      // 玩家死亡信息通知
+	MSG_OpCollectionEnd_Notice							 = 0x000C1061;	//  通知-采集完成
+	MSG_OpBench_Request									 = 0x000C0062;	//  请求-板凳操作
+	MSG_OpBench_Response								 = 0x000C1062;	//  回复-板凳操作
+	MSG_GroupDespawn_Notice								 = 0x000C1063;	//  通知-怪物组死亡
+	MSG_AIPetSkill_Notice								 = 0x000C1064;	//	通知-怪物释放宠物技能
+
+	// 喜宴 结束
+	// 新手村-划船
+	MSG_DungeonBoatingStatus_Request					 = 0x000C0071;	//	请求-改变划船状态
+	MSG_DungeonBoatingStatus_Response					 = 0x000C1071;	//	响应-改变划船状态
+
+	MSG_MultiBoatingStart_Request						 = 0x000C0072;	//	请求-开始多人划船
+	MSG_MultiBoatingStart_Response						 = 0x000C1072;	//	响应-开始多人划船
+	MSG_MultiBoatingEnd_Request							 = 0x000C0073;	//	请求-结束多人划船
+	MSG_MultiBoatingEnd_Response						 = 0x000C1073;	//	响应-结束多人划船
+	MSG_MultiBoatingStatus_Notice						 = 0x000C1074;	//	通知-多人划船状态
+	MSG_MultiBoatingReply_Request						 = 0x000C0075;	//  请求-上报自己选择结果
+	MSG_MultiBoatingReply_Response						 = 0x000C1075;	//  响应-上报自己选择结果
+
+	// 跨服野外
+	MSG_SpanWildScore_Notice							= 0x000C1081;	//	跨服野外积分通知
+	MSG_SpanWildState_Notice							= 0x000C1082;	//	跨服野外积分活动开启关闭状态通知
+	MSG_GetSpanWildState_Notice							= 0x000C1083;	//	跨服野外积分活动开启关闭状态通知
+
+
+	//宠物战斗
+	MSG_PetBattleStar_Request    = 0x000C0091;     //请求星星信息
+	MSG_PetBattleStar_Notice     = 0x000C1091;      // 推送战斗星星
+	MSG_PetBattleRound_Notice    = 0x000C1092;      // 推送战斗轮次
+	
+	MSG_SkipBattle_Request       = 0x000C0093;     //跳过战斗请求
+	MSG_SkipBattle_Response      = 0x000C1093;     //跳过战斗响应
+	
+	MSG_PetBattle_PvP_SettleUp_Notice = 0x000C1094; //宠物pvp结算
+
+    
+    // 领地争夺战
+    MSG_SPMonorBattle_RaceOne_Settle_Notice = 0x000C10A1;  // 攻防战结算通知
+    MSG_SPMonorBattle_RaceTwo_Settle_Notice = 0x000C10A2;  // 保卫战结算通知
+    MSG_SPMonorBattle_RaceThree_Settle_Notice = 0x000C10A3;  // 擂台战结算通知
+    MSG_SPMonorBattle_RaceOne_Rank_Notice = 0x000C10A4;  // 攻防战结算通知
+    MSG_SPMonorBattle_RaceTwo_Rank_Notice = 0x000C10A5;  // 保卫战结算通知
+    MSG_SPMonorBattle_RaceThree_Rank_Notice = 0x000C10A6;  // 擂台战结算通知
+    MSG_SPMonorBattle_RaceTwo_Capture_Rate_Notice = 0x000C10A7; //保卫战占领进度通知
+    MSG_SPMonorBattle_RaceThree_Fight_Request = 0x000C00A8;   // 擂台战上阵请求 
+    MSG_SPMonorBattle_RaceThree_Fight_Response = 0x000C10A8;   // 擂台战上阵响应
+    MSG_SPMonorBattle_RaceThree_Unfight_Request = 0x000C00A9;   // 擂台战下阵请求
+    MSG_SPMonorBattle_RaceThree_Unfight_Response = 0x000C10A9;  // 擂台战下阵响应
+    MSG_SPMonorBattle_RaceThree_Fight_Member_Notice = 0x000C10AA;  // 上阵成员通知
+    MSG_SPMonorBattle_RaceThree_Round_Notice  = 0x000C10AB;      // 轮次通知
+
+	//================================================================================
+	//邮件
+	MSG_MailBox_Response			= 0x000D0001;//同步客户端邮箱状态;
+	MSG_MailBox_Require				= 0x000D0002;//请求操作;
+	MSG_GmMail_Notice				= 0x000D0003;//GM邮件消息同步
+
+	//================================================================================
+	//活动
+	MSG_EventInspire_Request			= 0x000E0005;	// 鼓舞请求
+	MSG_EventInspire_Response			= 0x000E0006;	// 鼓舞回应
+	MSG_EventSummonStat_Response		= 0x000E0007;	// 通知召唤boss实时信息
+	MSG_EventSummonEndStat_Response		= 0x000E0008;   // 召唤boss结算信息通知
+	// 聚宝盆;
+	MSG_EventJuBaoPenState_Request		= 0x000E0009;	// 查询聚宝盆奖励领取状态;
+	MSG_EventJuBaoPenState_Response		= 0x000E000A;	// 回应聚宝盆奖励的查询;
+	MSG_EventPurchaseJuBaoPen_Request	= 0x000E000B;	// 购买聚宝盆的请求;
+	MSG_EventPurchaseJuBaoPen_Response	= 0x000E000C;	// 购买聚宝盆的回应;
+	MSG_EventGetJuBaoPenGift_Request	= 0x000E000D;	// 领取聚宝盆奖励的请求;
+	MSG_EventGetJuBaoPenGift_Response	= 0x000E000E;	// 领取聚宝盆奖励的回应;
+	// 活跃度
+	MSG_EventLivenessInfo_Request    	= 0x000E000F;	// 请求活跃度消息
+	MSG_EventLivenessInfo_Response  	= 0x000E0010;	// 响应活跃度消息
+	MSG_EventLivenessGetReward_Request  = 0x000E0011;	// 请求领取活跃度奖励
+	MSG_EventLivenessGetReward_Response = 0x000E0012;	// 响应领取活跃度奖励
+	MSG_ActivityEntry_Notice			= 0x000E0013;	// 活动入口信息推送
+	MSG_NewCharacter_Notice		        = 0x000E0014;   // 新服7天
+	MSG_WildActStatus_Request			= 0x000E0015;	// 野外Boss状态请求
+	MSG_WildActStatus_Response			= 0x000E1015;
+	MSG_WildActStatus_Notice			= 0x000E1016;	// 野外Boss复活或客户端刚上线时推送
+	MSG_WildBossInfo_Request			= 0x000E0017;	// 野外boss信息请求, EGS->EGS,服务器间消息
+	MSG_FestActivity_Notice				= 0x000E0018;	//节日活动推送消息
+	MSG_EventMonsterWave				= 0x000E0020;	// 怪物波数
+	MSG_EventMatchPVP_Response          = 0x000E1021;   //回复竞技请求
+	MSG_EventJoinActivity_Request       = 0x000E0030;   // 请求加入活动
+
+	// 爬塔
+	MSG_TowerInfo_Request				= 0x000E0031;	// 爬塔信息请求
+	MSG_TowerInfo_Response				= 0x000E1031;	// 
+	MSG_TowerGetFirstAward_Request		= 0x000E0032;	// 爬塔首次奖励领取请求
+	MSG_TowerGetFirstAward_Response		= 0x000E1032;	//
+	MSG_TowerGetStageAward_Request		= 0x000E0033;	// 爬塔阶段奖励领取请求
+	MSG_TowerGetStageAward_Response		= 0x000E1033;	//
+	MSG_TowerReset_Request				= 0x000E0034;	// 爬塔重置请求
+	MSG_TowerReset_Response				= 0x000E1034;	//
+	MSG_TowerRush_Request				= 0x000E0035;	// 爬塔扫荡请求
+	MSG_TowerRush_Response				= 0x000E1035;
+	MSG_EnterTower_Request				= 0x000E0036;	// 进入爬塔副本请求
+	MSG_EnterTower_Response				= 0x000E1036;
+	MSG_TowerDungeonEnd_Notice			= 0x000E0037;	// 爬塔副本战斗结束
+	MSG_TowerRushState_Request			= 0x000E0038;	// 请求爬塔的扫荡状态
+	MSG_TowerRushState_Response			= 0x000E1038;	// 响应爬塔的扫荡状态
+	MSG_TowerRushClearCD_Request		= 0x000E0039;	// 请求爬塔的扫荡cd
+	MSG_TowerRushClearCD_Response		= 0x000E1039;	// 响应爬塔的扫荡cd
+	MSG_EnterTeleportMainCity_Request	= 0x000E0040;	// 回城请求
+	MSG_EnterTeleportMainCity_Response	= 0x000E1040;	// 回城回复
+	MSG_TowerRushCancel_Request			= 0x000E0041;	// 请求取消爬塔扫荡
+	MSG_TowerRushCancel_Response		= 0x000E1041;	// 响应取消爬塔扫荡
+	MSG_TowerRushResult_Notice			= 0x000E0042;	// 扫荡结果通知
+
+	// 修仙
+	MSG_XiuXianInfo_Request				= 0x000E0050;	// 修仙详情请求
+	MSG_XiuXianInfo_Response			= 0x000E1050;	//
+	MSG_XueWeiUp_Request				= 0x000E0051;	// 穴位提升请求
+	MSG_XueWeiUp_Response				= 0x000E1051;	// 
+	MSG_DuJie_Request					= 0x000E0052;	// 渡劫请求
+	MSG_DuJie_Response					= 0x000E1052;	//
+	MSG_XiuXianResetCD_Request			= 0x000E0053;	// 修仙秒CD
+	MSG_XiuXianResetCD_Response			= 0x000E1053;	//
+	// 西域入侵
+	MSG_WestRegionNPCInfo_Request		= 0x000E0061;	// NPC详情请求
+	MSG_WestRegionNPCInfo_Response		= 0x000E1061;	// NPC详情
+	MSG_WestRegionEnter_Request			= 0x000E0062;	// 进入副本请求
+	MSG_WestRegionEnter_Response		= 0x000E1062;	// 进入副本请求
+
+	//答题活动
+	MSG_EventDailyQuestInform_Request		= 0x000E0080;	//日常题目请求
+	MSG_EventDailyQuestInform_Response		= 0x000E1080;	//日常题目响应
+	MSG_EventDailyQuestAnswer_Request		= 0x000E0081;	//日常回答请求
+	MSG_EventDailyQuestAnswer_Response		= 0x000E1081;	//日常回答响应
+	MSG_EventWisdomQuestInform_Request		= 0x000E0082;	//文曲题目请求
+	MSG_EventWisdomQuestInform_Response		= 0x000E1082;	//文曲题目响应
+	MSG_EventWisdomQuestInfo_Notice			= 0x000E1083;	//文曲问题推送
+	MSG_EventWisdomQuestStat_Notice			= 0x000E1084;	//文曲统计推送
+	MSG_EventWisdomQuestResult_Notice		= 0x000E1085;	//文曲结果推送
+	MSG_EventWisdomQuestActEnd_Notice		= 0x000E1086;	//文曲答题结束推送
+	MSG_EventWisdomFirstAnswer_Request		= 0x000E0087;	//文曲第一次答题请求
+	MSG_EventWisdomFirstAnswer_Response		= 0x000E1087;	//文曲第一次答题响应
+	MSG_EventWisdomSecondAnswer_Request		= 0x000E0088;	//文曲第二次答题请求
+	MSG_EventWisdomSecondAnswer_Response	= 0x000E1088;	//文曲第二次答题响应
+	MSG_EventWisdomCancel_Request			= 0x000E0089;	//文曲活动取消请求
+	MSG_EventWisdomCancel_Response			= 0x000E1089;	//文曲活动取消请求
+	MsG_EventJoinRecord_Notice				= 0x000E108A;   //活动参加次数推送
+	MSG_EventQuestRealRankList_Notice       = 0x000E108B;   //文曲实时榜推送
+	MSG_EventWisdomQuestOpen_Notice         = 0x000E108C;   //文曲开考时，弹框提示
+
+	// 遭遇事件（奇遇事件触发）
+	MSG_EventActivateHappyEncount_Notice	= 0x000E108D;	// 通知-玩家触发奇遇事件;
+	MSG_ExcutingHappyEncount_Request		= 0x000E008E;	// 请求-玩家执行奇遇事件;
+	MSG_ExcutingHappyEncount_Response		= 0x000E108E;  // 响应-玩家执行奇遇事件;
+
+	MSG_EventWorship_Request				= 0x000E008F;	// 膜拜请求
+	MSG_EventWorship_Response				= 0x000E108F;	// 膜拜响应
+	
+	MSG_EventPlayerStatus_Response			= 0x000E1090;	// 隐身状态通知
+
+	MSG_ManorWorship_Request				= 0x000E0091;	// 帮派领地膜拜请求;
+	MSG_ManorWorship_Response				= 0x000E1091;	// 帮派领地膜拜响应;
+
+	//================================================================================
+	// 0x000F 
+	// 工会系统模块消息定义 
+	// 原  仙盟
+	MSG_ImmortalMembersInfo_Request		= 0x000F0031;	//	请求查询仙盟成员信息
+	MSG_ImmortalMembersInfo_Response	= 0x000F1031;	//	响应查询仙盟成员信息
+
+	// 原  仙盟仓库
+	MSG_ImStore_Giveout_Request			= 0x000F2001;	// 仙盟仓库发放物品请求
+	MSG_ImStore_Giveout_Response		= 0x000F2002;	// 仙盟仓库发放物品回应
+	MSG_ImStore_Operate_Record			= 0x000F2003;	// 仙盟仓库操作记录
+	MSG_ImStore_Item_List				= 0x000F2004;	// 仙盟仓库的物品数据
+	MSG_ImStore_ItemInfo_Request		= 0x000F2005;	// 仙盟仓库物品信息请求
+	MSG_ImStore_ItemInfo_Response		= 0x000F2006;	// 仙盟仓库物品信息回应
+	// TODO: 以上消息作废
+	
+	// inform
+	MSG_GuildId_Inform					= 0x000F1001;	// 帮会Id通知 PBGuildIdInform
+	
+	// request
+	MSG_GuildCreate_Request				= 0x000F0001;	// 工会创建请求 PBGuildCreateRequest
+	MSG_GuildSearch_Request				= 0x000F0002;	// 工会查询请求 PBGuildSearchRequest
+	MSG_GuildApplyJoin_Request			= 0x000F0003;	// 工会加入申请 PBGuildApplyJoinRequest
+	MSG_GuildCancelApply_Request		= 0x000F0004;	// 工会加入申请 PBGuildCancelApplyRequest
+	// response
+	MSG_GuildCreate_Response			= 0x000FC001;	// 工会创建请求回复 PBGuildCreateResponse
+	MSG_GuildSearch_Response			= 0x000FC002;	// 工会查询请求回复 PBGuildSearchResponse
+	MSG_GuildApplyJoin_Response			= 0x000FC003;	// 工会加入申请回复		PBCommonResponse
+	MSG_GuildCancelApply_Response		= 0x000FC004;	// 工会加入申请回复		PBCommonResponse
+
+	MSG_GuildQuickJoin_Request			= 0x000F0006;	// 工会快速加入请求，只发消息Id
+	MSG_GuildQuickJoin_Response			= 0x000FC006;	// 工会快速加入回复 PBGuildQuickJoinResponse	
+	MSG_GuildInvite_Request				= 0x000F0007;	// 邀请加入帮派请求
+	MSG_GuildInvite_Response			= 0x000FC007;	// 
+	MSG_GuildInvite_Notice				= 0x000FC008;	// 向对方发送邀请加入帮派通知
+	
+	MSG_Guild_InnerOpIdxStart			= 0x000F000A;	// 华丽丽的分割线，区分工会的内外部操作，消息分发里会用到，不能随便改
+	
+	MSG_GuildApplyConfirm_Request		= 0x000F000A;	// 工会申请加入确认 PBGuildApplyConfirmRequest
+	MSG_GuildApplyConfirm_Response		= 0x000FC00A;	// 工会申请加入确认回复 PBGuildApplyConfirmResponse
+	MSG_GuildKickout_Request			= 0x000F000B;	// 工会踢人 PBGuildKickoutRequest	
+	MSG_GuildKickout_Response			= 0x000FC00B;	// 工会踢人回复		PBCommonResponse
+	
+	MSG_GuildModify_Request				= 0x000F000C;	// 工会信息修改 PBGuildModifyRequest
+	MSG_GuildModify_Response			= 0x000FC00C;	// 工会信息修改回复 PBGuildModifyResponse
+
+	MSG_GuildMemberModify_Request		= 0x000F000D;	// 工会成员信息修改（职位修改）PBGuildMemberModifyRequest
+	MSG_GuildMemberModify_Response		= 0x000FC00D;	// 工会成员信息修改（职位修改）回复 PBCommonResponse
+	
+	MSG_GuildDetail_Request				= 0x000F000E;	// 工会详情请求 PBGuildDetailRequest
+	MSG_GuildDetail_Response			= 0x000FC00E;	// 工会详情请求回复 PBGuildDetailResponse
+
+	MSG_GuildDailyLog_Request			= 0x000F000F;	// 工会日志请求	--
+	
+	MSG_GuildDonate_Request				= 0x000F0010;	// 工会捐赠请求 PBGuildDonateRequest		
+	MSG_GuildDonate_Response			= 0x000FC010;	// 工会捐赠请求回复 PBGuildDonateResponse
+
+	MSG_GuildLeaderChange_Request		= 0x000F0011;	// 工会长转让请求 PBGuildLeaderChangeRequest
+	MSG_GuildLeaderChange_Response		= 0x000FC011;	// 工会长转让回复 PBGuildLeaderChangeResponse
+
+	MSG_GuildApplicants_Request			= 0x000F0012;	// 申请者列表请求 PBGuildApplicantsRequest
+	MSG_GuildApplicants_Response		= 0x000FC012;	// 申请者列表请求 PBGuildApplicantsResponse
+	
+	MSG_GuildRecruitAd_Request			= 0x000F0013;	// 工会招聘广告请求 PBGuildRecruitAdRequest	
+	MSG_GuildRecruitAd_Response			= 0x000FC013;	// 工会招聘广告回复 --
+	
+	MSG_GuildQuit_Request				= 0x000F0014;	// 工会退出请求 --
+	MSG_GuildQuit_Response				= 0x000FC014;	// 工会退出回复 --
+	
+	MSG_GuildMemberPostChange_Request	= 0x000F0015;	// 工会成员职位修改请求 PBGuildMemberPostChangeRequest
+	MSG_GuildMemberPostChange_Response	= 0x000FC015;	// 工会成员职位修改回复 PBGuildMemberPostChangeResponse
+	
+	MSG_GuildLevelup_Request			= 0x000F0016;	// 工会升级请求 --
+	MSG_GuildLevelup_Response			= 0x000FC016;	// 工会升级回复 PBGuildGuildLevelupResponse
+	
+	MSG_GuildMemberList_Request			= 0x000F0017;	// 工会成员列表请求 --
+	MSG_GuildMemberList_Response		= 0x000FC017;	// 工会成员列表回复 PBGuildMemberListResponse
+
+	MSG_GuildPayoff_Request				= 0x000F0018;	// 工会工资结算请求 PBGuildPayoffRequest
+	MSG_GuildPayoff_Response			= 0x000FC018;	// 公会工资结算回复 PBGuildPayoffResponse
+
+	MSG_GuildPayoffConfirm_Request		= 0x000F0019;	// 公会工资结算确认请求 PBGuildPayoffConfirmRequest
+	MSG_GuildPayoffConfirm_Response		= 0x000FC019;	// 公会工资结算确认回复 PBGuildPayoffConfirmResponse
+
+	MSG_GuildRecord_Request				= 0x000F001A;	// 公会日志请求 PBGuildRecordRequest
+	MSG_GuildRecord_Response			= 0x000FC01A;	// 公会日志回复 PBGuildRecordResponse
+
+	MSG_BuildingLvUp_Request			= 0x000F001B;	// 帮派建筑升级请求 PBBuildingLvUpRequest
+	MSG_BuildingLvUp_Response			= 0x000FC01B;	// 帮派建筑升级回复 PBBuildingLvUpResponse
+	MSG_SkillStudy_Request				= 0x000F001C;	// 帮派技能研究请求 PBSkillStudyRequest
+	MSG_SkillStudy_Response				= 0x000FC01C;	//				  PBSkillStudyResponse
+	MSG_SkillLearn_Request				= 0x000F001D;	// 帮派技能升级请求 PBSkillLearnRequest
+	MSG_SkillLearn_Response				= 0x000FC01D;	//				  PBSkillLearnResponse
+	MSG_SkillCDTime_Request				= 0x000F001E;	// 帮派技能研究秒CD请求 PBSkillCDTimeRequest
+	MSG_SkillCDTime_Response			= 0x000FC01E;	//					 PBSkillCDTimeResponse
+	MSG_GuildSkillInfo_Request			= 0x000F001F;	// 玩家帮派技能信息请求 PBGuildSkillInfoRequest
+	MSG_GuildSkillInfo_Response			= 0x000FC01F;	//					 PBGuildSkillInfoResponse
+	MSG_SkillStudyInfo_Request			= 0x000F0020;	// 帮派技能研究信息请求 PBSkillStudyInfoRequest
+	MSG_SkillStudyInfo_Response			= 0x000FC020;	//					 PBSkillStudyInfoResponse
+	MSG_GuildBless_Request				= 0x000F0021;	// 祈愿坛祈愿请求 PBGuildBlessRequest
+	MSG_GuildBless_Response				= 0x000FC021;	//				PBGuildBlessResponse
+	MSG_EnterDrunkery_Notice			= 0x000F0022;	// 进入酒庄区域推送 PBEnterDrunkeryNotice
+	MSG_LeaveDrunkery_Notice			= 0x000F0023;	// 离开酒庄区域推送 PBLeaveDrunkeryNotice
+	MSG_Drink_Request					= 0x000F0024;	// 请求喝酒	PBDrinkRequest
+	MSG_Drink_Response					= 0x000FC024;	//			PBDrinkResponse
+	MSG_OpenBanquet_Request				= 0x000F0025;	// 开酒宴请求 PBOpenBanquetRequest
+	MSG_OpenBanquet_Response			= 0x000FC025;	//			PBOpenBanquetResponse
+	MSG_MakeWine_Request				= 0x000F0026;	// 酿酒请求	PBMakeWineRequest
+	MSG_MakeWine_Response				= 0x000FC026;	//			PBMakeWineResponse
+	MSG_MakeWineResetCD_Request			= 0x000F0027;	// 酿酒秒CD请求 PBMakeWineResetCDRequest
+	MSG_MakeWineResetCD_Response		= 0x000FC027;	//			  PBMakeWineResetCDResponse
+	MSG_BeKickouted_Notice				= 0x000F0028;	// 公会被踢通知 PBBeKickoutedNotice
+	MSG_OpenGuildBoss_Request			= 0x000F0029;	// 开启公会Boss
+	MSG_OpenGuildBoss_Response			= 0x000FC029;	//
+	MSG_OpenGuildBoss_Notice			= 0x000F0030;	// 公会Boss开启通知
+	MSG_GuildBossEnd_Notice				= 0x000F0031;	// 公会Boss结束通知
+	MSG_GuildBossDamage_Notice			= 0x000FC032;	// 帮会Boss伤害通知
+	MSG_EnterGuildBoss_Report			= 0x000F0033;	// 进入帮派Boss副本
+	MSG_ApplyRank_Request				= 0x000F0034;	// 帮派战报名排行请求
+	MSG_ApplyRank_Response				= 0x000FC034;
+	MSG_GetBattleLord_Request			= 0x000F0035;	// 羞羞请求
+	MSG_GetBattleLord_Response			= 0x000FC035;
+	MSG_JoinIMBattle_Request			= 0x000F0036;	// 加入帮派战请求
+	MSG_JoinIMBattle_Response			= 0x000FC036;
+	MSG_BattleDynamicInfo_Notice		= 0x000FC038;	// 帮派战动态信息推送
+	MSG_BattleReward_Notice				= 0x000FC039;	// 帮派战奖励信息推送
+	MSG_SetCampMember_Notice			= 0x000FC040;	// 设置阵营成员推送
+	MSG_AddCampMember_Notice			= 0x000FC041;	// 阵营成员增加推送
+	MSG_DeleteCampMember_Notice			= 0x000FC042;	// 阵营成员减少推送
+	MSG_ModifyCampMember_Notice			= 0x000FC043;	// 阵营成员信息修改推送
+	MSG_MemberKillInfo_Notice			= 0x000FC044;	// 成员击杀推送
+	MSG_SignGuildBattle_Request			= 0x000F0045;	// 帮派战报名请求
+	MSG_SignGuildBattle_Response		= 0x000FC046;	//
+	MSG_GuildBossStatus_Request			= 0x000F0047;	// 帮派Boss状态请求
+	MSG_GuildBossStatus_Response		= 0x000FC047;	//
+	MSG_ApplyJoinConfirm_Notice			= 0x000FC048;	// 同意加入帮派的推送
+	MSG_GuildMemberKill_Request			= 0x000F0049;	// 帮派成员被杀，求救
+	MSG_GuildMemberKill_Response		= 0x000FC049;	// 帮派成员被杀，求救
+	MSG_GuildMemberHelpTelport_Request	= 0x000F004A;	// 帮助传送请求
+	MSG_GuildMemberHelpTelport_Response	= 0x000FC04A;	// 帮助传送回复
+	MSG_GuildDismiss_Request			= 0x000F004B;	// 解散帮派请求请求
+	MSG_GuildDismiss_Response			= 0x000FC04B;	// 
+	MSG_GuildCancelDismiss_Request		= 0x000F004C;	// 取消解散帮派请求
+	MSG_GuildCancelDismiss_Response		= 0x000FC04C;	//
+	MSG_GuildDismiss_Notice				= 0x000F004D;	// 解散通知
+	
+	// 帮派仓库
+	MSG_GuildStore_Info_Notice = 0x000F104E;     // 帮派仓库推送信息
+	MSG_GuildStore_Message_Notice = 0x000F104F;  //仓库操作消息通知
+	MSG_GuildStore_GrantGoods_Request = 0x000F0050;  // 发放物品请求
+	MSG_GuildStore_GrantGoods_Response = 0x000F1050;
+	MSG_GuildStore_ExtenBag_Request  = 0x000F0051;  // 帮派仓库扩展格子请求
+	MSG_GuildStore_ExtenBag_Response  = 0x000F1051;
+
+	// 帮派领地 特别注意如果是GATE发送的消息 倒数第四位要是C 0x000F1061 -> 0x000FC061
+	MSG_Enter_GuildManor_Request  = 0x000F0060; //进入帮派领地
+	MSG_Enter_GuildManor_Response = 0x000FC060; 
+	MSG_Quit_GuildManor_Request   = 0x000F0061; //退出帮派领地
+	MSG_Quit_GuildManor_Response  = 0x000FC061; 
+	MSG_Open_GuildFire_Request	  = 0x000F0062; //篝火开启
+	MSG_Open_GuildFire_Response   = 0x000FC062; 
+	MSG_GuildFire_Time_Notice	  = 0x000F1063; //篝火时间
+	MSG_Open_GuildFire_Notice	  = 0x000F1064; //篝火开启弹窗通知
+
+	//================================================================================
+	// common消息;
+	MSG_DynamicNotice_Response			= 0x00110001;//发送动态提示
+	MSG_NPCInfo_Response				= 0x00110002;//发送npc信息;
+
+	MSG_Chat_Require					= 0x00110003;//聊天请求
+	MSG_Chat_Response					= 0x00110004;//聊天信息;
+	MSG_Chat_Private_Require			= 0x00110005;//私聊;
+	MSG_Charge_Config_Require			= 0x00110006; //充值配置请求
+	MSG_Charge_Config_Response			= 0x00111006; // 充值配置回应
+
+	MSG_UpdateCharMoney_Notice			= 0x00110007;	// 通知客户端更新角色数值（蜀山新加）
+
+	MSG_PathFind_Request				= 0x00110008;	// 请求路径信息
+	MSG_PathFind_Response				= 0x00111008;	// 响应路径信息 
+
+	MSG_NpcTeleport_Request				= 0x00110009;	// 请求Npc传送
+	MSG_NpcTeleport_Response			= 0x00111009;	// 响应Npc传送 
+
+	MSG_RankInfo_Request				= 0x0011000A;	// 请求排行榜
+	MSG_CharRank_Response				= 0x0011000B;	// 响应Char排行榜
+	MSG_GuildRank_Response				= 0x0011000C;	// 响应Guild排行榜
+	MSG_CharMineRank_Response			= 0x0011000D;	// 响应Char我的排行及前后3名
+	MSG_GuildMineRank_Response			= 0x0011000E;	// 响应Guild我的排行及前后3名
+	MSG_JusticeInfo_Notice				= 0x00110010;	// 通知客户端正气数据
+	MSG_WorldLevelInfo_Request			= 0x00110011;	// 请求世界等级	PBMsgWorldLevelInfoRequest
+	MSG_WorldLevelInfo_Response			= 0x00111011;	//				PBMsgWorldLevelInfoResponse
+	MSG_WorldLevelUpdate_Notice			= 0x00111012;	// 世界等级推送	PBMsgWorldLevelInfoResponse	
+	MSG_ClientLoadRoleOK_Report			= 0x00110013;	//客户端角色创建完毕
+	MSG_ItemTeleport_Request			= 0x00110014;	// 请求道具传送
+	MSG_ItemTeleport_Response			= 0x00111014;	// 响应道具传送 
+	MSG_SomeCharInfo_Notice				= 0x00110015;	// 通知客户端一些角色数据	//为防错定的协议
+	MSG_ClientInBlock_Report			= 0x00110016;	// 客户端上报客户端在阻挡里
+	MSG_ClientDoSomething_Notice		= 0x00110017;	// 通知客户端做某事
+	MSG_DoCmd_Request					= 0x00110018;	// 客户端请求执行指令
+	MSG_OfflineExp_Get_Request			= 0x00110019;	// 离线经验领取请求
+	MSG_OfflineExp_Get_Response			= 0x00111019;	// 离线经验领取响应
+	MSG_OfflineExp_Notice				= 0x0011001A;	// 离线经验通知
+	MSG_PositionUpdate_Report			= 0x0011001B;	// 客户端上报坐标
+	MSG_PositionSeqId_Notice			= 0x0011001C;	// 服务器通知客户端位置消息序列号
+	MSG_DeleteAllRole_Request			= 0x0011001D;   // 删除所有角色
+	MSG_DeleteAllRole_Response			= 0x0011001E;
+
+	MSG_NpcSpanTeleport_Request			= 0x0011001F;	// 请求跨服Npc传送
+	MSG_NpcSpanTeleport_Response		= 0x0011101F;	// 响应跨服Npc传送 
+	MSG_CheckMemberTeleport_Request		= 0x00110020;	// 去队员阵营验证队员是否符合传送条件
+	MSG_CheckMemberTeleport_Response	= 0x00111021;	// 去队员阵营验证队员是否符合传送条件 
+	MSG_CheckGateTeleport_Request		= 0x00110022;	// 去gate验证是否符合传送条件
+	MSG_CheckGateTeleport_Response		= 0x00111023;	// 去gate验证是否符合传送条件 
+	MSG_MemberSpanWildTP_Notice			= 0x00111024;	// 通知在别的阵营的队员传送 
+	MSG_AddGateTeleport_Notice			= 0x00110025;	// 去gate增加跨服传送的人数
+	MSG_Rks_Sign_Request				= 0x0011102A;	// 去egs取报名的帮派数据
+	MSG_UseFuzhijiujiu_Request			= 0x00110026;	// 使用福至久久彩票消息
+	MSG_UseFuzhijiujiu_Response			= 0x00111026;	// 使用福至久久彩票消息
+	MSG_ReportFuzhijiujiu_Request		= 0x00110027;	// 使用福至久久彩票消息
+	MSG_ReportFuzhijiujiu_Response		= 0x00111027;	// 使用福至久久彩票消息
+
+	//时装（转换、进阶）;
+	MSG_FashionTrans_Request			= 0x00120001;	//时装转换请求;
+	MSG_FashionTrans_Response			= 0x00120002;	//时装转换回应;
+	MSG_FashionAdvance_Request			= 0x00120003;	//时装转换请求;
+	MSG_FashionAdvance_Response			= 0x00120004;	//时装转换回应;
+	MSG_FashionAdvanceCost_Request		= 0x00120005;	//时装扣费请求;
+	MSG_FashionAdvanceCost_Response		= 0x00120006;	//时装扣费回应;
+
+	// 衣橱相关
+	MSG_WardrobeFashion_Request                          = 0x00120020;  // 请求-衣橱所有数据
+	MSG_WardrobeFashion_Response                         = 0x00120021;  // 响应-衣橱所有数据
+	MSG_WardrobeHungUP_Request                           = 0x00120022;  // 请求-衣橱挂衣服
+	MSG_WardrobeHungUP_Response                          = 0x00120023;  // 响应-衣橱挂衣服
+	MSG_WardrobeHungDown_Request                         = 0x00120024;  // 请求-衣橱取下服
+	MSG_WardrobeHungDown_Response                        = 0x00120025;  // 响应-衣橱取下服
+	MSG_WardrobeFashionApplyShape_Request                = 0x00120026;  // 请求-时装应用外形
+	MSG_WardrobeFashionApplyShape_Response               = 0x00120027;  // 响应-时装应用外形
+	MSG_WardrobeSlotUnlock_Request                       = 0x00120028;  // 请求-衣橱槽解锁
+	MSG_WardrobeSlotUnlock_Response                      = 0x00120029;  // 响应-衣橱槽解锁
+	MSG_WardrobeShapeReset_Request                       = 0x00120030;  // 请求-时装重置外形
+	MSG_WardrobeShapeReset_Response                      = 0x00120031;  // 响应-时装重置外形
+	MSG_WardrobeEquip_Request                            = 0x00120032;  // 请求-时装装备
+	MSG_WardrobeEquip_Response                           = 0x00120033;  // 响应-时装装备
+	MSG_WardrobeChange_Notice                            = 0x00120040;  // 通知-时装衣橱数据变化通知
+	
+	
+	// 跨服仙盟战
+	MSG_SPImBattleInfo_Request			= 0x00130001;	// 
+	MSG_SPImBattleInfo_Response			= 0x00131001;	// 跨服仙盟战推送消息
+	MSG_SPImBat_SignInfo_Request		= 0x00130002;	// 报名信息请求
+	MSG_SPImBat_SignInfo_Response		= 0x00131002;	// 报名信息回应
+	MSG_SPImBat_Sign_Request			= 0x00130003;	// 报名请求
+	MSG_SPImBat_Sign_Response			= 0x00131003;	// 报名回应
+	MSG_SPImBat_Round_Impulse			= 0x00130004;	// 比赛推送
+	MSG_SPImBat_Round_Request			= 0x00131004;	// 比赛数据请求
+	MSG_SPImBat_Join_Request			= 0x00130005;	// 请求加入战场
+	MSG_SPImBat_Join_Response			= 0x00131005;	// 请求加入战场回应
+	MSG_SPImBat_Battle_Score_Imp		= 0x00130006;	// 战场实时数据推送
+	MSG_SPImBat_Battle_End_Imp			= 0x00130007;	// 比赛结果推送
+	MSG_SPImBat_Member_Info_Sync		= 0x00130008;	// 战场参战成员信息推送
+	MSG_SPImBat_RankInfo_Request		= 0x00130009;	// 仙盟战排行信息请求
+	MSG_SPImBat_RankInfo_Response		= 0x0013000A;	// 仙盟战排行信息响应
+	MSG_SPImBat_EndInfo_Notice			= 0x0013000B;	// 非跨服仙盟战结束信息
+	MSG_SPImBat_BetInfo_Request			= 0x0013000C;	// 下注信息请求
+	MSG_SPImBat_BetInfo_Response		= 0x0013000D;	// 下注信息响应
+	MSG_SPImBat_Betting_Request			= 0x0013000E;	// 下注请求
+	MSG_SPImBat_Betting_Response		= 0x0013000F;	// 下注响应
+	MSG_SPImBat_Watching_Request		= 0x00130010;	// 观战请求
+	MSG_SPImBat_Watching_Response		= 0x00131010;	// 观战响应
+	MSG_SPImBat_WatchingInfo_Notice		= 0x00131011;	// 发送观战信息
+	MSG_SPImBat_Start_Notice			= 0x00130012;	// 发送开战推送通知
+	MSG_SPIMBat_HistoryRank_Request		= 0x00130013;	// 历史前三名数据请求
+	MSG_SPIMBat_HistoryRank_Response	= 0x00131013;
+
+	
+	//跨服领地争夺战
+	MSG_SPMonorBattleInfo_Notice	    = 0x00131021;	// 跨服领地战推送消息
+    MSG_SPMonorBat_SignInfo_Request		= 0x00130022;	// 跨服领地战报名信息请求
+	MSG_SPMonorBat_SignInfo_Response	= 0x00131022;	// 跨服领地战报名信息回应
+	MSG_SPMonorBat_Sign_Request			= 0x00130023;	// 跨服领地战报名请求
+	MSG_SPMonorBat_Sign_Response		= 0x00131023;	// 跨服领地战报名回应
+	MSG_SPMonorBat_MonorFight_Request     = 0x00130024; // 进入领地攻防战请求
+	MSG_SPMonorBat_MonorFight_Response    = 0x00131024; // 进入领地攻防战响应
+	MSG_SPMonorBat_BattleFlag_Request     = 0x00130025; // 进入战旗保卫战请求
+	MSG_SPMonorBat_BattleFlag_Response    = 0x00131025; // 进入战旗保卫战响应
+	MSG_SPMonorBat_FightForHegemony_Request  = 0x00130026; // 进入擂台争霸战请求
+	MSG_SPMonorBat_FightForHegemony_Response = 0x00131026; // 进入擂台争霸战响应
+	MSG_SPMonorBat_Enter_Monor_Request  = 0x00130027; // 进入领地请求
+	MSG_SPMonorBat_Enter_Monor_Response = 0x00131027; // 进入领地响应
+	MSG_SPMonorBat_Watch_Battle_Request = 0x00130028; // 领地战观战请求
+	MSG_SPMonorBat_Watch_Battle_Response = 0x00131028; // 领地战观战响应
+	MSG_SPMonorBat_EnterBattle_Request = 0x00130029;   // 进入战斗请求
+	MSG_SPMonorBat_EnterBattle_Response = 0x00131029;  // 进入战斗响应
+	MSG_SPMonorBat_GetMonorReward_Request = 0x0013002A; // 领领地奖励请求
+	MSG_SPMonorBat_GetMonorReward_Response = 0x0013102A; // 领领地奖励响应
+	MSG_SPMonorBat_OnCanEnterBattle_Notice = 0x0013102B; // 通知客户端进战场弹窗
+	MSG_SPMonorBat_GetScore_Notice         = 0x0013102C; // 通知客户端获得积分
+	
+
+	// 摇红包
+	MSG_RedPacketShake_Request			= 0x00140001;	// 摇红包请求
+	MSG_RedPacketShake_Response			= 0x00141001;	// 摇红包响应
+	MSG_RedPacketInfo_Request			= 0x00140002;	// 请求摇红包信息
+	MSG_RedPacketInfo_Response			= 0x00141002;	// 响应摇红包信息
+	MSG_RedPacketWeixinExchange_Request = 0x00140003;	// 积分对换微信红包码请求
+	MSG_RedPacketWeixinExchange_Response = 0x00141003;	// 积分对换微信红包码响应
+	MSG_RedPacketExchangeInfo_Request = 0x00140004; // 兑换码信息请求
+	MSG_RedPacketExchangeInfo_Response = 0x00141004; // 兑换码信息回应
+	MSG_RedPacketMenpiaoInfo_Notice		= 0x00140005;	// 上线时向客户端发送门票消息
+	//坐骑
+	MSG_MountInfo_Request				= 0x00150001;	//坐骑信息请求;
+	MSG_MountInfo_Response				= 0x00151001;	//坐骑信息回应;
+	MSG_MountLevelUp_Request			= 0x00150002;	//坐骑升级请求（吞筮经验）
+	MSG_MountLevelUp_Response			= 0x00151002;	//坐骑升级回应（吞筮经验）
+	MSG_MountClassUp_Request			= 0x00150003;	//坐骑升阶请求（召唤）
+	MSG_MountClassUp_Response			= 0x00151003;	//坐骑升阶回应（召唤）
+	MSG_RuneLevelUp_Request				= 0x00150004;	//坐骑符文升级请求（吞噬其他符文）
+	MSG_RuneLevelUp_Response			= 0x00151004;	//坐骑符文升级回应（吞噬其他符文）
+	MSG_MountRideOrRest_Request			= 0x00150007;	//坐骑骑乘、休息请求
+	MSG_MountRideOrRest_Response		= 0x00151007;	//坐骑骑乘、休息回应
+	MSG_MountChangeShow_Request			= 0x00150008;	//坐骑切换外形请求
+	MSG_MountChangeShow_Response		= 0x00151008;	//坐骑切换外形回应
+	MSG_MountBuyFashion_Request			= 0x00150009;	//购买坐骑外形请求
+	MSG_MountBuyFashion_Response		= 0x00151009;	//购买坐骑外形回应
+	MSG_FashionChange_Notice			= 0x00151010;	//坐骑时装信息改变时通知
+	MSG_RuneClassUp_Request				= 0x00151011;	// 符文进阶请求
+	MSG_RuneClassUp_Response			= 0x00151012;	// 符文进阶回应
+	MSG_RuneEnchant_Request				= 0x00151013;	// 符文洗练请求
+	MSG_RuneEnchant_Response			= 0x00151014;	// 符文洗练回应
+	MSG_MountFashionExchange_Request	= 0x00151015;	//坐骑时装兑换请求
+	MSG_MountFashionExchange_Response	= 0x00151016;	//坐骑时装兑换回应
+	MSG_RuneEnchantSave_Request			= 0x00151017;	// 符文洗练保留请求
+	MSG_RuneEnchantSave_Response		= 0x00151018;	// 符文洗练保留回应
+	MSG_MountFly_Request				= 0x00150019;	// 高飞请求
+	MSG_MountFly_Response				= 0x00151019;	// 高飞响应
+	MSG_RuneLottery_Request				= 0x00150020;	// 符文抽取请求
+	MSG_RuneLottery_Response			= 0x00151020;	// 符文抽取响应
+	MSG_RuneOneKeyLvUpRequest			= 0x00150021;	// 符文一键吞噬请求
+	MSG_RuneOneKeyLvupResponse			= 0x00151021;	// 符文一键吞噬响应
+	MSG_RuneMountRequest				= 0x00150022;	// 符文装备请求
+	MSG_RuneMountResponse				= 0x00151022;	// 符文装备响应
+	MSG_RuneUnMountRequest				= 0x00150023;	// 符文卸装请求
+	MSG_RuneUnMountResponse				= 0x00151023;	// 符文卸装响应
+	MSG_RuneOpenSlotRequest				= 0x00150024;	// 符文装备栏开启请求
+	MSG_RuneOpenSlotResponse			= 0x00151024;	// 符文装备栏开启响应
+	MSG_RuneLotteryCfgNotice			= 0x00150025;	// 发送符文抽奖配置信息
+	MSG_RuneLvUpQueryRequest			= 0x00150026;	// 符文升级查询
+	MSG_RuneLvUpQueryResponse			= 0x00151026;	// 符文升级查询回应
+	MSG_SoulStarLevelUp_Request			= 0x00150027;	//星魂升级请求
+	MSG_SoulStarLevelUp_Response		= 0x00151027;	// 星魂升级回应
+	MSG_SoulStarDecomposeRequest			= 0x00150028;	//星魂分解请求
+	MSG_SoulStarDecomposeResponse		= 0x00151028;	// 星魂分解回应
+	MSG_SoulStarTranfromRequest			= 0x00150029;	//星魂转换请求
+	MSG_SoulStarTranfromResponse		= 0x00151029;	// 星魂转换回应
+	MSG_SoulStarMountRequest			= 0x00150030;	//穿戴星魂请求
+	MSG_SoulStarMountResponse			= 0x00151030;	// 穿戴升级回应
+	MSG_SoulStarUnMountRequest			= 0x00150032;	//卸下星魂请求
+	MSG_SoulStarUnMountResponse			= 0x00151032;	// 卸下星魂回应
+	MSG_SoulStarInfoNotice					= 0x00151033;	// 卸下星魂回应
+	MSG_SoulStarGiftDecomposeRequest		= 0x00151034;	// 星魂礼包分解回应
+	MSG_SoulStarGiftDecomposeResponse		= 0x00151035;	// 星魂礼包分解回应
+
+	// 功能开放管理
+	MSG_UIOpenInfo_Notice				= 0x00161001;	//功能开放信息通知
+	MSG_UIStory_Report					= 0x00160002;	//上报剧情进度
+	MSG_UIGuide_Report					= 0x00160003;	//上报剧情进度
+	MSG_UIHide_Notice					= 0x00160004;	// UI隐藏通知(用通用的控制不了时用此协议单独控制)
+	MSG_UIPushLevel_Report				= 0x00160005;	//上报等级引导进度
+	MSG_UIPushLevel_Notice				= 0x00161005;	//通知等级引导进度
+
+	// 战斗
+	MSG_UseSkill_Request				= 0x00170001;	//使用技能请求
+	MSG_UseSkill_Response				= 0x00171001;	//使用技能回应
+	MSG_FightReport_Notice				= 0x00171002;	//战报
+	MSG_SkillCD_Notice					= 0x00171003;	//战斗中技能CD改变通知
+	MSG_PetUseSkill_Request				= 0x00170004;	//宠物使用技能请求
+	MSG_PetUseSkill_Response			= 0x00171004;	//宠物使用技能回应
+	MSG_MagicWeaponUseSkill_Request		= 0x00170005;	//使用法宝技能请求
+	MSG_MagicWeaponUseSkill_Response	= 0x00171005;	//使用法宝技能回应
+	MSG_CLIENT_AUTOBATTLE_Request		= 0x00170006;	//客户端告诉服务器挂机状态;
+	MSG_CLIENT_AUTOBATTLE_Response		= 0x00171006;	//客户端告诉服务器挂机状态;
+	MSG_CancelSpecialBattleStatus_Request = 0x00170007;	// 取消特殊状态请求;
+	MSG_CancelSpecialBattleStatus_Response = 0x00171007;	// 取消特殊状态响应;
+	MSG_SkillCommonCD_Notice			= 0x00171008;
+	MSG_SkillPropSkillCD_Notice			= 0x00171009;	// 道具CD信息;
+	MSG_Buff_Show_Info_Notice			= 0x0017100A;	// buff图标信息;
+
+	// 竞技场
+	MSG_ArenaMatch_Request				= 0x00180001;	//请求-竞技场报名
+	MSG_ArenaMatch_Response				= 0x00181001;	//响应-竞技场报名
+	MSG_ArenaMatchResult_Notice			= 0x00180002;	//通告-竞技场成功匹配报名
+	MSG_ArenaMatchCancel_Request 		= 0x00180003;	//请求-取消竞技场报名
+	MSG_ArenaMatchCancel_Response		= 0x00181003;	//响应-取消竞技场报名
+	MSG_ArenaOkIn_Request 				= 0x00180004;	//请求-竞技场确认进入
+	MSG_ArenaOkIn_Response 				= 0x00181004;	//响应-竞技场确认进入
+	MSG_ArenaCancelIn_Request 			= 0x00180005;	//请求-竞技场拒绝进入
+	MSG_ArenaCancelIn_Response 			= 0x00181005;	//响应-竞技场拒绝进入
+	MSG_SinglePvPCountDown_Notice		= 0x00180006;	//通告-个人PVP倒计时秒数
+	MSG_SinglePvPWaitingState_Notice	= 0x00180007;	//通告-个人PVP等待状态
+	MSG_ArenaSettleUp_Notice			= 0x00180008;	//通告-竞技场结算
+	MSG_ArenaGetPvPKills_Request		= 0x00180009;	//请求-竞技场连杀数
+	MSG_ArenaGetPvPKills_Response		= 0x00181009;	//响应-竞技场连杀数
+	MSG_SinglePvPEnter_Notice			= 0x0018000A;	//通告-已进入竞技场
+	MSG_PlayerPKRequest_Request			= 0x0018000B;	//切磋请求-A请求切磋B
+	MSG_PlayerPKRequest_Response		= 0x0018C00B;	//切磋响应-A
+	MSG_PlayerPKRequest_Notice			= 0x0018C00C;	//切磋通知-B
+	MSG_PlayerPKResponse_Report			= 0x0018000D;	//切磋决定上报-B通知服务器其决定
+	MSG_PlayerPKReject_Notice			= 0x0018C00D;	//切磋决定通知-开战则直接进入战斗, 没开战则通知A被拒绝
+	MSG_PlayerPKCancel_Report			= 0x0018000E;	//切磋请求-A取消切磋
+	MSG_PlayerPKResult_Notice			= 0x0018C00E;	//切磋结果推送
+
+	
+	// 战宠功能
+	MSG_PetPosUpdate_Report				= 0x00190001;	//位置更新请求
+	MSG_PetPosClient_Notice				= 0x00191001;	//位置更新回复
+	MSG_PetAcitve_Request				= 0x00190002;	//战宠出战请求
+	MSG_PetAcitve_Response				= 0x00191002;	//战宠出战回复
+	MSG_PetDeacitve_Request				= 0x00190003;	//战宠收回请求
+	MSG_PetDeacitve_Response			= 0x00191003;	//战宠收回回复
+	MSG_PetList_Notice					= 0x00191004;	//战宠列表通知
+	MSG_PetDelete_Request				= 0x00190005;	//战宠放生请求
+	MSG_PetDelete_Response				= 0x00191005;	//战宠放生回复
+	MSG_PetRelive_Request				= 0x00190006;	//战宠复活请求
+	MSG_PetRelive_Response				= 0x00191006;	//战宠复活回复
+	MSG_PetRename_Request				= 0x00190007;	//战宠改名请求
+	MSG_PetRename_Response				= 0x00191007;	//战宠改名回复
+	MSG_PetGrow_Request					= 0x00190008;	//战宠资质培养请求
+	MSG_PetGrow_Response				= 0x00191008;	//战宠资质培养回复
+	MSG_PetSkillLearn_Request			= 0x00190009;	//战宠技能学习请求
+	MSG_PetSkillLearn_Response			= 0x00191009;	//战宠技能学习回复
+	MSG_PetSkillForget_Request			= 0x0019000A;	//战宠技能遗忘请求
+	MSG_PetSkillForget_Response			= 0x0019100A;	//战宠技能遗忘回复
+	MSG_PetEvolve_Request				= 0x0019000B;	//战宠进阶请求
+	MSG_PetEvolve_Response				= 0x0019100B;	//战宠进阶回复
+	MSG_PetDrug_Request					= 0x0019000C;	//战宠药品请求
+	MSG_PetDrug_Response				= 0x0019100C;	//战宠药品回复
+	MSG_PetRenascence_Request			= 0x0019000D;	//战宠还童请求
+	MSG_PetRenascence_Response			= 0x0019100D;	//战宠还童回复
+	MSG_PetBuySlot_Request				= 0x0019000E;	//战宠购买栏位请求
+	MSG_PetBuySlot_Response				= 0x0019100E;	//战宠购买栏位回复
+	MSG_PetContainer_Request			= 0x0019000F;	//战宠购买栏位请求
+	MSG_PetContainer_Response			= 0x0019100F;	//战宠购买栏位回复
+	MSG_PetSkillReplace_Request			= 0x00190010;	//战宠技能替换请求
+	MSG_PetSkillReplace_Response		= 0x00191010;	//战宠技能替换请求
+	MSG_PetNewRenascence_Request		= 0x00190011;	//战宠还童请求 (新规则)
+	MSG_PetNewRenascence_Response		= 0x00191011;	//战宠还童响应 (新规则)
+	MSG_PetRenasceneReplace_Request		= 0x00190012;	//战宠还童替换 请求 
+	MSG_PetRenasceneReplace_Response	= 0x00191012;	//战宠还童替换 响应
+	
+	//宠物守护 
+	MSG_TakePetGuard_Request         = 0x00190013;    // 宠物守护请求
+	MSG_TakePetGuard_Response        = 0x00191013;    // 宠物守护响应
+	MSG_TakeBackPetGuard_Request     = 0x00190014;    // 宠物守护收回请求
+	MSG_TakeBackPetGuard_Response    = 0x00191014;    // 宠物守护收回响应
+	MSG_UpLevelPetGuard_Request      = 0x00190015;    // 宠物守护升级请求
+	MSG_UpLevelPetGuard_Response     = 0x00191015;    // 宠物守护升级响应
+	MSG_QuaryGuardUpBattleScore_Request     = 0x00190016;    // 宠物守护升级战斗力加成查询请求
+	MSG_QuaryGuardUpBattleScore_Response    = 0x00191016;    // 宠物守护升级战斗力加成查询响应
+	
+	// 宠物装备强化
+	MSG_PetEquipUpLevel_Request     = 0x00190017;    // 宠物装备升级请求
+	MSG_PetEquipUpLevel_Response    = 0x00191017;    // 宠物装备升级响应
+	MSG_PetEquipReplace_Request     = 0x00190018;    // 宠物装备替换请求
+	MSG_PetEquipReplace_Response    = 0x00191018;    // 宠物装备替换响应
+
+	//宠物战斗
+	MSG_SetPetBattleArray_Request = 0x00190020; // 设置阵容请求
+	MSG_SetPetBattleArray_Response = 0x00191020; //设置阵容响应
+	MSG_PetPVEBattleInfo_Request = 0x00190021;      //打开宠物PVE界面请求
+	MSG_PetPVEBattleInfo_Response = 0x00191021;     // 打开宠物PVE界面响应
+	MSG_GetBattlePetList_Request = 0x00190022;      //获取宠物战斗阵容宠物列表请求
+	MSG_GetBattlePetList_Response = 0x00191022;      //获取宠物战斗阵容宠物列表响应
+
+
+	MSG_PetTransPreview_Request		= 0x00190023;      // 宠物转换预览请求
+	MSG_PetTransPreview_Response	= 0x00191023;      // 宠物转换预览响应
+	MSG_PetTransReady_Request		= 0x00190024;      // 宠物转换准备请求
+	MSG_PetTransReady_Response		= 0x00191024;      // 宠物转换准备响应
+	MSG_PetTrans_Request			= 0x00190025;      // 宠物转换请求
+	MSG_PetTrans_Response			= 0x00191025;      // 宠物转换响应
+	MSG_PetLegacyPreview_Request	= 0x00190026;      // 宠物继承预览请求
+	MSG_PetLegacyPreview_Response	= 0x00191026;      // 宠物继承预览响应
+	MSG_PetLegacyReady_Request		= 0x00190027;      // 宠物继承准备请求
+	MSG_PetLegacyReady_Response		= 0x00191027;      // 宠物继承准备响应
+	MSG_PetLegacy_Request			= 0x00190028;      // 宠物继承请求
+	MSG_PetLegacy_Response			= 0x00191028;      // 宠物继承响应
+
+	MSG_PetPVPBattleInfo_Request = 0x00190030;      //打开宠物PVP界面请求
+	MSG_PetPVPBattleInfo_Response = 0x00191030;     // 打开宠物PVP界面响应
+	MSG_EnterPetBattlePvP_Request   = 0x00190031;   // 进入宠物PVP副本请求
+	MSG_EnterPetBattlePvP_Response   = 0x00191031;   // 进入宠物PVP副本响应
+	MSG_FlushPetPvPMatchInfo_Request = 0x00190032;   // 刷新对手请求
+	MSG_FlushPetPvPMatchInfo_Response = 0x00191032;   // 刷新对手响应
+	MSG_BattleRecord_Request         = 0x00190033;   // 查看战斗记录请求
+	MSG_BattleRecord_Response        = 0x00191033;   // 查看战斗记录响应
+
+	MSG_PetGrowthInfo_Request			= 0x00190034;	//战宠成长信息 请求 
+	MSG_PetGrowthInfo_Response			= 0x00191034;	//战宠成长信息 响应 
+	MSG_PetGrowth_Request				= 0x00190035;	//战宠成长 请求 
+	MSG_PetGrowth_Response				= 0x00191035;	//战宠成长 响应 
+
+	// 组队功能
+	MSG_TeamBuild_Request					= 0x001A0001; //请求-创建队伍
+	MSG_TeamBuild_Response					= 0x001A1001; //响应-创建队伍
+	MSG_TeamBuildOppositeTip_Notice			= 0x001A0002; //通告-创建队伍冲突提示(玩家先是后，要重发创建队伍消息)
+	MSG_TeamDismiss_Request					= 0x001A0003; //请求-解散队伍
+	MSG_TeamDismiss_Response				= 0x001A1003; //响应-解散队伍
+	MSG_TeamDismissOppositeTip_Notice		= 0x001A0004; //通告-解散队伍冲突提示(玩家先是后，要重发解散队伍消息)
+	MSG_TeamChangeLeader_Request			= 0x001A0005; //请求-转移队长
+	MSG_TeamChangeLeader_Response			= 0x001A1005; //响应-转移队长
+	MSG_TeamLeave_Request					= 0x001A0006; //请求-退出队伍
+	MSG_TeamLeave_Response					= 0x001A1006; //响应-退出队伍
+	MSG_TeamLeaveOppositeTip_Notice			= 0x001A0007; //通告-退出队伍冲突提示(玩家先是后，要重发退出队伍消息)
+	MSG_TeamKick_Request					= 0x001A0008; //请求-踢出队伍
+	MSG_TeamKick_Response					= 0x001A1008; //响应-踢出队伍
+	MSG_TeamProposal_Request				= 0x001A0009; //请求-邀请组队（队长邀请、队员邀请、邀请组队）
+	MSG_TeamProposal_Response				= 0x001A1009; //响应-邀请组队（队长邀请、队员邀请、邀请组队）
+	MSG_TeamProposalExamine_Notice			= 0x001A000A; //通告-队员邀请审批请求
+	MSG_TeamProposalExamineAnswer_Request	= 0x001A000B; //请求-队长审批队员邀请
+	MSG_TeamProposalExamineAnswer_Response	= 0x001A100B; //响应-队长审批队员邀请
+	MSG_TeamProposal_Notice					= 0x001A000C; //通告-邀请入队通告
+	MSG_TeamProposalAnswer_Request			= 0x001A000D; //请求-应答邀请入队
+	MSG_TeamProposalAnswer_Response			= 0x001A100D; //响应-应答邀请入队
+	MSG_TeamApply_Request					= 0x001A000E; //请求-申请入队
+	MSG_TeamApply_Response					= 0x001A100E; //响应-申请入队
+	MSG_TeamApplyAnswer_Request				= 0x001A000F; //请求-队长应答申请入队
+	MSG_TeamApplyAnswer_Response			= 0x001A100F; //响应-队长应答申请入队
+	MSG_TeamBaseDataUpdate_Notice			= 0x001A0010; //通告-队伍成员基础数据更新
+	MSG_TeamSyncHPMPUpdate_Notice			= 0x001A0011; //通告-队伍成员血量信息更新
+	MSG_TeamFlagUpdate_Notice				= 0x001A0012; //通告-队伍flag信息更新
+	MSG_TeamMemberClear_Notice				= 0x001A0013; //通告-清除队伍成员
+	MSG_TeamApplyerBaseData_Notice			= 0x001A0014; //通告-申请者基础数据
+	MSG_TeamApplyerClear_Notice				= 0x001A0015; //通告-清除申请者
+	MSG_TeamSyncPosUpdate_Notice			= 0x001A0016; //通告-队伍成员位置信息更新
+
+	MSG_TeamCallFriend_Request				= 0x001A0017; //请求-呼朋唤友
+	MSG_TeamCallFriend_Response				= 0x001A1017; //响应-呼朋唤友
+	MSG_TeamJoinCall_Request				= 0x001A0018; //请求-加入呼朋唤友队伍
+	MSG_TeamJoinCall_Response				= 0x001A1018; //响应-加入呼朋唤友队伍
+	MSG_ScreenPlayerInfo_Request			= 0x001A0019;	// 同屏玩家信息请求
+	MSG_ScreenPlayerInfo_Response			= 0x001AC019;	// 同屏玩家信息回复
+
+	MSG_TeamLeaderFollowOrder_Request		= 0x001A001A;	// 请求-队长召唤跟随 C->S
+	MSG_TeamLeaderFollowOrder_Response		= 0x001A101A;	// 响应-队长召唤跟随 S->C
+	MSG_TeamLeaderFollowOrder_Notice		= 0x001A101B;	// 通知-队长召唤通知 S->C
+	MSG_TeamMemberFollowOrder_Request		= 0x001A001C;	// 请求-队员召唤结果 C->S
+	MSG_TeamMemberFollowOrder_Response		= 0x001A101C;	// 响应-队员召唤结果 S->C
+	MSG_TeamMemberFollow_Request			= 0x001A001D;	// 请求-队员主动跟随 C->S
+	MSG_TeamMemberFollow_Response			= 0x001A101D;	// 响应-队员主动跟随 S->C
+	MSG_TeamMemberFollowEnterList_Request	= 0x001A001F;	// 请求-队员跟随开始 C->S
+	MSG_TeamMemberFollowEnterList_Response	= 0x001A101F;	// 响应-队员召唤结果 S->C
+	MSG_TeamMemberFollowInfo_Notice			= 0x001A1020;	// 通知-队员跟随信息 S->C
+	MSG_TeamMemberFollowCancel_Report		= 0x001A0021;	// 报告-队员取消跟随 C->S
+	MSG_TeamMemberAutoFollow_Request		= 0x001A0022;	// 请求-队员默认跟随 C->S
+	MSG_TeamMemberAutoFollow_Response		= 0x001A1022;	// 响应-队员默认跟随 S->C
+	MSG_TeamMemberFollowLose_Report			= 0x001A0023;	// 报告-队员跟随丢失 C->S
+	MSG_TeamMemberFollowSpeed_Report		= 0x001A0024;	// 报告-队员提速追击 C->S
+
+	MSG_TeamList_Request					= 0x001A0025;	// 请求-某活动的队伍列表 C->S
+	MSG_TeamList_Reponse					= 0x001A1025;	// 响应-某活动的队伍列表 S->C
+	MSG_SetTeamPurpose_Request				= 0x001A0026;	// 请求-设置队伍目标 C->S
+	MSG_SetTeamPurpose_Reponse				= 0x001A1026;	// 响应-设置队伍目标 S->C
+	MSG_TeamPurpose_Notice					= 0x001A0027;	// 通知-设置队伍目标 S->C
+	MSG_TeamSyncBuffUpdate_Notice			= 0x001A0028; //通告-队伍成员BUFF信息更新   //废弃
+
+	MSG_TransportProposalAnswerRequest		= 0x001A0029;	// 将被邀请者的应答消息转到队长服进行处理
+	MSG_TransportProposalAnswerResponse		= 0x001A1029;	// 将被邀请者的应答消息转到队长服进行处理
+
+	MSG_TransportApplyagreeRequest			= 0x001A002A;	// 将队长同意的消息转到队员服进行处理
+	MSG_TransportApplyagreeResonse			= 0x001A002B;	// 将队长同意的消息转到队员服进行处理
+
+	MSG_CheckMatchRequest					= 0x001A002C;	// 去队员的阵营验证是否能进入副本
+	MSG_CheckMatchResponse					= 0x001A102C;	// 去队员的阵营验证是否能进入副本
+
+	MSG_TransportApplyRequest				= 0x001A002D;	// 将队员申请的消息转到队长服进行处理
+	MSG_TransportApplyResonse				= 0x001A102D;	// 将队员申请的消息转到队长服进行处理
+
+	MSG_GetLeaderPosNotice					= 0x001A102F;	// 获取在异阵营的队长的信息
+	
+	// 匹配功能
+	MSG_MatchList_Request					= 0x001B0001; //请求-正在匹配的列表
+	MSG_MatchList_Response					= 0x001B1001; //响应-正在匹配的列表
+	MSG_MatchConfirm_Notice					= 0x001B0002; //通告-匹配成功需要玩家确认
+	MSG_MatchConfirmAnswer_Request			= 0x001B0003; //请求-玩家响应匹配确认
+	MSG_MatchConfirmAnswer_Response			= 0x001B1003; //响应-玩家响应匹配确认
+	MSG_MatchSignedUp_Request				= 0x001B0004; //请求-玩家报名匹配
+	MSG_MatchSignedUp_Response				= 0x001B1004; //响应-玩家报名匹配
+	MSG_MatchCancel_Request					= 0x001B0005; //请求-玩家取消报名
+	MSG_MatchCancel_Response				= 0x001B1005; //响应-玩家取消匹配
+	MSG_MatchList_Notice					= 0x001B0006; //通告-正在匹配的列表
+	MSG_MatchTeam_Request					= 0x001B0007; // 请求-匹配的队伍列表
+	MSG_MatchTeam_Response					= 0x001B1007; // 相应-匹配的队伍列表
+
+	// 跨服pve
+	MSG_PveMatch_Request					= 0x001B0008; // 请求匹配PVE
+	MSG_PveMatch_Response					= 0x001B1008; // 相应匹配PVE
+	MSG_CancelPveMatch_Request				= 0x001B0009; // 取消pve匹配
+	MSG_CancelPveMatch_Response				= 0x001B1009; // 取消pve匹配
+	MSG_PveMatchApply_Request				= 0x001B000A; // 申请加入匹配
+	MSG_PveMatchApply_Response				= 0x001B100A; // 申请加入匹配
+	MSG_PveMatchLeave_Request				= 0x001B000B; // 离开匹配
+	MSG_PveMatchLeave_Response				= 0x001B100B; // 离开匹配
+	MSG_PveMatchCallFriend_Request			= 0x001B000C; // 呼朋唤友
+	MSG_PveMatchCallFriend_Response			= 0x001B100C; // 呼朋唤友
+	MSG_GetMatchList_Request				= 0x001B000D; // 得到匹配队列
+	MSG_GetMatchList_Response				= 0x001B100D; // 得到匹配队列
+	MSG_SyncSpanPveInfo_Notice				= 0x001B100E; // 跨服pve队伍人数同步
+	MSG_PveMatchApplyCallFriend_Request		= 0x001B000F; // 点击呼朋唤友连接
+	MSG_PveMatchApplyCallFriend_Response	= 0x001B100F; // 点击呼朋唤友连接
+
+	MSG_GetMatchInfo_Request				= 0x001B0010; // 获取匹配信息（五鬼乱阵，封魔战场，仙之斗）
+	MSG_SyncSpanPveLeader_Notice			= 0x001B1011; // 跨服pve队伍队长状态同步
+
+	// 跨服决斗
+	MSG_ApplyDuel_Request					= 0x001B0012;	//请求发起决斗
+	MSG_ApplyDuel_Response					= 0x001B1012;	//请求发起决斗
+	MSG_CheckOther_Request					= 0x001B0013;	//检查别的玩家的状态
+	MSG_CheckOhter_Response					= 0x001B1013;	//检查别的玩家的状态
+	MSG_DoDuel_Request						= 0x001B0014;	//被发起方回复处理，同意还是拒绝
+	MSG_DoDuel_Response						= 0x001B1014;	
+	MSG_DuelInfo_Notice						= 0x001B1015;	//决斗状态数据
+	MSG_DuelCreateDungeon_Notice			= 0x001B1016;	//通知egs创建副本
+	MSG_DuelDespise_Notice					= 0x001B1017;	//蔑视
+	MSG_DuelState_Notice					= 0x001B1018;	//通知egs该玩家的决斗状态改变
+	MSG_DuelMail_Notice						= 0x001B1019;	//通知egs发邮件
+	MSG_DuelSettleUp_Notice					= 0x001B1020;	//结算通知
+
+	// 好友功能
+	MSG_SearchFriend_Request				= 0x001C0001;	// 请求 个人查找
+	MSG_SearchFriend_Response				= 0x001C1001;	// 响应 个人查找
+
+	MSG_SearchCondtion_Request				= 0x001C0002;	// 请求 条件查找
+	MSG_SearchCondtion_Response				= 0x001C1002;	// 响应 条件查找
+
+	MSG_AddTFriend_Request					= 0x001C0003;	// 请求 添加模板
+	MSG_AddTFriend_Response					= 0x001C1003;	// 响应 添加模板
+
+	MSG_RemoveTFriend_Request				= 0x001C0004;	// 请求 删除模板
+	MSG_RemoveTFriend_Response				= 0x001C1004;	// 响应 删除模板
+
+	MSG_AddTFriends_Notice					= 0x001C0005;	// 通知 添加模板
+	MSG_RemoveTFriends_Notice				= 0x001C0006;	// 通知 删除模板
+	MSG_UpdateTFriends_Notice				= 0x001C0007;	// 通知 更新模板
+	MSG_FriendData_Notice					= 0x001C0008;	// 通知 好友数据
+
+	MSG_CharZone_Request					= 0x001C0009;	// 请求 空间数据
+	MSG_CharZone_Response					= 0x001C1009;	// 响应 空间数据
+
+	MSG_MoveTarget_Request					= 0x001C000A;	// 请求 移动目标
+	MSG_MoveTarget_Response					= 0x001C100A;	// 响应 移动目标
+
+	// 好友 双向
+	MSG_AddFriendWithAckReuqest				= 0x001C000B;	// 添加好友, 需要对方响应		
+	MSG_AddFriendWithAckResponse			= 0x001C100B;	// 添加好友, 需要对方响应 回包
+	MSG_AddFriendAskTargetNotice			= 0x001C000C;	// 添加好友通知对方
+	MSG_AddFriendInteractNotice				= 0x001C100C;	// 添加好友通知对方情缘任务用
+	MSG_AddFriendAckRequest					= 0x001C000D;	// 响应添加好友
+	MSG_AddFriendAckResponse				= 0x001C100D;	// 响应添加好友 回包
+	MSG_RemoveFriendRequest					= 0x001C000E;	// 删除好友
+	MSG_RemoveFriendResponse				= 0x001C100E;	// 删除好友 回包 
+	// 赠送体力
+	MSG_FriendGiveEnergy_Request			= 0x001C000F;	// 请求 赠送体力
+	MSG_FriendGiveEnergy_Response			= 0x001C100F;	// 响应 赠送体力
+	MSG_FriendGatherEnergy_Request			= 0x001C0010;	// 请求 收取体力
+	MSG_FriendGatherEnergy_Response			= 0x001C1010;	// 响应 收取体力
+
+	MSG_FriendHeadIcon_Request				= 0x001C0011;	// 请求 对头像的操作
+	MSG_FriendHeadIcon_Response				= 0x001C1011;	// 响应 对头像的操作
+	MSG_FriendCheckIconState_Request		= 0x001C0012;	// 请求 检查头像操作是否在CD中
+	MSG_FriendCheckIconState_Response		= 0x001C1012;	// 回应 检查头像操作是否在CD中
+
+	MSG_FriendAddContact_Request			= 0x001C0013;	//添加最近联系人请求  回复走好友系统统一的回复消息
+	MSG_FriendEnergyTimes_Notice			= 0x001C0014;	//好友体力次数变化
+	MSG_RemoveRecentContact_Request			= 0x001C0015;	// 从最近联系人删除
+	MSG_RemoveRecentContact_Response		= 0x001C1015;	// 从最近联系人删除
+
+
+	MSG_CangqiongPK_Request					= 0x001D0001;	//请求 报名大乱斗
+	MSG_CangqiongPK_Response				= 0x001D1000;	//响应 报名大乱斗
+	MSG_CangqiongRank_Notice				= 0x001D0002;	//通知 大乱斗排行数据
+	MSG_CangqiongReward_Notice				= 0x001D0003;	//通知 大乱斗结算数据
+	// 
+	 
+	
+	//================================================================================
+	
+	MSG_Sign_NewerReward_Request			= 0x001E0001;	//请求 领取新手签到奖励
+	MSG_Sign_NewerReward_Response			= 0x001E1001;	//响应 领取新手签到奖励
+	MSG_Sign_DailyReward_Request			= 0x001E0002;	//请求 领取日常签到奖励
+	MSG_Sign_DailyReward_Response			= 0x001E1002;	//响应 领取日常签到奖励
+	MSG_Sign_DailyVipReward_Request			= 0x001E0003;	//请求 补领vip日常签到奖励
+	MSG_Sign_DailyVipReward_Response		= 0x001E1003;	//响应 补领vip日常签到奖励
+	MSG_Sign_LevelReward_Request			= 0x001E0004;	//请求 等级奖励
+	MSG_Sign_LevelReward_Response			= 0x001E1004;	//响应 等级奖励
+	MSG_Sign_OnlineReward_Request			= 0x001E0005;	//请求 在线奖励
+	MSG_Sign_onlineReward_Response			= 0x001E1005;	//响应 在线奖励
+	Msg_Sign_DailyRetroactive_Requrst		= 0x001E0006;	//请求 补签
+	MSG_Sign_DailyRetroactive_Response		= 0x001E1006;	//响应 补签
+	Msg_sign_PlayerInfo_Notice				= 0x001E1007;	//推送玩家签到的信息
+	Msg_Sign_Config_Request					= 0x001E0008;	//配置文件请求
+	MSG_Sign_Config_Response				= 0x001E1008;	//配置文件响应
+	MSG_AddEnergyInfo_Request				= 0x001E0009;	//每日吃鸡腿信息请求
+	MSG_AddEnergyInfo_Response				= 0x001E1009;	//
+	MSG_AddEnergy_Request					= 0x001E0010;	//吃鸡腿请求
+	MSG_AddEnergy_Response					= 0x001E1010;	//吃鸡回复
+	MSG_VIPAddEnergy_Request				= 0x001E0011;	//VIP购买体力请求
+	MSG_VIPAddEnergy_Response				= 0x001E1011;	//
+	MSG_NewServer_Activity_Request			= 0x001E0012;	//新服活动领取奖励请求
+	MSG_NewServer_Activity_Response			= 0x001E1012;	//新服活动领取奖励回复
+	MSG_Newserver_Activity_State_Notice		= 0x001E0013;	//新服活动领奖状态通知
+	Msg_Newserver_Activity_Cfg_Notice		= 0x001E0014;	//新服活动配置信息
+	MSG_Newserver_Charge_Request			= 0x001E0015;	//新服充值奖励请求
+	MSG_Newserver_Charge_Response			= 0x001E1015;	//新服充值奖励回复
+	MSG_Newserver_Charge_Notice				= 0x001E0016;	//新服充值通知
+	MSG_Newserver_ArenaRank_Request			= 0x001E0017;	//新服竞技场请求
+	MSG_Newserver_ArenaRank_Response		= 0x001E1017;	//新服竞技场回复
+	MSG_Newserver_Recharge_Cfg_Notice		= 0x001E0018;	//新服充值配置通知
+	MSG_Newserver_Recharge_State_Notice		= 0x001E0019;	//新服充值状态通知
+	MSG_Newserver_ShopDiscount_Buy_Request	= 0x001E001A;	//新服折扣购买请求
+	MSG_Newserver_ShopDiscount_Buy_Response	= 0x001E101A;	//新服折扣购买响应
+
+
+	//================================================================================
+	// 国家相关
+	MSG_Nation_CampUnion_Notice				= 0x001F0001;	// 阵营联盟信息通知
+	//================================================================================
+
+	// baobao
+	MSG_Hold_Request						= 0x00200001;	//发起抱抱请求
+	MSG_Hold_Response						= 0x00201001;	//响应抱抱请求
+	MSG_Hold_Ack_Notice						= 0x00200002;	//抱抱确认通知
+	MSG_Hold_Ack_Request					= 0x00200003;	//发起抱抱确认请求
+	MSG_Hold_Ack_Response					= 0x00201003;	//响应抱抱确认请求
+	MSG_Hold_Down_Request					= 0x00200004;	//发起下抱抱请求
+	MSG_Hold_Down_Response					= 0x00201004;	//响应下抱抱请求
+	MSG_Hold_Interrupt_Notice				= 0x00200005;	//抱抱中断通知
+	MSG_Hold_DelAppList_Notice				= 0x00200006;
+	MSG_Hold_AutoShield_Request				= 0x00200007;	//自动屏蔽请求
+	MSG_Hold_AutoShield_Response			= 0x00201007;	//自动屏蔽响应
+	MSG_Hold_AutoShield_Notice				= 0x00200008;	//自动屏蔽通告
+
+	MSG_InterAction_Request					= 0x00200009;	//发起互动动作(entity_id)
+	MSG_InterAction_Response				= 0x00201009;	//发起互动动作
+	MSG_CancelInterAction_Request			= 0x00200010;	//取消互动动作
+	MSG_CancelInterAction_Response			= 0x00201010;	//取消互动动作
+	MSG_InterAction_Notice					= 0x00201011;	//发起互动动作周围人通知
+	MSG_InterActionVerify_Notice			= 0x00201012;	//发起互动动作周围人通知
+	MSG_InterActionVerify_Request			= 0x00200013;	//发起互动动作周围人通知
+	MSG_InterActionVerify_Response			= 0x00201013;	//发起互动动作周围人通知
+	MSG_InterAction_RequestEx				= 0x00200014;	//发起互动动作(char_id)
+
+
+	MSG_Marriage_Ready_Request				= 0x00210001;	//请求 准备结婚
+	MSG_Marriage_Ready_Response				= 0x00211001;	//响应 准备结婚
+	MSG_Marry_LeaderAck_Request				= 0x00210002;	//请求 队长结婚确认
+	MSG_Marry_LeaderAck_Response			= 0x00211002;	//响应 队长结婚确认
+	MSG_Marry_LeaderAck_Notice				= 0x00211003;	//通知 队长结婚确认同志给队员
+	MSG_Marry_MemberAck_Request				= 0x00210004;	//请求 队员结婚确认
+	MSG_Marry_MemberAck_Response			= 0x00211004;	//响应 队员结婚确认
+	MSG_Marry_MemberCancel_Request			= 0x00210005;	//请求 队员结婚取消
+	MSG_Marry_MemberCancel_Response			= 0x00211005;	//响应 队员结婚取消
+	MSG_DivorceDeal_LeaderAck_Request		= 0x00210010;	//请求 队长协议离婚确认
+	MSG_DivorceDeal_LeaderAck_Response		= 0x00211010;	//响应 队长协议离婚确认
+	MSG_DivorceDeal_LeaderAck_Notice		= 0x00211011;	//通知 队长协议离婚确认同志给队员
+	MSG_DivorceDeal_MemberAck_Request		= 0x00210012;	//请求 队员协议离婚确认
+	MSG_DivorceDeal_MemberAck_Response		= 0x00211012;	//响应 队员协议离婚确认
+	MSG_DivorceDeal_MemberCancel_Request	= 0x00210013;	//请求 队员协议离婚取消
+	MSG_DivorceDeal_MemberCancel_Response	= 0x00211013;	//响应 队员协议离婚取消
+	MSG_DivorceForce_Request				= 0x00210014;	//请求 强制离婚
+	MSG_DivorceForce_Response				= 0x00211014;	//响应 强制离婚
+	MSG_Marriage_Info_Notice				= 0x00211015;	//通知 婚姻信息
+	MSG_Title_Change_Request				= 0x00210020;	//改变称号请求
+	MSG_Title_Change_Response				= 0x00211020;	//改变称号响应
+	MSG_Marriage_March_Request				= 0x00210030;	//游街请求
+	MSG_Marriage_March_Response				= 0x00211030;	//游街响应
+	MSG_Marriage_MarchReady_Request			= 0x00210031;	//游街请求消耗列表
+	MSG_Marriage_MarchReady_Response		= 0x00211031;	//游街相应消耗列表
+	MSG_Marriage_Success_Notice             = 0x00211032;   //结婚成功通知
+
+	MSG_Channel_QQ_Get_Reward_Request		= 0x00220001;	//腾讯发奖
+	MSG_Channel_QQ_Get_Reward_Response		= 0x00221001;	//发奖响应
+	MSG_Channel_QQ_Get_Reward_List_Request  = 0x00220002;   //获取奖励列表
+	MSG_Channel_QQ_Get_Reward_List_Response = 0x00221002;	//返回奖励列表
+
+
+	MSG_Rep_MoveToBag_Request				= 0x00230001;	// 从仓库移动到背包
+	MSG_Rep_MoveToBag_Response				= 0x00231001;	// response
+	MSG_Rep_RecvFromBag_Request				= 0x00230002;	// 从包裹移动到仓库
+	MSG_Rep_RecvFromBag_Response			= 0x00231002;	// response 
+	MSG_Rep_OnConnect_Notice				= 0x00231003;	// 发送仓库的数据
+	MSG_Rep_RepInfo_Notice					= 0x00231004; 
+	MSG_Rep_ChangeRep_Request				= 0x00230005;	// 更换背包
+	MSG_Rep_ChangeRep_Response				= 0x00231005;
+	MSG_Rep_Unlock_Request					= 0x00230006;	// 解锁背包
+	MSG_Rep_Unlock_Response					= 0x00231006;
+
+	MSG_NewRoleAct_GetState_Request			= 0x00240001;  //查询状态
+	MSG_NewRoleAct_GetState_Response		= 0x00241001;  //
+	MSG_NewRoleAct_Buy_Request				= 0x00240002;  //买
+	MSG_NewRoleAct_Buy_Response             = 0x00241002;
+	MSG_NewRoleAct_GetReward_Request		= 0x00240003;  // 领奖
+	MSG_NewRoleAct_GetReward_Response		= 0x00241003;  
+	MSG_NewRoleAct_SyncInfo_Notice			= 0x00241004;  // 同步状态
+	MSG_NewRoleAct_SyncActData_Notice		= 0x00241005; // 同步活动数据
+	
+	MSG_Guild_Day_Reward_Info_Notice         = 0x00251001; // 每日奖励领取状态通知
+	MSG_Guild_Get_Day_Reward_Request         = 0x00250002; // 每日奖励领取请求
+	MSG_Guild_Get_Day_Reward_Response        = 0x00251002; // 每日领奖响应
+	
+		//玩家称号
+	MSG_CharaceterTitle_Notice     = 0x00261001; //玩家称号信息通知
+	MSG_ChangeCharacterTitle_Request     = 0x00260002; //改变称号状态请求
+	MSG_ChangeCharacterTitle_Response    = 0x00261002; //
+
+
+	//十连抽活动
+	MSG_EventLotteryRequest             =  0x00270001;   //十连抽抽奖请求
+	MSG_EventLotteryResponse            =  0x00270002;   //十连抽抽奖响应
+	MSG_EventLotteryGoodItemNotice      =  0x00270003;   //十连抽好物品推送
+	MSG_ChargeRegressInfo_Notice		=  0x00270004;   //回归充值信息通知
+	MSG_IgnoreChargeRegress_Report		=  0x00270005;   //忽略回归充值消息上报
+	MSG_ActFireworksInfo_Notice			=  0x00270006;   //烟花活动信息通知
+	MSG_ActFireworksInfo_Request		=  0x00270007;   //烟花活动信息请求
+	MSG_ActFireworksInfo_Response		=  0x00270008;   //烟花活动信息回复
+	MSG_ClientBtnInfo_Notice			=  0x00270009;   //按钮信息通知
+	MSG_GateActStatus_Notice			=  0x0027000A;   //活动状态信息通知
+	// 登录礼包
+	MSG_LoginGifts_Status_Notice  = 0x0027100B;   // 礼包领取状态通知
+	MSG_LoginGifts_GetReward_Request = 0x0027000C; // 登录礼包领取请求
+	MSG_LoginGifts_GetReward_Response = 0x0027100C;// 登录礼包领取响应
+
+	// 老虎机;
+	MSG_OnearmBandit_Bless_Request          =  0x00270012;   // 老虎机抽奖请求;
+	MSG_OnearmBandit_Bless_Response         =  0x00271012;   // 老虎机抽奖响应;
+	MSG_OnearmBandit_Reward_Request         =  0x00270013;   // 老虎机奖励请求;
+	MSG_OnearmBandit_Reward_Response        =  0x00271013;   // 老虎机奖励响应;
+	MSG_OnearmBandit_Record_Notice			=  0x00270014;   // 老虎机历史记录推送;
+
+	// 在线礼包
+	MSG_OnlineGifts_Status_Notice  = 0x0027100D;   // 在线礼包领取状态通知
+	MSG_OnlineGifts_GetReward_Request = 0x0027000E; // 登录礼包领取请求
+	MSG_OnlineGifts_GetReward_Response = 0x0027100E;// 登录礼包领取响应
+
+	// 幸运值模块相关的消息
+	MSG_GetLuckInfoRequest              =  0x00280001;   // 获取幸运信息请求
+	MSG_GetLuckInfoResponse             =  0x00280002;   // 获取幸运信息响应
+	MSG_UpgradeLuckRequest              =  0x00280003;   // 升级幸运信息请求
+	MSG_UpgradeLuckResponse             =  0x00280004;   // 升级幸运信息响应
+	MSG_LuckReloadCfgNotice             =  0x00280005;   // 配置文件热启通知
+
+	MSG_PotentialInfo_Notice			= 0x00290001;	// 时装武器 潜能信息通知
+	MSG_PotentialFeed_Request			= 0x00290002;	// 潜能培养 请求
+	MSG_PotentialFeed_Response			= 0x00291002;	// 潜能培养 回复
+	MSG_PotentialReplace_Request		= 0x00290003;	// 潜能替换 请求
+	MSG_PotentialReplace_Response		= 0x00291003;	// 潜能替换 回复
+	MSG_PotentialUpClass_Request		= 0x00290004;	// 潜能升阶 请求
+	MSG_PotentialUpClass_Response		= 0x00291004;	// 潜能升阶 响应
+	MSG_PotentialTenFeed_Request		= 0x00290005;	// 潜能十连培养
+	MSG_PotentialTenFeed_Respoonse		= 0x00291005;	// 潜能十连培养响应
+	MSG_PotentialAttrState_Request		= 0x00290006;	// 潜能十连培养 属性设置
+	MSG_PotentialAttrState_Response		= 0x00291006;	// 潜能十连培养 属性设置响应
+	MSG_PotentialTenReplace_Request		= 0x00290007;	// 潜能十次替换 请求
+	MSG_PotentialTenReplace_Response	= 0x00291007;	// 潜能十次替换 响应
+
+
+	// 夫妻跨服PVP
+	MSG_Couplepvp_ActInfo_Request       = 0x00300001;   // 活动界面信息消息请求
+	MSG_Couplepvp_ActInfo_Response		= 0x00301001;   // 活动界面信息消息回复
+	MSG_Couplepvp_Apply_Request			= 0x00300002;   // 报名取消报名
+	MSG_Couplepvp_EnterDungeon_Notice	= 0x00300003;   // 进入夫妻PVP副本推送
+	MSG_Couplepvp_EnterDungeon_Request	= 0x00300004;   // 确定进入副本消息
+	MSG_Couplepvp_BattleInfo_Sync		= 0x00300005;   // 副本战斗积分信息
+	MSG_Couplepvp_BattleInfo_Result		= 0x00300006;   // 副本结算信息
+
+	// 翅膀培养
+	MSG_WingTrainAllInfo_Request        = 0x00310001;  // 培养信息请求
+	MSG_WingTrainAllInfo_Response       = 0x00310002;  // 培养信息回复
+	MSG_WingTrainUpStar_Request         = 0x00310003;  // 升点请求
+	MSG_WingTrainUpStar_Response        = 0x00310004;  // 升点回复
+	MSG_WingTrainUpJie_Request          = 0x00310005;  // 升阶请求
+	MSG_WingTrainUpJie_Response         = 0x00310006;  // 升阶回复
+	MSG_WingTrainQueryWingPro_Request   = 0x00310007;  // 查询翅膀属性值请求
+	MSG_WingTrainQueryWingPro_Response  = 0x00310008;  // 查询翅膀属性值回复
+	MSG_WingTrainQueryWingTip_Request   = 0x00310009;  // 查询翅膀tip请求
+	MSG_WingTrainQueryWingTip_Response  = 0x0031000A;  // 查询翅膀tip回复
+	MSG_WingTrainInfoNotice             = 0x0031000B;  // 培养信息通知
+
+	// 帮派红包
+	MSG_RedBag_Send_Request				= 0x00320001;   // 发送红包消请求
+	MSG_RedBag_Send_Response			= 0x00321001;   // 发送红包返回
+	MSG_RedBag_Notice					= 0x00320002;   // 红包推送消息
+	MSG_RedBag_List_Request				= 0x00320003;   // 请求帮派红包列表消息
+	MSG_RedBag_List_Response			= 0x00321003;   // 返回帮派红包列表消息
+	MSG_RedBag_Open_Request				= 0x00320004;   // 请求打开红包消息
+	MSG_RedBag_Open_Response			= 0x00321004;   // 返回红包信息
+	MSG_RedBag_Count_Request			= 0x00320005;   // 请求红包额度信息
+	MSG_RedBag_Count_Response			= 0x00321005;   // 返回红包额度信息
+	MSG_RedBag_Login_Notice				= 0x00321006;   // 红包登录推送
+
+	// 心法
+	MSG_Xinfa_Info_Request				= 0x00330001;   // 心法界面请求
+	MSG_Xinfa_Info_Response				= 0x00331001;   // 心法界面回复
+	MSG_Xinfa_Upgrade_Request			= 0x00331002;   // 心法修炼请求
+	MSG_Xinfa_Upgrade_Response			= 0x00331002;   // 心法修炼回复
+
+	// 修真
+	MSG_Xiuzhen_Info_Request			= 0x00340001;   // 修真界面请求
+	MSG_Xiuzhen_Info_Response			= 0x00341001;   // 修真界面回复
+	MSG_Xiuzhen_Upgrade_Request			= 0x00340002;   // 修真升级请求
+	MSG_Xiuzhen_Upgrade_Response		= 0x00341002;   // 修真升级回复
+	MSG_Xiuzhen_Info_Notice		        = 0x00341003;   // 
+
+	//================================================================================
+	// Common
+	MSG_ErrCode_Response		= 0x30000000;
+
+
+	//dimension消息;
+	MSG_DimensionTest_Require			= 0x40000001;//测试指令;
+	MSG_DimensionTest_Response			= 0x40000002;//测试指令;
+	MSG_DimensionCharJoin_Require		= 0x40000003;//玩家加入次元;
+	MSG_DimensionCharLeave_Require		= 0x40000004;//玩家离开次元;
+	MSG_DimensionChat_Require			= 0x40000005;//对同次元玩家聊天;
+	
+	//大世界战场消息;
+	MSG_BattleMatch_Request				= 0x50000001;//请求匹配;
+	MSG_BattleCancel_Request			= 0x50000002;//取消匹配;
+	MSG_BattleQuery_Request				= 0x50000003;//查询请求
+	MSG_BigGetMatchInfo_Request			= 0x50000004;// 获取匹配信息（五鬼乱阵，封魔战场，仙之斗）
+
+	//向客户端同步的消息;
+	MSG_Battle_Inform					= 0x70000001;//通知客户端战场状况;
+
+	MSG_RankTopPlayerLogin				= 0x70000002;// 魅力榜全服前3名上线通知;
+
+}
+

@@ -1,0 +1,15 @@
+import "tmpl_base.proto";
+
+message PBItemExchangeCfg
+{
+	repeated	PBItemExchangeVaule	exchange_item_list	 = 1; // 转换道具列表
+};
+
+// 兑换数值道具信息
+message PBItemExchangeVaule
+{
+	optional	sint32  exchange_type	= 1;	//兑换数值的类型
+	optional	sint32  exchange_vaule	= 2;	//换算的数值
+	optional	string	sheet_id		= 3;	//换算成的道具
+}
+

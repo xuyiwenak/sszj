@@ -1,0 +1,1 @@
+mysql -usszj -pDR9m_wqsgF8a -P3306 data_stat_ss -e "select gateway_id, immortal_level, immortal_star, count(*) as player_count from mount_info_stat group by gateway_id, immortal_level, immortal_star" > ./mount_immortal_last_month.txt

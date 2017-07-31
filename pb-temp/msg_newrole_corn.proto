@@ -1,0 +1,117 @@
+message PBNewRoleCornActAll
+{
+	repeated PBNewRoleCornAct one_act = 1;
+}
+message PBNewRoleCornAct
+{
+	optional uint64 actid = 1;
+	optional uint32 buytimelastday = 2;
+	repeated PBOneNewRoleCorn one_rolecon = 3;
+}
+message PBOneNewRoleCorn
+{
+	optional uint32 idx = 1;
+	optional uint32 cond_value = 2;
+	optional string name = 3;
+	optional string icon = 4;
+	optional uint32 price = 5;
+	optional uint32 old_price = 6;
+	repeated PBOneRewardRelation reward_relation = 7;
+
+}
+message PBOneRewardRelation
+{
+	optional uint32 day = 1;
+	repeated PBOneRewardContent reward_content = 2;
+	optional string title = 3;
+}
+message PBOneRewardContent
+{
+	optional string item_sheet = 1;
+	optional uint32 num = 2;
+	optional bool binded = 3;
+}
+
+
+
+enum enRewardState
+{
+	enRewardState_Get = 0; //已经领取
+	enRewardState_UnGet = 1;//未领取
+	enRewardState_CannotGet = 2;//不能领取
+	enRewardState_UNKNOWN  = 3;//未知的
+}
+enum enNewRoleBuyState
+{
+	enNewRoleBuyState_HasBuy = 1; //已经购买
+	enNewRoleBuyState_Cannot = 2; // 不能购买
+	enNewRoleBuyState_CanBuy = 3; // 可以购买
+	enNewRoleBuyState_UNKNOWN = 4; //未知的
+}
+message PBMsgNewRoleRoleDataNotice
+{
+	repeated PBNewRoleRoleDataOne pb_one = 1;
+	repeated PBNewRoleRoleBuyDataOne role_buy_state = 2;
+	optional uint64 act_begin = 3; //活动开始时间就是玩家第一次上线时间
+}
+message PBNewRoleRoleBuyDataOne     
+{
+	optional uint64 actid = 1;
+	optional uint32 chargepoint = 2;
+	repeated PBNewRoleBuyState buy_state =3;
+};
+message PBNewRoleBuyState
+{
+	optional uint32 corn_idx = 2;
+	optional enNewRoleBuyState buy_state = 3;
+};
+message PBNewRoleRoleDataOne
+{
+	optional uint64 actid = 1;
+	optional uint32 corn_idx = 2;
+	optional enNewRoleBuyState buy_state = 3;
+	repeated PBNewRoleRoleDataState role_reward_state = 4;
+	optional uint32 dayth = 5;//当前是第几天
+}
+message PBNewRoleRoleDataState
+{
+	optional uint32 day_th = 1;
+	optional enRewardState get_state = 2;
+}
+
+message PBMsgGetStateRequest
+{
+	optional uint64 activityid = 1;
+};
+message PBMsgGetStateResponse
+{
+	optional PBMsgNewRoleRoleDataNotice notice = 1;
+	optional uint32 ret_code = 2;
+};
+message PBMsgNewRoleCornBuy_Request
+{
+	optional uint64 activity_id = 1;
+	optional uint32 corn_id = 2;
+}
+message PBMsgNewRoleCornBuy_Response
+{
+	optional uint32 ret_code = 1;
+	optional uint64 activity_id = 2;
+	optional uint32 corn_id = 3;
+	optional enNewRoleBuyState buy_state = 4;
+	optional PBNewRoleRoleDataOne the_one = 5;
+}
+message PBMsgNewRoleGetReward_Request
+{
+	optional uint64 activity_id = 1;
+	optional uint32 corn_id = 2;
+	optional uint32 dayth = 3;
+}
+message PBMsgNewRoleGetReward_Response
+{
+	optional uint32 ret_code = 1;
+	optional uint64 activity_id = 2;
+	optional uint32 corn_id = 3;
+	optional uint32 dayth = 4;
+	optional uint32 reward_state =5;
+}

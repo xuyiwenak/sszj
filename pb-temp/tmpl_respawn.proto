@@ -1,0 +1,39 @@
+
+import "tmpl_base.proto";
+import "msg_dungeon.proto";
+
+
+message PBRespawnBaseConfig
+{
+//	optional sint32	pay_respawn_hp_percent							= 1;//[default=10000];	// 原地复活恢复血量万分比
+//	optional sint32	pay_respawn_mp_percent							= 2;//[default=10000];	// 原地复活恢复魔法值万分比
+//
+//	optional sint32	point_respawn_hp_percent						= 3;//[default=10000];	// 出生点复活恢复血量万分比
+//	optional sint32	point_respawn_mp_percent						= 4;//[default=10000];	// 出生点复活恢复魔法值万分比
+//
+//	optional sint32	backcity_respawn_hp_percent						= 5;//[default=10000];	// 回城复活恢复血量万分比
+//	optional sint32	backcity_respawn_mp_percent						= 6;//[default=10000];	// 回城复活恢复魔法值万分比
+
+	optional string	respawn_stone_sheet_name						= 7;	// 复活石sheetName
+}
+
+
+
+message PBConfigRespawn
+{
+	optional PBRespawnBaseConfig base_config					= 1; // 基本配置信息
+	repeated PBRespawnPercentConfig respawn						= 2;
+}
+
+message PBRespawnPercentConfig
+{
+	optional PBRespawnType		respawn_type					= 1;
+	repeated PBRespawnRecoverPercent	recover					= 2;
+}
+
+message PBRespawnRecoverPercent
+{
+	optional sint32				map_id							= 1;//[default=0];	// mapid==0:任意地图
+	optional sint32				hp_percent						= 2;	// 恢复血量万分比
+	optional sint32				mp_percent						= 3;	// 恢复魔法值万分比
+}

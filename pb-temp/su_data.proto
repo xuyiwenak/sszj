@@ -1,0 +1,86 @@
+// 以最快速度序列/反序列
+option optimize_for = SPEED;
+
+import "db_base.proto";
+import "db_logic_common.proto";
+
+
+message PBAllGateData
+{
+	optional PBGateUser			data_1 = 2;
+	optional PBGatewayInfo		data_3 = 4;
+	optional PBShardState		data_4 = 5;
+	optional PBBackupMail	        data_5 = 6;
+}
+
+message PBGateUser
+{
+	option (OptionPrimaryKey)	= "user_id";
+	optional uint32	flag		= 1;
+	optional uint32 user_id				= 2  ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL AUTO_INCREMENT"];
+	optional string user_name			= 3  ;//[(OptionDBFieldExtra) = "varchar(64) CHARACTER SET utf8 NOT NULL DEFAULT ''", (OptionDBNeedEscape) = true];
+	optional string account				= 4  ;//[(OptionDBFieldExtra) = "varchar(64) NOT NULL DEFAULT ''"];
+	optional string password			= 5  ;//[(OptionDBFieldExtra) = "varchar(64) DEFAULT NULL"];
+	optional string access_privilege	= 6  ;//[(OptionDBFieldExtra) = "set('OPEN','DEV','RESTRICTED') NOT NULL DEFAULT 'OPEN'"];
+	optional string privilege			= 7  ;//[(OptionDBFieldExtra) = "varchar(255) NOT NULL DEFAULT ''"];
+	optional string group_name			= 8  ;//[(OptionDBFieldExtra) = "varchar(255) NOT NULL DEFAULT ''"];
+	optional uint32 enter_ip			= 9  ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'"];
+	optional string enter_date			= 10 ;//[(OptionDBFieldExtra) = "datetime NOT NULL DEFAULT '0000-00-00 00:00:00'"];
+	optional string adid				= 11 ;//[(OptionDBFieldExtra) = "varchar(16) NOT NULL DEFAULT ''"];
+	optional string chid				= 12 ;//[(OptionDBFieldExtra) = "varchar(16) NOT NULL DEFAULT ''"];
+	optional int32 app_version			= 13 ;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '-1'"];
+	optional string state				= 14 ;//[(OptionDBFieldExtra) = "varchar(16) NOT NULL DEFAULT ''"];
+	optional string device_info			= 15 ;//[(OptionDBFieldExtra) = "varchar(255) NOT NULL DEFAULT ''"];
+}
+
+// 网关配置信息
+message PBGatewayInfo
+{
+	option (OptionPrimaryKey)			= "gateway_id";
+	optional uint32	flag				= 1;
+	optional uint32 gateway_id			= 2 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];
+	optional string gateway_code		= 3 ;//[(OptionDBFieldExtra) = "char(32) CHARACTER SET utf8 NOT NULL DEFAULT ''"];
+	optional string gateway_password	= 4 ;//[(OptionDBFieldExtra) = "char(32) CHARACTER SET utf8 NOT NULL DEFAULT ''"];
+	optional string erating_addr		= 5 ;//[(OptionDBFieldExtra) = "char(32) CHARACTER SET utf8 NOT NULL DEFAULT ''"];
+	optional uint32	agip_version		= 6 ;//[(OptionDBFieldExtra) = "tinyint(11) unsigned NOT NULL DEFAULT 32"];
+	optional uint32 default_game_id		= 7 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];
+};
+
+message PBBackupMailBox
+{
+	optional uint32 id_max_key	=	1;
+	repeated PBMail	mail_list	=	2;
+};
+
+message PBBackupMail
+{
+	option (OptionPrimaryKey)					= "roleId";
+	option (OptionIndex)						= "rangeIndex";
+	option (OptionAutoIncrementKey)				= "rangeIndex";
+	optional uint32	flag						=	1;
+	optional uint32				rangeIndex		=	2 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL AUTO_INCREMENT"];
+	optional uint32				roleId			=	3 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];
+	optional PBBackupMailBox	mailBox			=	4 ;//[(OptionDBFieldExtra) = "MediumBlob"];
+};
+
+
+// 角色名随机库
+//message PBRoleNameLib
+//{
+//	option (OptionPrimaryKey)	= "name_id";
+//	optional uint32	flag		= 1;
+//	optional uint32 name_id		= 2 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL AUTO_INCREMENT"];
+//	optional int32  name_type	= 3 ;//[(OptionDBFieldExtra) = "tinyint(2) NOT NULL DEFAULT 0"];
+//	optional string name		= 4 ;//[(OptionDBFieldExtra) = "varchar char(64) CHARACTER SET utf8 NOT NULL DEFAULT ''"];
+//}
+
+
+
+message PBShardState
+{
+	option (OptionPrimaryKey)		= "shard_id";
+	optional uint32	flag			= 1;
+	optional uint32 shard_id		= 2 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];
+	optional uint32 role_num		= 3 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];
+	optional uint32 unix_time		= 4 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];
+}

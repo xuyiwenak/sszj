@@ -1,0 +1,1 @@
+mysql -usszj -pDR9m_wqsgF8a -P3306 data_stat_ss -e "select role_id,gateway_id, equip_level,sheet_id, sheet_name,count(*) from char_equip group by gateway_id, role_id, sheet_id order by gateway_id, role_id, sheet_id" > ./equip_20170702.txt

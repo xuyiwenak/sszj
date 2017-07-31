@@ -1,0 +1,78 @@
+import "tmpl_base.proto";
+import "msg_base.proto";
+
+message PBWestRegionConfig
+{
+	optional PBWestRegionBasic	basic_info	= 1;
+	repeated PBWestRegionGroup	west_group	= 2;
+	repeated PBWestRegionPostions	npc_postions	= 3;
+};
+
+/* 
+	born_line:npc刷在几线 waring_percent(万分比):低于推荐战力的XX显示警告 normail_percent(万分比):大于推荐战力的XX不显示警告  
+	enter_percent(万分比):进入战力  max_times:最大次数  min_member_count:队伍最少人数
+*/
+message PBWestRegionBasic
+{
+	optional sint32			delay_levelid	= 1;
+	optional sint32			waring_percent	= 2;
+	optional sint32			normail_percent	= 3;
+	optional sint32			enter_percent	= 4;
+	optional sint32			min_member_count= 5;
+	optional sint32			max_distance	= 6;
+};
+
+/* 
+	groupid:levelid+递增的三位数  creature_id:怪物ID  group_name:怪物组名  creature_name:怪物名称 target_dungeon:进入的副本 
+	suggest_power:推荐战力 desc:其他描述
+	show_drop_item	掉落展示
+	show_boss_info	副本中boss展示
+	show_award_item 奖励展示 
+*/
+message PBWestRegionGroup
+{
+	optional sint32					levelid			= 1;
+	repeated PBWestRegionNPCGroup	npc_group		= 2;
+};
+
+message PBWestRegionNPCGroup
+{
+	repeated PBWestRegionNPCPair	group_info		= 1;
+	optional sint32					suggest_power	= 2;
+	optional string					target_dungeon	= 3;
+	optional string					creature_title	= 4;
+	repeated PBWestRegionBoss		boss_info		= 5;
+	optional sint32					born_line		= 6;
+	optional sint32					born_mapid		= 7;
+	optional PBWestRegionShowInfo	award_item		= 8;
+}
+
+message PBWestRegionNPCPair
+{
+	optional sint32					group_id		= 1;
+	optional string					group_name		= 2;
+};
+
+message PBWestRegionBoss
+{
+	optional string					boss_sheetid	= 1;
+	optional string					desc			= 2;
+	//optional sint32				suggest_power	= 3;
+	optional string					icon_name		= 4;
+};
+
+message PBWestRegionShowInfo
+{
+	repeated PBWestRegionShowItem	show_item		= 1;
+};
+
+message PBWestRegionShowItem
+{
+	optional string					sheetid			= 1;
+};
+
+message PBWestRegionPostions
+{
+	optional sint32				map_id		= 1;
+	repeated PBAIVector			postions	= 2;
+};

@@ -1,0 +1,271 @@
+import "msg_relation.proto";
+
+/* 关键词说明:
+	7场算一个race, 每场算一个round, 每个round中最多有7个floor 每个floor中有N对couple
+*/
+
+// 夫妻队员信息
+message PBcoupleMember
+{
+	optional string	char_name		= 1;//玩家姓名
+	optional uint32	char_role		= 2;//职业  ROLES::ERole
+	optional uint32	char_gender		= 3;//性别
+	optional sint32	char_level 		= 4;//等级
+	optional sint32 battle_score	= 5;//玩家战力
+	optional sint32 char_camp		= 6;//玩家阵营
+	optional uint32 role_id			= 7;//role_id
+	optional PBRelationRoleType	role_type		= 8;	//身份
+	optional string head_icon		= 9;//头像
+	optional uint64 entity_id		= 10;//
+};
+
+// 组队报名夫妻消息
+message PBcoupleTeam
+{
+	repeated PBcoupleMember couple_member = 1;  // 队伍角色信息
+	optional uint32 externgwId			  = 2;	// gatewayid
+	optional uint32 camp		          = 3;	// 报名时的阵营id
+	optional uint64 couple_teamid 		  = 4;  // 夫妻队伍报名id
+	optional uint32	leader_id			  = 5;	// 队长ID
+};
+
+//每一层队伍信息
+message PBcoupleFloor
+{
+	optional sint32 		floor_index 		= 1; // 层次索引
+	repeated PBcoupleTeam	couple_team_list 	= 2; // 夫妻队伍列表
+};
+
+
+// 夫妻副本对战信息
+message PBcouplePVPBattle
+{
+	optional uint64			battle_id			= 1; // 对战id
+	optional sint32			floor_index 		= 2; // 层次索引
+	repeated PBcoupleTeam	couple_team			= 3; // A队伍信息
+	//optional PBcoupleTeam	couple_teamB		= 4; // B队伍信息
+	optional uint64			win_couple_id		= 5;//[default = 0]; // 
+	optional uint32			dungeon_gateway		= 6; // 战场创建的区服
+	optional uint32			dungeon_camp		= 7; // 战场创建的区服
+	optional uint64			dungeon_entity_id	= 8; // 副本实体ID
+	optional uint32			dungeon_map_id		= 9; // 地图ID
+	optional string			dungeon_sheet		= 10;// 副本sheet ID
+};
+
+enum ECouplePVPDungeonType
+{
+	ECPVPDungeon_Rise			= 1;	// 晋级
+	ECPVPDungeon_Brutality		= 2;	// 终极PK
+
+	ECPVPDungeon_End			= 10;	// 结束,方便后续处理增加的
+};
+
+
+// 战斗结果
+enum ECouplePVPBattleRst
+{
+	ECPVPbattle_NotFind			= -1;	// 未找到
+	ECPVPbattle_NotCalc			= 0;	// 未结束
+	ECPVPbattle_Win				= 1;	// 胜利
+	ECPVPbattle_Lose			= 2;	// 失败
+};
+
+
+// 夫妻跨服PVP
+message PBcouplePVPRound
+{
+	repeated PBcoupleFloor 		couple_floor = 1; // 队伍层次信息
+	repeated PBcouplePVPBattle	battle_info  = 2; // 当前对战信息
+	optional sint32				round_index		= 3;//[default = -1];
+	optional ECouplePVPDungeonType	round_type	= 4;
+};
+
+enum EPBCouplePVPStatus
+{
+	ECouplePVP_NULL			= -1; // 已结束或未开始
+	ECouplePVP_Min			= 0; // 状态最小值
+	ECouplePVP_Signin		= 0;
+	ECouplePVP_RoundBegin	= 1;
+	ECouplePVP_BattleBegin	= 2;
+	ECouplePVP_BattleEnd	= 3;
+	ECouplePVP_RoundEnd		= 4;
+	ECouplePVP_Max			= 4; // 状态最大值
+};
+
+// 时间结构
+message PBCouplePVPMatchTime
+{
+	optional uint32		signin_begin			= 1; // 报名开始时间
+	repeated PBCouplePVPRoundTime	round_times	= 2;
+};
+
+message PBCouplePVPRoundTime
+{
+	optional sint32		round_index			= 1;//[default = -1];
+	optional uint32		round_begin			= 2;
+	optional uint32		battle_begin		= 3;
+	optional uint32		battle_end			= 4;
+	optional uint32		round_end			= 5;
+};
+
+// 夫妻跨服PVP数据
+message PBcouplePVPRace
+{
+	optional sint32				race_id			= 1; // 时间构成eg:2016113008
+	optional EPBCouplePVPStatus	cur_status		= 2;//[default=ECouplePVP_NULL]; // 当前活动状态
+	optional sint32				cur_round_index	= 3;//[default=-1]; // 当前轮次
+	optional PBcouplePVPRound	cur_coupleinfo	= 4; // 当前夫妻跨服PVP信息
+	repeated PBcouplePVPRound	his_coupleinfo	= 5; // 历史夫妻跨服PVP信息 每打一轮记录一下
+	optional PBCouplePVPMatchTime	match_time	= 6; // 时间
+	optional sint32				max_floor		= 7; // 最多打到N层
+};
+
+// 奖励道具列表
+message PBCoupleAward
+{
+	optional string			award_sheet_id	= 1; // 奖励道具id
+	optional sint32 		award_num		= 2; // 奖励数量
+	optional sint32			role_type		= 3;//[default=0]; // PBRelationRoleType
+};
+
+
+// 每一层奖励配置
+message PBCoupleFloorAward
+{
+	optional sint32				floor_index		 = 1;  // 层数
+	repeated PBCoupleAward 		floor_award_list = 2;  // 每层奖励列表
+	optional string				mail_id			 = 3;  // 邮件ID
+};
+
+//////////////////////////////// 服务器进程间   //////////////////////////////////////////
+message PBMsgCPVPSigninRequest
+{
+	optional PBcoupleTeam		team_info	= 1;
+};
+
+message PBMsgCPVPSigninResponse
+{
+	optional sint32				ret_code	= 1;
+	optional PBcoupleTeam		team_info	= 2;
+};
+
+message PBMsgCPVPInfoSync
+{
+	optional PBcouplePVPRace	race_info	= 1;
+};
+
+message PBMsgCPVPCreateDungeonRequest
+{
+	optional PBcouplePVPBattle	dungeon				= 1;
+};
+
+message PBMsgCPVPCreateDungeonResponse
+{
+	optional PBcouplePVPBattle	dungeon				= 1;
+};
+
+message PBMsgCoupleDungeonEndReport
+{
+	optional PBcouplePVPBattle	dungeon				= 1;
+	optional uint64				win_couple_id		= 2;
+};
+
+message PBMsgCoupleForceEndNotice
+{
+	optional PBcouplePVPBattle	dungeon				= 1;
+}
+
+message PBMsgCoupleRewardNotice
+{
+	optional PBCoupleFloorAward	award				= 1;
+	optional PBcoupleTeam		couple				= 2;
+}
+
+message PBMsgCPVPCancelSigninRequest
+{
+	optional PBcoupleTeam		team_info	= 1;
+};
+
+message PBMsgCPVPCancelSigninResponse
+{
+	optional sint32				ret_code	= 1;
+	optional PBcoupleTeam		team_info	= 2;
+};
+
+//////////////////////////////// 服务器进程间   //////////////////////////////////////////
+
+
+//PB消息/////////////////////////////////////////////////////////////////////////
+//活动界面信息消息ui
+//MSG_Couplepvp_ActInfo_Request
+message PBcouplePVPActInfoRequest
+{
+
+};
+
+//MSG_Couplepvp_ActInfo_Response
+message PBcouplePVPActInfoResponse
+{
+	optional sint32			ret_code		= 1;
+	repeated PBcoupleFloor  couple_floor 	= 2; // 队伍层次信息
+	optional sint32 		cur_apply_num 	= 3; // 当前已报名人数
+	optional sint32 		cur_status  	= 4; // 当前活动状态
+	optional sint32 		on_floor_index	= 5;//[default=-1]; // 自己队伍所在层数
+	optional PBcoupleTeam 	my_coupleTeam	= 6; // 自己的夫妻队伍信息
+	optional sint32 		remain_time 	= 7; // 剩余时间
+	optional sint32			max_floor		= 8; // 最大层数
+	optional sint32			battlt_rst		= 9; // 战斗结果
+	optional sint32			cur_round_index	= 10; // 当前轮次
+	
+};
+
+
+//报名取消报名
+//MSG_Couplepvp_Apply_Request
+message PBcouplePVPApplyRequest
+{
+	optional sint32 apply_status			 = 1; // 报名还是取消报名 （1报名 0取消报名）
+};
+
+//进入副本推送
+//MSG_Couplepvp_EnterDungeon_Notice
+message PBcouplePVPEnterDungeonNotice
+{
+	optional sint32 	floor_index 	= 1; // 层次索引
+};
+
+
+//确定进入副本消息
+//MSG_Couplepvp_EnterDungeon_Request
+message PBcouplePVPEnterDungeonRequest
+{
+
+};
+
+//副本中战斗积分ui
+//MSG_Couplepvp_BattleInfo_Sync
+message PBcouplePVPBattleInfoSync
+{
+	// 各队的当前分数
+	optional sint32					buff_camp	= 1; // 当前虎符buff所在阵营
+	repeated PBCoupleDungeonInfo	member_info	= 2;
+};
+
+message PBCoupleDungeonInfo
+{
+	optional PBcoupleTeam	couple_team		= 1; // 队伍角色信息
+	optional sint32 		score 			= 2; // 分数
+	optional sint32			dungeon_camp 	= 3; // 副本中的阵营
+}
+
+
+//副本结束ui
+//MSG_Couplepvp_BattleInfo_Result
+message PBcouplePVPBattleInfoResult
+{
+	optional PBcouplePVPBattle battle_info = 1; // 战斗信息
+	optional sint32			   winer_camp  = 2; // 胜利者的阵营
+	optional uint64			   husband_full_id = 3;	// 丈夫实体id
+	optional uint64			   wife_full_id	   = 4;	// 妻子实体id
+
+};

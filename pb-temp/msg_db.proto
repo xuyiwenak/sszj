@@ -1,0 +1,86 @@
+
+option optimize_for = SPEED;
+
+enum eExecType
+{
+	EXEC_NONE   = 0;
+	EXEC_QUERY  = 1;
+	EXEC_SAVE = 2;  
+	EXEC_SQL    = 3;
+	EXEC_CREATE_ROLE = 4;
+	EXEC_UPDATE = 5;
+	EXEC_CONSIGN_INSERT = 6;
+	EXEC_CONSIGN_MODIFY = 7;
+	EXEC_CONSIGN_DEL = 8;
+	EXEC_CONSIGN_HOT_SQL = 9;
+};
+
+message PBDBSql
+{
+	optional string		sql		= 1;
+};
+
+message PBDBCreateRole
+{
+	optional int64		char_id = 1;
+	optional int64		player_id = 2;
+	optional int32		role_id	= 3;		// erating role_id
+	optional int32		role	 = 4;		// 职业....
+	optional string		role_name = 5;
+	optional uint32		create_time = 6;
+	optional int32		op_state = 7;
+	optional int32		camp_id	= 8;
+	optional int32		gateway_id = 9;
+	optional int32		user_id = 10;
+};
+
+message PBDBResult
+{
+	optional int32		row_count = 1;
+	optional int32		low_count = 2;
+	repeated string		value		= 3;
+	repeated int32		value_length = 4;
+};
+
+enum PBConsignOper
+{
+	CONSIGN_NONE			= 0;			// 出售
+	CONSIGN_SALE			= 1;			// 购买
+	CONSIGN_REVOKE			= 2;		// 撤销
+};
+
+message PBConsignModify
+{
+	optional uint64 consign_id = 1;
+	optional int32  consign_flag = 2;
+	optional int32  buy_role_id  = 3;
+	optional int32  buy_owner_id = 4;
+}
+
+message PBConsignDel
+{
+	optional uint64 consign_id = 1;
+}
+
+message PBExecSql
+{
+	optional int32	exec_type = 1;	// 0 select , 1 update
+	optional string sql = 2;
+}
+
+enum PBConsignHotOper
+{
+	CONSIGNHOT_INSERT			= 1;			// 购买
+	CONSIGNHOT_UPDATE			= 2;		// 撤销
+};
+
+message PBConsignHotItemSql
+{
+	optional sint32	opt_type	= 1;	// 1 insert 2 update
+	optional sint32	sheet_id	= 2;
+	optional sint32	buy_times	= 3;
+	optional string sheet_name  = 4;
+};
+
+
+

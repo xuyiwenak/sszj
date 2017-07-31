@@ -1,0 +1,96 @@
+option optimize_for = SPEED;
+
+import "msg_base.proto";
+import "msg_item.proto";
+
+//翅膀培养信息请求
+message PBMsgWingTrainInfoRequest
+{
+	optional PBMsgSlot   slot_info = 1;
+};
+//翅膀培养信息回复
+message PBMsgWingTrainInfoResponse
+{
+	optional sint32        ret_code    = 1; // 返回值
+	optional PBWingJieInfo wing_info   = 2; // 翅膀培养信息
+	optional PBMsgSlot     slot_info   = 3;
+};
+//翅膀培养请求
+message PBMsgWingTrainRequest
+{
+	optional PBMsgSlot   slot_info = 1;
+};
+//翅膀培养回复
+message PBMsgWingTrainResponse
+{
+	optional sint32        ret_code    = 1; // 返回值
+	optional PBWingJieInfo wing_info   = 2; // 翅膀培养信息
+	optional PBMsgSlot     slot_info   = 3;
+};
+//翅膀升阶请求
+message PBMsgWingUpdateJieRequest
+{
+	optional PBMsgSlot   slot_info = 1;
+};
+//翅膀升阶回复
+message PBMsgWingUpdateJieResponse
+{
+	optional sint32        ret_code    = 1; // 返回值
+	optional PBWingJieInfo wing_info   = 2; // 翅膀培养信息
+	optional PBMsgSlot     slot_info   = 3;
+};
+
+// 查看翅膀某阶某星的属性值请求
+message PBMsgWingProRequest
+{
+	optional sint32      wing_jie  = 1; // 翅膀阶
+	optional PBMsgSlot   slot_info = 2;
+};
+
+// 查看翅膀某阶某星的属性值回复
+message PBMsgWingProResponse
+{
+	optional sint32       ret_code      = 1;
+	optional sint32       wing_jie      = 2; // 翅膀阶
+	optional PBMsgSlot    slot_info     = 3;
+	optional PBProperties wing_pro      = 4; // 属性
+	optional string       cur_shape     = 5; // 当前外形
+};
+
+message PBMsgWingSheetProRequest
+{
+	optional string      wing_sheet    = 1; // 翅膀sheet
+};
+
+message PBMsgWingSheetProResponse
+{
+	optional sint32       ret_code      = 1;
+	optional string       wing_sheet    = 2; // 翅膀sheet
+	optional PBProperties wing_pro      = 3; // 翅膀属性
+};
+
+message PBWingJieInfo
+{
+	optional sint32 cur_jie             = 1; // 当前阶
+	optional sint32 cur_star            = 2; // 当前点
+	optional sint32 max_star            = 3; // 最大点
+	optional sint32 max_jie             = 4; // 最大阶
+	optional string cost_item           = 5; // 消耗道具
+	optional sint32 cost_num            = 6; // 消耗道具数量
+	optional PBProperties cur_pro       = 7; // 当前属性属性
+	optional PBProperties next_pro      = 8; // 下阶段属性
+	optional string cur_jie_shape       = 9; // 当前阶外形
+	optional sint32 diff_star           = 10;// 变化的星
+};
+
+message PBWingTrainInfoNotice
+{
+	optional sint32   cur_jie    = 1;
+	optional sint32   cur_star   = 2;
+};
+
+message PBDBWingTrain
+{
+	optional sint32 cur_star			= 1; // 当前点
+	optional sint32 cur_jie				= 2;//[default=1]; // 当前阶
+};

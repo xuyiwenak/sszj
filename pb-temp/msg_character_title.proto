@@ -1,0 +1,36 @@
+import "msg_base.proto";
+
+enum EUseTitleType
+{
+	EUseType_Apperance = 1;    //使用外形
+	EUseType_Buff      = 2;    //使用属性
+	EUnuseType_Apperance = 3;  //不使用外形
+	EUnuseType_Buff    = 4;    //不使用属性
+}
+
+message PBMsgChangeTitleRequest
+{
+	optional uint32 title_sheet = 1;          //使用的称号
+	optional EUseTitleType  type = 2;         //使用的类型
+}
+
+
+message PBMsgChangeTitleResponse
+{
+	optional sint32 ret_code = 1;
+}
+
+message PBCharacterTitleInfo
+{
+	optional uint32 title_sheet = 1;         //使用的称号
+	optional bool is_active = 2;             //是否激活
+	optional bool is_use_apperance = 3;      //是否使用外观
+	optional bool is_use_buff = 4;           //是否使用属性
+	optional uint32 remaining_time = 5;      //有效时间
+	optional bool is_first_active  = 6;      //是否第一次激活
+}
+
+message PBMsgTitleInfoNotice
+{
+	repeated PBCharacterTitleInfo info = 1;
+}

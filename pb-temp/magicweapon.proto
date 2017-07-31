@@ -1,0 +1,83 @@
+// 以最快速度序列/反序列
+option optimize_for = SPEED;				
+
+import "db_base.proto";
+
+
+message PBMagicWeaponDebris
+{
+	optional uint32	sheet_id			= 	1;//物品的sheetid;
+	optional sint32	quantity			=	2;//数目;
+	optional bool 	bind				=	3;//是否绑定;
+};
+
+message PBMagicWeaponDebrisList//法宝碎片
+{
+	repeated PBMagicWeaponDebris	debris	=	1;//法宝碎片;
+};
+
+message PBMagicWeaponSummonInfo
+{
+	repeated PBMagicWeaponSummon summon_info	= 1;//各种召唤的信息;
+};
+
+message PBMagicWeaponSummon
+{
+	optional	sint32	free_type		=	1;//免费类型
+	optional	uint32	free_start_time	=	2;//免费开始时间;
+	optional 	sint32	free_times		=	3;//免费次数
+};
+
+message PBMagicWeaponBookInfo
+{
+	repeated string owned_sheet_name				= 1; //拥有仙宠
+	repeated uint32 activate_magicweapon_group_id			= 2; //已近激活的仙宠id
+};
+
+message PBMagicWeaponHouse
+{
+	optional uint64				active_id 				= 1;
+	optional string 			infos					= 2;//连线的记录，先简单这样
+	optional PBMagicWeaponList	magicweapon_list		= 3;
+	optional uint64				owner_id				= 4;//所属玩家id;
+	optional PBMagicWeaponDebrisList debris_info		= 5;//仙宠碎片信息;
+	optional PBMagicWeaponSummonInfo summon_info		= 6;//仙宠召唤信息;
+	optional PBMagicWeaponBookInfo	book_info			= 7;//拥有过的仙宠信息
+	optional uint64				vice_id 				= 8;//二奶法宝
+	optional sint64				com_skill_cd 			= 9;//法宝公共CD
+};
+
+message PBMagicWeaponList
+{
+	repeated PBDBMagicWeapon	magicweapon				= 1;
+};
+
+message PBDBMagicWeaponProperty
+{
+	optional  sint32 constitution			= 1;  //体质
+	optional  sint32 energy					= 2;  //精力
+	optional  sint32 strength				= 3;  //力量
+	optional  sint32 intelligence			= 4;  //智力
+	optional  sint32 dexterity				= 5;  //敏捷
+};
+
+message PBDBMagicWeapon
+{
+    optional uint64 			magicweapon_id	    	= 1; 	
+	optional string 			sheet_id				= 2;
+    optional uint32 			level	    			= 3;
+	optional int64  			exp 					= 4;
+	optional string 			main_skill				= 5;
+	optional string 			vice_skill				= 6;
+	optional uint32 			delete_flag  			= 7;
+	optional uint32 			state_flag  			= 8;
+	optional string 			main_skill_flushed		= 9;
+	optional string 			vice_skill_flushed		= 10;
+	optional string 			third_skill				= 11;
+	optional string 			forth_skill				= 12;
+	optional string 			third_skill_flushed		= 13;
+	optional string 			forth_skill_flushed		= 14;
+	optional PBDBMagicWeaponProperty	extra_property	= 15;//仙宠的额外属性;
+	optional PBDBMagicWeaponProperty	foster_property	= 16;//培养出的属性;
+	optional PBDBMagicWeaponProperty	grow_property	= 17;//资质属性;
+}

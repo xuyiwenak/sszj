@@ -1,0 +1,52 @@
+import "msg_base.proto";
+
+enum PBOfflineExpType
+{
+	EOFF_EXP_Normal  = 0;
+	EOFF_EXP_Consume = 1;
+};
+
+//领取离线经验响应
+message PBMsgOffExpGetRequest
+{
+	optional  PBOfflineExpType type = 1; //获取经验类型 
+};
+
+//领取离线经验响应
+message PBMsgOffExpResponse
+{
+	optional	sint32 ret_code	= 1;
+	optional	sint32 exp	= 2;	// 获得的经验
+};
+
+message PBMsgOffExpNotice
+{
+	optional	bool	has_get = 1;	//是否已领取  false 未领取 true 已领取
+	repeated	PBMsgOfflineExpData data_list = 2;	//离线经验数据
+	optional    string sheet_name = 3; // 道具sheet
+	optional    sint32 sheet_count = 4;// 道具数量
+};
+
+message PBMsgOfflineExpData
+{
+	optional sint32 offlineexp_id	= 1;	//离线经验活动ID
+	optional sint32 exp_value		= 2;	//获得的离线经验值
+	optional sint32 world_add		= 3;	//世界等级加成
+	optional sint32 vip_add			= 4;	//vip加成
+	optional sint32	times			= 5;	//参加次数
+};
+
+enum EOfflineExpId
+{
+	EOFF_EXP_UNKNOW		= 0;	//未知
+	EOFF_EXP_FUMOGU		= 1;	//伏魔谷
+	EOFF_EXP_CHIHUNMJ	= 2;	//赤魂梦境
+	EOFF_EXP_SMALL_SANHUAN	= 3;	//三环(小三环)
+	EOFF_EXP_WILD		= 4;	//野外
+	EOFF_EXP_CITAN		= 5;	//刺探
+	EOFF_EXP_BPBOSS		= 6;	//帮派boss
+	EOFF_EXP_BPMOWANG	= 7;	//帮派魔王
+	EOFF_EXP_CLIMBTOWER	= 8;	//爬塔
+	EOFF_EXP_BIG_SANHUAN	= 9;	//三环(大山环)
+	EOFF_EXP_TOTTAL = 9;//总数量
+};

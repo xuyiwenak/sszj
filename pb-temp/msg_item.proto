@@ -1,0 +1,979 @@
+import "msg_base.proto";
+import "msg_pet.proto";
+import "msg_common.proto";
+
+//装备附魔
+enum PBAttachPropClass
+{
+	enPropClass_Normal      = 1;   //普通
+	enPropClass_Practical   = 2;   //实用
+	enPropClass_Delicate    = 3;   //精致
+	enPropClass_Best        = 4;   //无暇
+	enPropClass_Perfect     = 5;   //完美
+}
+
+// 婚姻准备类型
+enum PBItemDescType
+{
+	enDescUnkown			= 0; // 无
+	enDescMarriage 			= 1; // 婚姻
+	enDescApron				= 2; //肚兜
+	enDescUndershorts			= 3; //裤衩
+}
+
+// 基础数据结构
+// 物品数量
+message PBMsgItemQuantity
+{
+	optional uint32		sheet_id	= 1; // 物品模板ID
+	optional sint32		count		= 2; // 数量  数量都是正整数
+}
+
+// 物品位置
+message PBMsgSlot
+{
+	optional int32		inv_type	= 1; // 包裹类型
+	optional int32		slot		= 2; // 位置
+}
+
+message PBMsgSlotEX
+{
+	optional uint64		char_id		= 1; // 玩家ID
+	optional int32		inv_type	= 2; // 包裹类型
+	optional int32		slot		= 3; // 位置
+}
+
+// 包裹某个物品的数量
+message PBMsgSlotQuantity
+{
+	optional int32		inv_type	= 1; // 包裹类型
+	optional int32		slot		= 2; // 物品位置
+	optional int32		count		= 3; // 数量
+}
+
+message PBItemPet
+{
+	optional uint32	sheet_id			= 	1; // 宠物的sheetid;
+	optional string	name				=	2; // 名字;
+	optional uint32 level				=	3; // 等级;
+	repeated uint32 rand_base			=	4; // 随机一级属性;
+	repeated uint32 rand_grow_base		=	5; // 随机资质属性;
+	repeated PBPetSkillList skill_list	=	6; // 三种技能的PB;
+	optional sint64 exp					=	7; // 经验;
+	optional uint32 life				=	8; // 寿命;
+	optional sint32 rand_grow_battle	=	9; // 二级属性成长率;
+};
+
+// 定义物品信息
+message PBMsgInvSlot
+{
+	optional int32 			   slot 				= 1;	// 索引
+	optional int32			   bind				    = 2;	// 是否绑定
+	optional uint32 		   sheet_id 			= 3;	// 模板ID
+	optional int32 			   quantity 			= 4;	// 堆叠数量
+	optional int32			   enchant_lv 			= 5;	// 注灵等级
+	optional int32			   bat_score			= 6;	// 本职业的战斗评分
+	optional int32			   sort_weight			= 7;	// 排序权重
+	optional int32			   prop_up_total		= 8;	// 属性总加成
+	optional uint32			   expired_time			= 9;	// 过期时间
+	optional int32			   price				= 10;	// 出售价格
+	optional int32			   rune_exp				= 12;	// 符文经验
+	repeated PBMsgVitBall	   ball_info			= 15;	// 物品注灵信息
+	optional PBProperties	   rune_stat_pro		= 16;	// 符文静态属性
+	optional PBProperties	   rune_add_pro			= 17;	// 符文附加属性
+	optional PBProperties	   stat_pro				= 18;	// 静态属性
+	optional PBProperties	   add_pro				= 19;	// 附加属性
+	optional ELastEnchantType  LastEnchantType		= 20;	// 上次附加属性的操作类型
+	optional sint32			   StaticProStar		= 21;	// 基础属性星级
+	optional PBProperties	   rune_rand_pro		= 22;	// 符文随机属性
+	optional PBProperties		endurance_pro		= 23;	//耐久属性
+	optional PBPetInfo			pet					= 24;// 宠物
+	optional uint32				can_use_time		= 25;// 当前时间大于can_use_time秒时才可以使用
+	optional uint32				color_style_id		= 26; // 装备染色ID 对外形生效
+	optional uint32				dye_style_id		= 27; // 染色Id，对外形暂时不生效 替换后变为color_style_id 
+	optional PBDynStr			dynamic_desc		= 28; // 动态描述
+	optional PBEquipRuneList	equip_rune_list		= 29;	//装备符文列表
+	optional PBTreasureMapInfo	treasuremap_info    = 30;  // 藏宝图信息
+	optional PBProperties		potential_pro		= 31; //潜能属性
+	optional int32				vitaValue			= 32;// 注灵值;
+	optional bool               is_style_use        = 33;//[default=false]; // 外形是否被其他使用
+	optional PBProperties		attach_pro		= 34; //附魔属性
+	optional PBProperties       wing_train_pro      = 35; // 翅膀培养属性
+	optional bool				fuzhi_isused		= 36; // 彩票是否使用过
+	optional string				fuzhijiujiu			= 37; // 彩票标示
+	optional int32				soulStarMaterialNum	= 38; // 星魂材料数量;
+}
+
+// 藏宝图信息
+message PBTreasureMapInfo
+{
+	optional uint32			map_id			  = 1;  // 地图ID;
+	optional sint32		    coordinate_x	  = 2;	// 宝藏x轴坐标;
+	optional sint32			coordinate_y	  = 3;	// 宝藏y轴坐标;
+	optional string			map_name		  = 4;  // 地图名称 
+	optional sint32         level			  = 5;  // 等级
+	optional uint32			dataset_sheet_id  = 6;  // 所属数据库的sheetID;	
+	optional sint32			treasuremap_type  = 7;  // 藏宝图类型;
+	optional sint32			camp_id			  = 8;  // 阵营;
+};
+
+// 物品属性定义
+message PBMsgProp
+{
+	optional uint64	prop_id			=	1; // 属性ID
+	optional int32	value			=	2; // 增加值
+	optional int32	max_value		= 	3; // 最大值
+	optional int32	is_fixed		=	4; // 是否是固定值  1 - 固定值 2 - 相对值（万分比）
+}
+
+message PBProperty
+{
+	optional int32	funcMode		=	1;// 属性生效方式 Pro_Type::TPro_Func
+	optional int32	funcType		=	2;// 属性类型 Pro_Type::EPropertyAttr
+	optional int32	value			=	3;// 属性值
+	optional int32	quality			=	4;// 星级评价
+	optional sint32 prop_class      = 5;  //属性品级
+	optional sint32       min_value   = 6; // 属性最小值
+	optional sint32       max_value   = 7; // 属性最大值
+};
+
+message PBProperties
+{
+	repeated PBProperty	properties	= 1;
+};
+
+message PBRuneItemPro
+{
+	optional uint32 cur_exp			=	1;	// 符文当前经验
+};
+
+// 物品的详细属性
+message PBMsgItem
+{
+	optional uint32 		inv_id			=	1; // 包裹ID
+	optional PBMsgInvSlot	slot_info		= 	2; // 物品基本信息
+	optional uint64			char_id			=	5; // 玩家ID
+}
+
+// 注灵球信息
+message PBMsgVitBall
+{
+	optional int32		slot		= 	1; // 注灵等级
+	optional int32		state		=	2; // 状态
+	optional int32		value		=	3; // 加成数值
+	optional int32		quantity	=	4; // 品级
+	optional int32		cost_lq		=	5; // 消耗灵气
+	optional int32		cost_my		= 	6; // 消耗的铜钱
+	optional int32		sus_ration	= 	7; // 成功率
+	optional int32		first_value =	8; // 首次注灵的加成值
+}
+
+// 注灵信息
+message PBMsgVitaInfo
+{
+	optional PBMsgSlot		item_slot		= 1; // 物品位置
+	repeated PBMsgVitBall	ball_info		= 2; // 物品注灵信息
+	//repeated PBMsgProp		stat_prop		= 3; // 基础属性
+	optional int32			score			= 4; // 战斗评分
+	optional PBProperties	static_prop		= 5; // 基础属性
+}
+
+enum ELastEnchantType
+{
+	Enchant_Null			= 0;
+	Enchant_XiLian			= 1;
+	Enchant_XiLing			= 2;
+	Enchant_ChongZhu		= 3;
+	Enchant_JingLian		= 4;
+};
+
+// 洗炼信息
+message PBMsgEchInfo
+{
+	optional PBMsgSlot		item_slot		= 1; // 物品位置
+	optional int32			cost_lq			= 2; // 消耗灵气
+	optional int32			cost_my			= 3; // 消耗铜钱
+	optional int32			score_cur		= 4; // 当前评分
+	optional int32			score_ech		= 5; // 洗炼属性评分	
+	optional PBProperties	pro_cur			= 6; // 当前附加属性
+	optional PBProperties	pro_ech			= 7; // 洗炼出的属性
+	optional ELastEnchantType last_type		= 8; // 上次对属性操作的类型
+}
+
+// 鉴定信息
+message PBMsgEvaInfo
+{
+	optional PBMsgSlot		item_slot		= 1; // 物品位置
+	//optional int32			cost_lq			= 2; // 消耗灵气
+	optional int32			cost_my			= 3; // 消耗铜钱
+	optional int32			score_cur		= 4; // 当前评分
+	optional int32			score_ech		= 5; // 洗炼属性评分	
+	//repeated PBMsgProp		pro_cur			= 6; // 当前基础属性
+	//repeated PBMsgProp		pro_ech			= 7; // 鉴定基础属性
+	optional PBProperties	sta_pro_cur		= 8; // 当前基础属性
+	optional PBProperties	sta_pro_ech		= 9; // 鉴定基础属性
+	optional uint32			pro_ech_star	= 10; // 鉴定基础属性的星级
+	optional uint32			pro_cur_star	= 11; // 当前基础属性的星级
+	optional string			item_sheet		= 12; // 鉴定卷sheet
+	optional int32			item_count		= 13; // 鉴定卷数量
+}
+// 炼化结果信息
+message PBMsgItemDisRet
+{
+	optional int32			slot			= 1; // 物品Slot
+	optional int32			err_code		= 2; // 错误码
+}
+
+// 货币信息
+message PBMoneyInfo
+{
+	optional	sint32		money_type	= 1; // 类型
+	optional	sint32		count		= 2; // 数量
+}
+
+// 包裹格子信息
+message PBMsgInvGrid
+{
+	optional	int32		total		= 1; // 总个数
+	optional	int32		open		= 2; // 开放个数
+}
+///////////////////////////////////////////////////////Server Inform///////////////////////////////////////////////////////
+// Init&Flush
+message PBMsgInvInfoInform
+{
+	repeated PBMsgInvSlot bag 			= 1;		// 包裹
+	repeated PBMsgInvSlot equip 		= 2;		// 装备
+	optional PBMsgInvGrid bag_gird		= 3;		// 包裹格子
+	repeated PBMsgInvSlot rune_bag		= 4;		// 符文包裹
+	optional PBMsgInvGrid rune_grid		= 5;		// 符文包裹格子
+	repeated PBMsgInvSlot soul_star_bag= 6;		// 星魂包裹
+	optional PBMsgInvGrid soul_star_grid		= 7;		// 星魂包裹格子
+	optional uint32		  time_now		= 8;
+}
+message PBMsgRepOne
+{
+	repeated PBMsgInvSlot bag 			= 1;		// 包裹
+	optional PBMsgInvGrid bag_gird		= 2;		// 包裹格子
+	optional int32 type 				= 3;		// 包裹类别
+	//optional PBItem		 repository_item= 4;		// 背包物品信息
+	optional PBRepositoryItem	repository_item= 4;		// 背包物品信息
+};
+
+message PBMsgRepAll
+{
+	repeated PBMsgRepOne rep_one = 1;
+};
+
+// Add
+message PBMsgItemAddInform
+{
+	optional int32				inv_type 	= 1;  	// 包裹
+	optional int32				op_type 	= 2;	// 操作类型
+	repeated PBMsgInvSlot 		item_list 	= 3;	// 物品数据
+	repeated PBMsgItemQuantity	delta_list	= 4; 	// 改变列表
+}
+// Remove
+message PBMsgItemRemoveInform
+{
+	optional int32				inv_type 	= 1;  	// 包裹
+	optional int32				op_type		= 2;	// 操作类型
+	repeated PBMsgInvSlot 		item_list	= 3;	// 物品数据
+	repeated PBMsgItemQuantity	delta_list	= 4; 	// 改变列表
+}
+// move
+message PBMsgItemMoveInform
+{
+	optional int32			src_inv_type 	= 1;	// 源包裹
+	optional int32			dst_inv_type 	= 2;	// 目的包裹
+	optional PBMsgInvSlot	src_item		= 3;	// 源物品数据
+	optional PBMsgInvSlot	dsc_item		= 4;	// 目的物品数据
+}
+// Slot更新
+message PBMsgSlotInform
+{
+	optional int32			oper_code		= 1;	// 操作码
+	optional int32			inv_type		= 2;	// 包裹
+	optional PBMsgInvSlot	slot_info		= 3;	// 更新的Slot信息
+}
+// 货币更新  //废弃 改由 PBMsgUpdateCharMoneyNotice
+//message PBMsgMoneyInform
+//{
+//	optional	sint32			op_type		= 1;
+//	repeated	PBMoneyInfo		money_list	= 2; // 当前货币信息
+//	repeated	PBMoneyInfo		delta		= 3; // 货币变化列表
+//}
+///////////////////////////////////////////////////////Server Response///////////////////////////////////////////////////////
+// Modify&Flush
+message PBMsgItemInfoResponse
+{
+	optional int32			seq_id			= 1; // 请求ID
+	repeated PBMsgItem		item_list		= 2; // 物品信息
+	optional sint32			ret_code		= 3;//[default=1];
+}
+
+// 炼化结果
+message PBMsgItemDisResponse
+{
+	optional int32			ret_code		= 1; // 操作结果码
+	optional int32			gain_lq			= 2; // 获得的灵气
+	repeated PBMsgItemDisRet ret_list		= 3; // 结果集
+}
+
+// 注灵信息
+message PBMsgVitInfoResponse
+{
+	optional int32			ret_code		= 1; // 请求结果
+	optional PBMsgVitaInfo	vita_info		= 2; // 注灵信息
+}
+
+// 注灵结果
+message PBMsgVitResponse
+{
+	optional int32			ret_code		= 1; // 注灵结果码
+	optional int32			vit_slot		= 2; // 注灵孔位
+	optional int32			ration_hit		= 3; // 是否成功
+	optional PBMsgVitaInfo	vita_info		= 4; // 操作后的信息
+}
+
+// 洗炼信息
+message PBMsgEchInfoResponse
+{
+	optional int32			ret_code		= 1; // 结果码
+	optional PBMsgEchInfo 	ech_info		= 2; // 洗炼信息
+}
+
+// 洗炼结果
+message PBMsgEchResponse
+{
+	optional int32			ret_code		= 1; // 结果
+	optional int32			oper			= 2; // 操作 0-洗炼 1-替换
+	optional PBMsgEchInfo 	ech_info		= 3; // 洗炼信息
+}
+// 鉴定信息
+message PBMsgEvaInfoResponse
+{
+	optional int32			ret_code		= 1;
+	optional PBMsgEvaInfo	eva_info		= 2;
+}
+
+message PBMsgEvaResponse
+{
+	optional int32			ret_code		= 1;
+	optional int32			oper			= 2;
+	optional PBMsgEvaInfo	eva_info		= 3; // 鉴定信息
+}
+
+message PBMsgCombineResponse
+{
+	optional int32 			ret_code 	= 1;	// 结果码
+	optional PBMsgInvSlot	slot_info	= 2;  // 合成的装备数据
+	optional int32			combine_count	= 3;
+}
+
+// 继承结果
+message PBMsgLegacyResponse
+{
+	optional int32		ret_code = 1; // 结果码
+	optional PBMsgItem  old_item = 2; // 旧物品
+	optional PBMsgItem	new_item = 3; // 新物品
+}
+
+// 锻造结果
+message PBMsgEchOneResponse
+{
+	optional int32			ret_code = 1; // 结果码
+	optional int32			ech_type = 2; // 锻造类型
+	optional PBMsgEchInfo	ech_info = 3; // 装备的洗炼信息
+}
+
+// 合成道具结果
+message PBMsgMatComResponse
+{
+	optional int32			ret_code = 1; // 结果码
+	optional PBMsgInvSlot	slot_info = 2; // 合成道具的数据
+}
+
+// 扩展包裹结果
+message PBMsgExternBagResponse
+{
+	optional int32			ret_code = 1;// 结果码
+	optional PBMsgInvGrid	bag_grid = 2;// 格子信息
+	optional int32			bag_type = 3;// 包裹类型
+}
+///////////////////////////////////////////////////////Client Request///////////////////////////////////////////////////////
+// 装备
+message PBMsgEquipRequest
+{
+	optional int32			slot			= 1;	// 包裹里的物品
+}
+// 卸载装备
+message PBMsgUnEquipRequest
+{
+	optional int32			slot			= 1;	// 装备的物品
+}
+// 查询装备信息
+message PBMsgItemRequest
+{
+	optional int32			seq_id			= 1;	// 请求ID
+	repeated PBMsgSlot		slot_list		= 2;    // 要查询的物品位置
+	optional uint64			char_id			= 3;    // 角色ID 0 为玩家自己
+	optional uint32			gatewayid		= 4;	// 展示玩家的gatewayid
+}
+// 查询多名玩家装备信息
+message PBMsgItemRequestEX
+{
+	optional int32			seq_id			= 1;	// 请求ID
+	repeated PBMsgSlotEX	slot_list		= 2;    // 要查询的物品位置
+}
+// 卖物品
+message PBMsgSellRequest
+{
+	repeated PBMsgSlotQuantity	slot_list		= 1;	// 包裹物品数量列表
+}
+// 使用物品
+message PBMsgItemUseRequest
+{
+	optional int32			slot			= 1;	// 在包裹中位置
+	optional int32			count			= 2;	// 使用个数
+}
+
+// 使用物品
+message PBMsgItemUseExRequest
+{
+	optional int32			slot			= 1;	// 在包裹中位置
+	optional int32			count			= 2;	// 使用个数
+	optional string			use_param = 3; // 使用参数
+}
+
+// 炼化
+message PBMsgItemDisRequest
+{
+	repeated int32			slot_list		= 1;	// 要炼化的物品slot列表
+}
+// 注灵信息
+message PBMsgVitInfoRequest
+{
+	optional PBMsgSlot		slot			= 1;	// 物品位置
+}
+// 请求注灵
+message PBMsgVitRequest
+{
+	optional PBMsgSlot		item_slot		= 1;	// 物品位置
+	optional int32			vit_slot		= 2;	// 注灵的孔位
+}
+// 洗炼信息
+message PBMsgEchInfoRequest
+{
+	optional PBMsgSlot		slot			= 1;	// 物品位置
+}
+// 请求洗炼
+message PBMsgEchRequest
+{
+	optional PBMsgSlot		slot			= 1;	// 物品位置
+	optional int32			oper			= 2;	// 0-洗炼 1-替换
+}
+// 鉴定信息
+message PBMsgEvaInfoRequest
+{
+	optional PBMsgSlot		slot			= 1;	// 物品位置
+}
+// 请求鉴定
+message PBMsgEvaRequest
+{
+	optional PBMsgSlot		slot			= 1;	// 物品位置
+	optional int32			oper			= 2;	// 0-鉴定 1-替换
+}
+// 装备合成请求
+message PBMsgCombineRequest
+{
+	optional PBMsgSlot		designer_slot		= 1; // 使用的图纸
+	optional PBMsgSlot		legacy_slot			= 2; // 进阶的装备
+	optional int32          legacy_state        = 3; // 是否继承（神装）
+	optional bool			is_bind				= 4;//[default=true]; // 是否合成绑定物品
+	optional bool			is_cost				= 5;//[default=true]; // 是否消耗道具
+}
+// 装备继承请求
+message PBMsgLegacyRequest
+{
+	optional PBMsgSlot		old_item			= 1; // 旧物品
+	optional PBMsgSlot		new_item			= 2; // 新物品
+}
+// 装备锻造的请求
+message PBMsgEchOneRequest
+{
+	optional PBMsgSlot		item_slot = 1; // 物品的位置
+	optional int32			ech_type = 2; // 锻造类型
+}
+// 道具合成请求
+message PBMsgMatComRequest
+{
+	optional PBMsgSlot		designer_slot = 1; // 使用的图纸物品位置
+	optional bool			is_bind			= 2;
+	optional sint32			combine_count	= 3;
+}
+// 包裹扩展请求
+message PBMsgExternBagRequest
+{
+	optional int32			dest_slot = 1; // 目标格子（扩展到第几个）
+	optional int32			bag_type  = 2; // 背包类型
+}
+
+// 特殊使用物品逻辑
+message PBMsgItemUseSpecialRequest
+{
+	optional int32			slot			= 1;	// 在包裹中位置
+	optional int32			count			= 2;	// 使用个数
+	optional int32			logic_code		= 3;	// 使用特殊物品的逻辑码
+	optional int32			open_type		= 4;	// 开启类型 0 付费开启 非0 免费开启
+}
+
+// 查询黄金福袋的开启次数
+message PBMsgGoldenBagTimesRequest
+{
+	
+}
+
+// 返回黄金福袋的开启次数
+message PBMsgGoldenBagTimesResponse
+{
+	optional uint32			    times		= 1;	// 开启次数
+}
+
+// 返回黄金福袋的开启结果
+message PBMsgGoldenBagUseResponse
+{
+	optional bool			    result		= 1;	// 是否成功
+	optional uint32			    times		= 2;	// 开启次数
+	repeated PBMsgItemQuantity	item_list	= 3; 	// 掉落物品
+}
+
+// 角色改名称请求
+// MSG_CharNameChange_Request
+message PBMsgCharNameChangeRequest
+{
+	optional string			new_name		= 1;	// 角色新名称
+	optional int32			item_slot		= 2;	// 道具物品在包裹中位置
+}
+
+// 角色改名称回应
+// MSG_CharNameChange_Response
+message PBMsgCharNameChangeResponse
+{
+	optional sint32			result_code		= 1;	// 改名结果
+}
+
+// 装备合成信息请求
+message PBMsgCombineInfoRequest
+{
+	optional PBMsgSlot		designer_slot		= 1; // 使用的图纸
+	optional PBMsgSlot		legacy_slot			= 2; // 进阶的装备
+}
+ 
+// 装备合成信息反馈 
+message PBMsgCombineInfoResponse
+{
+	optional int32  ret_code  = 1; // 结果码
+	optional bool   canLegacy  = 2; // 是否可继承
+	optional int32  noLegacyMoney = 3; // 不继承的铜钱花费
+	optional int32  noLegacyYuanbao = 4; // 不继承的蓝钻花费
+	optional int32  legacyMoney  = 5; // 继承的铜钱花费
+	optional int32  legacyYuanbao  = 6; // 继承的蓝钻花费
+	optional int32  legacyItem  = 7; // 继承的并且勾选消耗道具
+	optional int32  legacyAndItemYuanbao  = 8; // 继承的并且勾选消耗道具蓝钻花费
+	optional string itemSheet  = 9;    // 消耗道具sheet
+}
+
+// 时装转换请求;
+message PBMsgFashionTransRequest
+{
+	optional PBMsgSlot mainSlot = 1;		// 主时装位置;
+	optional PBMsgSlot viceSlot = 2;		// 副时装位置;
+};
+
+// 时装转换回应;
+message PBMsgFashionTransResponse
+{
+	optional int32 ret_code		= 1;		// 转换结果码
+	optional PBMsgSlot itemSlot = 2;		// 转换后时装;
+}
+
+// 时装进阶请求;
+message PBMsgFashionAdvanceRequest
+{
+	optional PBMsgSlot mainSlot = 1;		// 主时装位置;
+	optional PBMsgSlot viceSlot = 2;		// 副时装位置;
+	optional bool           legacy_prop		= 3; // 继承属性
+};
+
+// 时装进阶回应;
+message PBMsgFashionAdvanceResponse
+{
+	optional int32 ret_code		= 1;			// 进阶结果码;
+	optional PBMsgSlot itemSlot = 2;			// 进阶后时装;
+}
+
+// 时装进阶扣费请求;
+message PBMsgFashionAdvanceCostRequest
+{
+	optional PBMsgSlot mainSlot = 1;			// 主时装位置;
+};
+
+// 时装进阶扣费回应;
+message PBMsgFashionAdvanceCostResponse
+{
+	optional int32 fa_cost = 1;					// 时装进阶所需铜钱;
+	optional int32 lagacy_ubyb_cost = 2; // 继承需要的蓝钻
+	optional int32 lagacy_ubm_cost = 3;  // 继承需要的铜钱
+	optional int32 ret_code					= 4; // 结果码
+};
+
+// 荣誉装续费请求;
+ message PBMsgItemReNewRequest
+ {
+	 optional PBMsgSlot itemSlot = 1;			// 荣誉装位置;
+	 optional int32 days = 2;					// 续费天数;
+ };
+
+ // 荣誉装续费响应;
+ message PBMsgItemReNewResponse
+ {
+	 optional int32 ret_code			= 1;		// 结果码;
+ };
+
+ // 藏宝图使用之后结果
+ message PBMsgExcuteTreasureMapNotice
+ {
+	optional uint32	 incident_sheet_id  = 1;
+	optional int32   ret_code			= 2;
+ };
+
+ // 藏宝图的次数是否已用完提示,
+ message PBMsgIsSearchTreasuryRequest
+ {
+    optional uint32 item_sheet_id		= 1; 
+ };
+
+ message PBMsgIsSearchTreasuryResponse
+ {
+	optional sint32 ret_code			= 1; 
+ };
+
+ //装备耐力修理
+ message PBMsgItemEnduranceRequest
+ {
+	 optional sint32	bag_type	= 1;	//背包类型(背包男还是装备栏)
+	 optional sint32	slot		= 2;	//槽位
+ };
+
+ //装备耐力修理响应
+ message PBMsgItemEnduranceResponse
+ {
+	 optional sint32 ret_code	= 1;	//结果码
+	 optional sint32 slot		= 2;	//槽位
+	 optional sint32 endurance	= 3;	//修复后的耐力值
+ }
+
+ //所有装备耐力修理
+ message PBMsgAllItemEnduranceRequest
+ {
+
+ };
+
+ //所有装备耐力修理响应
+ message PBMsgAllItemEnduranceResponse
+ {
+	 optional sint32 ret_code	= 1;	//结果码
+	 repeated PBMsgEnduranceItem endurance_item_list = 2;
+};
+
+ //装备耐久上限值回复请求
+ message PBMsgItemEnduranceMaxRequest
+ {
+	 optional sint32	bag_type	= 1;	// 背包类型
+	 optional sint32	equip_slot		= 2; //装备槽位
+	 optional sint32	sheet_id	= 3; //消耗道具ID
+	 optional sint32	consume_num	= 4; //消耗道具的数量	
+ };
+
+//装备耐久上限值回复响应
+message PBMsgItemEnduranceMaxResponse
+{
+	optional sint32 ret_code	= 1;
+	optional sint32 slot		= 2;		//槽位
+	optional sint32 cur_endurance	= 3;	//目前值
+	optional sint32 max_endurance	= 4;	//上限值
+	optional sint32 after_endurance = 5;	//修复后的耐久值
+};
+
+ //装备耐力信息通知
+ message PBMsgItemEnduranceNotice
+ {
+	 optional sint32 slot	= 1;	//slot
+	 optional sint32 cur_endurance = 2;	//目前的耐力值
+	 optional sint32 max_endurance = 3;	//目前上限值
+ };
+
+ //装备耐久通知list;
+ message PBMsgAllItemEnduranceNotice
+ {
+	 repeated PBMsgItemEnduranceNotice all_endurance_list = 1;
+ };
+
+ message PBMsgItemEnduranceCostRequest
+ {
+	 repeated PBMsgItemEnduranceCost slot_list	= 1;	//槽位列表
+ };
+
+message PBMsgItemEnduranceCost
+{
+	optional sint32 slot = 1; //槽位ID
+	optional sint32 slot_type = 2;	//槽位类型
+};
+
+ message PBMsgItemEnduranceCostResponse
+ {
+	optional sint32 ret_code	= 1;
+	repeated PBEnduranceCostInfo cost_list	= 2; //消耗列表
+ };
+
+ message PBEnduranceCostInfo
+ {
+	 optional sint32 slot	= 1;	// 槽位
+	 optional sint32 money  = 2;	//铜钱
+	 optional sint32 xianfu = 3;	//仙府贡献值
+	 optional sint32 cur_endurance = 4;	//目前耐久值
+	 optional sint32 max_endurance = 5;	//		目前耐久上限
+	 optional sint32 after_endurance = 6;	// 普通修复后的值
+	 optional sint32 slot_type	= 7;		//槽位类型
+ };
+
+ message PBMsgDyeRequire
+ {
+	 optional PBMsgSlot equip_slot = 1;  // 装备
+	 optional PBMsgSlot dye_slot = 2; // 染料
+	 optional sint32			part_slot = 3; // 部位
+ };
+
+ message PBMsgDyeResponse
+ {
+	 optional sint32 ret_code = 1;
+	 optional PBMsgSlot equip_slot = 2;
+	 optional PBMsgSlot dye_slot = 3;
+	 optional sint32 part_slot = 4;
+	 optional sint32 item_dye_id = 5;
+ };
+
+ message PBMsgDyeReplaceRequire
+ {
+	 optional PBMsgSlot equip_slot = 1;
+	 optional sint32			part_slot = 2; // 部位
+ };
+
+ message PBMsgDyeReplaceResponse
+ {
+	 optional sint32				ret_code = 1;
+	 optional PBMsgSlot		equip_slot = 2;
+	 optional sint32				part_slot = 3; // 部位
+ };
+ 
+ message PBMsgClearDye
+ {
+	optional PBMsgSlot  equip_slot = 1; // 
+ }
+ 
+ message PBMsgClearDyeResponse
+ {
+	optional sint32 ret_code = 1; 
+	optional PBMsgSlot equip_slot = 2;
+	optional uint32 dye_id = 3;
+ }
+
+ // 宝石一键合成的请求消息
+ message PBMsgGemComposeQuickRequest
+ {
+	 optional	sint32	enchase_slot_type	= 1;	// 镶嵌宝石的slot类型
+	 optional	sint32	enchase_slot_index	= 2;	// 镶嵌宝石的slot槽位
+	 optional	sint32	bag_slot = 3;
+	 optional	sint32	gem_slot_type	= 4; // 宝石位置类型 1-镶嵌的宝石使用enchase_slot_type与enchase_slot_index决定宝石，2-包裹宝石使用bag_slot来决定宝石
+	 repeated	sint32	bag_slot_list		= 5;	// 背包里的宝石slot列表
+ }
+
+ // 宝石一键合成的查询响应消息
+ message PBMsgGemComposeQuickQueryResponse
+ {
+	 optional	sint32	ret_code			= 1;	// 宝石一键合成-查询结果码
+	 optional	sint32	cost_money			= 2;	// 需要消耗的金钱
+	 optional	sint32	cost_basic_gem		= 3;	// 需要消耗的基础宝石（需要买的目标类型的一级宝石）
+	 optional	sint32	cost_lingqi_need	= 4;	// 需要消耗的灵气(理论需要)
+	 optional	sint32	cost_lingqi_actual	= 5;	// 需要消耗的灵气(实际消耗)
+	 optional	sint32	cost_byb			= 6;	// 需要消耗的红钻(一共消耗)
+	 optional	sint32	cost_ubyb			= 7;	// 需要消耗的蓝钻(一共消耗)
+	 optional	sint32	cost_byb_gem		= 8;	// 需要消耗的红钻(购买材料宝石)
+	 optional	sint32	cost_ubyb_gem		= 9;	// 需要消耗的蓝钻(购买材料宝石)
+ }
+
+ // 宝石一键合成的合成响应消息
+ message PBMsgGemComposeQuickComposeResponse
+ {
+	 optional	sint32	ret_code		= 1;	// 宝石一键合成-合成结果码
+	 optional	uint32	com_gem_id	= 2;	// 合成的宝石ID
+ }
+
+message PBMsgOpenGiftNotice
+{
+	repeated PBMsgItem 				item_list 		= 1; // 开出的物品信息
+}
+
+message PBItemEventInv
+{
+	optional bool					is_bind			= 1; // 是否绑定
+	optional sint32					slot_id			= 2; //物品的槽位id
+};
+
+message PBMsgReNewConfigNotice
+{
+	repeated PBReNewConfigItem		config			= 1;
+};
+
+message PBReNewConfigItem
+{
+	optional sint32					sheet_id		= 1;
+	optional uint32					honor			= 2;
+	optional sint32					unbind_money	= 3;
+}
+
+message PBEquipRuneList
+{
+	repeated PBEquipRune rune_list	= 1;
+	optional sint32		 open_num	= 2;	//已开启的槽位数量
+};
+
+message PBEquipRune
+{
+	optional sint32			slot_id		= 1;	//槽位ID
+	optional sint32			rune_sheet	= 2;	//符文sheeet
+};
+
+message PBMsgEquipRuneMountRequest
+{
+	optional sint32		bag_type	= 1; //包裹类型 （背包 装备栏）
+	optional sint32		equip_slot	= 2; //装备的是slot
+	optional sint32		rune_slot	= 3; //符文的slot
+	optional sint32		mount_slot	= 4; //镶嵌的槽位
+};
+
+message PBMsgEquipRuneMountResponse
+{
+	optional sint32		ret_code	= 1;
+	optional sint32		bag_type	= 2;	//背包类型
+	optional sint32		equip_slot	= 3;	//装备槽位
+	optional sint32		rune_slot	= 4;	//符文槽位
+	optional sint32		rune_sheet	= 5;	//符文sheet
+	optional sint32		mount_slot	= 6;	//镶嵌的槽位
+};
+
+message PBMsgEquipRuneUnmountRequest
+{
+	optional sint32		bag_type		= 1; //包裹类型 （背包 装备栏）
+	optional sint32		equip_slot		= 2; //装备的是slot
+	optional sint32		unmount_slot	= 3; //符文的slot
+};
+
+message PBMsgEquipRuneUnmountResponse
+{
+	optional sint32		ret_code	= 1;
+	optional sint32		rune_sheet	= 2;
+	optional sint32		bag_type	= 3;
+};
+
+message PBMsgEquipRuneTransferRequest
+{
+	optional sint32	main_slot	= 1;
+	optional sint32 second_slot	= 2;
+};
+
+message PBMsgEquipRuneTransferResponse
+{
+	optional sint32 ret_code	= 1;
+	optional sint32 result_rune = 2;
+};
+
+message PBMsgEquipRuneOpenSlotRequest
+{
+	optional sint32 bag_type	= 1;
+	optional sint32 equip_slot	= 2;
+	optional sint32 open_slot	= 3;	//要开启的槽位ID
+};
+
+message PBMsgEquipRuneOpenSlotResponse
+{
+	optional sint32 ret_code	= 1;
+	optional sint32 bag_type	= 2;
+	optional sint32 equip_slot	= 3;
+	optional sint32 open_slot	= 4;	//要开启的槽位ID
+};
+
+message PBRepositoryItem
+{
+	optional uint32				quantity			= 1;
+	optional string				sheetid				= 2;
+	optional int32				binded				= 3;
+	optional int32				inv					= 4;
+	optional uint32				expiration			= 5;	//过期时间
+	optional uint32				can_use_time		= 6;	//可以使用的时间
+};
+
+message PBMsgEnduranceItem
+{
+	optional sint32 slot		= 1;	//槽位
+	optional sint32 endurance	= 2;	//修复后的耐力值
+};
+
+
+// 使用福至久久彩票
+message PBMsgUseFuzhijiujiuRequest
+{
+	optional uint32				slotidx				= 1;	// 物品位置
+};
+
+enum PBReportFuzhiType
+{
+	ReportFuzhiType_Success		= 1;
+	ReportFuzhiType_Failed		= 2;
+	ReportFuzhiType_NoPsId		= 3;
+};
+
+enum PBUseFuzhiType
+{
+	FuzhiType_Quest		=	1;
+	FuzhiType_Query		=	2;
+	FuzhiType_Exception	=	3;
+};
+
+message PBMsgUseFuzhijiujiuResponse
+{
+	optional sint32				ret_code			= 1;
+	optional uint32				slotidx				= 2;	// 物品位置
+	optional string				action				= 3;
+	optional string				phoneNum			= 4;
+	optional string				appid				= 5;
+	optional string				userid				= 6;
+	optional string				time				= 7;
+	optional uint64				fuzhijiujiu			= 8;
+	optional string				sign				= 9;
+	optional PBUseFuzhiType		usetype				= 10;
+};
+
+
+// 上报福至久久彩票码
+message PBMsgReportFuzhijiujiuRequest
+{
+	optional uint32				slotidx				= 1;	// 物品位置;
+	optional uint64				fuzhijiujiu			= 2;	// 彩票码;
+	optional PBReportFuzhiType  report_type			= 3;	// 上报类型;
+};
+
+message PBMsgReportFuzhijiujiuResponse
+{
+	optional sint32				ret_code			= 1;
+};

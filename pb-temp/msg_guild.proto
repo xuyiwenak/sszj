@@ -1,0 +1,1059 @@
+/// @brief	Data structure of guild
+/// @author	Deng Lichuan
+
+import "msg_common.proto";
+import "msg_skill.proto";
+import "msg_item.proto";
+import "msg_base.proto";
+import "msg_role_base.proto";
+
+enum PBEGuildPayoffType
+{
+	eGuild_Average		= 1; // 平均分配
+	eGuild_Contribution	= 2; // 按照贡献分配
+};
+
+enum PBEGuildExpOrigin
+{
+	eGuildExp_Mission		= 1; // 帮派任务
+	eGuildExp_DonateBlue	= 2; // 帮派捐献(蓝钻)
+	eGuildExp_DonateItem	= 3; // 帮派捐献(物品)
+};
+
+enum PBEGuildDismissReason
+{
+	eGuildDismiss_None			= 0;
+	eGuildDismiss_Request		= 1; // 主动申请解散
+	eGuildDismiss_BackSalary	= 2; // 维护费不足解散
+	eGuildDismiss_Election		= 3; // 没有合适的接班人(帮主),解散帮派
+};
+
+// 帮会简要信息
+message PBGuildSummary
+{
+	optional uint64					guild_id		= 1; // 帮会ID
+	optional string					guild_name		= 2; // 帮会名称
+	optional string					leader_name		= 3; // 帮主名称
+	optional string					manifesto		= 4; // 帮会宣言 
+	optional int32					icon_id			= 5; // 帮会图标
+	optional int32					member_num		= 6; // 成员当前成员数量
+	optional int32					max_member		= 7; // 最大成员数量
+	optional int32					city_id			= 8; // 活动城市ID/所在城市ID
+	
+	optional int32					guild_level		= 9; // 帮会等级
+	optional int32					guild_power		=10; // 帮会战力 
+	
+	optional PBEGuildJointLimitType limit_type		= 16;//[default=eGJT_None]; // 入会限制类型
+	optional int32					limit_level		= 17; // 入会等级限制 
+	optional int32					limit_combat_power	= 18; // 入会战力限制
+	
+	optional PBGuildDetail			detail			= 19; // 帮会详细信息
+	optional bool					is_payoff		= 20;//[default=false]; // 本周工资是否已结算
+	optional PBEGuildPayoffType		last_payoff_type= 21;//[default=eGuild_Average]; // 上周工资结算方式
+	optional PBGuildBuilding		guild_building	= 22; // 帮会建筑
+	optional PBGuildBoss			guild_boss		= 23; // 帮会Boss
+	optional PBGuildBattle			guild_battle	= 24; // 帮派战
+	optional uint64					camp_id			= 25; // 阵营ID
+	optional uint32					dismiss			= 26;//[default=0]; // 帮派解散的时间
+	optional uint64					leader_char_id	= 27; // 帮主charId
+	optional string					guild_icon		= 28; // 帮派图标
+	optional sint32					leader_sex		= 29; // 帮主性别(为默认图标服务)
+	optional sint32					direct_vip_level	= 30; // 直接加入需求的VIP等级
+	repeated PBEGuildDirectJoin		direct_limit		= 32; // 直接进入的限制
+	optional uint32					refresh_day			= 33; //隔天刷新的时间
+	optional PBRoleBase				leader_base		= 34; //帮主信息
+	optional PBGuildManor 			guild_manor	    = 35; // 帮派领地
+
+};
+
+// 帮会详细信息
+message PBGuildDetail
+{
+	optional uint32 create_time		=1; // 帮会创建时间 
+//	optional int32  guild_level		=2; // 帮会等级
+	optional int32  guild_exp		=3; // 帮会经验(帮会建设度)
+	optional int32  guild_money		=4; // 帮会资产
+//	optional int32  guild_power		=5; // 帮会战力 
+	optional int32  guild_score		=6; // 帮会积分 
+	optional int32  city_member		=7; // 同城人数
+
+	optional int32  next_maintenance_cost	=8; // 下一次/当前周维护消耗（每周结算：两周没有消耗则解散公会），由服务器根据配置计算(弃用,每次从配置中读取)
+	optional uint32 last_maintenance_time	=9; // 上次维护时间
+	optional string bulletin		=10;// 工会内部公告 
+
+	optional sint32 levelup_cost			=11; // 升级消耗
+	optional int32  levelup_maintenance_cost=12; // 升级后维护消耗
+	
+	repeated PBGuildMember members			=13; // 成员列表，个人捐献在这里面有
+
+	repeated PBGuildDailyRecord	daily_record=14; // 工会日志
+	optional int32	history_money			=15; // 历史总资产
+};
+
+// 加入帮会的限制类型
+enum PBEGuildJointLimitType
+{
+	eGJT_None			= -1; // 非法
+	eGJLT_Forbid		= 0; // 禁止加入
+	eGJLT_Restriction	= 1; // 条件限制确认后加入
+	eGJLT_Open			= 2; // 条件限制自由加入
+};
+
+enum PBEGuildDirectJoin
+{
+	eGDJ_None			= 0;
+	eGDJ_Direct			= 1;
+	eGDJ_VIP			= 2;
+	eGDJ_BattleScore	= 3;
+};
+
+// 记录角色的工会状态
+message PBCharGuildState
+{
+	optional uint64 guild_id				= 1;//[default=0]; // 工会ID
+	optional uint32 last_create_guild_time	= 2;//[default=0]; // 上次创建工会时间
+	optional uint32 last_quit_guild_time	= 3;//[default=0]; // 上次退出工会时间
+};
+
+// 帮会成员信息
+message PBGuildMember
+{
+	optional uint64 char_id				= 1; // 角色ID
+	optional string char_name			= 2; // 成员名字
+	optional int32  char_level			= 3; // 等级
+	optional int32  combat_power		= 4; // 战力
+	optional int32  occupation			= 5; // 职业
+	optional int32  vip_level			= 6; // vip 等级
+	optional int32  city_id				= 7; // 所在城市ID
+	optional PBEGuildMemberPost post	= 8; // 职位
+	//optional int32 contribution			= 9; // 历史总贡献
+	
+	// 以下是动态信息，待重新整理
+	optional bool is_online			= 10;	// 是否在线 
+	optional bool is_friend			= 11;	// 是否是好友
+	optional bool is_same_city		= 12;	// 是否同城
+	
+	optional uint32 offline_time	= 13; // 上一次下线时间 
+	optional uint32 join_time		= 14; // 加入时间 
+	optional int32 own_contribution	= 15; // 历史总贡献
+	optional int32 cur_week_contri	= 16; // 本周总贡献
+	optional int32 last_week_contri	= 17; // 上周总贡献
+	optional int32 do_request		= 20; // 今日做帮会任务次数
+	optional int32 do_bless			= 21; // 今日祈愿次数
+	repeated PBGBlessAward	awards	= 22; // 今日祈愿收获
+	optional int32	make_wine		= 23; // 今日已酿酒次数
+	repeated PBWine	wine			= 24; // 酒
+	optional sint32 make_wine_end_time	= 26; // 酿酒CD结束时间
+	optional string	icon			= 27; //头像Icon 
+	optional sint32	sex				= 28;
+	optional uint32	login_camp		= 29; // 当前所在阵营
+	optional PBEGuildMemberPost post_special	= 30; // 特殊职位(帮花)
+};
+message PBSignMember
+{
+	repeated uint64						member			= 1; // 报名的成员
+};
+// 帮会申请者信息
+message PBGuildApplicant
+{
+	optional uint64 char_id				= 1; // 角色ID
+	optional string char_name			= 2; // 成员名字
+	optional int32  char_level			= 3; // 等级
+	optional int32  combat_power		= 4; // 战力
+	optional int32  occupation			= 5; // 职业
+	optional int32  vip_level			= 6; // vip 等级
+	optional int32  city_id				= 7; // 所在城市ID
+	optional int32	sex					= 8;
+	optional int32	role_type			= 9;
+	optional string icon				= 10;
+};
+
+// 帮会成员职位 百位为帮花值
+enum PBEGuildMemberPost
+{
+	eGMP_Leader			= 0;	// 帮主Leader
+	eGMP_ViceLeader		= 1;	// 副帮主ViceLeader
+	eGMP_Normal			= 2;	// 普通成员
+	eGMP_Cream			= 3;   // 精英
+	eGMP_Elder			= 4;   // 长老
+	eGMP_Protect		= 5;   // 护法
+	eGMP_flower			= 100;  // 帮花特殊
+};
+
+// 帮会日志类型
+enum PBEGuildDailyRecordType
+{
+	eGDRT_Create		= 0;	// 创建
+	eGDRT_Join			= 1;	// 加入
+	eGDRT_Leave			= 2;	// 离开
+	eGDRT_Kickout		= 3;	// 被踢出
+	eGDRT_Levelup		= 4;	// 升级
+	eGDRT_Donate		= 5;	// 捐赠
+	eGDRT_ChangeLeader	= 6;	// 转让会长
+	eGDRT_Consume		= 7;	// 帮会贡献消费
+	eGDRT_PutItemToStore = 8;   // 向帮派仓库放物品
+	eGDRT_GiveItemToChar = 9;   // 将帮派仓库的物品发放给玩家
+};
+
+// 帮会日志记录
+message PBGuildDailyRecord
+{
+	optional uint32 record_time					= 1;	// 记录的时间
+	optional PBEGuildDailyRecordType	record_type	= 2;	// 记录类型
+	
+	optional uint64 ulong_1						= 3;	// param
+	optional uint64 ulong_2						= 4;	// param
+	optional uint64 ulong_3						= 5;	// param
+	
+	optional int32 int_1						= 6;
+	optional int32 int_2						= 7;
+	optional int32 int_3						= 8;
+	
+	optional string str_1						= 10;
+	optional string str_2						= 11;
+	optional string str_3						= 12;
+};
+message PBGuildDailyRecordMore
+{
+	repeated PBGuildDailyRecord			records	= 1;
+};
+
+enum PBEGuildingBuildingType
+{
+	eGuildBuilding_None			= 0;
+	eGuildBuilding_SkillTower	= 1; // 技能塔
+	eGuildBuilding_Bless		= 2; // 祈愿坛
+	eGuildBuilding_Drunkery		= 3; // 酒庄
+	eGuildBuilding_Repair		= 4; // 铁匠铺
+	eGuildBuilding_Dye			= 5; // 染坊
+};
+
+message PBGuildBuilding
+{
+	repeated PBBuilding				buildings				= 1; // 帮派建筑
+	repeated PBSkillStudy			skill_tower_level		= 2; // 技能塔的研究等级
+	optional sint32					publish_count			= 3; // 当日发布建筑任务的次数
+	optional sint32					due_time				= 4; // 建筑任务的完成时间
+	optional PBBuilding				building_task			= 5; // 当前建筑任务
+	optional sint32					finish_task_count		= 6; // 建设任务完成次数
+	optional sint32					open_banquet_count		= 7; // 当日开启酒宴的次数
+	optional sint32					banquet_end_time		= 8; // 酒宴结束时间
+};
+
+message PBBuilding
+{
+	optional PBEGuildingBuildingType	type				= 1;//[default=eGuildBuilding_None]; // 建筑类型
+	optional sint32						level				= 2; // 建筑等级
+};
+
+message PBSkillStudy
+{
+	optional sint32						secial_id			= 1;
+	optional sint32						level				= 2;
+	optional uint32						cd_time				= 3; // CD的到期时间
+};
+
+message PBWine
+{
+	optional sint32						type				= 1; // 酒的品质
+	optional sint32						today_drunk			= 2; // 今日已喝口数
+	optional sint32						remainder			= 3; // 剩余
+};
+
+message PBGuildBoss
+{
+	repeated PBGuildBossInfo			info				= 1;
+};
+enum PBEGuildBossStatus
+{
+	eGuildBoss_None			= 0;
+	eGuildBoss_Open			= 1;
+	eGuildBoss_Close		= 2;
+};
+message PBGuildBossInfo
+{
+	optional string						dungeon_sheet		= 1;
+	optional sint32						open_count			= 2;
+	optional uint64						dungeon_entity		= 3; // boss未开启时=NLMISC::CEntityId::Unknown
+	optional sint32						kill_min			= 4;//[default=0]; // boss被击杀时间
+	optional PBEGuildBossStatus			boss_status			= 5;//[default=eGuildBoss_Close]; // 其实没必要加这玩意
+	optional uint32						map_id				= 6;//[default=0];
+	optional sint32						yesterday_open_count	= 7;//[default=0];	//帮派bosss昨天开启的次数
+};
+
+message PBGuildBattle
+{
+	optional sint32						level_rank			= 1;//帮派等级排名
+	optional sint32						battle_score		= 2;//本轮帮派战积分
+	optional sint32						battle_rank			= 3;//本轮帮战排名
+	optional sint32						can_join_match_id	= 4;//[default=0]; // 可参加的赛季ID
+};
+
+//--------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------
+// 帮会创建请求
+message PBGuildCreateRequest
+{
+	optional PBGuildSummary  guild_info	= 1; // 工会信息
+	optional PBCurrencyType cost_type	= 2; //	花费类型
+};
+
+message PBGuildCreateResponse
+{
+	optional PBGuildSummary  guild_info	= 1;
+};
+
+// 帮会ID通知，角色上线时发送
+message PBGuildIdInform
+{
+	optional uint64 guild_id 			= 1; // 0表示没有帮会
+	optional PBGuildSummary  guild_info = 2; //
+	optional uint64 my_char_id			= 3;
+};
+
+//--------------------------------------------------------------------------------
+// 帮会申请加入请求
+message PBGuildApplyJoinRequest
+{
+	optional uint64 guild_id = 1;
+};
+
+// 帮会快速加入
+message PBGuildQuickJoinRequest
+{
+};
+// 帮派成员列表
+message PBGuildMemberListRequest
+{
+};
+// 帮派升级
+message PBGuildLevelupRequest
+{
+};
+// 退出帮派
+message PBGuildQuitRequest
+{
+};
+
+//--------------------------------------------------------------------------------
+// 帮会取消申请请求
+message PBGuildCancelApplyRequest
+{
+	optional uint64 guild_id = 1;
+};
+
+//--------------------------------------------------------------------------------
+// 帮会申请确认请求
+message PBGuildApplyConfirmRequest
+{
+	repeated uint64 agreed_char_id	= 1; // 被同意入会的char_id
+	repeated uint64 refused_char_id	= 2; // 被拒绝入会的char_id
+};
+
+//--------------------------------------------------------------------------------
+// 帮会申请确认请求回复
+message PBGuildApplyConfirmResponse
+{
+	optional PBGuildSummary my_guild_info	= 1; // 最新的工会信息，包括成员列表
+	repeated PBGuildApplicant applicants	= 2; // 申请者列表 
+};
+
+//--------------------------------------------------------------------------------
+// 工会快速加入回复
+message PBGuildQuickJoinResponse
+{
+	optional PBGuildSummary my_guild				= 1; // 已成功加入的工会，如果为空表示没有
+	//repeated PBGuildSummary applied_guild_list		= 2; // 已经提交申请待批复的工会，如果已经成功加入工会该字段为空
+	repeated uint64 new_applied_guild_id			= 3; // 已经申请过的工会
+};
+
+//--------------------------------------------------------------------------------
+// 踢人请求
+message PBGuildKickoutRequest
+{
+	repeated uint64 char_id = 1;
+};
+
+message PBGuildKickoutResponse
+{
+	optional uint64 opchar_id = 1;  // 操作的人
+	optional uint64 char_id	  = 2;  // 被踢的人
+};
+
+//--------------------------------------------------------------------------------
+// 工会解散请求
+message PBGuildDestroyRequest
+{
+	optional uint64 guild_id = 1;
+};
+
+//--------------------------------------------------------------------------------
+// 申请者列表请求
+message PBGuildApplicantsRequest
+{
+	optional uint64 guild_id  = 1; // 指定帮会ID，如果没有改字段则表示玩家所属帮会
+};
+
+message PBGuildApplicantsResponse
+{
+	repeated PBGuildApplicant applicants = 1; // 申请者列表
+};
+
+//--------------------------------------------------------------------------------
+// 帮会信息修改请求
+message PBGuildModifyRequest
+{
+	optional PBGuildSummary  guild_info = 1;	// 没有Detai信息
+};
+
+message PBGuildModifyResponse
+{
+	optional PBGuildSummary  guild_info = 1;	// 没有Detail信息
+};
+
+//--------------------------------------------------------------------------------
+// 帮会成员信息修改请求
+message PBGuildMemberModifyRequest
+{
+	repeated PBGuildMember guild_member = 1;
+};
+
+message PBGuildMemberModifyResponse
+{
+	repeated PBGuildMember guild_member = 1;
+};
+
+//--------------------------------------------------------------------------------
+// 帮会查询请求，返回指定帮会详情，包括成员列表
+message PBGuildDetailRequest
+{
+	optional uint64 guild_id  = 1; // 指定帮会ID，如果没有改字段则表示玩家所属帮会
+};
+// 返回指定帮会详情，包括成员列表
+message PBGuildDetailResponse
+{
+	optional PBGuildSummary guild_info = 1;
+};
+
+//--------------------------------------------------------------------------------
+// 帮会查询请求，返回帮会简要信息列表
+message PBGuildSearchRequest
+{
+	optional uint64 guild_id  = 1;	// 查询条件，指定工会ID，可选
+	optional bool	same_city = 2;	// 同城条件，可选
+};
+// 帮会查询返回帮会简要信息列表
+message PBGuildSearchResponse
+{	
+	optional PBGuildSearchRequest request	= 1;
+	repeated PBGuildSummary guild_list		= 2;
+	repeated uint64 applied_guild_id		= 3; // 已经申请过的工会
+};
+
+//--------------------------------------------------------------------------------
+// 帮会捐献请求
+enum PBEGuildDonateType
+{
+	eGuildDonate_Blue	= 1;
+	eGuildDonate_Item	= 2;
+};
+message PBGuildDonateRequest
+{
+	//optional PBCostInfo	donate	= 2; 		// 捐赠类型，考虑用统一的金钱类型
+	//optional int32		grade	= 1;		// 捐赠档次，
+
+	optional PBEGuildDonateType		type	= 3;		// 捐赠类型
+	optional int32					count	= 4;		// 捐献数量
+};
+
+message PBGuildDonateResponse
+{
+	optional int32					guild_money		=1; // 新的帮会资产
+	optional PBGuildMember			my_info			=2; // 我在帮会中的信息
+	optional PBGuildDailyRecordMore	donate_record	=3;	// 日志信息
+//	optional int32					guild_exp		=4; // 帮派经验
+	optional int32					history_money	=5; // 历史总贡献
+};
+
+//--------------------------------------------------------------------------------
+// 帮会长转让请求，由只能由原会长发出
+message PBGuildLeaderChangeRequest
+{
+	optional uint64 new_leader_id = 1; // 新的会长角色ID
+};
+
+message PBGuildLeaderChangeResponse
+{
+	optional PBGuildMember my_info		= 1; //我在帮会中的信息
+	optional PBGuildMember new_leader	= 2;	//新帮会长信息
+};
+
+//--------------------------------------------------------------------------------
+// 工会招收广告请求
+message PBGuildRecruitAdRequest
+{
+	optional string description		= 1; // 招收广告
+};
+
+//--------------------------------------------------------------------------------
+// 工会职位修改请求
+message PBGuildMemberPostChangeRequest
+{
+	repeated uint64 member_char_id		= 1;
+	optional PBEGuildMemberPost post	= 2;
+};
+
+message PBGuildMemberPostChangeResponse
+{
+	repeated PBGuildMember guild_member = 1;
+};
+
+//--------------------------------------------------------------------------------
+// 工会升级
+message PBGuildLevelupResponse
+{
+	optional PBGuildSummary guild_info = 1;	// 工会升级后返回详详细信息
+};
+
+//--------------------------------------------------------------------------------
+// 工会成员列表
+message PBGuildMemberListesponse
+{
+	repeated PBGuildMember guild_member = 1;
+};
+
+//-------------------------------------------------------------------------------
+// 公会工资结算
+message PBGuildPayoffRequest
+{
+}
+message PBGuildPayoffResponse
+{
+	optional sint32				ret_code	= 1;
+	optional sint32				guild_contri= 2;	// 当周总帮贡
+	optional sint32				all_salary	= 3;	// 所有成员总的工资
+}
+
+//-------------------------------------------------------------------------------
+// 公会工资确认结算
+message PBGuildPayoffConfirmRequest
+{
+	optional PBEGuildPayoffType	payoff_type	= 1;	// 结算方式
+}
+message PBGuildPayoffConfirmResponse
+{
+	optional sint32				ret_code	= 1;
+}
+
+//-------------------------------------------------------------------------------
+// 公会日志请求
+message PBGuildRecordRequest
+{
+	repeated PBEGuildDailyRecordType	record_type		= 1;	// 日志类型
+	optional sint32						operator_type	= 2;	// 客户端使用,服务器不关心
+};
+message PBGuildRecordResponse
+{
+	optional PBGuildDailyRecordMore		record_info	= 1;	// 日志信息
+	optional sint32						operator_type	= 2;	// 客户端使用,服务器不关心
+};
+
+//-------------------------------------------------------------------------------
+// 帮派建筑升级
+message PBBuildingLvUpRequest
+{
+	optional PBEGuildingBuildingType	building_type	= 1;
+};
+message PBBuildingLvUpResponse
+{
+	optional sint32						ret_code			= 1;
+	optional PBBuilding					building			= 2; // 帮派建筑
+	optional sint32						publish_times		= 3; // 当日发布建筑任务的次数
+	optional sint32						left_time			= 4; // 剩余时间
+	optional sint32						finish_task_count	= 5; // 已完成次数
+	optional sint32						guild_money			= 6;
+};
+
+//-------------------------------------------------------------------------------
+// 帮派技能研究
+message PBSkillStudyRequest
+{
+	optional sint32						secial_id		= 1; // 技能secial ID
+};
+message PBSkillStudyResponse
+{
+	optional sint32						ret_code		= 1;
+	optional PBSkillStudy		skill_tower_level		= 2; // 技能塔
+	optional sint32						guild_money		= 3;
+};
+
+//-------------------------------------------------------------------------------
+// 帮派技能研究信息请求
+message PBSkillStudyInfoRequest
+{
+};
+message PBSkillStudyInfoResponse
+{
+	optional sint32						ret_code		= 1;
+	repeated PBSkillStudy		skill_tower_level		= 2; // 技能塔
+};
+
+//-------------------------------------------------------------------------------
+// 帮派技能秒CD
+message PBSkillCDTimeRequest
+{
+	optional sint32						secial_id		= 1;
+};
+message PBSkillCDTimeResponse
+{
+	optional sint32						ret_code		= 1;
+	optional PBSkillStudy		skill_tower_level		= 2; // 技能塔
+};
+
+//-------------------------------------------------------------------------------
+// 帮派技能升级
+message PBSkillLearnRequest
+{
+	optional sint32						secial_id		= 1;
+};
+message PBSkillLearnResponse
+{
+	optional sint32						ret_code		= 1;
+	optional PBSkillInfo				skill_info		= 2;
+	optional sint32						fight_power		= 3; // 战斗力
+	optional PBProperties				properties		= 4; // 属性
+};
+
+//-------------------------------------------------------------------------------
+// 帮派技能详情
+message PBGuildSkillInfoRequest
+{
+};
+message PBGuildSkillInfoResponse
+{
+	repeated PBSkillInfo				skills_info		= 1;
+	optional PBProperties				properties		= 2;
+	optional sint32						fight_power		= 3;
+};
+
+//-------------------------------------------------------------------------------
+// 祈愿坛祈愿
+message PBGBlessAward
+{
+	optional string						sheetName		= 1;
+	optional sint32						number			= 2;
+};
+message PBGuildBlessRequest
+{
+};
+message PBGuildBlessResponse
+{
+	optional sint32						ret_code		= 1;
+	optional sint32						do_bless		= 2; // 今日已经祈愿次数
+	optional PBGBlessAward				award			= 3;
+};
+
+//-----------------------------------------------------------------------------
+// 进入喝酒区域
+enum PBEDrunkeryStatus
+{
+	EDrunkery_None			= 0;
+	EDrunkery_Full			= 1;	// 饱腹状态
+	EDrunkery_Normal		= 2;	// 有酒可饮且未饱腹
+	EDrunkery_Empty			= 3;	// 无酒可饮
+	EDrunkery_Banquet		= 4;	// 帮会酒宴
+	EDrunkery_Leave			= 5;	// 离开喝酒区域
+	EDrunkery_WineTypeFull	= 6;	// 选定类型的酒已达到今日饮酒上线
+	EDrunkery_WineTypeEmpty = 7;	// 选定类型的酒已经喝光
+};
+message PBEnterDrunkeryNotice
+{
+	optional PBEDrunkeryStatus			status			= 1; 
+	repeated PBWine						wine			= 2; // 酒
+};
+
+//-----------------------------------------------------------------------------
+// 离开喝酒区域(或无酒可饮或饱腹)
+message PBLeaveDrunkeryNotice
+{
+//	optional PBEDrunkeryStatus			status			= 1;
+};
+
+//-----------------------------------------------------------------------------
+// 请求喝酒
+message PBDrinkRequest
+{
+	optional sint32						wine_type		= 1; // 酒的品质
+	optional bool						is_auto			= 2; // 喝完当前品质酒之后是否进入自动饮酒状态
+};
+
+message PBDrinkeResponse
+{
+	optional PBEDrunkeryStatus			status			= 1;
+	optional sint32						banquet_number	= 2; // 参加酒宴人数
+	optional PBWine						wine			= 3; // 酒
+	optional sint32						increase_exp	= 4; // 增加的经验
+	optional sint32						ret_code		= 5;
+};
+
+//-----------------------------------------------------------------------------
+// 开酒宴请求
+message PBOpenBanquetRequest
+{
+};
+message PBOpenBanquetResponse
+{
+	optional sint32						ret_code		= 1;
+	optional sint32						left_time		= 2; // 酒宴剩余时间
+	optional sint32						open_count		= 3; // 已开启次数
+};
+
+//-----------------------------------------------------------------------------
+// 酿酒请求
+message PBMakeWineRequest
+{
+	optional sint32						type			= 1;
+};
+message PBMakeWineResponse
+{
+	optional sint32						ret_code		= 1;
+	optional PBWine						wine			= 5;
+	optional sint32						left_time		= 6;
+	optional sint32						make_wine_count	= 7; // 今日已酿酒次数
+};
+
+//-----------------------------------------------------------------------------
+// 酿酒秒CD请求
+message PBMakeWineResetCDRequest
+{
+};
+message PBMakeWineResetCDResponse
+{
+	optional sint32						ret_code		= 1;
+	optional sint32						left_time		= 3;
+};
+
+//-----------------------------------------------------------------------------
+// 公会成员被踢通知
+message PBBeKickoutedNotice
+{
+};
+
+//----------------------------------------------------------------------------
+// 邀请加入公会
+message PBGuildInviteRequest
+{
+	optional uint64						char_id			= 1; // 角色ID
+};
+
+message PBGuildInviteResponse
+{
+	optional sint32						ret_code		= 1;
+};
+
+message PBGuildInviteNotice
+{
+	optional uint64						guild_id		= 1; // 帮会ID
+	optional string						player_name		= 2;
+	optional string						guild_name		= 3;
+};
+
+// 开启帮派Boss
+message PBOpenGuildBossRequest
+{
+	optional string						dungeon_id		= 1;
+};
+message PBOpenGuildBossResponse
+{
+	optional sint32						ret_code		= 1;
+	optional PBGuildBossInfo			boss_info		= 2;
+};
+
+// 进入帮派Boss副本
+message PBEnterGuildBossReport
+{
+	optional string						dungeon_id		= 1;
+};
+
+// 帮派Boss开启通知
+message PBOpenGuildBossNotice
+{
+	optional PBGuildBossInfo			boss_info		= 2;
+};
+
+// 帮派Boss结束通知
+message PBGuildBossEndNotice
+{
+	optional string						dungeon_id		= 1;
+	optional bool						is_fail			= 2;
+	optional sint32						guild_contri	= 3; // 获得的帮贡
+	optional bool						luck_dog		= 4; // 最后一击
+};
+
+// 帮派Boss伤害通知
+message PBGuildBossDamageNotice
+{
+	repeated PBGuildDamage				rank			= 1; // 前N名
+	optional PBGuildDamage				self			= 2; // 自己的
+	optional sint32						boss_hp			= 3; // boss血量
+};
+message	PBGuildDamage
+{
+	optional string						player_name		= 1;
+	optional sint32						damage			= 2;
+	optional float						rate			= 3;
+};
+
+// 帮派Boss当前状态
+message PBMsgGuildBossStatusRequest
+{
+};
+message PBMsgGuildBossStatusResponse
+{
+	repeated uint32						closed_boss		= 1; // 已开启boss的副本Sheet
+};
+
+// 批准加入的推送
+message PBMSGApplyJoinConfirmNotice
+{
+};
+
+// help me 帮派成员被杀，求救请求
+message PBMsgGuildMemberKillRequest
+{
+};
+// help me 帮派成员被杀，求救回复
+message PBMsgGuildMemberKillResponse
+{
+	optional sint32						ret_code		= 1; // 返回码
+	optional sint32						map_id			= 2; // mapId
+	optional sint32						ins_number		= 3; // 副本nubemr
+	optional sint32						line_id			= 4; // 线Id
+	optional sint32						pos_x			= 5; // 位置X
+	optional sint32						pos_y			= 6; // 位置Y
+	optional sint32						camp_id			= 7; // 阵营
+};
+
+// 帮助传送请求
+message PBMsgGuildMemberHelpTelportRequest
+{
+	optional uint64						char_id			= 1; // 传送到那个成员身边
+};
+
+// 帮助传送回复
+message PBMsgGuildMemberHelpTelportResponse
+{
+	optional sint32						ret_code		= 1;
+	optional uint64						char_id			= 2; // 传送到那个成员身边
+	optional sint32						map_id			= 3; // mapId
+	optional sint32						ins_number		= 4; // 副本nubemr
+	optional sint32						line_id			= 5; // 线Id
+	optional sint32						pos_x			= 6; // 位置X
+	optional sint32						pos_y			= 7; // 位置Y
+	optional sint32						camp_id			= 8; // 阵营
+};
+// 解散帮派
+message PBMsgGuildDismissRequest
+{
+};
+
+message PBMsgGuildDismissResponse
+{
+	optional sint32						ret_code	= 1;
+	optional sint32						left_cd		= 2;
+};
+
+// 取消解散
+message PBMsgGuildCancelDismissRequest
+{
+};
+message PBMsgGuildCancelDismissResponse
+{
+	optional sint32						ret_code	= 1;
+};
+
+// 单条阵营联盟信息
+message PBCampUnionData
+{
+	repeated sint32		 camp_id			= 1;  // 阵营id
+	optional sint32	     begin_time			= 2;  // 结盟生效时间
+	optional sint32		 end_time			= 3;  // 结盟失效时间
+};
+
+message PBPBCampUnion
+{
+	repeated  PBCampUnionData		union_data			= 1;  // 结盟信息
+	optional  sint32				begin_time			= 2;  // 结盟生效时间
+	optional  sint32				end_time			= 3;  // 结盟失效时间
+};
+
+enum PBCampUnionUpdateType
+{
+	eCampUnion_Create			= 1;	// 创建
+	eCampUnion_Destroy			= 2;	// 解散
+	eCampUnion_Sync				= 3;    // 同步
+	eCampUnion_Notice			= 4;    // 通知，公告给客户端
+};
+
+// 阵营结盟信息通知
+message PBCampUnionNotice
+{
+	optional  PBPBCampUnion						union_data			= 1;  // 结盟信息
+};
+
+// 帮派每日领取奖励
+enum EGetGuildDayReward
+{
+	EGetGuildDayReward_Un_Pickup = 0;
+	EGetGuildDayReward_Pickup = 1;
+}
+
+
+message PBMsgGuildDayRewardInfoNotice
+{
+	optional EGetGuildDayReward  getreward 			= 1;   //是否领取过奖励 
+}
+
+message PBMsgGetGuildDayRewardRequest
+{
+	
+}
+
+message PBMsgGetGuildDayRewardResponse
+{
+	optional sint32 ret_code            = 1; 
+}
+
+message PBStoreMessageParm
+{
+	optional uint64 msg_time        = 1;       //消息时间，时间单独解析
+	optional PBDynStr parm          = 2;
+}
+
+message PBGuildStoreInfo
+{
+	optional sint32 inv_type = 1;               //仓库类型
+	repeated PBMsgInvSlot slot_info = 2;
+	optional PBMsgInvGrid inv_grid = 3;      // 当前格子数
+	repeated PBStoreMessageParm notice = 4; //历史消息
+}
+
+message PBMsgGuildStoreNotice                  //玩家上线推送
+{
+	optional PBGuildStoreInfo info = 1;
+}
+
+message PBMsgAddMessageNotice          // 仓库操作的消息
+{
+	optional PBStoreMessageParm message = 1;
+}
+
+message PBGrantGoods
+{
+	optional uint32 slot = 1;   // 发放物品的仓库索引
+	optional uint32 num  = 2;   // 发放物品的数量
+}
+
+// 发放物品
+message PBMsgGuildStoreGrantGoodsRequest
+{
+	repeated PBGrantGoods props = 1;  // 发放的道具     
+	optional uint64 char_id = 2;    // 发放玩家的char_id
+	optional uint32 oper_role_id = 3;  //操作玩家的Id
+}
+
+message PBMsgGuildStoreGrantGoodsResponse
+{
+	optional sint32 ret_code = 1;
+}
+
+// 扩展帮派仓库
+message PBMsgGuildStoreExtenBagRequest
+{
+	optional sint32 inv_type = 1;               //仓库类型
+	optional uint32 solt_index = 2;     // 扩展到的格子索引
+	optional uint32 oper_role_id = 3;     //操作玩家的Id
+}
+
+message PBMsgGuildStoreExtenBagResponse
+{
+	optional sint32 ret_code = 1; 
+	optional PBMsgInvGrid	bag_grid = 2;// 格子信息
+	optional sint32 guild_money = 3;   //剩余帮派资产           
+}
+
+
+
+////////////////////////////////////////////////////////
+//帮派领地功能
+
+enum PBEGuildFireStatus
+{
+	eGuildFire_Open			= 1;
+	eGuildFire_Close		= 0;
+};
+
+
+// 帮派领地存储结构
+message PBGuildManor
+{
+	optional uint64						dungeon_entity		= 1; // 领地的副本唯一id
+	optional sint32						open_count			= 2; // 篝火开启次数
+
+};
+
+
+//进入帮派领地
+//MSG_Enter_GuildManor_Request
+message PBEnterGuildManorRequest
+{
+
+}
+
+//MSG_Enter_GuildManor_Response
+message PBEnterGuildManorResponse
+{
+	optional sint32 ret_code = 1; 
+
+}
+
+//退出帮派领地
+//MSG_Quit_GuildManor_Request
+message PBQuitGuildManorRequest
+{
+
+}
+
+//MSG_Quit_GuildManor_Response
+message PBQuitGuildManorResponse
+{
+	optional sint32 ret_code = 1; 
+
+}
+
+
+//篝火开启
+//MSG_Open_GuildFire_Request
+message PBOpenGuildFireRequest
+{
+
+}
+
+//MSG_Open_GuildFire_Response
+message PBOpenGuildFireResponse
+{
+	optional sint32 ret_code = 1; 
+}
+
+//篝火剩余时间
+//MSG_GuildFire_Time_Notice
+message PBOGuildFireTimeNotice
+{
+	optional sint32 re_time = 1; // 剩余时间
+}
+
+//MSG_Open_GuildFire_Notice
+message PBOpenGuildFireNotice
+{
+
+}

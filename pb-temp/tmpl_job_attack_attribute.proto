@@ -1,0 +1,12 @@
+import "tmpl_base.proto";
+
+message PBJobAttack
+{
+	optional uint32 attack = 1; // ¹¥»÷ÊôÐÔ
+	repeated uint32 role = 2;             // Ö°Òµ
+}
+
+message PBJobAttackCfg
+{
+	repeated PBJobAttack  config = 1;   
+}

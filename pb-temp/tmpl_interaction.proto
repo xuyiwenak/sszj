@@ -1,0 +1,51 @@
+import "tmpl_base.proto";
+
+// 配置数据结构;
+message PBInteractionConfig
+{
+	repeated PBOneInteraction		interaction_list	= 1;
+};
+
+message PBOneInteraction
+{
+	optional sint32 				action_id			= 1;
+	optional PBOneInteractionLogic	logic_data			= 2;
+	optional PBOneInteractionClient	client_data			= 3;
+	optional PBOneInteractionUI		client_ui_data		= 4;
+};
+
+message PBOneInteractionLogic
+{
+	optional sint32					type				= 1;	// 单人0，多人1
+	optional bool					affect_target		= 2;//[default=false];	// 单人用的时候，影响对方的提示
+	optional sint32					sys_mode			= 3;//[default=0];	// 1：vptree同步，0：广发周围
+	optional sint32					cd					= 4;
+	optional float					dis					= 5;//[default=0];
+	optional string					src_sys_prompt_key	= 6;
+	optional string					tar_sys_prompt_key	= 7;
+	optional bool					is_notice			= 8;//[default=false];//是否需要对方确认
+	optional bool					is_lover			= 9;//[default=false];//是否夫妻动作
+};
+
+message PBOneInteractionClient
+{
+	optional float					client_dis			= 1;
+	optional sint32					dir_type			= 2;
+	optional sint32					src_sta_afx_id		= 3;
+	optional sint32					src_loop_afx_id		= 4;
+	optional bool					src_only_anim_loop	= 5;//[default=true];
+	optional sint32					tar_sta_afx_id		= 6;
+	optional sint32					tar_loop_afx_id		= 7;
+	optional bool					tar_only_anim_loop	= 8;//[default=true];
+	optional bool					delete_fx_when_over	= 9;//[default=true];
+	optional float					force_dis			= 10;//[default=0];
+	optional float					last_time			= 11;
+	optional bool					hide_weapon			= 12;//[default=false];
+	optional bool                   hide_wing           = 13;//[default=false];
+};
+
+message PBOneInteractionUI
+{
+	optional string					name				= 1;	// 交互名字，对应static_string.txt中的key值
+	optional string					picture				= 2;	// 交互显示图标，格式:atlas:sprite
+};

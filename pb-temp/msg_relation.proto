@@ -1,0 +1,218 @@
+import "msg_base.proto";
+import "msg_common.proto";
+
+// 婚姻准备类型
+enum PBMarryReadyType
+{
+	enMarry					= 1; // 结婚
+	enDealDivorce 			= 2; // 协议离婚
+	enForceDivorce 			= 3; // 强制离婚
+}
+
+// 结婚确认类型
+enum PBMarryOperateType
+{
+	enMarryAgree			= 1; // 同意
+	enMarryCancle			= 2; // 取消
+}
+
+// 结婚确认类型
+enum PBRelationRoleType
+{
+	enRelUnknown			= 0; // 无
+	enMarryWife				= 1; // 妻子(女士优先)
+	enMarryHusband			= 2; // 丈夫
+}
+
+// 结婚确认类型
+enum PBMarriageMarchType
+{
+	enMarchNormal			= 1; // 普通
+	enMarchGrand			= 2; // 豪华
+}
+
+
+message PBRelationMember
+{
+	optional uint64				member_id		= 1;
+	optional PBRelationRoleType	role_type		= 2;	//身份
+	optional string				member_name		= 3;	//名字
+};
+
+message PBMarriageInfo
+{
+	optional uint64				marriage_id		= 1; // 婚姻ID
+	optional uint32				marriage_time	= 2; // 结婚时间
+	repeated PBRelationMember	marriage_member	= 3; // 夫妻信息
+}
+
+message PBMsgMarriageInfoNotice   // 玩家一上线就会发的消息
+{
+	optional uint32				is_marriage		= 1; // 是否存在婚姻
+	optional PBMarriageInfo  	marriage_info	= 2; // 婚姻信息;
+}
+
+message PBMsgMarriageSuccessNotice
+{
+	optional string				member_name		= 1;	//名字
+};
+
+//--------------------------------------------
+// 结婚消息
+//--------------------------------------------
+
+message PBMarryParterInfo
+{
+	optional uint64				parter_id		= 1; // 搭档ID
+	optional string				parter_name		= 2; // 搭档角色名
+	optional sint32				parter_level	= 3; // 搭档等级
+	optional PBRelationRoleType	role_type		= 4; // 搭档身份
+};
+
+// 婚姻准备
+message PBMsgMarryReadyRequest
+{
+	optional PBMarryReadyType	event_type		= 1;  // PBMarryReadyType
+}
+message PBMsgMarryReadyResponse
+{
+	optional sint32				ret_code		= 1;
+	optional PBMarryReadyType	event_type		= 2;  // PBMarryReadyType
+	optional PBMarryParterInfo	parter_info		= 3;  // 搭档信息
+}
+
+
+// 队长结婚确认
+message PBMsgMarryLeaderAckRequest
+{
+}
+message PBMsgMarryLeaderAckResponse
+{
+	optional sint32				ret_code		= 1;
+	optional PBMarryParterInfo	parter_info		= 2;  // 搭档信息
+}
+
+// 结婚确认提示（队长同意结婚推送给队员弹框提示，同意与否走PBMsgMarryOperateRequest消息）
+message PBMsgMarryLeaderAckNotice
+{
+	optional sint32				ret_code		= 1;
+	optional PBMarryParterInfo	parter_info		= 2;  // 搭档信息
+}
+
+// 队员结婚确认
+message PBMsgMarryMemberAckRequest
+{
+}
+message PBMsgMarryMemberAckResponse
+{
+	optional sint32				ret_code		= 1;
+	optional PBMarryParterInfo	parter_info		= 2;  // 搭档信息
+}
+
+// 队员结婚取消
+message PBMsgMarryMemberCancelRequest
+{
+}
+message PBMsgMarryMemberCancelResponse
+{
+	optional sint32 ret_code		= 1;
+}
+
+
+//--------------------------------------------
+// 离婚消息
+//--------------------------------------------
+
+// 队长协议离婚确认
+message PBMsgDivorceDealLeaderAckRequest
+{
+}
+message PBMsgDivorceDealLeaderAckResponse
+{
+	optional sint32				ret_code		= 1;
+	optional PBMarryParterInfo	parter_info		= 2;  // 搭档信息
+}
+
+// 队长协议离婚确认同志给队员
+message PBMsgDivorceDealLeaderAckNotice  
+{
+	optional sint32				ret_code		= 1;
+	optional PBMarryParterInfo	parter_info		= 2;  // 搭档信息
+}
+
+
+// 队员协议离婚确认
+message PBMsgDivorceDealMemberAckRequest
+{
+}
+message PBMsgDivorceDealMemberAckResponse
+{
+	optional sint32				ret_code		= 1;
+	optional PBMarryParterInfo	parter_info		= 2;  // 搭档信息
+}
+
+// 队员协议离婚取消
+message PBMsgDivorceDealMemberCancelRequest
+{
+}
+message PBMsgDivorceDealMemberCancelResponse
+{
+	optional sint32 ret_code		= 1;
+}
+
+// 强制离婚
+message PBMsgForceDivorceRequest
+{
+}
+message PBMsgForceDivorceResponse
+{
+	optional sint32 ret_code		= 1;
+}
+
+//================================================================================
+// 修改称号请求
+// MSG_Title_Change_Request
+message PBTitleChangeRequest			
+{
+	optional sint32 title_type	= 1;
+	optional uint32	select_sheet = 2;
+}
+
+// 修改称号响应
+// MSG_Title_Change_Response
+message PBTitleChangeResponse
+{
+	optional sint32 ret_code	= 1;
+}
+
+//================================================================================
+// 游街请求
+// MSG_Marriage_March_Request
+message PBMarriageMarchRequest			
+{
+	optional PBMarriageMarchType march_type	= 1; // 游街的类型 1.普通 2.豪华
+}
+
+// 修改称号响应
+// MSG_Marriage_March_Response
+message PBMarriageMarchResponse
+{
+	optional sint32 ret_code				= 1;
+}
+
+
+// 游街请求
+// MSG_Marriage_March_Request
+message PBMarriageMarchReadyRequest			
+{
+	optional PBMarriageMarchType march_type	= 1; // 游街的类型 1.普通 2.豪华
+}
+
+// 修改称号响应
+// MSG_Marriage_March_Response
+message PBMarriageMarchReadyResponse
+{
+	optional sint32 ret_code				= 1;
+	optional PBCostInfoList money_list		= 2;
+	optional PBMarriageMarchType march_type	= 3; // 游街的类型 1.普通 2.豪华
+}

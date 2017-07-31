@@ -1,0 +1,33 @@
+/// @brief	template for config of quest_pry
+/// @author	Deng Lichuan
+
+import "tmpl_base.proto";
+
+message PBQuestPryCfg
+{
+	optional string						quality_ref_npc			= 1; // 刷新品质NPC
+	repeated PBQuestPryQualityCfg		quality_list			= 2; // 刷新品质列表
+	optional string						act_sheet				= 3; // 多倍奖励活动ID
+	repeated PBQuestPryOpenTimeCfg		open_time_list			= 4; // 开放时间表
+	optional sint32						quest_finish_notice_cd	= 5; // 任务完成公告CD（毫秒）
+	optional sint32						quest_commit_notice_cd	= 6; // 任务交付公告CD（毫秒）	
+};
+
+message PBQuestPryQualityCfg
+{
+	optional sint32					quality						= 1; // 品质
+	optional sint32					prop						= 2; // 概率 
+	optional sint32					award						= 3; // 额外奖励倍数（万分比）
+	optional sint32					notice_id					= 4; // 任务完成品质刷新提示
+	optional sint32					success_buff_id				= 5; // 任务完成的buffid
+	optional sint32					success_buff_mtime			= 6; // 任务完成的buff支持的时间，毫秒
+	optional sint32					commit_gateway_notice_id	= 7; // 任务完成品质刷新全服提示
+	optional sint32					self_gateway_notice_id		= 8; // 刷新品质时本阵营公告
+	optional sint32					enemy_gateway_notice_id		= 9; // 刷新品质时敌对阵营公告
+};
+
+message PBQuestPryOpenTimeCfg
+{
+	optional sint32					begin_minute				= 1; // 开始时间
+	optional sint32					end_minute					= 2; // 结束时间
+};

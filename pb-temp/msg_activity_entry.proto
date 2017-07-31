@@ -1,0 +1,217 @@
+option optimize_for = SPEED;
+import "msg_item.proto";
+
+enum PBEActivityStatus
+{
+	eActivity_None		= 0;
+	eActivity_Close		= 1;	// 活动处于关闭状态
+	eActivity_Open		= 2;	// 活动处于开启状态
+};
+
+// 玩家单个活动的基础数据
+message PBActivityData
+{
+	optional uint64				activityID			= 1; // 活动ID
+	optional sint32				last_time			= 2; // 上次做活动的时间
+	optional sint32				liveness			= 3; // 活跃度
+};
+
+message PBQuestionAct
+{
+	optional sint32             total_quest_num     = 1; // 题目总数
+	repeated sint32             stage_time_len      = 2; // 每题的 各个作答阶段 的时间长度(单位:秒 s)
+};
+
+// 单个活动项信息
+message PBActivityEntry
+{
+	optional sint32				activity_sheet		= 1;	// 活动的sheetID
+	optional sint32				liveness			= 2;	// 当前活跃度
+	optional float				accumulation		= 3;	// 累积奖励
+	optional PBEActivityStatus	status				= 4;	// 活动状态
+	optional sint32				openLevel			= 5;//[default=0xFFFF];	// 开启所需玩家等级
+	optional PBQuestionAct      question_act        = 6;    // 文曲答题 基本信息
+	optional uint32             start_time          = 7;    
+	optional uint32             end_time            = 8; 
+};
+
+message PBActivityEntries
+{
+	repeated PBActivityEntry	 activity_entry		= 1;
+};
+
+//////////////////////////////////////////////////////////////////////////
+// 向客户端推送活动入口信息
+message PBMsgActivityEntryInfoNotice
+{
+	optional PBActivityEntries	activity_entries	= 1;
+};
+
+// 活跃度奖励信息请求
+message PBMsgLivenessAwardInfoRequest
+{
+};
+message PBMsgLivenessAwardInfoResponse
+{
+	optional uint32				ret_code			= 1;
+	repeated uint32				have_got			= 2;	// 当前已经领取的奖励索引
+	optional uint32				liveness			= 3;	// 活跃度
+};
+
+// 活跃度奖励领取
+message PBMsgLivenessAwardGetRequest
+{
+	optional uint32				award_index			= 1;
+};
+message PBMsgLivenessAwardGetResponse
+{
+	optional uint32				ret_code			= 1;
+	repeated uint32				have_got			= 2;	// 当前已经领取的奖励索引
+};
+
+message PBMsgNewCharacterNotice
+{
+	optional bool				is_show				= 1;
+};
+
+/****************************** 修仙 *************************************/
+// 修仙详情
+message PBMsgXiuXianInfoRequest
+{
+};
+message PBMsgXiuXianInfoResponse
+{
+	optional PBXiuXianInfo		info				= 1;
+};
+message PBXiuXianInfo
+{
+	optional sint32				du_jie_index		= 1; // 渡劫索引
+	optional uint32				cd_time				= 2; // CD结束时间
+	repeated PBJingMaiInfo		jing_mai			= 3; // 经脉
+	repeated PBProperty			du_jie_pro			= 4; // 渡劫的属性
+};
+message PBJingMaiInfo
+{
+	optional uint32				sheet_id			= 1; // 经脉sheet
+	optional sint32				xue_wei_index		= 2; // 当前提升到的穴位索引
+	optional PBProperty			cur_property		= 3; // 属性
+};
+
+// 穴位提升
+message PBMsgXueWeiUpRequest
+{
+	optional sint32				jing_mai_index		= 1;
+};
+message PBMsgXueWeiUpResponse
+{
+	optional PBJingMaiInfo		jing_mai			= 1;
+	optional uint32				cd_time				= 2;
+	optional sint32				ret_code			= 3;
+};
+
+// 渡劫
+message PBMsgDuJieReqeust
+{
+};
+message PBMsgDuJieResponse
+{
+	optional sint32				ret_code			= 1;
+	optional PBXiuXianInfo		info				= 2;
+};
+
+// 秒CD
+message PBMsgXiuXianResetCDRequest
+{
+}
+message PBMsgXiuXianResetCDResponse
+{
+	optional sint32				ret_code			= 1;
+};
+
+/****************************** 修仙 *************************************/
+
+message PBMsgWildActStatusRequest
+{
+
+};
+
+message PBMsgWildActStatusResponse
+{
+	repeated PBWildActStatus		wild_status		= 1;
+}
+
+message PBWildActStatus
+{
+	optional sint32				activity_sheet		= 1; // 活动的sheetID
+	optional sint32				map_id				= 2; // 所在地图ID
+	optional sint32				line_number			= 3; // 线
+	optional sint64				left_hp				= 4; // 剩余血量
+	optional uint32				relive_time			= 5; // 复活时间
+	optional float				map_x				= 6;
+	optional float				map_y				= 7;
+};
+
+message PBMsgWildBossReliveNotice
+{
+	repeated PBWildActStatus		wild_status		= 1;
+
+};
+
+message PBMsgWildBossInfoRequest
+{
+	optional uint32				roleid				= 1;
+	optional sint32				msgtype				= 2;	// 消息类型，response或者notice
+	optional uint32				gatewayid			= 3;
+	optional uint32				campid				= 4;
+};
+
+
+message PBMsgFestActivityNotice
+{
+	repeated	PBFestActivityInfo fest_activity_list	= 1;	//节日活动列表
+};
+
+message PBFestActivityInfo
+{
+	optional sint32	sheet_id	= 1;	//sheeet_id
+	optional uint32	start_time	= 2;	//开始时间  
+	optional uint32	end_time	= 3;	//结束时间
+	optional PBEActivityStatus status = 4;	//活动状态 开启 or 关闭
+	optional sint32	rankv		= 5;	//节日活动排序值
+};
+
+message PBMsgSpanWildBossStateNotice
+{
+	optional PBEActivityStatus	status	= 1;
+};
+
+message PBMsgGetSpanWildBossStateNotice
+{
+	optional uint32				roleid		= 1;
+	optional uint32				gatewayid	= 2;
+	optional uint32				campid		= 3;
+};
+
+//////////////////////////////////// 西域入侵	//////////////////////////////////////
+message PBWestRegionNPCInfoRequest
+{
+	optional	uint64				npc_entity		= 1;
+};
+
+message PBWestRegionNPCInfoResponse
+{
+	optional	uint64				npc_entity		= 1;
+	optional	sint32				npc_groupid		= 2;
+	optional	sint32				ret_code		= 3;
+};
+
+message PBWestRegionEnterRequest
+{
+	optional	uint64				npc_entity		= 1;
+};
+
+message PBWestRegionEnterResponse
+{
+	optional	sint32				ret_code		= 1;
+};
+//////////////////////////////////// 西域入侵	//////////////////////////////////////

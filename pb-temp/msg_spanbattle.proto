@@ -1,0 +1,883 @@
+import "msg_base.proto";
+import "msg_item.proto";
+import "msg_guild.proto";
+import "msg_role_base.proto";
+import "tmpl_spim_dungeon.proto";
+
+////////////数据定义/////////////
+enum EPBRoundType
+{
+	ERoundType_Group		= 1; // 小组赛
+	ERoundType_Semifinals	= 2; // 半决赛
+	ERoundType_Final		= 3; // 决赛
+};
+
+enum EPBSPIMRoundStatus
+{
+	RoundStatus_Invalid			= -1; //错误状态
+	RoundStatus_BeforeBattle	= 0; // 战斗之前
+	RoundStatus_Battle			= 1; // 战斗阶段
+	RoundStatus_AfterBattle		= 2; // 战斗之后
+};
+
+enum EPBRoundResult
+{
+	ERoundResult_None		= 0;
+	ERoundResult_Rise		= 1;
+	ERoundResult_Third		= 2;
+	ERoundResult_Second		= 3;
+	ERoundResult_First		= 4;
+};
+
+enum EPBSpanImbattleType
+{
+	enImbType_None			= 0; // 无
+	enImbType_Fight			= 1; // 战斗
+	enImbType_Watching		= 2; // 观战
+};
+
+//跨服的信息
+message PBSpanInfo
+{
+	optional sint32 gw_id = 1;
+}
+
+//阵营竞价信息
+message PBCampApply
+{
+	optional sint32	apply_cost = 1; // 竞价
+	optional uint32	apply_time = 2; // 最近一次竞价时间
+	optional sint32	apply_status = 3; // 状态
+}
+
+// 阵营成员信息
+message PBCampMember
+{
+	optional uint64 role_id = 1; 	// role_id
+	optional sint32	gw_id = 2;   	// 网关ID+阵营ID
+	optional string name = 3;		// 名称
+	optional bool high_score_flag = 4;	// 获取高分数的标记（杀死怪物获得）
+	optional sint32 socre_area_time = 5;	// 在得分区域的时间
+}
+
+// 成员奖励
+message PBMemberReward
+{
+	optional PBCampMember member = 1;	// camp member
+	//repeated PBMsgItemQuantity mail_reward_list = 2; // 发邮件的奖励		TODOLWL 待废弃
+	//repeated PBMsgItemQuantity calculate_reward_list = 3; // 结算界面的奖励 TODOLWL 待废弃
+};
+
+// 阵营成员信息 TODOLWL 待废弃
+message PBScoreCampMember
+{
+	optional uint64 role_id = 1; 	// role_id
+	optional sint32	gw_id = 2;   	// 网关ID
+	optional string name = 3;		// 名称
+	optional sint32 kill_score = 4;	// 击杀人数
+	optional sint32 area_score = 5;	// 区域分数
+	optional uint64 player_id = 6;	// player_id
+}
+
+message PBMemberSync
+{
+	optional uint64 role_id = 1; 	// role_id
+	//optional sint32	gw_id = 2;   	// 网关ID
+	optional string name = 3;		// 名称
+	optional sint32 kill_score = 4;	// 击杀人数
+	optional sint32 area_score = 5;	// 区域分数
+	optional uint64 player_id = 6;	// player_id
+	optional sint32	camp_id		= 7;
+	//optional PBScoreCampMember member = 8;	// TODOLWL 待废弃
+	//optional bool is_active = 9;	// TODOLWL 待废弃
+}
+////////////游戏逻辑结构定义////////////
+// 阵营
+message PBCamp
+{
+	optional uint64	id				= 1;	// 
+	optional uint64	externId		= 2;	// 帮派ID
+	optional uint32 externGWId		= 3;	// 附加信息所在的GWID+阵营ID
+	optional string name			= 4;	// 名称
+	optional sint32 battle_score	= 5;	// 战斗力
+	optional sint32 level			= 6;	// 阵营等级
+	optional sint32 group_idx		= 7;//[default=-1];	// 组别(0...3)
+	optional sint32	camp_idx		= 8; // 轮次中阵营索引(0...15),用于比赛分组
+	//optional PBGuildSummary	guild_data	= 9; // 帮派数据
+	optional PBRoleBase	leader_base	= 10; //帮主信息
+	optional PBSignMember signed_member= 11; // 报名的成员
+}
+// 竞价单位
+message PBSignCamp
+{
+	optional PBCamp camp = 1;			// 阵营
+	optional PBCampApply apply = 2;		// 竞价信息
+	optional sint32		rank = 3;		// 名次
+}
+
+message PBSignCampList
+{
+	repeated PBSignCamp sign_list = 1;	//报名阵营
+}
+
+// 成员职位奖励
+message PBTitleReward
+{
+	optional sint32 title = 1;	// member title
+	repeated PBMsgItemQuantity reward_list = 2; // 奖励
+}
+
+// 仓库奖励
+message PBStoreReward
+{
+	optional sint32 rank = 1;	// 名次
+	repeated PBMsgItemQuantity reward_list = 2; // 奖励
+}
+
+// 奖励单位
+message PBRewardCamp
+{
+	optional PBCamp camp = 1;	// 阵营数据
+	repeated PBMemberReward member_reward_list = 2; // 成员奖励
+	//repeated PBTitleReward member_title_reward_list = 3;	//仙盟职位奖励	TODOLWL 待废弃
+	//optional PBStoreReward store_reward = 4;	// 仓库奖励	TODOLWL 待废弃
+	optional PBCfgSpimReward	dungeon		= 3; // 副本奖励
+	optional PBCfgSpimReward	guild		= 4; // 帮派仓库奖励
+	optional PBCfgSpimReward	guild_member	= 5; // 所有帮派成员
+	optional PBCfgSpimReward	gateway		= 6; // 全服奖励
+	optional PBCfgSpimReward	guild_leader= 7; // 帮主独享的奖励
+}
+
+// 报名竞价信息
+message PBSignInfo
+{
+	optional uint64	match_id = 1;	// 赛事ID
+	repeated PBSignCamp sign_list = 2; // 报名数据
+	optional uint64 last_change_time = 3; // 最近一次修改的时间记录
+	optional uint32 delta_time_to_end = 4;// 到报名结束的剩余时间（秒）
+	optional uint32 sign_end_time = 5;// 报名结束时间
+}
+
+// 战斗单位
+message PBBattleCamp
+{
+	optional PBCamp camp = 1; // 阵营
+	repeated PBCampMember member_list = 2;  // 成员列表
+	optional bool	is_bet	= 3;	// 玩家是否对该帮派点赞,发送给客户端的时候填充
+}
+
+// 战斗数据
+message PBBattle
+{
+	optional uint64			battle_id = 1;
+	optional PBBattleCamp 	camp_a = 2;
+	optional PBBattleCamp 	camp_b = 3;
+	optional uint32			start_time = 4;
+	optional uint32			end_time = 5;	// 弃用
+	optional sint32			win_camp_id = 6; // BATTLECAMP::enCampPVP1, BATTLECAMP::enCampPVP2
+	optional uint32			battle_on_gwid = 7;	//战场在那个gw
+	optional bool			give_reward_camp_a = 8;
+	optional bool			give_reward_camp_b = 9;
+	optional EPBSPIMRoundStatus	status	= 10; // 当前状态
+	optional sint32			battle_type	= 11; // BATTLECAMP::TBattleRound
+}
+
+// 比赛轮基本信息
+message PBRoundInfo
+{
+	optional uint64		match_id = 1;
+	optional sint32		round_index = 2;
+	optional sint32		round_title = 3;
+	optional uint32		start_time = 4;	// 当前轮战斗开始时间
+	optional uint32		end_time = 5;	// 当前论结束时间
+	optional string		reward_win = 6; // 弃用
+	optional string		reward_lose = 7; // 弃用
+	optional EPBSPIMRoundStatus		round_status = 8; // 当前状态
+	optional bool		round_end_flag = 9; // 弃用
+	optional EPBRoundType	round_type	= 10;	// 当前赛程
+}
+
+message PBRoundTimeInfo
+{
+	optional sint32			round_title		= 1;
+	optional uint32			bet_start		= 2;
+	optional uint32 		bet_end			= 3;
+	optional uint32 		battle_start	= 4;
+	optional uint32			battle_end		= 5;
+};
+
+// 比赛信息
+message PBMatchBasic
+{
+	optional uint64				match_id		= 1;    // id
+	optional uint32				sign_start_time = 2;	// 报名开始时间
+	optional uint32				sign_end_time	= 3;	// 报名结束时间
+	optional uint32				race_start_time = 4;	// 比赛开始时间
+	optional uint32				race_end_time	= 5;	// 比赛结束时间
+	optional sint32				match_status	= 6;//[default=-1];	// match状态		MATCH_STATUS::enMatchStatus
+	repeated PBRoundTimeInfo	round_time_list = 7;	// 赛事时间安排
+	optional uint32				match_end_time	= 8;
+	optional uint32				match_start_time= 9;
+	optional uint64				origin_match_id	= 10;	// 初始的赛事ID
+}
+
+// 比赛每轮数据
+message PBRound
+{
+	optional PBRoundInfo round_info = 1;
+	repeated PBBattle	battle_list = 2;
+}
+
+// 比赛轮信息
+message PBMatchRound
+{
+	optional PBRound cur_round 			= 1;  // 当前轮
+	repeated PBRound round_history   	= 2;  // 比赛记录
+}
+
+// 跨服帮派战历史前三的数据
+message PBMatchHistoryData
+{
+	optional uint32					match_id			= 1;  // 赛事ID
+	repeated PBMatchGuildData		guild_data			= 2;  // 帮派数据
+};
+
+message PBMatchGuildData
+{
+	optional uint32					battle_result		= 1;  // 排名 EPBRoundResult
+	optional PBBattleCamp			guild_battle		= 2;  // 帮会信息
+}
+
+// 仙盟战得分数据
+message PBIMBattleScore
+{
+	optional uint64 battle_id			= 1; // 战场ID
+	optional sint32	score_a				= 2; // A阵营得分
+	optional sint32	score_b				= 3; // B阵营得分
+	optional sint32	own_camp_id         = 4; //玩家自己的阵营ID
+	optional sint32 require_score		= 5; // 获胜需要的分数
+}
+
+message PBIMBattleMemberSync
+{
+	optional uint64 battle_id = 1;
+	repeated PBMemberSync members = 2;
+	repeated PBIMBattleCampInfo camps = 3;
+	optional uint64	token_player	= 4;
+	//repeated PBMemberSync member_list_a = 5; // TODOLWL 待废弃
+	//repeated PBMemberSync member_list_b = 6; // TODOLWL 待废弃
+}
+
+message PBIMBattleCampInfo
+{
+	optional sint32	camp_id		= 1;
+	optional sint32	score		= 2;
+	optional sint32 gateway_id	= 3;
+	optional string guild_name	= 4;
+};
+
+////////////消息定义////////////
+// 请求报名信息
+message PBRequireSignInfo
+{
+	optional uint64 match_id = 1; 	// id
+	optional bool force = 2;		// 强制请求 用于初始化
+}
+
+// 报名信息回应
+message PBResponseSignInfo
+{
+	optional uint64 match_id = 1; // id
+	optional sint32	ret_code = 2;	// 回应结果码  // 1-成功，有数据
+	optional PBSignInfo sign_info = 3; // 报名信息
+	optional sint32 guild_money = 4;
+	optional PBSignCamp my_guild = 5; // 报名数据
+	optional sint32 bid_limit = 6;  // 竞价下限 
+}
+
+// 请求报名
+message PBRequireSignBattle
+{
+	optional uint64 match_id = 1;	// id
+	optional sint32 append_cost = 2; // 追加资产
+}
+
+// 报名回应
+message PBResponseSignBattle
+{
+	optional uint64 match_id = 1;
+	optional sint32 ret_code = 2;
+	optional PBSignInfo sign_info = 3;  // 最新报名信息
+	
+}
+// 加入战斗请求
+message PBRequireJoinBattle
+{
+	optional uint64 match_id = 1;	  // 赛事ID
+	optional uint64 battle_id = 2;    // 战斗ID
+}
+// 加入战斗请求结果
+message PBResponseJoinBattle
+{
+	optional sint32 ret_code = 1; // 结果码
+	optional uint64 match_id = 2; // 比赛ID
+}
+
+// 加入观战请求
+message PBRequireWatchingBattle
+{
+	optional uint64 match_id		= 1; // 赛事ID
+	optional uint64 battle_id		= 2; // 战斗ID
+}
+// 加入观战请求结果
+message PBResponseWatchingBattle
+{
+	optional sint32 ret_code		= 1; // 结果码
+	optional uint64 match_id		= 2; // 比赛ID
+	optional PBParam code_param		= 3; // 结果码参数
+}
+
+// 观战信息结果推送
+message PBMsgWatchingInfoNotice
+{
+	optional EPBSpanImbattleType battle_type		= 1; // 类型
+	optional uint32 map_id			= 2; // 地图ID
+	optional uint64 match_id		= 3; // 比赛ID
+	optional uint64 battle_id		= 4; // 战场ID
+}
+
+// 比赛结果推送
+message PBImpBattleEnd
+{
+	optional uint64			battle_id = 1;
+	optional PBRewardCamp 	camp_a = 2;
+	optional PBRewardCamp 	camp_b = 3;
+	optional uint32			battle_end_time = 4;
+	optional sint32			battle_end = 5; // 3-camp a win, 4- camp b win, 0- no win
+	optional sint32			battle_round = 6;	// TBattleRound 比赛轮次 1：晋级赛；2：季军争夺赛；3：冠军争夺赛
+	optional sint32			join_camp_count = 7;	//参与队伍数目
+	optional sint32			own_camp_id = 8;	//玩家自己的阵营ID
+	optional sint32			score_a = 9;	//A阵营的得分
+	optional sint32			score_b = 10;	//B阵营的得分
+}
+
+message PBRaceInfo
+{
+	optional sint32			round_index = 1;
+	optional sint32 		round_status = 2;
+	optional sint32 		fightforthird_roundindex = 3; // log(参赛数)/log(2) - 1
+	repeated PBCamp			join_camp = 4;
+	repeated PBCamp			fightforthird_camp = 5;
+};
+
+//非跨服仙盟战结果推送
+message PBMsgIUBtlEndNotice
+{
+	optional sint32				version			= 1;	//阶段？
+	optional uint64				battle_id		= 2;	//仙盟战id
+	optional uint64				win_iu_id		= 3;	//获胜仙盟id
+	optional PBBtlEndCampInfo	campA_info		= 4;	//阵营信息
+	optional PBBtlEndCampInfo	campB_info		= 5;	//阵营信息
+
+};
+
+message PBBtlEndCampInfo
+{
+	optional uint64			iu_id				= 1;	//仙盟id
+	optional sint32			btl_score			= 2;	//积分
+	repeated PBBtlEndMember	member_infos		= 3;	//成员
+};
+
+message PBBtlEndMember
+{
+	optional sint32				version			= 1;
+	optional string				member_name		= 2;
+	repeated PBMsgItemQuantity	rewardItem		= 3;
+};
+
+//仙盟战排行榜
+message PBMsgIUBtlRankResponse	//响应排行榜信息
+{
+	optional sint32				ret_code		= 1;
+	optional PBBtlRankIUInfo	owner_iu		= 2;
+	repeated PBBtlRankIUInfo	rank_iu			= 3;
+};
+
+message PBBtlRankIUInfo
+{
+	optional sint32				iu_rank				= 1;	//仙盟排名
+	optional uint64				iu_id				= 2;	//仙盟id
+	optional string				iu_name				= 3;	//仙盟名
+	optional string				leader_name			= 4;	//盟主名字
+	optional sint32				iu_level			= 5;	//仙盟等级
+	optional sint32				last_season_score	= 6;	//上轮积分
+	optional sint32				cur_season_score	= 7;	//本轮积分
+};
+
+
+// message PBSpanbtlBetInfoRequest
+// {
+// 	optional uint64					match_id			= 1;
+// 	optional sint32 				round_index			= 2;
+// };
+
+// message PBSpanbtlBetInfoResponse
+// {
+// 	optional sint32					ret_code			= 1;
+// 	optional uint64					match_id			= 2;
+// 	repeated PBSpanbtlBetBattle		bet_battle			= 3;
+// };
+
+// message PBSpanbtlBettingRequest
+// {
+// 	optional uint64					match_id			= 1;
+// 	optional sint32 				round_index			= 2;
+// 	repeated PBSpanbtlBetBattle		bet_battle			= 3;
+// };
+
+message PBSpanbtlBetBattle
+{
+	optional uint64					battle_id			= 1;
+	repeated PBSpanbtlCampInfo		bet_camp 			= 2;
+};
+
+message PBSpanbtlCampInfo
+{
+	optional uint64					camp_id				= 1;
+	optional PBMsgItemQuantity		bet_item			= 2;
+};
+
+/////////////////////新跨服帮派战点赞下注消息////////////////////begin
+//个人下注信息
+message PBBetCharInfo
+{
+	optional uint64					char_id					= 1;	//玩家id
+	optional uint64					guild_id				= 2;    //下注的帮派id
+	optional sint32					bet_byb                 = 3;    //下注的绑定元宝值
+	optional sint32				    bet_time				= 4;    //下注时间
+	optional sint32				    round_index				= 5;    //下注轮次
+};
+
+//请求下注排行榜信息
+message PBSpanbtlBetInfoRequest
+{
+};
+
+//下注排行榜信息
+message PBSpanbtlBetInfoResponse
+{
+	optional sint32					ret_code			= 1; //结果code
+	repeated PBSpanbtlBetData		bet_battle			= 2; //帮会下注排行信息
+	repeated PBBetCharInfo          bet_charinfo		= 3; //个人下注信息
+};
+
+// 一条下注排行榜数据 
+message PBSpanbtlBetData
+{   
+	optional uint32				rank        = 1;  // 排名
+	optional uint64             guild_id	= 2;  // 帮会ID
+	optional uint32				guild_level = 3;  // 帮会等级
+	optional string             guild_name  = 4;  // 帮会名字
+	//optional string             master_name = 5;  // 帮主名字
+	//optional string             head_icon   = 6;  // 帮主头像
+	//optional uint32				camp        = 7;  // 阵营
+	optional sint32	            rank_value  = 5;  // 排行值(下注总值)
+	optional float	            scale		= 6;  // 赔率值
+	optional uint32             externGWId  = 7;  // 服务器idGWID
+};
+
+//下注某个帮会
+message PBSpanbtlBettingRequest
+{
+	optional uint64             guild_id	= 1;  // 帮会ID
+	optional uint32             bet_lv	    = 2;  // 下注第几档
+};
+
+
+//需要转发到其他阵营的
+
+/////////////////////新跨服帮派战点赞下注消息////////////////////end
+
+
+
+//////////////////////////帮派战  PB消息替换 start////////////////////////////////////////////////
+// 报名
+message PBMsgSignGuildBattleRequest
+{
+	optional uint64					battle_id			= 1;
+	optional sint32					apply_cost			= 2;
+};
+message PBMsgSignGuildBattleResponse
+{
+	optional sint32					ret_code			= 1;
+};
+
+// 竞价排名信息
+message PBMsgApplyRankRequest
+{
+	optional uint64					battle_id			= 2;
+};
+message PBMsgApplyRankResponse
+{
+	optional uint64					battle_id			= 1;
+	repeated PBIMBattleApply		apply_list			= 2;
+	optional sint32					ret_code			= 3;//[default=1];
+};
+message PBIMBattleApply
+{
+	optional sint32					version				= 1;
+	optional uint64					battle_id			= 2;
+	optional uint64					guild_id			= 3;
+	optional sint32					apply				= 4;
+	optional sint32					index				= 5;
+	optional string					guild_name			= 6;
+	optional PBEIMBattleResult		battle_result		= 7;
+};
+
+message PBMsgGetBattleLordRequest
+{
+};
+message PBMsgGetBattleLordResponse
+{
+	optional sint32					ret_code			= 1;//[default=1];
+	repeated PBIMBattle				guild_battle		= 2;
+};
+
+enum PBEIMBattleResult
+{
+	EIMBattle_None		= 0;
+	EIMBattle_Win		= 1;
+	EIMBattle_Lose		= 2;
+};
+
+message PBIMBattle
+{
+	optional sint32					version				= 1;
+	optional uint64					battle_id			= 2;
+	optional uint32					dungeon_sheet_id	= 3;
+	optional sint32					battle_prog			= 4;
+	optional uint32					sign_end_time		= 5;
+	optional uint32					link_dungeon_id		= 6;
+	optional string					lord_guild_name		= 7;
+	optional string					show_name			= 8;
+};
+
+// 加入帮派战
+message PBMsgJoinIMBattleRequest
+{
+	optional uint64					battle_id			= 1;
+};
+message PBMsgJoinIMBattleResponse
+{
+	optional PBIMBattleInfo			battle_info			= 1;
+	optional sint32					ret_code			= 2;//[default=0];
+};
+message PBIMBattleInfo
+{
+	optional sint32					version			=1;
+	optional uint64					battleId		=2;
+	optional uint64					campAId			=3;
+	optional uint64					campBId			=4;
+	optional sint32					myCampIndex		=5;
+	optional sint32					campAScore		=6;
+	optional sint32					campBScore		=7;
+	optional string					campAName		=8;
+	optional string					campBName		=9;
+	optional bool					hasMember		=10;
+	repeated PBIMMember				members			= 11;
+};
+message PBIMMember
+{
+	optional uint64					player_id		= 1;
+	optional string					player_name		= 2;
+	optional sint32					version			= 3;
+	optional uint64					guild_id		= 4;
+};
+
+message PBMsgBattleDynamicInfoNotice
+{
+	optional PBIMBattleDynamicInfo	info			= 1;
+};
+message PBIMBattleDynamicInfo
+{
+	optional sint32					version			=1;
+	optional uint64					battleId		=2;
+	optional uint64					tokenPlayer		=3;
+	optional sint32					campAScore		=4;
+	optional sint32					campBScore		=5;
+	optional bool					tokenCampA		=6;
+	optional bool					tokenCampB		=7;
+};
+
+message PBMsgBattleRewardNotice
+{
+	optional PBIMBattleReward	reward = 1;
+};
+message PBIMBattleReward
+{
+	optional sint32 version		= 1;
+	optional uint64 battleId	= 2;
+	optional uint64 winIuId		= 3;
+	repeated PBIMBattleRewardInfo infos	= 4;
+};
+message PBIMBattleRewardInfo
+{
+	optional sint32 version = 1;
+	optional uint64 imId = 2;
+	optional string memberName = 3;
+	repeated uint64 itemInfo = 4;// item sheet id in high 32 bit and count in low 32 bit
+};
+
+message PBMsgSetCampMemberNotice
+{
+	optional PBIMBattleCampMember camp_member	= 1;
+};
+message PBIMBattleCampMember
+{
+	optional	sint32 version = 1;
+	optional	uint64 battleId = 2;
+	optional	uint64 iuId = 3;
+	repeated	PBIMMember members = 4;
+};
+
+message PBMsgAddCampMemberNotice
+{
+	optional	PBIMMember	member	= 1;
+};
+
+message PBMsgDeleteCampMemberNotice
+{
+	optional	PBIMMember	member	= 1;
+};
+
+message PBMsgModifyCampMemberNotice
+{
+	optional	PBIMMember	member	= 1;
+};
+
+message PBMsgMemberKillInfoNotice
+{
+	optional PBIMKillInfo	kill_info = 1;
+};
+message PBIMKillInfo
+{
+	optional	sint32 version = 1;
+	optional	uint64 battleId = 2;
+	optional	sint32 myKill = 3;
+	optional	sint32 myRank = 4;
+	repeated	PBIMMemberKillInfo	member_kill_info = 5;
+};
+message PBIMMemberKillInfo
+{
+	optional	sint32 version = 1;
+//	optional	NLMISC::CEntityId charId; // Don NOT serial me, used for game logic, don't send it to client
+	optional	PBIMMember member = 2;
+	optional	sint32 killCount = 3;
+};
+
+message PBSPIMHistoryRank
+{
+	optional	sint32				origin_matchId	= 1;
+	repeated	PBMatchHistoryData	rank_data		= 2;
+};
+
+// 历史三甲数据
+message PBMsgSPIMHistoryRankRequest
+{
+};
+message PBMsgSPIMHistoryRankResponse
+{
+	optional 	PBSPIMHistoryRank	rank_data		= 1;
+};
+//////////////////////////帮派战  PB消息替换 end  ////////////////////////////////////////////////
+
+
+/////////////////////////跨服领地   start ////////////////////////////////////////////////////////
+
+enum PBBattleType
+{
+    eBattleType_Invialed = 0;    // 非法
+    eBattleType_Sign    = 1;     // 报名
+    eBattleType_RaceOne = 2;     // 攻防战
+    eBattleType_RaceTwo = 3;     // 保卫战
+    eBattleType_RaceThree = 4;   // 擂台战
+    eBattleType_Idle    = 5;   // 准备阶段
+	eBattleType_ActEnd  = 6;   // 活动结束
+	eBattleType_forceEnd = 7;  // 强制结束活动
+}
+
+// 领地领奖请求
+message PBMsgGetMonorRewardRequest
+{
+    
+}
+
+// 领地领奖响应
+message PBMsgGetMonorRewardResponse
+{
+    optional sint32 ret_code = 1;
+}
+
+// 通知状态
+message PBMsgMonorBattleInfoNotice
+{
+    optional PBBattleType battle_type = 1;    // 当前阶段
+}
+
+// 领地争防进入请求
+message PBMsgMonorFightBattleRequest
+{
+    
+}
+
+message PBMsgMonorFightBattleResponse
+{
+    optional sint32 ret_code = 1;
+}
+
+// 战旗守卫
+message PBMsgBattleFlagDefenseRequest
+{
+    
+}
+
+message PBMsgBattleFlagDefenseResponse
+{
+    optional sint32 ret_code = 1;
+}
+
+// 擂台争霸
+message PBFightForHegemonyRequest
+{
+
+}
+
+message PBFightForHegemonyResponse
+{
+    optional sint32 ret_code = 1;
+}
+
+// 进入浮空城
+message PBMsgEnterMonorRequest
+{
+    
+}
+message PBMsgEnterMonorResponse
+{
+    optional sint32 ret_code = 1;
+}
+
+// 进入领地战观战请求
+message PBMsgWatchMonorBattleRequest
+{
+    
+}
+
+message PBMsgWatchMonorBattleResponse
+{
+    optional sint32 ret_code = 1;
+}
+
+// 进入战斗请求
+message PBMsgMonorBattleEnterBattleRequest
+{
+
+}
+message PBMsgMonorBattleEnterBattleResponse
+{
+    optional sint32 ret_code = 1;  
+}
+
+message PBMonorRank
+{
+    optional sint32 rank       = 1; // 名次
+    optional string char_name  = 2; // 玩家名字
+    optional string guild_name = 3; // 帮派名字
+    optional uint32 gateway_id = 4; // 服务器
+    optional sint32 score      = 5; // 积分
+    optional sint32 kill_num   = 6; // 杀人数
+    optional uint32 role_id    = 7; // 玩家roleId
+    optional uint64 guild_id   = 8; // 帮派Id
+    optional uint32 camp       = 9; // 阵营
+}
+
+// 结算界面
+message PBMonorBattleSettleNotice
+{
+    optional bool is_win                   = 1;
+    repeated PBMonorRank       rank_list   = 2;
+    repeated PBMsgItemQuantity reward_list = 3;
+}
+
+// 通知左侧窗口
+message PBMsgMonorBattleScoreNotice
+{
+    repeated PBMonorRank rank_list = 1;
+}
+
+// 获得积分通知
+message PBMsgMonorBattleGetSumScoreNotice
+{
+    optional sint32 sum_score = 1;  // 玩家获得总积分
+}
+
+message PBMsgGetScoreNotice
+{
+    optional uint32 srcDatasetID = 1;  // 得分玩家datasetId
+    optional uint32 value        = 2;  // 获得的分数
+}
+
+
+///////////////// 攻防战 start //////////////////////
+
+
+///////////////// 攻防战 end ////////////////////// 
+
+////////////////  保卫战 start //////////////////////
+
+message PBMsgMonorBattleCaptureRateNotice
+{
+    optional sint32 cur_score = 1;    // 当前积分
+    optional sint32 win_score = 2;    // 获胜需要的最少积分
+}
+
+//////////////// 保卫战 end //////////////////////////
+
+//////////////// 擂台战 start ////////////////////////
+
+// 上阵请求
+message PBMsgMonorBattleFightRequest
+{
+
+}
+message PBMsgMonorBattleFightResponse
+{
+    optional sint32 ret_code = 1;
+}
+
+// 下阵请求
+message PBMsgMonorBattleUnfightRequest
+{
+
+}
+message PBMsgMonorBattleUnfightResponse
+{
+    optional sint32 ret_code = 1;
+}
+
+message PBMsgMonorBattleFightNotice
+{
+    repeated PBMonorRank fight_member = 1;  // 上阵成员
+}
+
+message PBMsgMonorBattleRoundNotice
+{
+    optional uint32 round = 1;            // 第几轮
+    optional bool is_started = 2;         // 是否已经开始
+    optional uint32 remind_second = 3;    // 开始剩余秒数 is_started = false 有效
+}
+
+/////////////// 擂台战 end ///////////////////////////
+
+
+/////////////////////////跨服领地   end ////////////////////////////////////////////////////////

@@ -1,0 +1,71 @@
+// 以最快速度序列/反序列
+option optimize_for = SPEED;
+
+import "msg_base.proto";
+
+
+enum ERankScope
+{
+	ERankScope_Global			= 0;	// 全服
+	ERankScope_ZongHeng			= 1;	// 纵横
+	ERankScope_XiaoYao			= 2;	// 逍遥
+	ERankScope_TianMing			= 3;	// 天命
+	ERankScope_Count			= 4;	// count
+};
+
+enum ERankType
+{
+	//	个人排行榜
+	ERank_PlayerBegin			= 1;	// 个人开始
+
+	ERank_PlayerLevel			= 1;	// 个人等级
+	ERank_PlayerBattleScore		= 2;	// 个人战斗力
+
+	ERank_PlayerPVPScore		= 3;	// 个人竞技场积分;
+	ERank_PlayerTreasureLingqi	= 4;	// 个人藏宝灵气 //暂无用
+
+	ERank_PlayerShiLian			= 5;	// 个人试炼;	//暂无用
+	ERank_PlayerCharmPoint		= 6;	// 个人魅力;
+
+	ERank_PlayerKiller			= 7;	// 个人杀人;
+	ERank_PlayerCurExp			= 8;	// 个人经验值;	//暂无用
+
+	ERank_PlayerPetBattleScore	= 9;	// 个人灵宠战力
+	ERank_PlayerJustice			= 10;	// 个人正气
+
+	ERank_PlayerEvil			= 11;	// 个人邪气
+	ERank_PlayerDeath			= 12;	// 个人死亡
+
+	ERank_PlayerJusticeExp		= 13;	// 个人正气经验（只做排序用、不是真实的榜单）
+	ERank_PlayerEvilExp			= 14;	// 个人邪气经验（只做排序用、不是真实的榜单）
+	ERank_PlayerClimbTower		= 15;	// 爬塔历史最高层数
+	ERank_PLayerClimbTowerTime	= 16;	// 爬塔历史最高层数时间
+	ERank_PlayerAnswerScore		= 17;	// 答题的分数
+	ERank_PlayerAnswerScoreTime	= 18;	// 答题的时间
+	ERank_PlayerMountBattleScore= 19;	// 个人飞剑战力
+	ERank_PlayerSpanWildScore	= 20;	// 跨服野外积分排行榜（只有世界排行）这份数据存储在common上
+	ERank_PlayerSendFlowerScore = 21;	// 个人送花积分排行榜;
+	// 在此处前面增加排行榜类型
+	ERank_PlayerEnd				= 22;	// 个人排行榜结束
+
+	//   帮派排行榜
+	ERank_GuildBegin			= 100;	// 帮派开始	
+
+	ERank_GuildLevel			= 100;	// 帮派等级
+	ERank_GuildBattleScore		= 101;	// 帮派战力
+
+	ERank_GuildMatchPoint		= 102;	// 帮派积分
+
+	// 在此处前面增加排行榜类型
+	ERank_GuildEnd				= 103;	// 帮派结束
+
+	ERank_SPIMHistoryRank		= 150;	// 跨服帮派战历史前三名
+
+};
+
+
+enum ERankObjType
+{
+	ERankObj_Player				= 1;
+	ERankObj_Guild				= 2;	
+};

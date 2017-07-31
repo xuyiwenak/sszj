@@ -1,0 +1,40 @@
+option optimize_for = SPEED;
+
+import "msg_base.proto";
+import "msg_item.proto";
+
+message PBMsgUIOpenInfoNotice
+{
+	repeated sint64	ui_state			= 1;
+	repeated uint32	ui_story			= 2;
+	repeated uint32	ui_guide			= 3;
+};
+
+message PBMsgUIStoryReport
+{
+	optional uint32	ui_story			= 1; // 剧情ID
+	optional uint32	save_flag			= 2; // 是否保存
+};
+
+message PBMsgUIGuideReport
+{
+	optional uint32	ui_guide			= 1; // 剧情ID
+};
+
+message PBMsgUIPushLevelReport
+{
+	optional uint32	ui_pushlevel		= 1; // 引导ID
+};
+
+message PBMsgUIPushLevelNotice
+{
+	repeated uint32	ui_pushlevel		= 1;
+};
+
+
+// 单独的隐藏或显示（用在不适用于通用控制的地方）
+message PBMsgUIHideNotice
+{
+	optional sint32						func_type	= 1; // CHATACTERUI::TWindow
+	optional bool						is_hide		= 2; // 是否隐藏
+};

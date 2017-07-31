@@ -1,0 +1,57 @@
+import "msg_item.proto";
+
+// 查询仙盟成员信息
+message PBMsgImmortalMember
+{
+	optional uint64 mId						= 1;
+	optional string name					= 2;
+	optional uint32 level					= 3;
+	optional uint32 job						= 4;
+	optional int32 hornourPoit				= 5;
+	optional uint32 title					= 6;
+	optional bool isOnline					= 7;
+	optional int32 capitalSum				= 8;
+	optional uint32 offline_time			= 9;
+}
+
+message PBMsgImmortalMembersResponse
+{
+	optional 			uint64 mId 			= 1;	
+	repeated PBMsgImmortalMember member_list 		= 2;
+}
+message PBMsgImmortalMembersRequest
+{	
+}
+
+message PBMsgItemOperateRecord
+{
+	optional int32	op_type			= 1;	//物品操作类型（1：获得；2：发放）
+	optional uint32 op_time			= 2;	//操作时间
+	optional int32	rank			= 3;	//名次
+	optional string	operator_name	= 4;	//操作者名字（现在操作者是盟主）
+	optional string	member_name		= 5;	//获得道具的成员名字
+	repeated PBMsgItemQuantity item	= 6;	//物品信息(物品id，个数)
+};
+
+message PBMsgItemOperateRecordList
+{
+	repeated PBMsgItemOperateRecord record_list = 1;	//仙盟仓库道具操作记录
+};
+
+message PBMsgImmortalStoreGiveOutRequest
+{
+	optional int32	slot		= 1;	//物品槽位
+	optional int32	count		= 2;	//物品数量
+	optional uint64 operatorId	= 3;	//操作者ID
+	optional uint64 memberId	= 4;	//物品发送给的成员ID
+};
+
+message PBMsgImmortalStoreGiveOutResponse
+{
+	optional int32	ret_code		= 1;	//消息码
+};
+
+message PBMsgImmortalStoreItemInfo
+{
+	repeated PBMsgInvSlot item_list	= 1;	//商店里的道具
+}

@@ -1,0 +1,36 @@
+import "msg_base.proto";
+
+
+message PBMsgRankList
+{
+	repeated	PBRankInfo rank_list	= 1; //排行榜数据
+}
+
+message PBRankInfo
+{
+	optional	sint32	rank	= 1; //排名
+	optional	uint64	id		= 2; //玩家id
+	optional	string	name	= 3; //玩家名字
+	optional	uint32	killnum	= 4; //击杀人数
+	optional	uint32	deathnum = 5;	//死亡次数
+	optional	uint32	exp		= 6;	//经验
+	optional	uint32	money	= 7;	//铜钱
+	optional	uint32  justice	= 8;	//正气值
+}
+
+message PBMsgDanceKillNum
+{
+	optional	uint32	killnum	= 1;	//已击杀的次数
+}
+
+//报名
+message PBMsgCangQiongPKRequest
+{
+}
+
+//响应
+message PBMsgCangQiongPKResponse
+{
+	optional	uint32	ret_code	= 1;
+	optional	uint32	state		= 2; //状态
+}

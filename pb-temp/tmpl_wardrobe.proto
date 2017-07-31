@@ -1,0 +1,26 @@
+import "tmpl_base.proto";
+
+message PBWardrobeConfig
+{
+	optional PBSlot             Slot     = 1;               
+	repeated PBFashionWardrobe  Fashion  = 2;
+};
+
+message PBSlot
+{
+	optional sint32          max_slot  = 1;
+	optional string          open_cost = 2;
+	optional sint32          open_slot = 3;//[default=2];
+}
+
+message PBFashionWardrobe
+{
+	optional sint32          equip_type     = 1;    //装备类型
+	optional sint32          fashion_type   = 2;    //服装类型ID
+	repeated PBSheets        fashion_sheet  = 3;    //服装sheet
+};
+
+message PBSheets
+{
+	optional string item       = 1;                  //
+};

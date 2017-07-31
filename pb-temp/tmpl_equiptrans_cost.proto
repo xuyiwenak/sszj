@@ -1,0 +1,33 @@
+import "tmpl_base.proto";
+
+message PBPropItem
+{
+	optional sint32 num    = 1;
+	optional sint32 costlz = 2;
+	optional sint32 costm  = 3;
+}
+
+message PBPropCostInfo
+{
+	optional uint32 id      = 1;
+	optional sint32 fixedlz = 2;
+	optional sint32 fixedm  = 3;
+	optional sint32 perlz   = 4;
+	optional sint32 perm    = 5;
+}
+
+message PBEquipQualityCfg
+{
+	optional uint32           equip_quality  = 1;
+	optional sint32          unlegacy_costlz = 2;  //不继承消耗的元宝
+	optional sint32           unlegacy_costm = 3;  //不继承消耗的金钱      
+	repeated PBPropItem       propitem       = 4;
+	repeated PBPropCostInfo   lockprop       = 5;
+	repeated PBPropCostInfo   unlockprop     = 6;
+}
+
+
+message PBEquipTransCostCfg
+{
+	repeated PBEquipQualityCfg equip_quality_cfg = 1;
+}

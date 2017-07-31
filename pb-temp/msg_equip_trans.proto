@@ -1,0 +1,37 @@
+import "msg_item.proto";
+import "msg_base.proto";
+
+message PBMsgEquipTransRequest
+{
+	optional PBMsgSlot		legacy_slot			= 1; // 转换的装备
+	optional bool         is_inherit      = 2; // 是否勾选    
+}
+
+message PBMsgEquipTransResponse
+{
+	optional sint32  ret_code = 1;   
+	optional PBMsgInvSlot slot_info = 2;  //转换后的装备信息
+}
+
+message PBMsgEquipTransCostRequest
+{
+	optional PBMsgSlot		legacy_slot			= 1; // 转换的装备
+}
+
+message PBCostMoney
+{
+	optional sint32  type = 1;  //类型
+	optional uint32      num = 2;   //钱数
+}
+message PBEquipTransCost
+{
+	optional bool is_inherit = 1;
+	repeated PBCostMoney money = 2;
+}
+
+message PBMsgEquipTransCostResponse
+{
+	optional sint32 ret_code = 1;
+	repeated PBEquipTransCost money = 2;
+	optional uint32 result_sheet = 3;
+}

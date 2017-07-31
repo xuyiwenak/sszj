@@ -1,0 +1,85 @@
+import "tmpl_base.proto";
+import "msg_couplepvp.proto";
+
+message PBConfigCouple
+{
+	optional PBCoupleActCtl			act_ctl			= 1; //活动配置
+	optional PBCouplePVPDungeonCfg 	dungeon_cfg 	= 2; // 副本通用配置
+	optional PBCoupleAwardCfg		award_cfg		= 3; // 奖励配置
+	optional string					act_sheet		= 4; // 活动sheet
+};
+
+message PBCoupleActCtl
+{
+	repeated PBCoupleActDate	date			= 1;
+	optional sint32				sign_time		= 2; // 单位秒
+	optional sint32				max_couple		= 3;//[default=0x7FFFFFFF]; // 最大报名数量
+	optional sint32				client_update	= 4; //	客户端请求频率
+	repeated PBCoupleActTime	act_time		= 5;
+};
+
+message PBCoupleActDate
+{
+	optional sint32				week			= 1; // 0~6:周日~周六
+	optional string				time			= 2; // 20:00:00
+};
+
+// 按照round_index一次配置
+message PBCoupleActTime
+{
+	optional sint32				round_index		= 1; // 
+	optional string				dungeon_sheet	= 2;
+	optional sint32				round_type		= 3; // ECouplePVPDungeonType
+	optional sint32				dungeon_time	= 4; // 秒
+	optional sint32				rest_time		= 5;//[default=2]; // 秒,最小为2
+	optional sint32				dungeon_gateway	= 6;
+	optional sint32				dungeon_camp	= 7;
+};
+
+
+// buff列表
+message PBCouplePVPList
+{
+	optional sint32 buff_id  = 1; // buffid
+	optional sint32 min_rate = 2; // 机率区间 小值 万分比
+	optional sint32 max_rate = 3; // 机率区间 大值 万分比
+	optional sint32 buff_time= 4; // buff持续时间 毫秒
+	optional string buff_name= 5; // buff名字
+	optional string buff_desc= 6; // buff描述
+};
+
+
+
+// 副本通用配置
+message PBCouplePVPDungeonCfg
+{
+	optional sint32				buff_id		= 1; // 副本中加积分的buffid
+	optional sint32				win_score	= 2; // 胜利积分值
+	optional sint32				intertime	= 3; // 增加积分间隔
+	optional sint32				score_val	= 4; // 每次加积分值
+	optional sint32				sure_buff_count = 5; // 必定出buff触发次数
+	optional sint32				buff_rate	= 6; // 虎符单独概率 万分比
+	optional string 			buff_name	= 7; // buff名字
+	optional string 			buff_desc	= 8; // buff描述
+	repeated PBCouplePVPList    buff_list	= 9; // buff_list
+	optional sint32				notice_time = 10;// 进入副本提示时间秒
+	optional sint32				over_time	= 11;// 进入副本超时判断时间秒
+	optional sint32				off_time	= 12;// 副本中等待开始时间
+	optional sint32				ready_time	= 13;// 倒计时开始时间
+	optional sint32				enter_buff_id	= 14;// 定身buffid
+	optional sint32				enter_buff_time	= 15;// 定身buffid超时时间
+	
+};
+
+// 奖励配置
+message PBCoupleAwardCfg
+{
+	repeated PBCoupleFloorAward floor_award		= 1; // 每一层奖励
+	optional PBCoupleFloorAward first_award		= 2; // 冠军奖励
+};
+
+
+
+
+
+

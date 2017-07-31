@@ -1,0 +1,100 @@
+/// @brief	template for config of fireworks
+/// @author	Qian LiJun
+
+import "tmpl_base.proto";
+
+// 烟花活动配置
+message PBConfigActivityFireworks
+{
+	repeated PBConfigFireworks		fireworks_config	= 1;// 烟花配置
+};
+
+
+message PBConfigFireworks
+{
+	optional string start_date					= 1;	// 活动开始日期
+	optional string start_time					= 2;	// 活动开始时间
+	optional string end_date					= 3;	// 活动结束日期
+	optional string end_time					= 4;	// 活动结束时间
+	optional PBConfigFireworksScore 	score_collect		= 5;	// 积分收集信息
+	optional PBConfigFireworksDisplay 	score_open			= 6;	// 烟花燃放信息
+	optional uint32 act_id						= 7;//[default=0];	// 活动ID
+	optional string npc_group_name				= 8;	// npc名
+	optional string btn_name					= 9;	// 客户端btn名
+	optional string btn_event					= 10;	// 客户端btn事件
+	optional PBConfigFireworksDesc 		act_desc_info		= 12;	// 活动描述相关
+	optional uint32 act_tip_type				= 13;//[default=0];	// 客户端hud界面显示
+
+}
+
+message PBConfigFireworksDesc
+{
+	optional string act_desc					= 1;	// 活动描述
+	optional string act_help_desc				= 2;	// 活动帮助
+	optional string act_award_desc				= 3;	// 活动奖励说明
+	optional string act_score_desc				= 4;	// 活动积分说明
+	optional string act_title_icon				= 5;	// 活动名称图片
+	optional string act_black_icon				= 6;	// 活动背景图片
+}
+
+message PBConfigFireworksScore
+{
+	optional string score_start_time		= 1;	// 积分开始时间
+	optional string score_end_time			= 2;	// 积分结束时间
+	repeated PBConfigFireworksQuest quest_info		= 3;	// 任务列表
+	optional sint32 player_score_limit		= 4;//[default=0];	// 玩家积分获取的最大值
+	optional uint32 act_score_total			= 5;//[default=0];	// 总积分
+}
+
+message PBConfigFireworksQuest
+{
+	optional sint32 quest_id				= 1;//[default=0];	// 任务ID
+	optional sint32 add_score				= 2;//[default=0];	// 交付获取的积分
+}
+
+
+message PBConfigFireworksDisplay
+{
+	optional string display_start_time		= 1;	// 烟花开始时间
+	optional string display_end_time		= 2;	// 烟花结束时间
+	repeated sint32 display_map_id			= 3;	// 烟花燃放的地图ID
+	optional sint32 add_exp_tick_second		= 4;	// 加经验的tick
+	optional sint32 add_exp_limit			= 5;	// 加经验的总次数
+	repeated PBConfigFireworksSocreChar		score_player	= 6;	// 玩家积分经验加成
+	repeated PBConfigFireworksSocreServer	score_server	= 7;	// 全服积分经验加成
+	optional sint32 is_show_fireworks		= 8;	// 是否然后烟花特效
+	optional PBTemplateItemQuantityList server_award_list	= 9;	// 全服进度完成奖励物品
+	optional string exp_table				= 10;	// 加经验的总次数
+	optional string server_award_mail_title	= 11;	// 奖励邮件标题
+	optional string server_award_mail_body	= 12;	// 奖励邮件正文
+	optional sint32 is_server_award			= 13;//[default=1];		// 是否发放全服奖励
+	optional string show_fireworks_fx		= 14;	// 烟花特效
+	optional string display_server_notice	= 15;	// 燃放烟花公告
+	optional uint32 display_server_notice_tick				= 16;	// 燃放烟花公告tick（秒）
+	optional string display_preview_notice					= 17;	// 燃放烟花公告tick（秒）
+	repeated uint32	display_preview_notice_second			= 18;	// 燃放烟花预热公告（配置烟花间隔开始时间秒数）
+	optional string map_fx					= 19;	// 场景烟花特效
+	optional sint32 map_fx_distance			= 20;	// 场景烟花半径
+	repeated PBTemplateVector2d map_fx_pos					= 21;	// 场景烟花位置
+	optional sint32 add_fx_tick_second		= 22;	// 加经验的tick
+	optional sint32 add_fx_limit			= 23;	// 加经验的总次数
+}
+
+//	玩家积分与经验加成关系;//[1,3]
+message PBConfigFireworksSocreChar
+{
+	optional sint32 score_min						= 1;	// 最小积分
+	optional sint32 score_max						= 2;	// 最大积分
+	optional sint32 add_score_precent				= 3;	// 经验加成万分比
+}
+
+//	积分完成度经验加成关系;//[0,3000]
+message PBConfigFireworksSocreServer
+{
+	optional sint32 score_min_precent		= 1;	// 最小积分万分比
+	optional sint32 score_max_precent		= 2;	// 最大积分万分比
+	optional sint32 add_score_precent		= 3;	// 经验加成万分比
+}
+
+
+

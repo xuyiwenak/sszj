@@ -1,0 +1,429 @@
+/// @brief	template for config of guild
+/// @author	Deng Lichuan
+
+import "tmpl_base.proto";
+import "msg_common.proto";
+import "msg_guild.proto";
+
+message PBGuildEverydayGetReward
+{
+	optional string item_sheet    = 1;       // 每日领取的物品
+	optional int32 num       = 2;           // 每日领取物品的数目
+};
+
+// 工会逻辑配置
+message PBConfigGuild
+{
+	optional PBGuildCreationConfig	creation_config	= 1;
+	optional PBGuildJoinConfig		join_config		= 2;
+	optional PBGuildDisbandConfig	disband_config	= 3;
+	repeated PBGuildLevelConfig		level_config	= 4;
+	optional PBGuildDonateConfig	donate_config	= 5;
+	optional PBGuildRewardConfig	reward_config	= 6;
+	repeated PBBasicSalary			basic_salary	= 7;
+	optional PBGuildBuildingCfg		guild_building	= 8;
+	repeated PBGuildExp				guild_exp		= 9;
+
+	optional int32 creation_coin_cost		= 11;	// 创建需花费的金币数量
+	optional int32 creation_diamond_cost	= 12;	// 创建需花费的蓝钻数量
+	optional int32 max_applied_guild		= 13;	// 申请工会上限
+	optional int32 quit_guild_cd			= 14;	// 退出帮会加入新帮会的CD时间(分钟)
+	optional int32 retain_data_cd			= 15;	// 退出当前帮会后数据保留时间(分钟)
+	optional int32 mission_group_id			= 16;	// 帮派日常任务的环任务ID
+	optional int32 create_level				= 17;	// 创建帮派需求等级
+	optional int32 join_level				= 18;	// 加入帮派等级
+	optional uint32 dismiss_cd				= 19;	// 解散帮派CD(分钟)
+	optional PBGuildBasicConfig	basic		= 20;
+	optional PBGuildStoreCfg store_config = 21;   //帮派仓库配置
+	optional PBGuildChangeJobCfg change_job = 22; // 任命官职配置
+};
+
+
+message PBGuildCreationConfig
+{
+	optional int32 coin_cost		= 1;//[default=50000];	// 创建需花费的金币数量
+	optional int32 diamond_cost		= 2;//[default=5000];	// 创建需花费的蓝钻数量
+	optional int32 required_level	= 3;//[default=15];	// 需要的等级
+	optional int32 min_name_len		= 4;//[default=1];		// 工会名称限制
+	optional int32 max_name_len		= 5;//[default=6];		// 工会名称限制
+}
+
+message PBGuildJoinConfig
+{
+	optional int32 required_level	= 3;//[default=15];	// 需要的等级
+	optional uint32 cd_seconds		= 4;//[default=86400];	// 自上次退出工会后的最小延迟时间
+}
+
+message PBGuildDisbandConfig
+{
+	optional uint32 max_no_maintenance_day	= 1;//[default=10]; // 最长的维护费欠费时间，超过后自动解散
+}
+
+// 工会等级配置
+message PBGuildLevelConfig
+{
+	optional int32 level_id					=1; // 等级
+	optional int32 max_member_num			=2; // 最大成员数量
+	optional int32 max_vice_leader			=3; // 最大副会长数量
+	optional int32 maintenance_cost			=4; // 维护消耗
+	optional int32 maintenance_period_day	=5; // 维护周期（天）
+	optional int32 levelup_money_cost		=6; // 升级需要消耗的资产
+	optional int32 guild_exp				=7; // 升级需要的帮会建设度
+	optional int32 history_money			=8; // 升级需要的历史帮派资产
+	repeated PBGuildEverydayGetReward reward      =9; // 每日签到奖励
+	// 副会长数量上线
+};
+
+// 工会捐赠配置
+message PBGuildDonateConfig
+{
+	//optional int32 id							=1; // 档次
+	//optional PBCurrencyType money_type		=2; // 金钱类型
+	//optional int32 amount						=3; // 金钱数量
+	//optional int32	contribution_item			=4; // 物品捐赠帮会个人贡献
+	//optional int32	guild_money_obtained_item	=5; // 物品捐赠获得的帮会资产
+	//optional string	donate_item					=6; // 捐献物品的sheetID
+	//optional int32	contribution_blue			=7; // 蓝钻捐赠帮会个人贡献
+	//optional int32	guild_money_obtained_blue	=8; // 蓝钻捐赠获得的帮会资产
+
+	optional int32	item_rate					=9; // 一帮派资产需要的铜钱数
+	optional int32	blue_rate					=10; // 一帮派资产需要的蓝钻数,
+	optional int32	contribution_rate			=11; // 捐献一帮派资产获得的个人帮贡
+	optional int32	default_item_count			=12;
+	optional int32	default_blue_count			=13;
+};
+
+// 工会工资配置
+message PBGuildRewardConfig
+{
+	optional int32	normal_value				=1; // 帮贡常规设定值
+	optional int32	factor						=2; // 帮贡常规设定值万分比系数
+	optional int32	min_contri					=3; // 最低周帮贡
+};
+
+message PBBasicSalary
+{
+	optional int32	guild_lv					=1; // 工会等级
+	optional int32	salary						=2; // 基础工资
+};
+
+message PBGuildBuildingCfg
+{
+	optional int32					finish_times			= 1; // 完成建筑任务需要做多少次
+	optional int32					daily_reward_times		= 2; // 玩家每日做建筑任务可获得奖励的次数
+	repeated PBBuildingTask			building				= 3;
+	repeated PBPublishCostMultiple	publish_cost_multiple	= 5;
+	repeated PBSkillStudyCfg		skill_study				= 6;
+	repeated PBSkillLearnCfg		skill_learn				= 7;
+	repeated PBGuildBless			bless					= 8;
+	optional PBDrunkery				drunkery				= 9;
+	optional PBDyeCfg				dye						= 10;
+};
+
+message PBBuildingTask
+{
+	optional int32					type				= 1; // 建筑类型
+	optional string					icon				= 2;
+	optional string					icon_atlas			= 3;
+	optional string					name				= 4;
+	optional string					desc				= 5;
+	optional int32					open_level			= 6; // 帮派X级时开放 
+	repeated PBBuildingLevelInfo	level_info			= 7;
+};
+
+message PBBuildingLevelInfo
+{
+	optional int32		level					= 1;
+	optional int32		cost_guild_contri		= 3;
+	optional int32		guild_level				= 4; // 不大于帮派X级
+	optional string		desc					= 5;
+};
+
+message PBPublishCostMultiple
+{
+	optional int32		start_times				= 1; // 起始次数
+	optional int32		end_times				= 2; // 终止次数
+	optional int32		multiple				= 3; // 倍数
+};
+
+message PBSkillStudyCfg
+{
+	optional int32				secial_id		= 1; // 技能研究等级
+	repeated PBGSStudyInfoCfg	study_info		= 2;
+};
+
+message PBGSStudyInfoCfg
+{
+	optional int32		level					= 1;
+	optional int32		cost_guild_contri		= 2; // 升级消耗的帮贡
+	optional int32		cd_time					= 3; // CD时间以分钟为单位
+	repeated PBGSUpCondition	condition		= 4; // 升级条件
+};
+
+message PBGSUpCondition
+{
+	optional int32						building_type	= 1;
+	optional int32						building_level	= 2; // 需求的建筑等级
+};
+
+message PBSkillLearnCfg
+{
+	optional int32				secial_id		= 1; // 技能 
+	repeated PBGSLearnInfoCfg	learn_info		= 2;
+};
+
+message PBGSLearnInfoCfg
+{
+	optional int32				level			= 1; // 技能学习等级
+	optional int32				cost_own_contri	= 3; // 升级消耗的个人贡献
+};
+
+message PBGuildBless
+{
+	optional int32				level			= 1;
+	optional int32				count			= 2;
+	optional int32				cost_own_contri	= 3;
+	optional string				award_loot		= 4;
+};
+
+message PBDrunkery
+{
+	optional int32				max_bottle		= 1;
+	optional int32				mapId			= 2;
+	optional float				pointX			= 3;
+	optional float				pointY			= 4;
+	optional float				pointZ			= 5;
+	optional int32				per_bottle		= 6;	// 每瓶酒能喝多少口
+	optional int32				banquet_exit_time	= 7;
+	repeated PBWineType			wine_type		= 8;
+	repeated PBBanquetParter	parter			= 9;
+	repeated PBBanquetCost		banquet_cost	= 10;
+	repeated PBDrunkeryLevelInfo	level_info	= 11;
+};
+
+message PBWineType
+{
+	optional int32				type			= 1;
+	optional int32				drunkery_level	= 3;
+	optional int32				cost_own_contri	= 4;
+	optional int32				cd_time			= 5;
+	optional string				icon			= 7;
+	optional string				icon_atlas		= 8;
+	optional string				exp_cfg			= 9;
+};
+
+message PBDrunkeryLevelInfo
+{
+	optional int32				drunkery_level	= 1;
+	optional int32				max_open_count	= 2;
+	optional int32				make_wine_count	= 3;
+};
+
+message PBBanquetParter
+{
+	optional int32				min_count		= 1;
+	optional int32				max_count		= 2;
+	optional float				extend_exp		= 3;
+};
+
+message PBBanquetCost
+{
+	optional int32				open_count		= 1;
+	optional int32				guild_contri	= 2;
+};
+
+// 帮派经验(建设度)
+message PBGuildExp
+{
+	optional PBEGuildExpOrigin	origin			= 1;
+	optional int32				exp				= 2;
+};
+
+// 公会Boss配置
+message PBGuildBossCfg
+{
+	optional int32					max_count		= 1;	// 废弃
+	optional int32					limit_level		= 2;
+	repeated PBGBossCfg				guild_boss		= 3;
+	repeated PBGBNPCAdjust			npc_adjust		= 5;
+	optional int32					rank_notice		= 6;
+	repeated PBGBOpenCount			open_count		= 7;
+};
+
+message PBGBossCfg
+{
+	optional string					dungeon_id		= 1;
+	repeated PBGBOpenCost			open_cost		= 2;
+	repeated PBGBLevelInfo			level_info		= 3;
+	optional string					boss_sheet		= 4;
+	repeated PBGBossGrowUp			creature_grow_up= 7;
+	repeated PBGBAwardPercent		award_percent	= 8;
+};
+
+message PBGBOpenCost
+{
+	optional int32					open_count		= 1;
+	optional int32					guild_money		= 2;
+};
+
+message PBGBLevelInfo
+{
+	optional int32					guild_level_start= 1;
+	optional int32					guild_level_end	= 2;
+	optional int32					min_npc_level	= 3;
+	optional int32					max_npc_level	= 4;
+	optional int32					base_npc_level	= 5;
+	repeated PBGBAward				luck_award		= 6;
+	optional int32					guild_contribution		= 7; // 总的帮派贡献
+	optional int32					min_guild_contribution	= 8; // 保底的帮派贡献
+};
+
+message PBGBAward
+{
+	optional int32					consume_type	= 1;
+	optional int32					count			= 2;
+};
+
+message PBGBAwardPercent
+{
+	optional int32					start_min		= 1; // 单位分钟
+	optional int32					end_min			= 2;
+	optional float					percent			= 3;
+};
+
+message PBGBNPCAdjust
+{
+	optional int32					kill_time		= 1; // 单位:分钟
+	optional int32					level_change	= 2;
+};
+
+message PBDyeCfg
+{
+	repeated PBDyeSkills			dye_skills		= 1; // 染色技能
+};
+
+message PBDyeSkills
+{
+	optional int32					secial_id		= 1;
+};
+
+message PBGBossGrowUp
+{
+	optional int32					guild_level		= 1;
+	optional int32					creature_level	= 2;
+};
+
+message PBGBOpenCount
+{
+	optional int32					guild_level		= 1;
+	optional int32					count			= 2;
+};
+
+message PBGuildBasicConfig
+{
+	optional int32					back_salary_dismiss = 1; // 拖欠维护费X周后解散帮派
+	optional int32					back_salary_notice	= 2; // 欠费时每隔X分钟通知一次
+	optional int32					change_leader_day	= 3;//[default=7]; // 帮主X天不上线就弹劾
+	optional int32					no_one_login		= 4;//[default=30]; // 近X天内没人上线,解散帮派
+};
+
+message PBGuildStoreCfg
+{
+	optional sint32 init_slot_num = 1;//[default=24];         //初始格子数
+	optional sint32 max_slot_num = 2;//[default=200];          //最大格子数
+	optional sint32 max_history_msg_num = 3;//[default=24];   // 最大历史消息数目
+}
+
+
+
+//可任命官职
+message PBGuildChangeJob
+{
+	optional sint32	change_job = 1; // 可任命职位
+}
+
+
+//官职列表
+message PBGuildJobList
+{
+	optional sint32				   guild_job  = 1; // 帮派职位
+	optional sint32				   job_count  = 2; // 官职数量
+	repeated PBGuildChangeJob change_job_info = 3; // 可任命职位
+}
+
+//任命官职配置
+message PBGuildChangeJobCfg
+{
+	repeated PBGuildJobList change_job_list = 1; // 任命官职列表
+	optional string	flower_title_sheet		= 2; // 帮花称号
+}
+
+
+
+// 篝火中buff加成信息
+message PBGuildFireBuffExp
+{
+	optional sint32 buff_id		= 1; // buffid
+	optional sint32 add_exp_pro = 2; // 经验加成百分比
+}
+
+
+// 刷npc信息
+message PBGuildManorRefNpc
+{
+	optional string							group_name		= 1;	// 怪物组名
+	optional int32							map_id			= 2;	// 地图ID
+	repeated PBTemplateVector				pos_list		= 3;	// 怪物地点
+	optional int32							line_id			= 4;	// 线ID         
+}
+
+
+// 篝火刷采集物信息
+message PBGuildFireRef
+{
+	optional sint32				ref_time	 = 1; // 刷新时间点
+	repeated PBGuildManorRefNpc ref_npc_info = 2; // 刷新信息
+}
+
+// 入侵怪物配置
+message PBGuildInvadeNpc
+{
+	optional string					invade_group_name	= 1;// 入侵活动怪物组名
+}
+
+// 入侵活动配置
+message PBGuildInvade
+{
+	repeated PBGuildInvadeNpc		invade_npc	= 1;// 入侵活动第一组怪物组名
+	repeated PBGuildInvadeNpc		invade_npc_list	= 2;// 入侵活动所有怪物组名
+}
+
+// 帮派领地功能配置
+message PBGuildManorCfg
+{
+	optional string					dungeon_sheet		= 1; // 帮派领地sheet
+	optional sint32					map_id				= 2; // 帮派领地地图id
+	optional sint32					posx				= 3; // 帮派领地进入点坐标x
+	optional sint32					posy				= 4; // 帮派领地进入点坐标y
+	optional sint32					fire_open_count		= 5; // 篝火每日开启次数
+	optional sint32 				fire_exist_time		= 6; // 篝火存在时间
+	optional sint32 				fire_exp_interval	= 7; // 篝火每次加经验间隔秒
+	optional sint32 				fire_maxexp_count	= 8; // 篝火最大每天加经验次数
+	optional string					fire_exp_sheet		= 9; // 篝火经验等级配置
+	repeated PBGuildFireBuffExp 	fire_buff_exp_list	= 10;// 篝火中buff加成信息
+	repeated PBGuildFireRef 		fire_ref_info		= 11;// 篝火刷采集物信息
+	optional PBGuildInvade			invade_info			= 12;// 入侵活动配置
+	optional PBGuildManorStatue		statue_info			= 13;// 帮派领地雕像
+}
+
+//帮派领地雕像
+message PBGuildManorStatue
+{
+	optional string group_name				= 1	;// 组名
+	optional string sheet_name				= 2	;// sheet名
+	optional uint64 default_vpa				= 3	;// 缺省vpa
+	optional uint64 default_vpb				= 4	;// 缺省vpb
+	optional uint64 default_vpc				= 5	;// 缺省vpc
+}
+
+

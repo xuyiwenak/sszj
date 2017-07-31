@@ -1,0 +1,2 @@
+AVG(diamond_blue)	AVG(diamond_red)	AVG(unbuond_money)	AVG(zhenqi)	AVG(lingqi)	AVG(pvp_honor)	AVG(renown)	AVG(exploit)
+18.5459	256.9098	1797777.6519	96129.0335	48117.4331	905.5153	57.6010	44.0274

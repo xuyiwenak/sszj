@@ -1,0 +1,14 @@
+import "tmpl_base.proto";
+
+message PBItemTimesLimitCfg
+{
+	option (OptionXmlFile)		= "item_times_limit_cfg.xml";
+
+	repeated	PBItemTimesLimitValue	item_list	 = 1; // 道具列表
+};
+
+message PBItemTimesLimitValue
+{
+	optional	string	sheet_id		= 1;	//道具
+	optional	uint32  times			= 2;	//限制使用次数
+}

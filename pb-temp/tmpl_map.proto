@@ -1,0 +1,207 @@
+
+import "tmpl_base.proto";
+
+enum PBMapCreateDungeonType
+{
+	enNone = 0;				// 非副本
+	enDynamic = 1; 		// 动态创建 (进入时创建)
+	enGlobalStatic = 2; 	// 唯一静态 (全服唯一，固定创建)
+	enLineStatic = 3; 		// 按线静态创建 (全服唯一，按分线对应创建)
+	enLineDynamic = 4;     // 分线的动态创建副本
+}
+
+
+// 所有游戏地图配置
+message PBConfigMap
+{
+	optional int32 newbie_map					= 1;//[default=9]; // 新手村地图
+	repeated PBGameMapConfig map				= 10;	// 逻辑地图配置，新增玩法地图是需要更新
+	//repeated PBLineSeparatedConfig line_config	= 11;	// 场景类型配置
+	repeated PBSeceneUIControl	ui_control		= 12;	// 场景UI类型配置
+}
+
+// 游戏地图配置
+message PBGameMapConfig
+{
+	// 服务器已有配置
+	optional int32 id			=1;	// 地图id
+	optional string scene_name	=2;	// 场景名称
+	optional string show_name	=3;	// 显示名称
+	optional string dungeon		=4;	// 副本AI配置
+	optional string music		=5;	// 音乐资源名称
+	optional PBEMapCameraType	camera	=6; // 地图处理类型
+	optional PBEScenePlayType	scene_type		=7; // 场景玩法类型
+	
+	optional int32 path_type	=9;//[default=0]; // 寻路模式，0直接打开进入副本界面 1跨地图寻路
+	
+	optional bool allow_ride	=10;//[default=false];
+	optional bool allow_pet		=11;//[default=true];
+	optional bool allow_change_mode = 12;//[default=false];		// 是否允许切换pk模式
+	optional PBEMapPkMode pk_mode = 13;//[default=ePK_Peace];		// 默认pk模式
+	optional bool allow_pk		=14;//[default=false];				// pk是否是合法的
+
+	optional bool allow_pay_respawn			=15;//[default=true];	// 是否允许原地复活
+	optional bool allow_point_respawn		=16;//[default=true];  // 是否允许出生点复活
+	optional bool allow_cityback_respawn	=17;//[default=true];  // 是否允许回城复活
+	optional bool is_free_point_respawn		=18;//[default=true];	// 是否出生点复活是免费的
+	optional sint32	respawn_chose_type_time	=19;//[default=300];	// 选择复活模式倒计时时间（单位秒）
+
+	optional string weather_name			= 20;				// 天气名称（客户端用）
+	optional bool is_weather_random			= 21;//[default=false];// 天气是否随机（客户端用）
+
+	optional sint32 pkvaluedrop				= 22;//[default=2];	//	该地图每分钟减少的pk值
+	optional float	min_height				= 23;
+	optional PBMapCreateDungeonType    dun_create_type			= 24;//[default=enDynamic]; // 副本创建模式
+	optional bool	show_start_target		= 25;//[default=false];	// 是否显示副本三星目标
+	optional bool allow_diff_camp			= 26;//[default=false];// 是否允许异阵营存在
+	optional bool auto_line_diff_camp		= 27;//[default=false];// 是否允许异阵营分线
+
+	// 客户端、服务器共用一个配置，有点麻烦;
+	// 以下客户端使用;
+	optional bool is_use_default_pk_mode	= 28;//[default=true];// 当属于玩家自选模式时，是否受玩家选择惯性影响（服务器不用）;
+	optional bool allow_change_target_type	= 29;//[default=false];// 起效条件：不允许客户端切换模式；效果：是否允许切换攻击目标类型（玩家、怪物）;
+	optional sint32 default_target_type = 30;//[default=0]; // 如果可以切换目标，默认切换目标类型， 0：无效，客户端当前是什么就是什么 1：玩家 2：怪物;
+
+	optional bool allow_spantp				= 31;//[default=false]; // 是否支持跨服传送
+	optional sint32 allow_modetype			= 32;//[default=0]; // 允许切换的模式
+	optional bool allow_inspanwild			= 33;//[default=false]; // 是否允许在放逐之地存在
+	optional bool allow_inspanmap			= 34;//[default=false]; // 玩家是否允许在跨服时停留
+	optional bool has_door					= 35;//[default=false]; // 是否有空气墙
+}
+
+// 客户端的地图处理类型
+enum PBEMapCameraType
+{
+	Default	=0;
+	LeftTop	=1;
+	RightTop=2;
+//	None	=3;
+}
+
+// 场景类型
+enum PBESceneType
+{
+	eST_MainCity		=0x010;// 主城
+	eST_Wild			=0x020;// 野外
+	eST_Single			=0x040;// 单人场景
+
+	eST_MultiPvE		=0x080;// 多人协战
+	eST_MultiPvP		=0x100;// 多人对战
+
+	eST_SceneTypeMask	=0xF0;
+	eST_SceneTypeOffset	=4;
+}
+
+// 场景玩法类型  (编号挨着写就好，没有特殊规则)
+enum PBEScenePlayType
+{
+	eSPT_SelectRole			= 0x01 ;//[(OptionHint) = "选人界面"];
+	eSPT_MainCity			= 0x10 ;//[(OptionHint) = "主城"];
+	eSPT_Wild				= 0x20 ;//[(OptionHint) = "野外"];
+	esPT_BianJing			= 0x21 ;//[(OptionHint) = "边境"];
+
+	eSPT_SinglePvE			= 0x40 ;//[(OptionHint) = "单人副本"];
+	eSPT_SinglePvP			= 0x41 ;//[(OptionHint) = "单人竞技"];
+	//eSPT_SingleLottery		= 0x42 ;//[(OptionHint) = "单人抽奖"];
+	eSPT_ChallengePvP		= 0x43 ;//[(OptionHint) = "切磋副本"];
+	eSPT_ClimbTower			= 0x44 ;//[(OptionHint) = "爬塔"];
+	//eSPT_VipDungeon			= 0x45 ;//[(OptionHint) = "红钻副本"];
+												   
+	eSPT_TeamPvE			= 0x80 ;//[(OptionHint) = "组队副本"];	
+	//eSPT_BossPvE			= 0x81 ;//[(OptionHint) = "boss战"];
+	//eSPT_GuildMeeting		= 0x82 ;//[(OptionHint) = "盟会副本"];
+	eSPT_GuildBoss			= 0x83 ;//[(OptionHint) = "工会boss"];
+	eSPT_Battlefield		= 0x84 ;//[(OptionHint) = "战场副本"];
+	//eSPT_SummonBoss			= 0x85 ;//[(OptionHint) = "召唤boss"];
+
+	//eSPT_TeamPvP			= 0x100 ;//[(OptionHint) = "组队竞技"];
+	//eSPT_MultiPvP			= 0x101 ;//[(OptionHint) = "多人PVP"];
+	eSPT_GuildBattle		= 0x102 ;//[(OptionHint) = "工会对战"];
+	eSPT_CrossGuildBattle	= 0x103 ;//[(OptionHint) = "跨服工会对战"];
+	//eSPT_WildPvP			= 0x104 ;//[(OptionHint) = "野外副本"];
+	eSPT_CangQiongPK		= 0x105 ;//[(OptionHint) = "乱武苍穹"];
+	//eSPT_AdvancedWild		= 0x106 ;//[(OptionHint) = "高级野外"];
+	eSPT_LinkDungeon		= 0x107 ;//[(OptionHint) = "三环副本"];
+	eSPT_WeddingDungeon		= 0x108 ;//[(OptionHint) = "婚宴副本"];
+	eSPT_SpanWild			= 0x109 ;//[(OptionHint) = "跨服野外"];
+	eSPT_PetPvEDungeon		= 0x110 ;//[(OptionHint) = "宠物PvE副本"];
+	eSPT_CouplePVPDungeon   = 0x111 ;//[(OptionHint) = "夫妻跨服PVP副本"];
+	eSPT_PetPvPDungeon		= 0x112 ;//[(OptionHint) = "宠物PvP副本"];
+	eSPT_GuildManorDungeon   = 0x113 ;//[(OptionHint) = "帮派领地副本"];
+	eSPT_SpanManorDefenseDungeon = 0x114 ;//[(OptionHint) = "领地攻防战副本"];
+	eSPT_SpanManorGuardDungeon	= 0x115 ;//[(OptionHint) = "领地保卫战副本"];
+	eSPT_SpanManorArenaDungeon	= 0x116 ;//[(OptionHint) = "领地擂台战副本"];
+	eSPT_SpanManorCityDungeon	= 0x117 ;//[(OptionHint) = "跨服领地副本"];
+}
+
+// 逻辑场景配置
+message PBLogicSceneConfig
+{
+	optional PBEScenePlayType type					= 1; //场景类型
+//	optional PBEntityDisplayConfig entity_display	= 2; //实体显示
+	optional PBLineSeparatedConfig line_saparated	= 3; //分线配置
+
+
+	optional bool			allow_pvp	= 5;
+	optional PBEMapPkMode	pk_mode		= 6;
+}
+
+// pk模式现在主动切换的只支持和平模式和帮派模式，
+// 其他模式现在不支持主动切换，是竞技场，切磋等地图的辅助判定规则
+enum PBEMapPkMode
+{
+	ePK_Peace	= 0;		// 和平模式
+	ePK_Kill	= 1;		// 自由模式
+	ePK_Guild	= 2;		// 帮派模式
+	ePK_Camp	= 3;		// 阵营模式
+	ePK_Battle	= 4;		// 战场模式（需要配合阵营一起判断）
+	ePK_Team	= 5;		// 队伍模式
+	ePK_Union	= 6;		// 联盟模式
+}
+
+// 场景实体显示配置
+//message PBEntityDisplayConfig
+//{
+//	optional int32 max_enemy		= 5;
+//
+//	repeated PBEntityPriority display_priority =6;
+//}
+
+// 分线配置
+message PBLineSeparatedConfig
+{
+	optional PBEScenePlayType type		= 1;
+	optional int32 min_line_num			= 2;//[default=0];	// 最小分线数量 
+	optional int32 max_allocated_entity = 3;			// 最大分配的实体数量
+	optional int32 max_contained_entity	= 4;			// 最大容纳的实体数量	
+	optional bool manual_switch			= 5;			// 是否允许手动切线
+	
+	optional uint32 reallocate_delay	= 6;//[default=1800];	// 重新分配超时，单位秒
+	
+//	optional int32 max_enemy			= 10;
+//	optional int32 max_guild_member		= 11;
+}
+
+// 实体优先级
+message PBEntityPriority
+{
+	 optional PBEEntityType type	= 1; // 类型
+	 optional uint32 weight			= 2; // 权值	
+	 optional sint32 sequence		= 3; // 顺序
+}
+
+// 实体类型
+enum PBEEntityType
+{
+	eET_Normal		=0;// 普通
+	eET_Teammate	=1;// 队友
+	eET_Guildmate	=2;// 同帮会
+	eET_Enemy		=3;// 仇人
+	eET_Max			=4;// 最大值
+}
+
+// 场景UI控制
+message PBSeceneUIControl
+{
+	optional PBEScenePlayType ui_type	= 1; // UI控制类型
+}

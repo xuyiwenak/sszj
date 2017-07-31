@@ -1,0 +1,557 @@
+import "msg_base.proto";
+import "msg_item.proto";
+import "msg_pet.proto";
+import "msg_mount.proto";
+import "msg_gemcutting.proto";
+import "msg_xinfa.proto";
+import "msg_xiuzhen.proto";
+
+message PBCommonNoParam
+{
+}
+
+
+// 作废消息
+message PBCreateCharBaseInfoRequest
+{
+	optional	uint32 char_slot = 1;
+}
+
+// 作废消息
+message PBSelectCharRequest
+{
+	optional	uint32 char_slot = 1;
+}
+
+// 作废消息
+message PBSelectCharResponse
+{
+	optional	uint32 char_slot = 1;
+}
+
+
+message PBStartPlayRequest
+{
+	optional	uint32			char_slot	= 1;
+}
+
+message PBLoginGiftResponse
+{
+	optional	bool			ok	= 1;
+}
+
+message PBChangeJobRequest
+{
+	optional	sint32	role	= 1;
+	optional	sint32	gender	= 2;
+	optional	sint32	color	= 3;
+}
+
+message PBChangeJobResponse
+{
+	optional	sint32	ret_code	= 1;
+}
+
+message PBMsgChangeJobQueryRequest
+{
+	optional	sint32	dst_role	= 1;
+};
+
+message PBMsgChangeJobQueryResponse
+{
+	optional sint32							ret_code = 1;
+	optional sint64							money	 = 2;
+	optional sint64							zhenqi	 = 3;
+	repeated PBChangeJobReMissonSkillBook	skillBook = 4;
+};
+
+message PBChangeJobReMissonSkillBook
+{
+	optional sint32 sheet_id = 1;
+	optional sint32 num		 = 2;
+};
+
+message PBGemState
+{
+	optional	uint32	gem_type		= 1;	// 部位;
+	optional	uint32	gem_index		= 2;	// 第几个;
+	optional	bool	gem_enable		= 3;	// 是否已经开孔;
+	optional	bool	gem_unlockable	= 4;	// 是否可以开孔;
+	optional	uint32	gem_sheet		= 5;	// 镶嵌的宝石是啥;
+	optional	sint32	gem_battlescore	= 6;	// 镶嵌的宝石所带来的战斗力;
+}
+
+
+message PBGemStateResponse
+{
+	repeated PBGemState	statelist	= 1;	// 宝石位状态列表;
+	optional sint32		ret_code	= 2;
+	optional uint64		player_id	= 3;
+	repeated PBGemcuttingInfo gemcutting_info = 4; //宝石雕琢信息
+	optional uint32     gem_slot_type_num = 5;
+	optional uint32     gem_slot_index_num = 6;
+};
+
+message PBGemComposeRequest
+{
+	optional	uint32	sheetid	= 1;
+	optional	sint32	count = 2;
+}
+
+// 宝石快速合成
+message PBGemQuickComposeRequest
+{
+	optional	uint32		gem_type		= 1;	// 部位
+	optional	uint32		gem_index		= 2;	// 第几个
+}
+
+message PBGemQuickComposeResponse
+{
+	optional	sint32		ret_code		= 1;
+	optional	PBGemState	statelist		= 2;	// 宝石位状态列表;
+};
+
+// 宝石转换
+message PBGemTransformRequest
+{
+	optional	string			sheetId			= 1;
+	optional	string			targetId		= 2;
+	optional	sint32			count			= 3;
+};
+message PBGemTransformResponse
+{
+	optional	sint32			ret_code		= 1;
+};
+
+// 宝石镶嵌
+message PBGemEnchaseRequest
+{
+	optional	uint32			gem_type		= 1; // 部位;
+	optional	uint32			gem_index		= 2; // 第几个;
+	optional	uint32			sheetId			= 3;
+};
+message PBGemEnchaseResponse
+{
+	optional	sint32			ret_code		= 1;
+	optional	PBGemState		state			= 2;	// 宝石位状态列表;
+};
+
+// 宝石卸下
+message PBGemRemoveRequest
+{
+	optional	uint32			gem_type		= 1; // 部位;
+	optional	uint32			gem_index		= 2; // 第几个;
+};
+message PBGemRemoveResponse
+{
+	optional	sint32			ret_code		= 1;
+	optional	PBGemState		state			= 2;	// 宝石位状态列表;
+};
+
+// 宝石槽开孔
+message PBGemUnlockRequest
+{
+	optional	uint32			gem_type		= 1; // 部位;
+	optional	uint32			gem_index		= 2; // 第几个;
+};
+message PBGemUnlockResponse
+{
+	optional	sint32			ret_code		= 1;
+	optional	uint32			gem_type		= 2; // 部位;
+	optional	uint32			gem_index		= 3; // 第几个;
+};
+
+//Char定义
+message PBMsgCharInfo
+{
+	optional PBMsgCharBase			char_base		= 1; //基础信息
+	optional PBMsgCharProperty		prop_info		= 2; //属性信息
+	repeated PBMsgItem 				item_list 		= 3; //装备数据
+	repeated PBGemState 			gem_info		= 4; //宝石信息
+	optional PBPetInfo				pet_info		= 5; //宠物信息
+	optional PBMsgMount             mount_info      = 6; //坐骑信息
+	repeated PBGemcuttingInfo       gem_cutting_info = 7;//宝石雕琢信息
+	optional PBCharPetGuardInfo		guard_pet_info	= 8; //守护宠物信息
+	optional PBCharXinfaInfo		xinfa_info		= 9; //心法信息;
+	optional PBCharXiuzhenInfo		xiuzhen_info		= 10; //修真信息;
+}
+
+message PBCharPetGuardInfo
+{
+	optional PBGuardLevelInfo guard_info = 1;     // 守护信息
+	optional PBPetInfo        pet_info = 2;       // 宠物信息
+}
+
+message PBCharXinfaInfo
+{
+	repeated PBXinfaItem	item_list			= 1;	// 孔数据;
+	optional uint32			total_battle_score	= 2;	// 总战力;
+}
+
+message PBCharXiuzhenInfo
+{
+	repeated PBXiuzhenmaiItem	mai_item_list	= 1;    //不定长的等级
+	optional uint32			total_battle_score	= 2;	// 总战力;
+}
+
+
+// 属性定义
+message PBMsgCharProperty
+{
+	repeated int32 					character_attribute 		= 1;							//一级属性
+	repeated int32 					character_scores 		  	= 2;							//气血、蓝
+	repeated int32 					character_battle_pro 	  	= 3;							//二级属性，战斗属性
+	repeated int32 					character_special_froce    	= 4;							//特殊属性-伤害
+	repeated int32 					character_special_fend     	= 5;							//特殊属性-抗性
+
+	
+	optional uint32					Con							= 6; 
+	optional uint32					Wis							= 7; 
+	optional uint32					Str							= 8; 
+	optional uint32					Sta							= 9; 
+	optional uint32					Spr							= 10; 
+	optional uint32					MaxHP						= 11; 
+	optional uint32					MaxMP						= 12; 
+	optional uint32					MaxAP						= 13; 
+	optional uint32					PDefence					= 14; 
+	optional uint32					MDefence					= 15;
+	optional uint32					PAttackMax					= 16;
+	optional uint32					PAttackMin					= 17;
+	optional uint32					MAttackMax					= 18;
+	optional uint32					MAttackMin					= 19;
+	optional uint32					PhyDodge					= 20;	// 物理闪避
+	optional uint32					MagDodge					= 21;	// 法术闪避
+	optional uint32 				PhyAccurate					= 22;	// 物理命中
+	optional uint32					MagAccurate					= 23;	// 法术命中
+	optional uint32					PhyBonus					= 24;	// 物理致命
+	optional uint32					MagBonus					= 25;	// 法术致命
+	optional uint32					BreakValue					= 26;	// 破盾值
+	optional uint32					Parry						= 27;	// 格挡值
+	optional uint32					AtkIce						= 28;	// 冰攻击	
+	optional uint32					AtkPoison					= 29;	// 毒攻击	
+	optional uint32					AtkElectricity				= 30;	// 电攻击	
+	optional uint32					AtkFire						= 31;	// 火攻击	
+	optional uint32					AtkWind						= 32;	// 风攻击	
+	optional uint32					AtkLight					= 33;	// 光攻击	
+	optional uint32					AtkFancy					= 34;	// 幻攻击	
+	optional uint32					AtkSoil						= 35;	// 土攻击	
+
+	optional uint32					ResistantIce				= 36;	// 抗冰	
+	optional uint32					ResistantPoison				= 37;	// 抗毒	
+	optional uint32					ResistantElect				= 38;	// 抗电	
+	optional uint32					ResistantFire				= 39;	// 抗火	
+	optional uint32					ResistantWind				= 40;	// 抗风	
+	optional uint32					ResistantSoil				= 41;	// 抗土
+	optional uint32					HealInc						= 42;	// 治疗加成值
+	optional uint32					CurHP						= 43;	// 气血当前值
+	optional uint32					CurMP						= 44;	// 魔法当前值
+	optional uint32					CurAP						= 45;	// 
+
+	optional uint32					VertigoPro					= 46;	//强眩晕概率;
+	optional uint32					ReduceVertigoPro			= 47;	//抗眩晕概率;
+	optional uint32					IgnoreReduceVertigoPro		= 48;	//忽视抗眩晕概率;
+	optional uint32					ConfusionPro				= 49;	//强混乱概率;
+	optional uint32					ReduceConfusionPro			= 50;	//抗混乱概率
+	optional uint32					IgnoreReduceConfusionPro	= 51;	//忽视抗混乱概率
+	optional uint32					SilentPro					= 52;	//强沉默概率
+	optional uint32					ReduceSilentPro				= 53;	//抗沉默概率
+	optional uint32					IgnoreReduceSilentPro		= 54;	//忽视抗沉默概率
+	optional uint32					FastenPro					= 55;	//强定身概率
+	optional uint32					ReduceFastenPro				= 56;	//抗定身概率
+	optional uint32					IgnoreReduceFastenPro		= 57;	//忽视抗定身概率
+
+	optional uint32					AddVertigoTime				= 58;	// 强眩晕（时间)
+	optional uint32					AddConfusionTime			= 59;	// 强混乱（时间)
+	optional uint32					AddFastenTime				= 60;	// 强定身（时间)
+	optional uint32					AddSilentTime				= 61;	// 强沉默（时间)
+	optional uint32					ReduceVertigoTime			= 62;	// 抗眩晕（时间)
+	optional uint32					ReduceConfusionTime			= 63;	// 抗混乱（时间)
+	optional uint32					ReduceFastenTime			= 64;	// 抗定身（时间)
+	optional uint32					ReduceSilentTime			= 65;	// 抗沉默（时间)
+	optional uint32					IgnoreReduceVertigoTime		= 66;	// 忽视抗眩晕（时间)
+	optional uint32					IgnoreReduceConfusionTime	= 67;	// 忽视抗混乱（时间)
+	optional uint32					IgnoreReduceFastenTime		= 68;	// 忽视抗定身（时间)
+	optional uint32					IgnoreReduceSilentTime		= 69;	// 忽视抗沉默（时间)
+
+
+	optional uint32					AtkIceIgnore				= 70;	// 冰攻击抗性;	
+	optional uint32					AtkPoisonIgnore				= 71;	// 毒攻击抗性;	
+	optional uint32					AtkElectricityIgnore		= 72;	// 电攻击抗性;	
+	optional uint32					AtkFireIgnore				= 73;	// 火攻击抗性;	
+	optional uint32					AtkWindIgnore				= 74;	// 风攻击抗性;	
+	optional uint32					AtkLightIgnore				= 75;	// 光攻击抗性;	
+	optional uint32					AtkFancyIgnore				= 76;	// 幻攻击抗性;	
+	optional uint32					AtkSoilIgnore				= 77;	// 土攻击抗性;	
+
+	optional uint32					ResistantPhyCritical		= 78;	// 物理暴击抗性;
+	optional uint32					ResistantMagCritical		= 79;	// 法术暴击抗性;
+}
+
+// 基础信息
+message PBMsgCharBase
+{
+	optional uint64 				char_id 					= 1; //CharacterId
+	optional uint32 				char_sheet_id 				= 2; //CharacterSheetId
+	optional string 				char_name 					= 3; //玩家名称
+	optional int32 					level 						= 4; //等级
+	optional int32 					battle_score 				= 5; //战斗力
+	optional int32 					external_battle_score		= 6; //附加战斗力
+	optional PBMsgVPInfo 			visual_prop 				= 7; //VPInfo
+	optional uint32 				title_sheet_id 		    	= 8; //称号 SheetId
+	optional string 				guild_name 					= 9; //仙盟名称
+	optional sint32					sex							= 10; //
+	optional sint32					teamMemberCount				= 11; //队伍人数
+	optional sint32					camp						= 12; //阵营
+	optional uint32					user_id						= 13; //角色ID
+	optional sint32					vip_level					= 14; //VIP
+	optional string					head_icon					= 15; //头像Icon
+	optional sint32					justice						= 16; //正气
+	optional sint32					evil						= 17; //邪气
+	optional string					partner_name				= 18; //配偶名称
+	optional uint32					gatewayid					= 19; //所属区服ID
+	optional uint32					login_gatewayid				= 20; //当前区服ID
+}
+
+//VPInfo
+message PBMsgVPInfo
+{
+	optional uint64 vpa_value = 1;
+	optional uint64 vpb_value = 2;
+	optional uint64 vpc_value = 3;
+}
+
+enum PBEGetCharInfoType
+{
+	eGetCharInfo_Base			= 1; // 基础信息
+	eGetCharInfo_Property		= 2; // 属性信息
+	eGetCharInfo_Items			= 3; // 装备数据 
+	eGetCharInfo_Gem			= 4; // 宝石
+	eGetCharInfo_Pet			= 5; // 出战的战宠
+	eGetCharInfo_Mount          = 6; // 驭剑符文
+	eGetCharInfo_GemCutting     = 7; // 宝石雕琢
+	eGetCharInfo_GuardPet		= 8; // 守护宠物信息
+	eGetCharInfo_Xinfa			= 9; // 心法信息;
+};
+message PBMsgCharInfoResquest
+{
+	optional uint64				char_id		= 1;
+	repeated PBEGetCharInfoType	get_type	= 2;
+	optional uint64				pet_id		= 3;
+	optional sint32				client_id	= 4;
+	optional uint32				gateway_id	= 5;	// 该玩家的gateway_id，因为现在支持跨服查看，所以要去对应的服务器查看数据
+}
+
+message PBMsgCharInfoResponse
+{
+	optional int32			ret_code	= 1;
+	optional PBMsgCharInfo  char_info 	= 2;
+	optional sint32			client_id	= 3;
+}
+
+
+message PBMsgRefreshPropertyNotice   
+{
+	optional PBMsgCharProperty		CharProperty	= 		1; 	 
+	optional uint32                 Level			= 		4; 
+};
+
+// 角色列表
+message PBMsgCharSummary
+{
+	optional uint32				state			= 1;
+	optional string				name			= 2;
+	optional uint32				people			= 3;
+	optional uint32				location		= 4;
+	optional uint32				level			= 5;
+	optional uint64				visual_prop_a	= 6;
+	optional uint64				visual_prop_b	= 7;
+	optional uint64				visual_prop_c	= 8;
+	optional uint32				sheet_id		= 9;
+	optional uint32				title			= 10;
+	optional uint32				char_Slot		= 11;
+	optional uint32				in_ring_session	= 12;
+	optional uint32				edit_session	= 13;
+	optional uint32				newbieland		= 14;
+	optional sint32				pos_x			= 15;
+	optional sint32				pos_y			= 16;
+	optional sint32				delete_time		= 17;
+	optional uint32				role_id			= 18;
+	optional uint64				char_id			= 19;
+	optional sint32				create_time		= 20;
+}
+
+message PBMsgCharSummaryNotice
+{
+	optional uint64				player_id		= 1; // 用户ID
+	repeated PBMsgCharSummary	char_summary 	= 2;
+	optional uint32             retCode         = 3;
+}
+
+message PBMsgUserLogin
+{
+	optional sint32             ret_code     = 1;
+	optional uint64				ctl_code     = 2; // 用户ID
+	repeated string             values       = 3;
+	repeated string             events       = 4;
+	optional string             token        = 5;
+	optional uint32             user_id		 = 6;
+	repeated PBMsgCharSummary	char_summary = 7;
+	optional uint32				best_camp	 = 8;//建议客户端创建角色的阵营;
+}
+
+message PBMsgCreateRoleRet
+{
+	optional sint32             ret_code     = 1;
+	optional uint32             new_role_id  = 2;
+	repeated PBMsgCharSummary	char_summary = 3;
+}
+
+
+message PBMsgDeleteRoleRet
+{
+	optional sint32             ret_code     = 1;
+	optional uint32             new_role_id  = 2;
+	repeated PBMsgCharSummary	char_summary = 3;
+}
+
+
+message PBMsgJoinRoleRet
+{
+	optional sint32             ret_code   = 1;
+	optional uint32             ch_role_id = 2;
+	optional string             fs_addr    = 3;
+}
+
+
+message PBMsgRandomNameRet
+{
+	optional sint32             ret_code = 1;
+	optional uint32             sex = 2;
+	repeated string             name_list = 3;
+}
+
+// 角色的次数信息
+message PBMsgCharCountInfoBase
+{
+	optional sint32				do_times			= 1;	// 已经使用的次数
+	optional sint32				total_times			= 2;	// 规则限定总次数
+	optional sint32				buy_times			= 3;	// 购买的次数
+	optional sint32				count_type			= 4;    // 计次类型
+	optional uint32				count_id			= 5;    // 计次对象的ID;
+	optional sint32				left_times			= 6;    // 剩余次数
+};
+
+// 更新玩家的次数信息
+message PBMsgCharCountInfoNotice
+{
+	repeated PBMsgCharCountInfoBase  char_countinfo	   = 1; // 所以带有计数信息的sheet
+};
+
+message PBMsgGemStateRequest
+{
+	optional uint64				player_id			= 1;	// 玩家ID
+};
+
+message PBMsgRoboletInfo
+{
+	optional bool active  = 1; // 月卡是否激活
+	optional uint32 expiration = 2; // 过期时间
+	optional bool has_gift = 3; // 是否有可领取奖励
+	optional bool is_new = 4; // 是否是新激活月卡
+	repeated PBMsgItemQuantity reward_list = 5; // 月卡奖励列表 
+}
+
+enum EPropertyChangeReason
+{
+	TProChange_PlayerLevelUp			=	1;	// 玩家升级
+};
+
+
+message PBMsgPropertyChangeNotice
+{
+	optional EPropertyChangeReason		reason		= 1;
+	optional PBMsgCharProperty			property	= 2;
+};
+
+
+message PBMsgRankPetInfoResquest
+{
+	optional uint64				char_id		= 1;
+}
+
+message PBMsgRankPetInfoResponse
+{
+	optional int32			ret_code	= 1;
+	optional PBPetInfo		pet_info 	= 2;
+}
+
+
+message PBMsgQuarterCardNotice
+{
+	optional bool active			= 1;		// 季卡是否激活
+	optional uint32 expiration		= 2;		// 过期时间
+	optional bool has_gift			= 3;		// 是否有可领取奖励
+	optional bool is_new			= 4;		// 是否是新激活季卡
+	repeated PBMsgItemQuantity reward_list = 5; // 季卡奖励列表 
+};
+
+message PBMsgQuarterGiftRequest
+{
+
+};
+
+message PBMsgQuarterGiftResponse
+{
+	optional sint32 ret_code	= 1;
+};
+
+message PBMsgGiftCardNotice
+{
+	optional sint32 card_id			= 1;		// 卡id （月卡 季卡 or 年卡）
+	optional bool active			= 2;		// 季卡是否激活
+	optional uint32 expiration		= 3;		// 过期时间
+	optional bool has_gift			= 4;		// 是否有可领取奖励
+	optional bool is_new			= 5;		// 是否是新激活季卡
+	repeated PBMsgItemQuantity reward_list = 6; // 季卡奖励列表 
+};
+
+
+message PBMsgGiftCardRewardRequest
+{
+	optional sint32 card_id = 1;
+};
+
+message PBMsgGiftCardRewardResponse
+{
+	optional sint32 ret_code = 1;
+	optional sint32 card_id	 = 2;
+};
+
+enum PBGiftCardId
+{
+	ECard_Month_ID		= 1001;
+	ECard_Quanter_ID	= 1002;
+};
+
+enum PBEKillerType
+{
+	EKillerType_Character = 0;
+	EKillerType_Creature = 1;
+}
+
+message PBMsgCharDeathInfoNotice
+{
+	optional PBEKillerType killer_type = 1; // 杀人者类型 
+	optional uint32 killer_roleid = 2;    // 杀人者ID
+	optional string killer_name = 3;      //杀人者名字
+	optional sint32 killer_camp = 4;      //杀人者阵营
+}
+
+// 跟其他模块不相关的玩家信息，在加载完场景后发送
+message PBMsgCharSignalNotice
+{
+	optional bool is_change_role = 1;       // 是否转职
+	optional uint32 last_quit_time = 2;     // 上次退出时间
+}
+
+

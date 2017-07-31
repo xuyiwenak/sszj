@@ -1,0 +1,77 @@
+option optimize_for = SPEED;
+
+enum PBELuckType
+{
+	eLuckType_XianYuan	    = 0; // 仙缘
+	eLuckType_MoYuan		= 1; // 魔怨
+}
+
+message PBMsgMountLuck
+{
+	optional PBELuckType type        = 1;  // 幸运类型
+	optional sint32 cur_level        = 2; // 当前级
+	optional sint32 cur_start        = 3; // 当前星
+	optional sint32 cur_battle       = 4; // 当前战力
+	optional sint32 cur_luck_value   = 5; // 当前幸运值
+	optional sint32 next_level       = 6; // 下一级
+	optional sint32 next_start       = 7; // 下一星
+	optional sint32 next_battle      = 8; // 下一战力
+	optional sint32 next_luck_value  = 9; // 下一幸运值
+	optional bool   is_max_level     = 10;// 是否到最大阶
+	repeated PBLuckItem pb_Item      = 11;// 需要道具的个数
+	optional sint32 battle_score	 = 12;// 飞剑战力;
+}
+
+message PBLuckItem
+{
+	optional string sheetId  = 1; //消耗道具的sheetid
+	optional sint32 num      = 2; //消耗道具的个数
+};
+
+message PBMsgMoutAllLuckRequest
+{
+
+};
+
+message PBMsgMountAllLuckResponse
+{
+	optional sint32 ret_code	      = 1;
+	repeated PBMsgMountLuck luck_info = 2;
+}
+
+
+message PBMsgMountLuckUpdateRequest
+{
+	optional PBELuckType type     = 1;
+	optional string sheet_id      = 2;
+}
+
+message PBMsgMountLuckUpdateResponse
+{
+	optional sint32 ret_code	      = 1;
+	optional PBMsgMountLuck luck_info = 2;
+}
+
+message PBMsgLuckInfoNotice
+{
+	optional PBELuckType type = 1;
+	repeated PBLuckItem  item = 2;
+};
+
+message PBMsgLuckInfoListNotice
+{
+	repeated PBMsgLuckInfoNotice luck_info_notice = 1;
+};
+
+// 数据库存储
+message PBLuckInfo
+{
+	optional PBELuckType type   = 1; //
+	optional sint32 cur_level   = 2; // 当前级
+	optional sint32 cur_star    = 3; // 当前星
+};
+
+message PBDBLuckInfo
+{
+	repeated PBLuckInfo db_info = 1;
+};

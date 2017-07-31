@@ -1,0 +1,101 @@
+import "msg_base.proto";
+import "msg_common.proto";
+
+message PBReward
+{
+	optional	uint32	sheet_id	=	1;//sheetId;
+	optional	sint32	quantity	= 	2;//数目
+};
+
+message PBGoal
+{
+	optional PBDynStr dyn_str 		=	1;//动态字符串;
+	optional string	  process_str	=	2;//进度，直接做出字符串了，现在越发觉得在客户端来做这个要好很多啊;
+};
+
+message PBQuest
+{
+	optional	uint32	quest_id		= 	1;//任务Id;
+	optional	uint32 	quest_state		= 	2;//任务状态,未接不可接，未接可接，已接已完成，已接已经完成
+	optional 	uint32	quest_type		= 	3;//任务类型;
+	optional 	uint32	quest_goal_type	=	4;//任务目标类型
+	optional 	string	quest_title 	=	5;//任务标题
+	optional	string	quest_desc		=	6;//任务详情
+	optional	uint32	npc_accept		=	7;//发任务NPC	
+	optional	uint32 	npc_commit		=	8;//交付任务NPC;
+	repeated	PBReward	rewards		= 	9;//任务奖励
+	optional	bool	may_giveup		= 	10;//是否可以放弃
+	optional	string	dlg_accept		=	11;//接任务对话
+	optional	string	dlg_commit		=	12;//交付任务对话
+	optional	PBGoal	goal			=	13;//目标
+	optional	sint32	weight			= 	14;//排序权重
+	optional	uint32	award_state		=	15;//奖励状态,不可领取，可领取，已经领取
+	optional	string	acc_story_id	= 	16; // 接任务对话ID
+	optional	string	com_story_id	=	17; // 完成任务对话ID
+	optional	sint32	star			=	18; // 星级
+	optional	sint32	camp			=	19; // 阵营检测
+	optional	sint32	league			=	20; // 同盟检测
+	optional	string	title			=	21; // 称号检测
+	optional	sint32	group_id		=	22; // 任务组号
+	optional	sint32	group_process	=	23; // 任务组进度
+	optional	sint32	event_type		=	24; // 任务事件类型
+	optional	sint32	acc_cinema_id	= 	25; // 接任务剧情ID
+	optional	sint32	com_cinema_id	=	26; // 接任务剧情ID
+	optional	sint32	min_level		= 	27; // 最小等级
+	optional	sint32	max_level		=	28; // 最大等级
+	optional	sint32	quality			=	29; // 品质
+	optional	sint32	npc_accept_camp	=	30; // 接任务NPC阵营
+	optional	sint32	npc_commit_camp	=	31; // 交任务NPC阵营
+	optional  bool    is_support_teleport = 32; // 是否支持传送
+	optional	uint32	expire_time		=	33; // 任务到期时间
+};
+
+message PBQuestChangeResponse
+{
+	optional	uint32	ret_code		=	1;//错误码;
+	optional	uint32	op_type			=	2;//操作类型,init，add，remove or change;
+	repeated	PBQuest	quest_list		=	3;//任务列表;
+	optional	uint32	op_sub_type		=	4;//任务类型,MISSION_OPTYPE::TMissionOpType;
+};
+
+message PBPhoneBindSuccessRequest
+{
+	optional	uint32	status		=	1;
+};
+
+message PBQuestTeleportRequest
+{
+	optional	uint32	quest_id		=	1; // 任务ID
+	optional	uint32	op_type			=	2; // 操作类型 2.接任务NPC 1.交任务NPC
+};
+
+message PBQuestTeleportResponse
+{
+	optional	uint32	ret_code		=	1; //错误码;
+};
+
+message PBUiOpenCondition
+{
+	optional	PBUIOpenPlayerLv	player_lv	= 1;
+	optional	PBUIOpenVipLv		vip_lv		= 2;
+	optional	PBUIOpenQuest		quest		= 3;
+};
+
+message PBUIOpenPlayerLv
+{
+	optional	sint32		level		= 1;//[default=65535];
+};
+message PBUIOpenVipLv
+{
+	optional	sint32		vip_level	= 1;//[default=0];
+};
+message PBUIOpenQuest
+{
+	optional	sint32		quest_id	= 1;
+	optional	sint32		quest_state = 2;
+};
+
+// 请求成就任务
+message PBQuestOtherRequest
+{
+};

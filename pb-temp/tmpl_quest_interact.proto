@@ -1,0 +1,19 @@
+
+import "tmpl_base.proto";
+
+message PBQuestInteractCfg
+{
+	repeated PBInterTaskList		quest_list		= 1; //情缘任务id列表
+	optional string 				act_sheet		= 2; //情缘活动sheet
+	optional uint32 				exp_interval	= 3; //情缘副本中加经验间隔秒
+	optional uint32 				add_intimacy	= 4; //情缘副本中加座上石凳后每次增加的亲密度
+	optional string					exp_table_sheet	= 5; //情缘副本增加经验配置
+	optional string					bench_sheet		= 6; //情缘副本石凳sheet
+	optional sint32					max_exp_count	= 7; //每天获取石凳经验次数
+};
+
+message PBInterTaskList
+{
+	optional uint32					quest_id		= 1; // 任务ID
+};
+

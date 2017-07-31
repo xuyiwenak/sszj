@@ -1,0 +1,36 @@
+
+//宠物装备强化请求
+message PBMsgPetEquipUpLevelRequest
+{
+	optional uint64 pet_id = 1; //宠物Id
+	optional uint32 slot = 2; // 装备部位
+}
+
+message PBMsgPetEquipUpLevelResponse
+{
+	optional sint32 ret_code = 1;
+}
+
+message PBPetEquipClass
+{
+	optional sint32 equip_index = 1; // 宠物装备索引; 
+	optional sint32 equip_class  = 2; // 宠物装备阶级; 
+	optional sint32 equip_star   = 3; // 宠物装备的星级; 
+	optional sint32 cur_battle_score = 4; // 宠物装备当前战斗力;
+	optional sint32 next_battle_score  = 5; // 宠物装备下一级战力; 
+};
+
+//交换装备请求
+message PBPetEquipReplaceRequest
+{
+	optional uint64 dest_pet_id    = 1;   //目标宠物Id
+	optional uint64 src_pet_id     = 2;   //源宠物Id
+	optional uint32 slot           = 3;   //部位
+}
+
+message PBPetEquipReplaceResponse
+{
+	optional sint32 ret_code = 1;
+}
+
+

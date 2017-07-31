@@ -1,0 +1,227 @@
+/// @brief	template for config of pet
+/// @author	Qian LiJun
+
+import "tmpl_base.proto";
+import "msg_common.proto";
+
+// 宠物逻辑配置
+message PBConfigPet
+{
+	option (OptionXmlFile)		= "pet_config.xml";
+	
+	optional PBPetBaseConfig		base_config		= 1;
+	optional PBPetActiveConfig		active_config	= 2;
+	optional PBPetSkillConfig		skill_config	= 3;
+	optional PBPetItemConfig		item_config		= 4;
+	optional PBPetBillingConfig		billing_config	= 5;
+	optional PBPetSavvyConfig		savvy_config	= 6;// 悟性配置
+	repeated PBPetContainerConfig	container_config= 7;// 回笼配置
+	optional PBPetBindConfig		bind_config		= 8;// 绑定配置
+	optional PBPetGuardConfig		guard_config = 9;  // 宠物守护配置
+	optional PBPetTransConfig		trans_config	= 10;  // 宠物转换配置
+	optional PBPetLegacyConfig		legacy_config	= 11;  // 宠物继承配置
+	optional PBPetEquipReplaceCfg equip_replace_config = 12;//宠物装备替换配置
+	optional PBPetGuardConfig   new_guard_config = 13;  // 新宠物守护配置
+	optional PBPetGrowthConfig   growth_config = 14;  // 宠物成长配置
+};
+
+// 宠物摘技能幸运数配置
+message PBConfigPetLucky
+{
+	option (OptionXmlFile)		= "pet_lucky_config.xml";
+	
+	repeated PBPetForgetSkillConfig	skill_config		= 1;
+	
+};
+
+message PBPetForgetSkillConfig
+{
+	optional int32 skill_id		= 1;//[default=0];	// 宠物技能ID
+	optional int32 skill_lv		= 2;//[default=1];	// 宠物技能等级
+	repeated PBPetForgetLuckyConfig	lucky_config	= 3;
+	optional int32 lucky_count	= 4;//[default=0];	// 宠物摘除幸运总数
+}
+
+message PBPetForgetLuckyConfig
+{
+	optional int32 lucky			= 1;//[default=10000];	// 幸运数
+	optional int32 count			= 2;//[default=1];		// 数
+}
+
+message PBPetBaseConfig
+{
+	optional int32 max_slot			= 1;//[default=5];		// 宠物最大栏位
+	optional int32 max_namelen		= 2;//[default=12];	// 宠物名最大长度
+	optional int32 ctrl_evolve		= 3;//[default=0];		// 宠物进阶开关
+	optional int32 default_speed	= 4;//[default=4500];	// 宠物初始速度
+	optional string basepro_table	= 5;//[default=""];	// 宠物基础属性配置表
+	optional string batpro_table	= 6;//[default=""];	// 宠物成长属性配置表
+	optional string levelup_table	= 7;//[default=""];	// 宠物升级配置表
+	optional int32 base_factor		= 8;//[default=10000];	// 宠物一级属性成长因素
+	optional int32 max_grow			= 9;//[default=100];	// 宠物培养资质最大值;
+	repeated int32 savvy_lvup_notice= 10;				// 宠物培养升级需要公告的等级列表
+};
+
+message PBPetActiveConfig
+{
+	optional int32 max_distance		= 1;//[default=7000];	// 宠物离人的最大距离
+	optional int32 relive_hp		= 2;//[default=2000];	// 宠物复活的hp值(万分比)
+	optional int32 pos_radiu		= 3;//[default=300];	// 宠物随机位置绕人的半径
+	optional int32 costlife_tick	= 4;//[default=1200];	// 宠物寿命消耗一点的tick值
+	optional int32 repairhp_tick	= 5;//[default=1200];	// 宠物恢复血蓝的tick值
+	optional int32 repairhp_factor	= 6;//[default=100];	// 宠物恢复血万分比
+	optional int32 costlife_die		= 7;//[default=1];		// 宠物死亡寿命消耗
+	optional int32 activepro_factor	= 8;//[default=100];	// 宠物出战对主人属性的加成
+};
+
+message PBPetSkillForgetBookConfig
+{
+	optional string skill_item		= 1			   ;	// 空白技能书
+	optional int32 skill_level		= 2			   ;	// 空白技能书等级
+	optional int32 forget_factor	= 3			   ;	// 空白技能书遗忘因子
+	optional int32 cost_money		= 4			   ;	// 空白技能书消耗钱币
+	optional int32 is_lucky			= 5;//[default=0] ;	// 是否计算幸运数
+}
+
+message PBPetSkillRand
+{
+	optional int32 skill_id			= 1			   ;	// 随机的低级技能
+	optional int32 skill_level		= 2			   ;	// 随机的低级技能等级
+}
+
+
+message PBPetSkillConfig
+{
+	optional int32 replace_factor	= 1;//[default=8000];	// 替换技能因子
+	repeated int32 add_factor		= 2;				// 添加技能因子
+	repeated PBPetSkillForgetBookConfig forget_config	= 3;	// 空白技能书
+	repeated PBPetSkillRand rand_skill		= 4;				// 随机的低级技能
+	optional string rand_skill_book	= 5;//[default=""];	// 宠物随机技能书
+};
+
+message PBPetItemConfig
+{
+	optional string grow_item		= 1;//[default=""];	// 资质丹
+	optional string evolve_item		= 2;//[default=""];	// 内丹
+	optional string life_item		= 3;//[default=""];	// 延寿丹
+	repeated string exp_item		= 4			   ;	// 经验丹
+	repeated string break_item		= 5			   ;	// 突破丹
+	repeated string skill_item		= 6			   ;	// 空白技能书
+};
+
+message PBPetBillingConfig
+{
+	optional uint32 buy_slot_count	= 1;//[default=9];		// 最大购买栏位次数
+	repeated uint32 buy_slot_money	= 2			  ;		// 购买栏位钻石数
+};
+
+message PBPetSavvyConfig
+{
+	optional uint32 level_max		= 1;//[default=10];	// 最大悟性等级
+	optional string savvy_table						= 2;	// 悟性提升资质表
+	optional string sp_item							= 3;	// 丹药7
+};
+
+message PBPetContainerConfig
+{
+	optional uint32 class		= 1				;	// 宠物品质
+	optional string cost_item	= 2				;	// 消耗回笼道具
+};
+
+message PBPetBindConfig
+{
+	repeated string bind_pet	= 1				;	// 消耗回笼道具
+};
+
+message PBPetGuardLevelConfig
+{
+	optional uint32 level       = 1;        // 等级
+	optional uint32 upgrade_exp = 2;//[default=1000000];        // 升级需要的经验值
+	optional uint32 pro_addition = 3;//[default=0];       // 当前等级加成的属性百分比
+	optional bool is_broad = 4;//[default=false];         // 是否公告
+}
+
+message PBPetGuardConfig
+{
+	optional uint32 guard_max_level = 1;//[default=0];        // 最大守护等级
+	optional uint32 uplevel_count_day = 2;//[default=0];      // 每日吃宠物次数
+	optional uint32 pet_class = 3;                         // 超过多少品阶提示
+	repeated PBPetGuardLevelConfig level_conf = 4;
+}
+
+message PBPetTransConfig
+{
+	repeated PBPetTransSkillConfig	trans_skill		= 1;
+	optional uint32					check_nature	= 2;//[default=0];			// 转换最低档检测
+	optional uint32					gap_second		= 3;//[default=10];		// 转换时间检测：防止客户端多次发送，出错
+}
+
+message PBPetTransSkillConfig
+{
+	optional string wai_skill_item		= 1;        // 内功宠物技能书
+	optional string nei_skill_item		= 2;		// 外功宠物技能书
+}
+
+message PBPetLegacyConfig
+{
+	optional uint32					base_cost		= 1;//[default=9999];		// 基础消耗
+	optional uint32					check_nature	= 2;//[default=0];			// 继承最低档检测
+	optional uint32					gap_second		= 3;//[default=10];		// 继承时间检测：防止客户端多次发送，出错
+	repeated PBPetLegacyQualityCfg	legacy_qulity_group	= 4;				// 宠物继承组
+}
+
+message PBPetEquipReplaceCfg
+{
+	optional string             cost_sheet_name          = 1;           //消耗的物品
+	repeated PBPetEquipClassCfg equip_replace_cost_conf  = 2;      //宠物装备替换消耗配置
+}
+
+message PBPetEquipClassCfg
+{
+	optional uint32 min_equip_class     = 1;           //宠物装备最小阶数
+	optional uint32 max_equip_class     = 2;           //宠物装备最大阶数
+	optional uint32 cost_num            = 3;           //消耗的数量
+}
+
+message PBPetLegacyQualityCfg
+{
+	repeated uint32 pet_quality			= 1;           //宠物品质
+}
+
+message PBPetGrowthConfig
+{
+	optional uint32 grow_total_times			= 1;           //成长次数
+	optional uint32 other_total_times			= 2;           //其他属性次数
+	optional uint32 grow_delta					= 3;           //成长与最大值差异值
+	optional PBPetGrowthOneCfg grow_prop_one	= 4;           //成长队列1
+	optional PBPetGrowthTwoCfg grow_prop_two	= 5;           //成长队列2
+	optional PBPetGrowthPropCfg other_prop		= 6;           //成长其他属性
+	repeated PBPetGrowthNoticeCfg grow_notice	= 7;		   //成长公告
+}
+
+message PBPetGrowthOneCfg
+{
+	repeated PBPetGrowthTimesCfg times_conf			= 1;
+}
+
+message PBPetGrowthTwoCfg
+{
+	repeated PBPetGrowthTimesCfg times_conf			= 1;
+}
+
+message PBPetGrowthPropCfg
+{
+	repeated PBPetGrowthTimesCfg times_conf			= 1;
+}
+
+message PBPetGrowthTimesCfg
+{
+	optional uint32 times      = 1;           //道具使用次数
+	optional uint32 min        = 2;           //最小值
+	optional uint32 max        = 3;           //最大值
+}
+
+message PBPetGrowthNoticeCfg
+{
+	optional uint32 dis_to_max      = 1;      //距离最大上限值
+}

@@ -1,0 +1,1 @@
+mysql -usszj -pDR9m_wqsgF8a -P3306 data_stat_ss -e "select gateway_id, gem_type, role_id, sum(power(4, gem_level - 1)) from gem_stat group by gateway_id, gem_type, role_id" > ./gem_enchase_value_20170710.txt

@@ -1,0 +1,75 @@
+import "msg_item.proto";
+import "msg_base.proto";
+
+message PBRepMoveToBagRequest
+{
+	optional sint32 cell = 1; // 第几个槽位
+	optional sint32 slot = 2; // 槽位中包裹的位置
+}
+message PBRepMoveToBagResponse
+{
+	optional sint32 ret_code = 1; 
+}
+message PBRepRecvFromBagRequest //请求从包裹移动到仓库
+{
+	optional sint32 bag_slot = 1; // 物品在包裹的位置
+	optional sint32 rep_cell = 2; // 第几个仓库的槽位
+}
+message PBRepRecvFromBagResponse
+{
+	optional sint32 ret_code = 1; 
+}
+message PBOnePart
+{
+	optional sint32 ret_cell = 1;
+	optional sint32 ret_slot = 2;
+}
+message PBUnLockRepNotice  // 达到应该开启仓库的等级时通知
+{
+	optional sint32 ret_code = 1; 
+	repeated PBOnePart one_part = 2;
+}
+//message PBOneBag
+//{
+//	optional uint32 idx =1;
+//	optional PBMsgInvSlot inv =2;
+//}
+//message PBRepDataNotice   //上线通知仓库的数据
+//{
+//	repeated PBOneBag one_bag = 1;
+//}
+//message PBMsgRepOne
+//{
+//	repeated PBMsgInvSlot bag 			= 1;		// 包裹
+//	optional PBMsgInvGrid bag_gird		= 2;		// 包裹格子
+//	optional int32 type 				= 3;		// 包裹类别
+//};
+//
+//message PBMsgRepAll
+//{
+//	repeated PBMsgRepOne rep_one;
+//};
+
+// 更换背包
+message PBRepChangeRequest
+{
+	optional sint32 bag_slot = 1; // 物品在包裹的位置
+	optional sint32 rep_index	= 2; // 第几个背包
+};
+message PBRepChangeResponse
+{
+	optional PBMsgRepOne	rep_info	= 1;
+	optional sint32			ret_code	= 2;
+};
+
+// 解锁背包
+message PBRepUnlockRequest
+{
+	optional sint32			rep_slot	= 1;
+};
+message PBRepUnlockResponse
+{
+	optional PBMsgRepOne	rep_info	= 1;
+	optional sint32			ret_code	= 2;
+	optional PBParam		code_param	= 3;
+};

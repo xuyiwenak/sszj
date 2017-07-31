@@ -1,0 +1,32 @@
+import "msg_item.proto";
+
+enum PBAttachOperType
+{
+	enAttachOper_Attach   = 1;  //附魔
+	enAttachOper_Replace  = 2;  //替换
+	enAttachOper_Select   = 3;  //查询
+	enAttachOper_BetterAtt = 4; // 高级附魔
+}
+
+message PBMsgEquipAttachRequest
+{
+	optional PBMsgSlot            slot			= 1;	// 物品位置
+	optional PBAttachOperType     oper      = 2;  // 1-附魔 2-替换 3-查询
+}
+
+message PBEquipAttachInfo
+{
+	optional PBMsgSlot	item_slot		        = 1; // 物品位置
+	optional string			item_sheet		      = 2; // 附魔石sheet
+	optional int32			item_count		      = 3; // 附魔石数量
+	optional PBProperties	pro_cur			      = 4; // 当前附加属性
+	optional PBProperties	pro_ech			      = 5; // 附魔出的属性
+	optional sint32     change_battle_score = 6; // 变化的战力，正数增加，负数减少
+}
+
+message PBMsgEquipAttachResponse
+{
+	optional sint32              ret_code      = 1; //结果码
+	optional PBAttachOperType    oper          = 2; // 1-附魔 2-替换 3-查询
+	optional PBEquipAttachInfo   attach_info   = 3; // 附魔信息
+}

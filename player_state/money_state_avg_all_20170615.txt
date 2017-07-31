@@ -1,0 +1,2 @@
+AVG(diamond_blue)	AVG(diamond_red)	AVG(unbuond_money)	AVG(zhenqi)	AVG(lingqi)
+29.1346	350.2433	1535231.3857	236138.2657	41696.2233

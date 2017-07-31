@@ -1,0 +1,251 @@
+import "msg_base.proto";
+
+// 红包玩家次数限制信息
+message PBRedBagCharCount
+{
+	optional sint32	send_count			= 1; //发送红包额度
+	optional sint32	draw_count			= 2; //领取红包额度
+}
+
+
+// 红包玩家信息
+message PBRedBagChar
+{
+	optional uint32     role_id				= 1; // 发送者角色id
+	optional string		char_name			= 2; // 发送者的玩家名字
+	optional string 	head_icon			= 3; // 发送者的头像
+	optional uint32     gender				= 4; // 性别
+	optional sint32		char_level 			= 5; // 等级
+	optional sint32		char_camp			= 6; // 玩家阵营
+	optional uint32		char_role			= 7; // 职业
+	optional uint64		char_id				= 8; // char_id
+	optional uint32		gateway_id			= 9; //角色gatewayId
+
+}
+
+// 分配状态
+enum EPBRedBagAllotStatus
+{
+	ERedBagAllot_init	= 0; // 未分配初始状态
+	ERedBagAllot_wait	= 1; // 等待平台返回状态
+	ERedBagAllot_finish	= 2; // 已经完成分配
+};
+
+// 红包模块类型 暂时只有帮派
+enum EPBRedBagModuleType
+{
+	RedBagModuleType_guild	= 1; // 帮派红包
+};
+
+
+
+// 红包发送类型
+enum EPBRedBagSendSysType
+{
+	RedBagSendSysType_char	= 0; // 玩家自己发送的红包
+	RedBagSendSysType_sys	= 1; // 系统给发送的红包
+};
+
+
+// 红包分配信息
+message PBRedBagAllot
+{
+	optional sint32			allot_val			= 1; // 分配金额
+	optional PBRedBagChar 	draw_char			= 2; // 领取者信息
+	optional sint32			allot_st			= 3; // 当前分配状态
+	optional uint32			allot_role_id		= 4; // 当前分配的角色id
+};
+
+
+//单个红包信息
+message PBRedBag
+{
+	optional uint64			red_id				= 1; // 红包id
+	optional sint32			send_time			= 2; // 发送时间戳
+	optional sint32			send_val			= 3; // 发送总金额
+	optional string			red_des				= 4; // 红包描述内容
+	optional PBRedBagChar 	send_char			= 5; // 发送者信息
+	repeated PBRedBagAllot	redbag_allot 		= 6; // 红包分配信息
+	optional string			red_type			= 7; // 红包类型yuanbao,bangyuan,money ***.sitem
+	optional uint64			pf_red_id			= 8; // 红包平台id
+	optional sint32			sys_type			= 9; // 发送系统类型 0玩家发送 1系统发送
+};
+
+
+
+//帮派红包存储信息
+message PBGuildRedBag
+{
+	repeated PBRedBag red_bag_list 		= 1;	//红包列表
+};
+
+
+//////////////////////////////////////////////////////////////////////////////
+//EGS消息
+// 发送红包消息
+//MSG_RedBag_Send_Request
+message PBMSGRedBagSendRequest
+{
+	optional sint32			send_val			= 1; // 发送总金额
+	optional string			red_des				= 2; // 红包描述内容
+	optional sint32			draw_char_num		= 3; // 领取人数量
+	optional string			red_type			= 4; // 红包类型yuanbao,bangyuan,money ***.sitem
+};
+
+// 返回发送红包是否成功消息
+//MSG_RedBag_Send_Response
+message PBMSGRedBagSendResponse
+{
+	optional sint32			ret_code		= 1; // 返回码
+
+};
+
+
+//红包推送消息
+//MSG_RedBag_Notice
+message PBMSGRedBagNotice
+{
+	optional PBRedBag 	red_bag 		= 1;	//红包信息
+	optional uint32     role_id			= 2;    //当前领取者的角色id（0为新红包推送, 其他就是当前领取者的角色id）
+};
+
+
+//请求帮派红包列表消息
+//MSG_RedBag_List_Request
+message PBMSGRedBagListRequest
+{
+
+};
+
+
+// 返回帮派红包列表消息
+//MSG_RedBag_List_Response
+message PBMSGRedBagListResponse
+{
+	optional sint32			ret_code		= 1; // 返回码
+	optional PBGuildRedBag  guild_red_bag	= 2; // 帮派红包列表
+};
+
+
+// 请求帮派红包金额限制信息
+// MSG_RedBag_Count_Request
+message PBMSGRedBagCountRequest
+{
+
+};
+
+// 返回帮派红包金额限制信息
+// MSG_RedBag_Count_Response
+message PBMSGRedBagCountResponse
+{
+	optional sint32				ret_code		= 1; // 返回码
+	optional PBRedBagCharCount	char_count		= 2; // 额度限制信息
+};
+
+
+// 请求打开红包消息
+//MSG_RedBag_Open_Request
+message PBMSGRedBagOpenRequest
+{
+	optional uint64			red_id			= 1; // 红包id	
+};
+
+
+// 返回红包信息
+//MSG_RedBag_Open_Response
+message PBMSGRedBagOpenResponse
+{
+	optional sint32			ret_code		= 1; // 返回码
+	optional PBRedBag  		red_bag			= 2; // 红包信息
+};
+
+// 红包登录推送
+// MSG_RedBag_Login_Notice
+message PBMSGRedBagLoginNotice
+{
+	optional string			send_type		= 1; // 应该发送的红包类型
+	optional sint32			is_localshard	= 2; // 本服0 跨服1
+};
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+// MSG_EGS_REDBAG_SEND_REQUEST			= 36000;// EGS向RKS通知发送红包成功消息
+// MSG_RKS_REDBAG_NOTICE				= 36001;// RKS向EGS通知红包推送
+// MSG_EGS_REDBAG_OPEN_REQUEST			= 36002;// EGS向RKS通知打开红包
+// MSG_EGS_REDBAG_OPEN_RESPONSE			= 36003;// RKS向EGS返回打开红包消息
+// MSG_EGS_REDBAG_LIST_REQUEST			= 36004;// EGS向RKS请求帮会的红包列表
+// MSG_RKS_REDBAG_LIST_RESPONSE			= 36005;// RKS向EGS返回帮会的红包列表
+// MSG_RKS_REDBAG_COUNT_SYN				= 36006;// RKS向EGS同步限制额度信息
+// MSG_RKS_REDBAG_MAIL_REPORT			= 36007;// RKS向EGS通知要发邮件
+// MSG_RKS_REDBAG_PF_ERROR				= 36008;// RKS返回平台的错误消息
+// MSG_RKS_REDBAG_BALANCE_NOTICE		= 36009;// RKS向EGS通知刷新账户
+//GATE消息
+
+
+//MSG_EGS_REDBAG_SEND_REQUEST
+message PBMSGGaTeRedBagSendRequest
+{
+	optional	uint32					role_id			= 1; // 操作者的角色id
+	optional	PBMSGRedBagSendRequest  send_redbag		= 2; // 请求要发送红包的信息
+	optional	sint32					sys_type		= 3; // 发送系统类型 0玩家发送 1系统发送
+};
+
+//MSG_EGS_REDBAG_OPEN_REQUEST
+message PBMSGGaTeRedBagOpenRequest
+{
+	optional	uint32					role_id			= 1; // 操作者的角色id
+	optional	uint64					red_id			= 2; // 红包id
+};
+
+//MSG_EGS_REDBAG_OPEN_RESPONSE
+message PBMSGGaTeRedBagOpenResponse
+{
+	optional	uint32					role_id			= 1; // 操作者的角色id
+	optional	PBMSGRedBagOpenResponse open_redbag		= 2; // 打开红包的信息
+};
+
+//MSG_EGS_REDBAG_LIST_REQUEST
+message PBMSGGaTeRedBagListRequest
+{
+	optional	uint32					role_id			= 1; // 操作者的角色id
+};
+
+//MSG_RKS_REDBAG_LIST_RESPONSE
+message PBMSGGaTeRedBagListResponse
+{
+	optional	uint32					role_id			= 1; // 操作者的角色id
+
+
+};
+
+// MSG_RKS_REDBAG_COUNT_SYN
+message PBMSGGaTeRedBagCountSyn
+{
+	optional	uint32					role_id			= 1; // 操作者的角色id
+	optional	sint32					add_send_count	= 2; // 发送红包额度同步
+	optional	sint32					add_draw_count	= 3; // 领取红包额度同步
+};
+
+
+// MSG_RKS_REDBAG_MAIL_REPORT
+message PBMSGGaTeRedBagMailReport
+{
+	optional	uint32					role_id			= 1;  // 操作者的角色id
+	optional	sint32					remain_val		= 2;  // 剩余金额
+};
+
+// MSG_RKS_REDBAG_PF_ERROR	
+message PBMSGGaTeRedBagPFError
+{
+	optional	sint32			ret_code		= 1; // 返回码
+	optional	uint32			role_id			= 2; // 操作者的角色id
+
+};
+
+// MSG_RKS_REDBAG_BALANCE_NOTICE	
+message PBMSGGaTeRedBagBalanceNotice
+{
+	optional	uint32			role_id			= 1; // 操作者的角色id
+	optional	sint32			flush_type		= 2; // 刷新类型
+};

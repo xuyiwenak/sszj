@@ -1,0 +1,259 @@
+
+// 以最快速度序列/反序列
+option optimize_for = SPEED;
+
+import "db_base.proto";
+
+// 消费交易
+message PBBillingStatus
+{
+	option (OptionPrimaryKey)		= "consume_id";
+	
+	option (OptionProcedureName)	= "ProcUserIbPayStart";
+	option (OptionProcedureResult)	= "PBBillingResult";
+	option (OptionIndex)			= "detail_id";
+	
+	optional uint32	flag			= 1;
+	
+	optional uint32 consume_id		= 2 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL AUTO_INCREMENT"];
+	
+	optional uint64 detail_id		= 3 ;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'"];
+
+	optional uint32 game_id			= 4 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 user_id			= 5 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 role_id			= 6 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+
+	optional uint32 role_gender		= 7 ;//[(OptionDBFieldExtra) = "tinyint(3) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 role_occup		= 8 ;//[(OptionDBFieldExtra) = "tinyint(3) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 role_level		= 9 ;//[(OptionDBFieldExtra) = "smallint(5) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 rating_id		= 10;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	
+	optional string ib_code			= 11 ;//[(OptionDBFieldExtra) = "char(32) CHARACTER SET utf8 NOT NULL", (OptionDBProcParam)=true];
+	optional uint32 package_flag	= 12 ;//[(OptionDBFieldExtra) = "tinyint(3) unsigned NOT NULL DEFAULT '1'", (OptionDBProcParam)=true];
+	optional uint32 ib_count		= 13 ;//[(OptionDBFieldExtra) = "smallint(5) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 pay_time		= 14 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'"];
+	optional uint32	user_ip			= 15 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+
+	optional int32 price			= 16 ;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional int32 discount_price	= 17 ;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional int32 subject_count	= 18 ;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+
+//	optional int32 subject_id_0		= 19 ;//[(OptionDBFieldExtra) = "smallint(5) NOT NULL DEFAULT '-1'", (OptionDBProcParam)=true];
+	optional int32 diamond_blue		= 20 ;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	
+//	optional int32 subject_id_1		= 21 ;//[(OptionDBFieldExtra) = "smallint(5) NOT NULL DEFAULT '-1'", (OptionDBProcParam)=true];
+	optional int32 diamond_red		= 22 ;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	
+	optional int32 other_subject_id	= 23 ;//[(OptionDBFieldExtra) = "smallint(5) NOT NULL DEFAULT '-1'", (OptionDBProcParam)=true];
+	optional int32 other_sub_amount	= 24 ;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	
+	optional int32 state			= 25 ;//[(OptionDBFieldExtra) = "smallint(5) NOT NULL DEFAULT '0'"];
+
+	optional uint32 shard_id		= 26 ;//[(OptionDBProcParam)=true];
+}
+
+// 玩家交易记录
+message PBCashExchange
+{
+	option (OptionPrimaryKey)		= "consume_id";
+	
+	option (OptionProcedureName)	= "ProcUserCashExchange";
+	option (OptionProcedureResult)	= "PBBillingResult";
+	
+	optional uint32	flag			= 1;
+	optional uint32 consume_id		= 2 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL AUTO_INCREMENT"];
+	optional uint64 detail_id		= 3 ;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'"];
+	optional uint32 src_game_id		= 4 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 src_user_id		= 5 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 src_role_id		= 6 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 dst_game_id		= 7 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 dst_user_id		= 8 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 dst_role_id		= 9 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 amount			= 10 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional int32 subject_id		= 11 ;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional int32 exchange_time	= 12 ;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional int32 state			= 13 ;//[(OptionDBFieldExtra) = "smallint(5) NOT NULL DEFAULT '0'"];
+
+	optional uint32 shard_id		= 14 ;//[(OptionDBProcParam)=true];
+	optional string item_code		= 15 ;//[(OptionDBFieldExtra) = "char(32) CHARACTER SET utf8 NOT NULL", (OptionDBProcParam)=true];
+	optional uint32 item_num		= 16 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+}
+
+message PBBillingUpdate
+{
+	option (OptionProcedureName)	= "ProcUserIbPayUpdate";
+	option (OptionProcedureResult)	= "PBBillingResult";
+	optional uint64 detail_id		= 1;//[(OptionDBProcParam)=true];
+	optional int32 state			= 2;//[(OptionDBProcParam)=true];
+}
+
+message PBBillingResult
+{
+	optional int32	ret_code		= 1;
+	optional int32	ret_type		= 2;
+	
+	optional uint64 detail_id		= 3;
+	optional int32	state			= 4;
+	optional uint32 request_id		= 5;
+}
+
+
+message PBChargeRecord
+{
+	option (OptionPrimaryKey)		= "detail_id";
+	option (OptionIndex)			= "user_id";
+	
+	option (OptionProcedureName)	= "ProcCharge";
+	option (OptionProcedureResult)	= "PBChargeResult";
+	
+	optional uint32	flag			= 1;
+	optional uint64 detail_id		= 2 ;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 game_id			= 3 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 gateway_id		= 4 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 user_id			= 5 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 role_id			= 6 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 amount			= 7 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 charge_time		= 8 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 subject_id		= 9 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+}
+
+
+// 添加免费货币
+message PBAddFreeMoney
+{
+	option (OptionPrimaryKey)		= "consume_id";
+	option (OptionIndex)			= "detail_id";
+
+	option (OptionProcedureName)	= "ProcAddFreeMoney";
+	option (OptionProcedureResult)	= "PBBillingResult";
+
+	optional uint32	flag			= 1;
+	optional uint32 consume_id		= 2 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL AUTO_INCREMENT"];
+	optional uint64 detail_id		= 3 ;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'"];
+	optional uint32 game_id			= 4 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 user_id			= 5 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 role_id			= 6 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];	
+	optional uint32	subject_id		= 7 ;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 amount			= 8 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32	add_time		= 9 ;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional string source			= 10 ;//[(OptionDBFieldExtra) = "char(32) CHARACTER SET utf8 NOT NULL", (OptionDBProcParam)=true];
+	optional uint32 shard_id		= 11 ;//[(OptionDBProcParam)=true];
+}
+
+message PBChargeResult
+{
+	repeated PBChargeRecord	chargeList = 1;
+}
+
+message PBProChargeRecord
+{
+	option (OptionProcedureName)	= "ProcChargeRecord";
+	option (OptionProcedureResult)	= "PBChargeResult";
+	
+	optional uint32	flag			= 1;
+	optional uint32 user_id			= 2 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+}
+
+// 发红包
+message PBSendRedPackets
+{
+	option (OptionPrimaryKey)		= "consume_id";
+	option (OptionIndex)			= "detail_id";
+
+	option (OptionProcedureName)	= "ProcSendRedPackets";
+	option (OptionProcedureResult)	= "PBBillingResult";
+
+	optional uint32	flag			= 1;
+	optional uint32 consume_id		= 2 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL AUTO_INCREMENT"];
+	optional uint64 detail_id		= 3 ;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'"];
+	optional uint32 game_id			= 4 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 user_id			= 5 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 role_id			= 6 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint64 redpackets_id	= 7 ;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32	subject_id		= 8 ;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 amount			= 9 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32	record_time		= 10 ;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint64 param_1			= 11 ;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint64 param_2			= 12 ;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional string param_pb		= 13 ;//[(OptionDBFieldExtra) = "varchar(256) CHARACTER SET utf8 NOT NULL", (OptionDBProcParam)=true];
+	optional uint32 gateway_id		= 14 ;//[(OptionDBProcParam)=true];
+}
+
+// 领红包
+message PBReceiveRedPackets
+{
+	option (OptionPrimaryKey)		= "consume_id";
+	option (OptionIndex)			= "detail_id";
+
+	option (OptionProcedureName)	= "ProcReceiveRedPackets";
+	option (OptionProcedureResult)	= "PBBillingResult";
+
+	optional uint32	flag			= 1;
+	optional uint32 consume_id		= 2 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL AUTO_INCREMENT"];
+	optional uint64 detail_id		= 3 ;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'"];
+	optional uint32 game_id			= 4 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 user_id			= 5 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 role_id			= 6 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint64 redpackets_id	= 7 ;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32	subject_id		= 8 ;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 amount			= 9 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32	record_time		= 10 ;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint64 param_1			= 11 ;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint64 param_2			= 12 ;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint64 src_detail_id	= 13 ;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 gateway_id		= 14 ;//[(OptionDBProcParam)=true];
+}
+
+// 退红包
+message PBDeleteRedPackets
+{
+	option (OptionPrimaryKey)		= "consume_id";
+	option (OptionIndex)			= "detail_id";
+
+	option (OptionProcedureName)	= "ProcDeleteRedPackets";
+	option (OptionProcedureResult)	= "PBBillingResult";
+
+	optional uint32	flag			= 1;
+	optional uint32 consume_id		= 2 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL AUTO_INCREMENT"];
+	optional uint64 detail_id		= 3 ;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'"];
+	optional uint32 game_id			= 4 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 user_id			= 5 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 role_id			= 6 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint64 redpackets_id	= 7 ;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32	subject_id		= 8 ;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 amount			= 9 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32	record_time		= 10 ;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint64 param_1			= 11 ;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint64 param_2			= 12 ;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint64 src_detail_id	= 13 ;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'", (OptionDBProcParam)=true];
+	optional uint32 gateway_id		= 14 ;//[(OptionDBProcParam)=true];
+}
+
+// 交换交易（待整理）
+//message PBTradeState
+//{
+//	option (OptionPrimaryKey)			= "guid";
+//	optional uint32	flag				= 1; 	
+//	// 交易ID: gametick + 自增量
+//	optional uint64 guid				= 2 ;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'"];
+//	// 角色ID
+//	optional uint64 char_id				= 3 ;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'"];
+//	// 角色等级
+//	optional int32 char_level			= 4 ;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'"];
+//	// 商品ID
+//	optional string item_sheet			= 5 ;//[(OptionDBFieldExtra) = "char(64) CHARACTER SET utf8 NOT NULL"];
+//	// 购买数量
+//	optional uint32 quantity			= 6 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'"];
+//	// 货币类型
+//	optional string money_type			= 7 ;//[(OptionDBFieldExtra) = "char(32) CHARACTER SET utf8 NOT NULL"];
+//	// 成交价格
+//	optional uint32 price				= 8 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'"];
+//	// 交易状态
+//	optional string status				= 9 ;//[(OptionDBFieldExtra) = "char(32) CHARACTER SET utf8 NOT NULL"];;
+//	// 交易开始时间
+//	optional uint32 start_time			= 10;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'"];
+//	// 最后一次状态更新时间
+//	optional uint32 update_time			= 11;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'"];
+//}
+
+

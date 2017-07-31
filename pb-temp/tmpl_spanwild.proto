@@ -1,0 +1,49 @@
+import "tmpl_base.proto";
+
+// 跨服野外积分配置
+
+message PBSpanWildCfg
+{
+	option (OptionXmlFile)		= "spanwild_config.xml";
+	repeated PBSpanWildScore	spanwildscore	= 1;
+	optional PBSpanWildReward	spanwildreward	= 2;
+}
+
+// 所有游戏地图配置
+message PBSpanWildScore
+{
+	optional sint32		index					= 1;//[default=0]; // 等级段
+	optional sint32		minlv					= 2;			// 最小等级包含自身
+	optional sint32		maxlv					= 3;			// 最大等级包含自身
+	optional float		dmgscore				= 4;			// 积分伤害比，造成伤害1，可获得的积分是多少，支持6位小数
+	optional string		sheetid					= 5;			// 怪物sheetid
+	repeated PBGetScore	getscore_rate			= 6;			// 积分削减系数
+	optional string		actid					= 7;			// 活动配置sheetid
+	optional sint32		notice_time				= 8;			// 通知时间（剩余）
+}
+
+
+message PBGetScore
+{
+	optional sint32		index					= 1;			// 攻击的怪物等级段
+	optional float		ratio					= 2;			// 削减，增加系数，最终会用积分乘以该值，支持6位小数
+}
+
+
+message PBRewardItem
+{
+	optional string		sheetid					= 1;
+	optional uint32		count					= 2;
+}
+
+message PBSpanWildRewardItem
+{
+	optional sint32			minRank					= 1;			// 排名最小值
+	optional sint32			maxRank					= 2;			// 排名最大值
+	repeated PBRewardItem	reward					= 3;			// 奖励列表
+}
+
+message PBSpanWildReward
+{
+	repeated PBSpanWildRewardItem	rewardlist		= 1;			// 奖励
+}

@@ -1,0 +1,38 @@
+/// @brief 摇红包的配置
+
+import "tmpl_base.proto";
+import "msg_common.proto";
+
+
+// 匹配配置
+message PBConfigRedPacket
+{
+	optional PBRedPacketBaseConfig			base_config					= 1;
+	repeated PBRedPacketRewardShowInfo		show_reward_info			= 2;				// 需展示的奖励列表
+	repeated PBRedPacketTimeInfo			shake_time					= 3;				// 摇奖时间段
+	repeated PBRedPacketTimeInfo			panel_show_time				= 4;				// 面板显示时间段
+};
+
+message PBRedPacketBaseConfig
+{
+	optional int32						weixin_redpacket_rate		= 1;//[default=930];	// 红信红包概率，万分比
+	optional int32						weixin_juanzhou_rate		= 2;//[default=70];	// 红包卷轴概率，万分比
+	optional int32						wine_rate					= 3;//[default=0];		// 实物概率（红酒），万分比
+	optional string						reward_loot_table			= 4;				// 游戏内奖励掉落表sheetName
+	optional string						weixijuanzhou_loot_table	= 5;				// 微信卷轴掉落表sheetName
+	optional int32						broad_min_jifen				= 6;//[default=800];	// 摇红信需广播的最小积分，单位是分
+	optional string						menpiao						= 7;				// 摇红包消耗的门票sheetName
+	optional int32						max_times					= 9;//[default=5];		// 最大次数
+};
+
+message PBRedPacketRewardShowInfo
+{
+	optional string						sheet_name						= 1;				// 物品sheetName
+}
+
+
+message PBRedPacketTimeInfo
+{
+	optional string							start_time					= 1;
+	optional string							end_time					= 2;			
+}

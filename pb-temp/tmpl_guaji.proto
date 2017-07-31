@@ -1,0 +1,23 @@
+/// @brief 超链接的配置
+
+import "tmpl_base.proto";
+
+message PBConfigGuaJi
+{
+	option (OptionXmlFile)		= "guaji_config.xml";
+	
+	optional PBConfigGuaJiYaoPin yaopin_info	= 1;// 药品配置
+}
+
+message PBConfigGuaJiYaoPin
+{
+	repeated PBConfigGuaJiBuy buy_list		= 1					;	// 商品列表
+}
+
+message PBConfigGuaJiBuy
+{
+	optional string goods_name		= 1					;	// 商品名
+	optional sint32 sel_index			= 2					;	// 客户端勾选类型
+	optional sint32 buy_vitem			= 3					;	// 替代货币项目
+}
+

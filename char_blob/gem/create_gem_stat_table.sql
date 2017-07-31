@@ -1,0 +1,2 @@
+create table gem_stat(gateway_id int(11), role_id int(11) unsigned, gem_type int(11), gem_level int(11), gem_count int(11), sheet_id varchar(50))ENGINE=InnoDB DEFAULT CHARSET=utf8;
+create table gem_cutting_stat(gateway_id int(11), role_id int(11) unsigned, cutting_type int(11), cutting_level int(11))ENGINE=InnoDB DEFAULT CHARSET=utf8;

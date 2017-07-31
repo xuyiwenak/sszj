@@ -1,0 +1,32 @@
+import "tmpl_base.proto";
+
+
+// 红包次数限制配置
+message PBRedBagCount
+{
+	optional  sint32  count_type 	= 1; // 限制类型 （1天 2星期 3月）
+	optional  sint32  count_val 	= 2; // 限制数值
+}
+
+// 红包配置
+message PBConfigRedBag
+{
+	optional sint32			used_level			= 1; //红包系统使用等级
+	optional sint32			max_yb				= 2; //红包最大金额
+	optional sint32			min_yb				= 3; //红包最小金额
+	optional sint32			max_allot			= 4; //红包分配最大个数
+	optional sint32			min_allot			= 5; //红包分配最小个数
+	optional sint32			exist_time			= 6; //红包存在时间秒
+	optional PBRedBagCount	send_count			= 7; //发送红包额度限制
+	optional PBRedBagCount	draw_count			= 8; //领取红包额度限制
+	optional string			red_type			= 9;//红包类型yuanbao,bangyuan,money ***.sitem
+	
+};
+
+
+
+
+
+
+
+

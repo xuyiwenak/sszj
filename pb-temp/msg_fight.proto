@@ -1,0 +1,237 @@
+//战报相关  begin
+option optimize_for = SPEED;
+
+// 战斗行为ID
+enum EFightAction
+{
+	NONE			= 0;
+	UseSkill		= 1;	//使用技能
+	HIT				= 2;	//受击
+	Hurt			= 3;	//掉血
+	Dead			= 4;	//死亡
+	Cure			= 5;	//治疗
+	AngerAdd		= 6;	//加怒气
+	AngerSub		= 7;	//减怒气
+	Dodge			= 8;	//闪避
+	AddBuff 		= 9;	//添加BUFF
+	RemoveBuff		= 10;	//移除BUFF 
+	Killer			= 11;	//击杀
+	Relive			= 12;	//复活
+	PoDun			= 13;	//破盾
+	BeatBack		= 14;	//击退(推人)
+	Assault			= 15;	//冲锋
+	BeTaunt			= 16;	//被嘲讽
+	BeginBoot		= 17;	//开始引导技能
+	EndBoot			= 18;	//结束引导技能
+	UseBootSkill	= 19;	//引导中的技能
+	WinkMove		= 20;	//瞬移
+	UseDelaySkill	= 21;	//延迟类技能;
+	CureMp			= 22;	//回蓝;
+	AbSorbHp		= 23;	//吸收血量;
+	FlushBuff		= 24;	//刷新BUFF信息;
+	Immune			= 25;	//免疫;
+};
+
+enum EFightDamageType
+{
+	normal			= 0;	//正常
+	block			= 1;	//格档
+	crit			= 2;	//爆击
+	rebound			= 3;	//反弹
+};
+
+
+// 属性ID与数据库绑定，不能变化
+enum EPropertyAttr
+{
+	ePAStart                                        =   0;  
+
+	ePAVitality                                     =   1;      // 体质
+	ePAEnergy                                       =   2;      // 精力
+	ePAStrength                                     =   3;      // 力量
+	ePAIntelligence                                 =   4;      // 智力
+	ePADexterity                                    =   5;      // 敏捷
+
+	ePAHPAdd										=	6;		// HP增加固定值
+	ePAHPAddRate									=	7;		// HP增加万分比 
+
+	ePAMPAdd										=	8;		// MP增加固定值 
+	ePAMPAddRate									=	9;		// MP增加万分比 
+
+	ePAPhyAttackAdd									=	10;		// 物理攻击增加固定值
+	ePAPhyAttackAddRate								=	11;		// 物理攻击增加百分比									
+
+	ePAMagAttackAdd									=	12;		// 法术攻击增加固定值 
+	ePAMagAttackAddRate								=	13;		// 法术攻击增加百分比
+
+	ePAPhyDefenceAdd								=	14;		// 物理防御增加固定值 
+	ePAPhyDefenceAddRate							=	15;		// 物理防御增加百分比
+
+	ePAMagDefenceAdd								=	16;		// 法术防御增加固定值
+	ePAMagDefenceAddRate							=	17;		// 法术防御增加百分比
+
+	ePAPhyAttackMin									=	18;		// 物理攻击最小值
+	ePAPhyAttackMax									=	19;		// 物理攻击最大值
+	ePAPhyAttackValue								=	20;		// 物理攻击力
+
+	ePAPhyDefence									=	21;		// 物理防御力	
+
+	ePAMagAttackMin									=	22;		// 法术攻击最小值
+	ePAMagAttackMax									=	23;		// 法术攻击最大值
+	ePAMagAttackValue								=	24;		// 法术攻及力
+
+	ePAMagDefence									=	25;		// 法术防御力
+
+	ePAPhySkillAttack								=	26;		// 技能物攻
+	ePAMagSkillAttack								=	27;		// 技能法攻
+
+	ePAPoDun										=	28;		// 破盾值
+
+	ePAEnd                                          =   50;   
+};
+
+//战报相关  end
+message PBCommandInfo
+{
+	optional PBCmdActAll  	all_cmd_list     = 1;
+};
+
+
+message PBCmdAct
+{
+	repeated PBCmdUnit cmd_list = 1;
+};
+
+message PBCmdActAll
+{
+	repeated PBCmdAct  all_cmd_list = 2;
+};
+
+
+message PBCmdUnit
+{
+	optional int32			loop			= 1;
+	optional EFightAction  	ActionID      	= 2;//[default= UseSkill];
+	optional uint32  		datasetID     	= 3;
+	repeated int32  		Param         	= 4;
+	optional uint32			srcDatasetID	= 5;// 纯粹是客户端需要，伤害飘字用到;
+};
+
+
+message PBReport
+{
+	optional int64			src				= 1;
+	optional PBCmdActAll	all_cmd_list 	= 2;
+};
+
+message PBFightMousePos
+{
+	optional sint32			x_pos			= 1;
+	optional sint32			y_pos			= 2;
+	optional sint32			z_pos			= 3;
+};
+
+message PBMsgUseSkillRequest
+{
+	optional sint32				suite_id		= 1;		// 技能套ID
+	optional sint32				skill_step		= 2;		// 技能步骤
+	optional uint32				entityid		= 3;		// 目标实体ID
+	optional PBFightMousePos	mouse_pos		= 4;		// 鼠标位置
+	optional sint32				is_mouse_pos	= 5;		// 0表示不用鼠标位置，1表示用鼠标位置
+};
+
+message PBMsgUseSkillResponse
+{
+	optional sint32				ret_code		= 1;		// 结果码
+};
+
+// 宠物使用技能
+message PBMsgPetUseSkillRequest
+{
+	optional sint32				suite_id		= 1;		// 技能套ID
+	optional sint32				skill_step		= 2;		// 技能步骤
+	optional uint32				entityid		= 3;		// 目标实体ID
+	optional PBFightMousePos	mouse_pos		= 4;		// 鼠标位置
+	optional sint32				is_mouse_pos	= 5;		// 0表示不用鼠标位置，1表示用鼠标位置
+};
+
+message PBMsgPetUseSkillResponse
+{
+	optional sint32				ret_code		= 1;		// 结果码
+};
+
+message PBMsgMagicWeaponUseSkillRequest
+{
+	optional uint32				entityid		= 2;		// 目标实体ID
+	optional PBFightMousePos	mouse_pos		= 3;		// 鼠标位置
+	optional sint32				is_mouse_pos	= 4;		// 0表示不用鼠标位置，1表示用鼠标位置
+};
+
+message PBMsgMagicWeaponUseSkillResponse
+{
+	optional sint32				ret_code		= 1;		// 结果码
+};
+
+message PBMsgFightReportNotice
+{
+	optional PBReport			report			= 1;		// 战报
+};
+
+message PBMsgClientAutoBattleFlagRequest
+{
+	optional sint32				is_auto_battle	= 1;		// 0非挂机状态，1挂机状态
+};
+
+message PBMsgClientAutoBattleFlagResponse
+{
+	optional sint32				ret_code		= 1;		// 结果码（目前没啥用）;
+};
+
+// 角色技能CD和宠物技能CD共用这个消息
+message PBSkillCDNotice
+{
+	optional sint32				secialid		= 1;
+	optional sint32				curcdtime		= 2;
+	optional sint32				maxcdtime		= 3;
+};
+
+// 取消特殊战斗状态;
+message PBMsgCancelSpecialBattleStatusRequest
+{
+	optional sint32				specialBattleStatus		= 1;		// 特殊状态类型;
+};
+
+// message PBMsgCancelSpecialBattleStatusResponse
+// {
+// 	optional sint32				ret_code		= 1;		// 结果码;
+// };
+
+// 角色技能CD和宠物技能CD共用这个消息;
+message PBSkillCommonCDNotice
+{
+	optional sint32	common_cd = 1;
+};
+
+// 道具技能cd通知;
+message PBPropSkillCDNotice
+{
+	optional sint32	cd			= 1;	// cd时间;
+	optional sint32 use_type	= 2;	// 类型标识（详见conf下group_skill_cd_config.xml）;
+};
+
+
+/*--------------------------------------------------------*/
+// buff信息，用于客户端显示;
+/*--------------------------------------------------------*/
+message PBBuffShowInfo
+{
+	optional sint32 buff_id		= 1;	// buff id;
+	optional int64 left_time	= 2;	// buff剩余时间; 
+	optional int64 total_time	= 3;	// buff总时间;
+	optional bool is_valid		= 4;	// 是否起效;
+};
+
+message PBBuffShowInfoNotice
+{
+	repeated PBBuffShowInfo buff_info = 1;// buff 信息;
+};

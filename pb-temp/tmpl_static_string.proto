@@ -1,0 +1,15 @@
+/// @brief	template for config of guild
+/// @author	Deng Lichuan
+
+import "tmpl_base.proto";
+
+message PBServerStaticString
+{
+	repeated PBStaticString		pb_strings	= 1;
+};
+
+message PBStaticString
+{
+	optional string		key			= 1;
+	optional string		value		= 2;
+};

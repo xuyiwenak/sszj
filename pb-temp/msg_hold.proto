@@ -1,0 +1,143 @@
+option optimize_for = SPEED;
+
+import "msg_base.proto";
+
+enum EHoldDownType
+{
+	EHT_DROP = 1;	//放下
+	EHT_DOWN = 2;	//下来
+}
+
+message PBMsgHoldRequest //玩家发起抱抱请求
+{
+	optional uint64	char_id	= 1;	//要抱起的玩家id
+}
+
+message PBMsgHoldResponse //响应玩家发起抱抱请求
+{
+	optional sint32	ret_code = 1;
+	optional uint64	char_id	 = 2; //被抱起的玩家的id
+}
+
+message PBMsgHoldAckNotice	//通告 被别的玩家发起抱抱
+{
+	optional uint64	char_id	= 1;	//发起抱抱的玩家id
+	optional string char_name = 2;	//发起抱抱的玩家名字
+}
+
+message PBMsgHoldAckRequest //请求 是否同意被抱抱
+{
+	optional bool	is_agree	= 1;	//是否同意
+	optional uint64	char_id		= 2;	// 发起抱抱的玩家id
+}
+
+message PBMsgHoldAckResponse //响应 是否同意被抱抱
+{
+	optional sint32	ret_code 	= 1;
+	optional sint32	hold_state	= 2;	// 抱起还是背包状态
+	optional uint64 char_id		= 3;	// 对象的id
+}
+
+message PBMsgHoldDownRequest	//下抱抱请求
+{
+	optional EHoldDownType down_type = 1;
+}
+
+message PBMsgHoldDownResponse	//响应下抱抱请求
+{
+	optional sint32 ret_code = 1;
+}
+
+message PBMsgHoldInterruptNotice	//抱抱中断通知
+{
+	optional uint64 char_id = 1;	//
+	optional bool	is_block = 2;	//是否在阻挡区
+}
+
+message PBMsgHoldDelAppListNotice
+{
+	optional uint64 char_id = 1;
+};
+
+message PBMsgHoldAutoShieldRequest
+{
+	optional bool		is_shield = 1;	//自动屏蔽
+	optional bool		is_action  = 2;	// 是否是多人动作
+};
+
+message PBMsgHoldAutoShieldResponse
+{
+	optional sint32 ret_code = 1;
+	optional bool   is_shield = 2;
+	optional bool	is_action  = 3;	// 是否是多人动作
+};
+
+message PBMsgHoldAutoShieldNotice
+{
+	optional bool   is_shield = 1;
+	optional bool	is_action  = 2;	// 是否是多人动作
+};
+
+
+// 互动动作
+message PBMsgInterActionRequest
+{
+	optional sint32					action_id			= 1;	// 交互id
+	optional uint64					tar_entityID		= 2;	// 目标; 0表示没有目标;	
+};
+
+// 补充请求;
+message PBMsgInterActionRequestEx
+{
+	optional sint32					action_id			= 1;	// 交互id
+	optional uint64					char_id				= 2;	// 目标; 0表示没有目标;	
+};
+
+message PBMsgInterActionResponse
+{
+	optional sint32					ret_code			= 1;
+	optional sint32					action_id			= 2;	// 交互id
+	optional uint64					src_entityID		= 3;	// 发起者
+	optional uint64					tar_entityID		= 4;	// 目标; 0表示没有目标;	
+};
+
+message PBMsgInterActionNotice
+{
+	optional sint32					action_id			= 1;	// 交互id
+	optional uint64					src_entityID		= 2;	// 发起者
+	optional uint64					tar_entityID		= 3;	// 目标; 0表示没有目标;	
+};
+
+message PBMsgCancelInterActionRequest
+{
+	
+};
+
+message PBMsgCancelInterActionResponse
+{
+	optional sint32					ret_code			= 1;
+};
+
+
+message PBMsgInterActionVerifyNotice
+{
+	optional string				role_name				= 1;// 名字
+	optional uint32				role_id					= 2;// ID			
+}
+
+enum PBInterActionVerify
+{
+	Verify_Agree = 1;
+	Verify_Reject = 2;
+};
+
+message PBMsgInterActionVerifyRequest
+{
+	optional uint32					role_id					= 1;// ID
+	optional PBInterActionVerify	type					= 2;
+};
+
+message PBMsgInterActionVerifyResponse
+{
+	optional sint32				ret_code				= 1;
+};

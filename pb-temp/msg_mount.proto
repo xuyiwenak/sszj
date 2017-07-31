@@ -1,0 +1,542 @@
+option optimize_for = SPEED;
+
+import "msg_base.proto";
+import "msg_item.proto";
+import "msg_mount_luck.proto";
+
+enum PBMsgMountOper
+{
+	enMountOper_Ride								= 1; //骑乘
+	enMountOper_Rest								= 2; //休息
+};
+
+enum PBMsgFlyType
+{
+	enFlyType_Low									= 1; // 低飞
+	enFlyType_High									= 2; // 高飞
+};
+
+message PBMsgMountFashion
+{
+	optional uint32 is_actived						= 1;
+	optional uint32 is_timelimited					= 2;
+	optional uint32 expiration						= 3;
+	optional uint32	index							= 4; // 索引
+};
+
+
+message PBMsgSoulStarItem
+{
+	optional PBMsgItem item							= 1;
+	optional uint32 slot_index							= 2; // 组内SlotId；
+	optional uint32 group_id							= 3; // 组数;
+	optional uint32 page_num						= 4; // 页数;
+};
+
+message PBMsgSoulStarChip
+{
+	optional uint32	soul_direction			= 1;// 星魂方向;
+	optional sint32 left_num					= 2;// 剩余数量;
+	optional uint32 chip_sheet				= 3;// 碎片sheet;
+};
+
+message PBMsgSoulStarInfo
+{
+	repeated PBMsgSoulStarItem		soul_star_page			= 1;
+	repeated PBMsgSoulStarChip		soul_star_chip_list		= 2; // 星魂碎片;
+};
+
+message PBMsgMount
+{
+	optional uint32 sheet_id						= 1; //坐骑sheet id
+	optional sint32	level							= 2; //等级
+	optional sint32	exp								= 3; //经验
+	optional uint32 show_idx						= 4; //外形索引;//[0-n]
+	optional PBMsgRuneSlot rune_slot				= 5; //坐骑符文 
+	repeated PBMsgMountFashion mount_fashion		= 6; //坐骑外形数据
+	optional sint32 battle_score					= 7; //坐骑本身战斗力（除符文外的战斗力）
+	repeated PBMsgMountLuck mount_train_info		= 8; //飞剑培养信息;
+	optional PBMsgSoulStarInfo  soul_star_info		= 9; //星魂信息;
+};
+
+message PBMsgRuneItem
+{
+	optional PBMsgItem	item						= 1;
+	optional uint32		rune_index					= 2;
+};
+
+message PBMsgRuneSlot
+{
+	repeated PBMsgRuneItem	rune_item					= 1;
+	optional uint32	open_slot_num						= 2;
+	optional uint32 cur_lottery_id						= 3;
+};
+
+// 坐骑信息请求
+message PBMsgMountInfoRequest
+{
+
+};
+
+message PBMsgMountInfoResponse
+{
+	optional int32 ret_code							= 1; // 结果码;
+	repeated PBMsgMount mount						= 2; // 拥有的坐骑列表
+	optional sint32 activate_mount_slotid			= 3; //激活的坐骑slotID
+	optional PBFashionCfgList fashioncfg			= 4; // 坐骑时装价格配置
+};
+
+
+
+// 坐骑升级请求（吞筮道具）
+message PBMsgMountLevelUpRequest
+{
+	optional sint32 mount_slotid					= 1; //坐骑slotID
+	repeated PBMsgSlot item_slot					= 2; //吞噬的物品位置
+};
+
+message PBMsgMountLevelUpResponse
+{
+	optional int32 ret_code							= 1; //结果码;
+	optional sint32 mount_slotid					= 2; //坐骑slotID
+	optional sint32	level							= 3; //等级
+	optional sint32	exp								= 4; //经验
+	optional sint32 battle_score					= 5; //坐骑本身战斗力（除符文外的战斗力）
+};
+
+
+// 坐骑升阶请求
+message PBMsgMountClassUpRequest
+{
+	optional sint32 mount_slotid					= 1; //坐骑slotID
+};
+
+message PBMsgMountClassUpResponse
+{
+	optional int32 ret_code							= 1; //结果码;
+	optional sint32 mount_slotid					= 2; //坐骑slotID
+	optional sint32	mount_sheetid					= 3; //坐骑sheetID
+	optional sint32 active_mount_slotid				= 4; //激活坐骑的slotID
+	optional sint32 battle_score					= 5; //坐骑本身战斗力（除符文外的战斗力）
+	repeated PBMsgMountFashion mount_fashion		= 6; //坐骑外形数据
+	optional uint32 show_idx						= 7; //外形索引;//[0-3]
+	optional PBMsgRuneSlot rune_slot				= 8; //坐骑符文 
+};
+
+
+// 坐骑骑乘或休息
+message PBMsgMountRideOrRestRequest
+{
+	optional sint32 mount_slotid					= 1; //坐骑slotID
+	optional sint32 ride_or_rest					= 2; //骑乘或休息 
+};
+
+message PBMsgMountRideOrRestResponse
+{
+	optional int32 ret_code							= 1; //结果码;
+	optional sint32 mount_slotid					= 2; //坐骑slotID
+	optional sint32 ride_or_rest					= 3; //骑乘或休息 
+
+	optional sint32 server_map_id					= 4; //服务器坐标
+	optional sint32 server_x						= 5; //服务器坐标
+	optional sint32 server_y						= 6; //服务器坐标
+	optional sint32	server_z						= 7; //服务器坐标
+	// 外形信息
+	optional sint32	mount_class						= 8; //飞剑品阶
+	optional sint32 mount_show_type					= 9; //飞剑时装
+};
+
+
+//装备坐骑符文请求
+message PBMsgEquipRuneRequest
+{
+	optional uint32 des_mount_slotid				= 1;	// 想要穿到哪个坐骑上
+	optional uint32 des_rune_index					= 2;	// 想要穿到哪个位置上
+	optional uint32 rune_index						= 3;	// 符文的索引（穿符文的时候只可能从包裹到符文槽）	
+};
+//装备坐骑符文回应
+message PBMsgEquipRuneResponse
+{
+	optional int32	ret_code						= 1;	// 结果码
+	optional uint32 des_mount_slotid				= 2;	// 想要穿到哪个坐骑上
+	optional uint32 des_rune_index					= 3;	// 想要穿到哪个位置上
+	optional uint32 rune_index						= 4;	// 符文的索引（穿符文的时候只可能从包裹到符文槽）
+	optional uint32 rune_bat_score					= 5;	// 装备符文的战斗力
+	optional uint32 rune_sheetid					= 6;	// 装备符文的sheetID
+};
+
+
+//卸载坐骑符文请求
+message PBMsgUnEquipRuneRequest
+{
+	optional uint32 src_mount_slotid				= 1;	// 想要卸载哪个坐骑上的符文
+	optional uint32 src_rune_index					= 2;	// 想要卸载的符文的位置
+};
+//卸载坐骑符文回应
+message PBMsgUnEquipRuneResponse
+{
+	optional int32	ret_code						= 1;	// 结果码
+	optional uint32 src_mount_slotid				= 2;	// 想要卸载哪个坐骑上的符文
+	optional uint32 src_rune_index					= 3;	// 想要卸载的符文的位置
+	optional uint32 rune_bat_score					= 4;	// 卸载符文的战斗力
+	optional uint32 rune_sheetid					= 5;	// 卸载符文的sheetID
+};
+
+
+//坐骑切换外形请求
+message PBMsgMountChangeShowRequest
+{
+	optional uint32 mount_slotid					= 1;	
+	optional uint32 fashion_index					= 2;
+};
+
+//坐骑切换外形回应
+message PBMsgMountChangeShowResponse
+{
+	optional int32	ret_code						= 1;	// 结果码
+	optional uint32 mount_slotid					= 2;	
+	optional uint32 fashion_index					= 3;
+};
+
+
+//购买坐骑外形请求
+message PBMsgMountBuyFashionRequest
+{
+	optional uint32 mount_slotid					= 1;	
+	optional uint32 fashion_index					= 2;
+	optional uint32 buytime							= 3;
+};
+
+//购买坐骑外形请求
+message PBMsgMountBuyFashionResponse
+{
+	optional int32	ret_code						= 1;	// 结果码
+	optional uint32 mount_slotid					= 2;	
+	optional uint32 fashion_index					= 3;
+	optional uint32 buytime							= 4;
+	optional PBMsgMountFashion mount_fashion			= 5;
+};
+
+
+//坐骑符文打造升级请求
+message PBMsgRuneLevelUpRequest
+{
+	optional sint32		mount_slotid				= 1;	// 坐骑slotID
+	optional sint32		bag_type					= 2;	// 符文所在的栏位
+	optional uint32		rune_index					= 3;	// 符文的索引
+	repeated uint32		designer_index				= 4;	// 图纸在包裹中的索引
+};
+
+message PBMsgRuneOneKeyLevelUpRequest	// 符文一键吞噬请求
+{
+	optional sint32		mount_slotid				= 1;	// 坐骑slotID
+};
+
+message PBMsgRuneOneKeyLevelUpResponse	// 符文一键吞噬回复
+{
+	optional sint32 ret_code	= 1;	//结果码
+	optional sint32 slot_id		= 2;	//符文的槽位id
+	optional sint32 exp			= 3;	// 符文的经验
+};
+
+//坐骑符文打造升级回应
+message PBMsgRuneLevelUpResponse
+{
+	optional int32	ret_code						= 1;	// 结果码
+	optional sint32 mount_slotid					= 2;	// 坐骑slotID
+	optional uint32	rune_slotid						= 3;	// 符文索引
+	optional PBMsgItem rune_item					= 4;	// 升级后的符文物品属性
+};
+
+//坐骑时装信息改变时通知
+message PBMsgFashionChangeNotice
+{
+	optional uint32 mount_slotid					= 1;	
+	optional uint32 fashion_index					= 2;
+	optional PBMsgMountFashion mount_fashion		= 3;
+	optional uint32 show_index						= 4;
+};
+
+
+//时装价格配置
+message PBPrice
+{
+	optional uint32 timetype						= 2;
+	optional uint32	price							= 3;
+	optional uint32 pricetype						= 4;
+};
+
+message PBOneFashionCfg
+{
+	optional uint32 fashionindex					= 1;
+	repeated PBPrice price							= 2;
+};
+
+message PBFashionCfg
+{
+	optional uint32 mount_sheetid					= 1;
+	repeated PBOneFashionCfg oneFashioncfg			= 2;
+};
+
+message PBFashionCfgList
+{
+	repeated PBFashionCfg fashionlist				= 1;
+};
+
+message PBMsgRuneClassUpRequest
+{
+	optional sint32 mount_slotid					= 1;	// 坐骑slotID
+	optional uint32	rune_slotid						= 2;	// 符文索引
+};
+
+message PBMsgRuneClassUpResponse
+{
+	optional int32	ret_code						= 1;	// 结果码
+	optional sint32 mount_slotid					= 2;	// 坐骑slotID
+	optional uint32	rune_slotid						= 3;	// 符文索引
+	optional PBMsgItem rune_item					= 4;	// 升级后的符文物品属性
+};
+
+message PBMsgMountFashionExchangeRequest
+{
+	optional sint32		mount_slotidx				= 1;
+	optional sint32		fashion_idx					= 2;
+};
+
+message PBMsgMountFashionExchangeResponse
+{
+	optional sint32		ret_code					= 1;
+	optional sint32		mount_slotidx				= 2;
+	optional sint32		fashion_idx					= 3;
+	optional PBMsgMountFashion mount_fashion		= 4;
+};
+
+// 符文洗练请求
+message PBMsgRuneEnchantRequest
+{
+	optional bool			is_lock					= 1;	// 是否锁定锁定
+	optional sint32			mount_slotid			= 2;	// 坐骑slotID
+	optional uint32			rune_slotid				= 3;	// 符文索引
+};
+message PBMsgRuneEnchantResponse
+{
+	optional sint32			ret_code				= 1;
+	optional sint32			mount_slotid			= 2;	// 坐骑slotID
+	optional uint32			rune_slotid				= 3;	// 符文索引
+	optional PBMsgItem		rune_item				= 4;
+};
+
+message PBMsgRuneEnchantSaveRequest
+{
+	optional sint32			mount_slotid			= 1;	// 坐骑slotID
+	optional uint32			rune_slotid				= 2;	// 符文索引
+};
+message PBMsgRuneEnchantSaveResponse
+{
+	optional sint32			ret_code				= 1;
+	optional sint32			mount_slotid			= 2;	// 坐骑slotID
+	optional uint32			rune_slotid				= 3;	// 符文索引
+	optional PBMsgItem		rune_item				= 4;
+};
+
+////////////////// 飞行相关 /////////////////////
+
+message PBMsgMountFlyRequest
+{
+	optional PBMsgFlyType	fly_type				= 1;	// 飞行类型
+};
+
+// 飞行的结果走vptree 这里只返回错误码
+message PBMsgMountFlyResponse
+{
+	optional sint32			ret_code				= 1;	// 返回码
+};
+
+
+message PBMsgRuneLotteryRequest
+{
+	optional bool	is_ten	= 1;	//是否是十连抽
+};
+
+message PBMsgRuneLotteryResponse
+{
+	optional sint32	ret_code	= 1;	//返回码
+	optional sint32	next_id		= 2;	//下一个槽位id
+	repeated sint32 rune_list	= 3;	//抽中的符文list
+};
+
+message PBMsgRuneMountRequest
+{
+	optional int32		bag_slot		= 1;	// 包裹里的槽位
+	optional int32		rune_slot		= 2;	// 符文装备的槽位
+	optional int32		mount_slotid	= 3;	// 坐骑slotID
+};
+
+message PBMsgRuneMountResponse
+{
+	optional int32	ret_code		= 1;	//结果码
+	optional int32  mount_slotid	= 2;	// 
+	optional int32	mount_sheet		= 3;	// 上装符文的sheeetid
+	optional int32	rune_slot		= 4;	// 符文装备的栏位
+	optional PBMsgInvSlot	mount_rune	= 5;	// 上装符文的信息
+	optional int32	battle_score	= 6;	// 飞剑战斗力
+};
+
+message PBMsgRuneUnMountRequest
+{
+	optional int32		mount_slotid	= 1;	// 坐骑slotID
+	optional int32		rune_slotid		= 2;
+};
+
+message PBMsgRuneUnMountResponse
+{
+	optional int32		ret_code		= 1;
+	optional int32		mount_slotid	= 2;
+	optional int32		unmount_sheet	= 3;	// 卸装物品的sheeetid
+	optional int32		rune_slotid		= 4;	// 符文装备的栏位
+	optional int32		battle_score	= 5;	// 飞剑战斗力
+};
+
+message PBMsgRuneOpenSlotRequest
+{
+	optional int32		mount_slotid	= 1;	// 坐骑slotID
+};
+
+message PBMsgRuneOpenSlotResponse
+{
+	optional	int32	ret_code		= 1;
+	optional	int32	mount_slotid	= 2;	// 坐骑slotID
+	optional	int32	open_num		= 3;	//已经开启的数量
+};
+
+//符文升级查询
+message PBMsgRuneLevelUpQueryRequest
+{
+	optional sint32		mount_slotid = 1;	// 坐骑slotID
+	optional uint32		bag_type = 2;
+	optional uint32		rune_index = 3;		// 符文的索引
+	repeated uint32		designer_index = 4;	// 图纸在包裹中的索引
+}
+
+//符文升级查询回应
+message PBMsgRuneLevelUpQueryResponse
+{
+	optional int32		ret_code = 1;	// 结果码
+	optional uint32		next_rune_sheetid = 2;	//升级后的符文sheet
+	optional uint32		cur_exp = 3;
+	optional uint32		add_exp	= 4;	// 获取的总经验
+	optional uint32		cost_num	= 5;	// 消耗的钱
+}
+
+message PBMsgSoulStarInfoNotice
+{
+	optional PBMsgSoulStarInfo  soul_star_notice		= 1; // 星魂发生变化;
+};
+
+message PBMsgSoulStarEquipRequest
+{
+	optional sint32 slot_id			=1; // 槽位Id;
+	optional sint32 bag_slot_id	=2; // 包裹的SlotId;
+	optional sint32 mount_id			=3; // 坐骑Id;
+	optional sint32 cur_page			=4; // 当前页数;
+};
+
+message PBMsgSoulStarUnEquipRequest
+{
+	optional sint32 slot_id			=1; // 槽位Id;
+	optional sint32 mount_id			=2; // 坐骑Id;
+	optional sint32 cur_page			=3; // 当前页数;
+};
+
+message PBMsgSoulStarEquipResponse
+{
+	optional int32		ret_code				= 1;	// 结果码
+	optional PBMsgInvSlot star_item		= 2;
+	optional int32	battle_score				= 3;	// 飞剑战斗力
+	optional int32  mount_slotid				= 4;	
+	optional int32  equip_slotid				= 5;	
+	optional sint32  cur_page					= 6; // 当前页数;
+
+};
+
+message PBMsgSoulStarUnEquipResponse
+{
+	optional int32		ret_code				= 1;	// 结果码
+	optional PBMsgInvSlot star_item		= 2;
+	optional int32	battle_score				= 3;	// 飞剑战斗力
+	optional int32  mount_slotid				= 4;	
+	optional int32  equip_slotid				= 5;	
+	optional sint32  cur_page					= 6; // 当前页数;
+};
+
+message PBMsgSoulStarLevelUpRequest
+{
+	optional sint32 bag_type					= 1; // 包裹类型;
+	optional sint32 slot_id						= 2; // 物品在包裹中的位置;
+	optional int32  mount_slotid				= 3;	
+	optional int32  level_up						= 4;	// 升到多少级;
+	optional int32	cur_page					= 5;	// 当前页数;
+};
+
+message PBMsgSoulStarLevelUpResponse
+{
+	optional int32				ret_code			= 1;	// 结果码;
+	optional int32				left_chip_num	= 2; // 剩余碎片的数量;
+	optional PBMsgItem		slot_item			= 3; // 升级后的星魂;
+	optional int32				mount_id			= 4; // 坐骑ID;
+	optional int32				slot_id				= 5; // 升级后的星魂;
+	optional int32				level_up			= 6;	// 升到多少级;
+	optional int32				cur_page			= 7;	// 当前页数;
+	optional int32				battle_score		= 8; //飞剑战力;
+};
+
+message PBMsgSoulStarGiftDecomposeRequest
+{
+	optional int32  inv_type	= 1;			// 包裹类型;
+	optional int32  bag_slot_id	= 2;
+	optional int32  mount_id	= 3;
+	optional int32  item_num	= 4; // 礼包的数量
+};
+
+message PBMsgSoulStarGiftDecomposeResponse
+{
+	optional int32		ret_code		= 1;	// 结果码
+};
+
+
+message PBMsgSoulStarDecomposeRequest
+{
+	optional int32  mount_slotid	= 1;	
+	optional int32  inv_type	= 2;			// 包裹类型;
+	optional int32  bag_slot_id	= 3;
+};
+
+message PBMsgSoulStarDecomposeResponse
+{
+	optional int32		ret_code		= 1;	// 结果码
+	optional PBMsgSoulStarChip		left_chip = 2; // 剩余碎片的数量;
+};
+
+message PBMsgSoulStarChipTransformRequest
+{
+	optional sint32		from_soul_star_type			=1; // 星魂转换的源类型;
+	optional sint32		to_soul_star_type				=2; // 星魂转换的目的类型;
+	optional sint32		transform_num					=3; // 转换数量;
+	optional int32		mount_slotid						= 4;	
+};
+
+message PBMsgSoulStarChipTransformResponse
+{
+	optional int32		ret_code		= 1;	// 结果码
+	repeated PBMsgSoulStarChip		left_chip = 2; // 剩余碎片的数量;
+};
+
+message PBMsgSoulStarOpenSlotRequest
+{
+	optional int32  mount_slotid	= 1;	
+};
+
+message PBMsgSoulStarOpenSlotResponse
+{
+	optional int32		ret_code						= 1;	// 结果码
+};

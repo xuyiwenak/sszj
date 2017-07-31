@@ -1,0 +1,1 @@
+mysql -usszj -pDR9m_wqsgF8a -P3306 data_stat_ss -e "select AVG(diamond_blue), AVG(diamond_red) , AVG(unbuond_money), AVG(zhenqi), AVG(lingqi), AVG(pvp_honor), AVG(renown), AVG(exploit) from money_state where unix_timestamp(now()) - last_quittime < 7 * 24 * 3600" > ./money_state_avg_active_all_20170712.txt

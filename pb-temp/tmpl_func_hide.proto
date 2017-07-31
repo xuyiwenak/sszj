@@ -1,0 +1,22 @@
+/// @brief	template for config of hidefunc
+/// @author	Qian LiJun
+
+import "tmpl_base.proto";
+import "msg_common.proto";
+
+// 工会逻辑配置
+message PBConfigGameFuncHide
+{
+	option (OptionXmlFile)		= "game_func_hide.xml";
+	
+	repeated PBFuncHide	func	= 1;// 隐藏项配置
+};
+
+message PBFuncHide
+{
+	optional int32 game_id				= 1;//[default=0];		// gameid
+	optional int32 gateway_id			= 2;//[default=0];		// gatewayid
+	optional string func_name			= 3;//[default=""];	// 功能名
+	repeated int32 func_param_int	= 4;							// 功能参数(int类型)
+	repeated string func_param_str	= 5;							// 功能参数(string类型)
+};

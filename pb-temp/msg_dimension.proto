@@ -1,0 +1,12 @@
+import "msg_base.proto";
+
+message PBDimensionHello
+{
+	optional string	hello = 1;
+}
+
+message PBDimensionChar
+{
+	optional uint64 role_id		=	1;//角色id;
+	optional uint32 shard_id	=	2;//当前所在的shard;
+}

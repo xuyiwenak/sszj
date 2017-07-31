@@ -1,0 +1,229 @@
+import "msg_base.proto";
+import "msg_item.proto";
+
+// 法宝操作类型
+enum MagicWeaponOpType
+{
+	enMWOp_Active		= 1; // 佩戴
+	enMWOp_Deactive	= 2; // 卸载
+	enMWOp_Advance	= 3; // 升阶
+	enMWOp_TakeVice	= 4; // 副法宝上位
+	enMWOp_LoseVice	= 5; // 副法宝下来
+};
+
+// 请求分解法宝
+message PBMagicWeaponDecomposeRequest					
+{
+	repeated uint64 magicweapon_id		= 1;// 法宝ID
+}
+message PBMagicWeaponDecomposeResponse					
+{
+	optional sint32	ret_code			= 1;
+	optional PBMagicWeaponItemList item_list	= 2; // 获得的物品信息
+}
+
+// 请求兑换法宝
+message PBMagicWeaponExchangeRequest					
+{
+	optional sint32	sheet_id			= 1;// 法宝兑换sheetId
+}
+message PBMagicWeaponExchangeResponse					
+{
+	optional sint32	ret_code					= 1;
+	optional PBMagicWeaponItemList item_list	= 2; // 获得的物品信息
+}
+
+//请求法宝碎片信息
+message PBMagicWeaponDebrisInfoRequest					
+{
+}
+message PBMagicWeaponDebrisInfoResponse
+{
+	optional sint32	ret_code					= 1; // 返回码
+	optional PBMagicWeaponItemList item_list	= 2; // 获得的物品信息
+}
+
+//响应分解成功
+message PBResolveInfoResponse
+{
+	optional sint32	ret_code					= 1;
+	optional PBMagicWeaponItemList item_list	= 2; // 获得的物品信息
+}
+
+message PBMagicWeaponItem
+{
+	optional uint32	sheet_id 			= 1; // 物品sheetid
+	optional sint32	count				= 2; // 物品个数
+}
+
+message PBMagicWeaponItemList
+{
+	repeated PBMagicWeaponItem item		= 1; 
+}
+
+
+//响应兑换成功
+message PBExchangeMagicWeaponResponse
+{
+	optional sint32	ret_code			= 1; // 返回码
+	optional uint64 magicweapon_id		= 2; // 获得的宠物id
+}
+
+
+//请求召唤信息
+message PBMagicWeaponCallInfoRequest					
+{
+}
+
+//免费召唤
+message PBFreeCallRequest					
+{
+	optional sint32 call_type			= 1; // 召唤类型
+}
+
+//消耗召唤
+message PBExpensiveCallRequest					
+{
+	optional sint32 call_type			= 1; // 召唤类型
+}
+
+//消耗召唤提示
+message PBExpensiveTipResponse
+{
+	optional sint32	ret_code			= 1; // 返回码
+	optional sint32 call_type			= 2; // 召唤类型
+}
+
+//召唤宠物列表
+message PBCallMagicWeaponListResponse
+{
+	optional sint32	ret_code			= 1; // 返回码
+	repeated PBMagicWeaponItem magicweapon_item	= 2; // 召唤出来的宠物蛋列表
+}
+
+//请求法宝培养信息
+message PBMagicWeaponFosterInfoRequest
+{
+	optional uint64	magicweapon_id		= 1; // 法宝id;
+}
+
+//法宝培养请求
+message PBMagicWeaponFosterRequest
+{
+	optional uint64 magicweapon_id		= 1; // 法宝id
+	optional sint32 foster_type			= 2; // 培养类型
+}
+
+//确认培养请求
+message PBMagicWeaponFosterAffirmRequest
+{
+	optional uint64 magicweapon_id		= 1; // 法宝id
+}
+
+//法宝培养信息
+message PBMagicWeaponFosterInfoResponse 
+{
+	optional sint32 ret_code 						= 1; // 返回码
+	optional uint64 magicweapon_id 					= 2; // 法宝id
+	optional sint32 delta_score 					= 3; // 战斗力变化
+	optional sint32 extra_property 					= 4; // 额外属性
+	optional PBMagicWeaponProperty delta_Property 			= 5; // 变化属性
+	optional PBMagicWeaponProperty property_max_value 		= 6; // 最大值
+	optional PBMagicWeaponProperty property_min_value 		= 7; // 最小值
+	optional PBMagicWeaponProperty extra_property_detail	= 8; // 额外属性
+}
+
+//法宝属性
+message PBMagicWeaponProperty
+{
+	optional sint32 constitution		= 1; // 体质
+	optional sint32 energy				= 2; // 精力
+	optional sint32 strength			= 3; // 力量
+	optional sint32 intelligence		= 4; // 智力
+	optional sint32 dexterity			= 5; // 敏捷
+}
+
+//法宝吞噬请求
+message PBMagicWeaponSwallowRequest
+{
+	optional uint64 magicweapon_id		= 1; // 法宝id
+	repeated PBSwallowItem swallow_list = 2;
+}
+//吞噬预览响应
+message PBMagicWeaponSwallowPreviewResponse
+{
+	optional sint32 ret_code			= 1;
+	optional sint32 money_spend			= 2; // 消耗
+	optional sint32 preview_level		= 3; // 等级预览
+	optional sint64 preview_exp			= 4; // 经验预览
+	optional sint64 preview_max_exp		= 5; // 最大经验预览
+	optional PBMagicWeaponProperty preview_property = 6; // 属性预览
+}
+//法宝吞噬响应
+message PBMagicWeaponSwallowRealResponse
+{
+	optional sint32 ret_code			= 1;
+}
+
+// 法宝经验材料
+message PBSwallowEgg
+{
+	optional uint32 sheet_id			= 1; // 法宝经验材料sheet
+	optional sint32 count				= 2; // 法宝经验材料数量
+}
+
+// 法宝吞噬物品
+message PBSwallowItem
+{
+	optional sint32 swallow_type		= 1; // 类型:法宝、法宝经验材料
+	optional uint64 magicweapon_id		= 2; // 法宝id
+	optional PBSwallowEgg egg			= 3; // 法宝经验材料
+}
+
+//法宝图鉴信息响应
+message PBMagicWeaponBookInfoResponse
+{
+	optional sint32 ret_code				= 1;
+	optional sint32 magicweapon_book_score	= 2;
+	repeated uint32 new_magicweapon_sheet	= 3;
+	repeated uint32 owned_magicweapon_sheet	= 4;
+	repeated uint32 activate_group_id		= 5;
+}
+
+message PBMagicWeaponBookActivateGroupRequest
+{
+	optional sint32 group_id			= 1;
+}
+
+// 使用召唤石进行卓越召唤
+message PBCallMagicWeaponUseStoneRequest
+{
+	optional sint32		callType		= 1;
+};
+message PBCallMagicWeaponUseStoneResponse
+{
+	optional sint32		ret_code		= 1;
+};
+
+//  法宝操作
+message PBMagicWeaponOpRequest
+{
+	optional uint32 op_type				= 1; // 操作类型 1-佩戴 2-卸载 3-丢弃 4-升阶预览 5-升阶 6-recast 7-skilllearn 8-swapskill
+	optional uint64 magicweapon_id		= 2; // 法宝id
+};
+message PBMagicWeaponOpResponse
+{
+	optional sint32	ret_code			= 1;
+	optional uint32 op_type				= 2; 
+};
+
+//  法宝升阶预览
+message PBMagicWeaponTryAdvanceRequest
+{
+	optional uint64 magicweapon_id		= 1; // 法宝id
+};
+message PBMagicWeaponTryAdvanceResponse
+{
+	optional sint32	ret_code			= 1;
+	repeated sint32 property			= 2; // 法宝预览属性
+};

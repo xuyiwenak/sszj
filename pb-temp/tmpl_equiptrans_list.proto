@@ -1,0 +1,36 @@
+import "tmpl_base.proto";
+
+message PBEquipSheet
+{
+	optional string sheet_id = 1;      // 装备sheetId
+}
+
+message PBEquipTransInfo
+{
+	optional uint32       equip_group_id = 1;        // 组ID
+	repeated PBEquipSheet equip_sheet   = 2;       
+}
+
+message PBProId
+{
+	optional uint32 pro_id = 1;
+	optional uint32 add_mod = 2;
+}
+
+message PBEquipTransProInfo
+{
+	optional uint32 pro_group_id = 1;     // 组ID
+	repeated PBProId trans_pro_id = 2;             //可以相互转换的属性ID           
+}
+
+message PBEquipTransSpecialPro           // 特殊属性ID
+{
+	optional uint32 regrenerate_pro_id = 1;       
+}
+
+message PBEquipTransCfg
+{
+	repeated PBEquipTransInfo  equip_info       = 1;
+	repeated PBEquipTransProInfo trans_pro_list = 2;
+	repeated PBEquipTransSpecialPro special_pro_list = 3;
+}

@@ -1,0 +1,1 @@
+create table charge(passport_id int(11), charge_total int(11))  ENGINE=InnoDB DEFAULT CHARSET=utf8;

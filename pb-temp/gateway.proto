@@ -1,0 +1,767 @@
+// 以最快速度序列/反序列
+option optimize_for = SPEED;
+
+import "db_base.proto";
+import "player.proto";
+import "magicweapon.proto";
+import "msg_guild.proto";
+import "msg_friend.proto";
+import "msg_common.proto";
+import "db_shop.proto";
+import "db_logic_common.proto";
+import "msg_service.proto";
+import "msg_pet.proto";
+import "msg_item.proto";
+import "msg_activity.proto";
+import "msg_spanbattle.proto";
+import "msg_guild_redbag.proto";
+import "msg_pet_battle.proto";
+
+
+// TODO 
+// 需要添加以下内容到message_set.proto
+// import "gateway.proto";
+// optional PBAllGameEvent		data_xx= xxx ;//[(OptionDBNamePrefix) = "gamedb"];
+
+message PBAllGameEvent
+{
+	repeated PBGameEventData game_events	= 3; 
+};
+
+// 活动持久化数据
+message PBGameEventData
+{	
+	optional uint64 event_id	= 1;	// 活动Id
+	optional int32  param_0		= 2;	// 参数0
+	optional int32  param_1		= 3;	// 参数1
+	optional int32  param_2		= 4;	// 参数2
+	optional uint32 param_3		= 5; 	// 参数3
+};
+
+message PBConsignInfos
+{										
+    repeated PBConsignInfo	consignment_info = 1;
+};
+
+/*
+message PBConsignInfo
+{	
+
+    optional uint64 consign_id    	= 1;
+	optional int32 price  			= 2;
+	optional int32 price_type   	= 3;
+	optional uint64 owner_id 		= 4;
+	optional sint32 on_sale			= 5;
+	optional string	sheet_name		= 6; // abandon
+	optional uint32 quantity		= 7;  // abandon
+	optional PBItem item			= 8;
+	optional uint32 src_roleid		= 9;		//	卖家角色ID
+	optional uint32 src_playerid	= 10;		//	卖家账户ID
+	optional uint32 src_gameid		= 11;		//	卖家游戏ID
+	optional uint32 consign_time	= 12;
+	optional uint32 expiration_time = 13; // 过期时间
+	
+};
+*/
+
+message PBImmortalUnions
+{
+	repeated PBImmortalUnion immortal_union_list = 1;
+};
+
+message PBImmortalUnion
+{	
+	optional uint64 iu_id									= 1; 	
+	optional string name									= 2;
+	optional uint64 created_time							= 3;	
+	optional string applied_members							= 4;
+	optional uint32 deleted									= 5; 	
+	optional sint64 growup_value							= 6; 	
+	optional uint32 level									= 7; 	
+	optional uint32 repaired_last_time						= 8; 	
+	optional sint32 repair_debt								= 9;
+	optional sint64 capital_sum								= 10;
+	optional string notice									= 11;
+	optional string skill_opened							= 12;
+	optional sint32 join_in_condition						= 13;
+	repeated PBImmortalUnionMembers	immortal_union_members	= 14;
+	optional uint32 research_lv								= 15;
+	optional uint32 sacri_lv								= 16;
+	optional uint32 ware_lv									= 17;
+	optional uint32 mall_lv									= 18;
+	optional uint32 tree_lv									= 19;
+	optional uint32 build_time								= 20;
+	optional uint32 created_with_erating					= 21;
+	optional sint64 capital_new								= 22;
+	optional sint32 open_times								= 23;
+	optional uint32 is_buildtime_ok							= 24;
+	repeated sint32 union_boss_times						= 25;
+	optional sint32 union_state								= 26;				//仙盟状态
+	optional uint32 union_disband_time						= 27;		//仙盟删除时间
+	optional uint32 disband_handler_userid					= 28;		//删除操作者userid，用于平台删除
+	optional sint32 union_boss_grow_level					= 29;				
+	optional PBInventory im_store							= 30; //仙盟仓库
+	optional PBItemOperateRecordList item_op_record			= 31;
+	optional sint32 last_season_blt_score					= 32;	//上赛季仙盟战积分	
+	optional sint32 last_season_blt_rank					= 33;	//当前赛季仙盟战排行
+	optional sint32 cur_season_blt_score					= 34;	//当前赛季仙盟战积分
+};
+
+message PBInventory
+{
+	repeated PBItem item	=	1;
+};
+
+message PBItemOperateRecordList
+{
+	repeated PBItemOperateRecord record_list = 1;	//仙盟仓库道具操作记录
+};
+
+message PBItemOperateRecord
+{
+	optional int32	op_type			= 1;	//物品操作类型（1：获得；2：发放）
+	optional uint32 op_time			= 2;	//操作时间
+	optional int32	rank			= 3;	//名次
+	optional string	operator_name	= 4;	//操作者名字（现在操作者是盟主）
+	optional string	member_name		= 5;	//获得道具的成员名字
+	repeated PBItemQuantity item	= 6;	//物品信息(物品id，个数)
+};
+
+message PBItemQuantity
+{
+	optional uint32		sheet_id	= 1; // 物品模板ID
+	optional sint32		count		= 2; // 数量  数量都是正整数
+}
+
+message PBImmortalUnionMembers
+{
+	optional uint64 mem_id			= 1; 	
+	optional uint64 iu_id			= 2;
+	optional uint64 title			= 3;
+	optional uint64 join_in_time	= 4;
+	optional uint32 deleted			= 5;
+	optional sint32 captial			= 6;
+	optional sint32 captial_sum		= 7;
+	optional uint32 leave_time		= 8;
+	optional uint32 offline_time	= 9;
+};
+
+message PBIMBattleCamp
+{
+    optional uint64				camp_id					= 1;//EntityType:ShardId:Date:Index
+	optional uint64				immortal_id				= 2;//Immortal Id
+	optional uint64				battle_id				= 3;//Battle Id
+	optional uint32				apply_cost				= 4;//apply cost
+	optional uint32				apply_time				= 5;//apply time
+	optional uint32				status					= 6;//apply cost status
+	optional uint32				score					= 7;//current score
+	optional string 			battle_info				= 8;//battle info
+	repeated uint64				member					= 9;//members in battle now, max up to 10
+	optional sint32				camp_index				= 10; // 阵营服务器ID
+	optional string				camp_name				= 11; // 阵营名称
+	optional sint32				battle_result			= 12;//[default=0]; // 上一场的结果PBEIMBattleResult
+};
+
+message PBImmortalBattle
+{
+	optional uint64 			battle_id				= 1;// EntityType:ShardId:Date
+	optional uint32				start_time				= 2;// Battle Start Time
+	optional string				map_id					= 3;// Battle map id
+	optional uint32				pro_status				= 4;// progress status
+	optional uint64				owner_imid				= 5;// immortal union id who own the map now
+	optional uint32				occupied_time			= 6;// time occupied the map
+	optional uint64				dungeon_id				= 7;// dungeon instance id
+	repeated PBIMBattleCamp			camp_list					= 8;// camps
+};
+
+message PBIMBattleAll
+{
+	repeated PBImmortalBattle   im_battle				= 1;
+	repeated PBIMBattleCamp   	im_camp					= 2;
+}
+
+message PBLeaderBoardList
+{
+	repeated PBLeaderBoard leader_board_list 			= 1;
+};
+
+message PBLeaderBoard
+{	
+    optional uint64 			board_id	    		= 1; 	
+	optional uint32				time_stamp				= 2;
+	repeated string 			info					= 3;
+};
+
+message PBShortMessageList//全局的离线事件，会比较小;
+{
+	repeated PBShortMessage messageList = 1;
+};
+
+message PBShortMessage
+{
+	optional uint64 message_id			= 1; 	
+	optional uint64 receiver_id			= 2;  // CharId
+	optional uint32 event_id			= 3;
+	optional string event_param 		= 4;
+	optional uint64 player_id			= 5; // PlayerId
+};
+
+message PBDungeonInfos
+{
+	repeated PBDungeonInfo	info_list	= 1;
+};
+
+message PBDungeonInfo
+{
+	optional uint64 owner_id		= 1;
+	optional string sheet_name		= 2;
+	optional int32  fastest_time	= 3; 
+	optional string user_name		= 4;
+};
+
+message PBRankRewardList
+{
+	repeated PBRewardInfo reward_list = 1;
+};
+
+message PBRewardInfo
+{
+	optional uint64 			reward_id				= 1;
+	optional uint32				activity_id				= 2;
+	optional uint32				start_time				= 3;
+	optional uint32				end_time				= 4;
+	optional uint32				player_id				= 5;
+	optional uint64				char_id					= 6;
+	optional uint32				reward_status			= 7;
+	optional string 			item1					= 8;
+	optional int32				count1					= 9;
+	optional string 			item2					= 10;
+	optional int32				count2					= 11;
+	optional string 			item3					= 12;
+	optional int32				count3					= 13;
+	optional string 			item4					= 14;
+	optional int32				count4					= 15;
+	optional string 			description				= 16;
+	optional string 			pad						= 17;
+	optional uint32				param					= 18;	// 扩展的参数字段
+};
+
+
+message PBRankRefreshInfo
+{
+	optional uint32					refresh_time			= 1;	//刷新时间
+};
+
+/////////////////////跨服帮派战下注存储信息////////////////////begin
+// 跨服帮派战下注存储的单条信息
+// message PBBetInfo
+// {
+// 	optional uint64					char_id					= 1;	//玩家id
+// 	optional uint64					match_id				= 2;    //第几届id
+// 	optional sint32 				round_index				= 3;    //第几轮
+// 	repeated PBBetBattleInfo		battle_info				= 4;    //下注的对战信息
+// };
+// 
+// 下注的对战信息
+// message PBBetBattleInfo
+// {
+// 	optional uint64					battle_id				= 1;    //对战id
+// 	optional sint32					bet_state				= 2;	//0：未领取，1：已领取
+// 	repeated PBBetCampInfo			bet_camp 				= 3;    //对战的帮派下注信息
+// };
+// 
+//对战的帮派下注信息
+// message PBBetCampInfo
+// {
+// 	optional uint64					camp_id					= 1;    //帮派id
+// 	optional string					bet_item				= 2;    
+// 	optional sint32					bet_count				= 3;
+// 
+// };
+// 
+// 跨服帮派战下注存储信息
+// message PBSpanBtlBetInfo
+// {
+// 	repeated PBBetInfo				bet_infos				= 1;
+// };
+
+//////////new///////////跨服帮派战下注存储信息////////////////////end
+// 个人下注信息
+// message PBBetCharInfo
+// {
+// 	optional uint64					char_id					= 1;	//玩家id
+// 	optional uint64					guild_id				= 2;    //下注的帮派id
+// 	optional sint32					bet_byb                 = 3;    //下注的绑定元宝值
+// 	optional sint32				    bet_time				= 4;    //下注时间
+// };
+
+//轮次下注信息
+message PBBetRoundInfo
+{
+	optional sint32 				round_index				= 1;    //第几轮
+	repeated PBBetCharInfo			bet_char_infos			= 2;    //个人下注信息
+
+};
+
+//跨服帮派战下注存储信息
+message PBSpanBtlBetInfo
+{
+	optional uint64					match_id				= 1;    //第几届id
+	repeated PBBetRoundInfo			bet_round_infos			= 2;    //轮次下注信息
+};
+
+/////////////////////跨服帮派战下注存储信息////////////////////end
+
+message PBShopLimitTime
+{
+	optional sint32					limit_type				= 1; // 限制类型
+	optional sint32					record_time				= 2; // 上次记录的限制时间
+};
+
+message PBShopLimitList
+{
+	repeated PBShopLimitTime		limit_time				= 1; // 全服购买限制时间列表
+};
+
+message PBGateWayDataEx
+{
+	option (OptionPrimaryKey)							= "gateway_id";
+	optional uint32 				gateway_id			= 1 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];	// 网关ID（区服）
+	optional PBIMBattleAll			immortal_battle 	= 2 ;//[(OptionDBFieldExtra) = "Blob"];		//仙盟战信息;
+	optional PBGateWayGuildCommon	guild_common		= 3 ;//[(OptionDBFieldExtra) = "Blob"];		//帮派的其他共有数据
+	optional PBDrwaLotteryALLData   draw_lottery_data   = 4 ;//[(OptionDBFieldExtra) = "Blob"];		//十连抽数据
+	optional PBActFireworks			fireworks_data		= 5 ;//[(OptionDBFieldExtra) = "MediumBlob"];	// 烟花活动数据
+	optional PBActOnearmBandit		onearmbandit_data	= 6 ;//[(OptionDBFieldExtra) = "MediumBlob"];	// 祈福数据;
+};
+
+message PBGmMailRole
+{
+	optional sint32					role_id					= 1; // 角色ID
+}
+
+message PBGmMailList
+{
+	repeated PBGMSendMails			gm_mail					= 1; // 邮件列表
+};
+
+//来一份全局信息表;
+message PBGateWayData//区服数据表;
+{
+	option (OptionPrimaryKey)							= "gateway_id";
+	optional uint32 				gateway_id			= 1 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];	// 网关ID（区服）
+	optional PBAllGameEvent			game_event  		= 2 ;//[(OptionDBFieldExtra) = "Blob"];
+	optional PBConsignInfos			consign_info		= 3 ;//[(OptionDBFieldExtra) = "LongBlob"];
+	optional PBImmortalUnions		immortal_unions		= 4 ;//[(OptionDBFieldExtra) = "LongBlob"];
+	optional string 				consum_record		= 5 ;//[(OptionDBFieldExtra) = "varchar(65535) CHARACTER SET utf8", (OptionDBNeedEscape) = true];//商品信息;
+	optional sint32  				pvp_season			= 6 ;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'"];//pvp赛季;
+	optional PBIMBattleAll			immortal_battle 	= 7 ;//[(OptionDBFieldExtra) = "Blob"];//仙盟战信息;
+	optional PBLeaderBoardList		leaderboard_list	= 8 ;//[(OptionDBFieldExtra) = "LongBlob"];//各个排行榜信息;
+	optional PBShortMessageList		short_message_list 	= 9 ;//[(OptionDBFieldExtra) = "Blob"];//离线的事件;
+	optional PBDungeonInfos			dungeon_info_list   = 10;//[(OptionDBFieldExtra) = "LongBlob"];//副本排行信息;
+	optional PBRankRewardList		reward_list			= 11;//[(OptionDBFieldExtra) = "LongBlob"];//奖励信息;
+	optional PBAuthorityDatas		authority_datas		= 12;//[(OptionDBFieldExtra) = "MediumBlob"];//活动授权信息;
+	optional PBRankRefreshInfo		rank_refresh		= 13;//[(OptionDBFieldExtra) = "MediumBlob"];//排行刷新
+	optional PBSpanBtlBetInfo		span_btl_bet		= 14;//[(OptionDBFieldExtra) = "MediumBlob"];//跨服战押注
+	
+	optional PBGuildDataList		guild_list			= 15;//[(OptionDBFieldExtra) = "LongBlob"];	// 工会数据
+	optional PBShopLimitList		shop_limit_list		= 16;//[(OptionDBFieldExtra) = "Blob"];	// 全服购买限制时间
+	optional sint32  				wboss_level			= 17;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'"];//世界Boss等级
+	optional PBSocialExchangeShop	exchange_shop		= 18;//[(OptionDBFieldExtra) = "MediumBlob"];//兑换商店
+	optional PBGmMailList			gm_mail_list		= 19;//[(OptionDBFieldExtra) = "MediumBlob"];//GM邮件信息;
+	optional uint32  				pvp_lasttime		= 20;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'"];//pvp最后刷新时间
+	optional PBWildBossLevelContain wild_boss_add_level = 21;//[(OptionDBFieldExtra) = "MediumBlob"];// 野外BOSS增加的等级
+};
+
+message PBGateWaySocialData
+{
+	option (OptionPrimaryKey)						= "gateway_id";
+	optional uint32 				gateway_id		= 1 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];	// 网关ID（区服）
+	optional PBSocialCharList		char_list		= 2 ;//[(OptionDBFieldExtra) = "LongBlob"];
+	optional PBCharFriendList 		friend_list		= 3 ;//[(OptionDBFieldExtra) = "LongBlob"];
+	optional PBWLAllRankInfo 		world_level		= 4 ;//[(OptionDBFieldExtra) = "LongBlob"];
+	optional PBPBCampUnion			camp_union		= 5 ;//[(OptionDBFieldExtra) = "Blob"];		//阵营结盟
+	optional PBChangeCampData		change_camp_data= 6 ;//[(OptionDBFieldExtra) = "Blob"];		//转阵营信息
+	optional PBWorldCharmRankTop3   charm_rank_top3  = 7;//[(OptionDBFieldExtra) = "Blob"];    // 魅力值排名前三
+	optional uint32         last_pet_pvp_rank_reward_time = 8 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"]; //上次宠物pvp排行榜奖励时间
+};
+
+message PBMarriageTable
+{
+	option (OptionPrimaryKey)						= "marriage_id";
+	optional uint64 			marriage_id 		= 1;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'"];	// 婚姻ID
+	optional uint32 			husband_id 			= 2;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'"];	// 丈夫roleid
+	optional uint32 			wife_id 			= 3;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'"];	// 妻子roleid
+	optional uint32 			marriage_state 		= 4;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'"];	// 婚姻状态 1.结婚 2.离异
+	optional uint32 			marriage_time 		= 5;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'"];	// 结婚时间
+	optional uint32 			divorce_time 		= 6;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'"];	// 离异时间
+};
+
+message PBSocialExchangeShop
+{
+	optional PBDBExchangeShopData	shop_data		= 1; // 兑换信息
+	optional uint32 				day_refresh		= 2; // 刷新时间
+};
+
+message PBSocialCharList
+{
+	repeated PBSocialChar social_char  = 1;
+};
+
+message PBSocialChar
+{
+	optional uint64				char_id			= 1;//id;
+	optional uint32				shard_id		= 2;//当前所在的物理区服
+	optional uint32				pf_role_id		= 3;//roleId
+	optional string				char_name		= 4;//玩家姓名;
+	optional uint32				char_role		= 5;//职业
+	optional uint32				char_gender		= 6;//性别
+	optional sint32				char_level 		= 7;//等级;
+	optional sint32				battle_score	= 8;//战力;
+	optional sint32 			pvp_score		= 9;//pvp积分
+	optional sint32				treasue_lq		= 10;//藏宝阁灵气
+	optional sint32				shilian			= 11;//试炼;
+	optional sint32				charm_point		= 12;//魅力值;
+	optional sint32				killer			= 13;//杀人数
+	optional sint64				cur_exp			= 14;//当前经验值;
+	optional sint32				char_camp		= 15;//当前阵营
+	optional sint32				pet_Level		= 16;//宠物等级
+	optional sint32				pet_battlescore = 17;//宠物战力
+	optional sint32				char_justice	= 18;//正义
+	optional sint32				char_evil		= 19;//邪恶
+	optional sint32				char_death		= 20;//死亡	
+	optional string				guild_name		= 21;//帮会名称
+	optional string				pet_sheet		= 22;//宠物sheet
+	optional string				head_icon		= 23;//头像icon
+	optional sint32				justice_exp		= 24;//正气经验
+	optional sint32				evil_exp		= 25;//邪气经验
+	optional sint32				climbtower_group = 26;//爬塔最大波数
+	optional uint32				climbtower_time	= 27;// 爬塔最大波数对应的时间
+	optional uint32				answer_score	= 28;// 答题的分数
+	optional sint32				quit_time		= 29; //最后一次下线时间
+	optional uint32				answer_score_time= 30;// 答题的分数
+	optional uint32				mount_battlescore= 31;// 飞剑战斗力
+	optional PBPetInfo			pet_info		= 32;// 上榜的那只宠物的信息，只存一只，离线的时候查看用 
+	optional uint32				send_flower		= 33;//送花;
+};
+
+message PBPetBattleRecordList
+{
+	repeated PBBattleRecord         pet_pvp_record = 1;
+	optional bool                   is_have_fix_char_level = 2;//[default=false];
+}
+
+message PBCharOffLine
+{
+	option (OptionPrimaryKey)						= "pf_role_id";
+	optional uint32					pf_role_id = 1;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"] ;
+	optional PBSocialChar			char_social = 2;//[(OptionDBFieldExtra) = "Blob"]; 
+	optional PBCharFriendData		char_friend = 3;//[(OptionDBFieldExtra) = "Blob"];
+	optional int32					update_time	= 4;//[(OptionDBFieldExtra) = "int(11) DEFAULT 0"] ;
+	optional PBPetBattleRecordList         pet_pvp_record_list = 5;//[(OptionDBFieldExtra) = "Blob"];  //宠物pvp战斗记录
+};
+
+message PBCharFriendList
+{
+	repeated PBCharFriendData		char_friends	= 1;//好友信息
+};
+
+message PBGuildData
+{
+	optional PBGuildSummary   guild_summary		= 1;
+	repeated PBGuildMember    guild_member		= 2;
+	repeated PBGuildApplicant guild_applicant	= 3;
+	repeated PBGuildDataRetain	data_retain		= 4; // 数据的临时保留
+	optional PBGuildStoreData  guild_store_data = 5;  //帮派仓库数据
+	optional PBGuildRedBag	  guild_redbag_data = 6;  //帮派红包数据
+
+};
+
+// 帮派任务
+message PBGuildTask
+{
+	optional uint64				guild_id		= 1;
+	optional sint32				time			= 2; // CD的结束时间
+};
+
+// 玩家退出公会加入另一公会的CD时间
+message PBGuildQuitCD
+{
+	optional uint64				char_id			= 1;
+	optional sint32				time			= 2; // CD的结束时间
+};
+
+// 玩家退出公会之后数据保留的CD时间
+message PBGuildDataRetain
+{
+	optional uint64				guild_id		= 1;
+	optional sint32				time			= 2; // 保留数据的清除时间
+	optional PBGuildMember		member_info		= 3;
+};
+
+// 帮派酒宴
+message PBGuildBanquet
+{
+	optional uint64				guild_id		= 1;
+	optional sint32				end_time		= 2;
+};
+
+// 帮派战积分
+message PBGuildBattleScore
+{
+	optional uint64				guild_id		= 1;
+	optional sint32				score			= 2;
+};
+
+message PBGuildDataList
+{
+	repeated PBGuildData		guild_data		= 1;
+	repeated PBGuildTask		guild_task		= 2;//废弃
+	repeated PBGuildQuitCD		quit_cd			= 3;//移到玩家身上
+	repeated PBGuildDataRetain	data_retain		= 4;//合并到PBGuildData上去
+	repeated PBGuildBanquet		banquet			= 5;//废弃
+	optional uint32				day_refresh		= 6;
+	optional uint32				week_refresh	= 7;
+	repeated PBGuildBattleScore	battle_score	= 8;	// 弃用 2016.03.23
+	optional PBIMBattleAll		all_battle		= 9;	// 弃用 2016.02.23
+	optional bool				is_trans		= 10;//[default=false];	// 是否阵营合并过
+};
+
+message PBGuildBT_SignRet
+{	
+	optional sint32 ret_code = 1; // 结果
+	optional uint64 signer_id = 2; // 报名者
+	optional PBIMBattleCamp sign_info = 3;
+	optional PBIMBattleAll battle = 4; // 报名之后仙盟战数据
+}
+
+// 仙盟战状态改变
+message PBGuildBT_StatusChange
+{
+	optional uint64 battle_id = 1; // 战场ID
+	optional sint32 pre_status = 2; // 转换前状态
+	optional sint32 after_status = 3; // 转换后状态
+	optional PBImmortalBattle pb_battle = 4; // 战场数据
+};
+
+// 创建战场
+message PBGuildBT_CreateField
+{
+	optional uint64 battle_id = 1;
+	optional string	map_id = 2;
+	optional uint64 camp_a = 3;
+	optional uint64 camp_b = 4;
+	optional bool	create = 5; // 是否创建副本实体
+};
+message PBGuildBT_CreateFieldRet
+{
+	optional sint32 ret_code = 1;
+	optional PBGuildBT_CreateField field_info = 2;
+	optional uint64 instance_id = 3;
+	optional uint32 dun_map_id = 4;
+};
+
+message PBGuildBT_PepleReport
+{
+	optional uint64 battle_id = 1;
+	optional sint32 camp_a_members = 2;
+	optional sint32 camp_b_members = 3;
+};
+
+message PBGuildBT_Report
+{
+	optional uint64 battle_id = 1;
+	optional sint32	camp_a_score = 2;
+	optional sint32	camp_b_score  = 3;
+	optional uint64 camp_a_id = 4;
+	optional uint64 camp_b_id = 5; 
+};
+
+message PBGuildBT_DrawbackApply
+{
+	optional uint64 battle_id = 1;
+	repeated uint64 camp_id = 2;
+	optional PBIMBattleAll pb_data = 3;
+};
+
+message PBGuildBT_JoinPVP
+{
+	optional uint64 char_id = 1;
+	optional uint64 battle_id = 2;
+	optional uint64 im_id = 3; // 帮派ID
+};
+
+message PBGuildBT_JoinPVPRet
+{
+	optional sint32 ret_code = 1;
+	optional uint64 char_id = 2;
+	optional uint64 battle_id = 3;
+	optional sint32 target_camp_id = 4;
+	optional uint64 target_dun_ins_id = 5;
+	optional uint64 camp_id = 6;
+	optional string map_id = 7;
+	optional uint32 dun_map_id = 8;
+
+};
+
+message PBIMBattleEndAwardExtend
+{
+	optional	uint64	guild_id	= 1;
+	optional	sint32	guild_money = 2;
+	optional	uint64	battle_id	= 3;
+};
+
+message PBGatWayGuildData
+{
+	option (OptionPrimaryKey)	= "guild_id";
+	optional uint64				guild_id		= 1;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT '0'"];
+	optional PBGuildData		guild_data		= 2;//[(OptionDBFieldExtra) = "MediumBlob"];
+	optional uint32				is_delete		= 3;//[(OptionDBFieldExtra) = "int(4) unsigned NOT NULL DEFAULT '0'"];
+};
+
+message PBAllGuildData
+{
+	repeated PBGatWayGuildData	guild_data		= 1;
+};
+
+message PBGateWayGuildCommon
+{
+	optional uint32				last_day_refresh	= 1;
+	optional uint32				last_week_refresh	= 2;
+	repeated PBGuildQuitCD		quit_cd				= 5;
+	optional sint32				need_change_ver		= 6; // 是否需要修改职位的版本
+};
+
+message PBChangeCampScore
+{
+	optional sint32				camp_id				= 1; // 阵营ID
+	optional sint32				battle_score		= 2; // 战力
+};
+
+message PBChangeCampData
+{
+	optional uint32				today_score_time	= 1; // 阵营ID
+	optional uint32				last_score_time		= 2; // 战力
+	repeated PBChangeCampScore	today_score			= 3;
+	repeated PBChangeCampScore	last_score			= 4;
+};
+
+message PBWorldCharmRankTop3
+{
+	repeated PBMsgRankCharNode char_node   = 1;
+	optional uint64 recv_time = 2;
+};
+
+//帮派仓库存储数据
+message PBGuildStoreSlot
+{
+	optional sint32 slot_stat = 1; //格子状态
+	optional uint32 sheet_id = 2;
+	optional uint32 num = 3;
+	optional sint32 sort_weight = 4;
+}
+
+message PBGuildStoreData
+{	
+	repeated PBGuildStoreSlot slot_info = 1;   //格子信息
+	optional uint32  open_slot = 2;      // 开启的格子
+	optional uint32  bought_slot = 3;
+	repeated PBStoreMessageParm notice = 4; //历史消息 
+}
+
+
+
+// 一条排行榜历史数据 先不用这种
+message PBGuildRankLastData
+{   
+	optional uint32				rank        = 1;  // 排名
+	optional uint64             guild_id	= 2;  // 帮会ID
+	optional uint32				guild_level = 3;  // 帮会等级
+	optional string             guild_name  = 4;  // 帮会名字
+	optional string             master_name = 5;  // 帮主名字
+	optional string             head_icon   = 6;  // 帮主头像
+	optional uint32				camp        = 7;  // 阵营
+	optional sint32	            rank_value  = 8;  // 排行值（目前只有积分使用）
+};
+
+
+// 帮派排行榜历史数据
+message PBGuildRankLastDataList
+{
+    //repeated PBGuildRankLastData  pbguildrank_data	= 1; 
+	repeated PBMsgRankGuildNode  pbguildrank_data	= 1; 
+};
+
+// 排行榜最后一次历史记录
+message PBRankLastData
+{
+	option (OptionPrimaryKey)	= "gateway_id";
+	optional uint32 				   gateway_id			= 1;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];	// 网关ID（区服）
+	optional PBGuildRankLastDataList   last_rank_data		= 2;//[(OptionDBFieldExtra) = "MediumBlob"];
+};
+
+message PBWildBossLevelContain
+{
+	repeated PBWildBossLevel boss_level = 1;
+}
+
+message PBWildBossLevel
+{
+	optional string sheet_id = 1;
+	optional sint32 up_level = 2;//[default=0];
+};
+
+message PBActFireworks
+{
+	repeated PBActFireworksActScore act_score = 1;
+};
+
+message PBActFireworksActScore
+{
+	optional uint32 act_id		= 1;
+	optional uint32 end_time	= 2;
+	repeated PBActFireworksPlayerScore player_score = 3;
+	optional uint32 cur_day_time	= 4; // 当前积分天数
+	optional uint32 cur_total_score	= 5; // 当前总积分
+};
+
+message PBActFireworksPlayerScore
+{
+	optional uint32 role_id		= 1; // 角色ID
+	optional uint32 score		= 2; // 积分
+};
+
+
+// 合服信息，源区服ID->目标区服ID
+message PBMergeServerData
+{
+	option (OptionPrimaryKey)						= "src_gatewayid";
+	optional uint32 			src_gatewayid 		= 1;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'"];	// 源区服ID
+	optional uint32 			dec_gatewayid 		= 2;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT '0'"];	// 目标区服ID
+};
+
+message PBPetArrayInfo
+{
+	repeated PBPetInfo	          pet_info       = 1;
+}
+
+message PBRobotArrayInfo
+{
+	repeated PBRobotPetInfo     	robot_pet_info = 1;
+}
+
+//宠物PvP排行榜
+message PBPetPvPRankData
+{
+	option (OptionPrimaryKey)													= "rank";
+	optional uint32               rank  							= 1;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];
+	optional uint32					      pf_role_id   				= 2;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"] ;
+	optional sint32               is_robot            = 3;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT 0"];     //是否是机器人
+	optional PBPetArrayInfo	          pet_info_list       = 4;//[(OptionDBFieldExtra) = "MediumBlob"];     //阵容信息
+	optional PBRobotArrayInfo     	robot_pet_info_list = 5;//[(OptionDBFieldExtra) = "MediumBlob"];     //机器人阵容信息
+};
+
+message PBActOnearmBandit
+{
+	optional uint32 act_id								= 1; 
+	repeated PBOnearmBanditHistoryData history_data		= 2;
+};

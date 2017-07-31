@@ -1,0 +1,1 @@
+create table conf_camp_info(ss_camp_type int(4) unsigned, ss_camp_name char(32), PRIMARY KEY (`ss_camp_type`))  ENGINE=InnoDB DEFAULT CHARSET=utf8;

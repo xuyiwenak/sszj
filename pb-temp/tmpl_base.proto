@@ -1,0 +1,68 @@
+//================================================================================
+/// @file	tmpl_base.proto 
+/// @brife
+///			Extend options for protocol messages to load game config data.
+/// @author	Deng Lichuan
+/// @date	2015-06-11
+//================================================================================
+option optimize_for = SPEED;
+
+import "google/protobuf/descriptor.proto";
+
+// option id  要从50000开始 50000以内pb内部使用
+// persistant部分用了50000和60000开始的
+// 虽然是独立的，这里还是用从51000和61000开始的，便于以后统一管理
+// 描述message的option
+extend google.protobuf.MessageOptions {
+	optional string				OptionXmlFile	= 51000 ;	// XML文件名
+	optional bool				OptionXmlOnly	= 51001 ;	// 只使用XML格式，不打包
+};
+
+// 描述字段的option
+extend google.protobuf.FieldOptions {
+    optional bool OptionServerOnly			= 61000 ;	// 是否只在服务端使用
+
+};
+
+extend google.protobuf.EnumValueOptions {
+	optional string OptionHint				= 71000 ;	// 注释
+};
+
+// 配置
+message PBConfigTemplate
+{
+	option (OptionXmlFile)	= "config_path.xml";
+
+	repeated PBTemplateData	config	=1;
+}
+
+// 配置属性定义
+message PBTemplateData
+{
+	optional string pb_name		=1;
+	optional string path		=2;
+};
+
+message PBTemplateVector				
+{
+	optional float	x				= 1;	// X
+	optional float	y				= 2;	// Y
+}
+
+message PBTemplateItemQuantity				
+{
+	optional string		sheet_name	= 1; // 物品模板ID
+	optional sint32		count		= 2; // 数量  数量都是正整数
+	optional string		consume_funtion		= 3; // 替代规则
+}
+
+message PBTemplateVector2d				
+{
+	optional sint32	x				= 1;	// X
+	optional sint32	y				= 2;	// Y
+}
+
+message PBTemplateItemQuantityList				
+{
+	repeated PBTemplateItemQuantity	item	= 1; 
+}

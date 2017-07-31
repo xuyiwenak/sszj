@@ -1,0 +1,14 @@
+import "tmpl_base.proto";
+
+message PBWingConfig
+{
+	repeated PBTrainConfig trainConfigs     = 1; // 培养配置
+}
+
+message PBTrainConfig
+{
+	optional string wingSheet     = 1; // 翅膀sheet
+	optional string trainSheet    = 2; // 培养规则sheet
+}
+
+

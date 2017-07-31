@@ -1,0 +1,303 @@
+import "msg_base.proto";
+
+
+// 和平台一致的设备标识码
+enum EClientDeviceType
+{
+	CDT_Other	=0;
+	CDT_IOS		=1;
+	CDT_Android	=2;
+	CDT_WP8		=3;
+}
+// 登录返回控制码
+enum ELoginControlCode
+{
+	CTL_EnterGame		= 1;
+	CTL_UpdateSrvList	= 2;
+	CTL_ShowSrvList = 3;
+	CTL_WEBEnter = 4;//通过短链接选取角色
+}
+
+// 客户端连接的形式
+enum ELoginConnectType
+{
+	ELCT_None				= 0; // 无
+	ELCT_Normal				= 1; // 正常
+	ELCT_Span				= 2; // 跨阵营
+	ELCT_Reconnect			= 3; // 断线重连
+}
+
+
+//===================================================
+// 一、设备私有信息
+message PBDevicePrivateInfo
+{	
+	optional uint32			game_id				= 1;
+	optional string			device_unique_id	= 2;
+	repeated PBPriAccount	accounts			= 3;	// 该设备成功登录过的帐号
+	//
+	// 可往下继续扩展，放一些隐秘的东东
+	// 
+}
+
+message PBPriAccount
+{
+	optional string user_name	= 1;
+	optional string user_pwd	= 2;
+	optional uint32 last_gateway_id	= 3;
+	optional uint32 last_login_time	= 4;
+}
+
+//===================================================
+// 二、系统详细信息
+message PBClientSystemInfo
+{
+	optional string device_model					=1; 
+	optional string device_name						=2; 
+	optional int32	device_type						=3; 
+	optional string device_unique_identifier		=4; 
+	optional int32	graphics_device_id				=5; 
+	optional string graphics_device_name			=6; 
+	optional string graphics_device_vendor			=7; 
+	optional int32	graphics_device_vendor_id		=8; 
+	optional string graphics_device_version			=9; 
+	optional int32	graphics_memory_size			=10;
+	optional int32	graphics_pixel_fillrate			=11;
+	optional int32	graphics_shader_level			=12;
+	optional int32	max_texture_size				=13;
+	optional int32	npot_support					=14;
+	optional string operating_system				=15;
+	optional int32	processor_count					=16;
+	optional string processor_type					=17;
+	optional int32	supported_render_target_count	=18;
+	optional bool	supports_3d_textures			=19;
+	optional bool	supports_accelerometer			=20;
+	optional bool	supports_compute_shaders		=21;
+	optional bool	supports_gyroscope				=22;
+	optional bool	supports_image_effects			=23;
+	optional bool	supports_instancing				=24;
+	optional bool	supports_location_service		=25;
+	optional bool	supports_render_textures		=26;
+	optional bool	supports_render_to_cubemap		=27;
+	optional bool	supports_shadows				=28;
+	optional int32	supports_stencil				=29;
+	optional bool	supports_vertex_programs		=30;
+	optional bool	supports_vibration				=31;
+	optional int32	system_memory_size				=32;
+}
+
+//===================================================
+// 三、帐号注册请求 HTTP
+message PBRegisterAccountRequest
+{
+	optional string account			= 1;
+	optional string password		= 2;
+	optional uint32 user_ip			= 3;
+	optional string id_number		= 4;
+	optional string real_name		= 5;
+	optional string email_addr		= 6;
+}
+// 帐号注册响应
+message PBRegisterAccountResponse
+{
+	optional int32 result_code		= 1;
+}
+
+//===================================================
+// 四、生成通行证请求 HTTP
+message PBGeneratePassportRequest
+{
+	optional string user_name		= 1;
+	optional uint32 user_ip			= 2;
+}
+// 生成通行证响应
+message PBGeneratePassportResponse
+{
+	optional string user_name		= 1;
+	optional string password		= 2;
+	optional int32  result_code		= 3;
+	optional uint32 is_success		= 4;
+	optional string pad				= 5;
+}
+
+
+//===================================================
+// 五、认证请求 HTTP
+message PBGameUserAuthRequest
+{
+	optional uint32 game_id		= 1;
+	optional string user_name	= 2; // 自运营信息
+	optional string password	= 3; // 自运营信息
+	optional string cp_token	= 4; // 联运信息
+	optional uint32 gateway_id	= 5; // 默认值0表示不指定区服
+	
+	optional uint32 user_ip		= 6; // 客户端IP
+	optional uint32	client_type	= 7;
+	optional string sdk_version	= 8;
+	
+	optional string adid		= 9;
+	optional string udid		= 10;
+	optional string idfa		= 11;
+
+	optional bool get_role_info	= 12; // 取角色信息
+}
+// 认证响应
+message PBGameUserAuthResponse
+{
+	optional int32	result_code	= 1;	// 返回码
+	optional uint32 game_id		= 2;	//
+	optional uint32 user_id		= 3;	//
+	optional string user_name	= 4;	//
+	optional string cp_ret_msg	= 5;	// 联运方返回的信息
+	
+	optional uint32 timestamp	= 6;	// 时间戳
+	optional string	game_token	= 7;	// token
+	repeated PBGameRoleSummary role_list = 8;// 角色信息列表
+}
+// 角色信息概要
+message PBGameRoleSummary
+{
+	optional uint32 gateway_id			= 1;
+	optional uint32 role_id				= 2;
+	optional string role_name			= 3;
+	optional uint32 role_level			= 4;
+	optional uint32 role_gender			= 5;
+	optional uint32 role_occupation		= 6;
+	optional uint32 role_create_time	= 7;
+}
+
+//==================================================================================
+// 六、选择游戏区服 HTTP
+message PBSelectGameGatewayRequest
+{
+	optional uint32 gateway_id	= 1;	// 
+	optional uint32 game_id		= 2;	//
+	optional uint32 user_id		= 3;	//
+	
+	optional uint32 timestamp	= 4;	// 时间戳
+	optional string	game_token	= 5;	// token
+}
+// 选择区服响应
+message PBSelectGameGatewayResponse
+{
+	optional int32	result_code	= 1;	// 返回码，表示成功与否
+	optional PBLoginToken		login_token = 2;	// 连接token
+}
+
+//==================================================================================
+message PBPosition
+{
+	optional uint32 map_id			=	1;//地图id;
+	optional uint32 line_id			=	2;//线id;
+	optional uint64 dungeon_id		=	3;//副本id;
+	optional sint32 x				=	4;
+	optional sint32 y				=	5;
+	optional sint32 z				=	6;
+	optional sint32 sp				=	7;//特殊标记
+};
+
+// 七、连接游戏服的第一个消息
+message PBEnterGameRequest
+{
+	optional string account		= 1;
+	optional string language	= 2;
+	optional uint32 gateway_id	= 3;
+	optional PBLoginToken		login_token = 4;	// 连接token
+	optional PBClientDeviceInfo	device_info = 5;
+}
+
+// 游戏服连接Token
+message PBLoginToken
+{
+	optional uint32 user_addr	= 1;
+	optional uint32 user_key	= 2;
+	optional uint32 game_id		= 3;
+	optional uint32 user_id		= 4;
+	optional uint64 char_id     = 5;
+	optional uint32 role_id     = 6;
+
+}
+
+// 客户端设备信息
+message PBClientDeviceInfo
+{
+	optional string mac_addr	= 1;// MAC
+	optional uint64	phone_no	= 2;// 手机号码
+	
+	optional string idfa		= 3;// idfa
+	optional string desc		= 4;// 描述信息
+	optional uint32	client_type	= 5;// 设备种类
+	optional uint32 app_version	= 6;// 版本信息
+}
+
+// 帐户信息
+message PBAccountInfo
+{
+	optional uint32 privilege	= 1;
+}
+
+// 进入游戏时FS 》》EGS
+message PBPlayerEnterGame
+{
+	optional uint64 player_id	= 1;
+	optional string account		= 2;
+	optional string language	= 3;
+	optional uint32 gateway_id	= 4;
+	optional uint32 privilege	= 5;
+	optional PBLoginToken		login_token = 6;
+	optional PBClientDeviceInfo	device_info = 7;
+	optional PBPosition login_position = 8;
+	optional uint32 server_list_ip = 9;
+	optional uint32 client_ip	 = 10;
+	optional uint32 client_type	= 12;
+	optional ELoginConnectType connect_type	= 13; // 连接的方式
+	
+}
+
+//登陆时候的排队位置 FS >> Client
+message PBLoginPosition
+{
+	optional sint32 position	=	1;
+	optional int32  wait_seconds	= 	2;
+}
+
+// 重复登录请求Shard踢人请求
+message PBPlayerKickSelfRequest
+{
+	repeated uint64 role_id		= 1;
+	optional uint32 user_id		= 2;	//
+	optional uint32 ip_addr		= 3;
+	optional uint32 game_id		= 4;
+	optional uint32 src_gateway_id	= 5;	//rks gatewayId
+	optional uint32 logined_gateway_id	= 6;	//角色正登陆的服务器
+}
+
+// 重复登录Shard踢人回应
+message PBPlayerKickSelfResponse
+{
+	optional uint64 player_id	= 1;
+	optional uint32 user_id		= 2;	//
+	optional uint32 do_gateway_id	= 3;	// 做踢人操作的服
+}
+
+//登陆时候的排队位置 FS >> Client
+message PBLoginRoleInfo
+{
+	optional uint32 gw	=	1;
+	optional string rn	=	2;
+	optional uint32 rl	=	3;
+	optional uint32 ro	=	4;
+	optional uint32 rg	=	5;
+}
+
+// 角色进入场景基础数据推送 egs >> client
+message PBMsgPlayerRoleBaseInfo
+{
+	optional int32 pf_role_id = 1;		// 平台role_id
+	optional int32 sheet_id = 2;		// 角色sheet_id
+	optional uint64 vpa	= 3;			// 
+	optional uint64 vpb	= 4;
+	optional uint64 vpc	= 5;
+	optional uint32 entity_index = 6;
+}
+

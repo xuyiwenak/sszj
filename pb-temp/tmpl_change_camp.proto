@@ -1,0 +1,53 @@
+/// @brief	template for config of change camp
+
+import "tmpl_base.proto";
+
+message PBConfigChangeCamp
+{
+	optional sint32				char_level_limit	= 1;//[default=80]; // 玩家等级
+	optional sint32				trans_cdtime		= 2;//[default=86400]; // 阵营转换成功后冷却时间
+	repeated PBConfigTransRule	dy_rule				= 3; // 阵营转换自定义规则
+	optional PBConfigTransRule	default_rule		= 4; // 阵营转换默认规则
+	optional sint32				max_member_ack_second	= 5; // 队员确认时间
+	repeated PBConfigTransTitle	replace_title		= 6; // 替换称号
+	optional string				npc_group_name		= 7; // NPC的组名
+	optional sint32				npc_check_distance	= 8;//[default=10]; // NPC的距离
+	optional sint32				npc_check_flag		= 9;//[default=0]; // NPC的距离是否判断哦
+	optional PBConfigCampCreature	camp_creature	= 10; // 弱国怪物死亡全服奖励
+}
+
+message PBConfigTransRule				
+{
+	optional sint32	src_camp_rank					= 1; // 源阵营排行
+	optional sint32	desc_camp_rank					= 2; // 目的阵营排行
+	optional PBTemplateItemQuantityList item_cost	= 3; // 物品消耗
+	optional PBTemplateItemQuantityList item_gift	= 4; // 物品奖励
+}
+
+message PBConfigTransTitle				
+{
+	optional sint32	is_replace						= 1; // 是否替换
+	repeated PBConfigCampTitle camp_title			= 2; // 各阵营称号列表
+}
+
+message PBConfigCampTitle
+{
+	optional sint32	camp_id							= 1; // 阵营ID
+	optional string	title_name						= 2; // 称号
+}
+
+message PBConfigCampCreature
+{
+	optional string	creature_name					= 1; // 阵营ID
+	repeated PBConfigCampCreatureAward	award_list	= 2; // 等级奖励段
+	optional string	mail_title						= 3; // 邮件标题
+	optional string	mail_body						= 4; // 邮件内容
+}
+
+message PBConfigCampCreatureAward
+{
+	optional sint32	level_min					= 1; // 最小等级
+	optional sint32	level_max					= 2; // 最大等级
+	optional PBTemplateItemQuantityList item_reawrd		= 3; // 物品奖励
+}
+

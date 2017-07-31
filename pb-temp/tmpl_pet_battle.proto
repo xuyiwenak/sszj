@@ -1,0 +1,100 @@
+import "tmpl_base.proto";
+
+message PBPetBattleCfg
+{
+	option (OptionXmlFile)		= "pet_battle_config.xml";
+	optional string          		dungeon_sheet 			= 1;   //副本名称
+	optional sint32          		max_rank_num        = 2;   //排行中最大人数
+	optional sint32             max_record_num      = 3;   //最大战斗记录数
+	optional sint32             push_rank_num       = 4;   //一直推送玩家数
+	repeated PBRobotArrayCfg 		robot_array_cfg    	= 5;   //机器人阵容
+	optional PBFightRewardCfg 	fight_reward_cfg    = 6;   //战斗奖励
+	repeated PBRankRewardCfg 		rank_reward_cfg     = 7;   //排行奖励
+	optional PBWorldNoticeCfg   world_notice_cfg    = 8;   //世界公告配置
+	optional PBSkipConfig quick_end_battle_cfg = 9; // 跳过战斗配置
+	repeated string             settle_up_time      = 10;  // 结算时间
+	repeated PBRobotPetProperty robot_pet_property = 11;        //机器人属性配置
+}
+
+// 单个机器人宠物
+message PBRobotOne
+{
+	optional uint64 pet_entity_id  	= 1;   // 宠物Id
+	optional string pet_sheet       	= 2;   // 宠物sheetId
+	optional sint32 pet_level      		= 3;   //宠物等级
+}
+// 机器人阵容
+message PBRobotArrayCfg
+{
+	optional string				robot_player_name		   = 1; //玩家姓名;
+	optional uint32				robot_player_role		   = 2; //职业
+	optional uint32				robot_player_gender		 = 3; //性别
+	optional uint32       robot_player_level     = 4;//[default=100]; //等级
+	repeated PBRobotOne   robot_pet_list         = 5; //阵容
+	optional uint32       robot_id               = 6; //机器人id
+}
+
+message PBRewardOne
+{
+	optional string sheet_id = 1;  // 物品
+	optional sint32 count    = 2;  // 数量
+}
+
+//战斗结算奖励
+message PBFightRewardCfg
+{
+	repeated PBRewardOne winner_reward    = 1;  //胜利奖励
+	repeated PBRewardOne loser_reward    = 2;  //失败奖励
+}
+// pvp排行榜奖励
+message PBRankRewardCfg
+{
+	optional uint32     min_rank      = 1;  //最小排名
+	optional uint32     max_rank      = 2;  //最大排名
+	repeated PBRewardOne reward       = 3;  // 奖励
+	optional uint32     reward_jifen  = 4;  // 奖励积分
+}
+
+// 公告
+message PBWorldNoticeCfg
+{
+	optional sint32 continuity_win_exceed_notice   	= 1; //连胜超过？公告
+	optional sint32 continuity_lose_exceed_notice   = 2; //连败超过？公告
+	repeated sint32 continuity_win_reach_notice     = 3; //连胜达到？公告
+	repeated sint32 continuity_lose_reach_notice    = 4; //连败达到？奖励
+}
+
+// 跳过战斗配置
+message PBSkipBattlePer
+{
+	optional float	battleper	=	1;
+}
+
+message PBBattleResult
+{
+	optional sint32 maxbattle	=	1;
+	optional sint32	minbattle	=	2;
+	optional float	resper		=	3;
+}
+
+message PBSkipConfig
+{
+	repeated PBSkipBattlePer	skipbattleper	= 1;		// 战斗力百分比
+	repeated PBBattleResult		battleresult	= 2;		// 战斗结果计算规则
+}
+
+message PBRobotPetProperty
+{
+	optional uint64 entity_id = 1;
+	optional sint32 level     = 2;
+	optional sint32 rand_grow_battle = 3;
+	optional string sheet_name = 4;
+	repeated sint32 rand_base = 5;
+	repeated sint32 rand_grow_base = 6;
+	optional sint32 pet_battle_score 	= 7;   //宠物战力
+}
+
+
+
+
+

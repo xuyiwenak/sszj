@@ -1,0 +1,38 @@
+/// @brief	template for config of change camp
+
+import "tmpl_base.proto";
+
+message PBConfigBoating
+{
+	optional string	mount_sheet					= 1;	// 坐骑sheet
+	optional sint32	mount_speed					= 2;	// 坐骑速度
+	optional PBTemplateVector2d		final_pos	= 3; 	// 终点位置
+	optional sint32	final_map_id				= 4;	// 终点地图
+	optional sint32	timeout_second				= 5;//[default=300];	// 划船的超时时间(秒)
+	optional sint32	guide_status				= 6;//[default=0];	// 触发指引开关
+	optional string	guide_text					= 7;	// 触发指引内容
+	optional sint32	guide_quest_id				= 8;	// 触发指引任务ID
+	optional PBMultiBoatingConfig multiconfig	= 9;	// 双人划船配置
+	optional PBFishingConfig fishingConfig	= 10;	// 钓鱼表现配置;
+};
+
+message PBFishingConfig
+{
+	optional sint32	sta_anim_id					= 1;	// 起手动作id
+	optional string	sta_weapon_sheet_name		= 2;	// 起手武器sheetname
+	optional sint32	loop_anim_id				= 3;	// 循环动作id
+	optional string	loop_weapon_sheet_name		= 4;	// 循环武器sheetname
+	optional float	once_time					= 5;	// 描述其他玩家一起钓鱼的时间（单位s）;
+};
+
+message PBMultiBoatingConfig
+{
+	optional string mount_sheet					= 1;	// 双人划船sheet
+	optional sint32	mount_speed					= 2;	// 速度
+	optional sint32	mapid						= 3;	// 所在地图
+	optional sint32 limitlv						= 4;	// 限制等级
+	optional PBTemplateVector2d		final_pos	= 5; 	// 终点位置
+	optional PBTemplateVector2d		start_pos	= 6;	// 起点位置
+	optional string collect_sheet				= 7;	// 划船采集物
+	optional sint32 collect_times				= 8;	// 每天划船采集次数
+}

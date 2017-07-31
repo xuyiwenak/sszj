@@ -1,0 +1,81 @@
+import "msg_base.proto";
+import "msg_item.proto";
+
+//限制定义
+message PBChargeLimit
+{
+	optional sint32 limit_time = 1; // 限制次数
+}
+
+// 充值购买定义
+message PBChargeBuy
+{
+	optional uint32 goods_id		= 1;
+	optional string goods_sheet		= 2; // 商品的sheet名
+}
+
+// 充值赠送定义
+message PBChargeGift
+{
+	optional PBMsgItemQuantity 	gift_quantity = 1; 
+	optional sint32	 			limit = 2;
+	optional string				desc = 3;
+	optional sint32				tag = 4;
+	optional string				icon_name = 5;
+	optional string				mail_id=6;
+}
+
+// 充值配置的购买商品
+message PBChargeInfo
+{
+	optional uint32	id = 1;
+	optional sint32 blue_diamond = 2;
+	optional sint32 rmb = 3;
+	optional string info = 4;
+	optional string doudou = 5;
+	optional string sheet_name = 6;
+	optional sint32 number = 7;
+	optional sint32 tag = 8;
+	optional string attach_code = 9;
+	optional string name = 10;
+	optional string code = 11;
+	optional string bi_code = 12;
+	optional string fee_name = 13;
+	optional PBChargeBuy charge_buy = 14; // 充值购买;
+	optional PBChargeGift charge_gift = 15; // 充值赠送;
+	optional string ch_id				= 16; // 渠道ID;
+	optional string icon_name			= 17; // 图标;
+	optional string charge_desc			= 18; // 充值描述;
+	optional sint32	dynamic_group		= 19; // 动态组（同组内跟据充值额计算id）,为越南点卡开发
+	optional string	foreign_code		= 20; // 外部码（充值签到所用）
+	optional sint32	limit_count			= 21; // 限制次数（苹果刷单开发的）
+	optional string price_info			= 22; // 自定义价格信息;
+	optional string title_info			= 23; // 自定义称号信息;
+}
+// 充值配置
+message PBChargeConf
+{
+	optional bool use_ui = 1;
+	optional string default_val = 2;
+	optional bool open_pay = 3;
+	optional string default_code = 4;
+	optional string default_bi_code = 5;
+	optional string default_fee_name = 6;
+	repeated PBChargeInfo charge_list = 7;
+	optional string default_channel_id = 8;
+}
+
+// 请求
+message PBChargeConfigRequest
+{
+	optional uint64 char_id = 1;
+}
+
+// 回应
+message PBChargeConfigResponse
+{
+	optional sint32	ret_code = 1;
+	optional uint64 char_id = 2;
+	optional PBChargeConf charge_conf = 3;
+}
+

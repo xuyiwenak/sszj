@@ -1,0 +1,29 @@
+
+import "tmpl_base.proto";
+
+message PBEvilCfg
+{
+	optional sint32 use_drop_hp			= 1;	    //使用肚兜掉血量  已不用
+	optional sint32 gain_times			= 2;		//每天获取肚兜的次数上限
+	optional sint32 use_times			= 3;		//每天使用肚兜的次数上限
+	optional sint32 kill_cd				= 4;		//击杀cd
+	optional sint32 apron_ratio			= 5;	    //肚兜掉落机率 已不用
+	optional string man_apron_sheet		= 6;	    //男肚兜的sheet 现在男女一样
+	optional string women_apron_sheet	= 7;	    //女肚兜的sheet
+	optional sint32 kill_times			= 8;		//击杀同一玩家每天的可掉落次数
+	optional float kill_ratio1			= 9;		//低战力击杀高战力掉落系数
+	optional float kill_ratio2			= 10;		//高战力击杀低战力掉落系数
+	optional float max_ratio			= 11;		//最高掉落系数
+	repeated PBEvilDropHp drop_hp_list	= 12;		//使用肚兜掉血的机率
+	optional sint32 durance_rate		= 13;       //耐久降为0概率万分比
+	optional float act_kill_ratio1		= 14;		//活动期间低战力击杀高战力掉落系数
+	optional float act_kill_ratio2		= 15;		//活动期间高战力击杀低战力掉落系数
+	optional float act_max_ratio		= 16;		//活动期间最高掉落系数
+};
+
+message PBEvilDropHp
+{
+	optional sint32 use_drop_hp = 1;
+	optional sint32 min_rate = 2;	// 机率区间 小值
+	optional sint32 max_rate = 3;	// 机率区间 大值
+};

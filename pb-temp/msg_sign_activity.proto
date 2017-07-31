@@ -1,0 +1,411 @@
+import "msg_base.proto";
+
+//新手签到领取奖励
+message PBMsgNewerSignRewardRequest
+{
+	optional	uint32 id = 1; 	// ID
+};
+
+//新手签到领取奖励响应
+message PBMsgNewerSignRewardResponse
+{
+	optional	sint32 ret_code = 1;
+	optional	uint32 state		= 2;//奖励状态
+ };
+
+ //日签到奖励领取
+message PBMsgDailySignRewardRequest
+{
+	optional	uint32 id = 1;	//id
+};
+
+//日签到奖励响应
+message PBMsgDailySignRewardResponse
+{
+	optional	sint32 ret_code = 1;
+	optional	uint32 state		= 2;	//奖励状态
+	optional	uint32 vip_state	= 3;	//vip奖励状态
+	optional	sint32  id = 4;			// id
+};
+//日签到vip补领
+message PBMsgDailySignVipRewardRequest
+{
+	optional	uint32 id = 1;
+};
+
+//日签到vip补领回复
+message PBMsgDailySignVipRewardResponse
+{
+	optional	sint32 ret_code		= 1;
+	optional	uint32 state			= 2; //奖励状态
+	optional	uint32 vip_state		= 3; //vip奖励状态
+	optional	sint32  id = 4;			// id
+};
+
+//日签到补签
+message PBMsgDailyRetroactiveRequest
+{
+	optional	sint32	id = 1;
+}
+
+//日签到补签响应
+message PBMsgDailyRetroactiveResponse
+{
+	optional	sint32	ret_code = 1;
+	optional	uint32	state	= 2;	//奖励状态
+	optional	uint32  vip_state = 3; //vip奖励状态
+	optional	sint32  id = 4;			// id
+}
+
+//等级奖励请求
+message PBMsgLevelRewardRequest
+{
+	optional	uint32 id = 1;
+};
+
+
+//等级奖励响应
+message PBMsgLevelRewardResponse
+{
+	optional	sint32 ret_code = 1;
+	optional	uint32 state		= 2; //奖励状态
+};
+
+//在线奖励请求
+message PBMsgOnlineRewardRequest
+{
+	optional	uint32 id = 1;
+};
+
+//在线奖励响应
+message PBMsgOnlineRewardResponse
+{
+	optional	sint32 ret_code = 1;
+	optional	uint32 state		= 2; //奖励状态
+};
+
+message PBMsgDailySignStateList
+{
+	optional	sint32 id = 1;		// id
+	optional	sint32 state = 2;   // 状态
+};
+
+enum eDailySignState
+{
+	eDailySign_NotAvailible = 0;	// 不可用
+	eDailySign_Retroactive	= 1;	// 可补签
+	eDailySign_VipReplace	= 2;	// 可vip补领
+	eDailySign_CanSign		= 3;	// 可签到
+	eDailySign_HasSignNotVip	= 4;	//已领取但未vip补领
+	eDailySign_AllSign		= 5;	// 已全部领取
+	eDailySign_NotDate		= 6;	//未到期
+};
+
+
+//推送签到功能的状态
+message PBMsgSignInfo
+{
+	optional	uint32	newersign_logindays	= 1;	// 新手登录的天数
+	optional	uint32	newersign_rewardstate	= 2;	//新手签到领奖状态
+	optional	uint32	dailysign_rewardstate	= 3;	// 日签到领奖状态
+	optional	uint32	dailysign_vip_rewardstate	= 4;	// 日签到vip补领状态
+	optional	uint32	level_rewardstate	= 5;	// 等级奖励领奖状态
+	optional	uint32	online_rewardstate	= 6;	// 在线奖励领奖装套
+	optional	uint32	logic_day			= 7;	//服务器的逻辑天数
+	repeated	PBMsgDailySignStateList dailysign_list	= 8;	// 签到状态列表
+	optional	uint32	month_day			= 9;	//当月的天数
+}
+
+message PBMsgSignCfgRequest
+{
+
+};
+
+// 是否可以领取体力
+message PBMsgAddEnergyInfoRequest
+{
+};
+message PBMsgAddEnergyInfoResponse
+{
+	optional PBAddEnergyStatus		status		= 1;
+};
+message PBAddEnergyStatus
+{
+	optional sint32					energy_id	= 1;
+	optional bool					can_get		= 2;
+};
+
+// 体力领取
+message PBMsgAddEnergyRequest
+{
+};
+message PBMsgAddEnergyResponse
+{
+	optional sint32					retCode		= 2;	// 领取结果
+	optional PBAddEnergyStatus		status		= 3;
+};
+
+// VIP购买体力
+message PBMsgVIPAddEnergyRequest
+{
+
+};
+message PBMsgVIPAddEnergyResponse
+{
+	optional sint32		retCode			= 2;	// 领取结果
+};
+
+message PBMsgNewserverActivityRequest
+{
+	optional sint32 day = 1;	//领取奖励的天数
+	optional sint32 id  = 2;	//领取奖励的id
+};
+
+message PBMsgNewserverActivityResponse
+{
+	optional sint32 ret_code = 1;
+	optional sint32 day	= 2;	//领奖的天数
+	optional sint32 state = 3;	//奖励状态
+	optional sint32 id = 4;		//领奖ID
+};
+
+message PBMsgNewservreActivityCfgNotice
+{
+	repeated	PBMsgNewserverActivityEquipUp equipup = 1;	//装备收集
+	repeated	PBMsgNewserverActivityArena	  arena	  = 2;	//竞技场
+	repeated	PBMsgNewserverActivityEquipVita equipvita = 3;	//装备注灵
+	repeated	PBMsgNewserverActivityEquipAttr equipattr = 4;	//装备属性
+	repeated	PBMsgNewserverActivityGems	gemsslot = 5;	//宝石开孔
+	repeated	PBMsgNewserverActivityPetskill petskill = 6;	//宠物技能
+	repeated	PBMsgNewserverActivityLevel	playerlevel = 7;	//玩家等级
+	repeated	PBMsgNewserverActivityBattlescore battlescore = 8;	//战力
+	repeated	PBMsgNewserverActivityEquipEnchance equipenchance = 9;	//装备强化
+	repeated	PBMsgNewserverActivityYuanshen	yuanshen = 10;	//升级元神
+	repeated	PBMsgNewservreActivityPetQuality petquality	= 11;	//拥有宠物品质
+	repeated	PBMsgNewserverActivityLearnGuildSkill learnguildskill = 12; //学习帮派技能
+	repeated	PBMsgNewserverActivityGuildSkillLevel guildskilllevel = 13;	///帮派技能等级
+	repeated	PBMsgNewserverActivityHonor		honorvalue	= 14; //荣耀值
+	repeated	PBMsgNewserverActivityWeixin		wenxin	= 15;	//微信分享
+};
+
+message PBMsgNewserverActivityEquipUp
+{
+	optional sint32 day = 1;		//天数
+	optional sint32 id = 2;			// id
+	optional sint32 equipnum = 3;	// 装备数量
+	optional sint32 level = 4;		//等级
+	optional sint32 quality = 5;	//品阶
+	optional PBMsgNewserverItemList rewardList = 6;
+};
+
+message PBMsgNewserverActivityArena
+{
+	optional sint32 day = 1;	//天数
+	optional sint32 id = 2;		//id
+	optional sint32 rank = 3;	//排名
+	optional PBMsgNewserverItemList rewardList = 4;
+};
+
+message PBMsgNewserverActivityEquipVita
+{
+	optional sint32 day = 1;	//天数
+	optional sint32 id = 2;		//id
+	optional sint32 equipnum = 3;	//装备数量
+	optional sint32 vita = 4;	//注灵比例、
+	optional PBMsgNewserverItemList rewardList = 5;
+};
+
+message PBMsgNewserverActivityEquipAttr
+{
+	optional sint32 day = 1;	//天数
+	optional sint32 id = 2;		//id
+	optional sint32 equipnum = 3;	//装备数量
+	optional sint32 attrnum = 4;	//装备属性
+	optional PBMsgNewserverItemList rewardList = 5;
+};
+
+message PBMsgNewserverActivityGems
+{
+	optional sint32 day = 1;	//天数
+	optional sint32 id = 2;		//id
+	optional sint32 slotnum = 3;	//开孔数量
+	optional PBMsgNewserverItemList rewardList = 4;
+};
+
+message PBMsgNewserverActivityPetskill
+{
+	optional sint32 day = 1;	//天数
+	optional sint32 id = 2;		//id
+	optional sint32 skillnum = 3;	//技能数量
+	optional sint32 level = 4;	//技能等级
+	optional PBMsgNewserverItemList rewardList = 5;
+};
+
+message PBMsgNewserverActivityLevel
+{
+	optional sint32 day = 1;	//天数
+	optional sint32 id = 2;		//id
+	optional sint32 level = 3;	//等级
+	optional PBMsgNewserverItemList rewardList = 4;
+};
+
+message PBMsgNewserverActivityBattlescore
+{
+	optional sint32 day = 1;	//天数
+	optional sint32 id = 2;		//id
+	optional sint32 battlescore = 3;	//战力
+	optional PBMsgNewserverItemList rewardList = 4;
+};
+
+message PBMsgNewserverActivityEquipEnchance
+{
+	optional sint32 day = 1;	// 天数
+	optional sint32 id = 2;		//id
+	optional sint32 equipnum = 3;	//装备数量
+	optional sint32 enchance = 4;	//强化点数
+	optional PBMsgNewserverItemList rewardList = 5;
+};
+
+message PBMsgNewserverActivityYuanshen
+{
+	optional sint32 day = 1;	//天数
+	optional sint32 id = 2;	//id
+	optional sint32 level = 3;	//等级
+	optional PBMsgNewserverItemList rewardList = 4;
+};
+
+message PBMsgNewservreActivityPetQuality
+{
+	optional sint32 day = 1;	//天数
+	optional sint32 id = 2;		//id
+	optional sint32 pet_num = 3;	//宠物数量
+	optional sint32 pet_quality = 4;	//宠物品质
+	optional PBMsgNewserverItemList rewardList = 5;
+};
+
+message PBMsgNewserverActivityLearnGuildSkill
+{
+	optional sint32 day = 1;	//天数
+	optional sint32 id = 2;		//id
+	optional sint32 learn_num = 3;	//学习的数量
+	optional PBMsgNewserverItemList rewardList = 4;
+};
+
+message PBMsgNewserverActivityGuildSkillLevel
+{
+	optional sint32 day = 1;	//天数
+	optional sint32 id = 2;	//id
+	optional sint32 skill_num = 3;	//数量
+	optional sint32 skill_level = 4;	//等级
+	optional PBMsgNewserverItemList rewardList = 5;
+};
+
+message PBMsgNewserverActivityHonor
+{
+	optional sint32 day = 1;	//天数
+	optional sint32 id = 2;	//id
+	optional sint32 honor = 3;	//数量
+	optional PBMsgNewserverItemList rewardList = 4;
+};
+
+message PBMsgNewserverActivityWeixin
+{
+	optional sint32 day = 1;	//天数
+	optional sint32 id = 2;	//id
+	optional PBMsgNewserverItemList rewardList = 3;
+	optional sint32 sift_type	= 4;	//帅选 类型
+	optional sint32 original	= 5;	//原价
+	optional sint32 discount	= 6;	//折扣价
+	optional sint32 vip			= 7;	//需要的vip等级
+};
+
+enum eRechargeReward
+{
+	eRecharge_NotGet = 1;	// 不可领取
+	eRecharge_Get	 = 2;	// 可以领取
+	eRecharge_HasGet = 3;	// 已经领取
+};
+
+enum eActivityReward
+{
+	eActivity_notGet = 1;	// 不可领取
+	eActivity_Get	 = 2;	// 可领取
+	eActivity_HasGet = 3;	// 已领取
+	eActivity_OutTime = 4;	// 已过期
+};
+
+message PBMsgNewserverActivityStateNotice
+{
+	optional sint32 day = 1;	//新服的天数
+	repeated PBMsgNewserverActivityStateList state_list = 2;	//领奖状态
+};
+
+message PBMsgNewserverActivityStateList
+{
+	optional sint32 days = 1;	// 天数
+	optional sint32 state = 2;	// 奖励状态
+	optional sint32 id = 3;		// id
+	optional sint32 cur = 4;	// 当前值
+	optional sint32 max = 5;	// 最大值
+};
+
+message PBMsgNewserverRechargeRequest
+{
+	optional sint32 day = 1;	//领取天
+};
+
+message PBMsgNewserverRechargeResponse
+{
+	optional sint32 ret_code = 1;	
+	optional sint32 id = 2;		//id
+	optional sint32 state = 3;		// 状态
+};
+
+message PBMsgNewserverRechargeListNotice
+{
+	repeated	PBMsgNewserverRechargeNotice state_list = 1;	//状态列表
+};
+
+message PBMsgNewserverRechargeNotice
+{
+	optional sint32 day = 1;	//天数
+	optional sint32 mount = 2;	//充值金额
+	optional sint32 state = 3;	//状态
+};
+
+message PBMsgNewserverRechargeCfgListNotice
+{
+	repeated PBMsgNewserverRechargeCfgNotice cfg_list = 1;	//信息列表
+};
+
+message PBMsgNewserverRechargeCfgNotice
+{
+	optional sint32 day = 1;	//天
+	optional sint32 recharge_mount = 2;	//充值金额
+	optional PBMsgNewserverItemList rewardList = 3;	//奖励物品
+};
+
+message PBMsgNewserverItemList
+{
+	repeated PBMsgNewserverItem item_list = 1;	//奖励列表
+};
+
+message PBMsgNewserverItem
+{
+	optional string sheetid = 1;	// 物品id
+	optional sint32 num = 2;	//物品数量
+};
+
+message PBMsgNewserverShopDiscountBuyRequest
+{
+	optional sint32	day	= 1;	//天
+	optional sint32 id = 2;		//id
+};
+
+message PBMsgNewserverShopDiscountBuyResponse
+{
+	optional sint32 ret_code = 1;
+	optional sint32 day		 = 2;
+	optional sint32 id		 = 3;
+	optional sint32 state	 = 4;
+};

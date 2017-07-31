@@ -1,0 +1,198 @@
+import "msg_base.proto";
+import "msg_team.proto";
+
+///////////////////////////// 蜀山 消息定义 /////////////////////////////
+
+// 队伍应答枚举类型
+enum PBMatchConfirmAnswerType
+{
+	PBMatchConfirmAnswerType_Agree					= 1;	// 同意
+	PBMatchConfirmAnswerType_Refuse					= 2;	// 拒绝
+};
+
+message PBMatchingActivity
+{
+	optional uint32		func_type					= 1;	// 功能类型
+	optional uint32		func_id						= 2;	// 副本sheetId
+	optional uint64		signup_time					= 3;	// 报名时间
+};
+
+// 废弃
+message PBMsgMatchListRequest
+{
+
+};
+// 废弃
+message PBMsgMatchListResponse
+{
+	optional sint32					ret_code		= 1;	// 返回码
+	repeated PBMatchingActivity		matchingList	= 2;	// 正匹配报名的活动
+};
+
+message PBMsgMatchConfirmNotice
+{
+	optional uint32		func_type					= 1;	// 功能类型
+	optional uint32		func_id						= 2;	// 
+};
+
+message PBMsgMatchConfirmAnswerRequest
+{
+	optional uint32						func_type	= 1;	// 功能类型
+	optional uint32						func_id		= 2;	// 
+	optional PBMatchConfirmAnswerType	answer		= 3;	// 应答结果
+};
+
+message PBMsgMatchConfirmAnswerResponse
+{
+	optional sint32						ret_code	= 1;	// 返回码
+};
+
+
+message PBMsgMatchSignedUpRequest
+{
+	optional uint32						func_type	= 1;	// 功能类型
+	optional uint32						func_id		= 2;	// sheetId
+};
+
+message PBMsgMatchSignedUpResponse
+{
+	optional sint32						ret_code	= 1;	// 返回码
+	optional PBParam					code_param	= 2;	// 返回码参数
+	optional uint32						func_type	= 3;	// 请求的功能类型
+	optional uint32						func_id		= 4;	// 请求的sheetID
+};
+
+message PBMsgMatchCancelRequest
+{
+	optional uint32						func_type	= 1;	// 功能类型
+	optional uint32						func_id		= 2;	// sheetId
+};
+
+message PBMsgMatchCancelResponse
+{
+	optional sint32						ret_code	= 1;	// 返回码
+	optional sint32						func_type	 = 2; // 功能类型
+	optional sint32						func_id = 3; // sheetid
+};
+
+message PBMsgMatchListNotice
+{
+	repeated PBMatchingActivity		matchingList	= 1;	// 正匹配报名的活动
+};
+
+// 队伍人数已满, 提示队长进入
+message PBMsgMatchEnterNotice
+{
+	repeated string						act_sheet	= 1;
+};
+
+
+
+// pve 匹配用这个 @cxl-lk
+message PBMsgPveMatchRequest
+{
+	optional	uint32					func_type	= 1;
+	optional	uint32					func_id		= 2;
+};
+
+message PBMsgPveMatchResponse
+{
+	optional	sint32					ret_code	= 1;	// 返回码
+	optional	PBParam					code_param	= 2;	// 返回码参数
+	optional	uint32					func_type	= 3;	// 请求的功能类型
+	optional	uint32					func_id		= 4;	// 请求的sheetID
+};
+
+// 申请加入一个匹配队伍,如果原来有队伍，会移除
+message PBMsgPveMatchApplyRequest
+{
+	optional	uint32					matchId		= 1;	// 匹配ID
+	optional	uint32					func_type	= 2;
+	optional	uint32					func_id		= 3;	
+};
+
+message PBMsgPveMatchApplyResponse
+{
+	optional	sint32					ret_code	= 1;
+	optional	PBParam					code_param	= 2;	// 返回码参数
+};
+
+// 请求取消匹配，离开匹配队伍，如果在本服的队伍里的话，会移除
+message PBMsgPveMatchLeaveRequest
+{
+	optional	uint32					matchId		= 1;	// 匹配ID
+	optional	uint32					func_type	= 2;
+	optional	uint32					func_id		= 3;
+};
+
+message PBMsgPveMatchLeaveResponse
+{
+	optional	sint32					ret_code	= 1;
+};
+
+message PBMsgCancelPveMatchRequest
+{
+	optional	uint32					func_type	= 1;
+	optional	uint32					func_id		= 2;
+};
+
+message PBMsgCancelPveMatchResponse
+{
+	optional	sint32					ret_code	= 1;
+	optional	uint32					func_type	= 2;
+	optional	uint32					func_id		= 3;
+};
+
+// 呼朋唤友请求
+message PBMsgPveMatchCallFriendRequest
+{
+	
+};
+
+message PBMsgPveMatchCallFriendResponse
+{
+	optional	sint32					ret_code	= 1;
+};
+
+// 点击呼朋唤友连接
+message PBMsgPveMatchApplyCallFriendRequest
+{
+	optional	uint32					matchid		= 1;
+	optional	uint32					func_id		= 2;
+	optional	uint32					func_type	= 3;
+};
+message PBMsgPveMatchApplyCallFriendResponse
+{
+	optional	sint32					ret_code	= 1;
+	optional	uint32					reasoncode	= 2;
+	optional	sint64					param	= 3;
+};
+
+// 获取匹配队列
+message PBMsgGetMatchListRequest
+{
+	optional	uint32					func_type	= 1;
+	optional	uint32					func_id		= 2;
+};
+
+message PBMsgGetMatchListResponse
+{
+	optional sint32						ret_code		= 1;	// 返回码
+	optional sint32						func_type		= 2;	// 功能类型(活动参数)
+	optional sint32						func_id			= 3;	// sheetid(活动参数)
+	repeated PBMsgTeamInfo				team			= 4;	// 队伍列表
+};
+
+message PBMsgSyncSpanPveTeamNotice
+{
+	optional uint32						matchid			= 1;
+	optional uint32						membernum		= 2;
+};
+
+// 同步跨服pve匹配是否是队长
+message PBMsgSyncSpanPveTeamLeaderNotice
+{
+	optional bool						isleader		= 1;
+};
+/////////////////////////////
+

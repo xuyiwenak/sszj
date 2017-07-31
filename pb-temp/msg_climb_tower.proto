@@ -1,0 +1,167 @@
+option optimize_for = SPEED;
+import "msg_dungeon.proto";
+
+enum PBETowerDifficulty
+{
+	eTowerDifficulty_None		= -1;
+	eTowerDifficulty_Simple		= 0;	// 简单
+	eTowerDifficulty_Hard		= 1;	// 困难
+};
+
+enum PBETowerAwardType
+{
+	eTowerAwardType_None		= -1;
+	eTowerAwardType_First		= 0;	// 首次奖励
+	eTowerAwardType_Stage		= 1;	// 阶段奖励
+};
+
+message PBSingleClimbTowerInfo
+{
+	optional sint32				cur_layer			= 1; // 当前层数
+	optional PBETowerDifficulty	difficulty			= 2;
+	repeated bool				first_award			= 3;
+	repeated bool				stage_award			= 4;
+	optional sint32				max_layer			= 5; // 历史最高层数
+};
+
+message PBClimbTowerInfos
+{
+	repeated PBSingleClimbTowerInfo		infos				= 1;
+	optional sint32						enter_count			= 2; // 本阶段已进入爬塔次数
+	optional sint32						rush_count			= 3; // 本阶段已扫荡次数
+	optional sint32						cur_group_spawn		= 4; // 本阶段已挑战波数
+	optional sint32						max_group_spawn		= 5; // 历史最高波数
+	optional sint32						left_reset_count	= 6; // 剩余重置次数(不存库)
+	optional sint32						cur_rush_layer		= 7; // 当日目前已经扫荡的层数
+	optional sint32						next_rush_time		= 8; // 下一个扫荡时间
+	optional sint32						max_pass_time		= 9; // 通过最高层数的时间
+	optional sint32						is_revise			= 10;// 是否修正过历史最高层数
+};
+
+// 爬塔信息
+message PBTowerInfoRequest
+{
+};
+message PBTowerInfoResponse
+{
+	optional PBClimbTowerInfos		tower_info		= 1;
+};
+
+// 首次奖励
+message PBTowerGetFirstAwardRequest
+{
+	optional sint32					layer			= 1;
+	optional PBETowerDifficulty		difficulty		= 2;
+};
+message PBTowerGetFirstAwardResponse
+{
+	optional sint32					ret_code		= 1;
+	optional PBETowerDifficulty		difficulty		= 2;
+	repeated bool					first_award		= 3;
+};
+
+// 阶段奖励
+message PBTowerGetStageAwardRequest
+{
+	optional sint32					layer			= 1;
+	optional PBETowerDifficulty		difficulty		= 2;
+};
+message PBTowerGetStageAwardResponse
+{
+	optional sint32					ret_code		= 1;
+	optional PBETowerDifficulty		difficulty		= 2;
+	repeated bool					stage_award		= 3;
+};
+
+// 爬塔重置
+message PBTowerResetRequest
+{
+	optional PBETowerDifficulty		difficulty		= 1;
+};
+message PBTowerResetResponse
+{
+	optional sint32					ret_code		= 1;
+};
+
+// 爬塔扫荡
+message PBTowerRushRequest
+{
+	optional PBETowerDifficulty		difficulty		= 1;
+	optional sint32					max_rush_layer	= 2;	// 指定的最大层数
+};
+
+message PBToweRushResponse
+{
+	optional sint32		ret_code = 1;
+	optional sint32		rush_cd	 = 2;
+};
+
+message PBToweRushNotice
+{
+	repeated PBTowerDungeonResult	results			= 1;	// 扫荡奖励
+	optional sint32					rush_state		= 2;	// 扫荡状态	0 非扫荡 1 扫荡
+	optional sint32					rush_cd			= 3;	// 扫荡cd
+	optional sint32					cur_layer		= 4;	// 当前层数
+	optional sint32					max_clientlayer	= 5;	// 客户端请求扫荡的层数
+};
+
+message PBTowerDungeonResult
+{
+	optional sint32					layer			= 1;
+	repeated PBMsgDrawReward		awards			= 2;
+};
+
+// 请求进入爬塔
+message PBEnterTowerRequest
+{
+	optional PBETowerDifficulty		difficulty		= 1;
+	optional sint32					layer			= 2;
+	optional bool					auto_next		= 3;//[default=true];	// 一层通关,传送门自动传送到下一层
+};
+message PBEnterTowerResponse
+{
+	optional sint32					ret_code		= 1;
+	optional PBETowerDifficulty		difficulty		= 2;
+	optional sint32					layer			= 3;
+};
+
+// 爬塔副本战斗结束
+message PBTowerDungeonEndNotice
+{
+	optional bool					is_win			= 1;
+};
+
+message PBMsgTowerRushStateRequest
+{
+
+};
+
+message PBMsgTowerRushStateResponse
+{
+	optional	sint32	ret_code	= 1;
+	optional	sint32	rush_state	= 2;	//扫荡状态
+	optional	sint32	rush_cd		= 3;	//扫荡cd
+	optional	sint32	cur_layer	= 4;	//目前层数 
+	optional	sint32	max_layer	= 5;	//最高层数
+	optional	sint32  client_layer = 6;	//客户端爬塔的层数
+};
+
+message PBMsgTowerRushClearCDRequest
+{
+
+};
+
+message PBMsgTowerRushClearCDResponse
+{
+	optional	sint32	ret_code	= 1;
+};
+
+message PBMsgTowerRushCancalRequest
+{
+
+};
+
+message PBMsgTowerRushCancalResponse
+{
+	optional	sint32 ret_code	   = 1;
+};

@@ -1,0 +1,28 @@
+/// @brief	template for config 
+
+import "tmpl_base.proto";
+
+message PBTransSheetID
+{
+	repeated PBTransRule		trans_rule		= 1;
+};
+
+message PBTransRule
+{
+	optional string				begin_time		= 1; // %d-%d-%d %d:%d:%d
+	optional string				end_time		= 2; // %d-%d-%d %d:%d:%d
+	repeated PBTransPair		trans_pair		= 3;
+	//repeated PBTransPairString	string_trans	= 4;
+};
+
+//message PBTransPairUInt
+//{
+//	optional uint32		int_src			= 1;
+//	optional uint32		int_dest		= 2;
+//};
+
+message PBTransPair
+{
+	optional uint32		str_src			= 1;
+	optional uint32		str_dest		= 2;
+};

@@ -1,0 +1,27 @@
+/// @brief 队伍的配置
+
+import "tmpl_base.proto";
+import "msg_common.proto";
+
+message PBTeamBaseInfo
+{
+	optional	sint32 offline_keep_team_seconds		= 1;//[default=120];	// 离线后在队伍中的保留时间（这段时间内上线还可以回到队伍中）
+	optional	sint32 callfriend_alive					= 2;//[default=600];	// 呼朋唤友存活时间(单位秒)
+}
+
+message PBTeamFollowInfo
+{
+	optional	sint32 order_keep_second				= 1;//[default=10];	// 同意跟随请求有效时间(单位秒)
+	optional	sint32 follow_change_speed				= 2;//[default=4500];	// 队员追击提速
+	optional	sint32 follow_open_ctrl					= 3;//[default=1];		// 跟随开关
+}
+
+// 队伍配置
+message PBConfigTeam
+{
+	optional PBTeamBaseInfo	base_info					= 1;
+	optional PBTeamFollowInfo	follow_info					= 2;
+};
+
+
+

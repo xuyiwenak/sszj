@@ -1,0 +1,234 @@
+import "msg_base.proto";
+
+//////////////////////////////////////////////////////////////////////////
+
+//决斗相关消息
+//////////////////////////////////////////////////////////////////////////
+
+// 发起
+message PBMsgApplyDuelRequest
+{
+	optional uint32 dec_roleid		=	1;	//目标roleid
+	optional uint32 gatewayid		=	2;	//目标gatewayid;
+	optional sint32 slot			=	3;	//发起决斗所需物品索引;
+};
+
+
+message PBMsgApplyDuelResponse
+{
+	optional sint32 ret_code		=	1;	
+};
+
+
+// 检查对方条件是否满足
+message PBMsgCheckOtherRequest
+{
+	optional uint32 dec_roleid		=	1;	// 目标roleid
+	optional uint32	dec_gatewayid	=	2;	// 目标gatewayid
+	optional uint32 src_roleid		=	3;
+	optional uint32 src_gatewayid	=	4;	// 发起人服gatewayid
+	optional uint32 src_campid		=	5;	// 发起人服campid
+	optional uint32 sessionid		=	6;
+	optional uint32	router_num		=	7;	// 路由次数，最多路由两次，一次去原服查询，没在原服，就去所在服查询，没在所在服，则直接返回错误
+};
+
+
+message PBMsgCheckOtherResponse
+{
+	optional sint32 ret_code		=	1;
+	optional uint32	sessionid		=	2;
+	optional PBDuelData dec_role	=	3;	// 被挑战方的数据
+};
+
+enum PBDuelState
+{
+	DuelState_Wait	=	1;	// 等待对方反应
+	DuelState_End	=	2;	// 等待时间结束，算拒绝
+};
+
+message PBMsgDuelInfoNotice
+{
+	optional PBDuelState	duel_state	=	1;		
+	optional PBDuelData		src_duel	=	2;
+	optional PBDuelData		dec_duel	=	3;
+	optional uint32			endtime		=	4;	//	决斗确认结束时间
+};
+
+
+enum PBDuelOperate
+{
+	Duel_Agree		=	1;
+	Duel_Reject		=	2;
+	Duel_Despise	=	3;
+};
+
+message PBMsgDoDuelRequest
+{
+	optional PBDuelOperate	optype		= 1;
+	optional uint32			roleid		= 2;
+	optional uint32			gatewayid	= 3;
+	optional uint32			campid		= 4;
+};
+
+message PBMsgDoDuelResponse
+{
+	optional sint32	ret_code			= 1;
+	optional PBDuelOperate	optype		= 2;
+};
+
+
+message PBDuelData
+{
+	optional uint32		roleid		=	1;
+	optional uint32		gatewayid	=	2;
+	optional string		name		=	3;
+	optional uint32		level		=	4;
+	optional uint32		battle		=	5;
+	optional uint32		role		=	6;	// 职业
+	optional uint32		camp		=	7;	// 阵营
+	optional uint32		logingateway	=	8;	// 当前登录的gatewayid
+	optional uint32		logincamp	=	9;	// 当前登录的campid
+	optional uint64		char_id		=	10;
+	optional string		icon		=	11;
+	optional uint32		gender		=	12;	// 性别
+};
+
+message PBMsgBwsDuelRequest
+{
+	optional PBDuelData		src_duel	=	1;
+	optional PBDuelData		dec_duel	=	2;
+	optional uint32			sessionid	=	3;
+};
+
+message PBMsgBwsDuelResponse
+{
+	optional sint32			ret_code	=	1;
+	optional PBDuelData		src_duel	=	2;
+	optional PBDuelData		dec_duel	=	3;
+	optional uint32			sessionid	=	4;
+};
+
+enum PBDuelResult
+{
+	Result_SUCCESS		=	1;
+	Result_FAILD		=	2;
+};
+
+message PBMsgBwsDuelDeleteItemNotice
+{
+	optional PBDuelResult	result		=	1;
+	optional uint32			src_roleid	=	2;
+	optional uint32			dec_roleid	=	3;
+};
+
+message PBMsgDuelCreateDungeonNotice
+{
+	optional uint32			src_roleid		=	1;
+	optional uint32			src_gatewayid	=	2;
+	optional uint32			dec_roleid		=	3;
+	optional uint32			dec_gatewayid	=	4;
+	optional uint64			src_fullid		=	5;
+	optional string			src_name		=	6;
+	optional uint64			dec_fullid		=	7;
+	optional string			dec_name		=	8;
+	optional uint32			src_campid		=	9;
+	optional uint32			src_battle		=	10;
+	optional uint32			src_level		=	11;
+	optional uint32			dec_campid		=	12;
+	optional uint32			dec_battle		=	13;
+	optional uint32			dec_level		=	14;
+};
+
+
+message PBMsgDuelPlayerEnterGameNotice
+{
+	optional uint32			roleid		=	1;
+	optional uint32			gatewayid	=	2;
+	optional uint32			campid		=	3;
+};
+
+message PBMsgDuelDespiseNotice
+{
+	optional uint32			roleid		=	1;
+	optional PBDuelData		src_duel	=	2;
+	optional PBDuelData		dec_duel	=	3;
+	optional uint32			sessionid	=	4;
+};
+
+
+message PBMsgDuelDespiseSucceedNotice
+{
+	optional sint32			ret_code	=	1;
+	optional uint32			sessionid	=	2;
+};
+
+
+message PBMsgDuelStateNotice
+{
+	optional uint32			roleid		=	1;
+	optional bool			isduel		=	2;
+};
+
+message PBMsgDuelMailNotice
+{
+	optional uint32			src_roleid		=	1;
+	optional uint32			src_gatewayid	=	2;
+	optional string			src_name		=	3;
+	optional uint32			dec_roleid		=	4;
+	optional uint32			dec_gatewayid	=	5;
+	optional string			dec_name		=	6;
+	optional bool			is_src			=	7;
+	optional PBDuelOperate	optype			=	8;
+	optional uint64			src_charid		=	9;
+	optional uint64			dec_charid		=	10;
+};
+
+message PBMsgDuelSettleUpNotice
+{
+	optional bool	is_draw					= 1;		// 是否平局
+	optional uint32 winner_row_id			= 2;		// 赢者dataset row id
+	optional sint32 winner_battle_score		= 3;		// 赢者战斗力
+	optional sint32 winner_pvp_score		= 4;		// 赢者总积分
+	optional sint32 winner_get_pvp_score	= 5;		// 赢者获得积分
+	optional uint32 loser_row_id			= 6;		// 输者dataset row id
+	optional sint32 loser_battle_score		= 7;		// 输者战斗力
+	optional sint32 loser_pvp_score			= 8;		// 输者总积分
+	optional sint32 loser_get_pvp_score		= 9;		// 输者获得积分
+	repeated PBMsgReward ext_rewards		= 10;		// 固定时间段额外奖励
+	repeated PBMsgReward participate_rewards= 11;		// 参与奖
+	optional sint32 kills					= 12;		// 连胜数
+	optional sint32 winner_level			= 13;		// 赢者等级
+	optional sint32 loser_level				= 14;		// 输者等级
+	optional sint32 winner_get_horn			= 15;		// 赢者获得荣誉
+	optional sint32 loser_get_horn			= 16;		// 输者获得荣誉
+	optional PBParam winner_name			= 17;		// 赢者名字
+	optional PBParam loser_name			= 18;		// 输者名字
+	optional sint32	winner_camp				= 19;		// 赢者阵营
+	optional sint32	loser_camp				= 20;		// 输者阵营
+};
+
+message PBMsgLoserDoEquipNotice
+{
+	optional uint32	loser_roleid					= 1;
+	optional uint32	loser_gatewayid					= 2;
+	optional uint32	winer_roleid					= 3;
+	optional uint32 winer_gatewayid					= 4;
+	optional uint32	duel_time						= 5;	// 决斗时间
+};
+
+message PBMsgLoserDoEquipRequest
+{
+	optional uint32	loser_roleid			= 1;
+	optional uint32 loser_gatewayid			= 2;
+	optional uint32 winer_roleid			= 3;
+	optional uint32	winer_gatewayid			= 4;
+	optional uint32	duel_time				= 5;
+	optional uint32 sessionid				= 6;
+};
+
+message PBMsgLoserDoEquipResponse
+{
+	optional sint32	ret_code				= 1;
+	optional uint32 sessionid				= 2;
+	optional uint32	roleid					= 3;
+};

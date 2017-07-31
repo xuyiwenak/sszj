@@ -1,0 +1,600 @@
+// 以最快速度序列/反序列
+option optimize_for = SPEED;
+
+import "msg_base.proto";
+
+//////////////////////////////////////////////////////////////////////////
+//	enum
+//////////////////////////////////////////////////////////////////////////
+enum EFriendCondtionType
+{
+	EFriendCondtionType_Level	= 1;	// 等级
+	EFriendCondtionType_City	= 2;	// 同城
+	EFriendCondtionType_Popular = 3;	// 人气
+	EFriendCondtionType_Apply	= 4;	// 申请
+};
+
+enum EFriendAddType
+{
+	EFriendAddType_Friend		= 1;	// 好友
+	EFriendAddType_Black		= 2;	// 黑名单
+	EFriendAddType_Enemy		= 3;	// 仇人
+	EFriendAddType_Contact		= 4;	//最近联系人
+};
+
+enum EFriendRemoveType
+{
+	EFriendRemoveType_Friend	= 1;	// 好友
+	EFriendRemoveType_Black		= 2;	// 黑名单
+	EFriendRemoveType_Negative	= 3;	// 被动关注
+	EFriendRemoveType_Enemy		= 4;	// 仇人
+	EFriendRemoveType_Contact	= 5;	// 最近联系人
+};
+
+enum EFriendUpdateType
+{
+	EFriendUpdateType_Level		= 1;	// 等级
+	EFriendUpdateType_State		= 2;	// 状态
+	EFriendUpdateType_Focus		= 3;	// 关注状态
+	EFriendUpdateType_FriendVal	= 4;	// 好友度
+
+	EFriendUpdateType_GiveEnergy	= 5;	// 赠送 体力
+	EFriendUpdateType_GiveState		= 6;	// 赠送 体力状态
+	EFriendUpdateType_GatherEnergy	= 7;	// 收取 体力值
+	EFriendUpdateType_GatherState	= 8;	// 收取 体力状态
+
+	EFriendUpdateType_BattleScore	= 9;	// 战力
+	EFriendUpdateType_HeadIcon		= 10;	// 头像Icon
+	EFriendUpdateType_NewDayFlush   = 11;	// 新的一天，数据刷新
+	EFriendUpdateType_CharName			= 12;	// 改名
+	EFriendUpdateType_Camp			= 13;	// 转阵营
+	EFriendUpdateType_Role			= 14;	//转职(职业)
+	EFriendUpdateType_Gender		= 15;	//转职(性别)
+
+	EFriendUpdateType_GuildId	= 100;	// guidl id
+
+	EFriendUpdateType_Sign		= 200;	// 签名
+	
+	EFriendUpdateType_IntimateNum = 300; //亲密度更新
+};
+
+enum EFriendFocusState
+{
+	ECharFriendFocusState_Normal	= 0;		// 正常关注 
+	ECharFriendFocusState_Special	= 1;		// 特别关注 
+};
+
+enum EFriendType
+{
+	EFriendType_Normal		= 1;		// 双向好友
+	EFriendType_Positive	= 2;		// 主动关注
+	EFriendType_Negative	= 3;		// 被动关注
+	EFriendType_Black		= 4;		// 黑名单
+	EFriendType_Enemy		= 5;		// 仇人
+	EFriendType_Contact		= 6;		// 最近联系人
+};
+
+
+enum EFriendState
+{
+	EFriendState_Online		= 1;		// 是否在线
+};
+
+
+enum EFriendGiveEnergyState
+{
+	EFriendGiveEnergy_None		= 0;		// 未赠送
+	EFriendGiveEnergy_Gived		= 1;		// 已赠送
+};
+
+enum EFriendGatherEnergyState
+{
+	EFriendGatherEnergy_None		= 0;		// 未收取
+	EFriendGatherEnergy_Gathering	= 1;		// 可收取
+	EFriendGatherEnergy_Gathered	= 2;		// 已收取
+};
+
+enum EFriendHeadIconType
+{
+	EFriendHeadIcon_UpLoad		= 1;	// 上传
+	EFriendHeadIcon_Update		= 2;	// 更新
+	EFriendHeadIcon_Delete		= 3;	// 删除
+};
+
+//////////////////////////////////////////////////////////////////////////
+//	base message
+//////////////////////////////////////////////////////////////////////////
+
+
+message PBCharFriendInfo
+{
+	optional string	char_name		= 1;//玩家姓名;
+
+	optional uint32	char_role		= 2;//职业
+
+	optional uint32	char_gender		= 3;//性别
+
+	optional sint32	char_level 		= 4;//等级;
+
+	optional sint32	char_head 		= 5;//等级;	
+
+	optional uint64	guild_id		= 6;// 帮会 id
+
+	optional string	guild_name		= 7;// 帮会 name
+
+	optional uint64	consort_id		= 8;// 配偶 id
+
+	optional string	consort_name	= 9;// 配偶 name
+
+	optional sint32 char_battlescore= 10;// 玩家战力
+
+	optional sint32 char_camp		= 11;// 玩家阵营
+
+	optional sint32 role_id			= 12;// role id
+
+	optional string head_icon		= 13;//头像ID
+};
+
+message PBCharFriendBase
+{
+	optional uint64 char_id			= 1;	// 玩家ID
+
+	optional string char_name		= 2;	// 玩家昵称
+
+	optional sint32 char_level		= 3;	// 玩家等级
+
+	optional sint32 char_job		= 4;	// 玩家职业
+
+	optional sint32 char_gender		= 5;	// 玩家性别
+
+	optional sint32	char_head		= 6;	// 玩家头像
+
+	optional sint64 add_time		= 7;	// 添加时间
+
+	optional uint32 char_state		= 8;	// 状态信息(在线状态)
+
+	optional sint32 char_battlescore= 9;	// 玩家战力
+
+	optional sint32 char_camp		= 10;	// 玩家阵营
+
+	optional sint32 role_id			= 11;	// role id
+		
+	optional string head_icon		= 12;//头像ID
+
+	optional uint64	guild_id		= 13;// 帮会 id
+
+	optional string	guild_name		= 14;// 帮会 name
+	
+	optional sint32 intimate_num	= 15;// 亲密度
+};
+
+message PBCharFriendNormal
+{
+	optional PBCharFriendBase char_base	= 1;	// 基础信息
+
+	optional string char_sign			= 2;	// 玩家签名
+
+	optional sint32 focus_state			= 3;	// 关注状态
+
+	optional sint32 friend_val			= 4;	// 好友度
+
+	optional uint64	guild_id			= 5;	// 帮会 id
+
+	optional sint32	give_energy			= 6;	// 赠送 体力值
+
+	optional uint32	give_state			= 7;	// 赠送 状态
+
+	optional sint32 gather_energy		= 8;	// 收取 体力值
+
+	optional uint32 gather_state		= 9;	// 收取 状态
+};
+
+message PBCharFriendPositive
+{
+	optional PBCharFriendBase char_base	= 1;	// 基础信息
+
+	optional string char_sign			= 2;	// 玩家签名
+
+	optional sint32 focus_state			= 3;	// 关注状态
+
+	optional sint32 friend_val			= 4;	// 好友度
+
+	optional uint64	guild_id			= 5;	// 帮会 id
+};
+
+message PBCharFriendNegative
+{
+	optional PBCharFriendBase char_base	= 1;	// 基础信息
+};
+
+message PBCharFriendBlack
+{
+	optional PBCharFriendBase char_base	= 1;	// 基础信息
+};
+
+message PBCharFriendEnemy
+{
+	optional PBCharFriendBase char_base	= 1;	// 基础信息
+};
+
+message PBCharFriendContact
+{
+	optional PBCharFriendBase char_base = 1;	//基础信息
+};
+
+message PBCharFriendMarriage
+{
+	optional PBCharFriendBase char_base = 1;	//基础信息
+};
+
+message PBCharFriendZoneMessage
+{
+	optional uint64 char_id			= 1;	// 玩家 ID
+
+	optional string char_name		= 2;	// 玩家 名称
+
+	optional uint64 char_level		= 3;	// 玩家 等级
+
+	optional uint64 char_head		= 4;	// 玩家 头像
+
+	optional string char_message	= 5;	// 玩家 留言
+};
+
+message PBCharFriendZone
+{
+	optional sint32	popular_val	= 1;	// 人气值
+
+	optional sint32	get_gifts	= 2;	// 收获的礼物
+
+	optional sint32	give_gifts	= 3;	// 赠送的礼物
+
+	optional string	sign_str	= 4;	// 签名
+
+	optional sint32	head_pic	= 5;	// 头像索引
+
+	repeated PBCharFriendZoneMessage char_messages = 6;	// 玩家留言
+};
+
+
+message PBCharFriendData
+{
+	optional uint64											char_id					= 1;	// 玩家ID
+
+	optional PBCharFriendInfo								base_info				= 2;	// 基础信息
+
+	repeated PBCharFriendNormal								normal_infos			= 3;	// 双向好友
+
+	repeated PBCharFriendPositive							positive_infos			= 4;	// 主动关注
+
+	repeated PBCharFriendNegative							negative_infos			= 5;	// 被动关注
+
+	repeated PBCharFriendBlack								black_infos				= 6;	// 黑名单信息
+
+	optional PBCharFriendZone								char_zone				= 7;	// 空间信息
+
+	repeated PBCharFriendEnemy								enemy_infos				= 8;	// 仇人信息
+
+	repeated PBCharFriendContact	contact_infos	= 9;	// 最近联系人
+
+	repeated uint64					given_list		= 10;   // 已经赠送的玩家列表
+
+	optional sint32					given_energy	= 11;	// 送体力的次数
+
+	optional sint32					gather_energy	= 12;	// 领取体力的次数
+
+	optional PBCharFriendMarriage							marriage_info			= 13;	// 婚姻信息
+};
+
+
+message PBCharTFriend
+{
+	optional EFriendType friend_type		= 1;	// 类型
+			
+	optional PBCharFriendBase char_base		= 2;	// 玩家基本信息
+
+	optional string str_param				= 3;	// 
+
+	optional sint32 si_param1				= 4;	// 
+
+	optional sint32 si_param2				= 5;	// 
+
+	optional sint32 give_state				= 6;	// 好友体力赠送状态
+
+	optional sint32 gather_state			= 7;	// 好友体力收取状态
+};
+
+
+//////////////////////////////////////////////////////////////////////////
+// messgae
+//////// //////////////////////////////////////////////////////////////////
+
+// 请求 个人查找
+message PBMsgFriendSearchFriendRequest
+{
+	optional string info	= 1;	// id or name 
+};
+
+// 响应 个人查找
+message PBMsgFriendSearchFriendResponse
+{
+	optional sint32				ret_code    = 1;
+
+	optional PBCharFriendBase	char_base   = 2;	// char info
+
+	optional uint64				guild_id	= 3;	// 帮会 id
+
+	optional string				guild_name	= 4;	// 帮会 name
+
+	optional sint32				popilar_val	= 5;	// 人气
+};
+
+// 请求 条件查找
+message PBMsgFriendSearchCondtionRequest
+{
+	optional EFriendCondtionType  condition_type = 1;	// 查询条件类型
+
+	optional sint32				  search_param   = 2;	// 查询附加参数
+
+};
+
+// 响应 条件查找
+message PBMsgFriendSearchCondtionResponse				
+{
+	optional sint32 ret_code			= 1;
+
+	optional sint32	search_param		= 2;	// 查询附加参数
+
+	repeated PBCharFriendBase char_infos= 3;	// 玩家信息
+};
+
+// 请求 添加模板
+message PBMsgFriendAddTFriendRequest					
+{
+	optional EFriendAddType add_ty	= 1;		// 添加类型
+
+	optional uint64 char_id			= 2;		// 玩家id
+};
+
+// 响应 添加模板
+message PBMsgFriendAddTFriendResponse					
+{
+	optional sint32 ret_code		= 1;	
+};
+
+// 请求 删除模板
+message PBMsgFriendRemoveTFriendRequest
+{
+	optional EFriendRemoveType remove_ty	= 1;		// 删除类型
+
+	optional uint64 char_id					= 2;		// 玩家id
+};
+
+// 响应 删除模板
+message PBMsgFriendRemoveTFriendResponse				
+{
+	optional sint32 ret_code		= 1;
+};
+
+// 通知 添加模板
+message PBMsgFriendAddTFriendsNotice	
+{
+	repeated PBCharTFriend friend_infos = 1;
+};
+
+// 通知 删除模板	
+message PBMsgFriendRemoveTFriendsNotice
+{
+	optional EFriendType friend_type	= 1; // 类型
+	repeated uint64		 friend_ids		= 2;
+};
+
+// 通知 更新模板	
+message PBMsgFriendUpdateTFriendsNotice
+{
+	optional uint64				char_id		= 1;
+	optional sint32				friend_type = 2;
+	optional EFriendUpdateType	key_type	= 3;
+	optional sint32				sint_val	= 4;
+	optional sint64				sint64_val	= 5;
+	optional string				str_val		= 6;
+};
+
+message PBMsgFriendFriendDataNotice
+{
+	optional PBCharFriendData   friend_data = 1;	// 好友数据
+};
+
+message PBMsgFriendCharZoneRequest
+{
+	optional uint64 char_id					= 1;	// char id
+};
+
+message PBMsgFriendCharZoneResponse
+{
+	optional sint32				ret_code	= 1;
+	optional PBCharFriendZone	char_zone	= 2;	
+};
+
+message PBMsgFriendMoveTargetRequest
+{
+	optional uint64 char_id					= 1;	// char id
+	optional int32  from_ty					= 2;	// from ty
+	optional int32  to_ty					= 3;	// char id
+};
+
+message PBMsgFriendMoveTargetResponse
+{
+	optional sint32				ret_code	= 1;
+};
+
+/////////////////////////////////////////////////////////////////////
+// 添加好友 双向逻辑
+/////////////////////////////////////////////////////////////////////
+message PBMsgFriendAddFriendWithAckRequest			// 添加好友, 需要对方响应
+{
+	optional uint64 char_id			= 1;			// 对方 Id
+};
+
+message PBMsgFriendAddFriendWithAckResponse			// 添加好友, 需要对方响应 回包
+{
+	optional sint32	ret_code		= 1;			// 返回码
+};
+
+message PBMsgFriendAddFriendAskTargetNotice			// 添加好友对方通知
+{
+	optional uint64 char_id			= 1;			// 对方 Id
+
+	optional string char_name		= 2;			// 对方 name
+};
+
+message PBMsgFriendAddFriendAckRequest				// 响应添加好友
+{
+	optional uint64 char_id			= 1;			// 对方 Id
+
+	optional int32  is_agree		= 2;			// 是否 同意
+};
+
+message PBMsgFriendAddFriendAckResponse				// 响应添加好友 回包
+{
+	optional sint32				ret_code	= 1;	// 返回码
+
+	optional string				str_param	= 2;	// 字符串 参数
+};
+
+message PBMsgFriendRemoveFriendRequest				// 删除好友
+{
+	optional uint64 char_id			= 1;			// 对方 Id
+};
+
+message PBMsgFriendRemoveFriendResponse				// 删除好友 回包
+{
+	optional sint32				ret_code	= 1;	// 返回码
+};
+
+
+message PBMsgFriendAddInteractNotice				// 添加好友对方通知情缘任务用
+{
+	optional uint64 char_id			= 1;			// 对方 Id
+
+	optional string char_name		= 2;			// 对方 name
+};
+
+/////////////////////////////////////////////////////////////////////
+// 好友 送体力
+/////////////////////////////////////////////////////////////////////
+message PBMsgFriendGiveEnergyRequest
+{
+	optional sint32			is_all		= 1;		// 是否所有
+	optional sint64			target_id	= 2;		// 目标 ID
+};
+
+message PBMsgFriendGiveEnergyResponse
+{
+	optional sint32			ret_code	= 1;		// 返回码
+	optional string			str_param	= 2;		// 对方昵称
+};
+
+message PBMsgFriendGatherEnergyRequest
+{	
+	optional sint32			is_all		= 1;		// 是否全部
+	optional sint64			target_id	= 2;		// 目标 ID
+};
+
+message PBMsgFriendGatherEnergyResponse
+{
+	optional sint32			ret_code	= 1;		// 返回码
+}
+
+
+message PBMsgChangeHeadIconRequest
+{
+	optional bool			update			= 1;	// 更新/删除
+	optional string			head_icon		= 2;	//头像ID
+};
+
+message PBMsgChangeHeadIconResponse
+{
+	optional sint32			result_code		= 1;	//结果
+};
+
+message PBMsgHeadIconIsInCheckingRequest
+{
+	optional sint32			operate_type		= 1;	// 操作类型
+};
+
+message PBMsgHeadIconIsInCheckingResponse
+{
+	optional sint32			result_code			= 1;	//结果
+	optional sint32			operate_type		= 2;	// 操作类型
+};
+
+message PBMsgAddContachRequest
+{
+	optional uint64 char_id			= 1;			// 对方 Id
+};
+
+message PBCharFriendOfflinePlayerSendEnergyInfo
+{
+	optional sint32 role_id		= 1;				//赠送者的role_id
+
+	optional sint64 char_id		= 2;				//接收者的玩家id
+
+	optional uint64 send_char_id = 3;				//发送者的玩家id号 
+
+	optional sint32 energy_num	 = 4;				//赠送体力的数值
+};
+
+message PBMsgFriendEnergyTimesNotice
+{
+	optional sint32	give_times		= 1;	// 已赠送的体力次数
+	optional sint32 gather_times	= 2;	// 已领取的体力次数
+};
+
+
+//EGS上好友数据不做逻辑处理，只识别增加和删除
+enum EUpdateEgsFreindData_Type
+{
+	EFriendUpdateEGSFriendData_Add		= 1;	// 增加好友数据
+	EFriendUpdateEGSFriendData_Del		= 2;	// 删除好友数据
+};
+
+message PBMsgUpdateEGSNormalFriendData
+{
+	optional sint32	update_type					= 1;	// 更新的方式
+	optional uint32	role_id						= 2;	// 更新的本人role_id
+	optional PBCharFriendNormal friend_data		= 3;	// 更新好友的数据
+};
+
+message PBMsgUpdateEGSBlackFriendData
+{
+	optional sint32	update_type					= 1;	// 更新的方式
+	optional uint32	role_id						= 2;	// 更新的本人role_id
+	optional PBCharFriendBlack friend_data		= 3;	// 更新好友的数据
+	optional sint32 black_friend_max			= 4;	// 黑名单最大数
+};
+
+message PBMsgUpdateEGSEnemyFriendData
+{
+	optional sint32	update_type					= 1;	// 更新的方式
+	optional uint32	role_id						= 2;	// 更新的本人role_id
+	optional PBCharFriendEnemy friend_data		= 3;	// 更新好友的数据
+	optional sint32 enemy_friend_max			= 4;	// 敌人最大数
+};
+
+
+message PBMsgUpdateEGSContactFriendData
+{
+	optional sint32	update_type					= 1;	// 更新的方式
+	optional uint32	role_id						= 2;	// 更新的本人role_id
+	optional PBCharFriendContact friend_data	= 3;	// 更新好友的数据
+};
+
+message PBMsgRemoveRecentContactRequest				// 从最近联系人删除
+{
+	optional uint64 char_id			= 1;			// 对方 Id
+};
+
+message PBMsgRemoveRecentContactResponse				// 从最近联系人删除
+{
+	optional sint32				ret_code	= 1;	// 返回码
+};

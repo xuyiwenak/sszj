@@ -1,0 +1,16 @@
+/// @brief 超链接的配置
+
+import "tmpl_base.proto";
+
+message PBConfigTextLink
+{
+	option (OptionXmlFile)		= "textlink_config.xml";
+	
+	repeated PBConfigLinkFormat	link_info	= 1;// 链接配置
+}
+
+message PBConfigLinkFormat
+{
+	optional string name					= 1					;	// 名称
+	optional string format				= 2					;	// 格式
+}

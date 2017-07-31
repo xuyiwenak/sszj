@@ -1,0 +1,1 @@
+mysql -usszj -pDR9m_wqsgF8a -P3306 data_stat_ss -e "select gateway_id, evil_level, evil_star, count(*) as player_count from mount_info_stat group by gateway_id, evil_level, evil_star" > ./mount_evil_last_month.txt

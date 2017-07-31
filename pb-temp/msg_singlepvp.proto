@@ -1,0 +1,223 @@
+import "msg_base.proto";
+
+///////////////////////////// 蜀山 消息定义 /////////////////////////////
+
+// 匹配结果
+enum PBArenaMatchResultType
+{
+	enPBArenaMatchResultType_Succ					= 1;	// 匹配成功
+	enPBArenaMatchResultType_TimeOut				= 2;	// 匹配超时
+};
+
+// 等待状态
+enum PBSinglePvPWaitState
+{
+	enPBSinglePvPWaitState_Wait					= 1;	// 等待
+	enPBSinglePvPWaitState_End					= 2;	// 等待结束
+};
+
+// 竞技场报名
+message PBMsgArenaMatchRequest
+{
+};
+
+message PBMsgArenaMatchResponse
+{
+	optional sint32 ret_code		= 1;		// 结果码
+};
+
+
+// 取消竞技场报名
+message PBMsgArenaMatchCancelRequest
+{
+};
+
+message PBMsgArenaMatchCancelResponse
+{
+	optional sint32 ret_code		= 1;		// 结果码
+};
+
+// 通知竞技场匹配成功
+message PBMsgArenaMatchResultNotice
+{
+	optional sint32 match_result	= 1;		// 匹配结果(类型:PBArenaMatchResultType)
+};
+
+// 竞技场确认进入请求
+message PBMsgArenaOkInRequest
+{
+};
+
+message PBMsgArenaOkInResponse
+{
+	optional sint32 ret_code		= 1;		// 结果码
+};
+
+
+// 竞技场拒绝进入请求
+message PBMsgArenaCancelInRequest
+{
+};
+
+message PBMsgArenaCancelInResponse
+{
+	optional sint32 ret_code		= 1;		// 结果码
+};
+
+// 开始PK倒计时
+message PBMsgSinglePvPCountDownNotice
+{
+	optional sint32 count_down		= 1;		// 倒计时秒数
+};
+
+// 通告-竞技场等待状态
+message PBMsgSinglePvPWaitStateNotice
+{
+	optional sint32 wait_state		= 1;		// 等待状态(PBSinglePvPWaitState)
+};
+
+
+// 通告-竞技场结算
+message PBMsgArenaSettleUpNotice
+{
+	optional bool	is_draw					= 1;		// 是否平局
+	optional uint32 winner_row_id			= 2;		// 赢者dataset row id
+	optional sint32 winner_battle_score		= 3;		// 赢者战斗力
+	optional sint32 winner_pvp_score		= 4;		// 赢者总积分
+	optional sint32 winner_get_pvp_score	= 5;		// 赢者获得积分
+	optional uint32 loser_row_id			= 6;		// 输者dataset row id
+	optional sint32 loser_battle_score		= 7;		// 输者战斗力
+	optional sint32 loser_pvp_score			= 8;		// 输者总积分
+	optional sint32 loser_get_pvp_score		= 9;		// 输者获得积分
+	repeated PBMsgReward ext_rewards		= 10;		// 固定时间段额外奖励
+	repeated PBMsgReward participate_rewards= 11;		// 参与奖
+	optional sint32 kills					= 12;		// 连胜数
+	optional sint32 winner_level			= 13;		// 赢者等级
+	optional sint32 loser_level				= 14;		// 输者等级
+	optional sint32 winner_get_horn			= 15;		// 赢者获得荣誉
+	optional sint32 loser_get_horn			= 16;		// 输者获得荣誉
+	optional PBParam winner_name			= 17;		// 赢者名字
+	optional PBParam loser_name			= 18;		// 输者名字
+	optional sint32	winner_camp				= 19;		// 赢者阵营
+	optional sint32	loser_camp				= 20;		// 输者阵营
+};
+
+//请求-竞技场连杀数
+message PBMsgArenaGetPvPKillsRequest
+{
+
+};
+
+message PBMsgArenaGetPvPKillsResponse
+{
+	optional sint32 ret_code				= 1;		// 结果码
+	optional sint32 kills					= 2;		// 连胜数
+};
+
+
+
+message PBMsgSinglePvPEnterNotice
+{
+	optional sint32 other_level				= 1;		// 对手的等级
+	optional bytes	other_name				= 2;		// 对手的名字
+	optional bool	is_left					= 3;		// 自己是否在左
+};
+
+/////////////////////////// 切磋消息   开始///////////////////////////////////////////////
+/// 切磋请求
+message PBMsgPlayerPKRequestRequest
+{
+	optional sint64			player_id			= 1; // 对方实体ID
+};
+message PBMsgPlayerPKRequestResponse
+{
+	optional sint32			ret_code			= 1;
+};
+message PBMsgPlayerPKRequestNotice
+{
+	optional string			player_name			= 1;
+	optional sint32			char_role			= 2;//职业
+	optional sint32			char_level			= 3;//等级 
+	
+};
+message PBMsgRksPlayerPKRequestNotice
+{
+	optional PBMsgPlayerPKRequestNotice pk_notice     = 1;
+	optional uint64                     dst_player_id = 2;// 
+};
+message PBMsgRksPlayerPKForwardNotice
+{
+	optional PBMsgPlayerPKRejectNotice pk_notice     = 1;
+	optional uint64                    dst_player_id = 2;// 
+};
+message PBMsgPlayerPkForwardRequest
+{
+	optional sint64         invite_player_id           = 1;//发起PK实体
+	optional string			player_name				   = 2;
+	optional sint32			char_role			       = 3;//职业
+	optional sint32			char_level			       = 4;//等级 
+	optional sint64		    beinvite_player_id	       = 5;//接收PK实体ID
+};
+message PBRksMsgPlayerPKRequest
+{
+	optional uint32 invite_role_id   = 1;
+	optional uint32 beinvite_role_id = 2;
+}; 
+message PBRksMsgPlayerPKResponse
+{
+	optional sint32 ret_code    = 1;
+	optional uint64 char_id	    = 2;
+};
+message PBRksMsgCancelPlayerPKNotice
+{
+	optional uint32 invite_role_id   = 1;
+};
+message PBRksMsgRejectPlayerPKNotice
+{
+	optional uint32 beinvite_role_id   = 1;
+};
+message PBRksMsgAcceptPlayerPKRequest
+{
+	optional uint32 beinvite_role_id   = 1;
+};
+message PBRksMsgAcceptPlayerPKReponse
+{
+	optional sint32 ret_code    = 1;
+	optional uint64 char_id	    = 2;
+	repeated uint64 player_list = 3;
+	optional string sheet_name  = 4;
+};
+
+message PBRksMsgRemovePlayerPKNotice
+{
+	optional uint32 role_id   = 1;
+};
+
+message PBMsgPlayerPkForwardResponse
+{
+	optional sint32			ret_code			= 1;
+	optional sint64		    invite_player_id	= 2;//
+	optional sint64		    beinvite_player_id	= 3;//接收PK实体ID
+};
+
+
+/// 切磋决定请求
+message PBMsgPlayerPKResponseReport
+{
+	optional bool			accept				= 1;
+};
+message PBMsgPlayerPKRejectNotice
+{
+};
+
+/// 取消切磋请求
+message PBMsgPlayerPKCancelReport
+{
+};
+
+// 切磋结果通知
+message PBMsgPlayerPKResultNotice
+{
+	optional sint32			result				= 1; // PK结果 SINGLEPVP::ESinglePvPResult
+};
+/////////////////////////// 切磋消息   结束//////////////////////////////////////////////

@@ -1,0 +1,133 @@
+option optimize_for = SPEED;
+
+import "msg_base.proto";
+import "msg_item.proto";
+
+enum PBFashionPart
+{
+	enFashion_Head    = 1;
+	enFashion_Clothes = 2;
+	enFashion_Wing    = 3;
+};
+
+//获取衣橱数据
+message PBMsgWardrobeRequest
+{
+}
+message PBMsgWardrobeResponse
+{
+	optional sint32                   ret_code = 1;   //返回码
+	repeated PBMsgWardrobeFashion     fashions = 2;
+}
+message PBMsgWardrobeFashion
+{
+	optional PBFashionPart   part     = 1;   //部位
+	optional sint32          type     = 2;   //服装类型
+	optional bool            is_have  = 3;   //是否有该类型的时装
+	optional PBMsgWardrobe   wardrobe = 4;
+}
+message PBMsgWardrobe
+{
+	optional PBMsgInvGrid         bag_grid = 1;   //包裹格子
+	repeated PBMsgWardrobeItem    items    = 2;
+}
+message PBMsgWardrobeItem
+{
+	optional sint32       slot     = 1;     //物品孔
+	optional PBMsgInvSlot item     = 2;     //物品
+}
+
+//衣橱挂上衣服
+message PBMsgWardrobeHangUpRequest
+{
+	optional PBMsgSlot         src_slot  = 1;
+	optional PBMsgWardrobeSlot dst_slot  = 2;
+}
+message PBMsgWardrobeHangUpResponse
+{
+	optional sint32            ret_code  = 1;
+	optional PBMsgWardrobeSlot dst_slot  = 2;
+}
+
+//衣橱取下衣服
+message PBMsgWardrobeHangDownRequest
+{
+    optional PBMsgWardrobeSlot src_slot  = 1;
+}
+message PBMsgWardrobeHangDownResponse
+{
+	optional sint32            ret_code  = 1;
+	optional PBMsgWardrobeSlot src_slot  = 2;
+}
+
+//开锁衣橱孔
+message PBMsgWardrobeUnlockRequest
+{
+	optional PBMsgWardrobeSlot lock_slot = 1;
+}
+message PBMsgWardrobeUnlockResponse
+{
+	optional sint32            ret_code   = 1;
+	optional PBMsgWardrobeSlot lock_slot  = 2;
+}
+
+//时装外形应用
+message PBMsgFashionShapeApplyRequest
+{
+	optional PBMsgWardrobeSlot shape_slot = 1;
+}
+message PBMsgFashionShapeApplyResponse
+{
+	optional sint32            ret_code      = 1;
+	optional PBMsgWardrobeSlot shape_slot    = 2;
+}
+
+message PBMsgWardrobeSlot
+{
+	optional PBFashionPart  part      = 1;
+	optional sint32         type      = 2;        //
+	optional uint32         slot      = 3;
+}
+
+//恢复
+message PBMsgRestoreFashionShapeRequest
+{
+	optional PBFashionPart  part     = 1;
+}
+
+message PBMsgRestoreFashionShapeResponse
+{
+	optional sint32         ret_code = 1;
+	optional PBFashionPart  part     = 2;
+}
+
+//装备衣橱的衣服
+message PBMsgEquitWardrobeFashionRequest
+{
+	optional PBMsgWardrobeSlot equit_slot = 1;
+};
+
+message PBMsgEquitWardrobeFashionResponse
+{
+	optional sint32              ret_code   = 1;
+	optional PBMsgWardrobeSlot   equit_slot = 2;
+};
+enum PBWardrobeOper
+{
+	enWardrobe_Add    = 1;
+	enWardrobe_Remove = 2;
+	enWardrobe_Update = 3;
+};
+
+message PBMsgWardrobeChangeNotice
+{ 
+	optional PBWardrobeOper    op   = 1;
+	optional PBMsgWardrobeSlot slot = 2;
+	optional PBMsgInvSlot      item = 3;
+};
+
+
+
+
+
+

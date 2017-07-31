@@ -1,0 +1,138 @@
+/// @brief 超链接的配置
+
+import "tmpl_base.proto";
+
+message PBConfigMarriage
+{
+	optional PBConfigMarryCondition		marry_condition_cfg		= 1; // 结婚条件
+	optional PBConfigMarry				marry_cfg				= 2; // 结婚配置
+	optional PBConfigDivorceCondition	divorce_condition_cfg	= 3; // 离婚条件
+	optional PBConfigDivorce			divorce_cfg				= 4; // 离婚配置
+	optional PBConfigMarryMarch			march_cfg				= 5; // 游街配置
+	optional PBConfigWedding			wedding_cfg				= 6; // 喜宴配置
+}
+
+message PBConfigMarriageCost
+{
+	repeated PBTemplateItemQuantity		price	= 1;	// 消耗列表
+}
+
+message PBConfigMarryCondition
+{
+	optional sint32	is_allow_same_sex			= 1;	// 是否允许同性结婚（台湾人民的热情需求）
+	optional PBConfigMarriageCost	price_list	= 2;	// 消耗的钱币
+	optional sint32	min_level_male				= 3;	// 结婚的性别男最小等级
+	optional sint32	min_level_female			= 4;	// 结婚的性别女最小等级
+	optional sint32	max_level_gap				= 5;	// 结婚的等级差距
+	optional sint32	min_friend_point			= 6;	// 结婚的亲密度
+	optional PBConfigMarriageCost have_equip_list	= 7;	// 结婚信物
+}
+
+message PBConfigMarryDyTitle
+{
+	optional string	title_sheet					= 1;	// 结婚动态称号
+	optional sint32	relation_type				= 2;	// 结婚动态称号关系类型 1.妻子 2.丈夫
+}
+
+message PBConfigMarry
+{
+	optional sint32	max_member_ack_second		= 1;	// 结婚的队员确认最大时常，也是服务器结婚列表存在的最大时长
+	optional PBConfigMarriageCost	success_gain_list			= 2;	// 结婚成功后给予双方道具
+	optional string	success_freind_mail			= 4;	// 结婚成功后给予双方好友邮件
+	repeated string	success_gain_title			= 5;	// 结婚成功后给予双方称号
+	optional string	success_server_notice		= 6;	// 结婚成功后全服滚屏公告
+	optional sint32	max_success_gain_item_exp	= 7;	// 结婚成功后给予双方道具添加经验的上限
+	optional sint32	add_exp_percent				= 8;//[default=500];	// 结婚给的经验加成，万分比
+	repeated PBConfigMarryDyTitle	check_dytitle	= 9;	// 结婚成功后给予双方动态称号校正
+}
+
+message PBConfigDivorceCondition
+{
+	optional PBConfigMarriageCost deal_cost_list	= 1;	// 协议离婚消耗的钱币
+	optional PBConfigMarriageCost force_cost_list	= 2;	// 强制离婚消耗的钱币
+}
+
+message PBConfigDivorce
+{
+	optional sint32	max_member_ack_second		= 1;	// 离婚的队员确认最大时常，也是服务器结婚列表存在的最大时长
+	optional string	success_mail				= 2;	// 离婚成功后给予双方邮件
+	optional sint32	success_deal_friend_point	= 3;	// 协议离婚成功后双方亲密度
+	optional sint32	success_force_friend_point	= 4;	// 强制离婚成功后双方亲密度
+	optional string	success_server_notice		= 5;	// 离婚成功后全服滚屏公告
+}
+
+message PBConfigMarryMarch
+{
+	repeated PBConfigMarryMarchItem	march_list	= 1;	// 游街的选项列表
+	optional sint32	board_exp_tick_second		= 2;	// 游街的广播经验时间戳（毫秒）
+	optional sint32	board_exp_rudis				= 4;	// 游街的广播经验半径
+	optional sint32	board_exp_limit				= 5;	// 游街的广播经验每天限制次数
+	optional sint32	board_flower_tick_second	= 6;	// 游街的广播鲜花时间戳（毫秒）
+	optional sint32	board_flower_nor_buff		= 7;	// 游街的广播鲜花普通buff
+	optional sint32	board_flower_nor_msecond	= 8;	// 游街的广播鲜花普通buff时间（毫秒）
+	optional sint32	board_flower_sp_buff		= 9;	// 游街的广播鲜花最后buff
+	optional sint32	board_flower_sp_msecond		= 10;	// 游街的广播鲜花最后buff时间（毫秒）
+	optional sint32	board_flower_rudis			= 11;	// 游街的广播鲜花半径
+	optional sint32	march_alive_msecond			= 12;//[default=600000];	// 游街的超时，缺省10分钟
+	optional sint32	board_link_notice_msecond	= 13;//[default=60000];	// 游街的广播快速进入时间戳（毫秒），缺省10分钟
+	optional sint32	board_flower_mount_buff		= 14;	// 每次触发捧花时，给新郎、新娘加的BUFF;
+	optional sint32	board_flower_mount_buff_time= 15;	// 每次触发捧花时，给新郎、新娘加的BUFF持续时间（毫秒）;
+}
+
+message PBConfigMarryMarchItem
+{
+	optional sint32 type						= 1;	// 婚礼类型 1.普通 2.高级
+	repeated PBConfigMarryMarchCommandSet command_set_list	= 2;	// 命令列表
+	optional PBConfigMarriageCost cost_list		= 3;	// 游街的钱币
+	optional string	ride_group_name				= 4;	// 游街的挂载NPC组名
+	optional string	board_exp_table				= 5;	// 游街的广播经验值表
+	optional PBConfigMarryMarchCommandSet timeout_command_set	= 6;	// 超时特殊命令
+}
+
+message PBConfigMarryMarchCommandSet
+{
+	optional sint32 start_mic_second			= 1;	// 开始的毫秒
+	repeated PBConfigMarryMarchCommand	command_list	= 2;	// 命令列表
+}
+
+message PBConfigMarryMarchCommand
+{
+	optional string comand_name					= 1;	// 命令名
+	optional sint32 pos_x						= 2;	// 位置x
+	optional sint32 pos_y						= 3;	// 位置y
+	optional string	group_name					= 4;	// npc的组名
+	optional sint32	map_id						= 5;	// npc的mapid
+	optional sint32	sleep_msecond				= 6;	// 暂停时间，什么也不做
+	repeated PBTemplateVector2d	dest_pos		= 7;	// 位置列表
+}
+
+message PBConfigWeddingDraw
+{
+	optional sint32 draw_type					= 1;	// 闹洞房类型 msg_dungeon.proto 中 PBWeddingDrawType
+	optional string draw_sheet					= 2;	// 掉落sheet
+	optional sint32 draw_price					= 3;	// 闹洞房价格
+	optional sint32 max_draw_times              = 4;    // 闹洞房最大次数
+}
+
+message PBConfigWedding
+{
+	optional sint32 wedding_create_price		= 1;//[default=10000000];	// 创建喜宴价格
+	optional string wedding_dg_sheet			= 2;//[default="437401000.dungeon"];	// 喜宴副本sheet
+	optional sint32 wedding_default_ticket_num	= 3;//[default=10];		// 喜宴初始可进人数
+	optional sint32 wedding_buy_ticket_price	= 4;//[default=10000000];	// 购买wedding_num_every_buy个进入喜宴人数的价格
+	optional sint32 wedding_ticketnum_every_buy	= 5;//[default=10];		// 每次购买的次数
+	optional sint32 remind_wedding_sec			= 6;//[default=1500];		// 开启拜堂提示时间
+	optional sint32 auto_wedding_sec			= 7;//[default=1530];		// 自动开启拜堂的时间
+	optional sint32 wedding_exp_interval_sec	= 8;//[default=30];		// 每隔多少秒喜宴中的人加经验
+	optional sint32	wedding_exp_end_sec			= 9;//[default=600];		// 创建喜宴后增加经验的时限
+	optional string	wedding_exp_table			= 10;					// 喜宴经验值表（.xp_table）
+	optional sint32 wedding_soft_max_ticket		= 11;//[default=100];		// 喜宴门票软上限
+	repeated string candy_npc					= 12;					// 喜糖NPC ai group name
+	optional sint32 candy_price					= 13;//[default=87654];	// 撒喜糖价格
+	optional sint32 eat_candy_num_limit			= 14;//[default=6];		// 吃喜糖次数
+	optional string candy_npc_sheet				= 15;					// 喜糖NPC sheetName
+	repeated PBConfigWeddingDraw wedding_draw	= 16;					// 闹洞房配置
+	optional sint32 wedding_exp_cnt_limit		= 17;//[default=1200];		// 在喜宴中获取经验的最大次数
+	optional sint32 wedding_couple_buff			= 18;					// 进入喜宴给新郎新娘加的BUFF
+	optional sint32 candy_npc_birth_quantity	= 19;//[default=3];		// 购买喜糖NPC时，每次出现的NPC数量
+}

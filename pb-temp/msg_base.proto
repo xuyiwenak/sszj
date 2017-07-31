@@ -1,0 +1,35 @@
+option optimize_for = SPEED;				
+
+//import "google/protobuf/descriptor.proto";
+
+import "msg_id_define.proto";
+
+
+// 奖励
+message PBMsgReward
+{
+	optional uint32	reward_sheed_id		= 1;	// 奖励的sheetID
+	optional sint32	num					= 2;	// 数量
+	optional bool	binded				= 3;	// 是否绑定 true:绑定 false：非绑定
+};
+
+
+enum PBParamColorType
+{
+	enColor_None						= 0;	// 无
+	enColor_Class						= 1;	// 根据品质显示颜色
+};
+
+message PBParam
+{
+	optional uint32				param_type	= 1;	//参数类型，是key(1)还是value(2);
+	optional string				param_str	= 2;
+	optional PBParamColorType	param_color	= 3;	//是否带颜色
+};
+
+message PBAIVector				
+{
+	optional float	x				= 1;	// X
+	optional float	y				= 2;	// Y
+}
+

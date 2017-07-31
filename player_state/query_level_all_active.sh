@@ -1,0 +1,1 @@
+mysql -usszj -pDR9m_wqsgF8a -P3306 data_stat_ss -e "select level, count(*) from money_state where unix_timestamp(now())  - last_quittime < 3600 * 24 * 7 group by level" > ./level_all_active_20170712.txt

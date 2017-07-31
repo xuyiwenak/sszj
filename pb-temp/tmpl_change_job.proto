@@ -1,0 +1,45 @@
+import "tmpl_base.proto";
+
+message PBChangeJobCfg
+{
+	optional	sint32					require_level	= 1;	//需要的等级
+	optional	sint32					money_remission_rate	= 2;	//技能升级消耗 铜钱返还比例  万分比
+	optional	sint32					zhenqi_remission_rate	= 3;	//技能升级消耗 真气返还比例  万分比
+	repeated	PBChangeJobCost			cost_list	= 4;	//消耗列表
+	repeated	PBRoleJuejiSKillBook	book_list	= 5;	//角色技能书列表
+	optional	sint32					times		= 6;	//每天转职的次数
+	repeated	PBChangeJobMoneyItem	money_item_list	 = 7; // 转换金币道具列表
+	repeated	PBChangeJobZhenQiItem	zhenqi_item_list = 8; // 转换真气道具列表
+};
+
+message PBChangeJobCost
+{
+	optional	string	sheet_id	= 1;	//消耗的物品sheet	
+	optional	sint32	cost_num	= 2;	//数量
+}
+
+message PBRoleJuejiSKillBook
+{
+	optional	sint32	role		= 1;	//技能ID
+	repeated	PBSkillBookList	book	= 2;	
+}
+
+message PBSkillBookList
+{
+	optional	sint32	book_lv		= 1;	//技能书等级
+	optional	string	book_sheet	= 2;	//技能书sheeet
+}
+
+// 兑换铜钱
+message PBChangeJobMoneyItem
+{
+	optional	sint32  exchange_vaule	= 1;	//换算的数值
+	optional	string	sheet_id		= 2;	//换算成的道具
+}
+
+// 兑换真气
+message PBChangeJobZhenQiItem
+{
+	optional	sint32  exchange_vaule	= 1;	//换算的数值
+	optional	string	sheet_id		= 2;	//换算成的道具
+}

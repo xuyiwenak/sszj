@@ -1,0 +1,44 @@
+option optimize_for = SPEED;
+
+import "msg_base.proto";
+import "msg_item.proto";
+
+//心法界面请求
+message PBMsgXinfaInfoRequest
+{
+	
+};
+
+//心法界面回复
+message PBMsgXinfaInfoResponse
+{
+	optional sint32			ret_code			= 1;	// 返回值;
+	repeated PBXinfaItem	item_list			= 2;
+	optional uint32			total_battle_score	= 3;	// 总战力;
+};
+
+//心法修炼请求
+message PBMsgXinfaUpgradeRequest
+{
+	optional uint32 slot_id			= 1;	// 孔;
+};
+
+//心法修炼回复
+message PBMsgXinfaUpgradeResponse
+{
+	optional sint32			ret_code			= 1;	// 返回值;
+	optional PBXinfaItem	item				= 2;
+	optional uint32			total_battle_score	= 3;	// 总战力;
+	optional float			multiple			= 4;	// 倍数;
+};
+
+message PBXinfaItem
+{
+	optional uint32 slot_id			= 1;	// 孔;
+	optional uint32 xinfa_type		= 2;	// 类型,对应EXinfa_Type;
+	optional uint32 cur_level		= 3;	// 当前等级;
+	optional uint32 cur_exp			= 4;	// 当前经验;
+	optional uint32 battle_score	= 5;	// 战力;
+	optional uint32 pro_value		= 6;	// 属性值;
+	optional uint32 next_pro_value	= 7;	// 下一级属性值;
+};

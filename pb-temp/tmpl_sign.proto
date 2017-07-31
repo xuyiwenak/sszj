@@ -1,0 +1,114 @@
+
+import "tmpl_base.proto";
+
+
+message PBSignOccBaseCfgList
+{
+	repeated	PBSignOcuBaseConfig cfgList = 1;
+}
+
+message PBSignOcuBaseConfig
+{
+	optional	sint32	occu = 1;	//职业
+	optional	PBSignBaseConfig basecof = 2;
+}
+
+message PBSignBaseConfig
+{
+	optional	PBNewerSign		newsign_list	= 1;	//新手签到
+	optional	PBMonthSign		monthsign_list	= 2;	//月签到
+	optional	PBLevelReward	levelreward_list	= 3;	//等级奖励
+	optional	PBOnlineReward	onlinereward_list	= 4;	//在线奖励
+	optional	PBAddEnergyList add_energy_list		= 5;
+}
+
+
+message PBNewerSign
+{
+	optional	string	name	= 1;
+	repeated	PBNewersignReward	newsign_reward	= 2;	//奖励列表
+	optional	string	atlas_name = 3;
+	optional	string	sprite_name = 4;
+	optional	string	sheet = 5;
+	optional	string	avaterSheetName = 6;
+}
+
+message PBNewersignReward
+{
+	optional	sint32	id = 1;	// ID
+	repeated	Item	item_list	= 2; //物品
+}
+
+message PBMonthSign
+{
+	optional	string	name = 1;
+	optional	string 	cost_sheet = 2;	//补签消耗的sheetID
+	optional	sint32	cost_num = 3;	//补签小号的数量
+	repeated	PBMonthsignReward	monthsign_reward = 4;
+	optional	string	buqian_sprite = 5;
+	optional	string	lingqu_sprite = 6;
+	optional	string	vip_sprite	= 7;
+	optional	string	daytag_sprite = 8;
+	optional	string	avaterSheetName = 9;
+}
+
+message PBMonthsignReward
+{
+	optional	sint32	id	= 1;
+	optional	sint32	vip = 2;
+	optional	sint32	times 	= 3;
+	optional	string	sheet	= 4;
+	optional	sint32	quantity	= 5;
+	optional	bool	isdaytag	= 6;
+}
+
+message PBLevelReward
+{
+	optional	string	name	= 1;
+	repeated	PBLevelRewardList	levelreward_list	= 2;
+	optional	string	avaterSheetName = 3;
+}
+
+message PBLevelRewardList
+{
+	optional	sint32	id	= 1;
+	optional	sint32	level = 2;
+	repeated	Item	item_list	= 3;
+}
+
+message PBOnlineReward
+{
+	optional	string	name	= 1;
+	repeated	PBOnlineRewardList	onlinereward_list	= 2;
+	optional	string	avaterSheetName = 3;
+}
+
+message PBOnlineRewardList
+{
+	optional	sint32	id	= 1;
+	optional	sint32	need_second = 2;
+	repeated	Item	item_list	= 3;
+}
+
+message Item
+{
+	optional	string	sheet	= 1;	//物品sheet
+	optional	sint32	quantity	= 2;	//物品数量
+}
+
+message PBAddEnergyList
+{
+	repeated	PBAddEnergyCfg	add_energy	= 1;
+	optional	string	avaterSheetName = 2;
+}
+
+message PBAddEnergyCfg
+{
+	optional	sint32	start_time		= 1;	// 开始时间
+	optional	sint32	end_time		= 2;	// 结束时间
+	optional	string	energy_item		= 3;	// 鸡腿sheet
+	optional	sint32	id				= 4;
+	optional	string	label_text		= 5;
+	optional	string	atlas_name		= 6;
+	optional	string	sprite_name		= 7;
+};

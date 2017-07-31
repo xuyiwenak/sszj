@@ -1,0 +1,100 @@
+import "msg_base.proto";
+import "msg_common.proto";
+import "tmpl_base.proto";
+
+// 阵营转换检查消息
+message PBMsgCheckTransCampRequest
+{
+
+};
+
+message PBMsgCheckTransCampResponse
+{
+	optional sint32 ret_code 					= 1;	
+	repeated PBMsgTransCampInfo camp_list		=  2; // 阵营信息
+};
+
+message PBMsgTransCampInfo
+{
+	optional sint32 camp_id 					= 1;// 阵营
+	optional sint32 camp_score					= 2;// 战力
+	optional PBTemplateItemQuantityList camp_cost			= 3;// 物品消耗
+	optional PBTemplateItemQuantityList camp_gain			= 4;// 物品奖励
+	optional sint32 camp_rank					= 5;// 排名
+};
+
+
+// 准备转阵营
+message PBMsgReadyTransCampRequest
+{
+	optional sint32 dest_camp_id 				= 1;// 目的阵营
+}
+
+message PBMsgReadyTransCampResponse
+{
+	optional sint32 ret_code					= 1;
+	optional sint32 dest_camp_id 				= 2;// 目的阵营
+}
+
+// 单人申请
+message PBMsgTransCampSingleRequest
+{
+	optional sint32 dest_camp_id 				= 1;// 目的阵营
+}
+
+message PBMsgTransCampSingleResponse
+{
+	optional sint32 ret_code					= 1;
+}
+
+// 队长申请
+message PBMsgTransCampLeaderRequest
+{
+	optional sint32 dest_camp_id 				= 1;// 目的阵营
+}
+
+message PBMsgTransCampLeaderResponse
+{
+	optional sint32 ret_code					= 1;
+}
+
+
+// 通知队原确认
+message PBMsgTransCampMemberNotice
+{
+	optional sint32 ret_code					= 1;
+	optional string parter_name					= 2; // 搭档名字
+	optional sint32 dest_camp					= 3; // 目标阵营
+	optional sint32 wait_second					= 4; // 等待的时间（秒数）
+};
+
+// 通知队长等待时间
+message PBMsgTransCampWaitNotice
+{
+	optional sint32 wait_second					= 1; // 等待的时间（秒数）
+}
+
+
+// 队员同意
+message PBMsgTransMemberOkRequest
+{
+}	
+message PBMsgTransMemberOkResponse
+{
+	optional sint32	ret_code					= 1;
+}
+
+// 队员拒绝
+message PBMsgTransMemberCancelRequest
+{
+}
+message PBMsgTransMemberCancelResponse
+{
+	optional sint32 ret_code					= 1;
+}
+
+// 阵营转换成功
+message PBMsgTransCampSuccessNotice
+{
+	optional sint32 new_camp_id					= 1;
+}

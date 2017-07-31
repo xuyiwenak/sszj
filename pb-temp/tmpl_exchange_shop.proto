@@ -1,0 +1,146 @@
+/// @brief	template for config of exchange_shop
+/// @author	Deng Lichuan
+
+import "tmpl_base.proto";
+
+// 运营活动兑换
+message PBExchangeShopCfg
+{
+	repeated PBTmplExchangeShop	shop_list			= 1; // 活动列表
+};
+
+// 游戏道具兑换
+message PBGameExchangeShopCfg
+{
+	repeated PBTmplExchangeShop	shop_list			= 1; // 活动列表
+};
+
+// 活动兑换商品信息定义
+message	PBTmplExchangeShop
+{
+	optional sint32				shop_id				= 1; // 活动ID
+	optional string				shop_name			= 4; // 活动名
+	optional sint32				shop_type			= 5; // 活动类型
+	repeated PBTmplExchangeTimeList	exchange_time_list	= 6; // 活动时间列表
+};
+
+message	PBTmplExchangeTimeList
+{
+	repeated PBTmplExchangeTime	exchange_times		= 1; // 开放时间列表
+	repeated PBTmplExchangeItem	exchange_items		= 2; // 兑换列表
+	optional sint32				is_unlimit_time		= 3; // 是否无限时
+};
+
+// 活动兑换商品信息定义
+message	PBTmplExchangeItem
+{
+	optional sint32				goods_id			= 1; // 商品ID
+	repeated PBTemplateItemQuantity	src_items		= 2; // 兑换源物品
+	repeated PBTemplateItemQuantity	dest_items		= 3; // 兑换目的物品
+	optional sint32				person_count		= 4; // 个人兑换次数限制
+	optional sint32				camp_count			= 5; // 阵营兑换次数限制
+	optional sint32				server_count		= 6; // 全服兑换次数限制
+	optional sint32				is_vip_count		= 7; // 是否有VIP兑换次数限制
+	optional sint32				is_daily_clear		= 8; // 是否每日清空次数限制，如果没有就是活动时间到期次数清空
+	optional sint32				check_world_level	= 9;//[default=0]; // 检查的世界等级数
+	optional sint32       shop_id  = 10;        //商店Id，程序赋值，不配置
+};
+
+// 活动兑换时间
+message	PBTmplExchangeTime
+{
+	optional string				start_time			= 1; // 开始时间
+	optional sint32				duration_hour		= 2; // 持续时间（小时）
+	optional sint32				is_new_server		= 3; // 是否关联新服时间
+	optional sint32				start_new_server_hour = 4; // 新服开始的天数
+}
+
+enum ESiftType 
+{
+	EST_Hot  = 0;//	热销
+	EST_Equip = 1; //  装备
+	EST_Designer = 2;//	卷轴
+	EST_Pet	= 3;//	宠物
+	EST_Material = 4;//	材料
+	EST_ItemDesigner = 5;//	道具卷轴
+	EST_Other	= 6;//	其他
+} 
+
+message PBConsignSearchCfg
+{
+	optional	PBTradeListCfg trade_config = 1;
+	optional	PBSiftListCfg	sift_config = 2;
+	optional	PBHotItemCfg	hotitem_config = 3;	//热销配置
+}
+
+message PBTradeListCfg
+{
+	repeated	PBTradeCfg trade = 1;
+}
+
+message PBTradeCfg
+{
+	optional	string	name	 = 1;
+	optional	sint32	sifttype = 2;
+	repeated	PBItemCfg	item = 3;
+	optional	string	search	 = 4;
+	optional	string	itemtype = 5;
+}
+
+message PBItemCfg
+{
+	optional	string		name = 1;	// 搜索小类型
+	optional	string		showsheetname = 2;
+	optional	string		sprite = 3;
+	repeated	PBTypeItem	typeItem = 4;	// 子搜索条件
+}
+
+message PBTypeItem
+{
+	optional	sint32	sitetype = 1;
+}
+
+message PBSiftListCfg
+{
+	repeated	PBSiftCfg	sift	= 1;
+}
+
+message PBSiftCfg
+{
+	optional	sint32					type	= 1;
+	optional	string					name	= 2;
+	repeated	PBSearchConditionCfg	item	= 3;
+	optional	sint32					defaultindex = 4;		
+}
+
+message PBSearchConditionCfg
+{
+	optional	sint32	index = 1;	
+	optional	string	key	= 2;
+	optional	sint32	suit = 3;//[default=0];	// 职业 
+	optional	sint32	start = 4;//[default=0];	// 起始等级
+	optional	sint32	end	= 5;//[default=200];	// 终止等级
+	optional	sint32	class = 6;//[default=-1];	// 品阶
+	optional	sint32	ug = 7;//[default=-1];		// 宠物成长
+}
+
+message PBHotItemCfg
+{
+	repeated	PBHotItem hotitem = 1;
+}
+
+message PBHotItem
+{
+	optional	string	item = 1;	//热销sheeet
+	optional	sint32	buy_times = 2;	//被购买次数
+}
+
+message PBConsignBlack
+{
+	repeated PBRole	role = 1;	//玩家roleID
+}
+
+message PBRole
+{
+	optional sint32 roleid = 1;
+}

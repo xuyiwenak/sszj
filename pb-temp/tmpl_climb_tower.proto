@@ -1,0 +1,80 @@
+/// @brief	template for config of climb tower
+
+import "tmpl_base.proto";
+
+message PBClimbTowerCfg
+{
+	repeated PBTowerList				tower_list		= 1;
+	optional PBTowerRush			tower_rush_info		= 2;
+};
+
+message PBTowerList
+{
+	optional sint32						difficulty		= 1;
+	repeated PBTower					tower			= 2;
+	repeated PBTowerAward				first_award		= 3;
+	repeated PBTowerAward				stage_award		= 4;
+	repeated PBTowerAward				award_preview	= 5;
+};
+
+enum PBETowerType
+{
+	eTowerType_None				= 0; // 非法
+	eTowerType_DoubleDamage		= 1; // 造成伤害和受到伤害翻倍
+	eTowerType_LimitTime		= 2; // 限定时间通关本层
+	eTowerType_ProtectNPC		= 3; // 系统刷出一个NPC，玩家需要保证通关时NPC不死
+	eTowerType_SkillNoCD		= 4; // 技能无冷却，但是消耗翻倍，杀死怪物会回复部分法力值
+	eTowerType_AutoAOE			= 5; // 每10秒一次全屏AOE，对玩家和怪物都造成伤害
+	eTowerType_Recover			= 6; // 受到伤害会回复等量的法力值，消耗法力值会回复等量的生命值，怪物每10秒回复一次生命值（10%）
+}
+
+message PBTower
+{
+	optional sint32						layer			= 1;
+	optional string						dungeon_name	= 2;
+	optional PBETowerType				type			= 3;//[default=eTowerType_None];
+	optional sint32						param1			= 5;
+	optional string						img				= 6;
+	optional string						num1			= 7;
+	optional string						num2			= 8;
+	optional string						atlas			= 9;
+	optional string						award1			= 10;
+	optional string						award2			= 11;
+	optional string						award3			= 12;
+};
+
+message PBTowerAward
+{
+	optional sint32						layer			= 1;
+	repeated PBTowerAwardItem			award			= 2;
+	optional sint32						recommond_battle= 3;
+};
+
+message PBTowerAwardItem
+{
+	optional string						item_name		= 1;
+	optional sint32						item_num		= 2;
+};
+
+
+message PBTowerRush
+{
+	optional string	rush_cost_sheet		= 1;	//扫荡消耗sheet
+	optional sint32 rush_cost_num		= 2;	//扫荡消耗的数量
+	optional string cd_sheet			= 3;	//清除扫荡cd的sheet
+	optional sint32	cd_num				= 4;	//清除扫荡cd的sheet数量
+	repeated PBTowerRunshInfo			tower_rush	= 5;
+}
+
+message PBTowerRunshInfo
+{
+	optional sint32 layer			= 1;	//层数
+	optional string drop_table		= 2;	//掉落表
+	optional PBTowerAIGroup ai_bot	= 3;	//怪物组名
+	optional sint32 rush_cd			= 4;	//扫荡cd
+}
+
+message PBTowerAIGroup
+{
+	repeated string ai_groupname	= 1;	//怪物组名
+}

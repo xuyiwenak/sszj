@@ -1,0 +1,20 @@
+import "tmpl_base.proto";
+
+// 配置数据结构;
+message ILucky99Lottery
+{
+	optional VacuumPhase vacuum_phase	= 1;
+};
+
+message VacuumPhase
+{
+	repeated VacuumPhaseList vacuum_list	= 1;
+};
+
+message VacuumPhaseList
+{
+	optional sint32 start_week		= 1;
+	optional sint32 start_hour		= 2;
+	optional sint32 end_week		= 3;
+	optional sint32 end_hour		= 4;
+}

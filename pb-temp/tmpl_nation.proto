@@ -1,0 +1,16 @@
+import "tmpl_base.proto";
+import "msg_common.proto";
+
+// 阵营结盟
+message PBCampUnionCfg
+{
+	optional	sint32 func_open		= 1;//[default=1];				// 功能开启：1开启，0关闭
+	optional	sint32 notice_time		= 2;//[default=0];				// 公告时间间隔：分钟
+	optional	sint32 battle_per		= 3;//[default=0];				// 战力万分比
+}
+
+// 国家配置
+message PBNationCfg
+{
+	optional PBCampUnionCfg	camp_union_cfg	= 1;
+};

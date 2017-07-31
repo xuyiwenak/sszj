@@ -1,0 +1,22 @@
+import "tmpl_base.proto";
+import "msg_common.proto";
+
+
+message PBBaseInfo
+{
+	optional int32 draw_reward_ub_cost			= 1;//[default=10];	// 额外抽奖所花费的元宝数
+}
+
+message PBGiveBackCond
+{
+	optional int32 max_killed					= 1;//[default=0];		// 杀死的怪物最大不超过此数
+}
+
+// 
+message PBConfigDungeon
+{
+	optional int32 enter_confirm_time			= 1;//[default=15];	// 组队副本进副本前的确认倒计时 单位秒
+	optional int32 wildboss_damageclear_time	= 2;//[default=30];
+	optional PBBaseInfo		base_info			= 3;				// 
+	optional PBGiveBackCond	give_back_cond		= 4;				// 归还扣除的条件
+};

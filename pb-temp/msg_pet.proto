@@ -1,0 +1,552 @@
+import "msg_base.proto";
+import "msg_skill.proto";
+import "msg_pet_equip.proto";
+
+enum EPetGuardConfigVersion	
+{
+	EPetGuardConfig_Config1       	= 1;	//原配置
+	EPetGuardConfig_Config2					= 2;	//新配置
+};
+
+// 宠物位置同步请求
+message PBPetPosUpdateReport
+{
+	optional sint32	pos_x					= 1; // 同步坐标X
+	optional sint32	pos_y					= 2; // 同步坐标Y
+	optional sint32	pos_next_x				= 3; // 下个同步坐标X
+	optional sint32	pos_next_y				= 4; // 下个同步坐标Y
+	optional float	head					= 5; // 朝向
+	optional uint32	reason					= 6; // 原因
+}
+
+
+// 宠物位置同步回复
+message PBPetClientPosNotice
+{
+	optional int32 x						= 1; // X
+	optional int32 y						= 2; // Y
+	optional int32 z						= 3; // Z
+	optional float heading					= 4; // 朝向
+	optional uint32 map_id					= 5; // 地图
+}
+
+// 宠物出战请求
+message PBPetActiveRequest
+{
+	optional uint64	entity_id				= 1; // 宠物实体ID
+	optional sint32	pos_x					= 2; // 宠物坐标X
+	optional sint32	pos_y					= 3; // 宠物坐标Y
+	optional sint32	ins_number				= 4; // 副本ID
+}
+
+message PBPetActiveResponse
+{
+	optional uint32	ret_code				= 1; // 错误码;
+	optional uint64	entity_id				= 2; // 宠物实体ID
+	optional PBParam code_param				= 3; // 结果码参数
+}
+
+// 宠物收回请求
+message PBPetDeactiveRequest
+{
+	optional uint64	entity_id				= 1; // 宠物实体ID
+}
+
+message PBPetDeactiveResponse
+{
+	optional uint32	ret_code				= 1; // 错误码;
+	optional uint64	entity_id				= 2; // 宠物实体ID
+	optional uint32	reason					= 3; // 原因;
+}
+
+message PBPetBaseProperty
+{
+	repeated sint32 property				= 1; // 一级属性值
+};
+
+message PBPetProperty
+{
+	optional uint32	str						= 1; // 力量
+	optional uint32	con						= 2; // 体质
+	optional uint32	sta						= 3; // 敏捷
+	optional uint32	wis						= 4; // 智力
+	optional uint32	spr						= 5; // 精神
+	optional uint32	cur_hp					= 6; // 当前血
+	optional uint32	max_hp					= 7; // 最大血
+	optional uint32	cur_mp					= 8; // 当前蓝
+	optional uint32	max_mp					= 9; // 最大蓝
+	optional uint32	cur_ap					= 10;// 当前怒
+	optional uint32	max_ap					= 11;// 最大怒
+	optional uint32	phy_attack_max			= 12;// 物理攻击最大值
+	optional uint32	phy_attack_min			= 13;// 物理攻击最小值
+	optional uint32	mag_Attack_max			= 14;// 法术攻击最大值
+	optional uint32	mag_Attack_min			= 15;// 法术攻击最小值
+	optional uint32	phy_defence				= 16;// 物理防御值
+	optional uint32	mag_defence				= 17;// 法术防御值
+	optional uint32	phy_dodge				= 18;// 物理闪避
+	optional uint32	mag_dodge				= 19;// 法术闪避
+	optional uint32	phy_accurate			= 20;// 物理命中
+	optional uint32	mag_accurate			= 21;// 法术命中
+	optional uint32	phy_bonus				= 22;// 物理致命
+	optional uint32	mag_bonus				= 23;// 法术致命
+	optional uint32	break					= 24;// 破盾值
+	optional uint32	parry					= 25;// 格挡值
+};
+
+message PBPetSkillList
+{
+	repeated PBSkillInfo skill				= 1; // 技能
+	repeated PBSkillInfo replace_skill		= 2; // 替换技能
+};
+
+message PBPetInfo
+{
+	optional uint64	entity_id				= 1; // 宠物实体ID
+	optional uint32	modify_type				= 2; // 修改的标记类型 参照PETTYPE::TPetModifyType
+	optional uint32	level					= 3; // 宠物等级
+	optional string	name					= 4; // 宠物名字
+	optional uint32	sheet_id				= 5; // 宠物sheetid
+	optional sint64	exp						= 6; // 宠物经验
+	optional PBPetProperty property			= 7; // 宠物属性
+	repeated PBPetSkillList skill_list		= 8; // 技能
+	optional PBPetBaseProperty grow_pro_temp= 9; // 培养的资质变化值
+	optional sint32	grow_status				= 10;// 培养的状态
+	optional PBPetBaseProperty grow_pro		= 11;// 培养的资质
+	optional sint32	life					= 12;// 宠物寿命
+	optional sint32	battle_score			= 13;// 宠物战斗力
+	optional sint32	grow_battle				= 14;// 二级属性成长率
+	optional sint32	grow_battle_max			= 15;// 二级属性成长率最大值
+	optional sint32	savvy					= 16;// 悟性
+	optional sint32	savvy_item_count		= 17;// 悟性特殊丹药使用数量
+	optional sint32	bind					= 18;// 绑定
+	optional PBPetRenaReplaceInfo rena_replace	= 19;	//还童替换
+	optional sint32	grow_success_times		= 20; //	培养必成次数
+	optional sint32	grow_success_times_show	= 21; //	培养必成次数是否显示
+	repeated PBPetForget  forget_item		= 22; // 摘技能书幸运数字
+	optional PBPetRenaIntellReplaceInfo	intell_rena = 23;	//资质还童数据
+	optional sint32 guard_battle_score = 24;   // 守护加成战力
+	optional sint32 next_level_guard_battle_score = 25;   // 下一级守护加成战斗力
+	repeated PBPetEquipClass equip_class = 26; // 宠物装备
+};
+
+message PBPetForget
+{
+	optional uint32 skill_lv				= 1; // 技能等级;
+	optional float	forget_lucky			= 2; // 技能幸运信息;
+}
+
+
+message PBPetRenaReplaceInfo
+{
+	optional EPetRenascenceType	rena_type	= 1; //还童类型
+	optional uint32	str						= 2; // 力量
+	optional uint32	con						= 3; // 体质
+	optional uint32	sta						= 4; // 敏捷
+	optional uint32	wis						= 5; // 智力
+	optional uint32	spr						= 6; // 精神
+	optional sint32	grow_battle				= 7; // 二级属性成长率
+	optional sint32 grow_battle_max			= 8;
+	repeated PBPetSkillList skill_list		= 9; // 技能
+};
+
+message PBPetRenaIntellReplaceInfo
+{
+	optional uint32	str						= 2; // 力量
+	optional uint32	con						= 3; // 体质
+	optional uint32	sta						= 4; // 敏捷
+	optional uint32	wis						= 5; // 智力
+	optional uint32	spr						= 6; // 精神
+	optional sint32 battlescore_change		= 7; // 战力变化值
+};
+
+message PBPetListNotice
+{
+	optional uint32	op_type					= 1; // 操作类型 参照PETTYPE::TPetOpType
+	repeated PBPetInfo pet_list				= 2; // 宠物信息列表
+	optional uint64	active_id				= 3; // 出战宠
+	optional uint32	buy_slot				= 4; // 购买的栏位
+	optional PBPetGuardInfo guard_info = 5; // 守护宠物信息 
+}
+
+
+// 宠物放生请求
+message PBPetDeleteRequest
+{
+	optional uint64	entity_id				= 1; // 宠物实体ID
+}
+
+message PBPetDeleteResponse
+{
+	optional uint32	ret_code				= 1; // 错误码;
+	optional uint64	entity_id				= 2; // 宠物实体ID
+}
+
+
+// 宠物放生请求
+message PBPetReliveRequest
+{
+}
+
+message PBPetReliveResponse
+{
+	optional uint32	ret_code				= 1; // 错误码;
+}
+
+
+// 宠物改名请求
+message PBPetRenameRequest
+{
+	optional uint64	entity_id				= 1; // 宠物实体ID
+	optional string	rename					= 2; // 宠物名字
+}
+
+message PBPetRenameResponse
+{
+	optional uint32	ret_code				= 1; // 错误码;
+}
+
+// 宠物资质培养请求
+message PBPetGrowRequest
+{
+	optional uint64	entity_id				= 1; // 宠物实体ID
+	optional uint32	item_id					= 2; // 药品sheetid
+	optional uint32	item_number				= 3; // 药品数量
+}
+
+message PBPetGrowResponse
+{
+	optional uint32	ret_code				= 1; // 错误码;
+}
+
+// 宠物技能学习请求
+message PBPetSkillLearnRequest
+{
+	optional uint64	entity_id				= 1; // 宠物实体ID
+	optional uint32	book_id					= 2; // 宠物学习的技能书
+}
+
+message PBPetSkillLearnResponse
+{
+	optional uint32	ret_code				= 1; // 错误码;
+}
+
+// 宠物技能遗忘请求
+message PBPetSkillForgetRequest
+{
+	optional uint64	entity_id				= 1; // 宠物实体ID
+	optional uint32	book_sheet_id			= 2; // 空白技能数的sheet
+}
+
+message PBPetSkillForgetResponse
+{
+	optional uint32	ret_code				= 1; // 错误码;
+}
+
+// 宠物技能替换请求
+message PBPetSkillRelpaceRequest
+{
+	optional uint64	entity_id				= 1; // 宠物实体ID
+}
+
+message PBPetSkillRelpaceResponse
+{
+	optional uint32	ret_code				= 1; // 错误码;
+}
+
+// 战宠进阶请求
+message PBPetEvolveRequest
+{
+	optional uint64	entity_id				= 1; // 宠物实体ID
+}
+
+message PBPetEvolveResponse
+{
+	optional uint32 ret_code				= 1; // 错误码
+//	optional uint64	entity_id				= 2; // 宠物实体ID
+}
+
+
+// 战宠使用药品请求
+message PBPetDrugRequest
+{
+	optional uint64	entity_id				= 1; // 宠物实体ID
+	optional uint32	item_id					= 2; // 药品sheetid
+	optional uint32	item_number				= 3; // 药品数量
+}
+
+message PBPetDrugResponse
+{
+	optional uint32 ret_code				= 1; // 错误码
+}
+
+// 战宠还童请求
+message PBPetRenascenceRequest
+{
+	optional uint64 entity_id				= 1; // 宠物实体ID
+}
+
+message PBPetRenascenceResponse
+{
+	optional uint32 ret_code				= 1; // 错误码
+}
+
+// 战宠购买栏位请求
+message PBPetBuySlotRequest
+{
+}
+
+message PBPetBuySlotResponse
+{
+	optional uint32 ret_code				= 1; // 错误码
+	optional uint32 buy_slot				= 2; // 当前栏位
+}
+
+// 战宠回笼请求
+message PBPetContainerRequest
+{
+	optional uint64 entity_id				= 1; // 宠物实体ID
+}
+
+message PBPetContainerResponse
+{
+	optional uint32 ret_code				= 1; // 错误码
+}
+
+message PBMsgPetNewRenascenceRequest
+{
+	optional uint64 entity_id					= 1; // 宠物实体ID
+	optional EPetRenascenceType	renascence_type	= 2; //还童类型
+};
+
+message PBMsgPetNewRenasceneResponse
+{
+	optional sint32 ret_code					= 1;
+	optional EPetRenascenceType	renascence_type	= 2; //还童类型
+	optional PBPetInfo pet_info					= 3; // 宠物信息列表
+};
+
+message PBMsgPetRenascenceReplaceRequest
+{
+	optional uint64 entity_id				= 1;
+	optional EPetRenascenceType replace_type = 2;
+};
+
+message PBMsgPetRenascenceReplaceResponse
+{
+	optional sint32 ret_code = 1;
+};
+
+enum EPetRenascenceType	
+{
+	EPRT_UNKNOW					= 0;	//未知
+	EPRT_SENIOR_INTELLIGENCE	= 1;	//高级资质
+	EPRT_ALL					= 2;	//全部
+};
+
+enum EPetRenascenceOpt
+{
+	EPRO_UNKNOW					= 0;	//未知
+	EPRO_REPLACE				= 1;	//替换
+	EPRO_CANCEL					= 2;	//取消
+};
+
+message PBGuardLevelInfo
+{
+	optional uint32 level            = 1;       // 守护等级
+	optional uint32 exp              = 2;			  // 守护经验
+	optional uint64 guard_pet_id     = 3;        // 守护宠物id
+	optional uint32 guard_slot       = 4;//[default=0];        // 守护宠物槽
+	optional uint32 guard_config_version  = 5;//[default=1];   // 守护配置版本 EPetGuardConfigVersion
+}
+
+message PBPetGuardInfo
+{
+	repeated PBGuardLevelInfo level_info = 1;
+}
+
+// 宠物守护请求
+message PBMsgTakePetGuardRequest
+{
+	optional uint32 guard_slot = 1;//[default=0];    // 策划说以后可能要扩展多个槽，每个槽提升等级
+	optional uint64 entity_id	 = 2; // 宠物实体ID
+}
+
+message PBMsgTakePetGuardResponse
+{
+	optional sint32 ret_code = 1;
+	optional uint32 guard_slot = 2;//[default=0];
+	optional uint64 entity_id = 3;       // 守护宠物的id
+}
+
+// 宠物守护收回请求
+message PBMsgTakeBackPetGuardRequest
+{
+	optional uint32 guard_slot = 1;//[default=0];
+	optional uint64 entity_id				= 2; // 宠物实体ID
+}
+
+message PBMsgTakeBackPetGuardResponse
+{
+	optional sint32 ret_code = 1;
+	optional uint32 guard_slot = 2;//[default=0];
+	optional uint64 entity_id = 3;       // 收回宠物的id 
+}
+
+
+// 宠物守护等级提升请求
+message PBMsgPetGuardLevelUpgradeRequest
+{
+	optional uint32 guard_slot = 1;//[default=0];  //要升级的槽
+	optional uint64 eat_pet_id = 2;      //吃掉的宠物Id
+};
+
+message PBMsgPetGuardLevelUpgradeResponse
+{
+	optional sint32 ret_code       = 1;
+}
+
+message PBMsgQueryUpgradeGuardBattleScoreRequest
+{
+	optional uint32 guard_slot = 1;//[default=0];
+	optional uint64 entity_id				= 2; // 吃掉的宠物实体ID
+}
+
+message PBPetGuardBattleScore
+{
+	optional uint64 entity_id				= 1;   // 宠物实体ID
+	optional sint32 add_battle_score = 2;  // 升级后战斗力
+}
+
+message PBMsgQueryUpgradeGuardBattleScoreResponse
+{
+	optional sint32 ret_code = 1;
+	optional uint32 guard_slot = 2;//[default=0];
+	repeated PBPetGuardBattleScore score = 3;       // 宠物守护战斗力
+}
+
+// 宠物转换预览
+message PBMsgPetTransPreviewRequest
+{
+	optional uint64				src_pet_id			= 1; // 源宠物ID
+	optional uint32				dst_pet_sheet		= 2; // 目的宠物
+	
+}
+
+message PBMsgPetTransPreviewResponse
+{
+	optional sint32				ret_code			= 1;
+	optional PBPetInfo			dst_pet				= 2; // 宠物信息
+	optional sint32				cost_money			= 3; // 消费元宝数
+}
+
+// 宠物转换准备
+message PBMsgPetTransReadyRequest
+{
+	optional uint64				src_pet_id			= 1; // 源宠物ID
+	optional uint32				dst_pet_sheet		= 2; // 目的宠物
+}
+
+message PBMsgPetTransReadyResponse
+{
+	optional sint32				ret_code			= 1;
+	optional PBPetInfo			dst_pet				= 2; // 宠物信息
+	optional sint32				cost_money			= 3; // 消费元宝数
+}
+
+// 宠物转换
+message PBMsgPetTransRequest
+{
+	optional uint64				src_pet_id			= 1; // 源宠物ID
+	optional uint32				dst_pet_sheet		= 2; // 目的宠物
+}
+
+message PBMsgPetTransResponse
+{
+	optional sint32				ret_code			= 1;
+}
+
+
+// 宠物转换预览
+message PBMsgPetLegacyPreviewRequest
+{
+	optional uint64				src_pet_id			= 1; // 源宠物ID
+	optional uint64				dst_pet_id			= 2; // 目的宠物ID
+}
+
+message PBMsgPetLegacyPreviewResponse
+{
+	optional sint32				ret_code			= 1;
+	optional PBPetInfo			dst_pet				= 2; // 宠物信息
+	optional sint32				cost_money			= 3; // 消费元宝数
+}
+
+// 宠物转换准备
+message PBMsgPetLegacyReadyRequest
+{
+	optional uint64				src_pet_id			= 1; // 源宠物ID
+	optional uint64				dst_pet_id			= 2; // 目的宠物ID
+}
+
+message PBMsgPetLegacyReadyResponse
+{
+	optional sint32				ret_code			= 1;
+	optional PBPetInfo			dst_pet				= 2; // 宠物信息
+	optional sint32				cost_money			= 3; // 消费元宝数
+}
+
+// 宠物转换
+message PBMsgPetLegacyRequest
+{
+	optional uint64				src_pet_id			= 1; // 源宠物ID
+	optional uint64				dst_pet_id			= 2; // 目的宠物ID
+}
+
+message PBMsgPetLegacyResponse
+{
+	optional sint32				ret_code			= 1;
+}
+
+// 战宠成长信息请求
+message PBMsgPetGrowthInfoRequest
+{
+	optional uint64 entity_id				= 1; // 宠物实体ID
+}
+
+// 战宠成长信息回复
+message PBMsgPetGrowthInfoResponse
+{
+	optional uint32 ret_code				= 1; // 错误码
+	optional PBPetGrowthInfo growth_info	= 2; // 剩余次数信息;
+}
+
+// 战宠成长请求
+message PBMsgPetGrowthRequest
+{
+	optional uint64 entity_id				= 1; // 宠物实体ID
+	optional PetGrowthPropType prop_type		= 2; // 属性
+}
+
+// 战宠成长回复
+message PBMsgPetGrowthResponse
+{
+	optional uint32 ret_code				= 1; // 错误码
+	optional PBPetGrowthInfo growth_info	= 2; // 剩余次数信息;
+}
+
+message PBPetGrowthInfo
+{
+	optional uint32 growth_last_times		= 1;//[default=0];			//成长剩余次数;
+	optional uint32 growth_last_prop_times	= 2;//[default=0];			//成长其他属性剩余次数;
+}
+
+enum PetGrowthPropType
+{
+	enUnKnow		=	0;		// 参数错误
+	enPetGrowth_Con	=   1;      // 体质
+	enPetGrowth_Spr	=   2;		// 精力
+	enPetGrowth_Str	=   3;      // 力量
+	enPetGrowth_Wis	=   4;		// 智力
+	enPetGrowth_Sta	=   5;      // 敏捷
+	enPetGrowth_Grow=	6;		// 成长
+};
+

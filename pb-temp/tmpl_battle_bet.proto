@@ -1,0 +1,22 @@
+
+import "tmpl_base.proto";
+
+message PBBetlist
+{
+	optional sint32 bet_lv  = 1;  	// 下注等级
+	optional sint32 byb_val = 2; 	// 等级对应的绑定元宝值
+  
+};
+
+
+message PBBattleBetCfg
+{
+	repeated PBBetlist	bet_list 			= 1;  // 下注等级信息
+	optional string 	bet_award_itemid    = 2;  // 下注道具奖励道具id
+	optional float      bet_win_scale 		= 3;  // 下注胜利奖励道具系数
+	optional float      bet_lost_scale 		= 4;  // 下注失败奖励道具系数
+	optional float      bet_revenue_scale   = 5;  // 下注税收系数
+	optional float      max_award_scale 	= 6;  // 元宝奖励系数最大值
+  
+};
+	

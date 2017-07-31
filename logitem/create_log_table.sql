@@ -1,0 +1,1 @@
+create table item_log(char_id bigint(22),map_id int(11),item_id bigint(22), sheet_id varchar(64), quantity int(11), quality int(11),op_type int(11),change_type int(11),bag_type int(11),log_time int(11), gatewayid int(10))  ENGINE=InnoDB DEFAULT CHARSET=utf8;

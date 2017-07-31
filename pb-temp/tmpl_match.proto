@@ -1,0 +1,88 @@
+/// @brief 匹配的配置
+
+import "tmpl_base.proto";
+import "msg_common.proto";
+
+
+enum PBMatchType
+{
+	enPBMatchType_Single						= 1;	// 匹配N个人（与队伍状态无关）
+	enPBMatchType_Team							= 2;	// 匹配N个人组成一个队（这些人中只可已有一个现有队伍）
+	enPBMatchType_Team2							= 3;	// 匹配N+N个人组成两个队（每组中只可已有一个现有队伍）
+	enPBMatchType_Room							= 4;	// 匹配房间
+	enPBMatchType_Cqpk							= 5;	// 大乱斗匹配
+	enPBMatchType_Battle						= 6;	// 10v10战场匹配
+	enPBMatchType_PveSpan						= 7;	// 跨服PVE
+	enPBMatchType_NoDungeon						= 8;	// 非副本目的匹配（只本阵营）
+};
+
+enum PBMatchSpanType
+{
+	enPBMatchSpanType_Local						= 1;	// 本服
+	enPBMatchSpanType_Span						= 2;	// 跨服
+};
+
+enum PBMatchMustCondType
+{
+	enPBMatchCondType_Level						= 1;	// 等级
+	enPBMatchCondType_BattleScore				= 2;	// 战斗力
+	enPBMatchCondType_PvPScoreSeg				= 3;	// PVP积分段
+	enPBMatchCondType_Camp						= 4;	// 阵营（一般不要用这个字段）
+}
+
+enum PBMatchBetterCondType
+{
+	enPBMatchBetterCondType_MatchTime			= 1;	// 匹配时长
+	enPBMatchBetterCondType_SameShardFirst		= 2;	// 本服优先
+	enPBMatchBetterCondType_DiffRole			= 3;	// 不同职业优先
+};
+
+// 匹配配置
+message PBConfigMatch
+{
+	repeated PBMatchRule				match_rule			= 1;
+	optional int32						max_signup_num		= 2;//[default=5]; // 最大报名数量
+	optional PBMatchBaseConfig			base_config			= 3;
+	repeated PBMatchNoticeEnter			enter_notice		= 4;
+};
+
+message PBMatchBaseConfig
+{
+	optional int32						max_confirming_secs	= 1;//[default=15]; // 最大确认时间（单位秒）
+	optional int32						callfriend_cd		= 2;//[default=8]; // 呼朋唤友CD（单位秒）
+};
+
+message PBMatchRule
+{
+	optional int32						match_id			= 1; // 匹配ID（请保留0, 0做为无效ID使用）
+	optional uint32						match_target_type	= 2; // 匹配目标类型
+	optional uint32						match_target_id		= 3;//[default=0]; // 匹配目标ID(请保留0, 0做为通用ID使用)
+	optional PBMatchType				match_type			= 4; // 匹配类型
+	optional PBMatchSpanType			span_type			= 5; // 是否支持跨服匹配
+	repeated PBMatchCond				must_cond			= 6; // 匹配条件（必须的）
+	repeated PBMatchCond				better_cond			= 7; // 优先条件（多余人选之后的选优条件）
+	optional bool						can_enter_doing		= 8; // 匹配成功后，是否还可继续配匹进去
+	optional int32						keep_time			= 9; // 状态保持的时间（单位秒）
+	optional int32						min_player_num		= 10;// 最小需要匹配的人数
+	optional int32						max_player_num		= 11;// 最大可匹配人数
+	optional bool						need_confirm		= 12;//[default=false];// 匹配成功后进入副本前是否要玩家确认
+	optional int32						best_match_time		= 13;//[default=10];	// 按最佳范围进行匹配的时间，超过这个时间，则用max_scope进行匹配，单位为秒，默认值为10秒 
+	optional bool						callfriend_need_build_team	= 14;//[default=false];	// 呼朋唤友时是否需要先组队
+	optional string						match_target_sheetid= 15;//[default=""];	// 匹配目标sheetID
+	optional int32						dungeon_type		= 16;//[default=-1]; // 副本类型
+	optional uint32						act_id				= 17;//[default=0];	// 活动ID
+};
+
+// 匹配条件
+message PBMatchCond
+{
+	optional int32 cond_type		= 1;//[default=0];		// 条件类型
+	optional int32 best_scope		= 2;//[default=0];		// 范围1
+	optional int32 max_scope		= 3;//[default=10000];	// 范围2
+}
+
+// 人满进入提示
+message PBMatchNoticeEnter
+{
+	optional string		act_sheetid	= 1; // 活动的sheetID
+}

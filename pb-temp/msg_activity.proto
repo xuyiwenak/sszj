@@ -1,0 +1,315 @@
+option optimize_for = SPEED;
+
+import "tmpl_base.proto";
+import "msg_quest.proto";
+import "tmpl_activity_fireworks.proto";
+import "msg_base.proto";
+
+enum TActChargeSignType
+{
+	enActChargeSign_None    = 0;
+	enActChargeSign_Over    = 1;
+	enActChargeSign_Express = 2;
+};
+
+
+enum TActFireworksTimeStatus
+{
+	enActFireStatus_None		= 0; // 无
+	enActFireStatus_Score		= 1; // 收集积分，显示下次烟花燃放时间
+	enActFireStatus_Display		= 2; // 燃放烟花，显示结束烟花燃放时间
+};
+
+enum TGateActStatus
+{
+	enGateActStatus_Idle		= 0; // 休息
+	enGateActStatus_Running		= 1; // 正在运行中
+};
+
+
+// 抽奖请求
+message PBMsgDrawLotteryRequest
+{
+	optional uint32 act_id = 1;  			// 活动ID
+	optional sint32 type   = 2;  			// 活动类型(1次，10次) 1
+};
+
+// 抽奖回复
+message PBMsgDrwaLotteryResponse
+{
+	optional sint32 ret_code             = 1; 					// 错误码
+	optional uint32 act_id               = 2; 					// 活动ID
+	optional sint32 type                 = 3; 					// 活动类型 单次抽奖 十连抽奖
+	repeated PBOneLotteryItem item       = 4;   			    // 中奖物品
+	optional uint32 free_left_time       = 5;   			    // 免费CD结束时间点（单位s）
+	optional sint32 free_left_cnt        = 6;   			    // 免费抽奖剩余次数
+};
+
+// 通知用户好物品
+message PBMsgDrawLotteryGoodItemNotice
+{
+	optional uint32 act_id                   = 1;
+	optional sint32 type					 = 2;
+	optional string player_name				 = 3;              // 中奖人名字
+	repeated PBOneLotteryItem good_item_list = 4;              // 中奖物品;
+};
+
+
+message PBLotteryStatusData
+{
+	repeated PBLotteryStatus act_status = 1;
+	optional uint32   lottery_jifen     = 2; // 活动总积分
+	optional uint32   period            = 3; // 当前期
+};
+
+// 用户活动状态数据
+message PBLotteryStatus
+{
+	optional uint32 act_id                     = 1;              // 活动ID
+	optional uint32 next_act_time              = 2;              // 下次活动免费时间
+	optional sint32 free_use_cnt               = 3;              // 免费抽奖使用次数
+	optional uint32 next_cd_time               = 4;              // 下次CD时间
+	optional sint32 get_item_use_cnt           = 5;              // 必得物品使用次数
+};
+
+// 单个物品描述;
+message PBOneLotteryItem
+{
+	optional string 				item_sheet = 1;						// 道具sheet名;
+	optional uint32 				num = 2;							// 数量;
+	optional bool 					valuable = 3;						// 是否贵重;
+};
+
+
+// 十连抽好物品存储
+message PBDrawLotteryOneActItems
+{
+	optional sint32 act_id  = 1;
+	repeated PBMsgDrawLotteryGoodItemNotice draw_lottery_data = 2;
+};
+
+//十连抽RKS通知EGS历史数据
+message PBDrwaLotteryALLData
+{
+	repeated PBDrawLotteryOneActItems items = 1;
+};
+
+// 回归充值（天降洪福）
+message PBChargeRegressInfo
+{
+	optional uint32 act_id						= 1; // 活动ID
+	optional uint32 expire_time					= 2; // 活动到期时间
+	optional uint32 charge_sum					= 3; // 累计充值总额
+	optional PBTemplateItemQuantityList award_list	= 4; // 奖励物品
+	optional uint32 ignore_count				= 5; // 忽略的剩余次数
+	optional uint32 is_show_window				= 6; // 是否显示推送窗口
+	optional uint32 cur_charge_sum				= 7; // 当前充值总额
+	optional string charge_desc					= 8; // 充值描述
+};
+
+// 回归充值（天降洪福）通知
+message PBMsgChargeRegressNotice
+{
+	optional PBChargeRegressInfo charge_info	= 1;
+};
+
+// 忽略回归充值（天降洪福）
+message PBMsgIngoreChargeRegressReport
+{
+	optional uint32 act_id						= 1; // 活动ID
+};
+
+
+// 烟火活动通知
+message PBMsgActFireworksInfoNotice
+{
+	optional PBMsgActFireworksInfo act_info		= 1;
+};
+
+// 烟火活动请求
+message PBMsgActFireworksInfoRequest
+{
+	optional uint32 act_id						= 1; // 活动ID
+	optional uint32 role_id						= 2; // 角色ID
+};
+
+// 烟火活动回复
+message PBMsgActFireworksInfoResponse
+{
+	optional PBMsgActFireworksInfo act_info		= 1;
+};
+
+message PBMsgActFireworksInfo
+{
+	optional uint32 act_id						= 1; // 活动ID
+	optional uint32 start_time					= 2; // 开始时间
+	optional uint32 end_time					= 3; // 结束时间
+	optional uint32 gain_score					= 4; // 获得的积分
+	optional uint32 server_cur_score			= 5; // 全服完成的当前积分
+	optional uint32 server_score_percent		= 6; // 全服完成的进度
+	repeated PBMsgActFireworksShowPercent show_percent		= 7; // 全服完成的进度显示
+	repeated PBMsgActFireworksQuest quest		= 8; // 任务进度
+	optional uint32 next_fireworks_time			= 9; // 下次燃放烟花的时间
+	optional PBTemplateItemQuantityList server_award_list	= 10; // 全服进度完成奖励物品
+	optional uint32 is_show_firework			= 11;	// 是否显示特效
+	optional uint32 server_total_score			= 12;	// 全服完成的总积分
+	optional PBConfigFireworksDesc act_desc_info= 13;	// 活动描述
+	optional TActFireworksTimeStatus fireworks_status		= 14;	// 烟花状态
+};
+
+message PBMsgActFireworksQuest
+{
+	optional uint32 gain_score					= 1; // 获得的积分
+	optional PBQuest quest						= 2; // 任务进度
+};
+
+message PBMsgActFireworksShowPercent
+{
+	optional uint32 show_score_percent			= 1; // 显示的阶段(万分比)
+};
+
+message PBMsgNpcBtnNotice
+{
+	optional uint32					npc_alias	= 1; // npc标识
+	repeated PBMsgNpcBtnInfo		btn_info    = 2; // 按钮数据
+};
+
+message PBMsgNpcBtnInfo
+{
+	optional string					name_key    = 1; // 按钮显示文字的key
+	optional string					event_link  = 2; // 按钮事件
+};
+
+message PBMsgGateActStatusNotice
+{
+	repeated PBMsgGateActStatusInfo	act_info= 1;
+};
+
+message PBMsgGateActStatusInfo
+{
+	optional uint32 act_id						= 1; // 活动ID
+	optional TGateActStatus status				= 2; // 状态
+	optional uint32 act_tip_type				= 3; // 客户端hud界面显示
+};
+
+enum TActRewardStatus
+{
+	enActReward_None  		 = 0; // 不合法
+	enActReward_CanNotGet  = 1; // 未完成
+	enActReward_CanGet     = 2; // 未领取
+	enActReward_HaveGet    = 3; // 已领取
+}
+
+// 奖励状态通知
+message PBMsgLoginGiftsRewardStatusNotice
+{
+	repeated PBLoginGiftsStatusInfo status_info = 1;
+}
+
+message PBLoginGiftsStatusInfo
+{
+	optional uint32                   act_id		= 1; // 活动ID
+	repeated PBLoginGiftsRewardStatus status    = 2; // 领取状态
+}
+
+message PBLoginGiftsRewardStatus
+{
+	optional sint32           dayth  = 1; // 第几天
+	optional TActRewardStatus status = 2;//[default=enActReward_None]; // 领取状态
+}
+
+message PBMsgGetLoginGiftsRequest
+{
+	optional uint32            act_id    = 1; // 活动id
+	optional uint32            dayth     = 2; // 第几天
+}
+
+message PBMsgGetLoginGiftsResponse
+{
+	optional sint32           ret_code = 1;
+}
+
+
+// 在线时长礼包
+
+message PBMsgOnlineGiftsRewardStatusNotice
+{
+	optional PBOnlineGiftsStatusInfo status_info = 1;
+}
+
+
+message PBOnlineGiftsStatusInfo
+{
+	optional uint32						act_id		= 1; // 活动ID
+	repeated PBOnlineGiftsGetStatus		status		= 2; // 领取状态
+	optional bool						is_open		= 3; // 活动是否开启
+}
+
+message PBOnlineGiftsGetStatus
+{
+	optional uint32				index = 1;
+	optional TActRewardStatus	status = 2;//[default=enActReward_None];
+	optional uint32				leftTime = 3;	// 剩余时间
+};
+
+message PBMsgGetOnlineGiftsRequest
+{
+	optional uint32				act_id	= 1;	// 活动ID
+	optional uint32				index	= 2;	// 领取的索引
+};
+
+message PBMsgGetOnlineGiftsResponse
+{
+	optional sint32				ret_code = 1;
+}
+
+//老虎机抽奖请求
+message PBMsgOnearmBanditBlessRequest
+{
+	optional uint32				act_id	= 1;	// 活动ID
+};
+
+//老虎机抽奖回复
+message PBMsgOnearmBanditBlessResponse
+{
+	optional sint32         ret_code		= 1;
+	optional uint32 		item_index		= 2;	//物品索引;
+	optional uint32 		multiple_index	= 3;	//倍数索引;
+};
+
+//老虎机获取物品请求
+message PBMsgOnearmBanditRewardRequest
+{
+	optional uint32				act_id	= 1;	// 活动ID
+};
+
+//老虎机获取物品回复
+message PBMsgOnearmBanditRewardResponse
+{
+	optional sint32         ret_code		= 1;
+	optional string 		item_sheet		= 2;	// 道具sheet名;
+	optional uint32 		item_num		= 3;	// 数量;
+	optional uint32			multiple		= 4;	// 倍数;
+	optional sint32			left_times		= 5;	// 剩余次数;
+};
+
+// 老虎机记录
+message PBMsgOnearmBanditRecordNotice
+{
+	optional uint32 act_id								= 1;
+	optional PBOnearmBanditHistoryData data				= 2;
+};
+
+//历史记录;
+message PBOnearmBanditHistoryData
+{
+	optional string sheetid		= 1;	//物品sheet;
+	optional sint32 num			= 2;	//数量;
+	optional sint32 multiple	= 3;	//倍率;
+	optional string player_name = 4;	//玩家;
+}
+
+message PBOnearmBanditClearReport
+{
+
+};

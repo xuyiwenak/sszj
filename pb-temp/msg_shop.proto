@@ -1,0 +1,452 @@
+import "msg_base.proto";
+import "msg_item.proto";
+import "msg_service.proto";
+import "tmpl_exchange_shop.proto";
+
+// 以下信息为数据源模板定义
+// 由通用工具支持Excel或xml到PB数据的转换
+
+// 商品销售标签
+enum PBEGoodsSaleTag
+{
+	GST_New			= 0x01;	// 新品
+	GST_HotSale		= 0x02;	// 热销
+	GST_Recommend	= 0x04;	// 推荐
+	GST_Promotion	= 0x08;	// 促销/限时折扣
+};
+
+// 商城定义
+message PBGoodsShopAll
+{
+	repeated PBGoodsShopType shop_list = 1; // 各类商城列表
+}
+
+// 商店类别（红钻蓝钻）定义
+message PBGoodsShopType
+{
+	repeated PBGoodsShelfTmpl	shelf_list	= 1; // 货架列表
+	optional string				bulletin	= 2; // 公告栏
+	optional string				type_name	= 3; // 分类名称
+}
+
+// 分类信息定义
+// 对应xml的多行数据或excel中的一张表
+message	PBGoodsShelfTmpl
+{
+	repeated PBGoodsTmpl	goods_list =1;	// 商品列表
+	optional string			shelf_name =2;	// 货架名称
+
+}
+
+
+// 商品信息定义
+// 对应xml数据源中带以下多个属性的单个标签（一行数据）
+// 对应excel数据源的一行数据
+message	PBGoodsTmpl
+{
+	optional uint32	goods_id			=1;		// 商品ID
+	optional uint32	item_sheet_id		=2;		// 上架物品SheetID
+	optional sint32	pack_unit_num		=3;		// 打包销售单元数量
+	optional sint32	max_quantity		=4;		// 上架数量，没有该字段则没有限制
+	optional sint32	left_quantity		=5;		// 剩余数量，一般不用配置，初始值和max_quantity一致，可以没有
+	optional sint32	buy_limit_per_char	=6;		// 每人（角色）限购数量，没有该字段则没有该限制
+	optional uint32	price_type			=7;		// 货币类型
+	optional sint32	original_price		=8;		// 原价
+	optional sint32	price				=9;		// 现价
+	optional bool	active				=10;	// 是否激活/上架，逻辑里要支持动态控制
+	optional bool	binding				=11;	// 是否绑定
+	optional bool	persentable			=12;	// 是否可以赠送
+	optional bool	lucky				=13;	// 是否幸运商品
+	optional bool	time_limited		=14;	// 是否限时
+	optional uint32	start_time			=15;	// 开始时间
+	optional uint32	duration_hour		=16;	// 持续时间(单位小时)，增加该字段便于限时商品重新开启（事件触发开启）
+	optional uint32	end_time			=17;	// 结束时间，初始化为start_time+duration
+	optional PBGoodsLimitCondition visible_condition	=18;	// 可见条件，没有该字段表示无限制条件
+	optional PBGoodsLimitCondition sale_condition		=19;	// 销售条件，没有该字段表示无限制条件
+	optional string	description			=20;	// 描述 
+	optional uint32	sale_tag			=21;	// 销售标签，N个PBEGoodsTag，可以拎出来单独配置
+	optional uint32	price_sheet			=22;	// 货币类型
+	optional sint32	buy_vitem			=23;	// 货币替代规则
+};
+
+// 商品限制信息
+message	PBGoodsLimitCondition
+{
+	optional sint32 char_level				=1;	// 角色等级限制，没有该字段则没有该限制
+	optional sint32 vip_level				=2;	// VIP等级限制，没有该字段则没有该限制
+	optional sint32 immortal_union_level	=3;	// 仙盟等级限制，没有该字段则没有该限制
+};
+
+// 商店信息定义
+message	PBShopTmpl
+{
+	optional uint32	shop_id			=1;		// 商店ID
+	optional string	shop_name		=2;		// 商店名称 
+	optional string	shop_desc		=3;		// 商店描述
+	repeated uint32 show_moeny		=4;		// 商店显示货币
+	optional uint32	refresh_type	=5;		// 商店刷新类型
+	optional uint32	refresh_time	=6;		// 商店刷新时间间隔
+	repeated uint32	refresh_moment	=7;		// 商店刷新时刻
+	optional uint32	refresh_item	=8;		// 商店刷新道具
+	optional sint32	refresh_fun		=9;		// 商店刷新功能项
+}
+
+message PBShopGoods
+{
+	optional PBGoodsTmpl goods_tmpl	= 1; // 商品列表
+	optional uint32	sold_out		= 2; // 商品ID
+};
+
+message PBShop
+{
+	optional sint32 shop_id				= 1; // 商店ID
+	repeated PBShopGoods goods_list		= 2; // 商品列表
+	optional uint32 sys_refreshtime		= 3; // 下次系统刷新的时间
+	optional uint32 dy_refreshtime		= 4; // 手动刷新的总次数
+	optional PBShopTmpl shop_tmpl		= 5; // 商店配置信息
+	optional uint32 dy_moneyrefreshtime	= 6; // 花钱刷新的次数
+};
+
+// 商店信息请求
+message	PBShopInfoRequest
+{
+	optional sint32 shop_id				= 1; // 商店ID
+};
+
+
+message	PBShopInfoResponse
+{
+	optional uint32	ret_code			= 1; // 错误码;
+	optional PBShop shop				= 2; // 商店信息
+};
+
+message	PBShopGoodsSoldNotice
+{
+	optional sint32 shop_id				= 1; // 商店ID
+	optional sint32 goods_id			= 2; // 商品ID
+	optional sint32 remian_count		= 3; // 剩余个数
+};
+
+message	PBShopGoodsBuyInfo
+{
+	optional sint32 goods_index			= 1; // 商品索引号
+	optional uint32 goods_id			= 2; // 商品ID
+	optional uint32 goods_count			= 3; // 商品总数
+	optional uint32 npc_id				= 4; // 黑市商店NPC
+	optional uint32 goods_price			= 5; // 商品价格
+	// 后补:2016/1/1 21:57 by hewei;
+	optional string goods_sheet_name	= 6; // 支持商品sheetname
+	optional sint32 sel_index			= 7; // 自动挂机选择项 1.铜钱 2.铜钱和帮元 3.铜钱，帮元和非帮元
+};
+
+// 商城商品购买请求
+message	PBShopGoodsBuyRequest
+{
+	optional sint32 shop_id				= 1; // 商店ID
+	optional PBShopGoodsBuyInfo goods	= 2; // 商品
+};
+
+message	PBShopGoodsBuyResponse
+{
+	optional uint32	ret_code			= 1; // 错误码;
+	optional sint32 shop_id				= 2; // 商店ID
+	optional PBShopGoodsBuyInfo goods	= 3; // 商品
+};
+
+
+// 商店刷新请求
+message	PBShopRefreshRequest
+{
+	optional sint32 shop_id				= 1; // 商店ID
+};
+
+message	PBShopRefreshResponse
+{
+	optional uint32	ret_code			= 1; // 错误码;
+	optional sint32 shop_id				= 2; // 商店ID
+};
+
+// 商城商品购买请求
+message	PBMallGoodsBuyRequest
+{
+	optional sint32 shop_id				= 1; // 商店ID
+	optional uint32 goods_id			= 2; // 商城时：商品ID 商店时：商品索引号
+	optional sint32 quantity			= 3; // 商品数量
+};
+
+message	PBMallGoodsBuyResponse
+{
+	optional uint32	ret_code			= 1; // 错误码;
+};
+
+// 商城信息请求
+message	PBMallInfoRequest
+{
+	optional sint32 shop_id				= 1; // 商店ID
+};
+
+message	PBMallInfoResponse
+{
+	optional uint32	ret_code			= 1; // 错误码;
+	optional PBGoodsShopAll shop		= 2; // 商店信息
+};
+
+
+// 商城商品赠送请求
+message	PBMallGoodsSendGiftRequest
+{
+	optional sint32 shop_id				= 1; // 商店ID
+	optional uint32 goods_id			= 2; // 商城时：商品ID 商店时：商品索引号
+	optional sint32 quantity			= 3; // 商品数量
+	optional uint64 full_id				= 4; // 好友entitiyID
+};
+
+message	PBMallGoodsSendGiftResponse
+{
+	optional uint32	ret_code			= 1; // 错误码;
+};
+
+
+// 购买回购物品请求
+message	PBBackGoodsBuyRequest
+{
+	optional uint64 item_id				= 1; // 物品ID
+};
+
+message	PBBackGoodsBuyResponse
+{
+	optional uint32	ret_code			= 1; // 错误码;
+};
+
+message	PBBuyBackItem
+{
+	optional uint64	goods_id			= 1; // 商品ID;
+	optional uint64	item_id				= 2; // 物品ID;
+	optional uint32	item_sheet			= 3; // 物品sheet;
+	optional sint32	price				= 4; // 物品价格;
+	optional sint32	item_count			= 5; // 物品数量;
+	optional uint32	price_id			= 6; // 物品价格sheet;
+	optional PBMsgItem item             = 7;
+};
+
+// 回购商品信息
+message	PBBuyBackInfoRequest
+{
+};
+
+message	PBBuyBackInfoResponse
+{
+	optional uint32	ret_code			= 1; // 错误码;
+	repeated PBBuyBackItem	item_list	= 2; // 物品列表;
+};
+
+message PBMsgConsignListRequest
+{
+	repeated uint32 id_list = 1; // 道具列表
+	optional sint32 type_key = 2; // 种类key
+	optional sint32 start_index = 3; // 开始索引
+	optional sint32 number = 4; // 最大数量
+}
+
+message PBMsgMyConsign
+{
+	optional PBMsgConsign info = 1;
+	optional sint32 sale_status = 2;
+	optional uint32 expiration = 3;
+};
+
+message PBMsgConsign
+{
+	optional uint64 id = 1; // id
+	optional uint32 sheet_id = 2; // sheetId
+	optional sint32 quantity = 3;  // 数量
+	optional sint32 price = 4; // 价格
+};
+
+message PBMsgConsignListResponse
+{
+	optional sint32 ret_code = 1;
+	optional sint32 start_index = 2; // 开始索引
+	repeated PBMsgConsign consign_list = 3; // 寄售列表
+	optional sint32 total_count = 4;
+};
+
+message PBMsgConsignMyListResponse
+{
+	optional sint32 ret_code = 1;
+	repeated PBMsgMyConsign my_list = 2;
+	optional sint32 max_count = 3;
+}
+
+message PBMsgConsignUpRequire
+{
+	optional uint32 item_slot = 1;
+	optional sint32 quantity = 2; 
+	optional sint32 price = 3;
+}
+
+message PBMsgConsignUpResponse
+{
+	optional sint32 ret_code = 1;
+	repeated PBMsgMyConsign my_list = 2;
+}
+
+message PBMsgConsignDownRequire
+{
+	optional uint64 consign_id = 1;
+}
+
+message PBMsgConsignDownResponse
+{
+	optional sint32 ret_code = 1;
+	repeated PBMsgMyConsign my_list = 2;
+}
+
+message PBMsgConsignBuyRequire
+{
+	optional uint64 consign_id = 1;
+}
+
+message PBMsgConsignBuyResponse
+{
+	optional sint32 ret_code = 1;
+}
+
+message PBMsgConsignToolTipRequire
+{
+	optional uint64 consign_id = 1;
+}
+
+message PBMsgConsignToolTipResponse
+{
+	optional sint32 ret_code = 1;
+	optional PBMsgItem item = 2;
+	optional uint64 consign_id = 3;
+}
+
+message PBMsgConsignGetRewardRequire
+{
+	optional uint64 consign_id = 1;
+}
+
+message PBMsgConsignGetRewardResponse
+{
+	optional sint32 ret_code = 1;
+	repeated PBMsgMyConsign my_list = 2;
+}
+
+message PBMsgConsignSearchRequest
+{
+	optional sint32 sift_type	= 1;	//类型  ESiftType
+	repeated sint32 site_type	= 2;	//搜索位置
+	optional sint32 role		= 3;	//职业
+	optional sint32 level		= 4;	//等级
+	optional sint32 itemclass	= 5;	//品阶
+	optional sint32 petup		= 6;	//宠物成长
+	optional sint32 startindex	= 7;	//开始索引
+	optional sint32 maxnum		= 8;	//最大数量
+	repeated sint32 search_list	= 9;	//指定搜索集合
+	optional bool	bdesc		= 10;	//是否降序
+};
+
+message PBMsgConsignSearchResponse 
+{
+	optional sint32 ret_code = 1;
+	optional sint32 start_index = 2; // 开始索引
+	repeated PBMsgConsign consign_list = 3; // 寄售列表
+	optional sint32 total_count = 4;
+	optional bool	bdesc		= 5;	//是否降序
+};
+
+message PBMsgConsignHotSaleRequest
+{
+
+};
+
+message PBMsgConsignHotSaleResponse
+{
+	optional sint32				ret_code	= 1;
+	optional PBMsgHotItemList	hotitem_list = 2;
+};
+
+
+message PBMsgConsignShowInfoRequest
+{
+	optional uint64 consign_id = 1;
+};
+
+message PBMsgConsignShowInfoRespose
+{
+	optional sint32 ret_code = 1;
+	optional sint32 start_index = 2; // 开始索引
+	repeated PBMsgConsign consign_list = 3; // 寄售列表
+	optional sint32 total_count = 4;	// 总数量
+	optional uint64 show_consign_id = 5;	//当前索引
+};
+
+
+// 活动兑换商店名称
+message	PBMsgExchangeShopName
+{
+	optional sint32				shop_id				= 1; // 商店ID
+	optional string				shop_name			= 2; // 商店名
+};
+
+// 活动兑换商店详细内容
+message	PBMsgExchangeShop
+{
+	optional sint32				start_time			= 1; // 活动开始时间
+	optional sint32				end_time			= 2; // 活动结束时间
+	repeated PBMsgExchangeItem	exchange_items		= 3; // 兑换商品列表
+	optional sint32				shop_id				= 4; // 兑换商店号
+	optional string				shop_name			= 5; // 兑换商店号
+	optional sint32				is_unlimit_time		= 6; // 是否无限时
+};
+
+// 活动兑换商品信息定义
+message	PBMsgExchangeItem
+{
+	optional PBTmplExchangeItem	tmpl_item			= 1; // 商品ID
+	optional sint32				ex_count			= 2; // 兑换次数
+	optional sint32				total_count			= 3; // 总次数
+};
+
+
+// 活动兑换商店列表请求
+message	PBMsgExchangeShopListRequest
+{
+
+}
+
+message	PBMsgExchangeShopListResponse
+{
+	optional sint32				ret_code			= 1; // 回复
+	repeated PBMsgExchangeShopName	shop_list		= 2; // 商店列表
+}
+
+
+// 活动兑换商店信息请求
+message	PBMsgExchangeShopInfoRequest
+{
+	optional sint32				shop_id				= 1; // 商店
+}
+
+message	PBMsgExchangeShopInfoResponse
+{
+	optional sint32				ret_code			= 1; // 回复
+	optional PBMsgExchangeShop	exchange_shop		= 2; // 兑换商店
+}
+
+// 活动兑换商店兑换请求
+message	PBMsgExchangeShopExRequest
+{
+	optional sint32				shop_id				= 1; // 商店
+	optional sint32				goods_id			= 2; // 商品ID
+	optional sint32				quantity			= 3; // 商品数量
+}
+
+message	PBMsgExchangeShopExResponse
+{
+	optional sint32				ret_code			= 1; // 回复
+	optional PBMsgExchangeItem	exchange_item		= 2; // 兑换商品
+}

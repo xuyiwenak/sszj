@@ -1,0 +1,120 @@
+// 以最快速度序列/反序列
+option optimize_for = SPEED;
+
+import "db_base.proto";
+import "msg_spanbattle.proto";
+import "msg_common.proto";
+import "gateway.proto";
+import "msg_couplepvp.proto";
+
+// 点赞存储消息
+message PBBetData
+{
+	repeated PBSpanbtlBetData		bet_battle		= 1; //帮会下注排行信息
+};
+
+// 跨服帮派战
+message PBGMSSpanBattle
+{
+	option (OptionPrimaryKey)	= "match_id";
+	optional sint32				match_id		= 1;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];	
+	optional PBMatchRound		match_round		= 2;//[(OptionDBFieldExtra) = "MediumBlob"];
+	optional PBMatchBasic		match_basic		= 3;//[(OptionDBFieldExtra) = "MediumBlob"];
+	optional sint32				update_time		= 5;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];
+	optional PBMatchHistoryData	history_data	= 6;//[(OptionDBFieldExtra) = "MediumBlob"];
+	optional PBRaceInfo			race_info		= 7;//[(OptionDBFieldExtra) = "MediumBlob"];
+	optional PBSignCampList		giveback_guild	= 8;//[(OptionDBFieldExtra) = "MediumBlob"];
+	optional PBSignInfo			signin_guild	= 9;//[(OptionDBFieldExtra) = "MediumBlob"];
+	optional PBBetData			bet_data		= 10;//[(OptionDBFieldExtra) = "MediumBlob"];
+	optional PBSPIMHistoryRank	history_rank	= 11;//[(OptionDBFieldExtra) = "MediumBlob"];
+};
+
+
+message PBSpanCurBattle
+{
+	option (OptionPrimaryKey)	= "game_id";
+	optional sint32				game_id			= 1;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];
+	optional sint32				cur_matchid		= 2;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];
+	optional sint32				update_time		= 3;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];
+};
+
+message PBSpanWildRankInfo
+{
+	repeated PBMsgRankCharNode char_node   = 1;
+};
+
+message PBSpanDuelData
+{
+	optional uint32				loser_roleid	= 1;
+	optional uint32				loser_gatewayid	= 2;
+	optional uint32				winer_roleid	= 3;
+	optional uint32				winer_gatewayid	= 4;
+	optional uint32				duel_time		= 5;
+};
+
+message PBSpanDuelInfo
+{
+	repeated PBSpanDuelData		dueldata		= 1;
+};
+
+message PBSpanWildRank
+{
+	option (OptionPrimaryKey)		= "game_id";
+	optional sint32					game_id			= 1;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];
+	optional PBSpanWildRankInfo		spanwild_rank	= 2;//[(OptionDBFieldExtra) = "MediumBlob"];
+	optional PBWildBossLevelContain	spanwild_bosslv	= 3;//[(OptionDBFieldExtra) = "MediumBlob"];
+	optional sint32					update_time		= 4;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];
+};
+
+message PBGMSCommonData
+{
+	option (OptionPrimaryKey)		= "game_id";
+	optional sint32					game_id			= 1;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];
+	optional PBcouplePVPRace		couple_pvp		= 2;//[(OptionDBFieldExtra) = "MediumBlob"];
+	optional PBSpanDuelInfo			duel_info		= 3;//[(OptionDBFieldExtra) = "MediumBlob"];
+	optional PBSpanMonorBattleDataList  monor_data      = 4;//[(OptionDBFieldExtra) = "MediumBlob"];
+};
+
+message PBSpanMonorBattleDataList
+{
+	repeated PBSpanMonorBattleData data_list = 1;
+};
+
+message PBSpanMonorBattleData
+{
+	optional uint32             data_id             = 1;
+	optional sint32                 cur_status      = 2;
+	optional PBSignCampList		giveback_guild	    = 3;
+	optional PBSignInfo			signin_guild	    = 4;
+	optional PBMonorBattleInfo  battle_info         = 5;
+	optional PBMonorOwnerInfo   owner_info          = 6;
+	repeated PBMonorOwnerHistoryInfo owner_history  = 7; // 历史领主
+};
+
+message PBMonorBattleInfo
+{
+    optional bool is_battle_success = 1;//[default=false];    // 是否创建战场
+    optional uint64 battle_id       = 2;//[default=0];    // 战场Id
+    optional uint32 battle_gateway_id = 3;//[default=0];  // 战场所在服
+    optional uint32 battle_camp_id  = 4;//[default=0];    // 战场所在阵营
+    
+}
+
+message PBMonorOwnerInfo
+{
+    optional bool is_have_owner = 1;//[default=false]; // 是否有所属
+    optional uint32 gateway_id = 2;//[default=0];
+    optional uint32 camp_id = 3;//[default=0];
+    optional uint64 guild_id = 4;//[default=0];
+	optional string guild_name = 5;
+	optional PBGuildMemberIdList member_id_list = 6;  // 帮派成员的id
+}
+
+message PBMonorOwnerHistoryInfo
+{
+	optional uint32 gateway_id = 1;//[default=0];
+	optional uint32 campId     = 2;//[default=0];
+	optional uint64 guild_id = 3;//[default=0];
+	optional string guild_name = 4;
+	optional uint32 get_time = 5;//[default=0]; // 获得时间
+};

@@ -1,0 +1,56 @@
+/// @brief	template for config of guild
+/// @author	Deng Lichuan
+
+import "tmpl_base.proto";
+
+message PBWorldLevelCfg
+{
+	repeated PBWLExpAdd			exp_add			= 1; // 经验加成
+	repeated PBWLExtend			wl_extend		= 2; // 世界等级突破
+	optional PBWLBasic			basic			= 3;
+};
+
+message PBWLExpAdd
+{
+	optional sint32				low				= 1; // 最低等级差
+	optional sint32				high			= 2; // 最高等级差
+	optional sint32				percent			= 3; // 百分比
+};
+
+message PBWLExtend
+{
+	optional sint32				wl_id			= 1; // 世界等级ID
+	optional sint32				level			= 2; // 世界等级
+	optional sint32				achieve_count	= 3; // 当N个玩家突破后进入一下个世界等级
+	optional sint32				extend_request_id	= 4; // 完成突破的任务ID
+	repeated PBWLAward			extend_award	= 5; // 突破奖励
+	optional PBWLAward			first_award		= 6; // 每次世界等级首次突破的队伍全体成员的奖励
+	optional PBWLAward			help_award		= 7; // 帮忙突破的队员的奖励
+	optional PBWLExpDecay		exp_decay		= 8; // 经验衰减
+	optional PBWLJusticeAdd		justice_add		= 9; // 正气值增加
+	optional sint32				auto_extend		= 10;//[default=100];
+	optional PBWLAward			auto_levelup	= 11; // 玩家在世界等级时自动升级, 给予奖励
+};
+
+message PBWLAward
+{
+	optional sint32				rank			= 1; // 排名
+	optional string				item_sheet		= 2; // 
+	optional sint32				count			= 3; //
+};
+
+message PBWLBasic
+{
+	optional sint32				min_level		= 1; // 获取世界等级经验加成的最小等级
+	optional sint32				max_exp_rate	= 2; // 最大积累的经验比
+};
+
+message PBWLExpDecay
+{
+	optional sint32				percent			= 1; // 百分比
+};
+
+message PBWLJusticeAdd
+{
+	optional sint32				percent			= 1;
+}

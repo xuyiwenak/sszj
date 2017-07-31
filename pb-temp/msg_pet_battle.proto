@@ -1,0 +1,219 @@
+import "msg_pet.proto";
+import "msg_item.proto";
+
+enum PBPetArrayType
+{
+	ePetArray_PvE = 1;
+	ePetArray_PvP = 2;
+}
+
+//设置玩家PVE宠物阵容
+message PBMsgSetPetBattleArrayRequest
+{
+	optional sint32 index           = 1;  //阵容宠物位置
+	optional uint64	pet_id				= 2; // 宠物ID
+	optional PBPetArrayType pet_array_type = 3;//[default=ePetArray_PvE]; //阵容类型
+}
+
+message PBPetBattleInfoOne
+{
+	optional sint32 index         = 1; // 阵容宠物位置
+	optional bool   is_borrow     = 2; // 是否是借宠 
+	optional PBPetInfo pet_info   = 3; // 宠物的信息
+}
+
+message PBMsgSetPetBattleArrayResponse
+{
+	optional sint32 ret_code = 1; 
+	repeated PBPetBattleInfoOne pet_battle_info = 2;
+	optional PBPetArrayType pet_array_type = 3;//[default=ePetArray_PvE]; 
+}
+
+// 打开宠物PVE界面请求
+message PBMsgPetPVEBattleInfoRequest
+{
+	
+}
+
+message PBPetPVEBattleDungeonInfo
+{
+	optional uint32 dungeon_id = 1;  // 副本Id
+	optional sint32 star_num   = 2;    // 通关星级
+	optional bool   is_lock    = 3;    // 是否锁定
+}
+
+message PBMsgPetPVEBattleInfoResponse
+{
+	optional sint32             ret_code            = 1;
+	repeated PBPetBattleInfoOne pet_battle_info     = 2;  //阵容信息
+	repeated PBPetPVEBattleDungeonInfo dungeon_info = 3; // 副本信息
+}
+
+
+// 宠物选择列表请求
+message PBMsgGetBattlePetListRequest
+{
+	optional PBPetArrayType pet_array_type = 1;//[default=ePetArray_PvE]; 
+}
+
+message PBPetBattleInfo
+{
+	optional PBPetInfo pet_info  = 1;   //宠物信息
+	optional bool is_selected    = 2;     //是否已选
+	optional bool is_friend_pet  = 3;      // 是否是好友宠
+	optional bool is_have_borrow = 4;  //是否已经借过
+	optional string char_name    = 5;      //好友的名字
+}
+
+message PBMsgGetBattlePetListResponse
+{
+	optional sint32          ret_code = 1;
+	repeated PBPetBattleInfo pet_list = 2; 
+}
+
+message PBPetSumaryInfo
+{
+	optional uint64 pet_id      = 1;    //宠物Id
+	optional sint32 sheet_id    = 2;    //宠物sheetId
+	optional sint32 level       = 3;    //宠物等级
+	optional sint32 battle_score = 4;   //宠物战力
+}
+
+message PBPetPvpRankInfoOne
+{
+	optional sint32          index           = 1; // 阵容宠物位置
+	optional PBPetSumaryInfo pet_sumary_info = 2; //宠物简要信息
+}
+
+// 设置PVP阵容
+message PBMsgSetPetPVPBattleArrayRequest
+{
+		optional sint32 index           = 1;  //阵容宠物位置
+		optional uint64	pet_id				  = 2; // 宠物ID
+}
+
+message PBMsgSetPetPVPBattleArrayResponse
+{
+	optional sint32             ret_code        = 1; 
+	repeated PBPetBattleInfoOne pet_battle_info = 2;
+}
+
+message PBPetPvPRankInfo
+{
+	optional uint32               rank      				= 1;  //名次
+	optional PBCharPetPVPRankInfo char_pet_pvp_info = 2;  //宠物PVP信息
+	optional bool                 can_fight         = 3;  // 是否可以挑战
+}
+
+//PVP数据请求
+message PBMsgPetPvPInfoRequest
+{
+	
+}
+
+message PBMsgPetPvPInfoResponse
+{
+	optional sint32             ret_code            = 1;
+	optional uint32             rank                = 2;  //名次 0代表在排行榜外
+	repeated PBMsgItemQuantity  reward              = 3;  //奖励
+	repeated PBPetBattleInfoOne pet_info_list       = 4;  //阵容信息
+	repeated PBPetPvPRankInfo   rank_info_list      = 5;  //对手信息
+	optional uint32             reward_jifen        = 6;  //奖励积分
+}
+
+//刷新对手
+message PBMsgFlushPetPvPMatchInfoRequest
+{
+	
+}
+
+message PBMsgFlushPetPvPMatchInfoResponse
+{
+	optional sint32             ret_code        = 1;  
+	repeated PBPetPvPRankInfo   rank_info_list  = 2;  //对手信息
+	optional uint32             my_role_id      = 3; //role_id
+}
+
+enum PBPetBattleFightType
+{
+	eFightType_Attack  = 1; //攻击
+	eFightType_Defense = 2; //防御
+}
+
+enum PBPetBattleFightResult
+{
+	eFightResult_Success = 1; //胜利
+	eFightResult_Failed  = 2; //失败
+	eFightResult_Draw    = 3; //平局，目前没有平局
+}
+
+message PBBattleRecord
+{
+	optional sint32                fight_type    = 1;   //战斗类型，攻击or防御
+	optional sint32                fight_result  = 2;   //战斗结果，胜利or失败
+	optional PBCharPetPVPRankInfo  player_info   = 3;   //玩家信息，名字，阵容
+}
+
+// 查看战斗记录请求
+message PBMsgBattleRecordRequest
+{
+	
+}
+
+message PBMsgBattleRecordResponse
+{
+	optional sint32         ret_code = 1;   
+	repeated PBBattleRecord notice   = 2;
+	optional uint32                my_role_id    = 3;   //id 
+}
+
+// 宠物PvP选择列表请求
+message PBMsgGetBattlePvPPetListRequest
+{
+	
+}
+
+message PBMsgGetBattlePvPPetListResponse
+{
+	optional sint32          ret_code = 1;
+	repeated PBPetBattleInfo pet_list = 2; 
+}
+
+
+// 挑战请求
+message PBMsgPetBattleFightRequest
+{
+	optional uint32             key   			    = 1;  //玩家Id  //如果是机器人，就取名次
+	optional bool               is_robot        = 2;  //是否是机器人
+}
+
+message PBMsgPetBattleFightResponse
+{
+	optional sint32          ret_code = 1;  
+}
+
+message PBRobotPetInfo
+{
+	optional uint64 pet_entity_id   = 1;  //怪物sheet
+	optional string pet_sheet        = 2;  //宠物sheet
+	optional sint32 pet_level        = 3;  //宠物等级
+	optional sint32 pet_battle_score = 4;  //宠物战力
+} 
+
+// 宠物PVP信息
+message PBCharPetPVPRankInfo
+{
+	optional uint32             role_id             = 1;     //玩家role_id//机器人填0
+	optional string             char_name           = 2;     //玩家名字
+	optional sint32				      char_role		        = 3;     //职业
+	optional sint32				      char_gender		      = 4;     //性别
+	optional sint32	            char_level          = 5;     //等级;
+	optional string	            head_icon	          = 6;     //头像icon
+	optional bool               is_robot            = 7;     //是否是机器人
+	repeated PBPetBattleInfoOne pet_info_list       = 8;     //阵容信息
+	repeated PBRobotPetInfo     robot_pet_info_list = 9;     //机器人阵容信息
+	optional uint32             rank                = 10;    // 排名
+	optional uint32             gateway_id          = 11;
+	optional uint32             camp_id             = 12;    // 阵营
+	optional uint64             char_id             = 13;    // char_id
+}

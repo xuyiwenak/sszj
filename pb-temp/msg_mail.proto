@@ -1,0 +1,30 @@
+option optimize_for = SPEED;
+
+import "msg_base.proto";
+import "db_logic_common.proto";
+
+
+message PBMailBox
+{
+	optional uint32	owner_id	=	1;//邮箱的主人的roleid;
+	repeated PBMail	mail_list	=	2;//邮件列表;
+};
+
+message PBMailResponse
+{
+	optional uint32	change_type	=	1;//改变的类型，添加，删除，改变;
+	repeated PBMail	mail_list	=	2;//改变的内容;
+};
+
+message PBMailRequire
+{
+	optional uint32 op_type		=	1;//操作类型;
+	repeated uint32 mail_list	=	2;//操作的邮件;
+	optional uint32 is_force_delete		=	3;//是否强制删除
+	optional uint32 force_delete_type = 4; // 按什么删除
+	repeated string str_mail_list = 5;   // 模板邮件
+};
+
+message PBMsgGmMailNotice
+{
+}

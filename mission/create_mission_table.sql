@@ -1,0 +1,1 @@
+create table mission_log(char_id bigint(22),char_level int(11),metier_id int(11), instance_id bigint(22), task_id int(11),op_type int(11),repetition int(11),log_time int(11), gatewayid int(10))  ENGINE=InnoDB DEFAULT CHARSET=utf8;

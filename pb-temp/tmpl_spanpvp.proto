@@ -1,0 +1,116 @@
+import "tmpl_base.proto";
+
+message PBSpanPVPBattle
+{
+	optional PBSpanBattleField		battle_field		= 1;
+	optional PBSpanTeamPVP			team_pvp			= 2;
+	optional PBSpanSingleCfg		single				= 3;
+};
+
+message PBSpanBattleField
+{
+	optional sint32					OpenBattleMinNumber		= 1;
+	optional sint32					BattleGroupMaxPlayer	= 2;
+	optional sint32					OpenBattleCountDown		= 3;
+	//optional sint32					BattleMatchUpdateDelta	= 4;
+	optional sint32					VictoryScore			= 5;
+	optional string					CampANpcName			= 6;
+	optional string					CampBNpcName			= 7;
+	optional float					RewardofZero			= 8;
+	optional float					RewardofDiscon			= 9;
+	optional string					WinnerReward			= 10;
+	optional string					LoserReward				= 11;
+	optional string					TopScoreReward			= 12;
+	optional sint32					GroupMaxCount			= 13;
+	optional sint32					MaterialBuff			= 14;
+	optional sint32					MaterialCoef			= 15;
+	optional string					MainMaterialName		= 16;
+	optional float					MaxHarvestDis			= 17;
+	optional sint32					AddBuffofDeathTimes		= 18;
+	optional sint32					AddbuffofMinmine		= 20;
+	optional sint32					Addbuffod				= 19;
+	optional sint32					AddbuffofMaxmine		= 21;
+	optional sint32					ContinueKillNum			= 22;
+	optional sint32					AddbuffoffiveKill		= 23;
+	optional sint32					ContinueBekillNum		= 24;
+	optional sint32					AddbuffoftenBekill		= 25;
+	optional string					dungeon_sheet			= 26;
+	repeated PBBattleJoinGroupType	group_type				= 27; // 封魔战场的index范围;//[1-255]
+	optional sint32 				AddBuffId				= 28;
+	optional string 				NoAfkWinReward			= 29;
+	optional string 				NoAfkLoseReward			= 30;
+};
+
+message PBBattleJoinGroupType
+{
+	optional sint32					index					= 1;
+	optional sint32					MinLevel				= 2;
+	optional sint32					MaxLevel				= 3;
+	optional float					ratio					= 4;
+};
+
+message PBSpanTeamPVP
+{
+	optional sint32					OpenBattleMinNumber		= 1;
+	optional sint32					BattleGroupMaxPlayer	= 2;
+	optional sint32					OpenBattleCountDown		= 3;
+	optional string					dungeon_sheet			= 4;
+	repeated PBTeamPvPJoinGroupType	group_type				= 5; // 组队竞技场的index范围;//[256-512]
+	optional sint32					time_mode				= 6; // ;//[0,x]秒走时间顺序分组
+	optional string					creature_a				= 7; // 赤魂石sheet id
+	optional string					creature_b				= 8; // 赤魂石sheet id
+	optional string					win_award				= 9;
+	optional string					lose_award				= 10;
+	optional sint32					victory_score			= 11;
+
+	repeated PBTeamPVPRoleBuff		role_buff				= 12; // 角色buff
+	repeated PBTeamPVPTowerBuff		tower_buff				= 13; // 塔信息
+	repeated PBTeamPVPPlayerBuff	kill_buff				= 14; // 击杀小兵
+//	repeated PBTeamPVPPlayerBuff	continuous_buff			= 15; // 连续击杀玩家
+	repeated PBTeamPVPPlayerBuff	break_buff				= 16; // 终结连杀玩家获得
+	repeated PBTeamPVPPlayerBuff	down_buff				= 17; // 连杀玩家死亡失去
+	optional sint32					pet_buff				= 18; // 宠物buff
+	optional sint32					double_kill				= 19; // 双杀时间间隔(单位:秒)
+	optional sint32					five_kill				= 20; // 5杀时间间隔(单位:秒)
+	optional string 				NoAfkWinReward			= 21;
+	optional string 				NoAfkLoseReward			= 22;
+};
+
+message PBTeamPVPRoleBuff
+{
+	optional sint32					role_type				= 1; // ROLES::ERole
+	optional sint32					buff_id					= 2; // buff id
+	optional sint32					max_floor				= 3; // buff 最大层数
+	optional sint32					show_buff_id			= 4; // 显示用的buff id
+};
+
+message PBTeamPVPTowerBuff
+{
+	optional string					creature_sheet			= 1;
+	optional sint32					buff_id					= 2; // 塔/水晶盾的buff id
+	optional sint32					begin_count				= 3;//[default=0x7FFFFFFF]; // 本方死亡X人时开始倒记数, 2147483647
+	optional sint32					down_count				= 4;//[default=0x7FFFFFFF]; // 本方死亡X人时盾消失, 2147483647
+	optional sint32					type					= 5; // 类型ETeamPVPTowerType
+
+};
+
+message PBTeamPVPPlayerBuff
+{
+	optional sint32					kill_count				= 1; // 击杀数
+	optional sint32					buff_count				= 2; // buff 层数
+};
+
+
+message PBSpanSingleCfg
+{
+	optional sint32					BattleMatchUpdateDelta	= 1;
+};
+
+message PBTeamPvPJoinGroupType
+{
+	optional sint32					index					= 1;
+	optional sint32					MinLevel				= 2;
+	optional sint32					MaxLevel				= 3;
+	optional sint32					dungeon_level			= 4; // 副本等级
+};
+

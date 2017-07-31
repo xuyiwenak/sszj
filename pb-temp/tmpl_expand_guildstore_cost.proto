@@ -1,0 +1,12 @@
+import "tmpl_base.proto";
+
+message PBExpandInvCostCfg
+{
+	repeated	PBExpandInvCost cost_cfg	= 1;
+}
+
+message PBExpandInvCost
+{
+	optional uint32 slot_index = 1;         //  槽索引
+	optional uint32 open_slot_cost = 2;//[default=500000];     //  消耗的建设
+}

@@ -1,0 +1,34 @@
+
+import "tmpl_base.proto";
+
+
+
+message PBActivitySpawnBotConfig
+{
+	option (OptionXmlFile)		= "activity_spawnbot.xml";
+
+	repeated PBActivitySpawnBotItemListConfig item_list		= 1;	//NPC刷新活动
+}
+
+message PBActivitySpawnBotFunc
+{
+	optional string							type			= 1;	// 类型
+	repeated int32							int_param		= 2;	// 整形参数
+	repeated string							str_param		= 3;	// 整形参数
+}
+
+message PBActivitySpawnBotItemConfig
+{
+	optional string							group_name		= 1;	// 怪物组名
+	optional int32							map_id			= 2;	// 地图ID
+	repeated PBTemplateVector				pos_list		= 3;	// 怪物地点
+	optional int32							line_id			= 4;	// 线ID
+}
+
+message PBActivitySpawnBotItemListConfig
+{
+	optional int32							activity_id		= 1;	// 活动ID
+	repeated PBActivitySpawnBotFunc			func			= 2;	// 功能
+	repeated PBActivitySpawnBotItemConfig	item			= 3;	// 怪物信息
+	optional int32							sys_despawn		= 4;//[default=1];	// 是否支持系统销毁
+}

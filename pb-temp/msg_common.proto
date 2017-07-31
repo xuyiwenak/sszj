@@ -1,0 +1,571 @@
+import "msg_base.proto";
+import "msg_login.proto";
+
+message PBErrCodeResponse
+{
+	optional int32		ret_code		= 1;
+	optional string		ret_code_name	= 2;
+};
+
+message PBCommonResponse
+{
+	optional int32		ret_code		= 1; // 消息码
+};
+
+message PBMessageCodeNotice
+{
+	optional int32		ret_code		= 1; // 消息码
+};
+
+message PBCharPosition
+{
+	optional int32 x		= 1;
+	optional int32 y		= 2;
+	optional int32 z		= 3;
+	optional float heading	= 4;
+	optional uint32 map_id	= 5;
+};
+
+// 货币类型枚举值，数值和平台统一（待再确认一下），最好全局都统一用这个定义
+enum PBCurrencyType
+{
+	eCT_BlueDiamond		= 5;	// 蓝钻
+	eCT_RedDiamond		= 6;	// 红钻
+	eCT_GoldCoin		= 14;	// 金币
+};
+
+enum PBCreatureTitleType
+{
+	enCreatureType_Normal			= 1;	// 缺省
+	enCreatureType_SpanImbattle		= 2;	// 跨服雕像
+	enCreatureType_DyName			= 3;	// 自定义名字
+	enCreatureType_WildManor		= 4;	// 帮派领地
+};
+
+//移动 msg_base.proto 中
+//message PBParam
+//{
+//	optional uint32 param_type = 1;//参数类型，是key还是value;
+//	optional string param_str = 2;
+//};
+
+message PBDynStr
+{
+	optional	string	str_name	=	1;//句子主干的名字;
+	repeated	PBParam	str_params	=	2;//参数;
+};
+
+message PBStr
+{
+	optional bool 		is_dyn_str		=	1;//字符串类型,是原始串还是动态串;
+	optional string 	original_str	=	2;//原始字符串;
+	optional PBDynStr	dyn_str			=	3;//动态串;
+};
+
+message PBChatRequire
+{
+	optional uint32	chat_channel = 1;//频道;
+	optional string chat_content = 2;//内容;
+	optional uint32	item_slot	 = 3;//物品索引（跨服喇叭使用，普通喇叭走的不是这个消息，要注意）
+};
+
+message PBPrivateChat
+{
+	optional uint64 role_id			=	1;//对方id;
+	optional string chat_content	=	2;//聊天内容;
+};
+
+message PBChatContent
+{
+	optional uint32 chat_channel = 1;//频道;
+	optional uint64 sender_id	 = 2;//玩家id，使用的是roleid,当时客户端需要修改;
+	optional string sender_name	 = 3;//玩家名字;需要扩展vip信息什么的;
+	optional sint32	vip_level	 = 4;//发送者的vip等级;
+	optional sint32 team_id		 = 5;//发送者的队伍id;
+	optional PBStr  chat_content = 6;//说话内容;
+	optional sint32 role		 = 7;//职业;
+	optional sint32 gender		 = 8;//性别;
+	optional sint32 camp_type	 = 9;//阵营
+	optional uint32	guild_title	 = 10;//公会职位;
+	optional string head_icon	 = 11;//头像icon
+	optional uint32 gateway_id   = 12;//
+};
+
+message PBNPCInfo
+{
+	optional	uint32	npc_alias	= 	1;//npc的数字id;
+	optional	uint32	map_id		=	2;//地图id;
+	optional	sint32	pos_x		=	3;//x坐标;
+	optional	sint32	pos_y		= 	4;//y坐标;
+	optional	string	npc_name	=	5;//npc名字，客户端显示需要
+	optional    string	word_welcome=	6;//npc的欢迎词;
+	optional    uint32	sheet_id	=	7;//npc的sheet;
+};
+
+message PBNPCInfoList//NPC坐标信息的推送
+{
+	repeated	PBNPCInfo	npc_info	=	1;
+};
+
+/// 更新角色数值
+message PBMsgUpdateCharMoneyNotice
+{
+	optional	sint32	unbound_yuanbao	= 1;	// 蓝钻
+	optional	sint32	bound_yuanbao	= 2;	// 红钻
+	optional	sint32	horn			= 3;	// 荣誉
+	optional	sint32	unbound_money	= 4;	// 绑定钱
+	optional	sint32	lingqi			= 5;	// 灵气
+	optional	sint64	zhenqi			= 6;	// 真气
+	optional	sint32	youqing_point	= 7;	// 友情点
+	optional	sint32	energy			= 8;	// 体力
+	optional	sint32	rush_ticket		= 9;	// 副本扫荡券
+	optional	sint32	guild_salary	= 10;	// 帮会工资
+	optional	sint32	guild_contribution	= 11;	// 帮会贡献
+	optional	sint32	qili			= 12;	// 气力值
+	optional	sint32	renown			= 13;	// 声望值
+	optional	sint32  exploit			= 14;	// 功勋
+	optional	sint32  jifen			= 15;	// 积分
+	optional    sint32  pet_pvp_jifen   = 16;   // 宠物pvp积分
+};
+
+message PBMsgPathFindRequest
+{
+	optional	sint32	path_ty		= 1;	// 路径类型
+	optional	sint32	map_from	= 2;	// 出发地图
+	optional	sint32	map_to		= 3;	// 目标地图
+	optional	sint32	camp_from	= 4;	// 出发阵营
+	optional	sint32	camp_to		= 5;	// 目标阵营
+};
+
+message PBMsgPathFindOption
+{
+	optional uint64	npc_id	= 1;		// npc id
+	optional sint32	menu_idx= 2;		// NPC 功能项
+	optional sint32	pos_x	= 3;		// X坐标
+	optional sint32	pos_y	= 4;		// Y坐标
+};
+
+message PBMsgPathFindNode
+{
+	optional	sint32					map_id		= 1;	// 节点地图
+	repeated	PBMsgPathFindOption		path_options= 2;    // 去map的可行选项 
+};
+
+message PBMsgPathFindResponse
+{
+	optional int32		ret_code		 = 1;	// 消息码
+	optional sint32		path_ty			 = 2;	// 路径类型
+	repeated PBMsgPathFindNode path_nodes= 3;	// 路径信息
+};
+
+message PBMsgNpcTeleportRequest
+{
+	optional	sint32	line_id	= 1;	// 目标线路
+	optional	uint64  npc_id  = 2;	// 传送npc
+	optional	string	npc_name= 3;	// 传送npc名字
+	optional	sint32	menu_idx= 4;	// npc菜单索引（传送门固定为0）
+};
+
+message PBMsgNpcTeleportResponse
+{
+	optional int32		ret_code		 = 1; // 消息码
+	optional PBParam	code_param		 = 2; // 返回码参数
+};
+
+message PBMsgItemTeleportRequest
+{
+	optional PBPosition	position		= 1; // 目标线路
+	optional int32		camp_id			= 2; // 阵营
+};
+
+message PBMsgItemTeleportResponse
+{
+	optional int32		ret_code		 = 1; // 消息码
+	optional PBParam	code_param		 = 2; // 返回码参数
+};
+
+// 跨服传送npc
+message PBMsgNpcSpanTeleportRequest
+{
+	optional	sint32	line_id	= 1;	// 目标线路
+	optional	uint64  npc_id  = 2;	// 传送npc
+	optional	string	npc_name= 3;	// 传送npc名字
+};
+
+message PBMsgNpcSpanTeleportResponse
+{
+	optional int32		ret_code		 = 1; // 消息码
+	optional PBParam	code_param		 = 2; // 返回码参数
+};
+
+message PBMsgClientInBlockReport
+{
+	optional	int32	map_id			= 1; // 地图ID
+	optional	int32	x				= 2;
+	optional	int32	y				= 3;
+	optional	int32	z				= 4;
+};
+
+message PBClientPosition
+{
+	optional	sint32	x				= 1;
+	optional	sint32	y				= 2;
+	optional	sint32	z				= 3;
+
+	optional	float	heading			= 4;
+};
+message PBMsgPostionUpdateReport
+{
+	optional	uint64	seq_id					= 1;
+	optional	uint32	version					= 2;
+	optional	uint32	checksum				= 3;
+	optional	uint32	tick					= 4;
+	optional	uint32	reason					= 5;
+	optional	PBClientPosition	new_pos		= 6;
+	optional	PBClientPosition	next_pos	= 7;
+};
+
+message PBMsgPostionSeqIdNotice
+{
+	optional	uint64	seq_id					= 1;
+};
+
+//////////////////////////////////////////////////////////////////////////
+//  排行榜
+//////////////////////////////////////////////////////////////////////////
+message PBMsgRankCharNode
+{
+	optional uint64 char_id			= 1;	// 玩家ID
+
+	optional string char_name		= 2;	// 玩家昵称
+
+	optional sint32 char_role		= 3;	// 玩家职业
+
+	optional sint32 char_sex		= 4;	// 玩家性别
+
+	optional sint32 char_level		= 5;	// 玩家等级
+
+	optional string guild_name		= 6;	// 玩家帮派名称
+
+	optional sint32 rank_val		= 7;	// 排行值 
+
+	optional sint32 rank_trend		= 8;	// 排行名次和上次排行的差值 
+
+	optional sint32 char_camp		= 9;	// 玩家 阵营
+
+	optional sint32 char_battlescore= 10;	// 玩家 战斗力
+
+	optional sint32 role_id			= 11;	// Role ID
+
+	optional string char_petname	= 12;	// 宠物 名称//废弃
+
+	optional string pet_sheet		= 13;	// 宠物 sheet
+
+	optional string head_icon		= 14;	// 头像icon
+};
+
+message PBMsgRankGuildNode
+{
+	optional uint64 guild_id		= 1;	// 帮派 ID
+
+	optional string guild_name		= 2;	// 帮派 Name
+
+	optional sint32 guild_level		= 3;	// 帮派 等级
+
+	optional uint64 master_id		= 4;	// 帮主 ID
+
+	optional string master_name		= 5;	// 帮主 Name
+
+	optional sint32 char_role		= 6;	// 帮主 职业
+
+	optional sint32 char_sex		= 7;	// 帮主 性别
+
+	optional sint32 char_level		= 8;	// 帮主 等级
+
+	optional sint32 char_camp		= 9;	// 玩家 阵营
+
+	optional sint32 char_battlescore= 10;	// 玩家 战斗力
+
+	optional sint32 role_id			= 11;	// Role ID
+
+	optional sint32 rank_val		= 12;	// 排行值 
+
+	optional sint32 rank_trend		= 13;	// 排行名次和上次排行的差值 
+
+	optional string head_icon		= 14;
+};
+
+message PBMsgRankInfoRequest
+{
+	optional	sint32	rank_scope	= 1;	// 排行榜范围
+
+	optional	sint32  rank_ty		= 2;	// 排行榜类型
+};
+
+message PBMsgCharRankResponse
+{
+	optional	sint32				rank_scope		= 1;	// 排行榜范围
+
+	optional	sint32				rank_ty			= 2;	// 排行榜类型
+
+	optional	uint32				remain_time		= 3;	// 下次刷新剩余秒数	
+
+	repeated	PBMsgRankCharNode	rank_chars		= 4;	// 排行数据
+};
+
+message PBMsgGuildRankResponse
+{
+	optional	sint32				rank_scope		= 1;	// 排行榜范围
+
+	optional	sint32				rank_ty			= 2;	// 排行榜类型
+
+	optional	uint32				remain_time		= 3;	// 下次刷新剩余秒数	
+
+	repeated	PBMsgRankGuildNode	rank_guilds		= 4;	// 排行数据
+};
+
+message PBMsgCharMineRankResponse
+{
+	optional	sint32				rank_scope		= 1;	// 排行榜范围
+
+	optional	sint32				rank_ty			= 2;	// 排行榜类型
+
+	optional	sint32				rank_mine		= 3;	// 我的排名
+
+	optional	sint32				rank_begin		= 4;	// 开始排名
+
+	repeated	PBMsgRankCharNode	rank_chars		= 5;	// 排行数据
+};
+
+message PBMsgGuildMineRankResponse
+{
+	optional	sint32				rank_scope		= 1;	// 排行榜范围
+
+	optional	sint32				rank_ty			= 2;	// 排行榜类型
+
+	optional	sint32				rank_mine		= 3;	// 我的排名
+
+	optional	sint32				rank_begin		= 4;	// 开始排名
+
+	repeated	PBMsgRankGuildNode	rank_guilds		= 5;	// 排行数据
+};
+
+//////////////////////////////////////////////////////////////////////////
+message PBMsgJusticeInfoNotice
+{
+	optional int32 justice_value	= 1;	//正气值
+	optional int32 justice_level	= 2;	//正义等级
+	optional int32 justice_dayValue	= 3;	//当天获得的正气值
+	optional int32 justice_limitvalue = 4;	//当天获得的正气值上限
+	optional int32 justice_upvalue	= 5;	//当前正义等级所所需的经验值
+	optional int32 evil_value		= 6;	//当前邪恶值
+	optional int32 evil_level		= 7;	//当前邪恶等级
+	optional int32 evil_upvalue		= 8;	//当前邪恶升级所需值
+	optional int32 justice_changevalue	= 9;	//正气的变化值
+	optional int32 evil_changevalue	= 10;	//邪气的变化值
+};
+
+
+
+message PBMsgChangeLineNotice
+{
+	optional int32 line				= 1;	// 线号
+}
+
+/////////////////////////////// 世界等级 begin ///////////////////////////////////////////
+message PBMsgWorldLevelInfoRequest
+{
+	repeated sint32					wl_ids	= 1; // 世界等级的ID
+};
+message PBMsgWorldLevelInfoResponse
+{
+	optional PBWLAllRankInfo		infos	= 1;
+	optional sint32					current_id = 2; // 当前世界等级ID
+};
+
+message PBWLAllRankInfo
+{
+	repeated PBWLSingleRankInfo		ranks		= 1;
+	optional sint32					current_id	= 2;//[default=-1];
+};
+
+message PBWLSingleRankInfo
+{
+	optional sint32				wl_id		= 1; // 世界等级ID
+	repeated PBWLPlayerInfo		players		= 2;
+	optional uint32				start_time	= 3;//[default=0xFFFFFFFF]; // 第一次被突破的时刻
+	optional uint32				team_id		= 4;
+	optional uint32				open_time	= 5; // 该等级段开始时间
+};
+
+message PBWLPlayerInfo
+{
+	optional uint64				player_id	= 1;
+//	optional sint64				player_exp	= 2; // 经验值
+	optional sint32				player_level= 3;
+	optional string				player_name = 4;
+	optional sint32				camp_type	= 5; // 阵营
+	optional sint32				sex			= 6;
+	optional sint32				rank		= 7;
+	optional sint32				role_type	= 8;
+	optional string				icon		= 9;
+};
+
+// 世界等级奖励
+message PBWorldLevelAward
+{
+	optional sint32				wl_id		= 1; // 世界等级ID
+	optional bool				is_first	= 2;//[default=false]; // 是否首次突破
+	repeated PBWLPlayerInfo		players		= 3;
+	optional uint32				team_id		= 4;
+};
+
+// 头像改变
+message PBMsgCharIconChange
+{
+	optional uint64				player_id	= 1;
+	optional string				icon		= 2;
+};
+/////////////////////////////// 世界等级 end ///////////////////////////////////////////
+
+message PBMsgCharBaseInfo
+{
+	optional string head_icon = 1;	//头像icon
+	optional uint32 role = 2;		//职业
+	optional uint32 gender = 3;		//性别
+	optional uint32 server_camp = 4;//服务器阵营
+};
+
+message PBMsgClientLoadRoleOKReport
+{
+
+};
+
+// 客户端
+message PBMsgSomeCharInfoNotice
+{
+	optional	uint32	hp		= 1;
+	optional	uint32	max_hp	= 2;
+	optional	uint32	mp		= 3;
+	optional	uint32	max_mp	= 4;
+};
+
+////////////////////////////////////////////////
+
+enum PBCmdType
+{
+	enPBCmdType_PBMessage						= 1;	// pb消息
+	enPBCmdType_RawMessage						= 2;	// 拒绝
+	enPBCmdType_OpenUI							= 3;	// 打开UI（parameters 第一个参数表示UI名字，后面为UI参数）
+	enPBCmdType_CloseUI							= 4;	// 关闭UI（parameters 第一个参数表示UI名字）
+};
+
+message PBMsgClientDoSomethingNotice
+{
+	optional	PBCmdType	cmd_type			= 1;	// 指令类型
+	optional	sint32		show_code			= 2;	// 在messagecode.txt中定义
+	optional	bool		need_confirm		= 3;	// 客户端是否弹确认框
+	repeated	string		parameters			= 4;	// 参数
+};
+
+message PBMsgDoCmdRequest
+{
+	optional	PBCmdType	cmd_type			= 1;	// 指令类型
+	repeated	string		parameters			= 2;	// 参数
+};
+
+// 货币信息
+enum PBCostType
+{
+	enPBCostType_Curreny						= 1;	// 数值
+	enPBCostType_Item							= 2;	// 物品
+};
+
+message PBCostInfo
+{
+	optional	PBCostType	type		= 1; // 消耗类型
+	optional	sint32		item_sheet	= 2; // 物品sheetid
+	optional	sint32		consume_type= 3; // 消费类型
+	optional	sint32		quantity	= 4; // 数量
+}
+
+message PBCostInfoList
+{
+	repeated	PBCostInfo	money		= 1; // 单消耗
+}
+
+message PBLogAction
+{
+	optional	sint32				action_type		= 1;
+	optional	sint32				action_son_type	= 2;
+	optional	sint32				param1			= 3;
+	optional	sint32				param2			= 4;
+	optional	uint64				param3			= 5;
+	optional	uint64				param4			= 6;
+};
+
+message PBMsgSpanWildScoreItem
+{
+	optional string char_name		= 1;	// 昵称
+	optional sint32	score			= 2;    // 积分
+};
+
+message PBMsgSpanWildScoreNotice
+{
+	optional	sint32					state			= 1;	// 状态（表示当前积分状态是否显示）
+	optional	PBMsgSpanWildScoreItem	mineinfo		= 2;	// 自己的信息
+	repeated	PBMsgSpanWildScoreItem	rankinfo		= 3;	// 排行信息
+};
+
+// 去gate检查队伍是否可以进入跨服野外副本
+message PBMsgCanTPToSpanWildRequest
+{
+	optional sint32						num				= 1;		// 过去的人数
+	optional uint32						sessionid		= 2;	
+};
+
+message PBMsgCanTPToSpanWildResponse
+{
+	optional sint32						ret_code		= 1;
+	optional sint32						num				= 2;		// 过去的人数
+	optional uint32						sessionid		= 3;
+};
+
+// 去gate上增加进入跨服野外的人数
+message PBMsgTPToSpanWildAddNumNotice
+{
+	optional sint32						num				= 1;		// 过去的人数
+};
+
+
+// 检查队员是否可以进入跨服野外副本
+message PBMsgMemberCanTPToSpanWildRequest
+{
+	optional uint32						leaderid		= 1;
+	optional uint32						memberid		= 2;		// 队员ID
+	optional string						sheetid			= 3;		// 怪物ID
+	optional uint32						sessionid		= 4;
+};
+
+message PBMsgMemberCanTPToSpanWildResponse
+{
+	optional sint32					ret_code			= 1;
+	optional sint32					reason				= 2;
+	optional sint64					param				= 3;
+	optional uint32					leaderid			= 4;
+	optional uint32					memberid			= 5;		// 队员ID
+	optional string					sheetid				= 6;		// 怪物ID
+	optional uint32					sessionid			= 7;
+};
+
+
+message PBMsgMemberSpanWildTPNotice
+{
+	optional uint32						memberid		= 1;		// 队员ID
+	optional PBPosition					pos				= 2;		// 传送位置
+};
+
+message PBGuildMemberIdList
+{
+    repeated uint64 member_id = 1;
+}

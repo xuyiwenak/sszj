@@ -1,0 +1,39 @@
+import "tmpl_base.proto";
+
+enum PBHappyEncounterType
+{
+	eKillMonster		= 1;  // 杀怪
+	eUseItem			= 2;  // 使用物品
+	ePassSomeWhere		= 3;  // 经过某区域
+	eTalkWithNPC		= 4;  // 与NPC对话
+	
+	eUnknown			= -1;  // 初始化，这个永远放最后
+}
+
+message PBHappyEncounterCfg
+{
+	repeated PBHappyEncounterInfo	 happy_encounter_info		= 1;				// 奇遇信息
+};
+
+message PBHappyEncounterInfo
+{
+	optional string					 count_info					= 1;						// 奇遇的记次信息		
+	optional sint32	 				 occurs_probability			= 2;//[default=0];				// 触发奇遇事件的可能性（0~10000）
+	optional string					 happy_encounter_dataset 	= 3;						// 奇遇事件库 "*.encounter_incident_dataset"
+	repeated PBHappyEncounterParam	 happy_encounter_param		= 4;						// 触发奇遇的参数
+};
+
+message PBHappyEncounterParam
+{
+	optional PBHappyEncounterType	  happy_encounter_type		= 1;//[default=eUnknown];		// 奇遇类型
+	optional string					  string_param				= 2;						
+	optional sint64					  int_param					= 3;
+	optional PBHappyEncounterLocation location					= 4;
+};
+
+message PBHappyEncounterLocation
+{
+	optional float					 x							= 1;
+	optional float					 y							= 2;
+	optional float					 range						= 3;
+}

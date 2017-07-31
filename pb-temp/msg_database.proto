@@ -1,0 +1,32 @@
+
+option optimize_for = SPEED;
+
+enum EClientDatabasePropType
+{
+	SPEED_FACTOR					=		0;
+	LEVEL							=		1;
+	EXP_VALUE						=		2;
+	MAX_EXP							=		3;
+	VIP_LEVEL						=		4;
+	VIP_EXP_VALUE					=		5;
+	PVP_SCORE						=		6;
+	MAX_ENERGY						=		7;
+	TARGET_LEVEL					=		8;
+	ACCEPT_EXP						=		9; // 新加的，新增的经验，用来解决客户端冒经验不对的问题
+};
+
+message ClientDatabaseProp
+{
+	optional	EClientDatabasePropType			prop_type	=	1;
+	optional	sint64							prop_value	=	2;
+}
+
+message PBMsgClientDatabaseInit
+{
+	repeated	ClientDatabaseProp	props		=	1;
+};
+
+message PBMsgClientDatabaseUpdate
+{
+	optional	ClientDatabaseProp	prop		=	1;
+};

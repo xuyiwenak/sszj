@@ -1,0 +1,28 @@
+import "tmpl_base.proto";
+
+message PBCangqiongPKConfList
+{
+	repeated	PBCangqiongPKConf	cangqiongPK_list	= 1;
+};
+
+message	PBCangqiongPKConf
+{
+	optional	sint32	minLevel	= 1;
+	optional	sint32	maxLevel	= 2;
+	optional	sint32	index		= 3;
+	optional	float	expRatio	= 4;
+	optional	float	hoourRatio	= 5;
+};
+
+message PBCangqiongPKRewardList
+{
+	repeated	PBCangqiongPBReward reward_list	= 1;
+};
+
+
+
+message PBCangqiongPBReward
+{
+	optional	string item = 1;
+	optional	sint32	quantity	= 2;
+};

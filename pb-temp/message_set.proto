@@ -1,0 +1,34 @@
+option optimize_for = SPEED;
+
+import "db_base.proto";
+import "player.proto";
+import "su_data.proto";
+import "billing.proto";
+import "gateway.proto";
+import "bigworld.proto";
+
+message PBMessageSet
+{
+	optional PBPlayer				data_1 = 1 ;//[(OptionDBNamePrefix) = "gamedb"] ;
+	optional PBCharacter			data_2 = 2 ;//[(OptionDBNamePrefix) = "gamedb"] ;
+	optional PBGateWayData			data_4 = 4 ;//[(OptionDBNamePrefix) = "gamedb"];
+	optional PBGateWaySocialData	data_5 = 5 ;//[(OptionDBNamePrefix) = "gamedb"];
+	optional PBBillingStatus		data_6 = 6 ;//[(OptionDBNamePrefix) = "gamedb"];
+	optional PBCashExchange			data_7 = 7 ;//[(OptionDBNamePrefix) = "gamedb"];
+	optional PBChargeRecord 		data_8 = 8 ;//[(OptionDBNamePrefix) = "gamedb"];
+	optional PBAllGateData			data_9 = 9 ;//[(OptionDBNamePrefix) = "su"];
+	optional PBAddFreeMoney 		data_10 = 10;//[(OptionDBNamePrefix) = "gamedb"];
+	optional PBChooseChar           data_11 = 11;//[(OptionDBNamePrefix) = "gamedb"];
+	optional PBConsignInfo			data_12 = 12;//[(OptionDBNamePrefix) = "gamedb"];
+	optional PBConsignLog			data_13 = 13;//[(OptionDBNamePrefix) = "gamedb"];
+	optional PBCharOffLine			data_14 = 14;//[(OptionDBNamePrefix) = "gamedb"];
+	optional PBGateWayDataEx		data_15 = 15;//[(OptionDBNamePrefix) = "gamedb"];
+	optional PBMarriageTable		data_16 = 16;//[(OptionDBNamePrefix) = "gamedb"];
+	optional PBGatWayGuildData		data_17 = 17;//[(OptionDBNamePrefix) = "gamedb"];
+	optional PBRankLastData			data_18 = 18;//[(OptionDBNamePrefix) = "gamedb"];
+	optional PBGMSSpanBattle		data_19 = 19;//[(OptionDBNamePrefix) = "su"];
+	optional PBSpanCurBattle		data_20 = 20;//[(OptionDBNamePrefix) = "su"];
+	optional PBSpanWildRank			data_21 = 21;//[(OptionDBNamePrefix) = "su"];
+	optional PBGMSCommonData		data_22 = 22;//[(OptionDBNamePrefix) = "su"];
+	optional PBPetPvPRankData       data_23 = 23;//[(OptionDBNamePrefix) = "gamedb"];
+}

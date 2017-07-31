@@ -1,0 +1,25 @@
+import "tmpl_base.proto";
+
+message PBFestActivityCfg
+{
+	repeated	FestActivityTime act_time	= 1;
+}
+
+message FestActivityTime
+{
+	optional	string	sheet_id = 1;	//活动sheetid
+	optional	string	start_time	= 2;	//开始时间
+	optional	string	end_time	= 3;	//结束时间
+}
+
+// 活动排序
+
+message FestActivityRank
+{
+	optional string sheet_str	= 1; // 活动sheet
+}
+
+message PBFestActivityRank
+{
+	repeated	FestActivityRank	sheet_id = 1;	//活动sheetid
+}

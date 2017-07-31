@@ -1,0 +1,582 @@
+import "msg_base.proto";
+import "msg_user.proto";
+import "msg_role_base.proto";
+
+
+///////////////////////////// 蜀山 消息定义 /////////////////////////////
+
+// 队伍应答枚举类型
+enum PBTeamAnswerType
+{
+	enPBTeamAnswerType_Agree					= 1;	// 同意
+	enPBTeamAnswerType_Refuse					= 2;	// 拒绝
+};
+
+// 队伍应答枚举类型
+enum PBTeamFollowInfoType
+{
+	enPBTeamFollowInfoType_LeaderInfo			= 0x01;	// 队长信息
+	enPBTeamFollowInfoType_ListIndex			= 0x02;	// 队员位置
+	enPBTeamFollowInfoType_Mount				= 0x04;	// 队长上飞剑
+	enPBTeamFollowInfoType_AutoFight			= 0x08;	// 队长挂机
+	enPBTeamFollowInfoType_AutoFollow			= 0x10;	// 本人自动跟随标记
+
+	enPBTeamFollowInfoType_ALL					= 0xff;	// 队员位置
+};
+
+
+message PBMsgTeamBaseData
+{
+	optional bool			present				= 1;
+	optional sint32			level				= 3;
+	optional sint32			role				= 4;
+	optional sint32			sex					= 5;
+	optional sint32			hornor				= 6;//废弃掉
+	optional bytes			name				= 7;
+	optional uint64			full_id				= 8;
+	optional sint32			vip_level			= 9;
+	optional sint32			battle_score		= 10;
+	optional string			guide_name			= 11;	// 帮派名字
+	optional PBMsgVPInfo	visual_prop			= 12;	// VPInfo
+	optional uint32			sheet_id			= 13;	// 
+	optional sint32			camp				= 14;	// 阵营
+	optional string			head_icon			= 15;	// 头像icon
+	optional ERoleStatus	status				= 16;	//是否在线
+};
+
+message PBMsgTeamSyncHPMP
+{
+	optional sint32			cur_hp				= 1;
+	optional sint32			max_hp				= 2;
+	optional sint32			cur_mp				= 3;
+	optional sint32			max_mp				= 4;
+};
+
+message PBMsgTeamSyncPos
+{
+	optional sint32				posX				= 1;
+	optional sint32				posY				= 2;
+	optional uint32				mapId				= 3;
+};
+
+message PBMsgTeamBuffInfo
+{
+	repeated sint32				buffId				= 1;
+};
+
+
+/////// 消息开始 /////////////
+
+//请求-创建队伍
+message PBMsgTeamBuildRequest
+{
+	optional bool					is_force			= 1;	// 是否强制创建队伍（如果在组队匹配中，则会中断匹配）
+};
+
+//响应-创建队伍
+message PBMsgTeamBuildResponse
+{
+	optional sint32					ret_code			= 1;	// 返回码
+};
+
+//通告-创建队伍冲突提示
+message PBMsgTeamBuildOppositeTipNotice
+{
+	optional sint32					notice_code			= 1;	// 提示码
+};
+
+//请求-解散队伍
+message PBMsgTeamDismissRequest
+{
+	optional bool					is_force			= 1;	// 是否强制解散（匹配中也不需确认）
+};
+
+//响应-解散队伍
+message PBMsgTeamDismissResponse
+{
+	optional sint32					ret_code			= 1;	// 返回码
+};
+
+//通告-解散队伍冲突提示
+message PBMsgTeamDismissOppositeTipNotice
+{
+	optional sint32					notice_code			= 1;	// 提示码
+};
+
+//请求-转移队长
+message PBMsgTeamChangeLeaderRequest
+{
+	optional uint64					new_leader_full_id	= 1;	// 新队长的 entity full id
+};
+
+//响应-转移队长
+message PBMsgTeamChangeLeaderResponse
+{
+	optional sint32					ret_code			= 1;	// 返回码
+};
+
+//请求-退出队伍
+message PBMsgTeamLeaveRequest
+{
+	optional bool					is_force			= 1;	// 是否强制离开（匹配中也不需确认）
+};
+
+//响应-退出队伍
+message PBMsgTeamLeaveResponse
+{
+	optional sint32					ret_code			= 1;	// 返回码
+};
+
+//通告-解散队伍冲突提示
+message PBMsgTeamLeaveOppositeTipNotice
+{
+	optional sint32					notice_code			= 1;	// 提示码
+};
+
+//请求-踢出队伍
+message PBMsgTeamKickRequest
+{
+	optional uint64					kicked_full_id		= 1;	// 被踢队员的 entity full id
+};
+
+//响应-踢出队伍
+message PBMsgTeamKickResponse
+{
+	optional sint32					ret_code			= 1;	// 返回码
+};
+
+//邀请创建队伍
+
+//邀请入队
+//请求-队长邀请
+message PBMsgTeamProposalRequest
+{
+	optional uint64					invatee_full_id		= 1;	// 被邀请人的 entity full id
+};
+
+//响应-队长邀请
+message PBMsgTeamProposalResponse
+{
+	optional sint32					ret_code			= 1;	// 返回码
+};
+
+
+//通告-队员邀请审批请求
+message PBMsgTeamProposalExamineNotice
+{
+	optional uint64					invater_full_id		= 1;	// 邀请人的 entity full id
+	optional uint64					invatee_full_id		= 2;	// 被邀请人的 entity full id
+	optional bytes					invatee_name		= 3;	// 被邀请人的 name
+};
+
+//请求-队长审批队员邀请
+message PBMsgTeamProposalExamineAnswerRequest
+{
+	optional uint64					invater_full_id		= 1;	// 邀请人的 entity full id
+	optional uint64					invatee_full_id		= 2;	// 被邀请人的 entity full id
+	optional PBTeamAnswerType		answer_type			= 3;	// 应答
+};
+
+//响应-队长审批队员邀请
+message PBMsgTeamProposalExamineAnswerResponse
+{
+	optional sint32					ret_code			= 1;	// 返回码
+};
+
+//通告-邀请入队通告
+message PBMsgTeamProposalNotice
+{
+	optional uint64					invater_full_id		= 1;	// 邀请人的 entity full id
+	optional bytes					invater_name		= 2;	// 邀请人名称
+	optional uint32					team_id				= 3;
+	//optional PBMsgTeamBaseData		invater_base_data	= 2;	// 邀请人的基本信息
+};
+
+//请求-应答邀请入队
+message PBMsgTeamProposalAnswerRequest
+{
+	optional uint32					team_id		= 1;	// 邀请人的 entity full id
+	optional PBTeamAnswerType		answer_type			= 2;	// 应答
+};
+
+//响应-应答邀请入队
+message PBMsgTeamProposalAnswerResponse
+{
+	optional sint32					ret_code			= 1;	// 返回码
+};
+
+//申请入队
+//请求-申请入队
+message PBMsgTeamApplyRequest
+{
+	optional uint64					member_full_id		= 1;	// 队伍成员的 entity full id
+	optional bool					is_force			= 2;	// 是否强制申请队伍（如果在队伍中，则直接退出）
+};
+
+//响应-申请入队
+message PBMsgTeamApplyResponse
+{
+	optional sint32					ret_code			= 1;	// 返回码
+};
+
+//请求-队长应答申请入队
+message PBMsgTeamApplyAnswerRequest
+{
+	optional uint64					applyer_full_id		= 1;	// 申请人的 entity full id
+	optional PBTeamAnswerType		answer_type			= 2;	// 应答
+};
+
+//响应-队长应答申请入队
+message PBMsgTeamApplyAnswerResponse
+{
+	optional sint32					ret_code			= 1;	// 返回码
+};
+
+
+
+message PBMsgTeamBaseDataUpdateNotice
+{
+	optional uint32				role_id			= 1;
+	optional PBMsgTeamBaseData	base_data		= 2;
+};
+
+message PBMsgTeamSyncHPMPUpdateNotice
+{
+	optional uint32				role_id			= 1;
+	optional PBMsgTeamSyncHPMP	hpmp_data		= 2;
+};
+
+message PBMsgTeamSyncPosUpdateNotice
+{
+	optional uint32				role_id			= 1;
+	optional PBMsgTeamSyncPos	pos_data		= 2;
+};
+
+message PBMsgTeamSyncBuffInfoUpdateNotice
+{
+	optional uint32				role_id			= 1;
+	optional PBMsgTeamBuffInfo	buffInfo		= 2;
+};
+
+message PBMsgTeamFlagUpdateNotice
+{
+	optional bool			is_in_team			= 1;
+	optional uint32			leader_id			= 2;
+	optional uint32			my_id				= 3;
+};
+
+message PBMsgTeamMemberClearNotice
+{
+	optional uint32			role_id				= 1;
+};
+
+message PBMsgTeamApplyerBaseDataNotice
+{
+	optional PBMsgTeamBaseData	base_data			= 1;
+};
+
+message PBMsgTeamApplyerClearNotice
+{
+	optional uint64				applyer_full_id		= 1; 
+};
+
+
+message PBMsgTeamCallFriendRequest
+{
+	optional uint32						func_type	= 1;	// 功能类型
+	optional uint32						func_id		= 2;	// sheetId
+};
+
+message PBMsgTeamCallFriendResponse
+{
+	optional sint32				ret_code			= 1;	// 返回码
+	optional PBParam			code_param			= 2;	// 返回码参数
+};
+
+message PBMsgTeamJoinCallRequest
+{
+	optional sint32				team_id				= 1;	// 队伍ID
+};
+
+message PBMsgTeamJoinCallResponse
+{
+	optional sint32				ret_code			= 1;	// 返回码
+};
+
+/// 同屏玩家信息请求
+message PBMsgScreenPlayerInfoRequest
+{
+	repeated sint64					player_id		= 1;	// 角色ID
+};
+message PBMsgScreenPlayerInfoResponse
+{
+	repeated PBScreenPlayerInfo		infos			= 1;
+};
+message PBScreenPlayerInfo
+{
+	optional sint32					level			= 1;	// 玩家等级
+	optional sint32					vip_level		= 2;
+	optional sint64					player_id		= 3;
+	optional sint32					fight_power		= 4;	// 战力
+	optional uint64					guild_id		= 5;
+	optional string					guild_name		= 6;
+	optional string					player_name		= 7;
+	optional sint32					player_sex		= 8;
+	optional sint32					role_type		= 9;
+	optional sint32					member_count	= 10;	// 当前队伍人数
+	optional string					head_icon		= 11;
+};
+
+message PBTeamLeaderMapInfo
+{
+	optional sint32				map_id			= 1;	// 队长map
+	optional sint32				pos_x			= 2;	// 队长x坐标
+	optional sint32				pos_y			= 3;	// 队长y坐标
+	optional sint32				line_id			= 4;	// 队长线ID
+	optional sint32				is_ride_mount	= 5;	// 是否飞剑状态
+};
+
+// 队长召唤跟随请求 C->S
+message PBMsgTeamFollowOrderRequest
+{
+	optional sint32				is_follow			= 1;	//  是否跟随
+};
+message PBMsgTeamFollowOrderResponse
+{
+	optional sint32				ret_code			= 1;	// 返回码
+};
+
+// 召唤队员跟随通知 S->C
+message PBMsgTeamFollowOrderNotice
+{
+	optional PBTeamLeaderMapInfo leader_info		= 1;	// 队长地图信息
+};
+
+// 队员跟随结果请求 C->S
+message PBMsgTeamMemberFollowOrderRequest
+{
+	optional sint32				is_accept			= 1;	// 是否同意
+};
+// 队员跟随结果回复 S->C
+message PBMsgTeamMemberFollowOrderResponse
+{
+	optional sint32				ret_code			= 1;	// 返回码
+	optional sint32				is_follow			= 2;	// 是否同意跟随
+	optional PBTeamLeaderMapInfo leader_info		= 3;	// 队长地图信息
+};
+
+// 队员跟随开始请求 C->S
+message PBMsgTeamMemberFollowEnterListRequest
+{
+};
+// 队员跟随开始请求 C->S
+message PBMsgTeamMemberFollowEnterListResponse
+{
+	optional sint32				ret_code			= 1;	// 返回码
+	optional sint32				is_following		= 2;	// 是否在跟随中
+	optional sint32				list_index			= 3;	// 跟随列表的位置
+};
+
+// 队员跟随请求 C->S
+message PBMsgTeamMemberFollowRequest
+{
+};
+message PBMsgTeamMemberFollowResponse
+{
+	optional sint32				ret_code			= 1;	// 返回码
+	optional sint32				is_follow			= 2;	// 是否同意跟随
+	optional PBTeamLeaderMapInfo leader_info		= 3;	// 队长地图信息
+};
+
+// 队员取消跟随报告 C->S
+message PBMsgTeamMemberFollowCancelReport
+{
+};
+
+// 队员跟随丢失报告 C->S
+message PBMsgTeamMemberFollowLoseReport
+{
+};
+
+// 队员提速报告 C->S
+message PBMsgTeamMemberFollowSpeedReport
+{
+	optional sint32					is_run			= 1; // 是否奔跑
+};
+
+// 队员信息通知 S->C
+message PBMsgTeamMemberFollowInfoNotice
+{
+	optional sint32					type			= 1; // 类型
+	optional sint32					list_index		= 2; // 角色ID
+	optional sint32					is_following	= 3; // 是否跟随中
+	optional PBTeamLeaderMapInfo	leader_info		= 4; // 队长信息
+	optional sint32					is_mount		= 5; // 是否上剑
+	optional sint32					is_autofight	= 6; // 是否挂机
+	optional sint32					is_autofollow	= 7; // 是否自动跟随
+};
+
+// 队员自动跟随请求 C->S
+message PBMsgTeamMemberAutoFollowRequest
+{
+	optional sint32				is_auto				= 1; // 是否自动
+};
+message PBMsgTeamMemberAutoFollowResponse
+{
+	optional sint32				ret_code			= 1; // 返回码
+};
+
+
+message PBMsgLeaderPosNotice
+{
+	optional uint32					member_id			= 1;
+	optional PBTeamLeaderMapInfo	lead_info			= 2;
+};
+
+
+////////////////////////////////////
+
+// 队伍目标类型
+enum PBTeamPurposeType
+{
+	PBTeamPurposeType_Guaji							= 1;	// 挂机
+	PBTeamPurposeType_TeamDungeon					= 2;	// 队伍副本
+};
+
+
+message PBMsgTeamInfo
+{
+	optional uint64			leader_full_id			= 1;
+	optional string			leader_name				= 2;
+	optional sint32			leader_level			= 3;
+	optional sint32			leader_role				= 4;
+	optional sint32			leader_sex				= 5;
+	optional string			leader_head_icon		= 6;	// 头像icon
+	optional sint32			leader_vip_level		= 7;
+	optional sint32			leader_battle_score		= 8;
+	optional sint32			leader_camp				= 9;	// 阵营
+	optional sint32			member_num				= 10;	// 目前成员数量
+	optional uint32			team_id					= 11;	// 队伍ID
+
+};
+
+// 请求某活动的队伍列表
+message PBMsgTeamListRequest
+{
+	optional PBTeamPurposeType			purpose_type	= 1;	// 目标类型				
+	optional uint32						func_type		= 2;	// 功能类型(活动参数)
+	optional uint32						func_id			= 3;	// sheetId(活动参数)
+};
+
+// 返回某活动的队伍列表
+message PBMsgTeamListResponse
+{
+	optional sint32						ret_code		= 1;	// 返回码
+	optional sint32						func_type		= 2;	// 功能类型(活动参数)
+	optional sint32						func_id			= 3;	// sheetid(活动参数)
+	repeated PBMsgTeamInfo				team			= 4;	// 队伍列表
+};
+
+// 设置队伍目标
+message PBMsgSetTeamPurposeRequest
+{
+	optional sint32						func_type		= 1;	// 功能类型(活动参数)
+	optional sint32						func_id			= 2;	// sheetid(活动参数)
+};
+
+
+message PBMsgSetTeamPurposeResponse
+{
+	optional sint32						ret_code		= 1;	// 返回码
+};
+
+// 队伍目标通告
+message PBMsgTeamPurposeNotice
+{
+	optional sint32						func_type		= 1;	// 功能类型(活动参数)
+	optional sint32						func_id			= 2;	// sheetid(活动参数)
+	optional bool						no_purpose		= 3;	// true表示没有目标 false表示有目标
+};
+
+
+// 将队员应答同意邀请的消息转到队长所在阵营
+message PBMsgTransportProposalAnswerRequest
+{
+	optional uint32					leaderid			= 1;	// 队长id
+	optional uint32					team_id				= 2;	// 
+	optional uint32					memberid			= 3;	// 被邀请人
+};
+
+// 将队员应答同意邀请的消息转到队长所在阵营
+message PBMsgTransportProposalAnswerResponse
+{
+	optional sint32					ret_code			= 1;
+	optional uint32					team_id				= 2;	// 
+	optional uint32					memberid			= 3;	// 被邀请人
+	optional uint32					leaderid			= 4;	// 队长id
+	optional uint32					functype			= 5;
+	optional uint32					sheetid				= 6;
+	optional uint32					matchid				= 7;
+	optional uint32					matchtype			= 8;
+	optional bool					isinmatch			= 9;
+};
+
+// 将申请的请求转到队长阵营，去确认是否条件符合
+message PBMsgTransportApplyRequest
+{
+	optional uint32					leaderid			= 1;	// 队长id
+	optional uint32					team_id				= 2;	// 
+	optional uint32					memberid			= 3;	// 被邀请人
+	optional uint64					memberfullid		= 4;	// 邀请人fullid
+};
+
+message PBMsgTransportApplyResponse
+{
+	optional sint32					ret_code			= 1;
+	optional uint32					leaderid			= 2;	// 队长id
+	optional uint32					team_id				= 3;	// 
+	optional uint32					memberid			= 4;	// 被邀请人
+	optional uint32					functype			= 5;
+	optional uint32					sheetid				= 6;
+	optional uint32					matchid				= 7;
+	optional uint32					matchtype			= 8;
+	optional uint64					memberfullid		= 9;	// 邀请人fullid
+};
+
+
+message PBMsgTransportApplyagreeRequest
+{
+	optional uint32					leaderid			= 1;	// 队长id
+	optional uint32					team_id				= 2;	// 
+	optional uint32					memberid			= 3;	// 被邀请人
+	optional uint32					functype			= 5;
+	optional uint32					sheetid				= 6;
+	optional uint32					matchid				= 7;
+	optional uint32					matchtype			= 8;
+};
+
+message PBMsgTransportApplyagreeResponse
+{
+	optional sint32					ret_code			= 1;
+	optional sint32					reason				= 2;
+	optional sint64					param				= 3;
+	optional uint32					leaderid			= 4;
+	optional uint32					memberid			= 5;
+};
+
+message PBMsgCanSpanPveMatchRequest
+{
+	optional uint32					leaderid			= 1;
+	optional uint32					memberid			= 2;
+	optional uint32					sessionid			= 3;
+	optional uint32					functype			= 4;
+	optional uint32					sheetid				= 5;
+};
+
+message PBMsgCanSpanPveMatchResponse
+{
+	optional sint32					ret_code			= 1;
+	optional uint32					sessionid			= 2;
+	optional sint32					reasoncode			= 3;
+	optional sint64					param				= 4;
+};

@@ -1,0 +1,19 @@
+/// @brief 超链接的配置
+
+import "tmpl_base.proto";
+
+message PBConfigSpanImbattleCreature
+{
+	repeated PBConfigSpanImbattleCreatureRank	rank_info	= 1 ;// 链接配置
+}
+
+message PBConfigSpanImbattleCreatureRank
+{
+	optional sint32 battle_result			= 1	;// 排名
+	optional string group_name				= 2	;// 怪物组名
+	optional uint64 default_vpa				= 3	;// 缺省vpa
+	optional uint64 default_vpb				= 4	;// 缺省vpb
+	optional uint64 default_vpc				= 5	;// 缺省vpc
+	optional string default_title			= 6	;// 缺省title
+	optional string valid_title				= 7	;// 有效title
+}

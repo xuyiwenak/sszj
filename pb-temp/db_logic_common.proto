@@ -1,0 +1,55 @@
+// 以最快速度序列/反序列
+option optimize_for = SPEED;
+
+message PBAttachment//比较麻烦，想办法和staticitem合并;
+{
+	optional uint32	sheet_id	= 	1;//物品的sheetid;
+	optional sint32	quantity	=	2;//数目;
+	optional bool 	bind		=	3;//是否绑定;
+	optional string item_desc	=	4;//署名专用
+}
+
+message PBKeyParam
+{
+	optional uint32			param_type	= 1;	//参数类型，是key(1)还是value(2);
+	optional string			param_str	= 2;
+};
+
+message PBMail
+{
+	optional uint32				mail_id		=	1;//邮件id，使用某种自增方式就ok;
+	optional uint32 			sender_id	= 	2;//发送者role_id,0表示系统邮件;
+	optional string 			sender_name	=	3;//发送者名字,正常有个id就可以;
+	optional string 			title		=	4;//邮件标题啊
+	optional string 			body		=	5;//邮件正文啊
+	optional uint32				send_time	=	6;//发送时间
+	repeated PBAttachment		attachment	=	7;//附件;
+	//如果有发放实物的，那么再添加一个pbitem就可以，我觉得咱们不是很有必要;
+	optional uint32				status		=	8;//状态，已读，未读，领取了附件，领取附件中;
+	repeated string				param		=	9;//参数
+	optional uint32				del_time	=	10;	//能够删除的时间  某些邮件在指定的时间内不能删除 所有需要这个参数
+	repeated PBKeyParam			key_param	=	11; //支持键值的参数 便于国际化 以后带参数的都用这个字段
+	optional uint32				expiration_time	= 12;	//过期时间  超过过期时间，直接删除  有附件也是直接删除  策划需求
+}
+
+//盟主信息，主要是外观数据
+message PBIULeaderInfo
+{
+	optional string				leader_name = 1;	//盟主名字
+	optional uint64				vpa = 2;
+	optional uint64				vpb = 3;
+	optional uint64				vpc = 4;
+}
+
+//仙盟的排名信息
+message PBRankIU
+{
+	optional sint32				iu_rank = 1;	//仙盟排名
+	optional uint64				iu_id = 2;	//仙盟id
+	optional string				iu_name = 3;	//仙盟名
+	optional sint32				iu_level = 4;	//仙盟等级
+	optional sint32				battle_score = 5;	//仙盟战斗力
+	optional uint32				gateway_id = 6;	//仙盟所在的GWID
+	optional bool				received_leader_info = 7;	//是否收到盟主信息的标记
+	optional PBIULeaderInfo		leader_info = 8;	//仙盟盟主信息
+}

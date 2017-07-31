@@ -1,0 +1,230 @@
+import "msg_base.proto";
+
+
+//================================================================================
+// 请求采矿
+// MSG_BtlHarvest_Request
+message PBBattlefieldHarvestRequest					
+{
+	optional uint32 material_id 		= 1;	//物资id,DataSetIndex
+	optional uint32	material_sheet_id 	= 2;	//物资SheetId
+}
+
+// 取消采矿
+// MSG_BtlHarvestCancel_Request
+message PBBattlefieldHarvestCancelRequest					
+{
+	optional uint32	material_sheet_id = 1;	//物资SheetId
+}
+
+// 响应采矿状态
+// MSG_BtlHarvestStatus_Response
+message PBBattlefieldHarvestStatusResponse
+{
+	optional sint32	harvest_status	= 1;	// 采集状态
+	optional sint32 harvest_time 	= 2;	// 采集时间new
+}
+
+
+//================================================================================
+// 请求交矿new
+message PBBattlefieldDeliverMaterialRequest
+{
+	optional uint32	camp_id				= 1;	//阵营Id
+}
+
+// 响应交矿new
+message PBBattlefieldDeliverMaterialResponse
+{
+
+}
+
+message PBBattleQueryRequest
+{
+	optional uint32		func_type					= 1;	// 功能类型
+	optional uint32		func_id						= 2;	// 副本sheetId
+};
+
+
+//================================================================================
+// 请求鼓舞new
+message PBBattlefieldInspireRequest
+{
+	optional uint32	inspire_type			= 1;	//鼓舞类型
+}
+
+// 响应鼓舞new
+message PBBattlefieldInspireResponse
+{
+
+}
+
+
+//================================================================================
+// 请求匹配战场
+// MSG_BtlMatch_Request
+message PBBattlefieldMatchRequest					
+{
+
+}
+
+// 取消匹配战场
+// MSG_BtlMatchCancel_Request
+message PBBattlefieldMatchCancelRequest					
+{
+
+}
+
+// 响应匹配状态
+// MSG_BtlMatchStatus_Response
+message PBBattlefieldMatchStatusResponse					
+{
+	optional sint32	match_status	= 1;	//匹配状态
+	optional sint32 match_time		= 2;	//匹配时间 new
+	optional sint32 member_count	= 3;	//人数 new
+	optional sint32 open_count		= 4;	//开启人数
+	optional sint32 max_count		= 5;	//最大人数
+	optional sint32 ret_code		= 6;	//返回码
+	optional uint32	dungeon_sheet	= 7;
+	optional uint32 is_cqpk			= 8;	//是否是五鬼幻阵
+}
+
+//================================================================================
+// 战场实时统计信息
+// MSG_BtlStat_Infrom
+message PBBattlefieldStatInform					
+{
+	optional uint32 victory_score 				= 1;	//获胜分数
+	repeated PBBattlefieldStatInfo stat_info 	= 2;	//实时统计信息
+	repeated PBBattlefieldCampInfo camp_info	= 3;	//阵营积分
+}
+
+// 战场结算信息
+// MSG_BtlEndStat_Inform
+message PBBattlefieldEndStatInform
+{
+	optional uint32 winner_camp_id				= 1;	//获胜方阵营id
+	repeated PBBattlefieldStatInfo stat_info 	= 2; 	//结束统计信息
+	repeated PBBattlefieldCampInfo camp_info	= 3;	//阵营积分
+}
+
+enum EBattlefieldTowerStatus
+{
+	EBattilefieldTower_NULL			= 0;
+	EBattilefieldTower_Init			= 1;	// 有盾且未开启去盾计数
+	EBattilefieldTower_Count		= 2;	// 有盾且已开启去盾计数
+	EBattilefieldTower_Danger		= 3;	// 已去盾：无盾标，无去盾所需人头数
+	EBattilefieldTower_Damage		= 4;	// 已被破坏：破坏图标
+};
+
+enum ETeamPVPTowerType
+{
+	EBattilefieldTower_1st			= 1; // 塔一
+	EBattilefieldTower_2nd			= 2; // 塔二
+	EBattilefieldTower_ShuiJing		= 3; // 水晶
+};
+
+message PBBattlefieldTowerInfo
+{
+	optional uint32 camp_id						= 1;	//阵营id
+	optional string	create_id					= 2;	//sheetid
+	optional EBattlefieldTowerStatus	status	= 3;
+	//optional sint32	count						= 4;	//数量
+	optional ETeamPVPTowerType		type		= 5;	//塔类型
+};
+
+message PBBattlefieldCampInfo
+{
+	optional uint32 camp_id						= 1;	//阵营id
+	optional sint32 score						= 2;	//积分
+	repeated PBBattlefieldTowerInfo tower_info	= 3;	//仙之斗--塔/水晶信息
+};
+
+// 战场统计信息定义
+message PBBattlefieldStatInfo
+{
+	optional uint32 char_id					= 1;	//id
+	optional string char_name				= 2;	//名字
+	optional uint32	char_camp_id			= 3;	//阵营Id
+	optional sint32	char_kills				= 4;	//杀人数
+	optional sint32	char_score				= 5;	//战场积分
+	optional uint32	reward_item_sheet_id	= 6;	//奖励物品
+	optional sint32	reward_item_count		= 7;	//奖励物品个数
+	optional sint32 reward_justice			= 8;	//奖励的正气值
+	repeated PBBattleRewad	reward_item_list	= 9;	//奖励列表
+	optional sint32	buff_floor				= 10;	// buff 层数---仙之斗
+	optional bool	isAFK					= 11;//[default=false];	//是否挂机;
+}
+
+//message PBSinglePvPTimes
+//{
+//	optional uint32 times				= 1;	// 
+//}
+
+/*
+	战场类型;
+*/
+message PBBattleMatchType
+{
+	optional uint32	bigworld_id			=	1;//单服匹配还是全区匹配;
+	optional sint32	group_type			=	2;//战场类型;
+	optional uint32 activity_id         =   3;
+	optional uint32 is_no_span          =   4;
+	optional sint32	battle_score		=	5;//战力  做玩家分组用
+	optional sint32	dungeon_sheet		=	6;
+}
+
+message PBRoleShard
+{
+	optional uint64 role_id				= 	1;//角色id;
+	optional uint32 global_shard_id		=	2;//所在物理区服;
+	optional sint32 battle_score		=	3;//战力
+	optional uint32	add_time			=	4;//加入的时间
+}
+
+message PBBattleMatchRes
+{
+	optional sint32			group_type 	=	1;
+	repeated PBRoleShard	roles		=   2;
+	optional uint32			dungeon_sheet	= 3;
+	optional uint32			start_match	= 4;
+	optional uint32			end_match	= 5;
+};
+
+message PBBattleMatchQueryRequest
+{
+	optional uint64 role_id				= 	1;//角色id;
+	optional uint32 global_shard_id		=	2;//所在物理区服;
+};
+
+message PBBattleRewad
+{
+	optional sint32	sheet_id	= 1;	//
+	optional sint32 num			= 2;
+};
+
+
+// 获取封魔战场，五鬼幻阵，仙之斗的匹配时间和匹配人数
+message PBMsgGetMatchInfoRequest
+{
+	optional uint32						func_type	= 1;
+	optional uint32						func_id		= 2;
+	optional uint32						match_type	= 3;
+	optional uint32						level		= 4;// 五鬼幻阵分组
+	optional uint32						grouptype	= 5;// 封魔战场，仙之斗分组
+	optional uint32						act_id		= 6;
+	optional bool						isnospan	= 7;
+	optional uint32						bigworldid	= 8;
+};
+
+
+message PBBattlefieldsendCallFriendNotice				
+{
+	optional uint32	dungeon_sheet	= 1;
+}
+
+message PBBattlefieldAFKNotice
+{
+	optional uint32	afk_times	= 1;	//挂机次数;
+	optional float afk_ratio	= 2;	//挂机一次奖励减少率;
+}

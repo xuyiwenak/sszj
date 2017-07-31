@@ -1,0 +1,98 @@
+import "msg_base.proto";
+import "msg_item.proto";
+
+
+message PBMsgPotentialInfoNotice
+{
+	optional	bool			activete	= 1;
+	optional	sint32			cur_value	= 2;
+	optional	sint32			cur_calss	= 3;
+	optional	PBProperties	temp_pro_list	= 4;	// 替换潜能属性
+	optional	PBProperties	cur_pro_list	= 5;	// 当前潜能属性
+	optional	PBProperties	last_pro_list	= 6;	// 上次升阶的值
+	optional	PBPotentialAttrList attrstate_list = 7;
+};
+
+message PBMsgPotentialFeedRequest
+{
+	
+};
+
+message PBMsgPotentialFeedResponse
+{
+	optional	sint32			ret_code = 1;
+	optional	PBProperties	pro_list	= 2;	// 当前潜能属性
+};
+
+message PBMsgPotentialTenFeedRequest
+{
+
+};
+
+message PBMsgPotentialTenFeedResponse
+{
+	optional	sint32					ret_code	= 1;
+	repeated	PBMsgPotentialTenResult result_list = 2;
+	optional	bool					success = 3; //满足
+};
+
+message PBMsgPotentialTenResult
+{
+	optional	sint32			feed_times	= 2;	//第几次培养
+	optional	PBProperties	pro_list	= 3;	// 培养的属性结果
+};
+
+message PBMsgPotentialTenReplaceRequest
+{
+
+};
+
+message PBMsgPotentialTenReplaceResponse
+{
+	optional	sint32			ret_code = 1;
+};
+
+message PBPotentialAttrState
+{
+	optional		sint32		attr_type	= 1;	//属性类型
+	optional		sint32		attr_mode	= 2;	//属性模式	洪荒之力这这个值都为0
+	optional		sint32		attr_state	= 3;	//0	未勾选
+};
+
+message PBPotentialAttrList
+{
+	repeated	PBPotentialAttrState attrstate = 1;
+};
+
+message PBMsgAttrStateRequest
+{
+	optional	PBPotentialAttrList attrstate_list = 1;
+};
+
+message PBMsgAttrStateResponse
+{
+	optional	sint32				 ret_code = 1;
+	optional	PBPotentialAttrList attrstate_list = 2;
+};
+
+message PBMsgPotentialReplaceRequest
+{
+};
+
+message PBMsgPotentialReplaceResponse
+{
+	optional	sint32 ret_code	= 1;
+};
+
+
+message PBMsgPotentialUpClassRequest
+{
+
+};
+
+message PBMsgPotentialUpClassResponse
+{
+	optional	sint32	ret_code	= 1;
+	optional	sint32	cur_class	= 2;	//当前阶
+	optional	sint32	cur_value	= 3;	//当前值
+};

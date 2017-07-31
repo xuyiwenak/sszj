@@ -1,0 +1,55 @@
+import "tmpl_base.proto";
+
+message PBItemEnduranceCfg
+{
+	optional	PBRepairCostInfo	level_cost_info	= 1;	//等级消耗
+	optional	PBRepairCostInfo	quality_cost_info	= 2;	//品阶消耗
+	optional	PBSkillLoss	use_skill_info	= 3;	//使用技能损耗
+	optional	PBSkillLoss	beskill_hit_info	= 4; //被技能击中损耗
+	optional	PBBeKilled	bekilled_info	= 5;	//被击杀损耗
+	optional	PBCoefficient	coefficient	= 6;	//系数
+	optional	PBXianfuSkillList xianfu_skill = 7;	//仙府修理
+};
+
+message PBRepairCostInfo
+{
+	repeated	PBCost	cost_list	= 2;// 消耗列表
+}
+
+message PBCost
+{
+	optional	uint32	index = 1;	// 索引值 代表level或quality
+	optional	float	money = 2;	//金钱
+	optional	float	xianfu = 3;	//仙府值
+}
+
+message PBSkillLoss
+{
+	optional	float	odds = 1;	//机率
+	optional	uint32	loss_value	= 2;	// 损耗值
+}
+
+message PBBeKilled
+{
+	optional	float	inpve	= 1;	// pve损耗机率
+	optional	float	inpvp	= 2;	// pvp损耗机率
+	optional	float	inred	= 3;	// 红名损耗机率
+}
+
+message PBCoefficient
+{
+	optional	float	cost_coefficient	= 1;	//消耗系数
+	optional	float	loss_coefficient	= 2;	//损耗系数
+}
+
+message PBXianfuSkillList
+{
+	repeated	PBXianfuSkillRepair skill = 1;	//需要技能列表
+}
+
+message PBXianfuSkillRepair
+{
+	optional	sint32	skill_level	= 1;	//仙府技能等级
+	optional	sint32	equip_level = 2;	//装备等级
+	optional	sint32	equip_quality	= 3;	//装备品阶
+}

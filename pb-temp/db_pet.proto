@@ -1,0 +1,110 @@
+// 以最快速度序列/反序列
+option optimize_for = SPEED;				
+
+import "db_base.proto";
+
+message PBDBPet
+{
+	optional uint64	entity_id			= 	1; // 实体ID;
+	optional uint32	sheet_id			= 	2; // 宠物的sheetid;
+	optional string	name				=	3; // 名字;
+	optional uint32 level				=	4; // 等级;
+	repeated uint32 rand_base			=	5; // 随机一级属性;
+	repeated uint32 rand_grow_base		=	6; // 随机资质属性;
+	repeated PBDBSkillList skill_list	=	7; // 三种技能的PB;
+	optional sint64 exp					=	8; // 经验;
+	optional uint32 life				=	11;// 寿命;
+	optional uint32 cur_hp				=	12;// 当前血;
+	optional uint32 cur_mp				=	13;// 当前蓝;
+	optional sint32 rand_grow_battle	=	14;// 二级属性成长率;
+	optional uint32 create_time			=	15;// 创建时间;
+	optional sint32 savvy				=	16;// 悟性;
+	optional sint32 savvy_item_count	=	17;// 悟性特殊丹药使用数量;
+	optional sint32 bind				=	18;// 绑定
+	optional string	sheet_name			= 	19;// 宠物的sheetid;
+	repeated uint32 replace_rand_base		=	20; // 随机一级属性 (还童替换);
+	repeated uint32 replace_rand_grow_base	=	21; // 随机资质属性 (还童替换);
+	optional sint32 replace_rand_grow_battle	=	22;// 二级属性成长率 (还童替换);
+	optional sint32 rena_type			= 23;	//还童类型
+	optional sint32 savvy_base_item_count	=	24;// 悟性顿悟丹药使用数量;
+	repeated PBDBPetForget forget_item	=	25;// 技能书的使用数量;
+	optional PBDBPetItellInfo intell_Rep_info = 26;	//资质还童替换信息
+	optional bool is_rename				=	27; // 宠物是否重命名
+	repeated PBDBPetEquipInfo pet_equip_info = 28; // 宠物装备信息
+	optional PBDBPetGrowthInfo growth_info	=	29; // 宠物成长信息;
+};
+
+message PBDBPetForget
+{
+	optional uint32 skill_lv			=	1; // 技能等级;
+	repeated PBDBPetForgetLucky forget_lucky=	2; // 技能幸运信息;
+	optional float forget_lucky_sum		=	3; // 幸运值
+}
+
+
+message PBDBPetForgetLucky
+{
+	optional sint32 lucky				=	1; // 幸运值;
+	optional sint32 count				=	2; // 数量;
+}
+
+message PBDBPetInfo
+{
+	repeated PBDBPet pet				=	1; // 宠物信息
+	optional uint64	active_id			= 	2; // 出战宠实体ID;
+	optional uint32 buy_slot			=	3; // 购买栏位的次数;
+	repeated PBDBPetGuardInfo guard_info = 5; // 宠物守护信息
+};
+
+message PBDBPetGuardInfo
+{
+	optional uint32 guard_slot = 1;       // 守护宠物槽
+	optional uint32 guard_level = 2;      //守护等级
+	optional uint32 guard_exp   = 3;      // 守护经验
+	optional uint64 guard_id  = 4;        // 守护宠
+	optional uint32 guard_config_version = 5;//[default=1]; // 守护配置版本
+}
+
+//宠物资质还童替换数据
+message PBDBPetItellInfo
+{
+	repeated uint32 replace_rand_base		=	20; // 随机一级属性 (资质还童替换);
+	repeated uint32 replace_rand_grow_base	=	21; // 随机资质属性 (资质还童替换);
+	optional sint32 battlediffvalue			=	22; // 战力变化值
+};
+
+// 宠物战斗信息
+message PBDBPetBattleInfo
+{
+	optional sint32 index = 1;   // 第几个位置
+	optional uint64 pet_id = 2; // 宠物Id
+}
+
+message PBDBPetBattleArray
+{
+	repeated PBDBPetBattleInfo pet_battle_info = 1; //宠物PVE阵容
+}
+
+
+
+//宠物装备存储
+message PBDBPetEquipInfo
+{
+	optional sint32 equip_slot = 1;   //部位
+	optional sint32 equip_class = 2;//[default=1];    // 阶数
+	optional sint32 equip_star = 3;//[default=0];  //星级
+	repeated PBPetEquipAddStarConsume consume_item = 4;
+}
+
+message PBPetEquipAddStarConsume
+{
+	optional string sheet_id = 1;   //消耗的物品
+	optional uint32 count = 2;//[default=0];      //消耗的数量
+}
+
+message PBDBPetGrowthInfo
+{
+	optional uint32 growth_times		= 1;//[default=0];			//成长次数;
+	optional uint32 growth_times_two	= 2;//[default=0];			//成长队列B次数;
+	optional uint32 growth_prop_times	= 3;//[default=0];			//成长其他属性次数;
+}

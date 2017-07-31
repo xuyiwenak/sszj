@@ -1,0 +1,63 @@
+option optimize_for = SPEED;
+
+import "msg_login.proto";
+
+enum ERoleStatus 
+{
+	ROLE_STATUS_OFFLINE					=	1;//离线;
+	ROLE_STATUS_CACHE					=	2;//跨阵营或跨服缓存;
+	ROLE_STATUS_ONLINE					=	3;//在线;
+};
+
+
+enum ECrossStatus
+{
+	enCrossState_Normal					= 0;	// 未跨服
+	enCrossState_SendingPrepareRequire	= 1;	// 发送准备token请求给远端
+	enCrossState_RemotePrepared			= 2;	// 远端准备好token
+	enCrossState_Crossing				= 3;	// 通知客户端连接远端
+	enCrossState_LoginedOnRemote		= 4;	// 在远端登陆成功
+	enCrossState_RemoteOffline			= 5;	// 在远端退出登陆
+};
+
+message PBCrossInfo
+{
+	optional	ECrossStatus	status				= 1;
+	optional	uint32			cross_gateway_id	= 2;	// 跨服目标服
+};
+
+
+message PBRoleBase
+{
+	optional	uint32	role_id			=	1;
+	optional	uint64	char_id			=	2;
+	optional	string	name			=	3;//名字
+	optional	uint32	camp_id			=	4;//阵营id
+	optional	uint32	role			=	5;//职业
+	optional	uint32	gender			=	6;//性别
+	optional	sint32	level			=	7;//等级
+	optional	sint64	exp				=	8;//经验
+	optional	sint32	battle_score	=	9;//战斗力
+	optional	sint32	pvp_score		=	10;//pvp积分;
+	optional	sint32	kills			=	11;//杀人数	
+	optional	sint32	vip_level		=	12;//vip等级
+	optional	uint64	vpa				=	13;
+	optional	uint64	vpb				=	14;
+	optional	uint64	vpc				=	15;
+	optional	uint32	sheet_id		=	16;
+
+	optional	ERoleStatus	status		=	17;//是否在线
+	optional	uint32	login_camp_id	=	18;//当前登录的阵营
+	
+	optional	uint64	guild_id		=	19;//公会id,公会模块加载完成之后，构建玩家id与公会id索引表的时候，设置
+	optional	string	guild_name		=	20;//公会名字
+
+	optional	uint32	team_id			=	21;//队伍id;
+	optional	string  head_icon		=	22;//
+	optional	uint64	dungeon_id		=	24;//人物所在副本id
+	optional	uint64	map_id			=	25;//地图ID
+	optional	uint32	role_gateway_id	=	26;//角色gatewayId
+	optional	PBCrossInfo	cross_info	=	27;//跨服信息（只本服玩家有意义）
+	optional	uint64	player_id		=	28;//地图ID
+	optional    ELoginConnectType connect_type = 29; //登陆类型
+};

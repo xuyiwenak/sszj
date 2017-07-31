@@ -1,0 +1,1 @@
+mysql -usszj -pDR9m_wqsgF8a -P3306 data_stat_ss -e "select ss_camp_type, count(*) from money_state where level >= 50 and unix_timestamp('2017-06-22 20:08:00') - last_quittime < 3600 * 24 * 7 group by ss_camp_type" > ./ss_camp_type_all_20170622.txt

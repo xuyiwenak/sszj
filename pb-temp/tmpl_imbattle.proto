@@ -1,0 +1,28 @@
+import "tmpl_base.proto";
+
+message PBIMBattleConfig
+{
+	optional PBIMBattleBasicVar		basic_var		= 1;
+	repeated PBIMBattleList			battle_list		= 2;
+};
+
+message PBIMBattleBasicVar
+{
+	optional float					imbattle_sign_end		= 1;// 报名结束时间,分钟数采用十进制,例如10点45分表示为 10 + 45/60 = 10.75
+	optional float					imbattle_sign_lock_end	= 2;// 战斗开始时间
+	optional float					imbattle_pvp_end		= 3;// 战斗结束时间
+	optional sint32					imbattle_win_scends		= 4;// 虎符持有时间,单位是秒
+	optional string					imbattle_token			= 5;// 虎符物品ID
+	optional sint32					max_sign_battle			= 6;//帮派战每个帮派最大报名场次，当前配置为2
+	optional string					imbattle_kill_rank_reward	= 7;// 击杀奖励
+	optional sint32					imbattle_sign_level_limit	= 8;//帮主报名帮派战等级
+	optional sint32					imbattle_pvp_notice			= 9;//帮派战开始时每300秒推送一次消息
+	optional float					imbattle_rest_end_time		= 10;//重置时间
+	optional sint32					imbattle_max_member			= 11;// 战斗人数限制
+};
+
+message PBIMBattleList
+{
+	optional sint32					week_day				= 1; // 星期
+	optional string					battles					= 2; // 战场数
+};

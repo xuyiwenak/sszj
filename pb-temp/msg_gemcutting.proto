@@ -1,0 +1,93 @@
+import "msg_common.proto";
+
+enum EGemCuttingType                         // 不用了
+{
+	EGemCuttingType_Base = 0;
+	EGemCuttingType_Element = 1;
+}
+
+message PBGemcuttingInfo
+{
+	optional sint32 gem_type  = 1;   //雕琢类型        
+	optional uint32 gemcutting_level = 2;   //雕琢等级
+	optional uint32 gemcutting_exp = 3;     //雕琢经验进度
+	optional uint32 buff_addition = 4;       //加成效果百分比  //现在不使用了
+	repeated PBGemcuttingBuffInfo buff_info = 5; //加成属性
+}
+
+message PBGemcuttingBuffInfo
+{
+	optional uint32 buff_type = 1;          //属性类型
+	optional uint32 buff_value = 2;         //属性值
+	optional uint32 buff_addition = 3;     // 加成百分比
+	optional sint32 battale_score = 4;    // 雕琢带来的战斗力
+}
+
+message PBGemCuttingDetail
+{
+	optional uint32 buff_addition = 1;       //加成效果百分比
+	repeated PBGemcuttingBuffInfo buff_info = 2; //加成属性
+}
+
+message PBGemcuttingStruct
+{
+	optional uint32 goods_sheet = 1;      //消耗的物品
+	optional uint32 goods_num   = 2;      //消耗物品的数量
+}
+
+message PBMsgBaseGemcuttingRequest
+{
+	repeated PBGemcuttingStruct request = 1;
+	optional sint32 gem_type = 2;             // 宝石类型
+}
+
+message PBMsgBaseGemcuttingResponse
+{
+	optional sint32 ret_code = 1;
+	repeated PBGemcuttingStruct returned_goods= 2;      //返还的物品 数量超过达到要求的最高等级，需要返还超过的材料
+}
+
+message PBMsgElementGemcuttingRequest                          //不用了
+{
+	repeated PBGemcuttingStruct request = 1;
+}
+
+message PBMsgElementGemcuttingResponse                        // 不用了
+{
+	optional sint32 ret_code = 1;
+	repeated PBGemcuttingStruct returned_goods= 2;      //返还的物品 数量超过达到要求的最高等级，需要返还超过的材料
+}
+
+message PBMsgBaseCuttingDetailRequest
+{
+	
+}
+
+message PBMsgBaseCuttingDetailResponse
+{
+	optional sint32 ret_code = 1;
+	optional PBGemCuttingDetail detail = 2;
+}
+
+message PBMsgElementCuttingDetailRequest          //不用了
+{
+	
+}
+
+message PBMsgElementCuttingDetailResponse       //不用了
+{
+	optional sint32 ret_code = 1;
+	optional PBGemCuttingDetail detail = 2;
+}
+
+message PBMsgResetGemCuttingRequest
+{
+	optional sint32 gem_type = 1;        // 宝石类型
+}
+
+message PBMsgResetGemCuttingResponse
+{
+	optional sint32 ret_code = 1;
+	optional sint32 gem_type = 2;        // 宝石类型       
+}
+

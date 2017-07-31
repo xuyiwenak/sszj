@@ -1,0 +1,24 @@
+import "tmpl_base.proto";
+import "msg_common.proto";
+
+message PBFriendValueCfg
+{
+	optional	sint32 max_friend	= 1;//[default=50];	// 好友上限
+	optional	sint32 max_black	= 2;//[default=10];	// 黑名单上限
+	optional	sint32 max_negative	= 3;//[default=10];	// 被动关注上限	
+	optional	sint32 max_enemy	= 4;//[default=10];	// 仇人上限	
+	optional	sint32 most_friend_num = 5;//[default=150];	//好友最大上限
+	optional	sint32 head_icon_cd	= 6;//[default=120];	// 修改头像cd
+	optional	sint32 head_icon_open	= 7;//[default=1];	// 0 关闭  非0 开启
+	optional	sint32 head_icon_length	= 8;//[default=255];// head_icon 的最大长度
+	optional	sint32 max_contact	= 9;//[default=50];	//最大联系人最大上限
+}
+
+// 队伍配置
+message PBFriendConfig
+{
+	optional PBFriendValueCfg	value_cfg	= 1;
+};
+
+
+

@@ -1,0 +1,58 @@
+/// @brief	template for config of quest_rand
+/// @author	Deng Lichuan
+
+import "tmpl_base.proto";
+
+message PBQuestRandCfg
+{
+	repeated PBQuestRandGroupCfg		group			= 1;
+};
+
+message PBQuestRandGroupCfg
+{
+	optional sint32					id				= 1; // 分组ID
+	optional sint32					commitNum		= 2; // 任务组最大可完成数 
+	optional sint32					clearType		= 3; // 完成数重置类型（参见enQuestGroupClearType）
+	repeated PBQuestRandLibrary		randLibrary		= 4; // 任务的随机库
+	repeated PBQuestRandCycleAward	cycleAward		= 5; // 奖励
+	repeated PBQuestRandCycleNotice	cycleNotice		= 6; // 通知
+};
+
+message PBQuestRandLibrary
+{
+	optional sint32					libraryID		= 1; // 任务库ID
+	repeated PBQuestRandCondition	condition		= 2; // 条件
+};
+
+message PBQuestRandCondition
+{
+	optional PBEConditionType	type			= 1;//[default=eCondition_None]; // 条件类型
+	optional sint32				minLevel		= 2; // 玩家最小等级
+	optional sint32				maxLevel		= 3; // 玩家最大等级
+	optional sint32				minCycle		= 4; // 最小环数
+	optional sint32				maxCycle		= 5; // 最大环数
+
+	optional sint32				guildBuildingType	= 6; // 帮派建筑类型
+	optional sint32				guildBuildingLevel	= 7; // 帮派建筑等级
+};
+
+// 添加类型后及时更新 quest_rand.xml
+enum PBEConditionType
+{
+	eCondition_None				= 0;
+	eCondition_NormalRand		= 1; // 普通环任务
+	eCondition_Building			= 2; // 帮派建筑
+	eCondition_Guild			= 3; // 帮派日常
+};
+
+message PBQuestRandCycleAward
+{
+	optional sint32				cycleID			= 1;
+	optional string				loot			= 2;
+};
+
+message PBQuestRandCycleNotice
+{
+	optional sint32				cycleID			= 1;
+	optional string				notice			= 2;
+};

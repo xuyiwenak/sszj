@@ -1,0 +1,46 @@
+// 以最快速度序列/反序列
+option optimize_for = SPEED;				
+
+import "db_base.proto";
+
+message PBDBGoods
+{
+	optional uint32	goods_id			= 	1; // 商品ID;
+	optional uint32 sold_out			=	2; // 商品购买标记;
+
+};
+
+message PBDBLimitGoods
+{
+	optional uint32	goods_id			= 	1; // 商品ID;
+	optional uint32 sold_nubmer			=	2; // 商品购买数量;
+	optional uint32 end_time			=	3; // 商品到期时间;
+};
+
+message PBDBShop
+{
+	optional uint32	shop_id				= 	1; // 商店类型;
+	repeated PBDBGoods	goods			= 	2; // 商品ID;
+	optional uint32	flush_time			= 	3; // 刷新时间;
+	optional uint32	flush_count			= 	4; // 刷新总次数;
+	optional uint32	money_flush_count	= 	5; // 花钱刷新次数;
+};
+
+message PBDBShopInfo
+{
+	repeated PBDBShop shop				=	1; // 商店信息
+	repeated PBDBLimitGoods limit_goods =	2; // 商品个人购买信息
+};
+
+
+message PBDBExchangeShopData
+{
+	repeated PBDBExchangeGoods goods_list = 1; // 商店类型;
+};
+
+message PBDBExchangeGoods
+{
+	optional sint32			ex_goods_id  = 1; // 商品ID
+	optional sint32			ex_count	 = 2; // 使用数
+	optional uint32			ex_end_time	 = 3; // 商品到期时间;
+};

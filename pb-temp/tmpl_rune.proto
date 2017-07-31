@@ -1,0 +1,54 @@
+import "tmpl_base.proto";
+
+message PBRuneLotteryCfg
+{
+	repeated	PBRuneLotteryList slot_info = 1;	//抽取符文配置
+	optional	PBRuneSlotInfo	  runeslot_info = 2;	//符文栏位信息
+	repeated	PBRuneLotteryReward runereward_info = 3;	//符文十连抽奖励
+};
+
+message PBRuneLotteryList
+{
+	optional	sint32	lottery_slot = 1;		// 抽取的slotid
+	optional	sint32	nextslot_ratio = 2;		// 进入下一个槽位的机率(万分比)
+	optional	string	cost_sheet	= 3;		// 抽取消耗的物品
+	optional	sint32	one_cost	= 4;		// 一次抽取的消耗数量
+	optional	sint32	ten_cost	= 5;		// 十次抽取的消耗数量
+	repeated	PBRuneList	rune_info = 6;		// 符文信息
+};
+
+message PBRuneList
+{
+	optional	string	rune_sheet = 1;		// 符文的sheet
+	optional	sint32	ratio	= 2;		// 抽中的机率
+};
+
+message	PBRuneSlotInfo
+{
+	optional	sint32	init_opennum	= 1;	//初始的开启栏位
+	optional	sint32	max_opennum		= 2;	//最大的开启栏位数量
+	repeated	PBRuneSlotOpenInfo	open_slot = 3;	// 符文槽开启消息
+	optional	string	cost_sheet		= 4;	// 吞噬消耗
+	optional	float	cost_rate		= 5;	// 润湿消耗倍率
+};
+
+message PBRuneSlotOpenInfo
+{
+	optional	sint32	slot_id		= 1;	//符文槽id
+	optional	sint32	level		= 2;	//需要的等级
+	optional	string	cost_sheet	= 3;	//开启栏位消耗的物品
+	optional	sint32	cost_num	= 4;	//消耗的数量
+}
+
+message PBRuneLotteryReward
+{
+	optional	sint32					lottery_time = 1;
+	repeated	PBRuneLotteryRewardItem	reward_list	 = 2;
+}
+
+message PBRuneLotteryRewardItem
+{
+	optional	string reward_sheet	= 1;
+	optional	sint32 reward_num	= 2;
+	optional	sint32 odds			= 3;
+}

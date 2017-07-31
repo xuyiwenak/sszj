@@ -1,0 +1,39 @@
+
+message PBEquipAttachCfg
+{
+	repeated PBPropLib             lib_list          = 1;  //品质库
+	repeated PBEquipAttachOneCfg   equip_attach_list = 2;
+	repeated PBRollRule            roll_rule_list = 3;  // 规则
+}
+
+
+message PBEquipAttachOneCfg
+{
+	optional sint32      vita_min_value         = 1;   //最小注灵百分比
+	optional sint32      vita_max_value         = 2;   //最大注灵百分比
+	optional string      cost_sheet_name        = 3;   //消耗物品名字
+	optional sint32      cost_count             = 4;   //消耗数量
+	optional sint32      add_pro_num            = 5;   //属性条数
+	repeated PBRoLLProp  can_roll_prop          = 6;   // 可以随机的属性品质
+	optional sint32      better_attach_num            = 7;   //高级附魔洗的属性的个数
+	optional string      better_cost_sheet_name        = 8;   //高级附魔消耗物品名字
+	optional sint32      better_cost_count             = 9;   //高级附魔消耗数量
+}
+
+message PBPropLib
+{
+	optional sint32  prop_class    = 1;   //属性品质
+	optional string  prop_lib_name = 2;   // 属性库名
+}
+
+
+message PBRoLLProp
+{
+	optional sint32 can_roll_prop_class    = 1;  // 可以roll的品质
+	optional sint32 roll_pro               = 2;  // roll的概率，万分比
+}
+
+message PBRollRule
+{
+	optional sint32 roll_pro               = 1;  // roll的概率，万分比
+}

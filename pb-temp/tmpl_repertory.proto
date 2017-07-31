@@ -1,0 +1,31 @@
+package REP;
+
+enum PBFreeCellType
+{
+	enPB_Free = 1; //免费
+	enPB_Charge = 2;//收费
+}
+enum PBFreeBagType
+{
+	enPB_Default_Free_Bag = 1;   //使用默认免费包裹
+	enPB_Free_Bag		  = 2;   //有免费包裹根据后面id定义
+	enPB_Null    		  = 3;   //没有免费包裹
+}
+
+message PBCell
+{
+	optional sint32					idx                = 1;     // 仓库包裹槽位
+	optional PBFreeCellType			is_free            = 2; 	   // 当前槽位是否免费
+	optional uint32					unlock_money       = 3;	   // 解锁当前槽位需要多少钱
+//	optional PBFreeBagType			free_bag           = 4;	   // 是否有免费的包裹
+	optional string					free_sheetid       = 5;	   // 免费包裹的id
+	optional sint32					unlock_level       = 6;     // 解锁当前槽位需要的等级
+	optional string					default_item		= 7;	// 默认赠送的背包物品
+}
+
+message PBCellAll
+{
+	repeated PBCell cell = 1;
+	//optional sint32 default_slot_size = 2;
+	optional sint32 default_cell_idx	= 3;
+}

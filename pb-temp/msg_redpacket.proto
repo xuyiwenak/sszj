@@ -1,0 +1,87 @@
+option optimize_for = SPEED;
+
+import "msg_base.proto";
+
+
+enum PBShakeResultType
+{
+	PBShakeResultType_Redpacket			= 1;	// 微信红包
+	PBShakeResultType_Wine				= 2;	// 红酒
+	PBShakeResultType_GameItem			= 3;	// 游戏内物品
+};
+
+// 摇红包请求
+message PBMsgRedpacketShakeRequest
+{
+};
+
+message PBMsgRedpacketShakeResponse
+{
+	optional int32 ret_code					= 1;	// 返回码
+	optional PBShakeResultType result_type	= 2;	// 奖励类型
+	optional int32 jifen					= 3;	// 红包积分（shake_type = PBShakeResultType_Redpacket 时有效）
+	repeated PBMsgReward reward_item		= 4;	// 游戏内物品奖励（shake_type = PBShakeResultType_GameItem 时有效）
+};
+
+
+
+
+
+message PBWeixinExchangeInfo
+{
+	optional int32 	jifen					= 1;	// 对应的积分
+	optional string	weixin_token			= 2;	// 微信红包兑换码
+	optional uint32	gen_time				= 3; // 生成时间
+	optional sint32	use_state				= 4; // 使用状态
+};
+
+// 获取红包界面信息
+message PBMsgRedpacketInfoRequest
+{
+};
+
+
+message PBMsgRedpacketInfoResponse
+{
+	optional int32 ret_code									= 1;	// 返回码
+	optional int32 jifen									= 2;	// 当前积分
+	//optional int32 last_sec								= 3;	// 活动结整剩余秒数
+	optional string	menpiao_sheet							= 4;	// 门票sheetName
+	repeated string show_reward_sheet						= 5;	// 奖品sheetName
+	optional bool  is_opened								= 6;	// 活动是否开启
+	optional uint32	start_time								= 7;	// 起始时间
+	optional uint32 end_time								= 8;	// 结束时间
+};
+
+// 兑换当前所有积分为微信红包请求
+message PBMsgRedpacketWeixinExchangeRequest
+{
+};
+
+
+message PBMsgRedpacketWeixinExchangeResponse
+{
+	optional int32     ret_code				= 1;	// 返回码
+	optional string	weixin_token		= 2;	// 微信红包兑换码
+	optional int32     jifen						= 3;	// 积分
+};
+
+// 请求兑换码记录请求
+message PBMsgRedpacketTokenRecordRequest
+{
+};
+
+message PBMsgRedpacketTokenRecordResponse
+{
+	optional sint32									ret_code = 1;   // 结果码
+	repeated PBWeixinExchangeInfo		weixin_exchange_info= 2;	// 微信兑换码列表
+};
+
+
+
+message PBMsgRedpacketMenpiaoInfoNotice
+{
+	optional string menpiao_sheet					= 1;	// 门票sheetName
+	optional bool  shake_opened						= 2;	// 摇红包是否开启
+}
+

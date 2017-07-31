@@ -1,0 +1,1 @@
+create table consign_log(sheet_name char(50), quantity int(11), price int(11), consign_flag int(11), consign_time int(11), src_role_id int(11), src_user_id int(11), src_game_id int(11), dest_role_id int(11), dest_user_id int(11), dest_game_id int(11))  ENGINE=InnoDB DEFAULT CHARSET=utf8;

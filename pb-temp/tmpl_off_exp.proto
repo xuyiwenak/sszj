@@ -1,0 +1,37 @@
+import "tmpl_base.proto";
+
+message PBOffexpCfg
+{
+	optional	sint32	open_level	= 1;	//开启等级
+	optional	sint32	max_exp		= 2;	//可获得的最大值
+	optional	sint32	vip_level	= 3;	//无损的vip等级
+	optional	sint32	monster_num	= 4;	//野外杀怪计数
+	optional	sint32	exp_discount = 5;	//经验折损  万分比
+	repeated	PBOffexpAct	act_cfg	= 6;	//活动配置
+	optional    string  consume_item = 7;   //消耗物品
+	optional    sint32  item_num     = 8;   //消耗物品数量
+};
+
+message PBOffexpAct
+{
+	optional	sint32	act_id		= 1;	//活动ID
+	optional	sint32	act_type	= 2;	//活动类型
+	optional	string	act_dungeon	= 3;	//活动副本
+	optional	sint32	act_arg		= 4;	//活动参数
+	optional	string	name		= 5;	//活动名字
+	optional	string	icon		= 6;	//活动icon
+	optional	sint32	level		= 7;	//活动开启等级
+	optional	string	operation	= 8;	//活动跳转
+}
+
+
+enum EOfflineExpType
+{
+	ETYPE_EXP_UNKNOW		= 0;	//未知
+	ETYPE_EXP_NORMALDUN	= 1;	//活动副本  每天都开启
+	ETYPE_EXP_GUILDDUN	= 2;	//帮派副本
+	ETYPE_EXP_WILD		= 3;	//野外
+	ETYPE_EXP_CITAN		= 4;	//刺探
+	ETYPE_EXP_CLIMBTOWER	= 5;	//爬塔
+	ETYPE_EXP_TIMEDUN		= 6;	//活动副本  有时间限制 不是每天都开启
+};

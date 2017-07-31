@@ -1,0 +1,1187 @@
+import "msg_base.proto";
+import "msg_pet_battle.proto";
+
+enum ECharAcceptFlag
+{
+	enRefuse	= 1;
+	enWait      = 2;
+	enAccept	= 3;
+};
+
+// 客户端事件枚举
+enum EClientEventType
+{
+	enClientEvent_Stroy	= 1; // 触发剧情
+	enClientEvent_Guide	= 2; // 触发指引
+	enClientEvent_Hint	= 3; // 触发提示，配置提示的ID
+	enClientEvent_Music = 4; // 触发音乐
+	enClientEvent_EventNodeCollection = 5; // 事件埋点
+};
+
+enum EInstanceEventType
+{
+	enInsEvent_OverTime	= 1; // 副本超时，无参数
+	enInsEvent_Hover	= 2; // AI暂停
+	enInsEvent_Dehover	= 3; // AI解除暂停
+	enInsEvent_TriggerName	= 4; // 触发器事件
+};
+
+enum EAIDungeonSettleType
+{
+	enAIDS_Invalid						= 0; // 无效类型
+	enAIDS_KillAllMonster				= 1; // 击杀全部怪物
+	enAIDS_KillMonster					= 2; // 击杀指定怪物
+	enAIDS_OpenAllBox					= 3; // 开始全部宝箱
+	enAIDS_OpenCollection				= 4; // 打开固定机关
+	enAIDS_PlayerDie					= 5; // 玩家死亡
+	enAIDS_TimeLimit					= 6; // 限时 
+	enAIDS_DungeonEnd_PlayerHpPercent	= 7; // 副本结束时玩家剩余血量百分比
+	enAIDS_PlayerHpPercent				= 8; // 玩家血量保持在百分比之上通关
+	enAIDS_NoUseMagicWeapon				= 9; // 不使用法宝技能通关
+	enAIDS_NpcHpPercent					= 10;// 指定NPC血量保持在百分比之上
+};
+
+enum PBBoatingType
+{
+	enBoating_None				= 0; // 无
+	enBoating_Starting			= 1; // 开始(新手)
+	enMultiBoating_Start		= 2; // 双人开始（主人位）
+	enMultiBoating_StartOther 	= 3; // 双人开始（客人位）
+	enBoating_End 				= 255; // 结束
+}
+
+
+message PBEmpty
+{
+}
+
+message PBDungeonId
+{
+	optional uint32	dungeon_id	= 1;//副本的sheetId;
+}
+
+message PBDungeonState
+{
+	optional uint32 sheet_id		=	1;	//副本的sheetid;
+	optional sint32 best_star		=	2;	//最好星级;
+	optional sint32 clear_times		=	3;	//通关副本次数;
+	optional sint32 fast_clean_time	=	4;	//最短通关时间;
+	optional bool 	reward_got		=	5;	//通关奖励被领取了;    //这个字段可以去掉
+};
+
+message PBActivityTeam
+{
+	optional uint32 sheet_id		= 	1;//活动;
+	optional uint32 team_id			= 	2;//队伍id
+	optional string leader_name		=	3;//队长名字;
+	optional sint32 leader_level	=	4;//队长等级;
+	optional sint32 member_number	=	5;//队伍成员数目;
+	optional bool 	my_team			=	6;//当前所在的队伍;
+};
+
+//PBActivityTeamListRequire 改名 PBActivityTeamListRequest
+message PBActivityTeamListRequest
+{
+};
+
+message PBActivityTeamListResponse
+{
+	optional sint32 result					=	1;//请求结果;
+	repeated PBActivityTeam	acvitity_team	=	2;//活动组队的列表;
+	optional sint32	cd						=	3;//呼朋唤友cd;
+};
+
+message PBCallFriendRequire
+{
+	optional uint32 sheet_id		=	1;//呼朋唤友请求参加的活动的名字;
+};
+
+message PBCallFriendResponse
+{
+	optional sint32	result 			=	1;//呼朋唤友的结果;
+	optional sint32 cd				=	2;//cd剩余时间;
+	optional uint32 sheet_id		=	3;//呼朋唤友的活动的sheetid;
+};
+
+message PBApplyTeamRequire
+{
+	optional uint32 team_Id			=	1;
+};
+
+//TODOCHB:team 新加消息
+message PBApplyTeamResponse
+{
+	optional sint32 ret_code		=	1; // 结果码
+};
+
+//强行申请加入队伍请求 TODOCHB:team 新加消息
+message PBForceApplyTeamRequire
+{
+	optional uint32 team_Id			=	1;
+};
+
+//强行申请加入队伍响应 TODOCHB:team 新加消息
+message PBForceApplyTeamResponse
+{
+	optional sint32 ret_code		=	1; // 结果码
+};
+
+
+message PBQuickBuildTeamRequire
+{
+	optional uint32 sheet_id = 1;//快速组队活动的sheetid;
+};
+
+message PBQuickBuildTeamResponse
+{
+	optional sint32 ret_code  = 1;
+	optional uint32 sheet_id = 2;//快速组队的活动的sheetid;
+};
+
+
+message PBMsgDungeonOnceMoreRequest
+{
+
+};
+
+message PBMsgDungeonOnceMoreResponse
+{
+	optional sint32 ret_code  = 1;
+};
+
+///////////////////////////// 蜀山 消息定义 /////////////////////////////
+
+// 副本扫荡类型
+enum PBDungeonRushType
+{
+	enPBDungeonRushType_Once					= 1;	// 1次扫荡
+	enPBDungeonRushType_Mult					= 2;	// 多次扫荡
+};
+// 宝箱领取情况
+enum PBDungeonChestState
+{
+	enPBDungeonChestState_UnGot					= 0;	// 未领取
+	enPBDungeonChestState_Got					= 1;	// 已领取
+};
+
+// 剧情播放，也可以兼容以后的引导部分
+enum PBDungeonStoryOpType
+{
+	enDungeonStoryOpType_Play					= 1;	// 剧情播放
+	enDungeonStoryOpType_Finish					= 2;	// 剧情结束
+	enDungeonStoryOpType_GuideStart				= 3;	// 引导开始
+	enDungeonStoryOpType_GuideEnd				= 4;	// 引导结束
+};
+
+// 采集操作类型
+enum PBOpCollectType
+{
+	enOpCollectType_Start						= 1;	// 开始
+	enOpCollectType_Cancel						= 2;	// 取消
+};
+
+// 板凳操作类型
+enum PBOpBenchType
+{
+	enOpBenchType_Start							= 1;	// 开始
+	enOpBenchType_Cancel						= 2;	// 取消
+	enOpBenchType_Check							= 3;	// 检查
+};
+
+// 副本角色统计信息
+message PBMsgDungeonStatInfo
+{
+	optional sint32	total_damage		= 1;
+	optional sint32	death_times			= 2;
+	optional sint32	pay_respawn_time	= 3;
+	optional sint32	total_injured		= 4;
+	optional sint32	creature_killed		= 5;
+	optional sint32	money_gained		= 6;
+	optional sint64	exp_gained			= 7;
+	optional sint64	zhenqi_gained		= 8;		// 真气值
+	optional sint32	lingqi_gained		= 9;
+	optional sint32 justice_gained		= 10;		// 正气值
+	optional sint64 pet_exp_gained		= 11;
+	optional sint64	exp_world_exp		= 12;		// 世界等级经验加成
+};
+
+// 奖励用（首次奖励、抽奖奖励、宝箱奖励）
+message PBMsgDrawReward
+{
+	optional uint32	draw_sheed_id		= 1;	// 奖励的sheetID
+	optional sint32	num					= 2;	// 数量
+	optional sint32 binded				= 3;	// 是否绑定 1:绑定 0：非绑定
+};
+
+message PBMsgRushResult
+{
+	optional sint32				num				= 1;	// 第几次扫荡索引,从0开始
+	repeated PBMsgDrawReward	rush_reward		= 2;	// 扫荡奖励
+};
+
+message PBMsgDungeonRecord
+{
+	optional uint32 sheet_id			= 1;	// 副本sheet_id
+	optional int32  clearance_times		= 2;	// 
+	optional int32  best_star			= 3;	// 最好星数
+	optional int32  fastest_time		= 4;	// 最快通关时间
+}
+
+message PBMsgChestRecord
+{
+	optional uint32 chest_sheet_id			= 1;	// 章节sheet ID
+	optional sint32 region_chest_state		= 2;	// 章节宝箱是否已打开	类型：PBDungeonChestState
+	repeated sint32 road_chest_state_list	= 3;	// 路线中小宝箱打开情况	类型：PBDungeonChestState
+};
+
+// 请求进入副本
+message PBMsgDungeonEnterRequest
+{
+	optional uint32	sheed_id		= 1;		// 请求进入的副本sheetID
+	optional bool   is_force		= 2;		// 是否强制进入(true时不提示正在匹配等)
+};
+
+message PBMsgDungeonEnterResponse
+{
+	optional sint32		ret_code		= 1;		// 结果码
+	optional uint32		sheed_id		= 2;		// 请求进入的副本sheetID
+	optional PBParam	code_param		= 3;		// 返回码参数
+};
+
+// 请求离开副本
+message PBMsgDungeonLeaveRequest
+{
+};
+
+message PBMsgDungeonLeaveResponse
+{
+	optional sint32 ret_code		= 1;		// 结果码
+};
+
+// 请求激活副本AI
+message PBMsgDungeonStartRequest 
+{
+};
+
+message PBMsgDungeonStartResponse 
+{
+	optional sint32 ret_code		= 1;		// 结果码
+};
+
+
+// 请求副本列表
+message PBMsgDungeonListRequest
+{
+};
+
+message PBMsgDungeonListResponse
+{
+	optional sint32					ret_code			= 1;	// 结果码
+	repeated PBMsgDungeonRecord  	dungeon_records		= 2;	// 副本信息表
+	repeated PBMsgChestRecord		dungeon_chests		= 3;	// 副本宝箱信息
+};
+
+
+// 通告副本结算结果
+message PBMsgDungeonSettleUpNotice
+{
+	optional sint32					exp_reward			= 1;	// 过关经验奖励
+	optional sint32					used_time			= 2;	// 使用的时间
+	repeated PBMsgDrawReward		draw_info			= 3;	// 翻牌奖励列表
+	optional PBMsgDungeonStatInfo	stat_info			= 4;	// 副本内统计信息
+	optional sint32					total_fauna			= 5;	// 总波数
+	optional sint32					is_success			= 6;	// 是否通关
+	optional PBMsgDungeonRecord		record				= 7;	// 副本记录
+
+	optional sint64					exp_team_bonus		= 8;	//
+	optional sint64					exp_global_bonus	= 9;	//
+	optional sint64					exp_dungeon_bonus	= 10;	//
+	optional sint64					exp_vip_level_bonus	= 11;	//
+
+	optional sint32					pvp_honor			= 12;	// 
+	optional sint32					bound_yuanbao		= 13;	//
+	optional sint32					star_level			= 14;	//	星级
+	repeated PBMsgDrawReward		clear_dungeon_reward= 15;	// 首次通关奖励
+	optional bool					is_no_profits		= 16;	// 是否是无收益进入副本
+	repeated PBMsgDrawReward		reward_info			= 17;	// 结算掉落
+	optional sint32					free_draw_cnt		= 18;	// 免费抽奖次数
+	optional PBMsgDungeonLeaderGift	leader_gift         = 19;   // 队长礼包
+};
+
+message PBMsgDungeonLeaderGift
+{
+	repeated PBMsgDrawReward		draw_reward         = 1;
+};
+
+// 翻牌抽奖
+message PBMsgDungeonDrawRequest
+{
+	optional sint32					draw_num			= 1;	// 已抽奖次数
+};
+
+message PBMsgDungeonDrawReponse
+{
+	optional sint32					ret_code			= 1;	// 返回码
+	optional sint32					draw_num			= 2;	// 已抽奖次数
+	optional PBMsgDrawReward		draw_reward			= 3;	// 抽得的奖励
+};
+
+// 通告统计信息
+message PBMsgDungeonStatNotice
+{
+	optional PBMsgDungeonStatInfo	stat_info			= 1;	// 统计信息
+	//optional sint32					total_fauna			= 2;	// 波数
+};
+
+// 扫荡请求
+message PBMsgDungeonRushRequest
+{
+	optional uint32					sheet_id			= 1;	// 副本sheetID
+	optional sint32					rush_type			= 2;	// 扫荡类型 PBDungeonRushType
+	optional sint32					rush_times			= 3;	// 扫荡次数
+};
+
+// 
+message PBMsgDungeonRushResponse
+{
+	optional sint32					ret_code			= 1;	// 返回码
+	optional uint32					sheet_id			= 2;	// 副本sheetID
+	repeated PBMsgRushResult		rush_result			= 3;	// 扫荡结果
+	optional sint32                 dungeon_type        = 4;    // 副本类型，客户端需要处理不同副本
+};
+
+message PBMsgDungeonRunNotice
+{
+	optional uint32					sheet_id			= 1;	// 副本sheetID
+	optional sint32					running				= 2;	// 是否已开始运行 0:未运行 1:已运行
+	optional uint32					left_time			= 3;	// 剩余时间，单位秒
+};
+
+// 解锁副本通告
+message PBMsgDungeonUnlockNotice
+{
+	optional uint32					sheet_id			= 1;	// 解锁的副本sheetID
+};
+
+// 重置副本
+message PBMsgDungeonResetCountRequest
+{
+	optional uint32					sheet_id			= 1;	// 副本sheet ID
+};
+
+message PBMsgDungeonResetCountResponse
+{
+	optional sint32					ret_code			= 1;	// 返回码
+	optional uint32					sheet_id			= 2;	// 副本sheet ID
+};
+
+
+// 领取路线中的小宝箱
+message PBMsgDungeonGetRoadChestRequest
+{
+	optional uint32					region_sheet_id		= 1;	// 章节sheet ID
+	optional sint32					chest_index			= 2;	// 宝箱索引
+};
+
+message PBMsgDungeonGetRoadChestResponse
+{
+	optional sint32					ret_code			= 1;	// 返回码
+	optional uint32					region_sheet_id		= 2;	// 章节sheet ID
+	optional sint32					chest_index			= 3;	// 宝箱索引
+	repeated PBMsgDrawReward		chest_reward		= 4;	// 宝箱奖励
+};
+
+
+
+// 领取章节宝箱
+message PBMsgDungeonGetRegionChestRequest
+{
+	optional uint32					region_sheet_id		= 1;	// 章节sheet ID
+};
+
+message PBMsgDungeonGetRegionChestResponse
+{
+	optional sint32					ret_code			= 1;	// 返回码
+	optional uint32					region_sheet_id		= 2;	// 章节sheet ID
+	repeated PBMsgDrawReward		chest_reward		= 3;	// 宝箱奖励
+};
+
+// 进副本冲突提示
+message PBMsgDungeonOppositeTipNotice
+{
+	optional sint32					notice_code			= 1;	// 提示码
+	optional uint32					dg_sheet_id			= 2;	// 副本sheetID
+};
+
+
+// 获取副本进入条件信息
+message PBMsgGetDungeonInfoRequest
+{
+	optional uint32					sheet_id			= 1;	// 副本列表sheetID
+};
+
+message PBMsgGetDungeonInfoResponse
+{
+	optional sint32					ret_code			= 1;	// 返回码
+	optional uint32					sheet_id			= 3;	// 副本列表ssheetID
+	optional sint32					price				= 4;    // 下一次副本的购买价格
+};
+
+// 购买副本或副本列表的进入次数
+message PBMsgDungeonListBuyEnterTimesRequest
+{
+	optional uint32					sheet_id			= 1;	// 副本列表sheetID		
+};
+
+message PBMsgDungeonListBuyEnterTimesResponse
+{
+	optional sint32					ret_code			= 1;	// 返回码
+	optional sint32					price				= 2;    // 下一次副本的购买价格
+	optional uint32					sheet_id			= 3;	// 副本列表ssheetID
+};
+
+// 队伍玩家信息
+message PBMsgTeamMemberInfo
+{
+	optional string					player_name			= 1;	// 玩家名称
+	optional bool					is_leader			= 2;    // 玩家是否为队长
+	optional bool                   can_enter			= 3;	// 玩家是否满足进入条件
+	optional sint32                 enter_type			= 4;    // 玩家进入副本的状态（正常进入、0收益等）
+	optional uint32					team_id				= 5;	// 队伍id用以客户端正确性校验
+	optional ECharAcceptFlag		is_accept			= 7;	// 玩家是否同意进入副本	
+};
+
+// 组队进入副本，验证玩家是否满足进入条件
+message PBMsgTeamEnterDungeonVerifyNotice
+{
+	optional sint32					notice_code			= 1;	// 返回码
+	optional uint32				    sheet_id			= 2;	// 副本的sheetID用以客户端正确性校验
+	repeated PBMsgTeamMemberInfo	player_info			= 3;    // 队伍成员信息 
+};
+
+// 队伍中玩家是否同意进入副本
+message PBMsgPlayerConfirmEnterDungeonRequest
+{
+	optional ECharAcceptFlag		is_accept			= 1;	// 玩家是否同意进入副本				
+};
+
+message PBMsgPlayerConfirmEnterDungeonResponse
+{
+	optional sint32					ret_code			= 1; 	// 返回码
+};
+
+// 队伍成员拒绝进入副本消息
+message PBMsgPlayerRefuseEnterDungeonNotice
+{
+	repeated PBMsgTeamMemberInfo	player_info			= 1;    // 队伍成员信息 
+};
+
+// 队伍成员不满足进入副本条件
+message PBMsgPlayerInconformityEnterDungeonConditionNotice
+{
+	repeated PBMsgTeamMemberInfo	player_info			= 1;    // 队伍成员信息 
+};
+
+// 队伍成员正在确认进入副本时掉线
+message PBMsgPlayerConfirmEnterDungeonOfflineNotice
+{
+	repeated PBMsgTeamMemberInfo	player_info			= 1;    // 队伍成员信息 
+};
+
+
+// 请求剧情操作
+message PBMsgDungeonStoryOpRequest					
+{
+	optional sint32	op_type			= 1;	// 操作类型 PBDungeonStoryOpType
+	optional sint32	story_id		= 2;	// 剧情ID
+}
+
+// 响应剧情操作
+message PBMsgDungeonStoryOpResponse					
+{
+	optional sint32	ret_code		= 1;	// 返回码
+	optional sint32	op_type			= 2;	// 操作类型  PBDungeonStoryOpType
+	optional sint32	story_id		= 3;	// 剧情ID
+}
+
+// 通知客户端事件触发
+message PBMsgDungeonClientEventNotice					
+{
+	optional sint32	event_id		= 1; // 事件ID
+	repeated sint32 param_int		= 2; // 事件整型参数
+	repeated string param_string	= 3; // 事件字符串参数
+	repeated float  param_float		= 4; // 事件浮点型参数
+}
+
+// EGS向AI通知事件
+message PBMsgEGSToAISEventReport					
+{
+	optional sint32	event_type		= 1;	// 事件类型，参考EInstanceEventType
+	optional sint32	ins_number		= 2;	// 副本ID
+	optional sint32	param_int		= 3;	// 事件参数
+	optional string trigger_name	= 4;	// 事件字符串参数
+}
+
+// EGS向AIS请求传送
+message PBMsgEnterDynamicPlaceReport					
+{
+	optional uint32	target_index	= 1;	// 传送NPC的dataset index
+	optional uint32	owner_index		= 2;	// 玩家的dataset index
+}
+
+//  EGS向AIS上报采集
+message PBMsgProcessCollectReport					
+{
+	optional uint32	target_index	= 1;	// 采集物的dataset index
+	optional uint32	killer_index	= 2;	// 采集者的dataset index
+}
+
+//  EGS向AIS上报实体死亡
+message PBMsgEntityKillReport					
+{
+	optional uint32	target_index	= 1;	// 死亡的dataset index
+	optional uint32	killer_index	= 2;	// 杀手的dataset index
+}
+
+//  EGS向AIS上报实体释放技能
+message PBMsgEntityExeSkillReport					
+{
+	optional uint32	actor_index		= 1;	// 自己的dataset index
+	optional uint32	target_index	= 2;	// 对方的dataset index
+	optional sint32	skill_id		= 3;	// 技能ID
+}
+
+// AI向EGS通知传送
+message PBMsgTeleportPlayerNotice					
+{
+	optional sint32	ins_number		= 1;	// 副本ID
+	optional uint64	player_id		= 2;	// 玩家的dataset index
+	optional float	teleport_x		= 3;	// 副本ID
+	optional float	teleport_y		= 4;	// 副本ID
+}
+
+// AI向EGS通知副本强制失败
+message PBMsgSceneFailNotice					
+{
+	optional sint32	ins_number		= 1;	// 副本ID
+}
+
+// AI向EGS通知设置怪物血量
+message PBMsgBotChangeHpNotice					
+{
+	optional sint32	ins_number		= 1;	// 副本ID
+	optional sint32	target_index	= 2;	// 怪物
+	optional sint32	target_hp		= 3;	// 怪物血量
+}
+
+// 请求操作采集物
+message PBMsgOpCollectionRequest					
+{
+	optional sint32	op_type			= 1;	// 操作类型 PBOpCollectType
+	optional sint32	target_index	= 2;	// 采集物
+}
+
+// 回复开始采集
+message PBMsgOpCollectionResponse					
+{
+	optional sint32	ret_code		= 1;	// 返回码
+	optional sint32	op_type			= 2;	// 操作类型  PBOpCollectType
+	optional sint32	target_index	= 3;	// 采集物ID
+}
+
+// 请求坐板凳
+message PBMsgOpBenchRequest					
+{
+	optional sint32	op_type			= 1;	// 操作类型 PBOpBenchType
+	optional sint32	target_index	= 2;	// 采集物
+}
+
+// 回复坐板凳
+message PBMsgOpBenchResponse					
+{
+	optional sint32	ret_code		= 1;	// 返回码
+	optional sint32	op_type			= 2;	// 操作类型  PBOpBenchType
+	optional sint32	target_index	= 3;	// 采集物ID
+}
+
+// 通知结束采集
+message PBMsgOpCollectionEndNotice
+{
+	optional sint32	target_index	= 3;	// 采集物ID
+}
+
+// 通知取消自动采集
+message PBMsgCancelCollectionNotice					
+{
+	optional sint32	ret_code		= 1;	// 返回码
+	optional sint32	reason			= 2;	// 原因
+}
+
+message PBSpawnBot				
+{
+	optional string	grp_name		= 1;	// 组名
+	repeated uint64	bot_id			= 2;	// 怪的ID
+}
+
+// 宠物AI技能
+message PBAIPetSkill				
+{
+	optional sint32		skill_id		= 1;	// 技能ID
+	optional sint32		skill_lv		= 2;	// 技能等级
+	optional uint32		action_time		= 3;	// 行动时间
+	optional uint32		cd_time			= 4;	// cd冷却时间
+	optional uint32		action_distance	= 5;	// 攻击距离
+	optional uint32		skill_logic_id	= 6;	// 攻击距离
+}
+
+message PBAIPetInfo
+{
+	repeated PBAIPetSkill		skill_info		= 1;	// 技能信息 
+}
+
+// 请求生成怪组
+message PBMsgSpawnBotRequest					
+{
+	optional sint32	ins_number		= 1;	// 副本ID;
+	optional string	grp_name		= 2;	// 组名;
+	optional uint32 line_id         = 3;	// 线ID，只做返回
+	optional uint32 sheet_id		= 4;	// SheetId，只做返回
+	optional sint32 is_set_bornpos  = 5;	// 是否设置出生点
+	optional PBAIVector born_pos	= 6;	// 出生点
+	optional uint64 character_id	= 7;    // 怪物召唤者; 
+	optional sint32 is_despawn		= 8;	// 是否销毁
+	optional PBAIPetInfo pet_info	= 9;	// 宠物信息
+}
+
+// 响应生成怪组
+message PBMsgSpawnBotResponse					
+{
+	optional sint32		ret_code		= 1;	// 返回码
+	optional sint32		ins_number		= 2;	// 副本ID
+	optional PBSpawnBot	grp_bot			= 3;	// 组信息
+	optional uint32		line_id         = 4;
+	optional uint32		sheet_id		= 5;
+	optional uint64     character_id	= 6;    // 怪物召唤者; 
+	optional sint32		is_despawn		= 7;	// 是否销毁
+}
+
+// 通知-怪物组出生
+message PBMsgGroupSpawnNotice				
+{
+	optional sint32		ins_number		= 1;	// 副本ID
+	optional string		group_name		= 2;	// 怪物组名
+	optional uint32		group_index     = 3;	// 怪物组索引
+	optional uint32		total_index		= 4;	// 总怪物组数
+}
+
+message PBMsgGroupDespawnNotice				
+{
+	optional sint32		ins_number		= 1;	// 副本ID
+	optional string		group_name		= 2;	// 怪物组名
+	optional uint32		group_index     = 3;	// 怪物组索引
+	optional uint32		total_index		= 4;	// 总怪物组数
+}
+
+
+// 通知-操作buff
+message PBMsgAISystemBuffNotice				
+{
+	optional sint32		ins_number		= 1;	// 副本ID
+	optional sint32		buff_id			= 2;	// buffID
+	optional sint32		buff_time		= 3;	// buff持续时间
+	optional PBSpawnBot	grp_bot			= 4;	// 组信息
+	optional sint32		is_add			= 5;	// 添加/删除buff
+}
+
+// 通知-操作systemskill
+message PBMsgAISystemSkillNotice				
+{
+	optional sint32		ins_number		= 1;	// 副本ID
+	optional sint32		skill_id		= 2;	// buffID
+	optional sint32		skill_lv		= 3;	// buff持续时间
+	optional sint32		is_target		= 4;	// 是否实体位置/是否有目标
+	optional sint32		is_player		= 5;	// 是否玩家
+	optional PBSpawnBot	grp_bot			= 6;	// 组信息
+	optional PBAIVector begin_pos		= 7;	// 开始位置
+	optional PBAIVector target_pos		= 8;	// 目标位置
+}
+
+// 通知-操作怪物skill
+message PBMsgAIPetSkillNotice				
+{
+	optional uint32		actor_index		= 1;	// 施法者
+	optional uint32		target_index	= 2;	// 目标
+	optional PBAIPetSkill pet_skill		= 3;	// 技能
+}
+
+
+
+// 通知-副本结算影响数
+message PBMsgAIDungeonSettleNotice				
+{
+	optional sint32		ins_number		= 1;	// 副本ID
+	optional sint32		settle_id		= 2;	// 结算类型
+	optional sint32		settle_count	= 3;	// 结算影响数
+}
+
+message PBMsgNewGroupMonsterComeNotice
+{
+	optional uint32					dungeon_type	= 1; // 类型为 ECounterType
+	optional PBMsgGroupSpawnNotice	pbNotice		= 2;
+	optional sint32					tower_layer		= 3; // 爬塔的当前层数
+};
+
+
+////////野外BOSS 相关开始 /////////
+
+message PBPlayerWildBossDmgInfo
+{
+	optional string						name					= 1;
+	optional sint32					    damage					= 2;
+	optional float						dmg_percent			    = 3;
+};
+
+message PBMsgWildDungeonPlayerBossDmgRankNotice
+{
+	repeated PBPlayerWildBossDmgInfo	player_wildbossdmg_list	= 1;
+};
+
+message PBMsgWildDungeonPlayerBossDmgNotice
+{
+	optional PBPlayerWildBossDmgInfo	player_dmg				= 1;
+};
+
+message PBMsgDisPlayWildDungeonBossDmgTableNotice
+{
+	optional bool						is_display			    = 1;
+};
+
+message PBWildBossLocationInfo
+{
+	optional sint32						map_id				    = 1;
+	optional sint32						line_id                 = 2;
+	optional float						coordinate_x		    = 3;
+	optional float						coordinate_y		    = 4;
+};
+
+message PBMsgWildBossLocationRequest
+{
+    optional uint32						sheet_id			    = 1;
+};
+
+
+message PBMsgWildBossLocationResponse	
+{
+    optional PBWildBossLocationInfo		wildboss_location		= 1;
+	optional sint32						ret_code				= 2;
+};
+
+message PBIsSearchingWildBoss
+{
+	optional bool						is_searching			= 1;
+	optional uint32						sheet_id				= 2;
+};
+
+message PBMsgIsSearchingWildBossNotice
+{
+	repeated PBIsSearchingWildBoss     is_searching_list		= 1;
+};
+
+message PBMsgPlayerTooLongNotAttackWildBossNotice
+{
+
+};
+
+////////野外BOSS 结束开始 /////////
+
+
+////////////// 复活相关 //////////////////
+enum PBRespawnType
+{
+	enPBRespawnType_Pay					= 0;	// 原地复活
+	enPBRespawnType_BackCity			= 1;	// 回城复活
+	enPBRespawnType_Point				= 2;	// 复活点复活
+};
+
+message PBMsgRespawnRequest
+{
+	optional PBRespawnType				respawn_type			= 1; // 出生类型
+};
+
+message PBMsgRespawnResponse
+{
+	optional sint32						ret_code				= 1;
+};
+
+////////////// 复活相关 结束 //////////////////
+
+enum EStarRating_State
+{
+	enStarRatingState_Runing	= 0;	// 正在进行
+	enStarRatingState_Finish	= 1;	// 完成
+	enStarRatingState_Fail		= 2;	// 失败
+};
+
+message PBMsgStarRatingInfoNotice
+{
+	optional sint32						star_idx			= 1;		// 星级索引
+	optional sint32						star_count			= 2;		// 星级当前次数
+	optional sint32						star_percent		= 3;		// 星级当前百分比
+	optional sint32						star_tick			= 4;		// 星级倒计时
+	optional sint32						star_state			= 5;		// 星级状态 
+};
+
+message PBMsgPetBattleStarInfoNotice
+{
+	optional sint32                star_num          = 1;        //剩余星数
+	optional sint32                star_cur_tick     = 2;        //当前剩余时间
+	optional sint32                star_total_tick   = 3;       // 总时间
+	repeated PBStarInfo            star_info         = 4;       // 星星信息
+};
+
+message PBStarInfo
+{
+	optional sint32              star_idx           = 1;       //星星索引
+    optional sint32              star_target_tick   = 2;       //星星目标时间
+};
+
+/////////////////////////////////// World Boss Begin ///////////////////////////////////////
+
+message PBMsgWorldBossRankItem
+{
+	optional string item_name    = 1;	// 昵称
+
+	optional sint32	item_damge   = 2;   // 伤害量
+
+	optional sint32 item_percent = 3;	// 百分比
+};
+
+message PBMsgWorldBossRankNotice
+{
+	optional PBMsgWorldBossRankItem rank_mine = 1;	// 自己的信息
+
+	repeated PBMsgWorldBossRankItem rank_item = 2;	// 排行 信息
+};
+
+message PBMsgWorldBossResultItem
+{
+	optional string item_name    = 1;	// 昵称
+
+	optional sint32	item_damge   = 2;   // 伤害量
+
+	optional sint32 item_percent = 3;	// 百分比
+
+	optional sint32 item_money	 = 4;	// 金钱
+
+	optional sint32 item_exp	 = 5;	// Exp
+};
+
+message PBMsgWorldBossResultNotice
+{
+	optional sint32					  result_ty   = 1;	// 结果类型 （1 胜利 0 失败）	
+
+	optional PBMsgWorldBossResultItem result_mine = 2;	// 自己的信息
+
+	optional PBMsgWorldBossResultItem result_luck = 3;	// 自己的信息
+
+	repeated PBMsgWorldBossResultItem result_item = 4;	// 列表 信息
+};
+
+message PBMsgWorldBossEnterRequest
+{
+};
+
+message PBMsgWorldBossEnterResponse
+{
+	optional sint32		ret_code				= 1;
+};
+message PBMsgWorldBossOpenNotice
+{
+	optional sint32		dungeon_sheet			= 1;
+};
+
+// 新加世界boss转阵营进入副本消息
+message PBMsgWorldBossToCampRequest
+{
+	optional sint32		camp_type				= 1; //发送的阵营id
+	optional uint32		role_id					= 2; //发送的角色id
+};
+
+//返回给发送阵营的消息
+message PBMsgWorldBossToCampResponse
+{
+	optional sint32		ret_code		=   1; //返回消息
+	optional uint32		map_id			=	2; //地图id;
+	optional uint32		line_id			=	3; //线id;
+	optional uint64		dungeon_id		=	4; //副本id;
+	optional uint32		role_id			=   5; //发送的角色id
+};
+
+
+
+/////////////////////////////////// World Boss End   ///////////////////////////////////////
+
+
+//请求请入三环副本
+message PBMsgEnterLinkDungeonRequest
+{
+};
+
+//是否是第三环
+message PBMsgLinkDegoenResultNotice
+{
+	optional	bool	is_three	= 1;	// 胜负
+	optional	sint32	timeount	= 2;	//超时
+};
+
+
+message PBMsgDungeonContinueKillNotice
+{
+	optional	sint32 continue_skill_num = 1;	// 连续击杀数;
+};
+
+
+////////////////////////////////////// 喜宴副本 /////////////////////////////
+
+// 邀请好友进入喜宴
+message PBMsgRequireFriendWeddingDungeonRequest
+{
+	optional uint32						instance_num				= 1;	// 副本实例ID
+	optional uint64						friend_full_id				= 2;	// 好友ID
+}
+
+message PBMsgRequireFriendWeddingDungeonResponse
+{
+	optional sint32						ret_code				= 1;	
+}
+
+// 邀请帮派成员进入喜宴
+message PBMsgRequireGuildWeddingDungeonRequest
+{
+	optional uint32						instance_num				= 1;	// 副本实例ID
+	optional sint32						camp_id						= 2;	// 副本所在阵营
+}
+
+message PBMsgRequireGuildWeddingDungeonResponse
+{
+	optional sint32						ret_code				= 1;	
+}
+
+// 邀请喜宴弹窗
+message PBMsgEnterWeddingDungeonDialogNotice
+{
+	optional uint32						instance_num				= 1;	// 副本实例ID
+	optional string						husband						= 2;	// 
+	optional string						wife						= 3;	// 
+	optional sint32						husband_camp				= 4;	// 
+	optional sint32						wife_camp					= 5;	// 
+	optional string						invater_name				= 6;	// 邀请者名字
+	optional sint32						camp_id						= 7;	// 喜宴所在阵营
+}
+
+// 开启喜宴副本请求
+message PBMsgCreateWeddingDungeonRequest
+{
+
+};
+
+message PBMsgCreateWeddingDungeonResponse
+{
+	optional sint32						ret_code				= 1;
+};
+
+message PBMsgCreateWeddingDungeonNotice
+{
+	optional sint32						creater_camp				= 1;	// 邀请者阵营
+	optional string						creater_name				= 2;	// 邀请者名字
+};
+
+// 进入喜宴副本请求
+message PBMsgEnterWeddingDungeonRequest
+{
+	optional bool						is_bride_or_husband			= 1;	// 是新郎或新娘
+	optional uint32						instance_num				= 2;	// 副本实例ID
+	optional sint32						camp_id						= 3;	// 副本所在阵营
+}
+
+message PBMsgEnterWeddingDungeonResponse
+{
+	optional sint32						ret_code				= 1;
+	optional PBParam					code_param				= 2;		// 返回码参数
+}
+
+
+// 购买进入喜宴人数限制
+message PBMsgBuyWeddingPlayerNumRequest
+{
+}
+
+message PBMsgBuyWeddingPlayerNumResponse
+{
+	optional sint32						ret_code				= 1;
+}
+
+
+// 进入喜宴副本后通知喜宴信息
+message PBMsgWeddingDungeonInfoNotice
+{
+	optional sint32						max_guest_num				= 1;	// 宾客门票数
+	optional uint64						husband_full_id				= 2;	// 
+	optional uint64						wife_full_id				= 3;	// 
+	optional string						husband_name				= 4;	// 
+	optional string						wife_name					= 5;	// 
+	optional sint32						husband_camp				= 6;	// 
+	optional sint32						wife_camp					= 7;	// 
+	optional uint32						instance_num				= 8;	// 副本实例ID
+	optional sint32						now_guest_num				= 9;	// 当前宾客人数
+}
+
+// 请求开始拜堂
+message PBMsgBeginPerformWeddingRequest
+{
+}
+
+message PBMsgBeginPerformWeddingResponse
+{
+	optional sint32						ret_code				= 1;
+}
+
+// 通知拜堂开始
+message PBMsgBeginPerformWeddingNotice
+{
+}
+
+
+// 购买喜糖
+message PBMsgDungeonBuyWeddingCandyRequest
+{
+
+};
+
+message PBMsgDungeonBuyWeddingCandyResponse
+{
+	optional sint32						ret_code				= 1;
+};
+
+enum PBWeddingDrawType
+{
+	enWeddingDrawType_LowLevel	= 0;	// 铜钱闹洞房
+	enWeddingDrawType_HighLevel	= 1;	// 元宝闹洞房
+};
+
+// 闹洞房
+message PBMsgDungeonWeddingDrawRequest
+{
+	optional PBWeddingDrawType	draw_type						= 1;
+};
+
+message PBMsgDungeonWeddingDrawResponse
+{
+	optional sint32						ret_code				= 1;
+};
+
+
+////////////////////////////////////// 喜宴副本结束 /////////////////////////////
+
+
+// 新手村-划船
+message PBMsgDungeonBoatingStatusRequest
+{
+	optional PBBoatingType				status					= 1; // 状态	
+};
+
+message PBMsgDungeonBoatingStatusResponse
+{
+	optional sint32						ret_code				= 1;
+	optional PBBoatingType 				status					= 2; // 状态
+};
+
+
+message PBMsgDungeonPetPvERoundNotice
+{
+	optional sint32   round = 1;    // 轮次
+}
+
+message PBMsgDungeonStarInfoRequest
+{
+
+};
+
+
+// 双人划船，或者单人划船，自由划船，跟新手划船不同
+enum PBBoatingReply
+{
+	enBoating_Agree				= 1; // 同意
+	enBoating_Reject			= 2; // 拒绝
+}
+
+message PBMsgMultiBoatingStartRequest
+{
+	
+};
+
+message PBMsgMultiBoatingStartResponse
+{
+	optional sint32				ret_code				= 1;
+	optional PBBoatingType 		status					= 2; // 状态
+};
+
+message PBMsgMultiBoatingEndRequest
+{
+
+};
+
+message PBMsgMultiBoatingEndResponse
+{
+	optional sint32				ret_code				= 1;
+	optional PBBoatingType 		status					= 2; // 状态
+};
+
+message PBMsgMultiBoatingStatusNotice
+{
+	optional string				leader_name				= 1;// 队长名字
+	optional uint32				role_id					= 2;// 队长ID
+};
+
+message PBMsgMultiBoatingReplyRequest
+{
+	optional PBBoatingReply		reply					= 1;
+	optional uint32				role_id					= 2;
+};
+
+message PBMsgMultiBoatingReplyResponse
+{
+	optional sint32				ret_code				= 1;
+};
+
+
+
+
+//跳过战斗
+message PBMsgDungeonSkipRequest
+{
+	
+}
+
+message PBMsgDungeonSkipResponse
+{
+	optional sint32 ret_code = 1; 
+}
+
+
+//宠物战斗结算通知
+message PBMsgPetBattlePvPSettelUpNotice
+{
+	optional PBPetBattleFightResult result = 1;  //战斗结果
+	optional string my_name = 2;      // 我的名字
+	optional string fighter_name = 3;       // 被挑战者名字
+	optional uint32 my_org_rank   = 4;      // 我的原排名
+	optional uint32 fighter_org_rank  = 5;    //被挑战者原排名
+	optional uint32 my_cur_rank   = 6;      // 我的现排名
+	optional uint32 fighter_cur_rank  = 7;    //被挑战者现排名
+	repeated PBPetBattleInfoOne my_pet_array = 8; // 我的阵容
+	repeated PBPetBattleInfoOne fighter_pet_array = 9; // 被挑战者阵容
+	repeated PBMsgReward reward = 10;       // 获得奖励
+	optional uint32 my_camp_id = 11;   // 我的阵营
+	optional uint32 fighter_camp_id = 12; // 被挑战者阵营
+}

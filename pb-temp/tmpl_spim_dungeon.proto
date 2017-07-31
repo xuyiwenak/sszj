@@ -1,0 +1,77 @@
+/// @brief	template for config of span guild battle
+
+import "tmpl_base.proto";
+
+message PBConfigSpimDg
+{
+	optional PBConfigSpimBasic		basic		= 1;
+	optional PBConfigSpimBuff		buff		= 2;
+	optional PBCfgSpimRewardDungeon dungeon		= 3;
+	optional PBCfgSpimRewardInfo	guilds		= 4;
+	optional PBCfgSpimRewardInfo	guild_members	= 5;
+	optional PBCfgSpimRewardInfo	win_gateways	= 6;
+	//optional PBCfgSpimRewardInfo	all_gateways	= 7;
+	optional sint32					watching_limit		= 8;//[default=200];; // 观战人数限制
+	optional PBCfgSpimRewardInfo	guild_leader	= 9; // 帮主独享的奖励
+};
+
+message PBConfigSpimBasic
+{
+	optional float				coordinate_x	= 1; // 地图中心点坐标
+	optional float				coordinate_y	= 2; // 地图中心点坐标
+	optional sint32				radius			= 3; // 半径
+	optional sint32				time_unit		= 5;//[default=5]; // X秒得一次积分(单位:s)
+	optional sint32				score_unit		= 6;//[default=5]; // 一次获得X积分
+	optional string				kill_notice		= 9; // "5,10" 连杀公告
+	optional sint32				win_score		= 10;// 多少分赢
+};
+
+message PBConfigSpimBuff
+{
+	optional string				creature_id		= 1; // 采集物ID
+	optional string				group_name		= 2; // 采集物组别
+	repeated PBConfigSpimVector position		= 3; // 采集物坐标
+	optional float				buff_ratio		= 4;//[default=2.0]; // 积分buff倍率
+	optional sint32				buff_continue	= 5;//[default=20]; // 积分buff持续时间(单位:s)
+	optional sint32				buff_id			= 6; // 加分buffID
+	optional sint32				refresh_interval= 7; // 采集物刷新间隔
+};
+
+message PBConfigSpimVector 
+{
+	optional float				position_x		= 1;
+	optional float				position_y		= 2;
+};
+
+message PBCfgSpimRewardDungeon
+{
+	repeated PBCfgSpimBetRatio	bet_ratio		= 1; // 竞价金额与奖励倍率
+	optional float				lost_ratio		= 3;//[default=0.5]; // 失败拿一半奖励
+};
+
+message PBCfgSpimBetRatio
+{
+	optional sint32				bet_min			= 1;
+	optional sint32				bet_max			= 2;
+	repeated PBCfgSpimItems		items			= 3; // 奖励
+};
+
+message PBCfgSpimReward
+{
+	optional sint32				battle_round	= 1; // EPBRoundResult
+	repeated PBCfgSpimItems		items			= 2;
+	optional string				mail_id			= 3;
+	optional string				mail_body		= 4;
+	optional sint32				round_idx		= 5; // 轮次索引
+};
+
+message  PBCfgSpimItems
+{
+	optional string				sheet_id		= 1;
+	optional sint32				count			= 2;
+};
+
+message PBCfgSpimRewardInfo
+{
+	repeated PBCfgSpimReward	rewards			= 1;
+};

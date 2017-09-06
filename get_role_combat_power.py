@@ -42,7 +42,7 @@ def query_role(db_host, db_user, db_passwd, db_name, db_port, gateway_id):
          user_id = row[7]
          user_game_id = row[8]
          camp_name_str = camp_name[ss_camp_type]
-         dest_sql = "insert into role_combat_power values(%d, '%s', %d, %d, '%s', %d, %d, %d, %d, %d, '%s', '%s')" % (role_id, char_name, combat_power, guild_id, guild_name, ss_camp_type, last_quittime, gateway_id, user_id, user_game_id, camp_name_str, date_str)
+         dest_sql = "insert into stat_combat_power values(%d, '%s', %d, %d, '%s', %d, %d, %d, %d, %d, '%s', '%s')" % (role_id, char_name, combat_power, guild_id, guild_name, ss_camp_type, last_quittime, gateway_id, user_id, user_game_id, camp_name_str, date_str)
          dest_cur.execute(dest_sql)
          combat_power_str = "%d,%d,%d,%s,%d,%d,%s,%d,%s,%d,%d,%s" % (user_game_id, user_id, role_id, char_name, combat_power, guild_id, guild_name, ss_camp_type, camp_name_str, last_quittime, gateway_id, date_str)
          f.write(combat_power_str)

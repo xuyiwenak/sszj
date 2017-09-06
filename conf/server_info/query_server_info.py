@@ -49,7 +49,7 @@ jsonData = json.loads(res.content)
 """
 count = 0
 for oneData in jsonData:
-    strData = "%s,%s,%s,%s,%s" %(oneData['id'],oneData['strGatewayId'],oneData['strServiceType'],oneData['strLogIp'],oneData['strDbName'])
+    strData = "%s,%s,%s,%s,%s,%s" %(oneData['id'],oneData['strGatewayId'],oneData['strServiceType'],oneData['strLogIp'],oneData['strDbName'],oneData['strThrTName'])
     f.write(strData)
     f.write('\n')
     count=count+1
@@ -80,3 +80,5 @@ def get_server_gsip(index):
      if get_server_type(index) == 2:
         #print "server_ip find!"
         return jsonData[index]['strWanIp']
+def get_server_type(index):
+    return jsonData[index]['strThrTName']

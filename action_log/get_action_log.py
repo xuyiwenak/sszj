@@ -61,7 +61,7 @@ def online_data2db(DB_HOST, DB_USER, DB_PWD, db_name, server_list,insert_dbname,
                                     from %s where log_time between unix_timestamp('%s') and unix_timestamp('%s')" % ( gateway_id, table_name,time_start,time_end))
                         log_data = log_cur.fetchall()
                         #print log_data
-                        dest_sql = "insert into action_log values(%s, %s, %s, %s, %s ,%s, %s, %s ,%s, %s, %s)"
+                        dest_sql = "insert into log_action values(%s, %s, %s, %s, %s ,%s, %s, %s ,%s, %s, %s)"
                         dest_cur.executemany(dest_sql,log_data)
                     dest_conn.commit()
                     log_cur.close()
@@ -76,6 +76,6 @@ def online_data2db(DB_HOST, DB_USER, DB_PWD, db_name, server_list,insert_dbname,
     dest_cur.close()
     dest_conn.close()
 
-online_data2db("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','conf_server_list_2','action_log','2017-06-12 00:00:00','2017-07-21 23:59:59')
+online_data2db("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','conf_server_list_2','action_log','2017-07-22 00:00:00','2017-08-31 23:59:59')
 #convert_log_time2time('20170809_dungeon')
 #convert_dbname2gate('logdb_240001')

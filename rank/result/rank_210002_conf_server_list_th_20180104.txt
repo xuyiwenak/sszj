@@ -1,0 +1,48 @@
+æŽ’è¡Œæ¦œlevelç½‘å…³210002
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,touch.v4@hotmail.com,100008164,8722,a?J?????,259850, 106, 4, 3, 483, 612
+210,gggoattaphon253000@gmail.com,100000202,8797,???????,271905, 106, 1, 3, 197, 558
+210,jcb.ploy@gmail.com,100000346,8798,S???s?J?,232536, 106, 2, 3, 120, 5582
+210,armmiizz1989@gmail.com,100001462,8818,???????,271390, 106, 1, 1, 937, 2496
+210,orosole1234@gmail.com,100003268,9238,????ne???,237331, 106, 2, 3, 0, 23458
+210,facebook100000082,100000082,8510,???????,282645, 105, 3, 3, 1050, 351
+210,mkjung4@gmail.com,100001942,8539,*?Mï?ï?ª?ï?*,197673, 105, 2, 1, 828, 8160
+210,gggballsohot1993@gmail.com,100007957,8569,?»???`??`™,229973, 105, 4, 2, 648, 333
+210,tappek1993@gmail.com,100000379,8606,???????,214440, 105, 4, 1, 145, 515
+210,facebook100000066,100000066,8610,S???u?,269014, 105, 1, 2, 802, 306
+æŽ’è¡Œæ¦œcombat_powerç½‘å…³210002
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,facebook100014542,100014542,12680,Freeze,298046, 103, 4, 3, 0, 540
+210,einameba_osk120@hotmail.com,100004039,8605,???s????,284342, 102, 1, 1, 869, 1977
+210,popoko2006@gmail.com,100000408,9022,??????x??,284144, 105, 2, 3, 835, 667
+210,facebook100000082,100000082,8510,???????,282645, 105, 3, 3, 1050, 351
+210,facebook100000169,100000169,8840,?????,277043, 105, 3, 3, 167, 3116
+210,noonkaroon@gmail.com,100000210,8831,ÉrrO?,275955, 105, 3, 3, 644, 1286
+210,gggchitiput01@gmail.com,100009608,9441,«wS??w???»™,275507, 105, 1, 2, 804, 288
+210,vithinut88@gmail.com,100013754,12043,`?mÎ??™,274566, 105, 2, 3, 826, 4621
+210,gggoattaphon253000@gmail.com,100000202,8797,???????,271905, 106, 1, 3, 197, 558
+210,armmiizz1989@gmail.com,100001462,8818,???????,271390, 106, 1, 1, 937, 2496
+æŽ’è¡Œæ¦œcharm_pointç½‘å…³210002
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,gggjingmguo77@gmail.com,100000110,8521,??????o????,210749, 100, 4, 1, 0, 26007
+210,orosole1234@gmail.com,100003268,9238,????ne???,237331, 106, 2, 3, 0, 23458
+210,gggbee41912@gmail.com,100000193,8984,????€??€???,226299, 105, 2, 1, 413, 13154
+210,chinoda_j@hotmail.com,100006169,12753,?????????,172608, 90, 3, 1, 0, 10896
+210,ggggoodme21skr@gmail.com,100012249,9246,R?SE,179798, 100, 3, 2, 34, 8880
+210,mkjung4@gmail.com,100001942,8539,*?Mï?ï?ª?ï?*,197673, 105, 2, 1, 828, 8160
+210,nichanana456@gmail.com,100003623,8711,*°Ni¢hA°*,230191, 103, 2, 1, 39, 7511
+210,pimsupa0122@gmail.com,100001950,8593,???????,208062, 100, 3, 1, 0, 7242
+210,facebook100010148,100010148,10063,HuGuang,208784, 101, 3, 1, 0, 7137
+210,bumbim08042531@gmail.com,100001953,8725,??•????,201369, 98, 2, 1, 0, 6671
+æŽ’è¡Œæ¦œpvp_scoreç½‘å…³210002
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,leaf_august30@hotmail.com,100030347,34162,P?rƒ???,220264, 93, 3, 3, 1528, 81
+210,facebook100000082,100000082,8510,???????,282645, 105, 3, 3, 1050, 351
+210,gggflame.merlin9@gmail.com,100007782,9485,°•~Mã?v???,173402, 93, 2, 3, 1035, 207
+210,gggyooyii301@gmail.com,100012900,10400,•????????,237280, 105, 3, 2, 1028, 2451
+210,wutthitham.kaenchan@gmail.com,100006575,8718,????????,122419, 71, 1, 3, 942, 0
+210,armmiizz1989@gmail.com,100001462,8818,???????,271390, 106, 1, 1, 937, 2496
+210,it2528it@gmail.com,100011548,8685,Zeus,244285, 104, 3, 2, 879, 1203
+210,einameba_osk120@hotmail.com,100004039,8605,???s????,284342, 102, 1, 1, 869, 1977
+210,maewmeow69@gmail.com,100006256,8807,Maewmeow,235801, 104, 2, 2, 863, 887
+210,popoko2006@gmail.com,100000408,9022,??????x??,284144, 105, 2, 3, 835, 667

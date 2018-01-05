@@ -14,11 +14,12 @@ import msg_mount_pb2
 import msg_gemcutting_pb2
 import msg_xinfa_pb2
 import msg_xiuzhen_pb2
+import msg_magic_pet_pb2
 
 DESCRIPTOR = descriptor.FileDescriptor(
   name='msg_user.proto',
   package='',
-  serialized_pb='\n\x0emsg_user.proto\x1a\x0emsg_base.proto\x1a\x0emsg_item.proto\x1a\rmsg_pet.proto\x1a\x0fmsg_mount.proto\x1a\x14msg_gemcutting.proto\x1a\x0fmsg_xinfa.proto\x1a\x11msg_xiuzhen.proto\"\x11\n\x0fPBCommonNoParam\"0\n\x1bPBCreateCharBaseInfoRequest\x12\x11\n\tchar_slot\x18\x01 \x01(\r\"(\n\x13PBSelectCharRequest\x12\x11\n\tchar_slot\x18\x01 \x01(\r\")\n\x14PBSelectCharResponse\x12\x11\n\tchar_slot\x18\x01 \x01(\r\"\'\n\x12PBStartPlayRequest\x12\x11\n\tchar_slot\x18\x01 \x01(\r\"!\n\x13PBLoginGiftResponse\x12\n\n\x02ok\x18\x01 \x01(\x08\"A\n\x12PBChangeJobRequest\x12\x0c\n\x04role\x18\x01 \x01(\x11\x12\x0e\n\x06gender\x18\x02 \x01(\x11\x12\r\n\x05\x63olor\x18\x03 \x01(\x11\"\'\n\x13PBChangeJobResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\".\n\x1aPBMsgChangeJobQueryRequest\x12\x10\n\x08\x64st_role\x18\x01 \x01(\x11\"\x80\x01\n\x1bPBMsgChangeJobQueryResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\r\n\x05money\x18\x02 \x01(\x12\x12\x0e\n\x06zhenqi\x18\x03 \x01(\x12\x12\x30\n\tskillBook\x18\x04 \x03(\x0b\x32\x1d.PBChangeJobReMissonSkillBook\"=\n\x1cPBChangeJobReMissonSkillBook\x12\x10\n\x08sheet_id\x18\x01 \x01(\x11\x12\x0b\n\x03num\x18\x02 \x01(\x11\"\x89\x01\n\nPBGemState\x12\x10\n\x08gem_type\x18\x01 \x01(\r\x12\x11\n\tgem_index\x18\x02 \x01(\r\x12\x12\n\ngem_enable\x18\x03 \x01(\x08\x12\x16\n\x0egem_unlockable\x18\x04 \x01(\x08\x12\x11\n\tgem_sheet\x18\x05 \x01(\r\x12\x17\n\x0fgem_battlescore\x18\x06 \x01(\x11\"\xbc\x01\n\x12PBGemStateResponse\x12\x1e\n\tstatelist\x18\x01 \x03(\x0b\x32\x0b.PBGemState\x12\x10\n\x08ret_code\x18\x02 \x01(\x11\x12\x11\n\tplayer_id\x18\x03 \x01(\x04\x12*\n\x0fgemcutting_info\x18\x04 \x03(\x0b\x32\x11.PBGemcuttingInfo\x12\x19\n\x11gem_slot_type_num\x18\x05 \x01(\r\x12\x1a\n\x12gem_slot_index_num\x18\x06 \x01(\r\"5\n\x13PBGemComposeRequest\x12\x0f\n\x07sheetid\x18\x01 \x01(\r\x12\r\n\x05\x63ount\x18\x02 \x01(\x11\"?\n\x18PBGemQuickComposeRequest\x12\x10\n\x08gem_type\x18\x01 \x01(\r\x12\x11\n\tgem_index\x18\x02 \x01(\r\"M\n\x19PBGemQuickComposeResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1e\n\tstatelist\x18\x02 \x01(\x0b\x32\x0b.PBGemState\"I\n\x15PBGemTransformRequest\x12\x0f\n\x07sheetId\x18\x01 \x01(\t\x12\x10\n\x08targetId\x18\x02 \x01(\t\x12\r\n\x05\x63ount\x18\x03 \x01(\x11\"*\n\x16PBGemTransformResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"K\n\x13PBGemEnchaseRequest\x12\x10\n\x08gem_type\x18\x01 \x01(\r\x12\x11\n\tgem_index\x18\x02 \x01(\r\x12\x0f\n\x07sheetId\x18\x03 \x01(\r\"D\n\x14PBGemEnchaseResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1a\n\x05state\x18\x02 \x01(\x0b\x32\x0b.PBGemState\"9\n\x12PBGemRemoveRequest\x12\x10\n\x08gem_type\x18\x01 \x01(\r\x12\x11\n\tgem_index\x18\x02 \x01(\r\"C\n\x13PBGemRemoveResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1a\n\x05state\x18\x02 \x01(\x0b\x32\x0b.PBGemState\"9\n\x12PBGemUnlockRequest\x12\x10\n\x08gem_type\x18\x01 \x01(\r\x12\x11\n\tgem_index\x18\x02 \x01(\r\"L\n\x13PBGemUnlockResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x10\n\x08gem_type\x18\x02 \x01(\r\x12\x11\n\tgem_index\x18\x03 \x01(\r\"\x80\x03\n\rPBMsgCharInfo\x12!\n\tchar_base\x18\x01 \x01(\x0b\x32\x0e.PBMsgCharBase\x12%\n\tprop_info\x18\x02 \x01(\x0b\x32\x12.PBMsgCharProperty\x12\x1d\n\titem_list\x18\x03 \x03(\x0b\x32\n.PBMsgItem\x12\x1d\n\x08gem_info\x18\x04 \x03(\x0b\x32\x0b.PBGemState\x12\x1c\n\x08pet_info\x18\x05 \x01(\x0b\x32\n.PBPetInfo\x12\x1f\n\nmount_info\x18\x06 \x01(\x0b\x32\x0b.PBMsgMount\x12+\n\x10gem_cutting_info\x18\x07 \x03(\x0b\x32\x11.PBGemcuttingInfo\x12+\n\x0eguard_pet_info\x18\x08 \x01(\x0b\x32\x13.PBCharPetGuardInfo\x12$\n\nxinfa_info\x18\t \x01(\x0b\x32\x10.PBCharXinfaInfo\x12(\n\x0cxiuzhen_info\x18\n \x01(\x0b\x32\x12.PBCharXiuzhenInfo\"Y\n\x12PBCharPetGuardInfo\x12%\n\nguard_info\x18\x01 \x01(\x0b\x32\x11.PBGuardLevelInfo\x12\x1c\n\x08pet_info\x18\x02 \x01(\x0b\x32\n.PBPetInfo\"N\n\x0fPBCharXinfaInfo\x12\x1f\n\titem_list\x18\x01 \x03(\x0b\x32\x0c.PBXinfaItem\x12\x1a\n\x12total_battle_score\x18\x02 \x01(\r\"Y\n\x11PBCharXiuzhenInfo\x12(\n\rmai_item_list\x18\x01 \x03(\x0b\x32\x11.PBXiuzhenmaiItem\x12\x1a\n\x12total_battle_score\x18\x02 \x01(\r\"\x82\x0e\n\x11PBMsgCharProperty\x12\x1b\n\x13\x63haracter_attribute\x18\x01 \x03(\x05\x12\x18\n\x10\x63haracter_scores\x18\x02 \x03(\x05\x12\x1c\n\x14\x63haracter_battle_pro\x18\x03 \x03(\x05\x12\x1f\n\x17\x63haracter_special_froce\x18\x04 \x03(\x05\x12\x1e\n\x16\x63haracter_special_fend\x18\x05 \x03(\x05\x12\x0b\n\x03\x43on\x18\x06 \x01(\r\x12\x0b\n\x03Wis\x18\x07 \x01(\r\x12\x0b\n\x03Str\x18\x08 \x01(\r\x12\x0b\n\x03Sta\x18\t \x01(\r\x12\x0b\n\x03Spr\x18\n \x01(\r\x12\r\n\x05MaxHP\x18\x0b \x01(\r\x12\r\n\x05MaxMP\x18\x0c \x01(\r\x12\r\n\x05MaxAP\x18\r \x01(\r\x12\x10\n\x08PDefence\x18\x0e \x01(\r\x12\x10\n\x08MDefence\x18\x0f \x01(\r\x12\x12\n\nPAttackMax\x18\x10 \x01(\r\x12\x12\n\nPAttackMin\x18\x11 \x01(\r\x12\x12\n\nMAttackMax\x18\x12 \x01(\r\x12\x12\n\nMAttackMin\x18\x13 \x01(\r\x12\x10\n\x08PhyDodge\x18\x14 \x01(\r\x12\x10\n\x08MagDodge\x18\x15 \x01(\r\x12\x13\n\x0bPhyAccurate\x18\x16 \x01(\r\x12\x13\n\x0bMagAccurate\x18\x17 \x01(\r\x12\x10\n\x08PhyBonus\x18\x18 \x01(\r\x12\x10\n\x08MagBonus\x18\x19 \x01(\r\x12\x12\n\nBreakValue\x18\x1a \x01(\r\x12\r\n\x05Parry\x18\x1b \x01(\r\x12\x0e\n\x06\x41tkIce\x18\x1c \x01(\r\x12\x11\n\tAtkPoison\x18\x1d \x01(\r\x12\x16\n\x0e\x41tkElectricity\x18\x1e \x01(\r\x12\x0f\n\x07\x41tkFire\x18\x1f \x01(\r\x12\x0f\n\x07\x41tkWind\x18  \x01(\r\x12\x10\n\x08\x41tkLight\x18! \x01(\r\x12\x10\n\x08\x41tkFancy\x18\" \x01(\r\x12\x0f\n\x07\x41tkSoil\x18# \x01(\r\x12\x14\n\x0cResistantIce\x18$ \x01(\r\x12\x17\n\x0fResistantPoison\x18% \x01(\r\x12\x16\n\x0eResistantElect\x18& \x01(\r\x12\x15\n\rResistantFire\x18\' \x01(\r\x12\x15\n\rResistantWind\x18( \x01(\r\x12\x15\n\rResistantSoil\x18) \x01(\r\x12\x0f\n\x07HealInc\x18* \x01(\r\x12\r\n\x05\x43urHP\x18+ \x01(\r\x12\r\n\x05\x43urMP\x18, \x01(\r\x12\r\n\x05\x43urAP\x18- \x01(\r\x12\x12\n\nVertigoPro\x18. \x01(\r\x12\x18\n\x10ReduceVertigoPro\x18/ \x01(\r\x12\x1e\n\x16IgnoreReduceVertigoPro\x18\x30 \x01(\r\x12\x14\n\x0c\x43onfusionPro\x18\x31 \x01(\r\x12\x1a\n\x12ReduceConfusionPro\x18\x32 \x01(\r\x12 \n\x18IgnoreReduceConfusionPro\x18\x33 \x01(\r\x12\x11\n\tSilentPro\x18\x34 \x01(\r\x12\x17\n\x0fReduceSilentPro\x18\x35 \x01(\r\x12\x1d\n\x15IgnoreReduceSilentPro\x18\x36 \x01(\r\x12\x11\n\tFastenPro\x18\x37 \x01(\r\x12\x17\n\x0fReduceFastenPro\x18\x38 \x01(\r\x12\x1d\n\x15IgnoreReduceFastenPro\x18\x39 \x01(\r\x12\x16\n\x0e\x41\x64\x64VertigoTime\x18: \x01(\r\x12\x18\n\x10\x41\x64\x64\x43onfusionTime\x18; \x01(\r\x12\x15\n\rAddFastenTime\x18< \x01(\r\x12\x15\n\rAddSilentTime\x18= \x01(\r\x12\x19\n\x11ReduceVertigoTime\x18> \x01(\r\x12\x1b\n\x13ReduceConfusionTime\x18? \x01(\r\x12\x18\n\x10ReduceFastenTime\x18@ \x01(\r\x12\x18\n\x10ReduceSilentTime\x18\x41 \x01(\r\x12\x1f\n\x17IgnoreReduceVertigoTime\x18\x42 \x01(\r\x12!\n\x19IgnoreReduceConfusionTime\x18\x43 \x01(\r\x12\x1e\n\x16IgnoreReduceFastenTime\x18\x44 \x01(\r\x12\x1e\n\x16IgnoreReduceSilentTime\x18\x45 \x01(\r\x12\x14\n\x0c\x41tkIceIgnore\x18\x46 \x01(\r\x12\x17\n\x0f\x41tkPoisonIgnore\x18G \x01(\r\x12\x1c\n\x14\x41tkElectricityIgnore\x18H \x01(\r\x12\x15\n\rAtkFireIgnore\x18I \x01(\r\x12\x15\n\rAtkWindIgnore\x18J \x01(\r\x12\x16\n\x0e\x41tkLightIgnore\x18K \x01(\r\x12\x16\n\x0e\x41tkFancyIgnore\x18L \x01(\r\x12\x15\n\rAtkSoilIgnore\x18M \x01(\r\x12\x1c\n\x14ResistantPhyCritical\x18N \x01(\r\x12\x1c\n\x14ResistantMagCritical\x18O \x01(\r\"\xa9\x03\n\rPBMsgCharBase\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x15\n\rchar_sheet_id\x18\x02 \x01(\r\x12\x11\n\tchar_name\x18\x03 \x01(\t\x12\r\n\x05level\x18\x04 \x01(\x05\x12\x14\n\x0c\x62\x61ttle_score\x18\x05 \x01(\x05\x12\x1d\n\x15\x65xternal_battle_score\x18\x06 \x01(\x05\x12!\n\x0bvisual_prop\x18\x07 \x01(\x0b\x32\x0c.PBMsgVPInfo\x12\x16\n\x0etitle_sheet_id\x18\x08 \x01(\r\x12\x12\n\nguild_name\x18\t \x01(\t\x12\x0b\n\x03sex\x18\n \x01(\x11\x12\x17\n\x0fteamMemberCount\x18\x0b \x01(\x11\x12\x0c\n\x04\x63\x61mp\x18\x0c \x01(\x11\x12\x0f\n\x07user_id\x18\r \x01(\r\x12\x11\n\tvip_level\x18\x0e \x01(\x11\x12\x11\n\thead_icon\x18\x0f \x01(\t\x12\x0f\n\x07justice\x18\x10 \x01(\x11\x12\x0c\n\x04\x65vil\x18\x11 \x01(\x11\x12\x14\n\x0cpartner_name\x18\x12 \x01(\t\x12\x11\n\tgatewayid\x18\x13 \x01(\r\x12\x17\n\x0flogin_gatewayid\x18\x14 \x01(\r\"F\n\x0bPBMsgVPInfo\x12\x11\n\tvpa_value\x18\x01 \x01(\x04\x12\x11\n\tvpb_value\x18\x02 \x01(\x04\x12\x11\n\tvpc_value\x18\x03 \x01(\x04\"\x86\x01\n\x15PBMsgCharInfoResquest\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12%\n\x08get_type\x18\x02 \x03(\x0e\x32\x13.PBEGetCharInfoType\x12\x0e\n\x06pet_id\x18\x03 \x01(\x04\x12\x11\n\tclient_id\x18\x04 \x01(\x11\x12\x12\n\ngateway_id\x18\x05 \x01(\r\"_\n\x15PBMsgCharInfoResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x05\x12!\n\tchar_info\x18\x02 \x01(\x0b\x32\x0e.PBMsgCharInfo\x12\x11\n\tclient_id\x18\x03 \x01(\x11\"U\n\x1aPBMsgRefreshPropertyNotice\x12(\n\x0c\x43harProperty\x18\x01 \x01(\x0b\x32\x12.PBMsgCharProperty\x12\r\n\x05Level\x18\x04 \x01(\r\"\x86\x03\n\x10PBMsgCharSummary\x12\r\n\x05state\x18\x01 \x01(\r\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06people\x18\x03 \x01(\r\x12\x10\n\x08location\x18\x04 \x01(\r\x12\r\n\x05level\x18\x05 \x01(\r\x12\x15\n\rvisual_prop_a\x18\x06 \x01(\x04\x12\x15\n\rvisual_prop_b\x18\x07 \x01(\x04\x12\x15\n\rvisual_prop_c\x18\x08 \x01(\x04\x12\x10\n\x08sheet_id\x18\t \x01(\r\x12\r\n\x05title\x18\n \x01(\r\x12\x11\n\tchar_Slot\x18\x0b \x01(\r\x12\x17\n\x0fin_ring_session\x18\x0c \x01(\r\x12\x14\n\x0c\x65\x64it_session\x18\r \x01(\r\x12\x12\n\nnewbieland\x18\x0e \x01(\r\x12\r\n\x05pos_x\x18\x0f \x01(\x11\x12\r\n\x05pos_y\x18\x10 \x01(\x11\x12\x13\n\x0b\x64\x65lete_time\x18\x11 \x01(\x11\x12\x0f\n\x07role_id\x18\x12 \x01(\r\x12\x0f\n\x07\x63har_id\x18\x13 \x01(\x04\x12\x13\n\x0b\x63reate_time\x18\x14 \x01(\x11\"e\n\x16PBMsgCharSummaryNotice\x12\x11\n\tplayer_id\x18\x01 \x01(\x04\x12\'\n\x0c\x63har_summary\x18\x02 \x03(\x0b\x32\x11.PBMsgCharSummary\x12\x0f\n\x07retCode\x18\x03 \x01(\r\"\xb0\x01\n\x0ePBMsgUserLogin\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x10\n\x08\x63tl_code\x18\x02 \x01(\x04\x12\x0e\n\x06values\x18\x03 \x03(\t\x12\x0e\n\x06\x65vents\x18\x04 \x03(\t\x12\r\n\x05token\x18\x05 \x01(\t\x12\x0f\n\x07user_id\x18\x06 \x01(\r\x12\'\n\x0c\x63har_summary\x18\x07 \x03(\x0b\x32\x11.PBMsgCharSummary\x12\x11\n\tbest_camp\x18\x08 \x01(\r\"d\n\x12PBMsgCreateRoleRet\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x13\n\x0bnew_role_id\x18\x02 \x01(\r\x12\'\n\x0c\x63har_summary\x18\x03 \x03(\x0b\x32\x11.PBMsgCharSummary\"d\n\x12PBMsgDeleteRoleRet\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x13\n\x0bnew_role_id\x18\x02 \x01(\r\x12\'\n\x0c\x63har_summary\x18\x03 \x03(\x0b\x32\x11.PBMsgCharSummary\"I\n\x10PBMsgJoinRoleRet\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x12\n\nch_role_id\x18\x02 \x01(\r\x12\x0f\n\x07\x66s_addr\x18\x03 \x01(\t\"F\n\x12PBMsgRandomNameRet\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0b\n\x03sex\x18\x02 \x01(\r\x12\x11\n\tname_list\x18\x03 \x03(\t\"\x8c\x01\n\x16PBMsgCharCountInfoBase\x12\x10\n\x08\x64o_times\x18\x01 \x01(\x11\x12\x13\n\x0btotal_times\x18\x02 \x01(\x11\x12\x11\n\tbuy_times\x18\x03 \x01(\x11\x12\x12\n\ncount_type\x18\x04 \x01(\x11\x12\x10\n\x08\x63ount_id\x18\x05 \x01(\r\x12\x12\n\nleft_times\x18\x06 \x01(\x11\"K\n\x18PBMsgCharCountInfoNotice\x12/\n\x0e\x63har_countinfo\x18\x01 \x03(\x0b\x32\x17.PBMsgCharCountInfoBase\")\n\x14PBMsgGemStateRequest\x12\x11\n\tplayer_id\x18\x01 \x01(\x04\"\x81\x01\n\x10PBMsgRoboletInfo\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\x12\x12\n\nexpiration\x18\x02 \x01(\r\x12\x10\n\x08has_gift\x18\x03 \x01(\x08\x12\x0e\n\x06is_new\x18\x04 \x01(\x08\x12\'\n\x0breward_list\x18\x05 \x03(\x0b\x32\x12.PBMsgItemQuantity\"i\n\x19PBMsgPropertyChangeNotice\x12&\n\x06reason\x18\x01 \x01(\x0e\x32\x16.EPropertyChangeReason\x12$\n\x08property\x18\x02 \x01(\x0b\x32\x12.PBMsgCharProperty\"+\n\x18PBMsgRankPetInfoResquest\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\"J\n\x18PBMsgRankPetInfoResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x05\x12\x1c\n\x08pet_info\x18\x02 \x01(\x0b\x32\n.PBPetInfo\"\x87\x01\n\x16PBMsgQuarterCardNotice\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\x12\x12\n\nexpiration\x18\x02 \x01(\r\x12\x10\n\x08has_gift\x18\x03 \x01(\x08\x12\x0e\n\x06is_new\x18\x04 \x01(\x08\x12\'\n\x0breward_list\x18\x05 \x03(\x0b\x32\x12.PBMsgItemQuantity\"\x19\n\x17PBMsgQuarterGiftRequest\",\n\x18PBMsgQuarterGiftResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"\x95\x01\n\x13PBMsgGiftCardNotice\x12\x0f\n\x07\x63\x61rd_id\x18\x01 \x01(\x11\x12\x0e\n\x06\x61\x63tive\x18\x02 \x01(\x08\x12\x12\n\nexpiration\x18\x03 \x01(\r\x12\x10\n\x08has_gift\x18\x04 \x01(\x08\x12\x0e\n\x06is_new\x18\x05 \x01(\x08\x12\'\n\x0breward_list\x18\x06 \x03(\x0b\x32\x12.PBMsgItemQuantity\"-\n\x1aPBMsgGiftCardRewardRequest\x12\x0f\n\x07\x63\x61rd_id\x18\x01 \x01(\x11\"@\n\x1bPBMsgGiftCardRewardResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63\x61rd_id\x18\x02 \x01(\x11\"\x80\x01\n\x18PBMsgCharDeathInfoNotice\x12#\n\x0bkiller_type\x18\x01 \x01(\x0e\x32\x0e.PBEKillerType\x12\x15\n\rkiller_roleid\x18\x02 \x01(\r\x12\x13\n\x0bkiller_name\x18\x03 \x01(\t\x12\x13\n\x0bkiller_camp\x18\x04 \x01(\x11\"G\n\x15PBMsgCharSignalNotice\x12\x16\n\x0eis_change_role\x18\x01 \x01(\x08\x12\x16\n\x0elast_quit_time\x18\x02 \x01(\r*\xf2\x01\n\x12PBEGetCharInfoType\x12\x15\n\x11\x65GetCharInfo_Base\x10\x01\x12\x19\n\x15\x65GetCharInfo_Property\x10\x02\x12\x16\n\x12\x65GetCharInfo_Items\x10\x03\x12\x14\n\x10\x65GetCharInfo_Gem\x10\x04\x12\x14\n\x10\x65GetCharInfo_Pet\x10\x05\x12\x16\n\x12\x65GetCharInfo_Mount\x10\x06\x12\x1b\n\x17\x65GetCharInfo_GemCutting\x10\x07\x12\x19\n\x15\x65GetCharInfo_GuardPet\x10\x08\x12\x16\n\x12\x65GetCharInfo_Xinfa\x10\t*5\n\x15\x45PropertyChangeReason\x12\x1c\n\x18TProChange_PlayerLevelUp\x10\x01*:\n\x0cPBGiftCardId\x12\x13\n\x0e\x45\x43\x61rd_Month_ID\x10\xe9\x07\x12\x15\n\x10\x45\x43\x61rd_Quanter_ID\x10\xea\x07*D\n\rPBEKillerType\x12\x19\n\x15\x45KillerType_Character\x10\x00\x12\x18\n\x14\x45KillerType_Creature\x10\x01')
+  serialized_pb='\n\x0emsg_user.proto\x1a\x0emsg_base.proto\x1a\x0emsg_item.proto\x1a\rmsg_pet.proto\x1a\x0fmsg_mount.proto\x1a\x14msg_gemcutting.proto\x1a\x0fmsg_xinfa.proto\x1a\x11msg_xiuzhen.proto\x1a\x13msg_magic_pet.proto\"\x11\n\x0fPBCommonNoParam\"0\n\x1bPBCreateCharBaseInfoRequest\x12\x11\n\tchar_slot\x18\x01 \x01(\r\"(\n\x13PBSelectCharRequest\x12\x11\n\tchar_slot\x18\x01 \x01(\r\")\n\x14PBSelectCharResponse\x12\x11\n\tchar_slot\x18\x01 \x01(\r\"\'\n\x12PBStartPlayRequest\x12\x11\n\tchar_slot\x18\x01 \x01(\r\"!\n\x13PBLoginGiftResponse\x12\n\n\x02ok\x18\x01 \x01(\x08\"A\n\x12PBChangeJobRequest\x12\x0c\n\x04role\x18\x01 \x01(\x11\x12\x0e\n\x06gender\x18\x02 \x01(\x11\x12\r\n\x05\x63olor\x18\x03 \x01(\x11\"\'\n\x13PBChangeJobResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\".\n\x1aPBMsgChangeJobQueryRequest\x12\x10\n\x08\x64st_role\x18\x01 \x01(\x11\"\x80\x01\n\x1bPBMsgChangeJobQueryResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\r\n\x05money\x18\x02 \x01(\x12\x12\x0e\n\x06zhenqi\x18\x03 \x01(\x12\x12\x30\n\tskillBook\x18\x04 \x03(\x0b\x32\x1d.PBChangeJobReMissonSkillBook\"=\n\x1cPBChangeJobReMissonSkillBook\x12\x10\n\x08sheet_id\x18\x01 \x01(\x11\x12\x0b\n\x03num\x18\x02 \x01(\x11\"\x89\x01\n\nPBGemState\x12\x10\n\x08gem_type\x18\x01 \x01(\r\x12\x11\n\tgem_index\x18\x02 \x01(\r\x12\x12\n\ngem_enable\x18\x03 \x01(\x08\x12\x16\n\x0egem_unlockable\x18\x04 \x01(\x08\x12\x11\n\tgem_sheet\x18\x05 \x01(\r\x12\x17\n\x0fgem_battlescore\x18\x06 \x01(\x11\"\xbc\x01\n\x12PBGemStateResponse\x12\x1e\n\tstatelist\x18\x01 \x03(\x0b\x32\x0b.PBGemState\x12\x10\n\x08ret_code\x18\x02 \x01(\x11\x12\x11\n\tplayer_id\x18\x03 \x01(\x04\x12*\n\x0fgemcutting_info\x18\x04 \x03(\x0b\x32\x11.PBGemcuttingInfo\x12\x19\n\x11gem_slot_type_num\x18\x05 \x01(\r\x12\x1a\n\x12gem_slot_index_num\x18\x06 \x01(\r\"5\n\x13PBGemComposeRequest\x12\x0f\n\x07sheetid\x18\x01 \x01(\r\x12\r\n\x05\x63ount\x18\x02 \x01(\x11\"?\n\x18PBGemQuickComposeRequest\x12\x10\n\x08gem_type\x18\x01 \x01(\r\x12\x11\n\tgem_index\x18\x02 \x01(\r\"M\n\x19PBGemQuickComposeResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1e\n\tstatelist\x18\x02 \x01(\x0b\x32\x0b.PBGemState\"I\n\x15PBGemTransformRequest\x12\x0f\n\x07sheetId\x18\x01 \x01(\t\x12\x10\n\x08targetId\x18\x02 \x01(\t\x12\r\n\x05\x63ount\x18\x03 \x01(\x11\"*\n\x16PBGemTransformResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"K\n\x13PBGemEnchaseRequest\x12\x10\n\x08gem_type\x18\x01 \x01(\r\x12\x11\n\tgem_index\x18\x02 \x01(\r\x12\x0f\n\x07sheetId\x18\x03 \x01(\r\"D\n\x14PBGemEnchaseResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1a\n\x05state\x18\x02 \x01(\x0b\x32\x0b.PBGemState\"9\n\x12PBGemRemoveRequest\x12\x10\n\x08gem_type\x18\x01 \x01(\r\x12\x11\n\tgem_index\x18\x02 \x01(\r\"C\n\x13PBGemRemoveResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1a\n\x05state\x18\x02 \x01(\x0b\x32\x0b.PBGemState\"9\n\x12PBGemUnlockRequest\x12\x10\n\x08gem_type\x18\x01 \x01(\r\x12\x11\n\tgem_index\x18\x02 \x01(\r\"L\n\x13PBGemUnlockResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x10\n\x08gem_type\x18\x02 \x01(\r\x12\x11\n\tgem_index\x18\x03 \x01(\r\"\xad\x03\n\rPBMsgCharInfo\x12!\n\tchar_base\x18\x01 \x01(\x0b\x32\x0e.PBMsgCharBase\x12%\n\tprop_info\x18\x02 \x01(\x0b\x32\x12.PBMsgCharProperty\x12\x1d\n\titem_list\x18\x03 \x03(\x0b\x32\n.PBMsgItem\x12\x1d\n\x08gem_info\x18\x04 \x03(\x0b\x32\x0b.PBGemState\x12\x1c\n\x08pet_info\x18\x05 \x01(\x0b\x32\n.PBPetInfo\x12\x1f\n\nmount_info\x18\x06 \x01(\x0b\x32\x0b.PBMsgMount\x12+\n\x10gem_cutting_info\x18\x07 \x03(\x0b\x32\x11.PBGemcuttingInfo\x12+\n\x0eguard_pet_info\x18\x08 \x01(\x0b\x32\x13.PBCharPetGuardInfo\x12$\n\nxinfa_info\x18\t \x01(\x0b\x32\x10.PBCharXinfaInfo\x12(\n\x0cxiuzhen_info\x18\n \x01(\x0b\x32\x12.PBCharXiuzhenInfo\x12+\n\x0emagic_pet_info\x18\x0b \x01(\x0b\x32\x13.PBCharMagicPetInfo\"Y\n\x12PBCharPetGuardInfo\x12%\n\nguard_info\x18\x01 \x01(\x0b\x32\x11.PBGuardLevelInfo\x12\x1c\n\x08pet_info\x18\x02 \x01(\x0b\x32\n.PBPetInfo\"N\n\x0fPBCharXinfaInfo\x12\x1f\n\titem_list\x18\x01 \x03(\x0b\x32\x0c.PBXinfaItem\x12\x1a\n\x12total_battle_score\x18\x02 \x01(\r\"Y\n\x11PBCharXiuzhenInfo\x12(\n\rmai_item_list\x18\x01 \x03(\x0b\x32\x11.PBXiuzhenmaiItem\x12\x1a\n\x12total_battle_score\x18\x02 \x01(\r\"=\n\x12PBCharMagicPetInfo\x12\'\n\x0emagic_pet_list\x18\x01 \x03(\x0b\x32\x0f.PBMagicPetItem\"\x82\x0e\n\x11PBMsgCharProperty\x12\x1b\n\x13\x63haracter_attribute\x18\x01 \x03(\x05\x12\x18\n\x10\x63haracter_scores\x18\x02 \x03(\x05\x12\x1c\n\x14\x63haracter_battle_pro\x18\x03 \x03(\x05\x12\x1f\n\x17\x63haracter_special_froce\x18\x04 \x03(\x05\x12\x1e\n\x16\x63haracter_special_fend\x18\x05 \x03(\x05\x12\x0b\n\x03\x43on\x18\x06 \x01(\r\x12\x0b\n\x03Wis\x18\x07 \x01(\r\x12\x0b\n\x03Str\x18\x08 \x01(\r\x12\x0b\n\x03Sta\x18\t \x01(\r\x12\x0b\n\x03Spr\x18\n \x01(\r\x12\r\n\x05MaxHP\x18\x0b \x01(\r\x12\r\n\x05MaxMP\x18\x0c \x01(\r\x12\r\n\x05MaxAP\x18\r \x01(\r\x12\x10\n\x08PDefence\x18\x0e \x01(\r\x12\x10\n\x08MDefence\x18\x0f \x01(\r\x12\x12\n\nPAttackMax\x18\x10 \x01(\r\x12\x12\n\nPAttackMin\x18\x11 \x01(\r\x12\x12\n\nMAttackMax\x18\x12 \x01(\r\x12\x12\n\nMAttackMin\x18\x13 \x01(\r\x12\x10\n\x08PhyDodge\x18\x14 \x01(\r\x12\x10\n\x08MagDodge\x18\x15 \x01(\r\x12\x13\n\x0bPhyAccurate\x18\x16 \x01(\r\x12\x13\n\x0bMagAccurate\x18\x17 \x01(\r\x12\x10\n\x08PhyBonus\x18\x18 \x01(\r\x12\x10\n\x08MagBonus\x18\x19 \x01(\r\x12\x12\n\nBreakValue\x18\x1a \x01(\r\x12\r\n\x05Parry\x18\x1b \x01(\r\x12\x0e\n\x06\x41tkIce\x18\x1c \x01(\r\x12\x11\n\tAtkPoison\x18\x1d \x01(\r\x12\x16\n\x0e\x41tkElectricity\x18\x1e \x01(\r\x12\x0f\n\x07\x41tkFire\x18\x1f \x01(\r\x12\x0f\n\x07\x41tkWind\x18  \x01(\r\x12\x10\n\x08\x41tkLight\x18! \x01(\r\x12\x10\n\x08\x41tkFancy\x18\" \x01(\r\x12\x0f\n\x07\x41tkSoil\x18# \x01(\r\x12\x14\n\x0cResistantIce\x18$ \x01(\r\x12\x17\n\x0fResistantPoison\x18% \x01(\r\x12\x16\n\x0eResistantElect\x18& \x01(\r\x12\x15\n\rResistantFire\x18\' \x01(\r\x12\x15\n\rResistantWind\x18( \x01(\r\x12\x15\n\rResistantSoil\x18) \x01(\r\x12\x0f\n\x07HealInc\x18* \x01(\r\x12\r\n\x05\x43urHP\x18+ \x01(\r\x12\r\n\x05\x43urMP\x18, \x01(\r\x12\r\n\x05\x43urAP\x18- \x01(\r\x12\x12\n\nVertigoPro\x18. \x01(\r\x12\x18\n\x10ReduceVertigoPro\x18/ \x01(\r\x12\x1e\n\x16IgnoreReduceVertigoPro\x18\x30 \x01(\r\x12\x14\n\x0c\x43onfusionPro\x18\x31 \x01(\r\x12\x1a\n\x12ReduceConfusionPro\x18\x32 \x01(\r\x12 \n\x18IgnoreReduceConfusionPro\x18\x33 \x01(\r\x12\x11\n\tSilentPro\x18\x34 \x01(\r\x12\x17\n\x0fReduceSilentPro\x18\x35 \x01(\r\x12\x1d\n\x15IgnoreReduceSilentPro\x18\x36 \x01(\r\x12\x11\n\tFastenPro\x18\x37 \x01(\r\x12\x17\n\x0fReduceFastenPro\x18\x38 \x01(\r\x12\x1d\n\x15IgnoreReduceFastenPro\x18\x39 \x01(\r\x12\x16\n\x0e\x41\x64\x64VertigoTime\x18: \x01(\r\x12\x18\n\x10\x41\x64\x64\x43onfusionTime\x18; \x01(\r\x12\x15\n\rAddFastenTime\x18< \x01(\r\x12\x15\n\rAddSilentTime\x18= \x01(\r\x12\x19\n\x11ReduceVertigoTime\x18> \x01(\r\x12\x1b\n\x13ReduceConfusionTime\x18? \x01(\r\x12\x18\n\x10ReduceFastenTime\x18@ \x01(\r\x12\x18\n\x10ReduceSilentTime\x18\x41 \x01(\r\x12\x1f\n\x17IgnoreReduceVertigoTime\x18\x42 \x01(\r\x12!\n\x19IgnoreReduceConfusionTime\x18\x43 \x01(\r\x12\x1e\n\x16IgnoreReduceFastenTime\x18\x44 \x01(\r\x12\x1e\n\x16IgnoreReduceSilentTime\x18\x45 \x01(\r\x12\x14\n\x0c\x41tkIceIgnore\x18\x46 \x01(\r\x12\x17\n\x0f\x41tkPoisonIgnore\x18G \x01(\r\x12\x1c\n\x14\x41tkElectricityIgnore\x18H \x01(\r\x12\x15\n\rAtkFireIgnore\x18I \x01(\r\x12\x15\n\rAtkWindIgnore\x18J \x01(\r\x12\x16\n\x0e\x41tkLightIgnore\x18K \x01(\r\x12\x16\n\x0e\x41tkFancyIgnore\x18L \x01(\r\x12\x15\n\rAtkSoilIgnore\x18M \x01(\r\x12\x1c\n\x14ResistantPhyCritical\x18N \x01(\r\x12\x1c\n\x14ResistantMagCritical\x18O \x01(\r\"\xa9\x03\n\rPBMsgCharBase\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x15\n\rchar_sheet_id\x18\x02 \x01(\r\x12\x11\n\tchar_name\x18\x03 \x01(\t\x12\r\n\x05level\x18\x04 \x01(\x05\x12\x14\n\x0c\x62\x61ttle_score\x18\x05 \x01(\x05\x12\x1d\n\x15\x65xternal_battle_score\x18\x06 \x01(\x05\x12!\n\x0bvisual_prop\x18\x07 \x01(\x0b\x32\x0c.PBMsgVPInfo\x12\x16\n\x0etitle_sheet_id\x18\x08 \x01(\r\x12\x12\n\nguild_name\x18\t \x01(\t\x12\x0b\n\x03sex\x18\n \x01(\x11\x12\x17\n\x0fteamMemberCount\x18\x0b \x01(\x11\x12\x0c\n\x04\x63\x61mp\x18\x0c \x01(\x11\x12\x0f\n\x07user_id\x18\r \x01(\r\x12\x11\n\tvip_level\x18\x0e \x01(\x11\x12\x11\n\thead_icon\x18\x0f \x01(\t\x12\x0f\n\x07justice\x18\x10 \x01(\x11\x12\x0c\n\x04\x65vil\x18\x11 \x01(\x11\x12\x14\n\x0cpartner_name\x18\x12 \x01(\t\x12\x11\n\tgatewayid\x18\x13 \x01(\r\x12\x17\n\x0flogin_gatewayid\x18\x14 \x01(\r\"F\n\x0bPBMsgVPInfo\x12\x11\n\tvpa_value\x18\x01 \x01(\x04\x12\x11\n\tvpb_value\x18\x02 \x01(\x04\x12\x11\n\tvpc_value\x18\x03 \x01(\x04\"\x86\x01\n\x15PBMsgCharInfoResquest\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12%\n\x08get_type\x18\x02 \x03(\x0e\x32\x13.PBEGetCharInfoType\x12\x0e\n\x06pet_id\x18\x03 \x01(\x04\x12\x11\n\tclient_id\x18\x04 \x01(\x11\x12\x12\n\ngateway_id\x18\x05 \x01(\r\"_\n\x15PBMsgCharInfoResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x05\x12!\n\tchar_info\x18\x02 \x01(\x0b\x32\x0e.PBMsgCharInfo\x12\x11\n\tclient_id\x18\x03 \x01(\x11\"U\n\x1aPBMsgRefreshPropertyNotice\x12(\n\x0c\x43harProperty\x18\x01 \x01(\x0b\x32\x12.PBMsgCharProperty\x12\r\n\x05Level\x18\x04 \x01(\r\"\x86\x03\n\x10PBMsgCharSummary\x12\r\n\x05state\x18\x01 \x01(\r\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06people\x18\x03 \x01(\r\x12\x10\n\x08location\x18\x04 \x01(\r\x12\r\n\x05level\x18\x05 \x01(\r\x12\x15\n\rvisual_prop_a\x18\x06 \x01(\x04\x12\x15\n\rvisual_prop_b\x18\x07 \x01(\x04\x12\x15\n\rvisual_prop_c\x18\x08 \x01(\x04\x12\x10\n\x08sheet_id\x18\t \x01(\r\x12\r\n\x05title\x18\n \x01(\r\x12\x11\n\tchar_Slot\x18\x0b \x01(\r\x12\x17\n\x0fin_ring_session\x18\x0c \x01(\r\x12\x14\n\x0c\x65\x64it_session\x18\r \x01(\r\x12\x12\n\nnewbieland\x18\x0e \x01(\r\x12\r\n\x05pos_x\x18\x0f \x01(\x11\x12\r\n\x05pos_y\x18\x10 \x01(\x11\x12\x13\n\x0b\x64\x65lete_time\x18\x11 \x01(\x11\x12\x0f\n\x07role_id\x18\x12 \x01(\r\x12\x0f\n\x07\x63har_id\x18\x13 \x01(\x04\x12\x13\n\x0b\x63reate_time\x18\x14 \x01(\x11\"e\n\x16PBMsgCharSummaryNotice\x12\x11\n\tplayer_id\x18\x01 \x01(\x04\x12\'\n\x0c\x63har_summary\x18\x02 \x03(\x0b\x32\x11.PBMsgCharSummary\x12\x0f\n\x07retCode\x18\x03 \x01(\r\"\xb0\x01\n\x0ePBMsgUserLogin\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x10\n\x08\x63tl_code\x18\x02 \x01(\x04\x12\x0e\n\x06values\x18\x03 \x03(\t\x12\x0e\n\x06\x65vents\x18\x04 \x03(\t\x12\r\n\x05token\x18\x05 \x01(\t\x12\x0f\n\x07user_id\x18\x06 \x01(\r\x12\'\n\x0c\x63har_summary\x18\x07 \x03(\x0b\x32\x11.PBMsgCharSummary\x12\x11\n\tbest_camp\x18\x08 \x01(\r\"d\n\x12PBMsgCreateRoleRet\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x13\n\x0bnew_role_id\x18\x02 \x01(\r\x12\'\n\x0c\x63har_summary\x18\x03 \x03(\x0b\x32\x11.PBMsgCharSummary\"d\n\x12PBMsgDeleteRoleRet\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x13\n\x0bnew_role_id\x18\x02 \x01(\r\x12\'\n\x0c\x63har_summary\x18\x03 \x03(\x0b\x32\x11.PBMsgCharSummary\"I\n\x10PBMsgJoinRoleRet\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x12\n\nch_role_id\x18\x02 \x01(\r\x12\x0f\n\x07\x66s_addr\x18\x03 \x01(\t\"F\n\x12PBMsgRandomNameRet\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0b\n\x03sex\x18\x02 \x01(\r\x12\x11\n\tname_list\x18\x03 \x03(\t\"\x8c\x01\n\x16PBMsgCharCountInfoBase\x12\x10\n\x08\x64o_times\x18\x01 \x01(\x11\x12\x13\n\x0btotal_times\x18\x02 \x01(\x11\x12\x11\n\tbuy_times\x18\x03 \x01(\x11\x12\x12\n\ncount_type\x18\x04 \x01(\x11\x12\x10\n\x08\x63ount_id\x18\x05 \x01(\r\x12\x12\n\nleft_times\x18\x06 \x01(\x11\"K\n\x18PBMsgCharCountInfoNotice\x12/\n\x0e\x63har_countinfo\x18\x01 \x03(\x0b\x32\x17.PBMsgCharCountInfoBase\")\n\x14PBMsgGemStateRequest\x12\x11\n\tplayer_id\x18\x01 \x01(\x04\"\x81\x01\n\x10PBMsgRoboletInfo\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\x12\x12\n\nexpiration\x18\x02 \x01(\r\x12\x10\n\x08has_gift\x18\x03 \x01(\x08\x12\x0e\n\x06is_new\x18\x04 \x01(\x08\x12\'\n\x0breward_list\x18\x05 \x03(\x0b\x32\x12.PBMsgItemQuantity\"i\n\x19PBMsgPropertyChangeNotice\x12&\n\x06reason\x18\x01 \x01(\x0e\x32\x16.EPropertyChangeReason\x12$\n\x08property\x18\x02 \x01(\x0b\x32\x12.PBMsgCharProperty\"+\n\x18PBMsgRankPetInfoResquest\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\"J\n\x18PBMsgRankPetInfoResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x05\x12\x1c\n\x08pet_info\x18\x02 \x01(\x0b\x32\n.PBPetInfo\"\x87\x01\n\x16PBMsgQuarterCardNotice\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\x12\x12\n\nexpiration\x18\x02 \x01(\r\x12\x10\n\x08has_gift\x18\x03 \x01(\x08\x12\x0e\n\x06is_new\x18\x04 \x01(\x08\x12\'\n\x0breward_list\x18\x05 \x03(\x0b\x32\x12.PBMsgItemQuantity\"\x19\n\x17PBMsgQuarterGiftRequest\",\n\x18PBMsgQuarterGiftResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"\x95\x01\n\x13PBMsgGiftCardNotice\x12\x0f\n\x07\x63\x61rd_id\x18\x01 \x01(\x11\x12\x0e\n\x06\x61\x63tive\x18\x02 \x01(\x08\x12\x12\n\nexpiration\x18\x03 \x01(\r\x12\x10\n\x08has_gift\x18\x04 \x01(\x08\x12\x0e\n\x06is_new\x18\x05 \x01(\x08\x12\'\n\x0breward_list\x18\x06 \x03(\x0b\x32\x12.PBMsgItemQuantity\"-\n\x1aPBMsgGiftCardRewardRequest\x12\x0f\n\x07\x63\x61rd_id\x18\x01 \x01(\x11\"@\n\x1bPBMsgGiftCardRewardResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63\x61rd_id\x18\x02 \x01(\x11\"\x80\x01\n\x18PBMsgCharDeathInfoNotice\x12#\n\x0bkiller_type\x18\x01 \x01(\x0e\x32\x0e.PBEKillerType\x12\x15\n\rkiller_roleid\x18\x02 \x01(\r\x12\x13\n\x0bkiller_name\x18\x03 \x01(\t\x12\x13\n\x0bkiller_camp\x18\x04 \x01(\x11\"G\n\x15PBMsgCharSignalNotice\x12\x16\n\x0eis_change_role\x18\x01 \x01(\x08\x12\x16\n\x0elast_quit_time\x18\x02 \x01(\r\"0\n\x1dPBMsgRankMagicPetInfoResquest\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\"Y\n\x1dPBMsgRankMagicPetInfoResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x05\x12&\n\rmagicpet_info\x18\x02 \x01(\x0b\x32\x0f.PBMagicPetItem*\x8d\x02\n\x12PBEGetCharInfoType\x12\x15\n\x11\x65GetCharInfo_Base\x10\x01\x12\x19\n\x15\x65GetCharInfo_Property\x10\x02\x12\x16\n\x12\x65GetCharInfo_Items\x10\x03\x12\x14\n\x10\x65GetCharInfo_Gem\x10\x04\x12\x14\n\x10\x65GetCharInfo_Pet\x10\x05\x12\x16\n\x12\x65GetCharInfo_Mount\x10\x06\x12\x1b\n\x17\x65GetCharInfo_GemCutting\x10\x07\x12\x19\n\x15\x65GetCharInfo_GuardPet\x10\x08\x12\x16\n\x12\x65GetCharInfo_Xinfa\x10\t\x12\x19\n\x15\x65GetCharInfo_MagicPet\x10\n*5\n\x15\x45PropertyChangeReason\x12\x1c\n\x18TProChange_PlayerLevelUp\x10\x01*:\n\x0cPBGiftCardId\x12\x13\n\x0e\x45\x43\x61rd_Month_ID\x10\xe9\x07\x12\x15\n\x10\x45\x43\x61rd_Quanter_ID\x10\xea\x07*D\n\rPBEKillerType\x12\x19\n\x15\x45KillerType_Character\x10\x00\x12\x18\n\x14\x45KillerType_Creature\x10\x01')
 
 _PBEGETCHARINFOTYPE = descriptor.EnumDescriptor(
   name='PBEGetCharInfoType',
@@ -62,11 +63,15 @@ _PBEGETCHARINFOTYPE = descriptor.EnumDescriptor(
       name='eGetCharInfo_Xinfa', index=8, number=9,
       options=None,
       type=None),
+    descriptor.EnumValueDescriptor(
+      name='eGetCharInfo_MagicPet', index=9, number=10,
+      options=None,
+      type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=7378,
-  serialized_end=7620,
+  serialized_start=7648,
+  serialized_end=7917,
 )
 
 
@@ -83,8 +88,8 @@ _EPROPERTYCHANGEREASON = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=7622,
-  serialized_end=7675,
+  serialized_start=7919,
+  serialized_end=7972,
 )
 
 
@@ -105,8 +110,8 @@ _PBGIFTCARDID = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=7677,
-  serialized_end=7735,
+  serialized_start=7974,
+  serialized_end=8032,
 )
 
 
@@ -127,8 +132,8 @@ _PBEKILLERTYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=7737,
-  serialized_end=7805,
+  serialized_start=8034,
+  serialized_end=8102,
 )
 
 
@@ -141,6 +146,7 @@ eGetCharInfo_Mount = 6
 eGetCharInfo_GemCutting = 7
 eGetCharInfo_GuardPet = 8
 eGetCharInfo_Xinfa = 9
+eGetCharInfo_MagicPet = 10
 TProChange_PlayerLevelUp = 1
 ECard_Month_ID = 1001
 ECard_Quanter_ID = 1002
@@ -165,8 +171,8 @@ _PBCOMMONNOPARAM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=140,
-  serialized_end=157,
+  serialized_start=161,
+  serialized_end=178,
 )
 
 
@@ -193,8 +199,8 @@ _PBCREATECHARBASEINFOREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=159,
-  serialized_end=207,
+  serialized_start=180,
+  serialized_end=228,
 )
 
 
@@ -221,8 +227,8 @@ _PBSELECTCHARREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=209,
-  serialized_end=249,
+  serialized_start=230,
+  serialized_end=270,
 )
 
 
@@ -249,8 +255,8 @@ _PBSELECTCHARRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=251,
-  serialized_end=292,
+  serialized_start=272,
+  serialized_end=313,
 )
 
 
@@ -277,8 +283,8 @@ _PBSTARTPLAYREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=294,
-  serialized_end=333,
+  serialized_start=315,
+  serialized_end=354,
 )
 
 
@@ -305,8 +311,8 @@ _PBLOGINGIFTRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=335,
-  serialized_end=368,
+  serialized_start=356,
+  serialized_end=389,
 )
 
 
@@ -347,8 +353,8 @@ _PBCHANGEJOBREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=370,
-  serialized_end=435,
+  serialized_start=391,
+  serialized_end=456,
 )
 
 
@@ -375,8 +381,8 @@ _PBCHANGEJOBRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=437,
-  serialized_end=476,
+  serialized_start=458,
+  serialized_end=497,
 )
 
 
@@ -403,8 +409,8 @@ _PBMSGCHANGEJOBQUERYREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=478,
-  serialized_end=524,
+  serialized_start=499,
+  serialized_end=545,
 )
 
 
@@ -452,8 +458,8 @@ _PBMSGCHANGEJOBQUERYRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=527,
-  serialized_end=655,
+  serialized_start=548,
+  serialized_end=676,
 )
 
 
@@ -487,8 +493,8 @@ _PBCHANGEJOBREMISSONSKILLBOOK = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=657,
-  serialized_end=718,
+  serialized_start=678,
+  serialized_end=739,
 )
 
 
@@ -550,8 +556,8 @@ _PBGEMSTATE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=721,
-  serialized_end=858,
+  serialized_start=742,
+  serialized_end=879,
 )
 
 
@@ -613,8 +619,8 @@ _PBGEMSTATERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=861,
-  serialized_end=1049,
+  serialized_start=882,
+  serialized_end=1070,
 )
 
 
@@ -648,8 +654,8 @@ _PBGEMCOMPOSEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1051,
-  serialized_end=1104,
+  serialized_start=1072,
+  serialized_end=1125,
 )
 
 
@@ -683,8 +689,8 @@ _PBGEMQUICKCOMPOSEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1106,
-  serialized_end=1169,
+  serialized_start=1127,
+  serialized_end=1190,
 )
 
 
@@ -718,8 +724,8 @@ _PBGEMQUICKCOMPOSERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1171,
-  serialized_end=1248,
+  serialized_start=1192,
+  serialized_end=1269,
 )
 
 
@@ -760,8 +766,8 @@ _PBGEMTRANSFORMREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1250,
-  serialized_end=1323,
+  serialized_start=1271,
+  serialized_end=1344,
 )
 
 
@@ -788,8 +794,8 @@ _PBGEMTRANSFORMRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1325,
-  serialized_end=1367,
+  serialized_start=1346,
+  serialized_end=1388,
 )
 
 
@@ -830,8 +836,8 @@ _PBGEMENCHASEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1369,
-  serialized_end=1444,
+  serialized_start=1390,
+  serialized_end=1465,
 )
 
 
@@ -865,8 +871,8 @@ _PBGEMENCHASERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1446,
-  serialized_end=1514,
+  serialized_start=1467,
+  serialized_end=1535,
 )
 
 
@@ -900,8 +906,8 @@ _PBGEMREMOVEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1516,
-  serialized_end=1573,
+  serialized_start=1537,
+  serialized_end=1594,
 )
 
 
@@ -935,8 +941,8 @@ _PBGEMREMOVERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1575,
-  serialized_end=1642,
+  serialized_start=1596,
+  serialized_end=1663,
 )
 
 
@@ -970,8 +976,8 @@ _PBGEMUNLOCKREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1644,
-  serialized_end=1701,
+  serialized_start=1665,
+  serialized_end=1722,
 )
 
 
@@ -1012,8 +1018,8 @@ _PBGEMUNLOCKRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1703,
-  serialized_end=1779,
+  serialized_start=1724,
+  serialized_end=1800,
 )
 
 
@@ -1094,6 +1100,13 @@ _PBMSGCHARINFO = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='magic_pet_info', full_name='PBMsgCharInfo.magic_pet_info', index=10,
+      number=11, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -1103,8 +1116,8 @@ _PBMSGCHARINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1782,
-  serialized_end=2166,
+  serialized_start=1803,
+  serialized_end=2232,
 )
 
 
@@ -1138,8 +1151,8 @@ _PBCHARPETGUARDINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2168,
-  serialized_end=2257,
+  serialized_start=2234,
+  serialized_end=2323,
 )
 
 
@@ -1173,8 +1186,8 @@ _PBCHARXINFAINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2259,
-  serialized_end=2337,
+  serialized_start=2325,
+  serialized_end=2403,
 )
 
 
@@ -1208,8 +1221,36 @@ _PBCHARXIUZHENINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2339,
-  serialized_end=2428,
+  serialized_start=2405,
+  serialized_end=2494,
+)
+
+
+_PBCHARMAGICPETINFO = descriptor.Descriptor(
+  name='PBCharMagicPetInfo',
+  full_name='PBCharMagicPetInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='magic_pet_list', full_name='PBCharMagicPetInfo.magic_pet_list', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=2496,
+  serialized_end=2557,
 )
 
 
@@ -1782,8 +1823,8 @@ _PBMSGCHARPROPERTY = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2431,
-  serialized_end=4225,
+  serialized_start=2560,
+  serialized_end=4354,
 )
 
 
@@ -1943,8 +1984,8 @@ _PBMSGCHARBASE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4228,
-  serialized_end=4653,
+  serialized_start=4357,
+  serialized_end=4782,
 )
 
 
@@ -1985,8 +2026,8 @@ _PBMSGVPINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4655,
-  serialized_end=4725,
+  serialized_start=4784,
+  serialized_end=4854,
 )
 
 
@@ -2041,8 +2082,8 @@ _PBMSGCHARINFORESQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4728,
-  serialized_end=4862,
+  serialized_start=4857,
+  serialized_end=4991,
 )
 
 
@@ -2083,8 +2124,8 @@ _PBMSGCHARINFORESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4864,
-  serialized_end=4959,
+  serialized_start=4993,
+  serialized_end=5088,
 )
 
 
@@ -2118,8 +2159,8 @@ _PBMSGREFRESHPROPERTYNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4961,
-  serialized_end=5046,
+  serialized_start=5090,
+  serialized_end=5175,
 )
 
 
@@ -2279,8 +2320,8 @@ _PBMSGCHARSUMMARY = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5049,
-  serialized_end=5439,
+  serialized_start=5178,
+  serialized_end=5568,
 )
 
 
@@ -2321,8 +2362,8 @@ _PBMSGCHARSUMMARYNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5441,
-  serialized_end=5542,
+  serialized_start=5570,
+  serialized_end=5671,
 )
 
 
@@ -2398,8 +2439,8 @@ _PBMSGUSERLOGIN = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5545,
-  serialized_end=5721,
+  serialized_start=5674,
+  serialized_end=5850,
 )
 
 
@@ -2440,8 +2481,8 @@ _PBMSGCREATEROLERET = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5723,
-  serialized_end=5823,
+  serialized_start=5852,
+  serialized_end=5952,
 )
 
 
@@ -2482,8 +2523,8 @@ _PBMSGDELETEROLERET = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5825,
-  serialized_end=5925,
+  serialized_start=5954,
+  serialized_end=6054,
 )
 
 
@@ -2524,8 +2565,8 @@ _PBMSGJOINROLERET = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5927,
-  serialized_end=6000,
+  serialized_start=6056,
+  serialized_end=6129,
 )
 
 
@@ -2566,8 +2607,8 @@ _PBMSGRANDOMNAMERET = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6002,
-  serialized_end=6072,
+  serialized_start=6131,
+  serialized_end=6201,
 )
 
 
@@ -2629,8 +2670,8 @@ _PBMSGCHARCOUNTINFOBASE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6075,
-  serialized_end=6215,
+  serialized_start=6204,
+  serialized_end=6344,
 )
 
 
@@ -2657,8 +2698,8 @@ _PBMSGCHARCOUNTINFONOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6217,
-  serialized_end=6292,
+  serialized_start=6346,
+  serialized_end=6421,
 )
 
 
@@ -2685,8 +2726,8 @@ _PBMSGGEMSTATEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6294,
-  serialized_end=6335,
+  serialized_start=6423,
+  serialized_end=6464,
 )
 
 
@@ -2741,8 +2782,8 @@ _PBMSGROBOLETINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6338,
-  serialized_end=6467,
+  serialized_start=6467,
+  serialized_end=6596,
 )
 
 
@@ -2776,8 +2817,8 @@ _PBMSGPROPERTYCHANGENOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6469,
-  serialized_end=6574,
+  serialized_start=6598,
+  serialized_end=6703,
 )
 
 
@@ -2804,8 +2845,8 @@ _PBMSGRANKPETINFORESQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6576,
-  serialized_end=6619,
+  serialized_start=6705,
+  serialized_end=6748,
 )
 
 
@@ -2839,8 +2880,8 @@ _PBMSGRANKPETINFORESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6621,
-  serialized_end=6695,
+  serialized_start=6750,
+  serialized_end=6824,
 )
 
 
@@ -2895,8 +2936,8 @@ _PBMSGQUARTERCARDNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6698,
-  serialized_end=6833,
+  serialized_start=6827,
+  serialized_end=6962,
 )
 
 
@@ -2916,8 +2957,8 @@ _PBMSGQUARTERGIFTREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6835,
-  serialized_end=6860,
+  serialized_start=6964,
+  serialized_end=6989,
 )
 
 
@@ -2944,8 +2985,8 @@ _PBMSGQUARTERGIFTRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6862,
-  serialized_end=6906,
+  serialized_start=6991,
+  serialized_end=7035,
 )
 
 
@@ -3007,8 +3048,8 @@ _PBMSGGIFTCARDNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6909,
-  serialized_end=7058,
+  serialized_start=7038,
+  serialized_end=7187,
 )
 
 
@@ -3035,8 +3076,8 @@ _PBMSGGIFTCARDREWARDREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7060,
-  serialized_end=7105,
+  serialized_start=7189,
+  serialized_end=7234,
 )
 
 
@@ -3070,8 +3111,8 @@ _PBMSGGIFTCARDREWARDRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7107,
-  serialized_end=7171,
+  serialized_start=7236,
+  serialized_end=7300,
 )
 
 
@@ -3119,8 +3160,8 @@ _PBMSGCHARDEATHINFONOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7174,
-  serialized_end=7302,
+  serialized_start=7303,
+  serialized_end=7431,
 )
 
 
@@ -3154,8 +3195,71 @@ _PBMSGCHARSIGNALNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7304,
-  serialized_end=7375,
+  serialized_start=7433,
+  serialized_end=7504,
+)
+
+
+_PBMSGRANKMAGICPETINFORESQUEST = descriptor.Descriptor(
+  name='PBMsgRankMagicPetInfoResquest',
+  full_name='PBMsgRankMagicPetInfoResquest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='char_id', full_name='PBMsgRankMagicPetInfoResquest.char_id', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=7506,
+  serialized_end=7554,
+)
+
+
+_PBMSGRANKMAGICPETINFORESPONSE = descriptor.Descriptor(
+  name='PBMsgRankMagicPetInfoResponse',
+  full_name='PBMsgRankMagicPetInfoResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='ret_code', full_name='PBMsgRankMagicPetInfoResponse.ret_code', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='magicpet_info', full_name='PBMsgRankMagicPetInfoResponse.magicpet_info', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=7556,
+  serialized_end=7645,
 )
 
 _PBMSGCHANGEJOBQUERYRESPONSE.fields_by_name['skillBook'].message_type = _PBCHANGEJOBREMISSONSKILLBOOK
@@ -3174,10 +3278,12 @@ _PBMSGCHARINFO.fields_by_name['gem_cutting_info'].message_type = msg_gemcutting_
 _PBMSGCHARINFO.fields_by_name['guard_pet_info'].message_type = _PBCHARPETGUARDINFO
 _PBMSGCHARINFO.fields_by_name['xinfa_info'].message_type = _PBCHARXINFAINFO
 _PBMSGCHARINFO.fields_by_name['xiuzhen_info'].message_type = _PBCHARXIUZHENINFO
+_PBMSGCHARINFO.fields_by_name['magic_pet_info'].message_type = _PBCHARMAGICPETINFO
 _PBCHARPETGUARDINFO.fields_by_name['guard_info'].message_type = msg_pet_pb2._PBGUARDLEVELINFO
 _PBCHARPETGUARDINFO.fields_by_name['pet_info'].message_type = msg_pet_pb2._PBPETINFO
 _PBCHARXINFAINFO.fields_by_name['item_list'].message_type = msg_xinfa_pb2._PBXINFAITEM
 _PBCHARXIUZHENINFO.fields_by_name['mai_item_list'].message_type = msg_xiuzhen_pb2._PBXIUZHENMAIITEM
+_PBCHARMAGICPETINFO.fields_by_name['magic_pet_list'].message_type = msg_magic_pet_pb2._PBMAGICPETITEM
 _PBMSGCHARBASE.fields_by_name['visual_prop'].message_type = _PBMSGVPINFO
 _PBMSGCHARINFORESQUEST.fields_by_name['get_type'].enum_type = _PBEGETCHARINFOTYPE
 _PBMSGCHARINFORESPONSE.fields_by_name['char_info'].message_type = _PBMSGCHARINFO
@@ -3194,6 +3300,7 @@ _PBMSGRANKPETINFORESPONSE.fields_by_name['pet_info'].message_type = msg_pet_pb2.
 _PBMSGQUARTERCARDNOTICE.fields_by_name['reward_list'].message_type = msg_item_pb2._PBMSGITEMQUANTITY
 _PBMSGGIFTCARDNOTICE.fields_by_name['reward_list'].message_type = msg_item_pb2._PBMSGITEMQUANTITY
 _PBMSGCHARDEATHINFONOTICE.fields_by_name['killer_type'].enum_type = _PBEKILLERTYPE
+_PBMSGRANKMAGICPETINFORESPONSE.fields_by_name['magicpet_info'].message_type = msg_magic_pet_pb2._PBMAGICPETITEM
 DESCRIPTOR.message_types_by_name['PBCommonNoParam'] = _PBCOMMONNOPARAM
 DESCRIPTOR.message_types_by_name['PBCreateCharBaseInfoRequest'] = _PBCREATECHARBASEINFOREQUEST
 DESCRIPTOR.message_types_by_name['PBSelectCharRequest'] = _PBSELECTCHARREQUEST
@@ -3222,6 +3329,7 @@ DESCRIPTOR.message_types_by_name['PBMsgCharInfo'] = _PBMSGCHARINFO
 DESCRIPTOR.message_types_by_name['PBCharPetGuardInfo'] = _PBCHARPETGUARDINFO
 DESCRIPTOR.message_types_by_name['PBCharXinfaInfo'] = _PBCHARXINFAINFO
 DESCRIPTOR.message_types_by_name['PBCharXiuzhenInfo'] = _PBCHARXIUZHENINFO
+DESCRIPTOR.message_types_by_name['PBCharMagicPetInfo'] = _PBCHARMAGICPETINFO
 DESCRIPTOR.message_types_by_name['PBMsgCharProperty'] = _PBMSGCHARPROPERTY
 DESCRIPTOR.message_types_by_name['PBMsgCharBase'] = _PBMSGCHARBASE
 DESCRIPTOR.message_types_by_name['PBMsgVPInfo'] = _PBMSGVPINFO
@@ -3250,6 +3358,8 @@ DESCRIPTOR.message_types_by_name['PBMsgGiftCardRewardRequest'] = _PBMSGGIFTCARDR
 DESCRIPTOR.message_types_by_name['PBMsgGiftCardRewardResponse'] = _PBMSGGIFTCARDREWARDRESPONSE
 DESCRIPTOR.message_types_by_name['PBMsgCharDeathInfoNotice'] = _PBMSGCHARDEATHINFONOTICE
 DESCRIPTOR.message_types_by_name['PBMsgCharSignalNotice'] = _PBMSGCHARSIGNALNOTICE
+DESCRIPTOR.message_types_by_name['PBMsgRankMagicPetInfoResquest'] = _PBMSGRANKMAGICPETINFORESQUEST
+DESCRIPTOR.message_types_by_name['PBMsgRankMagicPetInfoResponse'] = _PBMSGRANKMAGICPETINFORESPONSE
 
 class PBCommonNoParam(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
@@ -3419,6 +3529,12 @@ class PBCharXiuzhenInfo(message.Message):
   
   # @@protoc_insertion_point(class_scope:PBCharXiuzhenInfo)
 
+class PBCharMagicPetInfo(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBCHARMAGICPETINFO
+  
+  # @@protoc_insertion_point(class_scope:PBCharMagicPetInfo)
+
 class PBMsgCharProperty(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _PBMSGCHARPROPERTY
@@ -3586,5 +3702,17 @@ class PBMsgCharSignalNotice(message.Message):
   DESCRIPTOR = _PBMSGCHARSIGNALNOTICE
   
   # @@protoc_insertion_point(class_scope:PBMsgCharSignalNotice)
+
+class PBMsgRankMagicPetInfoResquest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGRANKMAGICPETINFORESQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgRankMagicPetInfoResquest)
+
+class PBMsgRankMagicPetInfoResponse(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGRANKMAGICPETINFORESPONSE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgRankMagicPetInfoResponse)
 
 # @@protoc_insertion_point(module_scope)

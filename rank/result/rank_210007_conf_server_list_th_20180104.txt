@@ -1,0 +1,48 @@
+æŽ’è¡Œæ¦œlevelç½‘å…³210007
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,gggcuteso00wero@gmail.com,100067971,93874,??????????,194285, 88, 3, 1, 450, 153
+210,facebook100005422,100005422,93944,?•l??Ou?O€,186675, 88, 2, 1, 1003, 775
+210,facebook100068950,100068950,96346,[FF0000]??????,151547, 87, 3, 1, 872, 72
+210,skyloverannita@gmail.com,100067982,93838,????????,154001, 86, 3, 1, 521, 18
+210,magic.leo224@gmail.com,100067927,93981,??????,152350, 86, 2, 1, 467, 283
+210,rittrong@hotmail.com,100066082,94009,13***$iC,139520, 85, 3, 1, 413, 0
+210,yaowaraj109@gmail.com,100068761,95719,Vixol,131543, 85, 2, 1, 0, 81
+210,sticker7755@gmail.com,100037824,94430,?????,137606, 84, 2, 2, 382, 18
+210,vasnhaoppo@gmail.com,100042689,96164,á?????,138488, 84, 2, 1, 294, 90
+210,fewzuzaa002@gmail.com,100026446,96168,??????,141316, 84, 4, 1, 878, 90
+æŽ’è¡Œæ¦œcombat_powerç½‘å…³210007
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,gggcuteso00wero@gmail.com,100067971,93874,??????????,194285, 88, 3, 1, 450, 153
+210,facebook100005422,100005422,93944,?•l??Ou?O€,186675, 88, 2, 1, 1003, 775
+210,skyloverannita@gmail.com,100067982,93838,????????,154001, 86, 3, 1, 521, 18
+210,magic.leo224@gmail.com,100067927,93981,??????,152350, 86, 2, 1, 467, 283
+210,facebook100068950,100068950,96346,[FF0000]??????,151547, 87, 3, 1, 872, 72
+210,facebook100011153,100011153,94313,***sabaidee***,149892, 82, 1, 1, 0, 182
+210,kanomwhan.aim.aim.26@gmail.com,100019544,94049,OS?u???,145970, 83, 2, 1, 229, 1350
+210,orwan7784@hotmail.com,100067129,93840,???????,142773, 80, 2, 1, 145, 160
+210,fewzuzaa002@gmail.com,100026446,96168,??????,141316, 84, 4, 1, 878, 90
+210,rittrong@hotmail.com,100066082,94009,13***$iC,139520, 85, 3, 1, 413, 0
+æŽ’è¡Œæ¦œcharm_pointç½‘å…³210007
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,kanomwhan.aim.aim.26@gmail.com,100019544,94049,OS?u???,145970, 83, 2, 1, 229, 1350
+210,facebook100005422,100005422,93944,?•l??Ou?O€,186675, 88, 2, 1, 1003, 775
+210,gtogotza@gmail.com,100042363,93881,?Go†za?,122431, 77, 3, 1, 0, 512
+210,magic.leo224@gmail.com,100067927,93981,??????,152350, 86, 2, 1, 467, 283
+210,facebook100055769,100055769,97555,????????,123591, 82, 3, 1, 195, 263
+210,facebook100011153,100011153,94313,***sabaidee***,149892, 82, 1, 1, 0, 182
+210,facebook100069231,100069231,96764,?????8???,127724, 82, 4, 2, 358, 162
+210,orwan7784@hotmail.com,100067129,93840,???????,142773, 80, 2, 1, 145, 160
+210,gggcuteso00wero@gmail.com,100067971,93874,??????????,194285, 88, 3, 1, 450, 153
+210,743755827537,100069062,96400,??? ???,110467, 80, 3, 2, 172, 99
+æŽ’è¡Œæ¦œpvp_scoreç½‘å…³210007
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,facebook100005422,100005422,93944,?•l??Ou?O€,186675, 88, 2, 1, 1003, 775
+210,fewzuzaa002@gmail.com,100026446,96168,??????,141316, 84, 4, 1, 878, 90
+210,facebook100068950,100068950,96346,[FF0000]??????,151547, 87, 3, 1, 872, 72
+210,tanesnim@gmail.com,100000635,93943,??????????,106580, 74, 1, 2, 567, 0
+210,skyloverannita@gmail.com,100067982,93838,????????,154001, 86, 3, 1, 521, 18
+210,magic.leo224@gmail.com,100067927,93981,??????,152350, 86, 2, 1, 467, 283
+210,gggcuteso00wero@gmail.com,100067971,93874,??????????,194285, 88, 3, 1, 450, 153
+210,pasting@gmail.com,100068129,94342,~Rainbow~,99419, 76, 2, 1, 425, 0
+210,rittrong@hotmail.com,100066082,94009,13***$iC,139520, 85, 3, 1, 413, 0
+210,facebook100054666,100054666,94039,??? ???,90191, 70, 3, 2, 396, 9

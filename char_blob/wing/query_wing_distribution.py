@@ -60,8 +60,10 @@ def DB2txt(DB_HOST, DB_USER, DB_PWD, db_name,blob_name,insert_db):
 create_char_wing_table.create_table("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','char_zhenyan')
 #Get_Player_Fashion("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','char_blob_first_month','char_wing')
 #Get_Player_Fashion("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','char_blob_middle_month','char_wing')
-Get_Player_Fashion("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','char_blob_last_month','char_wing')
+#Get_Player_Fashion("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','char_blob_last_month','char_wing')
+Get_Player_Fashion("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','char_blob','char_wing')
 #DB2txt("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','char_blob_first_month','char_wing')
 #DB2txt("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','char_blob_middle_month','char_wing')
-DB2txt("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','char_blob_last_month','char_wing')
+#DB2txt("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','char_blob_last_month','char_wing')
+DB2txt("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','char_blob','char_wing')
 

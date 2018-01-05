@@ -1,0 +1,13 @@
+import "tmpl_base.proto";
+
+message PBCampChatCfg
+{
+    optional sint32 limit_cancel_level			  = 1;//[default=0] ;
+	repeated PBCampChatLevelTable level_table = 2;
+};
+
+message PBCampChatLevelTable
+{
+	optional sint32 level							= 1;
+	optional sint32 maxchatallowed	                = 2;
+};

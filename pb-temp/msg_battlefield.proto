@@ -180,6 +180,7 @@ message PBRoleShard
 	optional uint32 global_shard_id		=	2;//所在物理区服;
 	optional sint32 battle_score		=	3;//战力
 	optional uint32	add_time			=	4;//加入的时间
+	optional uint32 camp				=	5;//分组信息;
 }
 
 message PBBattleMatchRes
@@ -228,3 +229,30 @@ message PBBattlefieldAFKNotice
 	optional uint32	afk_times	= 1;	//挂机次数;
 	optional float afk_ratio	= 2;	//挂机一次奖励减少率;
 }
+
+message PBTeamBattleMatch
+{
+	optional uint32	bigworld_id			=	1;//单服匹配还是全区匹配;
+	optional sint32	group_type			=	2;//战场类型;
+	optional uint32 activity_id         =   3;
+	optional uint32 is_no_span          =   4;
+	optional sint32	dungeon_sheet		=	5;
+	optional uint32 team_id				=	6;
+	repeated PBTeamMatchRoleInfo role_list = 7;
+};
+
+message PBTeamMatchRoleInfo
+{
+	optional uint32 role_id				= 1;
+	optional sint32	battle_score		= 2;//战力;
+	optional uint32 shard_id			= 3;
+};
+
+message PBCancelTeamMatch
+{
+	optional uint32 team_id				=	1;
+	optional uint32	bigworld_id			=	2;//单服匹配还是全区匹配;
+	optional uint32 activity_id         =   3;
+	optional uint32 is_no_span          =   4;
+	optional sint32	group_type			=	5;//战场类型;
+};

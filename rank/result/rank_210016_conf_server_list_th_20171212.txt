@@ -1,0 +1,16 @@
+排行榜level网关210016
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,jiang_jiahui@sina.com,100000001,1185,excess231,2873, 2, 4, 1, 0, 0
+210,219155656783,100030575,33869,?????,2605, 1, 4, 1, 0, 0
+排行榜combat_power网关210016
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,jiang_jiahui@sina.com,100000001,1185,excess231,2873, 2, 4, 1, 0, 0
+210,219155656783,100030575,33869,?????,2605, 1, 4, 1, 0, 0
+排行榜charm_point网关210016
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,219155656783,100030575,33869,?????,2605, 1, 4, 1, 0, 0
+210,jiang_jiahui@sina.com,100000001,1185,excess231,2873, 2, 4, 1, 0, 0
+排行榜pvp_score网关210016
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,219155656783,100030575,33869,?????,2605, 1, 4, 1, 0, 0
+210,jiang_jiahui@sina.com,100000001,1185,excess231,2873, 2, 4, 1, 0, 0

@@ -12,7 +12,7 @@ import tmpl_base_pb2
 DESCRIPTOR = descriptor.FileDescriptor(
   name='tmpl_change_camp.proto',
   package='',
-  serialized_pb='\n\x16tmpl_change_camp.proto\x1a\x0ftmpl_base.proto\"\xd8\x02\n\x12PBConfigChangeCamp\x12\x18\n\x10\x63har_level_limit\x18\x01 \x01(\x11\x12\x14\n\x0ctrans_cdtime\x18\x02 \x01(\x11\x12#\n\x07\x64y_rule\x18\x03 \x03(\x0b\x32\x12.PBConfigTransRule\x12(\n\x0c\x64\x65\x66\x61ult_rule\x18\x04 \x01(\x0b\x32\x12.PBConfigTransRule\x12\x1d\n\x15max_member_ack_second\x18\x05 \x01(\x11\x12*\n\rreplace_title\x18\x06 \x03(\x0b\x32\x13.PBConfigTransTitle\x12\x16\n\x0enpc_group_name\x18\x07 \x01(\t\x12\x1a\n\x12npc_check_distance\x18\x08 \x01(\x11\x12\x16\n\x0enpc_check_flag\x18\t \x01(\x11\x12,\n\rcamp_creature\x18\n \x01(\x0b\x32\x15.PBConfigCampCreature\"\xa2\x01\n\x11PBConfigTransRule\x12\x15\n\rsrc_camp_rank\x18\x01 \x01(\x11\x12\x16\n\x0e\x64\x65sc_camp_rank\x18\x02 \x01(\x11\x12.\n\titem_cost\x18\x03 \x01(\x0b\x32\x1b.PBTemplateItemQuantityList\x12.\n\titem_gift\x18\x04 \x01(\x0b\x32\x1b.PBTemplateItemQuantityList\"P\n\x12PBConfigTransTitle\x12\x12\n\nis_replace\x18\x01 \x01(\x11\x12&\n\ncamp_title\x18\x02 \x03(\x0b\x32\x12.PBConfigCampTitle\"8\n\x11PBConfigCampTitle\x12\x0f\n\x07\x63\x61mp_id\x18\x01 \x01(\x11\x12\x12\n\ntitle_name\x18\x02 \x01(\t\"\x84\x01\n\x14PBConfigCampCreature\x12\x15\n\rcreature_name\x18\x01 \x01(\t\x12.\n\naward_list\x18\x02 \x03(\x0b\x32\x1a.PBConfigCampCreatureAward\x12\x12\n\nmail_title\x18\x03 \x01(\t\x12\x11\n\tmail_body\x18\x04 \x01(\t\"s\n\x19PBConfigCampCreatureAward\x12\x11\n\tlevel_min\x18\x01 \x01(\x11\x12\x11\n\tlevel_max\x18\x02 \x01(\x11\x12\x30\n\x0bitem_reawrd\x18\x03 \x01(\x0b\x32\x1b.PBTemplateItemQuantityList')
+  serialized_pb='\n\x16tmpl_change_camp.proto\x1a\x0ftmpl_base.proto\"\x9a\x03\n\x12PBConfigChangeCamp\x12\x18\n\x10\x63har_level_limit\x18\x01 \x01(\x11\x12\x14\n\x0ctrans_cdtime\x18\x02 \x01(\x11\x12#\n\x07\x64y_rule\x18\x03 \x03(\x0b\x32\x12.PBConfigTransRule\x12(\n\x0c\x64\x65\x66\x61ult_rule\x18\x04 \x01(\x0b\x32\x12.PBConfigTransRule\x12\x1d\n\x15max_member_ack_second\x18\x05 \x01(\x11\x12*\n\rreplace_title\x18\x06 \x03(\x0b\x32\x13.PBConfigTransTitle\x12\x16\n\x0enpc_group_name\x18\x07 \x01(\t\x12\x1a\n\x12npc_check_distance\x18\x08 \x01(\x11\x12\x16\n\x0enpc_check_flag\x18\t \x01(\x11\x12,\n\rcamp_creature\x18\n \x01(\x0b\x32\x15.PBConfigCampCreature\x12\x1f\n\x17server_merge_check_time\x18\x0b \x01(\x11\x12\x1f\n\x17server_merge_check_flag\x18\x0c \x01(\x11\"\xa2\x01\n\x11PBConfigTransRule\x12\x15\n\rsrc_camp_rank\x18\x01 \x01(\x11\x12\x16\n\x0e\x64\x65sc_camp_rank\x18\x02 \x01(\x11\x12.\n\titem_cost\x18\x03 \x01(\x0b\x32\x1b.PBTemplateItemQuantityList\x12.\n\titem_gift\x18\x04 \x01(\x0b\x32\x1b.PBTemplateItemQuantityList\"P\n\x12PBConfigTransTitle\x12\x12\n\nis_replace\x18\x01 \x01(\x11\x12&\n\ncamp_title\x18\x02 \x03(\x0b\x32\x12.PBConfigCampTitle\"8\n\x11PBConfigCampTitle\x12\x0f\n\x07\x63\x61mp_id\x18\x01 \x01(\x11\x12\x12\n\ntitle_name\x18\x02 \x01(\t\"\x84\x01\n\x14PBConfigCampCreature\x12\x15\n\rcreature_name\x18\x01 \x01(\t\x12.\n\naward_list\x18\x02 \x03(\x0b\x32\x1a.PBConfigCampCreatureAward\x12\x12\n\nmail_title\x18\x03 \x01(\t\x12\x11\n\tmail_body\x18\x04 \x01(\t\"s\n\x19PBConfigCampCreatureAward\x12\x11\n\tlevel_min\x18\x01 \x01(\x11\x12\x11\n\tlevel_max\x18\x02 \x01(\x11\x12\x30\n\x0bitem_reawrd\x18\x03 \x01(\x0b\x32\x1b.PBTemplateItemQuantityList')
 
 
 
@@ -94,6 +94,20 @@ _PBCONFIGCHANGECAMP = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='server_merge_check_time', full_name='PBConfigChangeCamp.server_merge_check_time', index=10,
+      number=11, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='server_merge_check_flag', full_name='PBConfigChangeCamp.server_merge_check_flag', index=11,
+      number=12, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -104,7 +118,7 @@ _PBCONFIGCHANGECAMP = descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=44,
-  serialized_end=388,
+  serialized_end=454,
 )
 
 
@@ -152,8 +166,8 @@ _PBCONFIGTRANSRULE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=391,
-  serialized_end=553,
+  serialized_start=457,
+  serialized_end=619,
 )
 
 
@@ -187,8 +201,8 @@ _PBCONFIGTRANSTITLE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=555,
-  serialized_end=635,
+  serialized_start=621,
+  serialized_end=701,
 )
 
 
@@ -222,8 +236,8 @@ _PBCONFIGCAMPTITLE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=637,
-  serialized_end=693,
+  serialized_start=703,
+  serialized_end=759,
 )
 
 
@@ -271,8 +285,8 @@ _PBCONFIGCAMPCREATURE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=696,
-  serialized_end=828,
+  serialized_start=762,
+  serialized_end=894,
 )
 
 
@@ -313,8 +327,8 @@ _PBCONFIGCAMPCREATUREAWARD = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=830,
-  serialized_end=945,
+  serialized_start=896,
+  serialized_end=1011,
 )
 
 _PBCONFIGCHANGECAMP.fields_by_name['dy_rule'].message_type = _PBCONFIGTRANSRULE

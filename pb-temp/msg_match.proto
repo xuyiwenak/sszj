@@ -75,6 +75,28 @@ message PBMsgMatchCancelResponse
 	optional sint32						func_id = 3; // sheetid
 };
 
+message PBMsgPVPTeamMatchRequest
+{
+	optional uint32						func_type	= 1;	// 功能类型
+	optional uint32						func_id		= 2;	// sheetId
+};
+
+message PBMsgPVPTeamMatchResponse
+{
+	optional sint32						ret_code	= 1;	// 返回码
+};
+
+message PBMsgPVPTeamMatchCancelRequest
+{
+	optional uint32						func_type	= 1;	// 功能类型
+	optional uint32						func_id		= 2;	// sheetId
+};
+
+message PBMsgPVPTeamMatchCancelResponse
+{
+	optional sint32						ret_code	= 1;	// 返回码
+};
+
 message PBMsgMatchListNotice
 {
 	repeated PBMatchingActivity		matchingList	= 1;	// 正匹配报名的活动

@@ -16,7 +16,7 @@ import msg_couplepvp_pb2
 DESCRIPTOR = descriptor.FileDescriptor(
   name='bigworld.proto',
   package='',
-  serialized_pb='\n\x0e\x62igworld.proto\x1a\rdb_base.proto\x1a\x14msg_spanbattle.proto\x1a\x10msg_common.proto\x1a\rgateway.proto\x1a\x13msg_couplepvp.proto\"2\n\tPBBetData\x12%\n\nbet_battle\x18\x01 \x03(\x0b\x32\x11.PBSpanbtlBetData\"\xed\x02\n\x0fPBGMSSpanBattle\x12\x10\n\x08match_id\x18\x01 \x01(\x11\x12\"\n\x0bmatch_round\x18\x02 \x01(\x0b\x32\r.PBMatchRound\x12\"\n\x0bmatch_basic\x18\x03 \x01(\x0b\x32\r.PBMatchBasic\x12\x13\n\x0bupdate_time\x18\x05 \x01(\x11\x12)\n\x0chistory_data\x18\x06 \x01(\x0b\x32\x13.PBMatchHistoryData\x12\x1e\n\trace_info\x18\x07 \x01(\x0b\x32\x0b.PBRaceInfo\x12\'\n\x0egiveback_guild\x18\x08 \x01(\x0b\x32\x0f.PBSignCampList\x12!\n\x0csignin_guild\x18\t \x01(\x0b\x32\x0b.PBSignInfo\x12\x1c\n\x08\x62\x65t_data\x18\n \x01(\x0b\x32\n.PBBetData\x12(\n\x0chistory_rank\x18\x0b \x01(\x0b\x32\x12.PBSPIMHistoryRank:\x0c\x92\xb5\x18\x08match_id\"Y\n\x0fPBSpanCurBattle\x12\x0f\n\x07game_id\x18\x01 \x01(\x11\x12\x13\n\x0b\x63ur_matchid\x18\x02 \x01(\x11\x12\x13\n\x0bupdate_time\x18\x03 \x01(\x11:\x0b\x92\xb5\x18\x07game_id\";\n\x12PBSpanWildRankInfo\x12%\n\tchar_node\x18\x01 \x03(\x0b\x32\x12.PBMsgRankCharNode\"\x81\x01\n\x0ePBSpanDuelData\x12\x14\n\x0closer_roleid\x18\x01 \x01(\r\x12\x17\n\x0floser_gatewayid\x18\x02 \x01(\r\x12\x14\n\x0cwiner_roleid\x18\x03 \x01(\r\x12\x17\n\x0fwiner_gatewayid\x18\x04 \x01(\r\x12\x11\n\tduel_time\x18\x05 \x01(\r\"3\n\x0ePBSpanDuelInfo\x12!\n\x08\x64ueldata\x18\x01 \x03(\x0b\x32\x0f.PBSpanDuelData\"\xa1\x01\n\x0ePBSpanWildRank\x12\x0f\n\x07game_id\x18\x01 \x01(\x11\x12*\n\rspanwild_rank\x18\x02 \x01(\x0b\x32\x13.PBSpanWildRankInfo\x12\x30\n\x0fspanwild_bosslv\x18\x03 \x01(\x0b\x32\x17.PBWildBossLevelContain\x12\x13\n\x0bupdate_time\x18\x04 \x01(\x11:\x0b\x92\xb5\x18\x07game_id\"\xa9\x01\n\x0fPBGMSCommonData\x12\x0f\n\x07game_id\x18\x01 \x01(\x11\x12$\n\ncouple_pvp\x18\x02 \x01(\x0b\x32\x10.PBcouplePVPRace\x12\"\n\tduel_info\x18\x03 \x01(\x0b\x32\x0f.PBSpanDuelInfo\x12.\n\nmonor_data\x18\x04 \x01(\x0b\x32\x1a.PBSpanMonorBattleDataList:\x0b\x92\xb5\x18\x07game_id\"F\n\x19PBSpanMonorBattleDataList\x12)\n\tdata_list\x18\x01 \x03(\x0b\x32\x16.PBSpanMonorBattleData\"\x89\x02\n\x15PBSpanMonorBattleData\x12\x0f\n\x07\x64\x61ta_id\x18\x01 \x01(\r\x12\x12\n\ncur_status\x18\x02 \x01(\x11\x12\'\n\x0egiveback_guild\x18\x03 \x01(\x0b\x32\x0f.PBSignCampList\x12!\n\x0csignin_guild\x18\x04 \x01(\x0b\x32\x0b.PBSignInfo\x12\'\n\x0b\x62\x61ttle_info\x18\x05 \x01(\x0b\x32\x12.PBMonorBattleInfo\x12%\n\nowner_info\x18\x06 \x01(\x0b\x32\x11.PBMonorOwnerInfo\x12/\n\rowner_history\x18\x07 \x03(\x0b\x32\x18.PBMonorOwnerHistoryInfo\"t\n\x11PBMonorBattleInfo\x12\x19\n\x11is_battle_success\x18\x01 \x01(\x08\x12\x11\n\tbattle_id\x18\x02 \x01(\x04\x12\x19\n\x11\x62\x61ttle_gateway_id\x18\x03 \x01(\r\x12\x16\n\x0e\x62\x61ttle_camp_id\x18\x04 \x01(\r\"\xa2\x01\n\x10PBMonorOwnerInfo\x12\x15\n\ris_have_owner\x18\x01 \x01(\x08\x12\x12\n\ngateway_id\x18\x02 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x03 \x01(\r\x12\x10\n\x08guild_id\x18\x04 \x01(\x04\x12\x12\n\nguild_name\x18\x05 \x01(\t\x12,\n\x0emember_id_list\x18\x06 \x01(\x0b\x32\x14.PBGuildMemberIdList\"u\n\x17PBMonorOwnerHistoryInfo\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12\x0e\n\x06\x63\x61mpId\x18\x02 \x01(\r\x12\x10\n\x08guild_id\x18\x03 \x01(\x04\x12\x12\n\nguild_name\x18\x04 \x01(\t\x12\x10\n\x08get_time\x18\x05 \x01(\rB\x02H\x01')
+  serialized_pb='\n\x0e\x62igworld.proto\x1a\rdb_base.proto\x1a\x14msg_spanbattle.proto\x1a\x10msg_common.proto\x1a\rgateway.proto\x1a\x13msg_couplepvp.proto\"2\n\tPBBetData\x12%\n\nbet_battle\x18\x01 \x03(\x0b\x32\x11.PBSpanbtlBetData\"\xed\x02\n\x0fPBGMSSpanBattle\x12\x10\n\x08match_id\x18\x01 \x01(\x11\x12\"\n\x0bmatch_round\x18\x02 \x01(\x0b\x32\r.PBMatchRound\x12\"\n\x0bmatch_basic\x18\x03 \x01(\x0b\x32\r.PBMatchBasic\x12\x13\n\x0bupdate_time\x18\x05 \x01(\x11\x12)\n\x0chistory_data\x18\x06 \x01(\x0b\x32\x13.PBMatchHistoryData\x12\x1e\n\trace_info\x18\x07 \x01(\x0b\x32\x0b.PBRaceInfo\x12\'\n\x0egiveback_guild\x18\x08 \x01(\x0b\x32\x0f.PBSignCampList\x12!\n\x0csignin_guild\x18\t \x01(\x0b\x32\x0b.PBSignInfo\x12\x1c\n\x08\x62\x65t_data\x18\n \x01(\x0b\x32\n.PBBetData\x12(\n\x0chistory_rank\x18\x0b \x01(\x0b\x32\x12.PBSPIMHistoryRank:\x0c\x92\xb5\x18\x08match_id\"Y\n\x0fPBSpanCurBattle\x12\x0f\n\x07game_id\x18\x01 \x01(\x11\x12\x13\n\x0b\x63ur_matchid\x18\x02 \x01(\x11\x12\x13\n\x0bupdate_time\x18\x03 \x01(\x11:\x0b\x92\xb5\x18\x07game_id\";\n\x12PBSpanWildRankInfo\x12%\n\tchar_node\x18\x01 \x03(\x0b\x32\x12.PBMsgRankCharNode\"\x81\x01\n\x0ePBSpanDuelData\x12\x14\n\x0closer_roleid\x18\x01 \x01(\r\x12\x17\n\x0floser_gatewayid\x18\x02 \x01(\r\x12\x14\n\x0cwiner_roleid\x18\x03 \x01(\r\x12\x17\n\x0fwiner_gatewayid\x18\x04 \x01(\r\x12\x11\n\tduel_time\x18\x05 \x01(\r\"3\n\x0ePBSpanDuelInfo\x12!\n\x08\x64ueldata\x18\x01 \x03(\x0b\x32\x0f.PBSpanDuelData\"\xa1\x01\n\x0ePBSpanWildRank\x12\x0f\n\x07game_id\x18\x01 \x01(\x11\x12*\n\rspanwild_rank\x18\x02 \x01(\x0b\x32\x13.PBSpanWildRankInfo\x12\x30\n\x0fspanwild_bosslv\x18\x03 \x01(\x0b\x32\x17.PBWildBossLevelContain\x12\x13\n\x0bupdate_time\x18\x04 \x01(\x11:\x0b\x92\xb5\x18\x07game_id\"\xa9\x01\n\x0fPBGMSCommonData\x12\x0f\n\x07game_id\x18\x01 \x01(\x11\x12$\n\ncouple_pvp\x18\x02 \x01(\x0b\x32\x10.PBcouplePVPRace\x12\"\n\tduel_info\x18\x03 \x01(\x0b\x32\x0f.PBSpanDuelInfo\x12.\n\nmonor_data\x18\x04 \x01(\x0b\x32\x1a.PBSpanMonorBattleDataList:\x0b\x92\xb5\x18\x07game_id\"F\n\x19PBSpanMonorBattleDataList\x12)\n\tdata_list\x18\x01 \x03(\x0b\x32\x16.PBSpanMonorBattleData\"\x89\x02\n\x15PBSpanMonorBattleData\x12\x0f\n\x07\x64\x61ta_id\x18\x01 \x01(\r\x12\x12\n\ncur_status\x18\x02 \x01(\x11\x12\'\n\x0egiveback_guild\x18\x03 \x01(\x0b\x32\x0f.PBSignCampList\x12!\n\x0csignin_guild\x18\x04 \x01(\x0b\x32\x0b.PBSignInfo\x12\'\n\x0b\x62\x61ttle_info\x18\x05 \x01(\x0b\x32\x12.PBMonorBattleInfo\x12%\n\nowner_info\x18\x06 \x01(\x0b\x32\x11.PBMonorOwnerInfo\x12/\n\rowner_history\x18\x07 \x03(\x0b\x32\x18.PBMonorOwnerHistoryInfo\"t\n\x11PBMonorBattleInfo\x12\x19\n\x11is_battle_success\x18\x01 \x01(\x08\x12\x11\n\tbattle_id\x18\x02 \x01(\x04\x12\x19\n\x11\x62\x61ttle_gateway_id\x18\x03 \x01(\r\x12\x16\n\x0e\x62\x61ttle_camp_id\x18\x04 \x01(\r\"\xa2\x01\n\x10PBMonorOwnerInfo\x12\x15\n\ris_have_owner\x18\x01 \x01(\x08\x12\x12\n\ngateway_id\x18\x02 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x03 \x01(\r\x12\x10\n\x08guild_id\x18\x04 \x01(\x04\x12\x12\n\nguild_name\x18\x05 \x01(\t\x12,\n\x0emember_id_list\x18\x06 \x01(\x0b\x32\x14.PBGuildMemberIdList\"u\n\x17PBMonorOwnerHistoryInfo\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12\x0e\n\x06\x63\x61mpId\x18\x02 \x01(\r\x12\x10\n\x08guild_id\x18\x03 \x01(\x04\x12\x12\n\nguild_name\x18\x04 \x01(\t\x12\x10\n\x08get_time\x18\x05 \x01(\r\"\xe8\x01\n\x11PBCommonCropsInfo\x12\x10\n\x08\x63rops_id\x18\x01 \x01(\x04\x12\x12\n\ncrops_name\x18\x02 \x01(\t\x12\x12\n\ngateway_id\x18\x03 \x01(\r\x12\x10\n\x08match_id\x18\x04 \x01(\x11\x12\x12\n\njoin_times\x18\x05 \x01(\x11\x12\x15\n\rvectory_times\x18\x06 \x01(\x11\x12\x11\n\tcur_score\x18\x07 \x01(\x11\x12\x12\n\nrank_grade\x18\x08 \x01(\x11\x12\x1f\n\x07history\x18\t \x03(\x0b\x32\x0e.PBHistoryInfo\x12\x14\n\x0c\x62\x61ttle_score\x18\n \x01(\r\"D\n\rPBHistoryInfo\x12\x10\n\x08match_id\x18\x01 \x01(\x11\x12\r\n\x05score\x18\x02 \x01(\x11\x12\x12\n\nrank_grade\x18\x03 \x01(\x11\";\n\x11PBCommonCropsList\x12&\n\ncrops_list\x18\x01 \x03(\x0b\x32\x12.PBCommonCropsInfo\"]\n\x15PBCommonCropsInfoData\x12\x0f\n\x07\x64\x61ta_id\x18\x01 \x01(\r\x12&\n\ncrops_list\x18\x02 \x01(\x0b\x32\x12.PBCommonCropsList:\x0b\x92\xb5\x18\x07\x64\x61ta_idB\x02H\x01')
 
 
 
@@ -657,6 +657,202 @@ _PBMONOROWNERHISTORYINFO = descriptor.Descriptor(
   serialized_end=1942,
 )
 
+
+_PBCOMMONCROPSINFO = descriptor.Descriptor(
+  name='PBCommonCropsInfo',
+  full_name='PBCommonCropsInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='crops_id', full_name='PBCommonCropsInfo.crops_id', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='crops_name', full_name='PBCommonCropsInfo.crops_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='gateway_id', full_name='PBCommonCropsInfo.gateway_id', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='match_id', full_name='PBCommonCropsInfo.match_id', index=3,
+      number=4, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='join_times', full_name='PBCommonCropsInfo.join_times', index=4,
+      number=5, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='vectory_times', full_name='PBCommonCropsInfo.vectory_times', index=5,
+      number=6, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='cur_score', full_name='PBCommonCropsInfo.cur_score', index=6,
+      number=7, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='rank_grade', full_name='PBCommonCropsInfo.rank_grade', index=7,
+      number=8, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='history', full_name='PBCommonCropsInfo.history', index=8,
+      number=9, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='battle_score', full_name='PBCommonCropsInfo.battle_score', index=9,
+      number=10, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=1945,
+  serialized_end=2177,
+)
+
+
+_PBHISTORYINFO = descriptor.Descriptor(
+  name='PBHistoryInfo',
+  full_name='PBHistoryInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='match_id', full_name='PBHistoryInfo.match_id', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='score', full_name='PBHistoryInfo.score', index=1,
+      number=2, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='rank_grade', full_name='PBHistoryInfo.rank_grade', index=2,
+      number=3, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=2179,
+  serialized_end=2247,
+)
+
+
+_PBCOMMONCROPSLIST = descriptor.Descriptor(
+  name='PBCommonCropsList',
+  full_name='PBCommonCropsList',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='crops_list', full_name='PBCommonCropsList.crops_list', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=2249,
+  serialized_end=2308,
+)
+
+
+_PBCOMMONCROPSINFODATA = descriptor.Descriptor(
+  name='PBCommonCropsInfoData',
+  full_name='PBCommonCropsInfoData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='data_id', full_name='PBCommonCropsInfoData.data_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='crops_list', full_name='PBCommonCropsInfoData.crops_list', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=descriptor._ParseOptions(descriptor_pb2.MessageOptions(), '\222\265\030\007data_id'),
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=2310,
+  serialized_end=2403,
+)
+
 _PBBETDATA.fields_by_name['bet_battle'].message_type = msg_spanbattle_pb2._PBSPANBTLBETDATA
 _PBGMSSPANBATTLE.fields_by_name['match_round'].message_type = msg_spanbattle_pb2._PBMATCHROUND
 _PBGMSSPANBATTLE.fields_by_name['match_basic'].message_type = msg_spanbattle_pb2._PBMATCHBASIC
@@ -680,6 +876,9 @@ _PBSPANMONORBATTLEDATA.fields_by_name['battle_info'].message_type = _PBMONORBATT
 _PBSPANMONORBATTLEDATA.fields_by_name['owner_info'].message_type = _PBMONOROWNERINFO
 _PBSPANMONORBATTLEDATA.fields_by_name['owner_history'].message_type = _PBMONOROWNERHISTORYINFO
 _PBMONOROWNERINFO.fields_by_name['member_id_list'].message_type = msg_common_pb2._PBGUILDMEMBERIDLIST
+_PBCOMMONCROPSINFO.fields_by_name['history'].message_type = _PBHISTORYINFO
+_PBCOMMONCROPSLIST.fields_by_name['crops_list'].message_type = _PBCOMMONCROPSINFO
+_PBCOMMONCROPSINFODATA.fields_by_name['crops_list'].message_type = _PBCOMMONCROPSLIST
 DESCRIPTOR.message_types_by_name['PBBetData'] = _PBBETDATA
 DESCRIPTOR.message_types_by_name['PBGMSSpanBattle'] = _PBGMSSPANBATTLE
 DESCRIPTOR.message_types_by_name['PBSpanCurBattle'] = _PBSPANCURBATTLE
@@ -693,6 +892,10 @@ DESCRIPTOR.message_types_by_name['PBSpanMonorBattleData'] = _PBSPANMONORBATTLEDA
 DESCRIPTOR.message_types_by_name['PBMonorBattleInfo'] = _PBMONORBATTLEINFO
 DESCRIPTOR.message_types_by_name['PBMonorOwnerInfo'] = _PBMONOROWNERINFO
 DESCRIPTOR.message_types_by_name['PBMonorOwnerHistoryInfo'] = _PBMONOROWNERHISTORYINFO
+DESCRIPTOR.message_types_by_name['PBCommonCropsInfo'] = _PBCOMMONCROPSINFO
+DESCRIPTOR.message_types_by_name['PBHistoryInfo'] = _PBHISTORYINFO
+DESCRIPTOR.message_types_by_name['PBCommonCropsList'] = _PBCOMMONCROPSLIST
+DESCRIPTOR.message_types_by_name['PBCommonCropsInfoData'] = _PBCOMMONCROPSINFODATA
 
 class PBBetData(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
@@ -771,5 +974,29 @@ class PBMonorOwnerHistoryInfo(message.Message):
   DESCRIPTOR = _PBMONOROWNERHISTORYINFO
   
   # @@protoc_insertion_point(class_scope:PBMonorOwnerHistoryInfo)
+
+class PBCommonCropsInfo(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBCOMMONCROPSINFO
+  
+  # @@protoc_insertion_point(class_scope:PBCommonCropsInfo)
+
+class PBHistoryInfo(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBHISTORYINFO
+  
+  # @@protoc_insertion_point(class_scope:PBHistoryInfo)
+
+class PBCommonCropsList(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBCOMMONCROPSLIST
+  
+  # @@protoc_insertion_point(class_scope:PBCommonCropsList)
+
+class PBCommonCropsInfoData(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBCOMMONCROPSINFODATA
+  
+  # @@protoc_insertion_point(class_scope:PBCommonCropsInfoData)
 
 # @@protoc_insertion_point(module_scope)

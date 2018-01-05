@@ -14,7 +14,7 @@ import msg_guild_pb2
 DESCRIPTOR = descriptor.FileDescriptor(
   name='tmpl_guild.proto',
   package='',
-  serialized_pb='\n\x10tmpl_guild.proto\x1a\x0ftmpl_base.proto\x1a\x10msg_common.proto\x1a\x0fmsg_guild.proto\";\n\x18PBGuildEverydayGetReward\x12\x12\n\nitem_sheet\x18\x01 \x01(\t\x12\x0b\n\x03num\x18\x02 \x01(\x05\"\xe3\x05\n\rPBConfigGuild\x12/\n\x0f\x63reation_config\x18\x01 \x01(\x0b\x32\x16.PBGuildCreationConfig\x12\'\n\x0bjoin_config\x18\x02 \x01(\x0b\x32\x12.PBGuildJoinConfig\x12-\n\x0e\x64isband_config\x18\x03 \x01(\x0b\x32\x15.PBGuildDisbandConfig\x12)\n\x0clevel_config\x18\x04 \x03(\x0b\x32\x13.PBGuildLevelConfig\x12+\n\rdonate_config\x18\x05 \x01(\x0b\x32\x14.PBGuildDonateConfig\x12+\n\rreward_config\x18\x06 \x01(\x0b\x32\x14.PBGuildRewardConfig\x12$\n\x0c\x62\x61sic_salary\x18\x07 \x03(\x0b\x32\x0e.PBBasicSalary\x12+\n\x0eguild_building\x18\x08 \x01(\x0b\x32\x13.PBGuildBuildingCfg\x12\x1e\n\tguild_exp\x18\t \x03(\x0b\x32\x0b.PBGuildExp\x12\x1a\n\x12\x63reation_coin_cost\x18\x0b \x01(\x05\x12\x1d\n\x15\x63reation_diamond_cost\x18\x0c \x01(\x05\x12\x19\n\x11max_applied_guild\x18\r \x01(\x05\x12\x15\n\rquit_guild_cd\x18\x0e \x01(\x05\x12\x16\n\x0eretain_data_cd\x18\x0f \x01(\x05\x12\x18\n\x10mission_group_id\x18\x10 \x01(\x05\x12\x14\n\x0c\x63reate_level\x18\x11 \x01(\x05\x12\x12\n\njoin_level\x18\x12 \x01(\x05\x12\x12\n\ndismiss_cd\x18\x13 \x01(\r\x12\"\n\x05\x62\x61sic\x18\x14 \x01(\x0b\x32\x13.PBGuildBasicConfig\x12&\n\x0cstore_config\x18\x15 \x01(\x0b\x32\x10.PBGuildStoreCfg\x12(\n\nchange_job\x18\x16 \x01(\x0b\x32\x14.PBGuildChangeJobCfg\"\x84\x01\n\x15PBGuildCreationConfig\x12\x11\n\tcoin_cost\x18\x01 \x01(\x05\x12\x14\n\x0c\x64iamond_cost\x18\x02 \x01(\x05\x12\x16\n\x0erequired_level\x18\x03 \x01(\x05\x12\x14\n\x0cmin_name_len\x18\x04 \x01(\x05\x12\x14\n\x0cmax_name_len\x18\x05 \x01(\x05\"?\n\x11PBGuildJoinConfig\x12\x16\n\x0erequired_level\x18\x03 \x01(\x05\x12\x12\n\ncd_seconds\x18\x04 \x01(\r\"6\n\x14PBGuildDisbandConfig\x12\x1e\n\x16max_no_maintenance_day\x18\x01 \x01(\r\"\x82\x02\n\x12PBGuildLevelConfig\x12\x10\n\x08level_id\x18\x01 \x01(\x05\x12\x16\n\x0emax_member_num\x18\x02 \x01(\x05\x12\x17\n\x0fmax_vice_leader\x18\x03 \x01(\x05\x12\x18\n\x10maintenance_cost\x18\x04 \x01(\x05\x12\x1e\n\x16maintenance_period_day\x18\x05 \x01(\x05\x12\x1a\n\x12levelup_money_cost\x18\x06 \x01(\x05\x12\x11\n\tguild_exp\x18\x07 \x01(\x05\x12\x15\n\rhistory_money\x18\x08 \x01(\x05\x12)\n\x06reward\x18\t \x03(\x0b\x32\x19.PBGuildEverydayGetReward\"\x8e\x01\n\x13PBGuildDonateConfig\x12\x11\n\titem_rate\x18\t \x01(\x05\x12\x11\n\tblue_rate\x18\n \x01(\x05\x12\x19\n\x11\x63ontribution_rate\x18\x0b \x01(\x05\x12\x1a\n\x12\x64\x65\x66\x61ult_item_count\x18\x0c \x01(\x05\x12\x1a\n\x12\x64\x65\x66\x61ult_blue_count\x18\r \x01(\x05\"O\n\x13PBGuildRewardConfig\x12\x14\n\x0cnormal_value\x18\x01 \x01(\x05\x12\x0e\n\x06\x66\x61\x63tor\x18\x02 \x01(\x05\x12\x12\n\nmin_contri\x18\x03 \x01(\x05\"1\n\rPBBasicSalary\x12\x10\n\x08guild_lv\x18\x01 \x01(\x05\x12\x0e\n\x06salary\x18\x02 \x01(\x05\"\xc3\x02\n\x12PBGuildBuildingCfg\x12\x14\n\x0c\x66inish_times\x18\x01 \x01(\x05\x12\x1a\n\x12\x64\x61ily_reward_times\x18\x02 \x01(\x05\x12!\n\x08\x62uilding\x18\x03 \x03(\x0b\x32\x0f.PBBuildingTask\x12\x35\n\x15publish_cost_multiple\x18\x05 \x03(\x0b\x32\x16.PBPublishCostMultiple\x12%\n\x0bskill_study\x18\x06 \x03(\x0b\x32\x10.PBSkillStudyCfg\x12%\n\x0bskill_learn\x18\x07 \x03(\x0b\x32\x10.PBSkillLearnCfg\x12\x1c\n\x05\x62less\x18\x08 \x03(\x0b\x32\r.PBGuildBless\x12\x1d\n\x08\x64runkery\x18\t \x01(\x0b\x32\x0b.PBDrunkery\x12\x16\n\x03\x64ye\x18\n \x01(\x0b\x32\t.PBDyeCfg\"\x9a\x01\n\x0ePBBuildingTask\x12\x0c\n\x04type\x18\x01 \x01(\x05\x12\x0c\n\x04icon\x18\x02 \x01(\t\x12\x12\n\nicon_atlas\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x0c\n\x04\x64\x65sc\x18\x05 \x01(\t\x12\x12\n\nopen_level\x18\x06 \x01(\x05\x12(\n\nlevel_info\x18\x07 \x03(\x0b\x32\x14.PBBuildingLevelInfo\"b\n\x13PBBuildingLevelInfo\x12\r\n\x05level\x18\x01 \x01(\x05\x12\x19\n\x11\x63ost_guild_contri\x18\x03 \x01(\x05\x12\x13\n\x0bguild_level\x18\x04 \x01(\x05\x12\x0c\n\x04\x64\x65sc\x18\x05 \x01(\t\"Q\n\x15PBPublishCostMultiple\x12\x13\n\x0bstart_times\x18\x01 \x01(\x05\x12\x11\n\tend_times\x18\x02 \x01(\x05\x12\x10\n\x08multiple\x18\x03 \x01(\x05\"K\n\x0fPBSkillStudyCfg\x12\x11\n\tsecial_id\x18\x01 \x01(\x05\x12%\n\nstudy_info\x18\x02 \x03(\x0b\x32\x11.PBGSStudyInfoCfg\"r\n\x10PBGSStudyInfoCfg\x12\r\n\x05level\x18\x01 \x01(\x05\x12\x19\n\x11\x63ost_guild_contri\x18\x02 \x01(\x05\x12\x0f\n\x07\x63\x64_time\x18\x03 \x01(\x05\x12#\n\tcondition\x18\x04 \x03(\x0b\x32\x10.PBGSUpCondition\"@\n\x0fPBGSUpCondition\x12\x15\n\rbuilding_type\x18\x01 \x01(\x05\x12\x16\n\x0e\x62uilding_level\x18\x02 \x01(\x05\"K\n\x0fPBSkillLearnCfg\x12\x11\n\tsecial_id\x18\x01 \x01(\x05\x12%\n\nlearn_info\x18\x02 \x03(\x0b\x32\x11.PBGSLearnInfoCfg\":\n\x10PBGSLearnInfoCfg\x12\r\n\x05level\x18\x01 \x01(\x05\x12\x17\n\x0f\x63ost_own_contri\x18\x03 \x01(\x05\"Y\n\x0cPBGuildBless\x12\r\n\x05level\x18\x01 \x01(\x05\x12\r\n\x05\x63ount\x18\x02 \x01(\x05\x12\x17\n\x0f\x63ost_own_contri\x18\x03 \x01(\x05\x12\x12\n\naward_loot\x18\x04 \x01(\t\"\xa0\x02\n\nPBDrunkery\x12\x12\n\nmax_bottle\x18\x01 \x01(\x05\x12\r\n\x05mapId\x18\x02 \x01(\x05\x12\x0e\n\x06pointX\x18\x03 \x01(\x02\x12\x0e\n\x06pointY\x18\x04 \x01(\x02\x12\x0e\n\x06pointZ\x18\x05 \x01(\x02\x12\x12\n\nper_bottle\x18\x06 \x01(\x05\x12\x19\n\x11\x62\x61nquet_exit_time\x18\x07 \x01(\x05\x12\x1e\n\twine_type\x18\x08 \x03(\x0b\x32\x0b.PBWineType\x12 \n\x06parter\x18\t \x03(\x0b\x32\x10.PBBanquetParter\x12$\n\x0c\x62\x61nquet_cost\x18\n \x03(\x0b\x32\x0e.PBBanquetCost\x12(\n\nlevel_info\x18\x0b \x03(\x0b\x32\x14.PBDrunkeryLevelInfo\"\x8f\x01\n\nPBWineType\x12\x0c\n\x04type\x18\x01 \x01(\x05\x12\x16\n\x0e\x64runkery_level\x18\x03 \x01(\x05\x12\x17\n\x0f\x63ost_own_contri\x18\x04 \x01(\x05\x12\x0f\n\x07\x63\x64_time\x18\x05 \x01(\x05\x12\x0c\n\x04icon\x18\x07 \x01(\t\x12\x12\n\nicon_atlas\x18\x08 \x01(\t\x12\x0f\n\x07\x65xp_cfg\x18\t \x01(\t\"^\n\x13PBDrunkeryLevelInfo\x12\x16\n\x0e\x64runkery_level\x18\x01 \x01(\x05\x12\x16\n\x0emax_open_count\x18\x02 \x01(\x05\x12\x17\n\x0fmake_wine_count\x18\x03 \x01(\x05\"K\n\x0fPBBanquetParter\x12\x11\n\tmin_count\x18\x01 \x01(\x05\x12\x11\n\tmax_count\x18\x02 \x01(\x05\x12\x12\n\nextend_exp\x18\x03 \x01(\x02\"9\n\rPBBanquetCost\x12\x12\n\nopen_count\x18\x01 \x01(\x05\x12\x14\n\x0cguild_contri\x18\x02 \x01(\x05\"=\n\nPBGuildExp\x12\"\n\x06origin\x18\x01 \x01(\x0e\x32\x12.PBEGuildExpOrigin\x12\x0b\n\x03\x65xp\x18\x02 \x01(\x05\"\xb6\x01\n\x0ePBGuildBossCfg\x12\x11\n\tmax_count\x18\x01 \x01(\x05\x12\x13\n\x0blimit_level\x18\x02 \x01(\x05\x12\x1f\n\nguild_boss\x18\x03 \x03(\x0b\x32\x0b.PBGBossCfg\x12\"\n\nnpc_adjust\x18\x05 \x03(\x0b\x32\x0e.PBGBNPCAdjust\x12\x13\n\x0brank_notice\x18\x06 \x01(\x05\x12\"\n\nopen_count\x18\x07 \x03(\x0b\x32\x0e.PBGBOpenCount\"\xce\x01\n\nPBGBossCfg\x12\x12\n\ndungeon_id\x18\x01 \x01(\t\x12 \n\topen_cost\x18\x02 \x03(\x0b\x32\r.PBGBOpenCost\x12\"\n\nlevel_info\x18\x03 \x03(\x0b\x32\x0e.PBGBLevelInfo\x12\x12\n\nboss_sheet\x18\x04 \x01(\t\x12(\n\x10\x63reature_grow_up\x18\x07 \x03(\x0b\x32\x0e.PBGBossGrowUp\x12(\n\raward_percent\x18\x08 \x03(\x0b\x32\x11.PBGBAwardPercent\"7\n\x0cPBGBOpenCost\x12\x12\n\nopen_count\x18\x01 \x01(\x05\x12\x13\n\x0bguild_money\x18\x02 \x01(\x05\"\xe5\x01\n\rPBGBLevelInfo\x12\x19\n\x11guild_level_start\x18\x01 \x01(\x05\x12\x17\n\x0fguild_level_end\x18\x02 \x01(\x05\x12\x15\n\rmin_npc_level\x18\x03 \x01(\x05\x12\x15\n\rmax_npc_level\x18\x04 \x01(\x05\x12\x16\n\x0e\x62\x61se_npc_level\x18\x05 \x01(\x05\x12\x1e\n\nluck_award\x18\x06 \x03(\x0b\x32\n.PBGBAward\x12\x1a\n\x12guild_contribution\x18\x07 \x01(\x05\x12\x1e\n\x16min_guild_contribution\x18\x08 \x01(\x05\"0\n\tPBGBAward\x12\x14\n\x0c\x63onsume_type\x18\x01 \x01(\x05\x12\r\n\x05\x63ount\x18\x02 \x01(\x05\"G\n\x10PBGBAwardPercent\x12\x11\n\tstart_min\x18\x01 \x01(\x05\x12\x0f\n\x07\x65nd_min\x18\x02 \x01(\x05\x12\x0f\n\x07percent\x18\x03 \x01(\x02\"8\n\rPBGBNPCAdjust\x12\x11\n\tkill_time\x18\x01 \x01(\x05\x12\x14\n\x0clevel_change\x18\x02 \x01(\x05\",\n\x08PBDyeCfg\x12 \n\ndye_skills\x18\x01 \x03(\x0b\x32\x0c.PBDyeSkills\" \n\x0bPBDyeSkills\x12\x11\n\tsecial_id\x18\x01 \x01(\x05\"<\n\rPBGBossGrowUp\x12\x13\n\x0bguild_level\x18\x01 \x01(\x05\x12\x16\n\x0e\x63reature_level\x18\x02 \x01(\x05\"3\n\rPBGBOpenCount\x12\x13\n\x0bguild_level\x18\x01 \x01(\x05\x12\r\n\x05\x63ount\x18\x02 \x01(\x05\"~\n\x12PBGuildBasicConfig\x12\x1b\n\x13\x62\x61\x63k_salary_dismiss\x18\x01 \x01(\x05\x12\x1a\n\x12\x62\x61\x63k_salary_notice\x18\x02 \x01(\x05\x12\x19\n\x11\x63hange_leader_day\x18\x03 \x01(\x05\x12\x14\n\x0cno_one_login\x18\x04 \x01(\x05\"[\n\x0fPBGuildStoreCfg\x12\x15\n\rinit_slot_num\x18\x01 \x01(\x11\x12\x14\n\x0cmax_slot_num\x18\x02 \x01(\x11\x12\x1b\n\x13max_history_msg_num\x18\x03 \x01(\x11\"&\n\x10PBGuildChangeJob\x12\x12\n\nchange_job\x18\x01 \x01(\x11\"b\n\x0ePBGuildJobList\x12\x11\n\tguild_job\x18\x01 \x01(\x11\x12\x11\n\tjob_count\x18\x02 \x01(\x11\x12*\n\x0f\x63hange_job_info\x18\x03 \x03(\x0b\x32\x11.PBGuildChangeJob\"[\n\x13PBGuildChangeJobCfg\x12(\n\x0f\x63hange_job_list\x18\x01 \x03(\x0b\x32\x0f.PBGuildJobList\x12\x1a\n\x12\x66lower_title_sheet\x18\x02 \x01(\t\":\n\x12PBGuildFireBuffExp\x12\x0f\n\x07\x62uff_id\x18\x01 \x01(\x11\x12\x13\n\x0b\x61\x64\x64_exp_pro\x18\x02 \x01(\x11\"n\n\x12PBGuildManorRefNpc\x12\x12\n\ngroup_name\x18\x01 \x01(\t\x12\x0e\n\x06map_id\x18\x02 \x01(\x05\x12#\n\x08pos_list\x18\x03 \x03(\x0b\x32\x11.PBTemplateVector\x12\x0f\n\x07line_id\x18\x04 \x01(\x05\"M\n\x0ePBGuildFireRef\x12\x10\n\x08ref_time\x18\x01 \x01(\x11\x12)\n\x0cref_npc_info\x18\x02 \x03(\x0b\x32\x13.PBGuildManorRefNpc\"-\n\x10PBGuildInvadeNpc\x12\x19\n\x11invade_group_name\x18\x01 \x01(\t\"b\n\rPBGuildInvade\x12%\n\ninvade_npc\x18\x01 \x03(\x0b\x32\x11.PBGuildInvadeNpc\x12*\n\x0finvade_npc_list\x18\x02 \x03(\x0b\x32\x11.PBGuildInvadeNpc\"\xfc\x02\n\x0fPBGuildManorCfg\x12\x15\n\rdungeon_sheet\x18\x01 \x01(\t\x12\x0e\n\x06map_id\x18\x02 \x01(\x11\x12\x0c\n\x04posx\x18\x03 \x01(\x11\x12\x0c\n\x04posy\x18\x04 \x01(\x11\x12\x17\n\x0f\x66ire_open_count\x18\x05 \x01(\x11\x12\x17\n\x0f\x66ire_exist_time\x18\x06 \x01(\x11\x12\x19\n\x11\x66ire_exp_interval\x18\x07 \x01(\x11\x12\x19\n\x11\x66ire_maxexp_count\x18\x08 \x01(\x11\x12\x16\n\x0e\x66ire_exp_sheet\x18\t \x01(\t\x12/\n\x12\x66ire_buff_exp_list\x18\n \x03(\x0b\x32\x13.PBGuildFireBuffExp\x12&\n\rfire_ref_info\x18\x0b \x03(\x0b\x32\x0f.PBGuildFireRef\x12#\n\x0binvade_info\x18\x0c \x01(\x0b\x32\x0e.PBGuildInvade\x12(\n\x0bstatue_info\x18\r \x01(\x0b\x32\x13.PBGuildManorStatue\"{\n\x12PBGuildManorStatue\x12\x12\n\ngroup_name\x18\x01 \x01(\t\x12\x12\n\nsheet_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65\x66\x61ult_vpa\x18\x03 \x01(\x04\x12\x13\n\x0b\x64\x65\x66\x61ult_vpb\x18\x04 \x01(\x04\x12\x13\n\x0b\x64\x65\x66\x61ult_vpc\x18\x05 \x01(\x04')
+  serialized_pb='\n\x10tmpl_guild.proto\x1a\x0ftmpl_base.proto\x1a\x10msg_common.proto\x1a\x0fmsg_guild.proto\";\n\x18PBGuildEverydayGetReward\x12\x12\n\nitem_sheet\x18\x01 \x01(\t\x12\x0b\n\x03num\x18\x02 \x01(\x05\"\xc5\x06\n\rPBConfigGuild\x12/\n\x0f\x63reation_config\x18\x01 \x01(\x0b\x32\x16.PBGuildCreationConfig\x12\'\n\x0bjoin_config\x18\x02 \x01(\x0b\x32\x12.PBGuildJoinConfig\x12-\n\x0e\x64isband_config\x18\x03 \x01(\x0b\x32\x15.PBGuildDisbandConfig\x12)\n\x0clevel_config\x18\x04 \x03(\x0b\x32\x13.PBGuildLevelConfig\x12+\n\rdonate_config\x18\x05 \x01(\x0b\x32\x14.PBGuildDonateConfig\x12+\n\rreward_config\x18\x06 \x01(\x0b\x32\x14.PBGuildRewardConfig\x12$\n\x0c\x62\x61sic_salary\x18\x07 \x03(\x0b\x32\x0e.PBBasicSalary\x12+\n\x0eguild_building\x18\x08 \x01(\x0b\x32\x13.PBGuildBuildingCfg\x12\x1e\n\tguild_exp\x18\t \x03(\x0b\x32\x0b.PBGuildExp\x12\x1a\n\x12\x63reation_coin_cost\x18\x0b \x01(\x05\x12\x1d\n\x15\x63reation_diamond_cost\x18\x0c \x01(\x05\x12\x19\n\x11max_applied_guild\x18\r \x01(\x05\x12\x15\n\rquit_guild_cd\x18\x0e \x01(\x05\x12\x16\n\x0eretain_data_cd\x18\x0f \x01(\x05\x12\x18\n\x10mission_group_id\x18\x10 \x01(\x05\x12\x14\n\x0c\x63reate_level\x18\x11 \x01(\x05\x12\x12\n\njoin_level\x18\x12 \x01(\x05\x12\x12\n\ndismiss_cd\x18\x13 \x01(\r\x12\"\n\x05\x62\x61sic\x18\x14 \x01(\x0b\x32\x13.PBGuildBasicConfig\x12&\n\x0cstore_config\x18\x15 \x01(\x0b\x32\x10.PBGuildStoreCfg\x12(\n\nchange_job\x18\x16 \x01(\x0b\x32\x14.PBGuildChangeJobCfg\x12\x33\n\x12\x62oss_damage_reward\x18\x17 \x01(\x0b\x32\x17.PBGuildDamageRewardCfg\x12+\n\x0eguild_liveness\x18\x18 \x01(\x0b\x32\x13.PBGuildLivenessCfg\"\x84\x01\n\x15PBGuildCreationConfig\x12\x11\n\tcoin_cost\x18\x01 \x01(\x05\x12\x14\n\x0c\x64iamond_cost\x18\x02 \x01(\x05\x12\x16\n\x0erequired_level\x18\x03 \x01(\x05\x12\x14\n\x0cmin_name_len\x18\x04 \x01(\x05\x12\x14\n\x0cmax_name_len\x18\x05 \x01(\x05\"?\n\x11PBGuildJoinConfig\x12\x16\n\x0erequired_level\x18\x03 \x01(\x05\x12\x12\n\ncd_seconds\x18\x04 \x01(\r\"6\n\x14PBGuildDisbandConfig\x12\x1e\n\x16max_no_maintenance_day\x18\x01 \x01(\r\"\x82\x02\n\x12PBGuildLevelConfig\x12\x10\n\x08level_id\x18\x01 \x01(\x05\x12\x16\n\x0emax_member_num\x18\x02 \x01(\x05\x12\x17\n\x0fmax_vice_leader\x18\x03 \x01(\x05\x12\x18\n\x10maintenance_cost\x18\x04 \x01(\x05\x12\x1e\n\x16maintenance_period_day\x18\x05 \x01(\x05\x12\x1a\n\x12levelup_money_cost\x18\x06 \x01(\x05\x12\x11\n\tguild_exp\x18\x07 \x01(\x05\x12\x15\n\rhistory_money\x18\x08 \x01(\x05\x12)\n\x06reward\x18\t \x03(\x0b\x32\x19.PBGuildEverydayGetReward\"\x8e\x01\n\x13PBGuildDonateConfig\x12\x11\n\titem_rate\x18\t \x01(\x05\x12\x11\n\tblue_rate\x18\n \x01(\x05\x12\x19\n\x11\x63ontribution_rate\x18\x0b \x01(\x05\x12\x1a\n\x12\x64\x65\x66\x61ult_item_count\x18\x0c \x01(\x05\x12\x1a\n\x12\x64\x65\x66\x61ult_blue_count\x18\r \x01(\x05\"O\n\x13PBGuildRewardConfig\x12\x14\n\x0cnormal_value\x18\x01 \x01(\x05\x12\x0e\n\x06\x66\x61\x63tor\x18\x02 \x01(\x05\x12\x12\n\nmin_contri\x18\x03 \x01(\x05\"1\n\rPBBasicSalary\x12\x10\n\x08guild_lv\x18\x01 \x01(\x05\x12\x0e\n\x06salary\x18\x02 \x01(\x05\"\xc3\x02\n\x12PBGuildBuildingCfg\x12\x14\n\x0c\x66inish_times\x18\x01 \x01(\x05\x12\x1a\n\x12\x64\x61ily_reward_times\x18\x02 \x01(\x05\x12!\n\x08\x62uilding\x18\x03 \x03(\x0b\x32\x0f.PBBuildingTask\x12\x35\n\x15publish_cost_multiple\x18\x05 \x03(\x0b\x32\x16.PBPublishCostMultiple\x12%\n\x0bskill_study\x18\x06 \x03(\x0b\x32\x10.PBSkillStudyCfg\x12%\n\x0bskill_learn\x18\x07 \x03(\x0b\x32\x10.PBSkillLearnCfg\x12\x1c\n\x05\x62less\x18\x08 \x03(\x0b\x32\r.PBGuildBless\x12\x1d\n\x08\x64runkery\x18\t \x01(\x0b\x32\x0b.PBDrunkery\x12\x16\n\x03\x64ye\x18\n \x01(\x0b\x32\t.PBDyeCfg\"\x9a\x01\n\x0ePBBuildingTask\x12\x0c\n\x04type\x18\x01 \x01(\x05\x12\x0c\n\x04icon\x18\x02 \x01(\t\x12\x12\n\nicon_atlas\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x0c\n\x04\x64\x65sc\x18\x05 \x01(\t\x12\x12\n\nopen_level\x18\x06 \x01(\x05\x12(\n\nlevel_info\x18\x07 \x03(\x0b\x32\x14.PBBuildingLevelInfo\"b\n\x13PBBuildingLevelInfo\x12\r\n\x05level\x18\x01 \x01(\x05\x12\x19\n\x11\x63ost_guild_contri\x18\x03 \x01(\x05\x12\x13\n\x0bguild_level\x18\x04 \x01(\x05\x12\x0c\n\x04\x64\x65sc\x18\x05 \x01(\t\"Q\n\x15PBPublishCostMultiple\x12\x13\n\x0bstart_times\x18\x01 \x01(\x05\x12\x11\n\tend_times\x18\x02 \x01(\x05\x12\x10\n\x08multiple\x18\x03 \x01(\x05\"K\n\x0fPBSkillStudyCfg\x12\x11\n\tsecial_id\x18\x01 \x01(\x05\x12%\n\nstudy_info\x18\x02 \x03(\x0b\x32\x11.PBGSStudyInfoCfg\"r\n\x10PBGSStudyInfoCfg\x12\r\n\x05level\x18\x01 \x01(\x05\x12\x19\n\x11\x63ost_guild_contri\x18\x02 \x01(\x05\x12\x0f\n\x07\x63\x64_time\x18\x03 \x01(\x05\x12#\n\tcondition\x18\x04 \x03(\x0b\x32\x10.PBGSUpCondition\"@\n\x0fPBGSUpCondition\x12\x15\n\rbuilding_type\x18\x01 \x01(\x05\x12\x16\n\x0e\x62uilding_level\x18\x02 \x01(\x05\"K\n\x0fPBSkillLearnCfg\x12\x11\n\tsecial_id\x18\x01 \x01(\x05\x12%\n\nlearn_info\x18\x02 \x03(\x0b\x32\x11.PBGSLearnInfoCfg\":\n\x10PBGSLearnInfoCfg\x12\r\n\x05level\x18\x01 \x01(\x05\x12\x17\n\x0f\x63ost_own_contri\x18\x03 \x01(\x05\"Y\n\x0cPBGuildBless\x12\r\n\x05level\x18\x01 \x01(\x05\x12\r\n\x05\x63ount\x18\x02 \x01(\x05\x12\x17\n\x0f\x63ost_own_contri\x18\x03 \x01(\x05\x12\x12\n\naward_loot\x18\x04 \x01(\t\"\xa0\x02\n\nPBDrunkery\x12\x12\n\nmax_bottle\x18\x01 \x01(\x05\x12\r\n\x05mapId\x18\x02 \x01(\x05\x12\x0e\n\x06pointX\x18\x03 \x01(\x02\x12\x0e\n\x06pointY\x18\x04 \x01(\x02\x12\x0e\n\x06pointZ\x18\x05 \x01(\x02\x12\x12\n\nper_bottle\x18\x06 \x01(\x05\x12\x19\n\x11\x62\x61nquet_exit_time\x18\x07 \x01(\x05\x12\x1e\n\twine_type\x18\x08 \x03(\x0b\x32\x0b.PBWineType\x12 \n\x06parter\x18\t \x03(\x0b\x32\x10.PBBanquetParter\x12$\n\x0c\x62\x61nquet_cost\x18\n \x03(\x0b\x32\x0e.PBBanquetCost\x12(\n\nlevel_info\x18\x0b \x03(\x0b\x32\x14.PBDrunkeryLevelInfo\"\x8f\x01\n\nPBWineType\x12\x0c\n\x04type\x18\x01 \x01(\x05\x12\x16\n\x0e\x64runkery_level\x18\x03 \x01(\x05\x12\x17\n\x0f\x63ost_own_contri\x18\x04 \x01(\x05\x12\x0f\n\x07\x63\x64_time\x18\x05 \x01(\x05\x12\x0c\n\x04icon\x18\x07 \x01(\t\x12\x12\n\nicon_atlas\x18\x08 \x01(\t\x12\x0f\n\x07\x65xp_cfg\x18\t \x01(\t\"^\n\x13PBDrunkeryLevelInfo\x12\x16\n\x0e\x64runkery_level\x18\x01 \x01(\x05\x12\x16\n\x0emax_open_count\x18\x02 \x01(\x05\x12\x17\n\x0fmake_wine_count\x18\x03 \x01(\x05\"K\n\x0fPBBanquetParter\x12\x11\n\tmin_count\x18\x01 \x01(\x05\x12\x11\n\tmax_count\x18\x02 \x01(\x05\x12\x12\n\nextend_exp\x18\x03 \x01(\x02\"9\n\rPBBanquetCost\x12\x12\n\nopen_count\x18\x01 \x01(\x05\x12\x14\n\x0cguild_contri\x18\x02 \x01(\x05\"=\n\nPBGuildExp\x12\"\n\x06origin\x18\x01 \x01(\x0e\x32\x12.PBEGuildExpOrigin\x12\x0b\n\x03\x65xp\x18\x02 \x01(\x05\"\xd8\x01\n\x0ePBGuildBossCfg\x12\x11\n\tmax_count\x18\x01 \x01(\x05\x12\x13\n\x0blimit_level\x18\x02 \x01(\x05\x12\x1f\n\nguild_boss\x18\x03 \x03(\x0b\x32\x0b.PBGBossCfg\x12\"\n\nnpc_adjust\x18\x05 \x03(\x0b\x32\x0e.PBGBNPCAdjust\x12\x13\n\x0brank_notice\x18\x06 \x01(\x05\x12\"\n\nopen_count\x18\x07 \x03(\x0b\x32\x0e.PBGBOpenCount\x12 \n\topen_time\x18\x08 \x03(\x0b\x32\r.PBGBOpenTime\"\xce\x01\n\nPBGBossCfg\x12\x12\n\ndungeon_id\x18\x01 \x01(\t\x12 \n\topen_cost\x18\x02 \x03(\x0b\x32\r.PBGBOpenCost\x12\"\n\nlevel_info\x18\x03 \x03(\x0b\x32\x0e.PBGBLevelInfo\x12\x12\n\nboss_sheet\x18\x04 \x01(\t\x12(\n\x10\x63reature_grow_up\x18\x07 \x03(\x0b\x32\x0e.PBGBossGrowUp\x12(\n\raward_percent\x18\x08 \x03(\x0b\x32\x11.PBGBAwardPercent\"7\n\x0cPBGBOpenCost\x12\x12\n\nopen_count\x18\x01 \x01(\x05\x12\x13\n\x0bguild_money\x18\x02 \x01(\x05\"4\n\x0cPBGBOpenTime\x12\x12\n\nstart_time\x18\x01 \x01(\x05\x12\x10\n\x08\x65nd_time\x18\x02 \x01(\x05\"\xe5\x01\n\rPBGBLevelInfo\x12\x19\n\x11guild_level_start\x18\x01 \x01(\x05\x12\x17\n\x0fguild_level_end\x18\x02 \x01(\x05\x12\x15\n\rmin_npc_level\x18\x03 \x01(\x05\x12\x15\n\rmax_npc_level\x18\x04 \x01(\x05\x12\x16\n\x0e\x62\x61se_npc_level\x18\x05 \x01(\x05\x12\x1e\n\nluck_award\x18\x06 \x03(\x0b\x32\n.PBGBAward\x12\x1a\n\x12guild_contribution\x18\x07 \x01(\x05\x12\x1e\n\x16min_guild_contribution\x18\x08 \x01(\x05\"0\n\tPBGBAward\x12\x14\n\x0c\x63onsume_type\x18\x01 \x01(\x05\x12\r\n\x05\x63ount\x18\x02 \x01(\x05\"G\n\x10PBGBAwardPercent\x12\x11\n\tstart_min\x18\x01 \x01(\x05\x12\x0f\n\x07\x65nd_min\x18\x02 \x01(\x05\x12\x0f\n\x07percent\x18\x03 \x01(\x02\"8\n\rPBGBNPCAdjust\x12\x11\n\tkill_time\x18\x01 \x01(\x05\x12\x14\n\x0clevel_change\x18\x02 \x01(\x05\",\n\x08PBDyeCfg\x12 \n\ndye_skills\x18\x01 \x03(\x0b\x32\x0c.PBDyeSkills\" \n\x0bPBDyeSkills\x12\x11\n\tsecial_id\x18\x01 \x01(\x05\"<\n\rPBGBossGrowUp\x12\x13\n\x0bguild_level\x18\x01 \x01(\x05\x12\x16\n\x0e\x63reature_level\x18\x02 \x01(\x05\"3\n\rPBGBOpenCount\x12\x13\n\x0bguild_level\x18\x01 \x01(\x05\x12\r\n\x05\x63ount\x18\x02 \x01(\x05\"~\n\x12PBGuildBasicConfig\x12\x1b\n\x13\x62\x61\x63k_salary_dismiss\x18\x01 \x01(\x05\x12\x1a\n\x12\x62\x61\x63k_salary_notice\x18\x02 \x01(\x05\x12\x19\n\x11\x63hange_leader_day\x18\x03 \x01(\x05\x12\x14\n\x0cno_one_login\x18\x04 \x01(\x05\"[\n\x0fPBGuildStoreCfg\x12\x15\n\rinit_slot_num\x18\x01 \x01(\x11\x12\x14\n\x0cmax_slot_num\x18\x02 \x01(\x11\x12\x1b\n\x13max_history_msg_num\x18\x03 \x01(\x11\"&\n\x10PBGuildChangeJob\x12\x12\n\nchange_job\x18\x01 \x01(\x11\"b\n\x0ePBGuildJobList\x12\x11\n\tguild_job\x18\x01 \x01(\x11\x12\x11\n\tjob_count\x18\x02 \x01(\x11\x12*\n\x0f\x63hange_job_info\x18\x03 \x03(\x0b\x32\x11.PBGuildChangeJob\"[\n\x13PBGuildChangeJobCfg\x12(\n\x0f\x63hange_job_list\x18\x01 \x03(\x0b\x32\x0f.PBGuildJobList\x12\x1a\n\x12\x66lower_title_sheet\x18\x02 \x01(\t\":\n\x12PBGuildFireBuffExp\x12\x0f\n\x07\x62uff_id\x18\x01 \x01(\x11\x12\x13\n\x0b\x61\x64\x64_exp_pro\x18\x02 \x01(\x11\"n\n\x12PBGuildManorRefNpc\x12\x12\n\ngroup_name\x18\x01 \x01(\t\x12\x0e\n\x06map_id\x18\x02 \x01(\x05\x12#\n\x08pos_list\x18\x03 \x03(\x0b\x32\x11.PBTemplateVector\x12\x0f\n\x07line_id\x18\x04 \x01(\x05\"M\n\x0ePBGuildFireRef\x12\x10\n\x08ref_time\x18\x01 \x01(\x11\x12)\n\x0cref_npc_info\x18\x02 \x03(\x0b\x32\x13.PBGuildManorRefNpc\"-\n\x10PBGuildInvadeNpc\x12\x19\n\x11invade_group_name\x18\x01 \x01(\t\"b\n\rPBGuildInvade\x12%\n\ninvade_npc\x18\x01 \x03(\x0b\x32\x11.PBGuildInvadeNpc\x12*\n\x0finvade_npc_list\x18\x02 \x03(\x0b\x32\x11.PBGuildInvadeNpc\"\xfc\x02\n\x0fPBGuildManorCfg\x12\x15\n\rdungeon_sheet\x18\x01 \x01(\t\x12\x0e\n\x06map_id\x18\x02 \x01(\x11\x12\x0c\n\x04posx\x18\x03 \x01(\x11\x12\x0c\n\x04posy\x18\x04 \x01(\x11\x12\x17\n\x0f\x66ire_open_count\x18\x05 \x01(\x11\x12\x17\n\x0f\x66ire_exist_time\x18\x06 \x01(\x11\x12\x19\n\x11\x66ire_exp_interval\x18\x07 \x01(\x11\x12\x19\n\x11\x66ire_maxexp_count\x18\x08 \x01(\x11\x12\x16\n\x0e\x66ire_exp_sheet\x18\t \x01(\t\x12/\n\x12\x66ire_buff_exp_list\x18\n \x03(\x0b\x32\x13.PBGuildFireBuffExp\x12&\n\rfire_ref_info\x18\x0b \x03(\x0b\x32\x0f.PBGuildFireRef\x12#\n\x0binvade_info\x18\x0c \x01(\x0b\x32\x0e.PBGuildInvade\x12(\n\x0bstatue_info\x18\r \x01(\x0b\x32\x13.PBGuildManorStatue\"{\n\x12PBGuildManorStatue\x12\x12\n\ngroup_name\x18\x01 \x01(\t\x12\x12\n\nsheet_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65\x66\x61ult_vpa\x18\x03 \x01(\x04\x12\x13\n\x0b\x64\x65\x66\x61ult_vpb\x18\x04 \x01(\x04\x12\x13\n\x0b\x64\x65\x66\x61ult_vpc\x18\x05 \x01(\x04\"V\n\x14PBMaxDamageRewardCfg\x12\x0c\n\x04rank\x18\x01 \x01(\x11\x12\x30\n\x0breward_list\x18\x02 \x01(\x0b\x32\x1b.PBTemplateItemQuantityList\"\x9e\x02\n\x16PBGuildDamageRewardCfg\x12\x30\n\x11max_damage_reward\x18\x01 \x03(\x0b\x32\x15.PBMaxDamageRewardCfg\x12\x34\n\x0flast_hit_reward\x18\x02 \x01(\x0b\x32\x1b.PBTemplateItemQuantityList\x12&\n\x1emax_damage_reward_everyday_cnt\x18\x03 \x01(\x11\x12$\n\x1clast_hit_reward_everyday_cnt\x18\x04 \x01(\x11\x12\'\n\x1fmax_damage_reward_creature_list\x18\x05 \x03(\t\x12%\n\x1dlast_hit_reward_creature_list\x18\x06 \x03(\t\"y\n\x10PBLivenessReward\x12\n\n\x02id\x18\x01 \x01(\r\x12\x10\n\x08liveness\x18\x02 \x01(\x11\x12\x15\n\rbg_srite_name\x18\x03 \x01(\t\x12\x30\n\x0breward_list\x18\x04 \x01(\x0b\x32\x1b.PBTemplateItemQuantityList\"N\n\x13PBLivenessRewardCfg\x12\x14\n\x0cmax_liveness\x18\x01 \x01(\x11\x12!\n\x06reward\x18\x02 \x03(\x0b\x32\x11.PBLivenessReward\"I\n\x13PBSalaryLivenessCfg\x12\x14\n\x0cper_liveness\x18\x01 \x01(\x11\x12\x1c\n\x14max_liveness_per_day\x18\x02 \x01(\x11\"e\n\x15PBDonationLivenessCfg\x12\x14\n\x0cper_liveness\x18\x01 \x01(\x11\x12\x1c\n\x14max_liveness_per_day\x18\x02 \x01(\x11\x12\x18\n\x10\x61\x64\x64_liveness_cnt\x18\x03 \x01(\x11\"_\n\x15PBActivityLivenessCfg\x12\x12\n\ndungeon_id\x18\x01 \x01(\t\x12\x14\n\x0cper_liveness\x18\x02 \x01(\x11\x12\x1c\n\x14max_liveness_per_day\x18\x03 \x01(\x11\"\xc3\x01\n\x15PBWildBossLivenessCfg\x12\x13\n\x0b\x63reature_id\x18\x01 \x01(\t\x12\x32\n\x17max_damage_liveness_cfg\x18\x02 \x03(\x0b\x32\x11.PBMaxDmgLiveness\x12\'\n\x1fmax_max_damage_liveness_per_day\x18\x03 \x01(\x11\x12\x19\n\x11last_hit_liveness\x18\x04 \x01(\x11\x12\x1d\n\x15max_last_hit_liveness\x18\x05 \x01(\x11\"=\n\x10PBMaxDmgLiveness\x12\x0c\n\x04rank\x18\x01 \x01(\x11\x12\x1b\n\x13max_damage_liveness\x18\x02 \x01(\x11\"\xe0\x02\n\x12PBGuildLivenessCfg\x12\x1b\n\x13player_min_liveness\x18\x01 \x01(\x11\x12-\n\x0fsalary_liveness\x18\x02 \x01(\x0b\x32\x14.PBSalaryLivenessCfg\x12\x31\n\x11\x64onation_liveness\x18\x03 \x01(\x0b\x32\x16.PBDonationLivenessCfg\x12\x31\n\x11\x61\x63tivity_liveness\x18\x04 \x03(\x0b\x32\x16.PBActivityLivenessCfg\x12-\n\rboss_liveness\x18\x05 \x03(\x0b\x32\x16.PBWildBossLivenessCfg\x12-\n\x0fliveness_reward\x18\x06 \x01(\x0b\x32\x14.PBLivenessRewardCfg\x12\x1d\n\x15max_all_boss_liveness\x18\x07 \x01(\x11\x12\x1b\n\x13guild_fire_liveness\x18\x08 \x01(\x11')
 
 
 
@@ -208,6 +208,20 @@ _PBCONFIGGUILD = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='boss_damage_reward', full_name='PBConfigGuild.boss_damage_reward', index=21,
+      number=23, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='guild_liveness', full_name='PBConfigGuild.guild_liveness', index=22,
+      number=24, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -218,7 +232,7 @@ _PBCONFIGGUILD = descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=134,
-  serialized_end=873,
+  serialized_end=971,
 )
 
 
@@ -273,8 +287,8 @@ _PBGUILDCREATIONCONFIG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=876,
-  serialized_end=1008,
+  serialized_start=974,
+  serialized_end=1106,
 )
 
 
@@ -308,8 +322,8 @@ _PBGUILDJOINCONFIG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1010,
-  serialized_end=1073,
+  serialized_start=1108,
+  serialized_end=1171,
 )
 
 
@@ -336,8 +350,8 @@ _PBGUILDDISBANDCONFIG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1075,
-  serialized_end=1129,
+  serialized_start=1173,
+  serialized_end=1227,
 )
 
 
@@ -420,8 +434,8 @@ _PBGUILDLEVELCONFIG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1132,
-  serialized_end=1390,
+  serialized_start=1230,
+  serialized_end=1488,
 )
 
 
@@ -476,8 +490,8 @@ _PBGUILDDONATECONFIG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1393,
-  serialized_end=1535,
+  serialized_start=1491,
+  serialized_end=1633,
 )
 
 
@@ -518,8 +532,8 @@ _PBGUILDREWARDCONFIG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1537,
-  serialized_end=1616,
+  serialized_start=1635,
+  serialized_end=1714,
 )
 
 
@@ -553,8 +567,8 @@ _PBBASICSALARY = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1618,
-  serialized_end=1667,
+  serialized_start=1716,
+  serialized_end=1765,
 )
 
 
@@ -637,8 +651,8 @@ _PBGUILDBUILDINGCFG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1670,
-  serialized_end=1993,
+  serialized_start=1768,
+  serialized_end=2091,
 )
 
 
@@ -707,8 +721,8 @@ _PBBUILDINGTASK = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1996,
-  serialized_end=2150,
+  serialized_start=2094,
+  serialized_end=2248,
 )
 
 
@@ -756,8 +770,8 @@ _PBBUILDINGLEVELINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2152,
-  serialized_end=2250,
+  serialized_start=2250,
+  serialized_end=2348,
 )
 
 
@@ -798,8 +812,8 @@ _PBPUBLISHCOSTMULTIPLE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2252,
-  serialized_end=2333,
+  serialized_start=2350,
+  serialized_end=2431,
 )
 
 
@@ -833,8 +847,8 @@ _PBSKILLSTUDYCFG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2335,
-  serialized_end=2410,
+  serialized_start=2433,
+  serialized_end=2508,
 )
 
 
@@ -882,8 +896,8 @@ _PBGSSTUDYINFOCFG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2412,
-  serialized_end=2526,
+  serialized_start=2510,
+  serialized_end=2624,
 )
 
 
@@ -917,8 +931,8 @@ _PBGSUPCONDITION = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2528,
-  serialized_end=2592,
+  serialized_start=2626,
+  serialized_end=2690,
 )
 
 
@@ -952,8 +966,8 @@ _PBSKILLLEARNCFG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2594,
-  serialized_end=2669,
+  serialized_start=2692,
+  serialized_end=2767,
 )
 
 
@@ -987,8 +1001,8 @@ _PBGSLEARNINFOCFG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2671,
-  serialized_end=2729,
+  serialized_start=2769,
+  serialized_end=2827,
 )
 
 
@@ -1036,8 +1050,8 @@ _PBGUILDBLESS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2731,
-  serialized_end=2820,
+  serialized_start=2829,
+  serialized_end=2918,
 )
 
 
@@ -1134,8 +1148,8 @@ _PBDRUNKERY = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2823,
-  serialized_end=3111,
+  serialized_start=2921,
+  serialized_end=3209,
 )
 
 
@@ -1204,8 +1218,8 @@ _PBWINETYPE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3114,
-  serialized_end=3257,
+  serialized_start=3212,
+  serialized_end=3355,
 )
 
 
@@ -1246,8 +1260,8 @@ _PBDRUNKERYLEVELINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3259,
-  serialized_end=3353,
+  serialized_start=3357,
+  serialized_end=3451,
 )
 
 
@@ -1288,8 +1302,8 @@ _PBBANQUETPARTER = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3355,
-  serialized_end=3430,
+  serialized_start=3453,
+  serialized_end=3528,
 )
 
 
@@ -1323,8 +1337,8 @@ _PBBANQUETCOST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3432,
-  serialized_end=3489,
+  serialized_start=3530,
+  serialized_end=3587,
 )
 
 
@@ -1358,8 +1372,8 @@ _PBGUILDEXP = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3491,
-  serialized_end=3552,
+  serialized_start=3589,
+  serialized_end=3650,
 )
 
 
@@ -1412,6 +1426,13 @@ _PBGUILDBOSSCFG = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='open_time', full_name='PBGuildBossCfg.open_time', index=6,
+      number=8, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -1421,8 +1442,8 @@ _PBGUILDBOSSCFG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3555,
-  serialized_end=3737,
+  serialized_start=3653,
+  serialized_end=3869,
 )
 
 
@@ -1484,8 +1505,8 @@ _PBGBOSSCFG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3740,
-  serialized_end=3946,
+  serialized_start=3872,
+  serialized_end=4078,
 )
 
 
@@ -1519,8 +1540,43 @@ _PBGBOPENCOST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3948,
-  serialized_end=4003,
+  serialized_start=4080,
+  serialized_end=4135,
+)
+
+
+_PBGBOPENTIME = descriptor.Descriptor(
+  name='PBGBOpenTime',
+  full_name='PBGBOpenTime',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='start_time', full_name='PBGBOpenTime.start_time', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='end_time', full_name='PBGBOpenTime.end_time', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=4137,
+  serialized_end=4189,
 )
 
 
@@ -1596,8 +1652,8 @@ _PBGBLEVELINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4006,
-  serialized_end=4235,
+  serialized_start=4192,
+  serialized_end=4421,
 )
 
 
@@ -1631,8 +1687,8 @@ _PBGBAWARD = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4237,
-  serialized_end=4285,
+  serialized_start=4423,
+  serialized_end=4471,
 )
 
 
@@ -1673,8 +1729,8 @@ _PBGBAWARDPERCENT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4287,
-  serialized_end=4358,
+  serialized_start=4473,
+  serialized_end=4544,
 )
 
 
@@ -1708,8 +1764,8 @@ _PBGBNPCADJUST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4360,
-  serialized_end=4416,
+  serialized_start=4546,
+  serialized_end=4602,
 )
 
 
@@ -1736,8 +1792,8 @@ _PBDYECFG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4418,
-  serialized_end=4462,
+  serialized_start=4604,
+  serialized_end=4648,
 )
 
 
@@ -1764,8 +1820,8 @@ _PBDYESKILLS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4464,
-  serialized_end=4496,
+  serialized_start=4650,
+  serialized_end=4682,
 )
 
 
@@ -1799,8 +1855,8 @@ _PBGBOSSGROWUP = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4498,
-  serialized_end=4558,
+  serialized_start=4684,
+  serialized_end=4744,
 )
 
 
@@ -1834,8 +1890,8 @@ _PBGBOPENCOUNT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4560,
-  serialized_end=4611,
+  serialized_start=4746,
+  serialized_end=4797,
 )
 
 
@@ -1883,8 +1939,8 @@ _PBGUILDBASICCONFIG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4613,
-  serialized_end=4739,
+  serialized_start=4799,
+  serialized_end=4925,
 )
 
 
@@ -1925,8 +1981,8 @@ _PBGUILDSTORECFG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4741,
-  serialized_end=4832,
+  serialized_start=4927,
+  serialized_end=5018,
 )
 
 
@@ -1953,8 +2009,8 @@ _PBGUILDCHANGEJOB = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4834,
-  serialized_end=4872,
+  serialized_start=5020,
+  serialized_end=5058,
 )
 
 
@@ -1995,8 +2051,8 @@ _PBGUILDJOBLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4874,
-  serialized_end=4972,
+  serialized_start=5060,
+  serialized_end=5158,
 )
 
 
@@ -2030,8 +2086,8 @@ _PBGUILDCHANGEJOBCFG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4974,
-  serialized_end=5065,
+  serialized_start=5160,
+  serialized_end=5251,
 )
 
 
@@ -2065,8 +2121,8 @@ _PBGUILDFIREBUFFEXP = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5067,
-  serialized_end=5125,
+  serialized_start=5253,
+  serialized_end=5311,
 )
 
 
@@ -2114,8 +2170,8 @@ _PBGUILDMANORREFNPC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5127,
-  serialized_end=5237,
+  serialized_start=5313,
+  serialized_end=5423,
 )
 
 
@@ -2149,8 +2205,8 @@ _PBGUILDFIREREF = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5239,
-  serialized_end=5316,
+  serialized_start=5425,
+  serialized_end=5502,
 )
 
 
@@ -2177,8 +2233,8 @@ _PBGUILDINVADENPC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5318,
-  serialized_end=5363,
+  serialized_start=5504,
+  serialized_end=5549,
 )
 
 
@@ -2212,8 +2268,8 @@ _PBGUILDINVADE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5365,
-  serialized_end=5463,
+  serialized_start=5551,
+  serialized_end=5649,
 )
 
 
@@ -2324,8 +2380,8 @@ _PBGUILDMANORCFG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5466,
-  serialized_end=5846,
+  serialized_start=5652,
+  serialized_end=6032,
 )
 
 
@@ -2380,8 +2436,477 @@ _PBGUILDMANORSTATUE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5848,
-  serialized_end=5971,
+  serialized_start=6034,
+  serialized_end=6157,
+)
+
+
+_PBMAXDAMAGEREWARDCFG = descriptor.Descriptor(
+  name='PBMaxDamageRewardCfg',
+  full_name='PBMaxDamageRewardCfg',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='rank', full_name='PBMaxDamageRewardCfg.rank', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='reward_list', full_name='PBMaxDamageRewardCfg.reward_list', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=6159,
+  serialized_end=6245,
+)
+
+
+_PBGUILDDAMAGEREWARDCFG = descriptor.Descriptor(
+  name='PBGuildDamageRewardCfg',
+  full_name='PBGuildDamageRewardCfg',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='max_damage_reward', full_name='PBGuildDamageRewardCfg.max_damage_reward', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='last_hit_reward', full_name='PBGuildDamageRewardCfg.last_hit_reward', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='max_damage_reward_everyday_cnt', full_name='PBGuildDamageRewardCfg.max_damage_reward_everyday_cnt', index=2,
+      number=3, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='last_hit_reward_everyday_cnt', full_name='PBGuildDamageRewardCfg.last_hit_reward_everyday_cnt', index=3,
+      number=4, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='max_damage_reward_creature_list', full_name='PBGuildDamageRewardCfg.max_damage_reward_creature_list', index=4,
+      number=5, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='last_hit_reward_creature_list', full_name='PBGuildDamageRewardCfg.last_hit_reward_creature_list', index=5,
+      number=6, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=6248,
+  serialized_end=6534,
+)
+
+
+_PBLIVENESSREWARD = descriptor.Descriptor(
+  name='PBLivenessReward',
+  full_name='PBLivenessReward',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='id', full_name='PBLivenessReward.id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='liveness', full_name='PBLivenessReward.liveness', index=1,
+      number=2, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='bg_srite_name', full_name='PBLivenessReward.bg_srite_name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='reward_list', full_name='PBLivenessReward.reward_list', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=6536,
+  serialized_end=6657,
+)
+
+
+_PBLIVENESSREWARDCFG = descriptor.Descriptor(
+  name='PBLivenessRewardCfg',
+  full_name='PBLivenessRewardCfg',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='max_liveness', full_name='PBLivenessRewardCfg.max_liveness', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='reward', full_name='PBLivenessRewardCfg.reward', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=6659,
+  serialized_end=6737,
+)
+
+
+_PBSALARYLIVENESSCFG = descriptor.Descriptor(
+  name='PBSalaryLivenessCfg',
+  full_name='PBSalaryLivenessCfg',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='per_liveness', full_name='PBSalaryLivenessCfg.per_liveness', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='max_liveness_per_day', full_name='PBSalaryLivenessCfg.max_liveness_per_day', index=1,
+      number=2, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=6739,
+  serialized_end=6812,
+)
+
+
+_PBDONATIONLIVENESSCFG = descriptor.Descriptor(
+  name='PBDonationLivenessCfg',
+  full_name='PBDonationLivenessCfg',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='per_liveness', full_name='PBDonationLivenessCfg.per_liveness', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='max_liveness_per_day', full_name='PBDonationLivenessCfg.max_liveness_per_day', index=1,
+      number=2, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='add_liveness_cnt', full_name='PBDonationLivenessCfg.add_liveness_cnt', index=2,
+      number=3, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=6814,
+  serialized_end=6915,
+)
+
+
+_PBACTIVITYLIVENESSCFG = descriptor.Descriptor(
+  name='PBActivityLivenessCfg',
+  full_name='PBActivityLivenessCfg',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='dungeon_id', full_name='PBActivityLivenessCfg.dungeon_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='per_liveness', full_name='PBActivityLivenessCfg.per_liveness', index=1,
+      number=2, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='max_liveness_per_day', full_name='PBActivityLivenessCfg.max_liveness_per_day', index=2,
+      number=3, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=6917,
+  serialized_end=7012,
+)
+
+
+_PBWILDBOSSLIVENESSCFG = descriptor.Descriptor(
+  name='PBWildBossLivenessCfg',
+  full_name='PBWildBossLivenessCfg',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='creature_id', full_name='PBWildBossLivenessCfg.creature_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='max_damage_liveness_cfg', full_name='PBWildBossLivenessCfg.max_damage_liveness_cfg', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='max_max_damage_liveness_per_day', full_name='PBWildBossLivenessCfg.max_max_damage_liveness_per_day', index=2,
+      number=3, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='last_hit_liveness', full_name='PBWildBossLivenessCfg.last_hit_liveness', index=3,
+      number=4, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='max_last_hit_liveness', full_name='PBWildBossLivenessCfg.max_last_hit_liveness', index=4,
+      number=5, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=7015,
+  serialized_end=7210,
+)
+
+
+_PBMAXDMGLIVENESS = descriptor.Descriptor(
+  name='PBMaxDmgLiveness',
+  full_name='PBMaxDmgLiveness',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='rank', full_name='PBMaxDmgLiveness.rank', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='max_damage_liveness', full_name='PBMaxDmgLiveness.max_damage_liveness', index=1,
+      number=2, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=7212,
+  serialized_end=7273,
+)
+
+
+_PBGUILDLIVENESSCFG = descriptor.Descriptor(
+  name='PBGuildLivenessCfg',
+  full_name='PBGuildLivenessCfg',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='player_min_liveness', full_name='PBGuildLivenessCfg.player_min_liveness', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='salary_liveness', full_name='PBGuildLivenessCfg.salary_liveness', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='donation_liveness', full_name='PBGuildLivenessCfg.donation_liveness', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='activity_liveness', full_name='PBGuildLivenessCfg.activity_liveness', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='boss_liveness', full_name='PBGuildLivenessCfg.boss_liveness', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='liveness_reward', full_name='PBGuildLivenessCfg.liveness_reward', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='max_all_boss_liveness', full_name='PBGuildLivenessCfg.max_all_boss_liveness', index=6,
+      number=7, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='guild_fire_liveness', full_name='PBGuildLivenessCfg.guild_fire_liveness', index=7,
+      number=8, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=7276,
+  serialized_end=7628,
 )
 
 _PBCONFIGGUILD.fields_by_name['creation_config'].message_type = _PBGUILDCREATIONCONFIG
@@ -2396,6 +2921,8 @@ _PBCONFIGGUILD.fields_by_name['guild_exp'].message_type = _PBGUILDEXP
 _PBCONFIGGUILD.fields_by_name['basic'].message_type = _PBGUILDBASICCONFIG
 _PBCONFIGGUILD.fields_by_name['store_config'].message_type = _PBGUILDSTORECFG
 _PBCONFIGGUILD.fields_by_name['change_job'].message_type = _PBGUILDCHANGEJOBCFG
+_PBCONFIGGUILD.fields_by_name['boss_damage_reward'].message_type = _PBGUILDDAMAGEREWARDCFG
+_PBCONFIGGUILD.fields_by_name['guild_liveness'].message_type = _PBGUILDLIVENESSCFG
 _PBGUILDLEVELCONFIG.fields_by_name['reward'].message_type = _PBGUILDEVERYDAYGETREWARD
 _PBGUILDBUILDINGCFG.fields_by_name['building'].message_type = _PBBUILDINGTASK
 _PBGUILDBUILDINGCFG.fields_by_name['publish_cost_multiple'].message_type = _PBPUBLISHCOSTMULTIPLE
@@ -2416,6 +2943,7 @@ _PBGUILDEXP.fields_by_name['origin'].enum_type = msg_guild_pb2._PBEGUILDEXPORIGI
 _PBGUILDBOSSCFG.fields_by_name['guild_boss'].message_type = _PBGBOSSCFG
 _PBGUILDBOSSCFG.fields_by_name['npc_adjust'].message_type = _PBGBNPCADJUST
 _PBGUILDBOSSCFG.fields_by_name['open_count'].message_type = _PBGBOPENCOUNT
+_PBGUILDBOSSCFG.fields_by_name['open_time'].message_type = _PBGBOPENTIME
 _PBGBOSSCFG.fields_by_name['open_cost'].message_type = _PBGBOPENCOST
 _PBGBOSSCFG.fields_by_name['level_info'].message_type = _PBGBLEVELINFO
 _PBGBOSSCFG.fields_by_name['creature_grow_up'].message_type = _PBGBOSSGROWUP
@@ -2432,6 +2960,17 @@ _PBGUILDMANORCFG.fields_by_name['fire_buff_exp_list'].message_type = _PBGUILDFIR
 _PBGUILDMANORCFG.fields_by_name['fire_ref_info'].message_type = _PBGUILDFIREREF
 _PBGUILDMANORCFG.fields_by_name['invade_info'].message_type = _PBGUILDINVADE
 _PBGUILDMANORCFG.fields_by_name['statue_info'].message_type = _PBGUILDMANORSTATUE
+_PBMAXDAMAGEREWARDCFG.fields_by_name['reward_list'].message_type = tmpl_base_pb2._PBTEMPLATEITEMQUANTITYLIST
+_PBGUILDDAMAGEREWARDCFG.fields_by_name['max_damage_reward'].message_type = _PBMAXDAMAGEREWARDCFG
+_PBGUILDDAMAGEREWARDCFG.fields_by_name['last_hit_reward'].message_type = tmpl_base_pb2._PBTEMPLATEITEMQUANTITYLIST
+_PBLIVENESSREWARD.fields_by_name['reward_list'].message_type = tmpl_base_pb2._PBTEMPLATEITEMQUANTITYLIST
+_PBLIVENESSREWARDCFG.fields_by_name['reward'].message_type = _PBLIVENESSREWARD
+_PBWILDBOSSLIVENESSCFG.fields_by_name['max_damage_liveness_cfg'].message_type = _PBMAXDMGLIVENESS
+_PBGUILDLIVENESSCFG.fields_by_name['salary_liveness'].message_type = _PBSALARYLIVENESSCFG
+_PBGUILDLIVENESSCFG.fields_by_name['donation_liveness'].message_type = _PBDONATIONLIVENESSCFG
+_PBGUILDLIVENESSCFG.fields_by_name['activity_liveness'].message_type = _PBACTIVITYLIVENESSCFG
+_PBGUILDLIVENESSCFG.fields_by_name['boss_liveness'].message_type = _PBWILDBOSSLIVENESSCFG
+_PBGUILDLIVENESSCFG.fields_by_name['liveness_reward'].message_type = _PBLIVENESSREWARDCFG
 DESCRIPTOR.message_types_by_name['PBGuildEverydayGetReward'] = _PBGUILDEVERYDAYGETREWARD
 DESCRIPTOR.message_types_by_name['PBConfigGuild'] = _PBCONFIGGUILD
 DESCRIPTOR.message_types_by_name['PBGuildCreationConfig'] = _PBGUILDCREATIONCONFIG
@@ -2460,6 +2999,7 @@ DESCRIPTOR.message_types_by_name['PBGuildExp'] = _PBGUILDEXP
 DESCRIPTOR.message_types_by_name['PBGuildBossCfg'] = _PBGUILDBOSSCFG
 DESCRIPTOR.message_types_by_name['PBGBossCfg'] = _PBGBOSSCFG
 DESCRIPTOR.message_types_by_name['PBGBOpenCost'] = _PBGBOPENCOST
+DESCRIPTOR.message_types_by_name['PBGBOpenTime'] = _PBGBOPENTIME
 DESCRIPTOR.message_types_by_name['PBGBLevelInfo'] = _PBGBLEVELINFO
 DESCRIPTOR.message_types_by_name['PBGBAward'] = _PBGBAWARD
 DESCRIPTOR.message_types_by_name['PBGBAwardPercent'] = _PBGBAWARDPERCENT
@@ -2480,6 +3020,16 @@ DESCRIPTOR.message_types_by_name['PBGuildInvadeNpc'] = _PBGUILDINVADENPC
 DESCRIPTOR.message_types_by_name['PBGuildInvade'] = _PBGUILDINVADE
 DESCRIPTOR.message_types_by_name['PBGuildManorCfg'] = _PBGUILDMANORCFG
 DESCRIPTOR.message_types_by_name['PBGuildManorStatue'] = _PBGUILDMANORSTATUE
+DESCRIPTOR.message_types_by_name['PBMaxDamageRewardCfg'] = _PBMAXDAMAGEREWARDCFG
+DESCRIPTOR.message_types_by_name['PBGuildDamageRewardCfg'] = _PBGUILDDAMAGEREWARDCFG
+DESCRIPTOR.message_types_by_name['PBLivenessReward'] = _PBLIVENESSREWARD
+DESCRIPTOR.message_types_by_name['PBLivenessRewardCfg'] = _PBLIVENESSREWARDCFG
+DESCRIPTOR.message_types_by_name['PBSalaryLivenessCfg'] = _PBSALARYLIVENESSCFG
+DESCRIPTOR.message_types_by_name['PBDonationLivenessCfg'] = _PBDONATIONLIVENESSCFG
+DESCRIPTOR.message_types_by_name['PBActivityLivenessCfg'] = _PBACTIVITYLIVENESSCFG
+DESCRIPTOR.message_types_by_name['PBWildBossLivenessCfg'] = _PBWILDBOSSLIVENESSCFG
+DESCRIPTOR.message_types_by_name['PBMaxDmgLiveness'] = _PBMAXDMGLIVENESS
+DESCRIPTOR.message_types_by_name['PBGuildLivenessCfg'] = _PBGUILDLIVENESSCFG
 
 class PBGuildEverydayGetReward(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
@@ -2649,6 +3199,12 @@ class PBGBOpenCost(message.Message):
   
   # @@protoc_insertion_point(class_scope:PBGBOpenCost)
 
+class PBGBOpenTime(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBGBOPENTIME
+  
+  # @@protoc_insertion_point(class_scope:PBGBOpenTime)
+
 class PBGBLevelInfo(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _PBGBLEVELINFO
@@ -2768,5 +3324,65 @@ class PBGuildManorStatue(message.Message):
   DESCRIPTOR = _PBGUILDMANORSTATUE
   
   # @@protoc_insertion_point(class_scope:PBGuildManorStatue)
+
+class PBMaxDamageRewardCfg(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMAXDAMAGEREWARDCFG
+  
+  # @@protoc_insertion_point(class_scope:PBMaxDamageRewardCfg)
+
+class PBGuildDamageRewardCfg(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBGUILDDAMAGEREWARDCFG
+  
+  # @@protoc_insertion_point(class_scope:PBGuildDamageRewardCfg)
+
+class PBLivenessReward(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBLIVENESSREWARD
+  
+  # @@protoc_insertion_point(class_scope:PBLivenessReward)
+
+class PBLivenessRewardCfg(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBLIVENESSREWARDCFG
+  
+  # @@protoc_insertion_point(class_scope:PBLivenessRewardCfg)
+
+class PBSalaryLivenessCfg(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBSALARYLIVENESSCFG
+  
+  # @@protoc_insertion_point(class_scope:PBSalaryLivenessCfg)
+
+class PBDonationLivenessCfg(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBDONATIONLIVENESSCFG
+  
+  # @@protoc_insertion_point(class_scope:PBDonationLivenessCfg)
+
+class PBActivityLivenessCfg(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBACTIVITYLIVENESSCFG
+  
+  # @@protoc_insertion_point(class_scope:PBActivityLivenessCfg)
+
+class PBWildBossLivenessCfg(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBWILDBOSSLIVENESSCFG
+  
+  # @@protoc_insertion_point(class_scope:PBWildBossLivenessCfg)
+
+class PBMaxDmgLiveness(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMAXDMGLIVENESS
+  
+  # @@protoc_insertion_point(class_scope:PBMaxDmgLiveness)
+
+class PBGuildLivenessCfg(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBGUILDLIVENESSCFG
+  
+  # @@protoc_insertion_point(class_scope:PBGuildLivenessCfg)
 
 # @@protoc_insertion_point(module_scope)

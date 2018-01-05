@@ -68,4 +68,5 @@ def Get_Player_Equip(DB_HOST, DB_USER, DB_PWD, db_name,blob_name,insert_db):
     dest_conn.close()
 #Get_Player_Equip("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','char_blob_first_month','pet_info')
 #Get_Player_Equip("103.244.235.249", 'sszj', 'DR9m_wqsgF8a','data_stat_ss', 'char_blob_middle_month','pet_info')
-Get_Player_Equip("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','char_blob_last_month','pet_info')
+#Get_Player_Equip("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','char_blob_last_month','pet_info')
+Get_Player_Equip("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','char_blob','char_pet')

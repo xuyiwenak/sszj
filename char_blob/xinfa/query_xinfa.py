@@ -15,7 +15,7 @@ def query_role_gem():
       dest_cur = dest_conn.cursor()
       dest_cur.execute('SET NAMES UTF8')
       sql = "select gateway_id, pf_role_id, xinfa_data from\
-      char_blob_middle_month where level >= 110"
+      char_blob where level >= 110"
       dest_cur.execute(sql)
       for row in dest_cur.fetchall():
          gateway_id = row[0]
@@ -26,7 +26,7 @@ def query_role_gem():
          for xinfa_one in xinfa_data.data_list:
              slot_id = xinfa_one.slot_id
              cur_level = xinfa_one.cur_level
-             dest_sql = "insert into xinfa_stat values(%d,  %d,  %d, %d)" % (gateway_id, role_id, slot_id, cur_level)
+             dest_sql = "insert into char_xinfa values(%d,  %d,  %d, %d)" % (gateway_id, role_id, slot_id, cur_level)
              dest_cur.execute(dest_sql)
 
     except MySQLdb.Error, e:

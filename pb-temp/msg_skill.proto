@@ -39,6 +39,7 @@ message PBAllSkill
 	repeated PBSkillInfo	unique_skill= 4;// 绝技技能;
 
 	repeated PBSkillInfo	marry_skill = 5;// 夫妻技能;
+	repeated PBSkillInfo	magicpet_skill = 6; //灵宝技能;
 }
 
 /// 上线给客户端发送

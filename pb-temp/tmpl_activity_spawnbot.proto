@@ -23,6 +23,7 @@ message PBActivitySpawnBotItemConfig
 	optional int32							map_id			= 2;	// 地图ID
 	repeated PBTemplateVector				pos_list		= 3;	// 怪物地点
 	optional int32							line_id			= 4;	// 线ID
+	optional string                         wild_boss_cfg = 5;     // 野外boss的配置
 }
 
 message PBActivitySpawnBotItemListConfig

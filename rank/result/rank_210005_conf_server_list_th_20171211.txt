@@ -1,0 +1,16 @@
+排行榜level网关210005
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,w@sina.com,100030606,34011,??????,2489, 1, 3, 1, 0, 0
+210,636228124785,100030597,33887,???�???�,2496, 1, 2, 3, 0, 0
+排行榜combat_power网关210005
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,636228124785,100030597,33887,???�???�,2496, 1, 2, 3, 0, 0
+210,w@sina.com,100030606,34011,??????,2489, 1, 3, 1, 0, 0
+排行榜charm_point网关210005
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,636228124785,100030597,33887,???�???�,2496, 1, 2, 3, 0, 0
+210,w@sina.com,100030606,34011,??????,2489, 1, 3, 1, 0, 0
+排行榜pvp_score网关210005
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,w@sina.com,100030606,34011,??????,2489, 1, 3, 1, 0, 0
+210,636228124785,100030597,33887,???�???�,2496, 1, 2, 3, 0, 0

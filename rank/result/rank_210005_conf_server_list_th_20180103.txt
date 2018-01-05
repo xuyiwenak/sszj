@@ -1,0 +1,48 @@
+排行榜level网关210005
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,vvipzakub@gmail.com,100034339,70398,??????,206390, 97, 1, 1, 30, 441
+210,stabilossit3@gmail.com,100034344,70436,????????,224297, 97, 3, 1, 671, 1037
+210,facebook100000053,100000053,70402,?????,195012, 96, 1, 3, 243, 27
+210,apiwatnada@gmail.com,100056012,71406,~StaR~,210846, 96, 2, 1, 515, 127
+210,a-chi-39@hotmail.com,100028261,71827,?`????????,177624, 96, 2, 1, 60, 383
+210,jaymart2521@gmail.com,100026840,70395,?????????,187296, 95, 1, 3, 377, 166
+210,facebook100009343,100009343,70467,-Redzone-,189358, 95, 2, 3, 0, 119
+210,craemy2015@hotmail.com,100055978,71348,~�Cawakii�~~,194493, 95, 2, 1, 30, 4194
+210,mmm_m2533@hotmail.com,100030420,71725,????Big?M????,191521, 95, 1, 1, 90, 117
+210,facebook100003603,100003603,71239,�??????�,170685, 94, 1, 3, 0, 135
+排行榜combat_power网关210005
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,stabilossit3@gmail.com,100034344,70436,????????,224297, 97, 3, 1, 671, 1037
+210,gggsaknarin772529@gmail.com,100009233,71770,??????,212279, 94, 4, 3, 387, 183
+210,apiwatnada@gmail.com,100056012,71406,~StaR~,210846, 96, 2, 1, 515, 127
+210,nzvrzo1@hotmail.com,100045592,70420,??tty?,207191, 88, 1, 3, 0, 7884
+210,vvipzakub@gmail.com,100034339,70398,??????,206390, 97, 1, 1, 30, 441
+210,rojn042529@gmail.com,100054714,71382,-??????-,206241, 93, 4, 1, 30, 171
+210,facebook100000053,100000053,70402,?????,195012, 96, 1, 3, 243, 27
+210,craemy2015@hotmail.com,100055978,71348,~�Cawakii�~~,194493, 95, 2, 1, 30, 4194
+210,mmm_m2533@hotmail.com,100030420,71725,????Big?M????,191521, 95, 1, 1, 90, 117
+210,facebook100009343,100009343,70467,-Redzone-,189358, 95, 2, 3, 0, 119
+排行榜charm_point网关210005
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,nzvrzo1@hotmail.com,100045592,70420,??tty?,207191, 88, 1, 3, 0, 7884
+210,craemy2015@hotmail.com,100055978,71348,~�Cawakii�~~,194493, 95, 2, 1, 30, 4194
+210,gggjetholgibbs9877@gmail.com,100001740,71224,??????????,131831, 83, 4, 2, 30, 2763
+210,stabilossit3@gmail.com,100034344,70436,????????,224297, 97, 3, 1, 671, 1037
+210,facebook100008905,100008905,71426,Eva�,167200, 90, 2, 1, 565, 901
+210,hurliwz37@gmail.com,100055938,70867,?????????,186151, 93, 4, 1, 0, 683
+210,kwangkatoonpek3@gmail.com,100055699,70465,?????????,183057, 91, 2, 2, 0, 499
+210,facebook100058062,100058062,75334,[Indy],109916, 76, 4, 2, 485, 465
+210,vvipzakub@gmail.com,100034339,70398,??????,206390, 97, 1, 1, 30, 441
+210,a-chi-39@hotmail.com,100028261,71827,?`????????,177624, 96, 2, 1, 60, 383
+排行榜pvp_score网关210005
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,tanesnim@gmail.com,100000635,72438,???????,158774, 85, 3, 2, 1179, 0
+210,291826565298,100047362,70685,w?????,154186, 86, 2, 2, 883, 182
+210,gggtanaphonarm@hotmail.com,100047668,70887,HP-Arm,102106, 77, 2, 1, 718, 36
+210,facebook100026002,100026002,72761,????***,123512, 81, 2, 2, 675, 0
+210,stabilossit3@gmail.com,100034344,70436,????????,224297, 97, 3, 1, 671, 1037
+210,toomtoomtoom1999@gmail.com,100030231,71602,s????o,113506, 78, 4, 3, 636, 18
+210,facebook100050103,100050103,71160,???????,80060, 78, 2, 1, 618, 0
+210,gggsupachai_za1@hotmail.com,100001351,71315,?IMPR?VISE?,121013, 80, 1, 3, 598, 0
+210,kespokaew@hotmail.com,100044038,70432,`~o???:??o?~`,141307, 86, 4, 3, 587, 0
+210,facebook100008905,100008905,71426,Eva�,167200, 90, 2, 1, 565, 901

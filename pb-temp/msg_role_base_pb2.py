@@ -12,7 +12,7 @@ import msg_login_pb2
 DESCRIPTOR = descriptor.FileDescriptor(
   name='msg_role_base.proto',
   package='',
-  serialized_pb='\n\x13msg_role_base.proto\x1a\x0fmsg_login.proto\"F\n\x0bPBCrossInfo\x12\x1d\n\x06status\x18\x01 \x01(\x0e\x32\r.ECrossStatus\x12\x18\n\x10\x63ross_gateway_id\x18\x02 \x01(\r\"\xa6\x04\n\nPBRoleBase\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0f\n\x07\x63\x61mp_id\x18\x04 \x01(\r\x12\x0c\n\x04role\x18\x05 \x01(\r\x12\x0e\n\x06gender\x18\x06 \x01(\r\x12\r\n\x05level\x18\x07 \x01(\x11\x12\x0b\n\x03\x65xp\x18\x08 \x01(\x12\x12\x14\n\x0c\x62\x61ttle_score\x18\t \x01(\x11\x12\x11\n\tpvp_score\x18\n \x01(\x11\x12\r\n\x05kills\x18\x0b \x01(\x11\x12\x11\n\tvip_level\x18\x0c \x01(\x11\x12\x0b\n\x03vpa\x18\r \x01(\x04\x12\x0b\n\x03vpb\x18\x0e \x01(\x04\x12\x0b\n\x03vpc\x18\x0f \x01(\x04\x12\x10\n\x08sheet_id\x18\x10 \x01(\r\x12\x1c\n\x06status\x18\x11 \x01(\x0e\x32\x0c.ERoleStatus\x12\x15\n\rlogin_camp_id\x18\x12 \x01(\r\x12\x10\n\x08guild_id\x18\x13 \x01(\x04\x12\x12\n\nguild_name\x18\x14 \x01(\t\x12\x0f\n\x07team_id\x18\x15 \x01(\r\x12\x11\n\thead_icon\x18\x16 \x01(\t\x12\x12\n\ndungeon_id\x18\x18 \x01(\x04\x12\x0e\n\x06map_id\x18\x19 \x01(\x04\x12\x17\n\x0frole_gateway_id\x18\x1a \x01(\r\x12 \n\ncross_info\x18\x1b \x01(\x0b\x32\x0c.PBCrossInfo\x12\x11\n\tplayer_id\x18\x1c \x01(\x04\x12(\n\x0c\x63onnect_type\x18\x1d \x01(\x0e\x32\x12.ELoginConnectType*U\n\x0b\x45RoleStatus\x12\x17\n\x13ROLE_STATUS_OFFLINE\x10\x01\x12\x15\n\x11ROLE_STATUS_CACHE\x10\x02\x12\x16\n\x12ROLE_STATUS_ONLINE\x10\x03*\xcd\x01\n\x0c\x45\x43rossStatus\x12\x17\n\x13\x65nCrossState_Normal\x10\x00\x12&\n\"enCrossState_SendingPrepareRequire\x10\x01\x12\x1f\n\x1b\x65nCrossState_RemotePrepared\x10\x02\x12\x19\n\x15\x65nCrossState_Crossing\x10\x03\x12 \n\x1c\x65nCrossState_LoginedOnRemote\x10\x04\x12\x1e\n\x1a\x65nCrossState_RemoteOffline\x10\x05\x42\x02H\x01')
+  serialized_pb='\n\x13msg_role_base.proto\x1a\x0fmsg_login.proto\"F\n\x0bPBCrossInfo\x12\x1d\n\x06status\x18\x01 \x01(\x0e\x32\r.ECrossStatus\x12\x18\n\x10\x63ross_gateway_id\x18\x02 \x01(\r\"\xee\x04\n\nPBRoleBase\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0f\n\x07\x63\x61mp_id\x18\x04 \x01(\r\x12\x0c\n\x04role\x18\x05 \x01(\r\x12\x0e\n\x06gender\x18\x06 \x01(\r\x12\r\n\x05level\x18\x07 \x01(\x11\x12\x0b\n\x03\x65xp\x18\x08 \x01(\x12\x12\x14\n\x0c\x62\x61ttle_score\x18\t \x01(\x11\x12\x11\n\tpvp_score\x18\n \x01(\x11\x12\r\n\x05kills\x18\x0b \x01(\x11\x12\x11\n\tvip_level\x18\x0c \x01(\x11\x12\x0b\n\x03vpa\x18\r \x01(\x04\x12\x0b\n\x03vpb\x18\x0e \x01(\x04\x12\x0b\n\x03vpc\x18\x0f \x01(\x04\x12\x10\n\x08sheet_id\x18\x10 \x01(\r\x12\x1c\n\x06status\x18\x11 \x01(\x0e\x32\x0c.ERoleStatus\x12\x15\n\rlogin_camp_id\x18\x12 \x01(\r\x12\x10\n\x08guild_id\x18\x13 \x01(\x04\x12\x12\n\nguild_name\x18\x14 \x01(\t\x12\x0f\n\x07team_id\x18\x15 \x01(\r\x12\x11\n\thead_icon\x18\x16 \x01(\t\x12\x12\n\ndungeon_id\x18\x18 \x01(\x04\x12\x0e\n\x06map_id\x18\x19 \x01(\x04\x12\x17\n\x0frole_gateway_id\x18\x1a \x01(\r\x12 \n\ncross_info\x18\x1b \x01(\x0b\x32\x0c.PBCrossInfo\x12\x11\n\tplayer_id\x18\x1c \x01(\x04\x12(\n\x0c\x63onnect_type\x18\x1d \x01(\x0e\x32\x12.ELoginConnectType\x12\x10\n\x08\x63rops_id\x18\x1e \x01(\x04\x12\x1d\n\x15last_create_crop_time\x18\x1f \x01(\r\x12\x15\n\rlast_quittime\x18  \x01(\r*U\n\x0b\x45RoleStatus\x12\x17\n\x13ROLE_STATUS_OFFLINE\x10\x01\x12\x15\n\x11ROLE_STATUS_CACHE\x10\x02\x12\x16\n\x12ROLE_STATUS_ONLINE\x10\x03*\xcd\x01\n\x0c\x45\x43rossStatus\x12\x17\n\x13\x65nCrossState_Normal\x10\x00\x12&\n\"enCrossState_SendingPrepareRequire\x10\x01\x12\x1f\n\x1b\x65nCrossState_RemotePrepared\x10\x02\x12\x19\n\x15\x65nCrossState_Crossing\x10\x03\x12 \n\x1c\x65nCrossState_LoginedOnRemote\x10\x04\x12\x1e\n\x1a\x65nCrossState_RemoteOffline\x10\x05\x42\x02H\x01')
 
 _EROLESTATUS = descriptor.EnumDescriptor(
   name='ERoleStatus',
@@ -35,8 +35,8 @@ _EROLESTATUS = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=665,
-  serialized_end=750,
+  serialized_start=737,
+  serialized_end=822,
 )
 
 
@@ -73,8 +73,8 @@ _ECROSSSTATUS = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=753,
-  serialized_end=958,
+  serialized_start=825,
+  serialized_end=1030,
 )
 
 
@@ -328,6 +328,27 @@ _PBROLEBASE = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='crops_id', full_name='PBRoleBase.crops_id', index=28,
+      number=30, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='last_create_crop_time', full_name='PBRoleBase.last_create_crop_time', index=29,
+      number=31, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='last_quittime', full_name='PBRoleBase.last_quittime', index=30,
+      number=32, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -338,7 +359,7 @@ _PBROLEBASE = descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=113,
-  serialized_end=663,
+  serialized_end=735,
 )
 
 _PBCROSSINFO.fields_by_name['status'].enum_type = _ECROSSSTATUS

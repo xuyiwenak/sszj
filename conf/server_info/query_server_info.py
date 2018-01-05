@@ -2,9 +2,10 @@
 import requests
 import json
 import sys
+import time
 reload(sys)
 sys.setdefaultencoding('utf8')
-filename = "jason.txt"
+filename = "jason_%s.txt" %time.strftime('%Y%m%d',time.localtime(time.time()))
 f = open(filename, "w")
 
 url = "http://idb.linekong.com/ZoneConfig.php"
@@ -49,7 +50,7 @@ jsonData = json.loads(res.content)
 """
 count = 0
 for oneData in jsonData:
-    strData = "%s,%s,%s,%s,%s,%s" %(oneData['id'],oneData['strGatewayId'],oneData['strServiceType'],oneData['strLogIp'],oneData['strDbName'],oneData['strThrTName'])
+    strData = "%s,%s,%s,%s,%s,%s,%s,%s" %(oneData['id'],oneData['strGatewayId'],oneData['strServiceType'],oneData['strWanIp'],oneData['strNeiIP'],oneData['strLogIp'],oneData['strDbName'],oneData['strThrTName'])
     f.write(strData)
     f.write('\n')
     count=count+1
@@ -62,7 +63,7 @@ server_count = get_server_count()
 def get_server_type(index):
        if jsonData[index]['strServiceType'] == 'MasterDB':
            return 1
-       elif jsonData[index]['strServiceType'] == 'GameServer':
+       elif jsonData[index]['strServiceType'] == 'GameServer' or jsonData[index]['strServiceType'] == 'Common':
            return 2
 
 def get_server_gateway(index):
@@ -80,5 +81,5 @@ def get_server_gsip(index):
      if get_server_type(index) == 2:
         #print "server_ip find!"
         return jsonData[index]['strWanIp']
-def get_server_type(index):
+def get_server_game_channel(index):
     return jsonData[index]['strThrTName']

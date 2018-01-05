@@ -508,7 +508,7 @@ message PBMsgSoulStarDecomposeRequest
 {
 	optional int32  mount_slotid	= 1;	
 	optional int32  inv_type	= 2;			// °ü¹üÀàÐÍ;
-	optional int32  bag_slot_id	= 3;
+	repeated int32  bag_slot_id	= 3;
 };
 
 message PBMsgSoulStarDecomposeResponse

@@ -14,7 +14,7 @@ import msg_role_base_pb2
 DESCRIPTOR = descriptor.FileDescriptor(
   name='msg_team.proto',
   package='',
-  serialized_pb='\n\x0emsg_team.proto\x1a\x0emsg_base.proto\x1a\x0emsg_user.proto\x1a\x13msg_role_base.proto\"\xae\x02\n\x11PBMsgTeamBaseData\x12\x0f\n\x07present\x18\x01 \x01(\x08\x12\r\n\x05level\x18\x03 \x01(\x11\x12\x0c\n\x04role\x18\x04 \x01(\x11\x12\x0b\n\x03sex\x18\x05 \x01(\x11\x12\x0e\n\x06hornor\x18\x06 \x01(\x11\x12\x0c\n\x04name\x18\x07 \x01(\x0c\x12\x0f\n\x07\x66ull_id\x18\x08 \x01(\x04\x12\x11\n\tvip_level\x18\t \x01(\x11\x12\x14\n\x0c\x62\x61ttle_score\x18\n \x01(\x11\x12\x12\n\nguide_name\x18\x0b \x01(\t\x12!\n\x0bvisual_prop\x18\x0c \x01(\x0b\x32\x0c.PBMsgVPInfo\x12\x10\n\x08sheet_id\x18\r \x01(\r\x12\x0c\n\x04\x63\x61mp\x18\x0e \x01(\x11\x12\x11\n\thead_icon\x18\x0f \x01(\t\x12\x1c\n\x06status\x18\x10 \x01(\x0e\x32\x0c.ERoleStatus\"S\n\x11PBMsgTeamSyncHPMP\x12\x0e\n\x06\x63ur_hp\x18\x01 \x01(\x11\x12\x0e\n\x06max_hp\x18\x02 \x01(\x11\x12\x0e\n\x06\x63ur_mp\x18\x03 \x01(\x11\x12\x0e\n\x06max_mp\x18\x04 \x01(\x11\"=\n\x10PBMsgTeamSyncPos\x12\x0c\n\x04posX\x18\x01 \x01(\x11\x12\x0c\n\x04posY\x18\x02 \x01(\x11\x12\r\n\x05mapId\x18\x03 \x01(\r\"#\n\x11PBMsgTeamBuffInfo\x12\x0e\n\x06\x62uffId\x18\x01 \x03(\x11\")\n\x15PBMsgTeamBuildRequest\x12\x10\n\x08is_force\x18\x01 \x01(\x08\"*\n\x16PBMsgTeamBuildResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"6\n\x1fPBMsgTeamBuildOppositeTipNotice\x12\x13\n\x0bnotice_code\x18\x01 \x01(\x11\"+\n\x17PBMsgTeamDismissRequest\x12\x10\n\x08is_force\x18\x01 \x01(\x08\",\n\x18PBMsgTeamDismissResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"8\n!PBMsgTeamDismissOppositeTipNotice\x12\x13\n\x0bnotice_code\x18\x01 \x01(\x11\":\n\x1cPBMsgTeamChangeLeaderRequest\x12\x1a\n\x12new_leader_full_id\x18\x01 \x01(\x04\"1\n\x1dPBMsgTeamChangeLeaderResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\")\n\x15PBMsgTeamLeaveRequest\x12\x10\n\x08is_force\x18\x01 \x01(\x08\"*\n\x16PBMsgTeamLeaveResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"6\n\x1fPBMsgTeamLeaveOppositeTipNotice\x12\x13\n\x0bnotice_code\x18\x01 \x01(\x11\".\n\x14PBMsgTeamKickRequest\x12\x16\n\x0ekicked_full_id\x18\x01 \x01(\x04\")\n\x15PBMsgTeamKickResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"3\n\x18PBMsgTeamProposalRequest\x12\x17\n\x0finvatee_full_id\x18\x01 \x01(\x04\"-\n\x19PBMsgTeamProposalResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"h\n\x1ePBMsgTeamProposalExamineNotice\x12\x17\n\x0finvater_full_id\x18\x01 \x01(\x04\x12\x17\n\x0finvatee_full_id\x18\x02 \x01(\x04\x12\x14\n\x0cinvatee_name\x18\x03 \x01(\x0c\"\x81\x01\n%PBMsgTeamProposalExamineAnswerRequest\x12\x17\n\x0finvater_full_id\x18\x01 \x01(\x04\x12\x17\n\x0finvatee_full_id\x18\x02 \x01(\x04\x12&\n\x0b\x61nswer_type\x18\x03 \x01(\x0e\x32\x11.PBTeamAnswerType\":\n&PBMsgTeamProposalExamineAnswerResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"Y\n\x17PBMsgTeamProposalNotice\x12\x17\n\x0finvater_full_id\x18\x01 \x01(\x04\x12\x14\n\x0cinvater_name\x18\x02 \x01(\x0c\x12\x0f\n\x07team_id\x18\x03 \x01(\r\"Y\n\x1ePBMsgTeamProposalAnswerRequest\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12&\n\x0b\x61nswer_type\x18\x02 \x01(\x0e\x32\x11.PBTeamAnswerType\"3\n\x1fPBMsgTeamProposalAnswerResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"A\n\x15PBMsgTeamApplyRequest\x12\x16\n\x0emember_full_id\x18\x01 \x01(\x04\x12\x10\n\x08is_force\x18\x02 \x01(\x08\"*\n\x16PBMsgTeamApplyResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"^\n\x1bPBMsgTeamApplyAnswerRequest\x12\x17\n\x0f\x61pplyer_full_id\x18\x01 \x01(\x04\x12&\n\x0b\x61nswer_type\x18\x02 \x01(\x0e\x32\x11.PBTeamAnswerType\"0\n\x1cPBMsgTeamApplyAnswerResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"W\n\x1dPBMsgTeamBaseDataUpdateNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12%\n\tbase_data\x18\x02 \x01(\x0b\x32\x12.PBMsgTeamBaseData\"W\n\x1dPBMsgTeamSyncHPMPUpdateNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12%\n\thpmp_data\x18\x02 \x01(\x0b\x32\x12.PBMsgTeamSyncHPMP\"T\n\x1cPBMsgTeamSyncPosUpdateNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12#\n\x08pos_data\x18\x02 \x01(\x0b\x32\x11.PBMsgTeamSyncPos\"Z\n!PBMsgTeamSyncBuffInfoUpdateNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12$\n\x08\x62uffInfo\x18\x02 \x01(\x0b\x32\x12.PBMsgTeamBuffInfo\"Q\n\x19PBMsgTeamFlagUpdateNotice\x12\x12\n\nis_in_team\x18\x01 \x01(\x08\x12\x11\n\tleader_id\x18\x02 \x01(\r\x12\r\n\x05my_id\x18\x03 \x01(\r\"-\n\x1aPBMsgTeamMemberClearNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"G\n\x1ePBMsgTeamApplyerBaseDataNotice\x12%\n\tbase_data\x18\x01 \x01(\x0b\x32\x12.PBMsgTeamBaseData\"6\n\x1bPBMsgTeamApplyerClearNotice\x12\x17\n\x0f\x61pplyer_full_id\x18\x01 \x01(\x04\"@\n\x1aPBMsgTeamCallFriendRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\"M\n\x1bPBMsgTeamCallFriendResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1c\n\ncode_param\x18\x02 \x01(\x0b\x32\x08.PBParam\"+\n\x18PBMsgTeamJoinCallRequest\x12\x0f\n\x07team_id\x18\x01 \x01(\x11\"-\n\x19PBMsgTeamJoinCallResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"1\n\x1cPBMsgScreenPlayerInfoRequest\x12\x11\n\tplayer_id\x18\x01 \x03(\x12\"C\n\x1dPBMsgScreenPlayerInfoResponse\x12\"\n\x05infos\x18\x01 \x03(\x0b\x32\x13.PBScreenPlayerInfo\"\xe9\x01\n\x12PBScreenPlayerInfo\x12\r\n\x05level\x18\x01 \x01(\x11\x12\x11\n\tvip_level\x18\x02 \x01(\x11\x12\x11\n\tplayer_id\x18\x03 \x01(\x12\x12\x13\n\x0b\x66ight_power\x18\x04 \x01(\x11\x12\x10\n\x08guild_id\x18\x05 \x01(\x04\x12\x12\n\nguild_name\x18\x06 \x01(\t\x12\x13\n\x0bplayer_name\x18\x07 \x01(\t\x12\x12\n\nplayer_sex\x18\x08 \x01(\x11\x12\x11\n\trole_type\x18\t \x01(\x11\x12\x14\n\x0cmember_count\x18\n \x01(\x11\x12\x11\n\thead_icon\x18\x0b \x01(\t\"k\n\x13PBTeamLeaderMapInfo\x12\x0e\n\x06map_id\x18\x01 \x01(\x11\x12\r\n\x05pos_x\x18\x02 \x01(\x11\x12\r\n\x05pos_y\x18\x03 \x01(\x11\x12\x0f\n\x07line_id\x18\x04 \x01(\x11\x12\x15\n\ris_ride_mount\x18\x05 \x01(\x11\"0\n\x1bPBMsgTeamFollowOrderRequest\x12\x11\n\tis_follow\x18\x01 \x01(\x11\"0\n\x1cPBMsgTeamFollowOrderResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"G\n\x1aPBMsgTeamFollowOrderNotice\x12)\n\x0bleader_info\x18\x01 \x01(\x0b\x32\x14.PBTeamLeaderMapInfo\"6\n!PBMsgTeamMemberFollowOrderRequest\x12\x11\n\tis_accept\x18\x01 \x01(\x11\"t\n\"PBMsgTeamMemberFollowOrderResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tis_follow\x18\x02 \x01(\x11\x12)\n\x0bleader_info\x18\x03 \x01(\x0b\x32\x14.PBTeamLeaderMapInfo\"\'\n%PBMsgTeamMemberFollowEnterListRequest\"d\n&PBMsgTeamMemberFollowEnterListResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x14\n\x0cis_following\x18\x02 \x01(\x11\x12\x12\n\nlist_index\x18\x03 \x01(\x11\"\x1e\n\x1cPBMsgTeamMemberFollowRequest\"o\n\x1dPBMsgTeamMemberFollowResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tis_follow\x18\x02 \x01(\x11\x12)\n\x0bleader_info\x18\x03 \x01(\x0b\x32\x14.PBTeamLeaderMapInfo\"#\n!PBMsgTeamMemberFollowCancelReport\"!\n\x1fPBMsgTeamMemberFollowLoseReport\"2\n PBMsgTeamMemberFollowSpeedReport\x12\x0e\n\x06is_run\x18\x01 \x01(\x11\"\xc3\x01\n\x1fPBMsgTeamMemberFollowInfoNotice\x12\x0c\n\x04type\x18\x01 \x01(\x11\x12\x12\n\nlist_index\x18\x02 \x01(\x11\x12\x14\n\x0cis_following\x18\x03 \x01(\x11\x12)\n\x0bleader_info\x18\x04 \x01(\x0b\x32\x14.PBTeamLeaderMapInfo\x12\x10\n\x08is_mount\x18\x05 \x01(\x11\x12\x14\n\x0cis_autofight\x18\x06 \x01(\x11\x12\x15\n\ris_autofollow\x18\x07 \x01(\x11\"3\n PBMsgTeamMemberAutoFollowRequest\x12\x0f\n\x07is_auto\x18\x01 \x01(\x11\"5\n!PBMsgTeamMemberAutoFollowResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"R\n\x14PBMsgLeaderPosNotice\x12\x11\n\tmember_id\x18\x01 \x01(\r\x12\'\n\tlead_info\x18\x02 \x01(\x0b\x32\x14.PBTeamLeaderMapInfo\"\x86\x02\n\rPBMsgTeamInfo\x12\x16\n\x0eleader_full_id\x18\x01 \x01(\x04\x12\x13\n\x0bleader_name\x18\x02 \x01(\t\x12\x14\n\x0cleader_level\x18\x03 \x01(\x11\x12\x13\n\x0bleader_role\x18\x04 \x01(\x11\x12\x12\n\nleader_sex\x18\x05 \x01(\x11\x12\x18\n\x10leader_head_icon\x18\x06 \x01(\t\x12\x18\n\x10leader_vip_level\x18\x07 \x01(\x11\x12\x1b\n\x13leader_battle_score\x18\x08 \x01(\x11\x12\x13\n\x0bleader_camp\x18\t \x01(\x11\x12\x12\n\nmember_num\x18\n \x01(\x11\x12\x0f\n\x07team_id\x18\x0b \x01(\r\"d\n\x14PBMsgTeamListRequest\x12(\n\x0cpurpose_type\x18\x01 \x01(\x0e\x32\x12.PBTeamPurposeType\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\"k\n\x15PBMsgTeamListResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tfunc_type\x18\x02 \x01(\x11\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\x11\x12\x1c\n\x04team\x18\x04 \x03(\x0b\x32\x0e.PBMsgTeamInfo\"@\n\x1aPBMsgSetTeamPurposeRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\x11\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\x11\"/\n\x1bPBMsgSetTeamPurposeResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"P\n\x16PBMsgTeamPurposeNotice\x12\x11\n\tfunc_type\x18\x01 \x01(\x11\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\x11\x12\x12\n\nno_purpose\x18\x03 \x01(\x08\"Z\n#PBMsgTransportProposalAnswerRequest\x12\x10\n\x08leaderid\x18\x01 \x01(\r\x12\x0f\n\x07team_id\x18\x02 \x01(\r\x12\x10\n\x08memberid\x18\x03 \x01(\r\"\xc7\x01\n$PBMsgTransportProposalAnswerResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07team_id\x18\x02 \x01(\r\x12\x10\n\x08memberid\x18\x03 \x01(\r\x12\x10\n\x08leaderid\x18\x04 \x01(\r\x12\x10\n\x08\x66unctype\x18\x05 \x01(\r\x12\x0f\n\x07sheetid\x18\x06 \x01(\r\x12\x0f\n\x07matchid\x18\x07 \x01(\r\x12\x11\n\tmatchtype\x18\x08 \x01(\r\x12\x11\n\tisinmatch\x18\t \x01(\x08\"g\n\x1aPBMsgTransportApplyRequest\x12\x10\n\x08leaderid\x18\x01 \x01(\r\x12\x0f\n\x07team_id\x18\x02 \x01(\r\x12\x10\n\x08memberid\x18\x03 \x01(\r\x12\x14\n\x0cmemberfullid\x18\x04 \x01(\x04\"\xc1\x01\n\x1bPBMsgTransportApplyResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x10\n\x08leaderid\x18\x02 \x01(\r\x12\x0f\n\x07team_id\x18\x03 \x01(\r\x12\x10\n\x08memberid\x18\x04 \x01(\r\x12\x10\n\x08\x66unctype\x18\x05 \x01(\r\x12\x0f\n\x07sheetid\x18\x06 \x01(\r\x12\x0f\n\x07matchid\x18\x07 \x01(\r\x12\x11\n\tmatchtype\x18\x08 \x01(\r\x12\x14\n\x0cmemberfullid\x18\t \x01(\x04\"\x9d\x01\n\x1fPBMsgTransportApplyagreeRequest\x12\x10\n\x08leaderid\x18\x01 \x01(\r\x12\x0f\n\x07team_id\x18\x02 \x01(\r\x12\x10\n\x08memberid\x18\x03 \x01(\r\x12\x10\n\x08\x66unctype\x18\x05 \x01(\r\x12\x0f\n\x07sheetid\x18\x06 \x01(\r\x12\x0f\n\x07matchid\x18\x07 \x01(\r\x12\x11\n\tmatchtype\x18\x08 \x01(\r\"w\n PBMsgTransportApplyagreeResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0e\n\x06reason\x18\x02 \x01(\x11\x12\r\n\x05param\x18\x03 \x01(\x12\x12\x10\n\x08leaderid\x18\x04 \x01(\r\x12\x10\n\x08memberid\x18\x05 \x01(\r\"w\n\x1bPBMsgCanSpanPveMatchRequest\x12\x10\n\x08leaderid\x18\x01 \x01(\r\x12\x10\n\x08memberid\x18\x02 \x01(\r\x12\x11\n\tsessionid\x18\x03 \x01(\r\x12\x10\n\x08\x66unctype\x18\x04 \x01(\r\x12\x0f\n\x07sheetid\x18\x05 \x01(\r\"f\n\x1cPBMsgCanSpanPveMatchResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tsessionid\x18\x02 \x01(\r\x12\x12\n\nreasoncode\x18\x03 \x01(\x11\x12\r\n\x05param\x18\x04 \x01(\x12*O\n\x10PBTeamAnswerType\x12\x1c\n\x18\x65nPBTeamAnswerType_Agree\x10\x01\x12\x1d\n\x19\x65nPBTeamAnswerType_Refuse\x10\x02*\xf3\x01\n\x14PBTeamFollowInfoType\x12%\n!enPBTeamFollowInfoType_LeaderInfo\x10\x01\x12$\n enPBTeamFollowInfoType_ListIndex\x10\x02\x12 \n\x1c\x65nPBTeamFollowInfoType_Mount\x10\x04\x12$\n enPBTeamFollowInfoType_AutoFight\x10\x08\x12%\n!enPBTeamFollowInfoType_AutoFollow\x10\x10\x12\x1f\n\x1a\x65nPBTeamFollowInfoType_ALL\x10\xff\x01*S\n\x11PBTeamPurposeType\x12\x1b\n\x17PBTeamPurposeType_Guaji\x10\x01\x12!\n\x1dPBTeamPurposeType_TeamDungeon\x10\x02')
+  serialized_pb='\n\x0emsg_team.proto\x1a\x0emsg_base.proto\x1a\x0emsg_user.proto\x1a\x13msg_role_base.proto\"\xae\x02\n\x11PBMsgTeamBaseData\x12\x0f\n\x07present\x18\x01 \x01(\x08\x12\r\n\x05level\x18\x03 \x01(\x11\x12\x0c\n\x04role\x18\x04 \x01(\x11\x12\x0b\n\x03sex\x18\x05 \x01(\x11\x12\x0e\n\x06hornor\x18\x06 \x01(\x11\x12\x0c\n\x04name\x18\x07 \x01(\x0c\x12\x0f\n\x07\x66ull_id\x18\x08 \x01(\x04\x12\x11\n\tvip_level\x18\t \x01(\x11\x12\x14\n\x0c\x62\x61ttle_score\x18\n \x01(\x11\x12\x12\n\nguide_name\x18\x0b \x01(\t\x12!\n\x0bvisual_prop\x18\x0c \x01(\x0b\x32\x0c.PBMsgVPInfo\x12\x10\n\x08sheet_id\x18\r \x01(\r\x12\x0c\n\x04\x63\x61mp\x18\x0e \x01(\x11\x12\x11\n\thead_icon\x18\x0f \x01(\t\x12\x1c\n\x06status\x18\x10 \x01(\x0e\x32\x0c.ERoleStatus\"S\n\x11PBMsgTeamSyncHPMP\x12\x0e\n\x06\x63ur_hp\x18\x01 \x01(\x11\x12\x0e\n\x06max_hp\x18\x02 \x01(\x11\x12\x0e\n\x06\x63ur_mp\x18\x03 \x01(\x11\x12\x0e\n\x06max_mp\x18\x04 \x01(\x11\"=\n\x10PBMsgTeamSyncPos\x12\x0c\n\x04posX\x18\x01 \x01(\x11\x12\x0c\n\x04posY\x18\x02 \x01(\x11\x12\r\n\x05mapId\x18\x03 \x01(\r\"#\n\x11PBMsgTeamBuffInfo\x12\x0e\n\x06\x62uffId\x18\x01 \x03(\x11\")\n\x15PBMsgTeamBuildRequest\x12\x10\n\x08is_force\x18\x01 \x01(\x08\"*\n\x16PBMsgTeamBuildResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"6\n\x1fPBMsgTeamBuildOppositeTipNotice\x12\x13\n\x0bnotice_code\x18\x01 \x01(\x11\"+\n\x17PBMsgTeamDismissRequest\x12\x10\n\x08is_force\x18\x01 \x01(\x08\",\n\x18PBMsgTeamDismissResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"8\n!PBMsgTeamDismissOppositeTipNotice\x12\x13\n\x0bnotice_code\x18\x01 \x01(\x11\":\n\x1cPBMsgTeamChangeLeaderRequest\x12\x1a\n\x12new_leader_full_id\x18\x01 \x01(\x04\"1\n\x1dPBMsgTeamChangeLeaderResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\")\n\x15PBMsgTeamLeaveRequest\x12\x10\n\x08is_force\x18\x01 \x01(\x08\"*\n\x16PBMsgTeamLeaveResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"6\n\x1fPBMsgTeamLeaveOppositeTipNotice\x12\x13\n\x0bnotice_code\x18\x01 \x01(\x11\".\n\x14PBMsgTeamKickRequest\x12\x16\n\x0ekicked_full_id\x18\x01 \x01(\x04\")\n\x15PBMsgTeamKickResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"3\n\x18PBMsgTeamProposalRequest\x12\x17\n\x0finvatee_full_id\x18\x01 \x01(\x04\"-\n\x19PBMsgTeamProposalResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"h\n\x1ePBMsgTeamProposalExamineNotice\x12\x17\n\x0finvater_full_id\x18\x01 \x01(\x04\x12\x17\n\x0finvatee_full_id\x18\x02 \x01(\x04\x12\x14\n\x0cinvatee_name\x18\x03 \x01(\x0c\"\x81\x01\n%PBMsgTeamProposalExamineAnswerRequest\x12\x17\n\x0finvater_full_id\x18\x01 \x01(\x04\x12\x17\n\x0finvatee_full_id\x18\x02 \x01(\x04\x12&\n\x0b\x61nswer_type\x18\x03 \x01(\x0e\x32\x11.PBTeamAnswerType\":\n&PBMsgTeamProposalExamineAnswerResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"Y\n\x17PBMsgTeamProposalNotice\x12\x17\n\x0finvater_full_id\x18\x01 \x01(\x04\x12\x14\n\x0cinvater_name\x18\x02 \x01(\x0c\x12\x0f\n\x07team_id\x18\x03 \x01(\r\"Y\n\x1ePBMsgTeamProposalAnswerRequest\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12&\n\x0b\x61nswer_type\x18\x02 \x01(\x0e\x32\x11.PBTeamAnswerType\"3\n\x1fPBMsgTeamProposalAnswerResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"A\n\x15PBMsgTeamApplyRequest\x12\x16\n\x0emember_full_id\x18\x01 \x01(\x04\x12\x10\n\x08is_force\x18\x02 \x01(\x08\"*\n\x16PBMsgTeamApplyResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"^\n\x1bPBMsgTeamApplyAnswerRequest\x12\x17\n\x0f\x61pplyer_full_id\x18\x01 \x01(\x04\x12&\n\x0b\x61nswer_type\x18\x02 \x01(\x0e\x32\x11.PBTeamAnswerType\"0\n\x1cPBMsgTeamApplyAnswerResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"W\n\x1dPBMsgTeamBaseDataUpdateNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12%\n\tbase_data\x18\x02 \x01(\x0b\x32\x12.PBMsgTeamBaseData\"W\n\x1dPBMsgTeamSyncHPMPUpdateNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12%\n\thpmp_data\x18\x02 \x01(\x0b\x32\x12.PBMsgTeamSyncHPMP\"T\n\x1cPBMsgTeamSyncPosUpdateNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12#\n\x08pos_data\x18\x02 \x01(\x0b\x32\x11.PBMsgTeamSyncPos\"Z\n!PBMsgTeamSyncBuffInfoUpdateNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12$\n\x08\x62uffInfo\x18\x02 \x01(\x0b\x32\x12.PBMsgTeamBuffInfo\"Q\n\x19PBMsgTeamFlagUpdateNotice\x12\x12\n\nis_in_team\x18\x01 \x01(\x08\x12\x11\n\tleader_id\x18\x02 \x01(\r\x12\r\n\x05my_id\x18\x03 \x01(\r\"-\n\x1aPBMsgTeamMemberClearNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"G\n\x1ePBMsgTeamApplyerBaseDataNotice\x12%\n\tbase_data\x18\x01 \x01(\x0b\x32\x12.PBMsgTeamBaseData\"6\n\x1bPBMsgTeamApplyerClearNotice\x12\x17\n\x0f\x61pplyer_full_id\x18\x01 \x01(\x04\"@\n\x1aPBMsgTeamCallFriendRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\"M\n\x1bPBMsgTeamCallFriendResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1c\n\ncode_param\x18\x02 \x01(\x0b\x32\x08.PBParam\"+\n\x18PBMsgTeamJoinCallRequest\x12\x0f\n\x07team_id\x18\x01 \x01(\x11\"-\n\x19PBMsgTeamJoinCallResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"1\n\x1cPBMsgScreenPlayerInfoRequest\x12\x11\n\tplayer_id\x18\x01 \x03(\x12\"C\n\x1dPBMsgScreenPlayerInfoResponse\x12\"\n\x05infos\x18\x01 \x03(\x0b\x32\x13.PBScreenPlayerInfo\"\xe9\x01\n\x12PBScreenPlayerInfo\x12\r\n\x05level\x18\x01 \x01(\x11\x12\x11\n\tvip_level\x18\x02 \x01(\x11\x12\x11\n\tplayer_id\x18\x03 \x01(\x12\x12\x13\n\x0b\x66ight_power\x18\x04 \x01(\x11\x12\x10\n\x08guild_id\x18\x05 \x01(\x04\x12\x12\n\nguild_name\x18\x06 \x01(\t\x12\x13\n\x0bplayer_name\x18\x07 \x01(\t\x12\x12\n\nplayer_sex\x18\x08 \x01(\x11\x12\x11\n\trole_type\x18\t \x01(\x11\x12\x14\n\x0cmember_count\x18\n \x01(\x11\x12\x11\n\thead_icon\x18\x0b \x01(\t\"k\n\x13PBTeamLeaderMapInfo\x12\x0e\n\x06map_id\x18\x01 \x01(\x11\x12\r\n\x05pos_x\x18\x02 \x01(\x11\x12\r\n\x05pos_y\x18\x03 \x01(\x11\x12\x0f\n\x07line_id\x18\x04 \x01(\x11\x12\x15\n\ris_ride_mount\x18\x05 \x01(\x11\"0\n\x1bPBMsgTeamFollowOrderRequest\x12\x11\n\tis_follow\x18\x01 \x01(\x11\"0\n\x1cPBMsgTeamFollowOrderResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"G\n\x1aPBMsgTeamFollowOrderNotice\x12)\n\x0bleader_info\x18\x01 \x01(\x0b\x32\x14.PBTeamLeaderMapInfo\"6\n!PBMsgTeamMemberFollowOrderRequest\x12\x11\n\tis_accept\x18\x01 \x01(\x11\"t\n\"PBMsgTeamMemberFollowOrderResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tis_follow\x18\x02 \x01(\x11\x12)\n\x0bleader_info\x18\x03 \x01(\x0b\x32\x14.PBTeamLeaderMapInfo\"\'\n%PBMsgTeamMemberFollowEnterListRequest\"d\n&PBMsgTeamMemberFollowEnterListResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x14\n\x0cis_following\x18\x02 \x01(\x11\x12\x12\n\nlist_index\x18\x03 \x01(\x11\"\x1e\n\x1cPBMsgTeamMemberFollowRequest\"o\n\x1dPBMsgTeamMemberFollowResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tis_follow\x18\x02 \x01(\x11\x12)\n\x0bleader_info\x18\x03 \x01(\x0b\x32\x14.PBTeamLeaderMapInfo\"#\n!PBMsgTeamMemberFollowCancelReport\"!\n\x1fPBMsgTeamMemberFollowLoseReport\"2\n PBMsgTeamMemberFollowSpeedReport\x12\x0e\n\x06is_run\x18\x01 \x01(\x11\"\xc3\x01\n\x1fPBMsgTeamMemberFollowInfoNotice\x12\x0c\n\x04type\x18\x01 \x01(\x11\x12\x12\n\nlist_index\x18\x02 \x01(\x11\x12\x14\n\x0cis_following\x18\x03 \x01(\x11\x12)\n\x0bleader_info\x18\x04 \x01(\x0b\x32\x14.PBTeamLeaderMapInfo\x12\x10\n\x08is_mount\x18\x05 \x01(\x11\x12\x14\n\x0cis_autofight\x18\x06 \x01(\x11\x12\x15\n\ris_autofollow\x18\x07 \x01(\x11\"3\n PBMsgTeamMemberAutoFollowRequest\x12\x0f\n\x07is_auto\x18\x01 \x01(\x11\"5\n!PBMsgTeamMemberAutoFollowResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"R\n\x14PBMsgLeaderPosNotice\x12\x11\n\tmember_id\x18\x01 \x01(\r\x12\'\n\tlead_info\x18\x02 \x01(\x0b\x32\x14.PBTeamLeaderMapInfo\"\x86\x02\n\rPBMsgTeamInfo\x12\x16\n\x0eleader_full_id\x18\x01 \x01(\x04\x12\x13\n\x0bleader_name\x18\x02 \x01(\t\x12\x14\n\x0cleader_level\x18\x03 \x01(\x11\x12\x13\n\x0bleader_role\x18\x04 \x01(\x11\x12\x12\n\nleader_sex\x18\x05 \x01(\x11\x12\x18\n\x10leader_head_icon\x18\x06 \x01(\t\x12\x18\n\x10leader_vip_level\x18\x07 \x01(\x11\x12\x1b\n\x13leader_battle_score\x18\x08 \x01(\x11\x12\x13\n\x0bleader_camp\x18\t \x01(\x11\x12\x12\n\nmember_num\x18\n \x01(\x11\x12\x0f\n\x07team_id\x18\x0b \x01(\r\"d\n\x14PBMsgTeamListRequest\x12(\n\x0cpurpose_type\x18\x01 \x01(\x0e\x32\x12.PBTeamPurposeType\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\"k\n\x15PBMsgTeamListResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tfunc_type\x18\x02 \x01(\x11\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\x11\x12\x1c\n\x04team\x18\x04 \x03(\x0b\x32\x0e.PBMsgTeamInfo\"@\n\x1aPBMsgSetTeamPurposeRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\x11\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\x11\"/\n\x1bPBMsgSetTeamPurposeResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"P\n\x16PBMsgTeamPurposeNotice\x12\x11\n\tfunc_type\x18\x01 \x01(\x11\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\x11\x12\x12\n\nno_purpose\x18\x03 \x01(\x08\"Z\n#PBMsgTransportProposalAnswerRequest\x12\x10\n\x08leaderid\x18\x01 \x01(\r\x12\x0f\n\x07team_id\x18\x02 \x01(\r\x12\x10\n\x08memberid\x18\x03 \x01(\r\"\xc7\x01\n$PBMsgTransportProposalAnswerResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07team_id\x18\x02 \x01(\r\x12\x10\n\x08memberid\x18\x03 \x01(\r\x12\x10\n\x08leaderid\x18\x04 \x01(\r\x12\x10\n\x08\x66unctype\x18\x05 \x01(\r\x12\x0f\n\x07sheetid\x18\x06 \x01(\r\x12\x0f\n\x07matchid\x18\x07 \x01(\r\x12\x11\n\tmatchtype\x18\x08 \x01(\r\x12\x11\n\tisinmatch\x18\t \x01(\x08\"g\n\x1aPBMsgTransportApplyRequest\x12\x10\n\x08leaderid\x18\x01 \x01(\r\x12\x0f\n\x07team_id\x18\x02 \x01(\r\x12\x10\n\x08memberid\x18\x03 \x01(\r\x12\x14\n\x0cmemberfullid\x18\x04 \x01(\x04\"\xc1\x01\n\x1bPBMsgTransportApplyResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x10\n\x08leaderid\x18\x02 \x01(\r\x12\x0f\n\x07team_id\x18\x03 \x01(\r\x12\x10\n\x08memberid\x18\x04 \x01(\r\x12\x10\n\x08\x66unctype\x18\x05 \x01(\r\x12\x0f\n\x07sheetid\x18\x06 \x01(\r\x12\x0f\n\x07matchid\x18\x07 \x01(\r\x12\x11\n\tmatchtype\x18\x08 \x01(\r\x12\x14\n\x0cmemberfullid\x18\t \x01(\x04\"\x9d\x01\n\x1fPBMsgTransportApplyagreeRequest\x12\x10\n\x08leaderid\x18\x01 \x01(\r\x12\x0f\n\x07team_id\x18\x02 \x01(\r\x12\x10\n\x08memberid\x18\x03 \x01(\r\x12\x10\n\x08\x66unctype\x18\x05 \x01(\r\x12\x0f\n\x07sheetid\x18\x06 \x01(\r\x12\x0f\n\x07matchid\x18\x07 \x01(\r\x12\x11\n\tmatchtype\x18\x08 \x01(\r\"w\n PBMsgTransportApplyagreeResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0e\n\x06reason\x18\x02 \x01(\x11\x12\r\n\x05param\x18\x03 \x01(\x12\x12\x10\n\x08leaderid\x18\x04 \x01(\r\x12\x10\n\x08memberid\x18\x05 \x01(\r\"w\n\x1bPBMsgCanSpanPveMatchRequest\x12\x10\n\x08leaderid\x18\x01 \x01(\r\x12\x10\n\x08memberid\x18\x02 \x01(\r\x12\x11\n\tsessionid\x18\x03 \x01(\r\x12\x10\n\x08\x66unctype\x18\x04 \x01(\r\x12\x0f\n\x07sheetid\x18\x05 \x01(\r\"f\n\x1cPBMsgCanSpanPveMatchResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tsessionid\x18\x02 \x01(\r\x12\x12\n\nreasoncode\x18\x03 \x01(\x11\x12\r\n\x05param\x18\x04 \x01(\x12\"w\n\x1bPBMsgCanTeamPVPMatchRequest\x12\x10\n\x08leaderid\x18\x01 \x01(\r\x12\x10\n\x08memberid\x18\x02 \x01(\r\x12\x11\n\tsessionid\x18\x03 \x01(\r\x12\x10\n\x08\x66unctype\x18\x04 \x01(\r\x12\x0f\n\x07sheetid\x18\x05 \x01(\r\"f\n\x1cPBMsgCanTeamPVPMatchResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tsessionid\x18\x02 \x01(\r\x12\x12\n\nreasoncode\x18\x03 \x01(\x11\x12\r\n\x05param\x18\x04 \x01(\x12\"d\n\x1dPBMsgTeamPVPMatchStatusNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x10\n\x08\x66unctype\x18\x02 \x01(\r\x12\x0f\n\x07sheetid\x18\x03 \x01(\r\x12\x0f\n\x07\x62_match\x18\x04 \x01(\x08*O\n\x10PBTeamAnswerType\x12\x1c\n\x18\x65nPBTeamAnswerType_Agree\x10\x01\x12\x1d\n\x19\x65nPBTeamAnswerType_Refuse\x10\x02*\xf3\x01\n\x14PBTeamFollowInfoType\x12%\n!enPBTeamFollowInfoType_LeaderInfo\x10\x01\x12$\n enPBTeamFollowInfoType_ListIndex\x10\x02\x12 \n\x1c\x65nPBTeamFollowInfoType_Mount\x10\x04\x12$\n enPBTeamFollowInfoType_AutoFight\x10\x08\x12%\n!enPBTeamFollowInfoType_AutoFollow\x10\x10\x12\x1f\n\x1a\x65nPBTeamFollowInfoType_ALL\x10\xff\x01*S\n\x11PBTeamPurposeType\x12\x1b\n\x17PBTeamPurposeType_Guaji\x10\x01\x12!\n\x1dPBTeamPurposeType_TeamDungeon\x10\x02')
 
 _PBTEAMANSWERTYPE = descriptor.EnumDescriptor(
   name='PBTeamAnswerType',
@@ -33,8 +33,8 @@ _PBTEAMANSWERTYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6328,
-  serialized_end=6407,
+  serialized_start=6655,
+  serialized_end=6734,
 )
 
 
@@ -71,8 +71,8 @@ _PBTEAMFOLLOWINFOTYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6410,
-  serialized_end=6653,
+  serialized_start=6737,
+  serialized_end=6980,
 )
 
 
@@ -93,8 +93,8 @@ _PBTEAMPURPOSETYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6655,
-  serialized_end=6738,
+  serialized_start=6982,
+  serialized_end=7065,
 )
 
 
@@ -3015,6 +3015,160 @@ _PBMSGCANSPANPVEMATCHRESPONSE = descriptor.Descriptor(
   serialized_end=6326,
 )
 
+
+_PBMSGCANTEAMPVPMATCHREQUEST = descriptor.Descriptor(
+  name='PBMsgCanTeamPVPMatchRequest',
+  full_name='PBMsgCanTeamPVPMatchRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='leaderid', full_name='PBMsgCanTeamPVPMatchRequest.leaderid', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='memberid', full_name='PBMsgCanTeamPVPMatchRequest.memberid', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='sessionid', full_name='PBMsgCanTeamPVPMatchRequest.sessionid', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='functype', full_name='PBMsgCanTeamPVPMatchRequest.functype', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='sheetid', full_name='PBMsgCanTeamPVPMatchRequest.sheetid', index=4,
+      number=5, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=6328,
+  serialized_end=6447,
+)
+
+
+_PBMSGCANTEAMPVPMATCHRESPONSE = descriptor.Descriptor(
+  name='PBMsgCanTeamPVPMatchResponse',
+  full_name='PBMsgCanTeamPVPMatchResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='ret_code', full_name='PBMsgCanTeamPVPMatchResponse.ret_code', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='sessionid', full_name='PBMsgCanTeamPVPMatchResponse.sessionid', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='reasoncode', full_name='PBMsgCanTeamPVPMatchResponse.reasoncode', index=2,
+      number=3, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='param', full_name='PBMsgCanTeamPVPMatchResponse.param', index=3,
+      number=4, type=18, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=6449,
+  serialized_end=6551,
+)
+
+
+_PBMSGTEAMPVPMATCHSTATUSNOTICE = descriptor.Descriptor(
+  name='PBMsgTeamPVPMatchStatusNotice',
+  full_name='PBMsgTeamPVPMatchStatusNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgTeamPVPMatchStatusNotice.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='functype', full_name='PBMsgTeamPVPMatchStatusNotice.functype', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='sheetid', full_name='PBMsgTeamPVPMatchStatusNotice.sheetid', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='b_match', full_name='PBMsgTeamPVPMatchStatusNotice.b_match', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=6553,
+  serialized_end=6653,
+)
+
 _PBMSGTEAMBASEDATA.fields_by_name['visual_prop'].message_type = msg_user_pb2._PBMSGVPINFO
 _PBMSGTEAMBASEDATA.fields_by_name['status'].enum_type = msg_role_base_pb2._EROLESTATUS
 _PBMSGTEAMPROPOSALEXAMINEANSWERREQUEST.fields_by_name['answer_type'].enum_type = _PBTEAMANSWERTYPE
@@ -3109,6 +3263,9 @@ DESCRIPTOR.message_types_by_name['PBMsgTransportApplyagreeRequest'] = _PBMSGTRAN
 DESCRIPTOR.message_types_by_name['PBMsgTransportApplyagreeResponse'] = _PBMSGTRANSPORTAPPLYAGREERESPONSE
 DESCRIPTOR.message_types_by_name['PBMsgCanSpanPveMatchRequest'] = _PBMSGCANSPANPVEMATCHREQUEST
 DESCRIPTOR.message_types_by_name['PBMsgCanSpanPveMatchResponse'] = _PBMSGCANSPANPVEMATCHRESPONSE
+DESCRIPTOR.message_types_by_name['PBMsgCanTeamPVPMatchRequest'] = _PBMSGCANTEAMPVPMATCHREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgCanTeamPVPMatchResponse'] = _PBMSGCANTEAMPVPMATCHRESPONSE
+DESCRIPTOR.message_types_by_name['PBMsgTeamPVPMatchStatusNotice'] = _PBMSGTEAMPVPMATCHSTATUSNOTICE
 
 class PBMsgTeamBaseData(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
@@ -3559,5 +3716,23 @@ class PBMsgCanSpanPveMatchResponse(message.Message):
   DESCRIPTOR = _PBMSGCANSPANPVEMATCHRESPONSE
   
   # @@protoc_insertion_point(class_scope:PBMsgCanSpanPveMatchResponse)
+
+class PBMsgCanTeamPVPMatchRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGCANTEAMPVPMATCHREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgCanTeamPVPMatchRequest)
+
+class PBMsgCanTeamPVPMatchResponse(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGCANTEAMPVPMATCHRESPONSE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgCanTeamPVPMatchResponse)
+
+class PBMsgTeamPVPMatchStatusNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGTEAMPVPMATCHSTATUSNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgTeamPVPMatchStatusNotice)
 
 # @@protoc_insertion_point(module_scope)

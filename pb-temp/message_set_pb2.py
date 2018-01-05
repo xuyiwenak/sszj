@@ -17,7 +17,7 @@ import bigworld_pb2
 DESCRIPTOR = descriptor.FileDescriptor(
   name='message_set.proto',
   package='',
-  serialized_pb='\n\x11message_set.proto\x1a\rdb_base.proto\x1a\x0cplayer.proto\x1a\rsu_data.proto\x1a\rbilling.proto\x1a\rgateway.proto\x1a\x0e\x62igworld.proto\"\xf1\x05\n\x0cPBMessageSet\x12\x19\n\x06\x64\x61ta_1\x18\x01 \x01(\x0b\x32\t.PBPlayer\x12\x1c\n\x06\x64\x61ta_2\x18\x02 \x01(\x0b\x32\x0c.PBCharacter\x12\x1e\n\x06\x64\x61ta_4\x18\x04 \x01(\x0b\x32\x0e.PBGateWayData\x12$\n\x06\x64\x61ta_5\x18\x05 \x01(\x0b\x32\x14.PBGateWaySocialData\x12 \n\x06\x64\x61ta_6\x18\x06 \x01(\x0b\x32\x10.PBBillingStatus\x12\x1f\n\x06\x64\x61ta_7\x18\x07 \x01(\x0b\x32\x0f.PBCashExchange\x12\x1f\n\x06\x64\x61ta_8\x18\x08 \x01(\x0b\x32\x0f.PBChargeRecord\x12\x1e\n\x06\x64\x61ta_9\x18\t \x01(\x0b\x32\x0e.PBAllGateData\x12 \n\x07\x64\x61ta_10\x18\n \x01(\x0b\x32\x0f.PBAddFreeMoney\x12\x1e\n\x07\x64\x61ta_11\x18\x0b \x01(\x0b\x32\r.PBChooseChar\x12\x1f\n\x07\x64\x61ta_12\x18\x0c \x01(\x0b\x32\x0e.PBConsignInfo\x12\x1e\n\x07\x64\x61ta_13\x18\r \x01(\x0b\x32\r.PBConsignLog\x12\x1f\n\x07\x64\x61ta_14\x18\x0e \x01(\x0b\x32\x0e.PBCharOffLine\x12!\n\x07\x64\x61ta_15\x18\x0f \x01(\x0b\x32\x10.PBGateWayDataEx\x12!\n\x07\x64\x61ta_16\x18\x10 \x01(\x0b\x32\x10.PBMarriageTable\x12#\n\x07\x64\x61ta_17\x18\x11 \x01(\x0b\x32\x12.PBGatWayGuildData\x12 \n\x07\x64\x61ta_18\x18\x12 \x01(\x0b\x32\x0f.PBRankLastData\x12!\n\x07\x64\x61ta_19\x18\x13 \x01(\x0b\x32\x10.PBGMSSpanBattle\x12!\n\x07\x64\x61ta_20\x18\x14 \x01(\x0b\x32\x10.PBSpanCurBattle\x12 \n\x07\x64\x61ta_21\x18\x15 \x01(\x0b\x32\x0f.PBSpanWildRank\x12!\n\x07\x64\x61ta_22\x18\x16 \x01(\x0b\x32\x10.PBGMSCommonData\x12\"\n\x07\x64\x61ta_23\x18\x17 \x01(\x0b\x32\x11.PBPetPvPRankDataB\x02H\x01')
+  serialized_pb='\n\x11message_set.proto\x1a\rdb_base.proto\x1a\x0cplayer.proto\x1a\rsu_data.proto\x1a\rbilling.proto\x1a\rgateway.proto\x1a\x0e\x62igworld.proto\"\xbd\x06\n\x0cPBMessageSet\x12\x19\n\x06\x64\x61ta_1\x18\x01 \x01(\x0b\x32\t.PBPlayer\x12\x1c\n\x06\x64\x61ta_2\x18\x02 \x01(\x0b\x32\x0c.PBCharacter\x12\x1e\n\x06\x64\x61ta_4\x18\x04 \x01(\x0b\x32\x0e.PBGateWayData\x12$\n\x06\x64\x61ta_5\x18\x05 \x01(\x0b\x32\x14.PBGateWaySocialData\x12 \n\x06\x64\x61ta_6\x18\x06 \x01(\x0b\x32\x10.PBBillingStatus\x12\x1f\n\x06\x64\x61ta_7\x18\x07 \x01(\x0b\x32\x0f.PBCashExchange\x12\x1f\n\x06\x64\x61ta_8\x18\x08 \x01(\x0b\x32\x0f.PBChargeRecord\x12\x1e\n\x06\x64\x61ta_9\x18\t \x01(\x0b\x32\x0e.PBAllGateData\x12 \n\x07\x64\x61ta_10\x18\n \x01(\x0b\x32\x0f.PBAddFreeMoney\x12\x1e\n\x07\x64\x61ta_11\x18\x0b \x01(\x0b\x32\r.PBChooseChar\x12\x1f\n\x07\x64\x61ta_12\x18\x0c \x01(\x0b\x32\x0e.PBConsignInfo\x12\x1e\n\x07\x64\x61ta_13\x18\r \x01(\x0b\x32\r.PBConsignLog\x12\x1f\n\x07\x64\x61ta_14\x18\x0e \x01(\x0b\x32\x0e.PBCharOffLine\x12!\n\x07\x64\x61ta_15\x18\x0f \x01(\x0b\x32\x10.PBGateWayDataEx\x12!\n\x07\x64\x61ta_16\x18\x10 \x01(\x0b\x32\x10.PBMarriageTable\x12#\n\x07\x64\x61ta_17\x18\x11 \x01(\x0b\x32\x12.PBGatWayGuildData\x12 \n\x07\x64\x61ta_18\x18\x12 \x01(\x0b\x32\x0f.PBRankLastData\x12!\n\x07\x64\x61ta_19\x18\x13 \x01(\x0b\x32\x10.PBGMSSpanBattle\x12!\n\x07\x64\x61ta_20\x18\x14 \x01(\x0b\x32\x10.PBSpanCurBattle\x12 \n\x07\x64\x61ta_21\x18\x15 \x01(\x0b\x32\x0f.PBSpanWildRank\x12!\n\x07\x64\x61ta_22\x18\x16 \x01(\x0b\x32\x10.PBGMSCommonData\x12\"\n\x07\x64\x61ta_23\x18\x17 \x01(\x0b\x32\x11.PBPetPvPRankData\x12!\n\x07\x64\x61ta_24\x18\x18 \x01(\x0b\x32\x10.PBCropsInfoData\x12\'\n\x07\x64\x61ta_25\x18\x19 \x01(\x0b\x32\x16.PBCommonCropsInfoDataB\x02H\x01')
 
 
 
@@ -183,6 +183,20 @@ _PBMESSAGESET = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='data_24', full_name='PBMessageSet.data_24', index=22,
+      number=24, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='data_25', full_name='PBMessageSet.data_25', index=23,
+      number=25, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -193,7 +207,7 @@ _PBMESSAGESET = descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=112,
-  serialized_end=865,
+  serialized_end=941,
 )
 
 _PBMESSAGESET.fields_by_name['data_1'].message_type = player_pb2._PBPLAYER
@@ -218,6 +232,8 @@ _PBMESSAGESET.fields_by_name['data_20'].message_type = bigworld_pb2._PBSPANCURBA
 _PBMESSAGESET.fields_by_name['data_21'].message_type = bigworld_pb2._PBSPANWILDRANK
 _PBMESSAGESET.fields_by_name['data_22'].message_type = bigworld_pb2._PBGMSCOMMONDATA
 _PBMESSAGESET.fields_by_name['data_23'].message_type = gateway_pb2._PBPETPVPRANKDATA
+_PBMESSAGESET.fields_by_name['data_24'].message_type = gateway_pb2._PBCROPSINFODATA
+_PBMESSAGESET.fields_by_name['data_25'].message_type = bigworld_pb2._PBCOMMONCROPSINFODATA
 DESCRIPTOR.message_types_by_name['PBMessageSet'] = _PBMESSAGESET
 
 class PBMessageSet(message.Message):

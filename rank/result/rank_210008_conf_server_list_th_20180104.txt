@@ -1,0 +1,48 @@
+æŽ’è¡Œæ¦œlevelç½‘å…³210008
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,punnawep@hotmail.co.th,100031722,97823,?L??i†??,143762, 80, 2, 1, 492, 127
+210,facebook100069747,100069747,97880,???,118075, 80, 3, 1, 460, 72
+210,maylody@hotmail.com,100069763,97910,~????????~,122687, 80, 2, 2, 775, 218
+210,rossross2526@gmail.com,100069773,97947,??????,164322, 80, 2, 2, 1282, 200
+210,facebook100069798,100069798,98031,??????????????,130363, 80, 2, 2, 627, 36
+210,jokejoke_hot@hotmail.com,100069822,98072,°J?ker°,157763, 80, 3, 1, 1551, 609
+210,suphakornbanjong404@gmail.com,100030455,98086,?~Frozen~?,131950, 80, 3, 1, 952, 18
+210,nootanes@gmail.com,100069843,98130,???????,160179, 80, 1, 2, 796, 27
+210,maylody1@hotmail.com,100070027,98645,~•???????•~,163204, 80, 3, 2, 791, 492
+210,gggv0989496254@gmail.com,100047436,98881,???????,143209, 80, 3, 1, 485, 18
+æŽ’è¡Œæ¦œcombat_powerç½‘å…³210008
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,rossross2526@gmail.com,100069773,97947,??????,164322, 80, 2, 2, 1282, 200
+210,maylody1@hotmail.com,100070027,98645,~•???????•~,163204, 80, 3, 2, 791, 492
+210,nootanes@gmail.com,100069843,98130,???????,160179, 80, 1, 2, 796, 27
+210,jokejoke_hot@hotmail.com,100069822,98072,°J?ker°,157763, 80, 3, 1, 1551, 609
+210,gggho20427@gmail.com,100000682,99486,MEGAMAGWUM,153562, 79, 1, 1, 200, 18
+210,punnawep@hotmail.co.th,100031722,97823,?L??i†??,143762, 80, 2, 1, 492, 127
+210,gggv0989496254@gmail.com,100047436,98881,???????,143209, 80, 3, 1, 485, 18
+210,suphakornbanjong404@gmail.com,100030455,98086,?~Frozen~?,131950, 80, 3, 1, 952, 18
+210,facebook100069798,100069798,98031,??????????????,130363, 80, 2, 2, 627, 36
+210,gggkingzii2211@gmail.com,100070454,99672,NamikazeMinato,125619, 77, 4, 3, 167, 0
+æŽ’è¡Œæ¦œcharm_pointç½‘å…³210008
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,jokejoke_hot@hotmail.com,100069822,98072,°J?ker°,157763, 80, 3, 1, 1551, 609
+210,maylody1@hotmail.com,100070027,98645,~•???????•~,163204, 80, 3, 2, 791, 492
+210,maylody@hotmail.com,100069763,97910,~????????~,122687, 80, 2, 2, 775, 218
+210,rossross2526@gmail.com,100069773,97947,??????,164322, 80, 2, 2, 1282, 200
+210,punnawep@hotmail.co.th,100031722,97823,?L??i†??,143762, 80, 2, 1, 492, 127
+210,facebook100069747,100069747,97880,???,118075, 80, 3, 1, 460, 72
+210,facebook100069798,100069798,98031,??????????????,130363, 80, 2, 2, 627, 36
+210,facebook100069923,100069923,98329,???????,114127, 79, 4, 2, 326, 36
+210,nootanes@gmail.com,100069843,98130,???????,160179, 80, 1, 2, 796, 27
+210,gggkullapak1522@gmail.com,100070548,99927,?????,65417, 72, 2, 3, 301, 27
+æŽ’è¡Œæ¦œpvp_scoreç½‘å…³210008
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,jokejoke_hot@hotmail.com,100069822,98072,°J?ker°,157763, 80, 3, 1, 1551, 609
+210,rossross2526@gmail.com,100069773,97947,??????,164322, 80, 2, 2, 1282, 200
+210,suphakornbanjong404@gmail.com,100030455,98086,?~Frozen~?,131950, 80, 3, 1, 952, 18
+210,nootanes@gmail.com,100069843,98130,???????,160179, 80, 1, 2, 796, 27
+210,maylody1@hotmail.com,100070027,98645,~•???????•~,163204, 80, 3, 2, 791, 492
+210,maylody@hotmail.com,100069763,97910,~????????~,122687, 80, 2, 2, 775, 218
+210,facebook100069798,100069798,98031,??????????????,130363, 80, 2, 2, 627, 36
+210,facebook100024360,100024360,98113,??????,107609, 75, 4, 3, 510, 18
+210,facebook100010139,100010139,98003,>??????<,119729, 79, 4, 1, 494, 9
+210,punnawep@hotmail.co.th,100031722,97823,?L??i†??,143762, 80, 2, 1, 492, 127

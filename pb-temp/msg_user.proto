@@ -5,6 +5,7 @@ import "msg_mount.proto";
 import "msg_gemcutting.proto";
 import "msg_xinfa.proto";
 import "msg_xiuzhen.proto";
+import "msg_magic_pet.proto";
 
 message PBCommonNoParam
 {
@@ -174,6 +175,7 @@ message PBMsgCharInfo
 	optional PBCharPetGuardInfo		guard_pet_info	= 8; //守护宠物信息
 	optional PBCharXinfaInfo		xinfa_info		= 9; //心法信息;
 	optional PBCharXiuzhenInfo		xiuzhen_info		= 10; //修真信息;
+	optional PBCharMagicPetInfo		magic_pet_info	= 11;//灵宝信息;
 }
 
 message PBCharPetGuardInfo
@@ -194,6 +196,10 @@ message PBCharXiuzhenInfo
 	optional uint32			total_battle_score	= 2;	// 总战力;
 }
 
+message PBCharMagicPetInfo
+{
+	repeated PBMagicPetItem	magic_pet_list		= 1;	// 激活的灵宝列表;
+};
 
 // 属性定义
 message PBMsgCharProperty
@@ -331,6 +337,7 @@ enum PBEGetCharInfoType
 	eGetCharInfo_GemCutting     = 7; // 宝石雕琢
 	eGetCharInfo_GuardPet		= 8; // 守护宠物信息
 	eGetCharInfo_Xinfa			= 9; // 心法信息;
+	eGetCharInfo_MagicPet		= 10;// 灵宝信息;
 };
 message PBMsgCharInfoResquest
 {
@@ -552,6 +559,17 @@ message PBMsgCharSignalNotice
 {
 	optional bool is_change_role = 1;       // 是否转职
 	optional uint32 last_quit_time = 2;     // 上次退出时间
+}
+
+message PBMsgRankMagicPetInfoResquest
+{
+	optional uint64				char_id		= 1;
+}
+
+message PBMsgRankMagicPetInfoResponse
+{
+	optional int32			ret_code	    = 1;
+	optional PBMagicPetItem	magicpet_info 	= 2;
 }
 
 

@@ -15,7 +15,7 @@ def query_role_gem_cutting():
       dest_cur = dest_conn.cursor()
       dest_cur.execute('SET NAMES UTF8')
       sql = "select gateway_id, pf_role_id, gem_enchase_list from\
-      char_blob_last_month"
+      char_blob"
       dest_cur.execute(sql)
       for row in dest_cur.fetchall():
          gateway_id = row[0]
@@ -27,7 +27,7 @@ def query_role_gem_cutting():
          for gem_cut_one in gem_data.gem_cutting:
              gem_cut_type = gem_cut_one.cutting_type
              gem_cut_level = gem_cut_one.cutting_level
-             dest_sql = "insert into gem_cutting_stat values(%d,  %d,  %d, %d)" % (gateway_id, role_id, gem_cut_type, gem_cut_level)
+             dest_sql = "insert into char_gem_cutting values(%d,  %d,  %d, %d)" % (gateway_id, role_id, gem_cut_type, gem_cut_level)
              dest_cur.execute(dest_sql)
     except MySQLdb.Error, e:
       print "MySQL Error %d:%s" %(e.args[0], e.args[1])

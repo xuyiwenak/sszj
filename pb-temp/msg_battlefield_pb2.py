@@ -12,7 +12,7 @@ import msg_base_pb2
 DESCRIPTOR = descriptor.FileDescriptor(
   name='msg_battlefield.proto',
   package='',
-  serialized_pb='\n\x15msg_battlefield.proto\x1a\x0emsg_base.proto\"M\n\x1bPBBattlefieldHarvestRequest\x12\x13\n\x0bmaterial_id\x18\x01 \x01(\r\x12\x19\n\x11material_sheet_id\x18\x02 \x01(\r\">\n!PBBattlefieldHarvestCancelRequest\x12\x19\n\x11material_sheet_id\x18\x01 \x01(\r\"R\n\"PBBattlefieldHarvestStatusResponse\x12\x16\n\x0eharvest_status\x18\x01 \x01(\x11\x12\x14\n\x0charvest_time\x18\x02 \x01(\x11\"6\n#PBBattlefieldDeliverMaterialRequest\x12\x0f\n\x07\x63\x61mp_id\x18\x01 \x01(\r\"&\n$PBBattlefieldDeliverMaterialResponse\":\n\x14PBBattleQueryRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\"3\n\x1bPBBattlefieldInspireRequest\x12\x14\n\x0cinspire_type\x18\x01 \x01(\r\"\x1e\n\x1cPBBattlefieldInspireResponse\"\x1b\n\x19PBBattlefieldMatchRequest\"!\n\x1fPBBattlefieldMatchCancelRequest\"\xc3\x01\n PBBattlefieldMatchStatusResponse\x12\x14\n\x0cmatch_status\x18\x01 \x01(\x11\x12\x12\n\nmatch_time\x18\x02 \x01(\x11\x12\x14\n\x0cmember_count\x18\x03 \x01(\x11\x12\x12\n\nopen_count\x18\x04 \x01(\x11\x12\x11\n\tmax_count\x18\x05 \x01(\x11\x12\x10\n\x08ret_code\x18\x06 \x01(\x11\x12\x15\n\rdungeon_sheet\x18\x07 \x01(\r\x12\x0f\n\x07is_cqpk\x18\x08 \x01(\r\"\x86\x01\n\x17PBBattlefieldStatInform\x12\x15\n\rvictory_score\x18\x01 \x01(\r\x12)\n\tstat_info\x18\x02 \x03(\x0b\x32\x16.PBBattlefieldStatInfo\x12)\n\tcamp_info\x18\x03 \x03(\x0b\x32\x16.PBBattlefieldCampInfo\"\x8a\x01\n\x1aPBBattlefieldEndStatInform\x12\x16\n\x0ewinner_camp_id\x18\x01 \x01(\r\x12)\n\tstat_info\x18\x02 \x03(\x0b\x32\x16.PBBattlefieldStatInfo\x12)\n\tcamp_info\x18\x03 \x03(\x0b\x32\x16.PBBattlefieldCampInfo\"\x88\x01\n\x16PBBattlefieldTowerInfo\x12\x0f\n\x07\x63\x61mp_id\x18\x01 \x01(\r\x12\x11\n\tcreate_id\x18\x02 \x01(\t\x12(\n\x06status\x18\x03 \x01(\x0e\x32\x18.EBattlefieldTowerStatus\x12 \n\x04type\x18\x05 \x01(\x0e\x32\x12.ETeamPVPTowerType\"d\n\x15PBBattlefieldCampInfo\x12\x0f\n\x07\x63\x61mp_id\x18\x01 \x01(\r\x12\r\n\x05score\x18\x02 \x01(\x11\x12+\n\ntower_info\x18\x03 \x03(\x0b\x32\x17.PBBattlefieldTowerInfo\"\x97\x02\n\x15PBBattlefieldStatInfo\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\r\x12\x11\n\tchar_name\x18\x02 \x01(\t\x12\x14\n\x0c\x63har_camp_id\x18\x03 \x01(\r\x12\x12\n\nchar_kills\x18\x04 \x01(\x11\x12\x12\n\nchar_score\x18\x05 \x01(\x11\x12\x1c\n\x14reward_item_sheet_id\x18\x06 \x01(\r\x12\x19\n\x11reward_item_count\x18\x07 \x01(\x11\x12\x16\n\x0ereward_justice\x18\x08 \x01(\x11\x12(\n\x10reward_item_list\x18\t \x03(\x0b\x32\x0e.PBBattleRewad\x12\x12\n\nbuff_floor\x18\n \x01(\x11\x12\r\n\x05isAFK\x18\x0b \x01(\x08\"\x92\x01\n\x11PBBattleMatchType\x12\x13\n\x0b\x62igworld_id\x18\x01 \x01(\r\x12\x12\n\ngroup_type\x18\x02 \x01(\x11\x12\x13\n\x0b\x61\x63tivity_id\x18\x03 \x01(\r\x12\x12\n\nis_no_span\x18\x04 \x01(\r\x12\x14\n\x0c\x62\x61ttle_score\x18\x05 \x01(\x11\x12\x15\n\rdungeon_sheet\x18\x06 \x01(\x11\"_\n\x0bPBRoleShard\x12\x0f\n\x07role_id\x18\x01 \x01(\x04\x12\x17\n\x0fglobal_shard_id\x18\x02 \x01(\r\x12\x14\n\x0c\x62\x61ttle_score\x18\x03 \x01(\x11\x12\x10\n\x08\x61\x64\x64_time\x18\x04 \x01(\r\"\x82\x01\n\x10PBBattleMatchRes\x12\x12\n\ngroup_type\x18\x01 \x01(\x11\x12\x1b\n\x05roles\x18\x02 \x03(\x0b\x32\x0c.PBRoleShard\x12\x15\n\rdungeon_sheet\x18\x03 \x01(\r\x12\x13\n\x0bstart_match\x18\x04 \x01(\r\x12\x11\n\tend_match\x18\x05 \x01(\r\"E\n\x19PBBattleMatchQueryRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\x04\x12\x17\n\x0fglobal_shard_id\x18\x02 \x01(\r\".\n\rPBBattleRewad\x12\x10\n\x08sheet_id\x18\x01 \x01(\x11\x12\x0b\n\x03num\x18\x02 \x01(\x11\"\xaa\x01\n\x18PBMsgGetMatchInfoRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\x12\x12\n\nmatch_type\x18\x03 \x01(\r\x12\r\n\x05level\x18\x04 \x01(\r\x12\x11\n\tgrouptype\x18\x05 \x01(\r\x12\x0e\n\x06\x61\x63t_id\x18\x06 \x01(\r\x12\x10\n\x08isnospan\x18\x07 \x01(\x08\x12\x12\n\nbigworldid\x18\x08 \x01(\r\":\n!PBBattlefieldsendCallFriendNotice\x12\x15\n\rdungeon_sheet\x18\x01 \x01(\r\">\n\x16PBBattlefieldAFKNotice\x12\x11\n\tafk_times\x18\x01 \x01(\r\x12\x11\n\tafk_ratio\x18\x02 \x01(\x02*\xaf\x01\n\x17\x45\x42\x61ttlefieldTowerStatus\x12\x1b\n\x17\x45\x42\x61ttilefieldTower_NULL\x10\x00\x12\x1b\n\x17\x45\x42\x61ttilefieldTower_Init\x10\x01\x12\x1c\n\x18\x45\x42\x61ttilefieldTower_Count\x10\x02\x12\x1d\n\x19\x45\x42\x61ttilefieldTower_Danger\x10\x03\x12\x1d\n\x19\x45\x42\x61ttilefieldTower_Damage\x10\x04*l\n\x11\x45TeamPVPTowerType\x12\x1a\n\x16\x45\x42\x61ttilefieldTower_1st\x10\x01\x12\x1a\n\x16\x45\x42\x61ttilefieldTower_2nd\x10\x02\x12\x1f\n\x1b\x45\x42\x61ttilefieldTower_ShuiJing\x10\x03')
+  serialized_pb='\n\x15msg_battlefield.proto\x1a\x0emsg_base.proto\"M\n\x1bPBBattlefieldHarvestRequest\x12\x13\n\x0bmaterial_id\x18\x01 \x01(\r\x12\x19\n\x11material_sheet_id\x18\x02 \x01(\r\">\n!PBBattlefieldHarvestCancelRequest\x12\x19\n\x11material_sheet_id\x18\x01 \x01(\r\"R\n\"PBBattlefieldHarvestStatusResponse\x12\x16\n\x0eharvest_status\x18\x01 \x01(\x11\x12\x14\n\x0charvest_time\x18\x02 \x01(\x11\"6\n#PBBattlefieldDeliverMaterialRequest\x12\x0f\n\x07\x63\x61mp_id\x18\x01 \x01(\r\"&\n$PBBattlefieldDeliverMaterialResponse\":\n\x14PBBattleQueryRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\"3\n\x1bPBBattlefieldInspireRequest\x12\x14\n\x0cinspire_type\x18\x01 \x01(\r\"\x1e\n\x1cPBBattlefieldInspireResponse\"\x1b\n\x19PBBattlefieldMatchRequest\"!\n\x1fPBBattlefieldMatchCancelRequest\"\xc3\x01\n PBBattlefieldMatchStatusResponse\x12\x14\n\x0cmatch_status\x18\x01 \x01(\x11\x12\x12\n\nmatch_time\x18\x02 \x01(\x11\x12\x14\n\x0cmember_count\x18\x03 \x01(\x11\x12\x12\n\nopen_count\x18\x04 \x01(\x11\x12\x11\n\tmax_count\x18\x05 \x01(\x11\x12\x10\n\x08ret_code\x18\x06 \x01(\x11\x12\x15\n\rdungeon_sheet\x18\x07 \x01(\r\x12\x0f\n\x07is_cqpk\x18\x08 \x01(\r\"\x86\x01\n\x17PBBattlefieldStatInform\x12\x15\n\rvictory_score\x18\x01 \x01(\r\x12)\n\tstat_info\x18\x02 \x03(\x0b\x32\x16.PBBattlefieldStatInfo\x12)\n\tcamp_info\x18\x03 \x03(\x0b\x32\x16.PBBattlefieldCampInfo\"\x8a\x01\n\x1aPBBattlefieldEndStatInform\x12\x16\n\x0ewinner_camp_id\x18\x01 \x01(\r\x12)\n\tstat_info\x18\x02 \x03(\x0b\x32\x16.PBBattlefieldStatInfo\x12)\n\tcamp_info\x18\x03 \x03(\x0b\x32\x16.PBBattlefieldCampInfo\"\x88\x01\n\x16PBBattlefieldTowerInfo\x12\x0f\n\x07\x63\x61mp_id\x18\x01 \x01(\r\x12\x11\n\tcreate_id\x18\x02 \x01(\t\x12(\n\x06status\x18\x03 \x01(\x0e\x32\x18.EBattlefieldTowerStatus\x12 \n\x04type\x18\x05 \x01(\x0e\x32\x12.ETeamPVPTowerType\"d\n\x15PBBattlefieldCampInfo\x12\x0f\n\x07\x63\x61mp_id\x18\x01 \x01(\r\x12\r\n\x05score\x18\x02 \x01(\x11\x12+\n\ntower_info\x18\x03 \x03(\x0b\x32\x17.PBBattlefieldTowerInfo\"\x97\x02\n\x15PBBattlefieldStatInfo\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\r\x12\x11\n\tchar_name\x18\x02 \x01(\t\x12\x14\n\x0c\x63har_camp_id\x18\x03 \x01(\r\x12\x12\n\nchar_kills\x18\x04 \x01(\x11\x12\x12\n\nchar_score\x18\x05 \x01(\x11\x12\x1c\n\x14reward_item_sheet_id\x18\x06 \x01(\r\x12\x19\n\x11reward_item_count\x18\x07 \x01(\x11\x12\x16\n\x0ereward_justice\x18\x08 \x01(\x11\x12(\n\x10reward_item_list\x18\t \x03(\x0b\x32\x0e.PBBattleRewad\x12\x12\n\nbuff_floor\x18\n \x01(\x11\x12\r\n\x05isAFK\x18\x0b \x01(\x08\"\x92\x01\n\x11PBBattleMatchType\x12\x13\n\x0b\x62igworld_id\x18\x01 \x01(\r\x12\x12\n\ngroup_type\x18\x02 \x01(\x11\x12\x13\n\x0b\x61\x63tivity_id\x18\x03 \x01(\r\x12\x12\n\nis_no_span\x18\x04 \x01(\r\x12\x14\n\x0c\x62\x61ttle_score\x18\x05 \x01(\x11\x12\x15\n\rdungeon_sheet\x18\x06 \x01(\x11\"m\n\x0bPBRoleShard\x12\x0f\n\x07role_id\x18\x01 \x01(\x04\x12\x17\n\x0fglobal_shard_id\x18\x02 \x01(\r\x12\x14\n\x0c\x62\x61ttle_score\x18\x03 \x01(\x11\x12\x10\n\x08\x61\x64\x64_time\x18\x04 \x01(\r\x12\x0c\n\x04\x63\x61mp\x18\x05 \x01(\r\"\x82\x01\n\x10PBBattleMatchRes\x12\x12\n\ngroup_type\x18\x01 \x01(\x11\x12\x1b\n\x05roles\x18\x02 \x03(\x0b\x32\x0c.PBRoleShard\x12\x15\n\rdungeon_sheet\x18\x03 \x01(\r\x12\x13\n\x0bstart_match\x18\x04 \x01(\r\x12\x11\n\tend_match\x18\x05 \x01(\r\"E\n\x19PBBattleMatchQueryRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\x04\x12\x17\n\x0fglobal_shard_id\x18\x02 \x01(\r\".\n\rPBBattleRewad\x12\x10\n\x08sheet_id\x18\x01 \x01(\x11\x12\x0b\n\x03num\x18\x02 \x01(\x11\"\xaa\x01\n\x18PBMsgGetMatchInfoRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\x12\x12\n\nmatch_type\x18\x03 \x01(\r\x12\r\n\x05level\x18\x04 \x01(\r\x12\x11\n\tgrouptype\x18\x05 \x01(\r\x12\x0e\n\x06\x61\x63t_id\x18\x06 \x01(\r\x12\x10\n\x08isnospan\x18\x07 \x01(\x08\x12\x12\n\nbigworldid\x18\x08 \x01(\r\":\n!PBBattlefieldsendCallFriendNotice\x12\x15\n\rdungeon_sheet\x18\x01 \x01(\r\">\n\x16PBBattlefieldAFKNotice\x12\x11\n\tafk_times\x18\x01 \x01(\r\x12\x11\n\tafk_ratio\x18\x02 \x01(\x02\"\xb6\x01\n\x11PBTeamBattleMatch\x12\x13\n\x0b\x62igworld_id\x18\x01 \x01(\r\x12\x12\n\ngroup_type\x18\x02 \x01(\x11\x12\x13\n\x0b\x61\x63tivity_id\x18\x03 \x01(\r\x12\x12\n\nis_no_span\x18\x04 \x01(\r\x12\x15\n\rdungeon_sheet\x18\x05 \x01(\x11\x12\x0f\n\x07team_id\x18\x06 \x01(\r\x12\'\n\trole_list\x18\x07 \x03(\x0b\x32\x14.PBTeamMatchRoleInfo\"N\n\x13PBTeamMatchRoleInfo\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x14\n\x0c\x62\x61ttle_score\x18\x02 \x01(\x11\x12\x10\n\x08shard_id\x18\x03 \x01(\r\"v\n\x11PBCancelTeamMatch\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x13\n\x0b\x62igworld_id\x18\x02 \x01(\r\x12\x13\n\x0b\x61\x63tivity_id\x18\x03 \x01(\r\x12\x12\n\nis_no_span\x18\x04 \x01(\r\x12\x12\n\ngroup_type\x18\x05 \x01(\x11*\xaf\x01\n\x17\x45\x42\x61ttlefieldTowerStatus\x12\x1b\n\x17\x45\x42\x61ttilefieldTower_NULL\x10\x00\x12\x1b\n\x17\x45\x42\x61ttilefieldTower_Init\x10\x01\x12\x1c\n\x18\x45\x42\x61ttilefieldTower_Count\x10\x02\x12\x1d\n\x19\x45\x42\x61ttilefieldTower_Danger\x10\x03\x12\x1d\n\x19\x45\x42\x61ttilefieldTower_Damage\x10\x04*l\n\x11\x45TeamPVPTowerType\x12\x1a\n\x16\x45\x42\x61ttilefieldTower_1st\x10\x01\x12\x1a\n\x16\x45\x42\x61ttilefieldTower_2nd\x10\x02\x12\x1f\n\x1b\x45\x42\x61ttilefieldTower_ShuiJing\x10\x03')
 
 _EBATTLEFIELDTOWERSTATUS = descriptor.EnumDescriptor(
   name='EBattlefieldTowerStatus',
@@ -43,8 +43,8 @@ _EBATTLEFIELDTOWERSTATUS = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2368,
-  serialized_end=2543,
+  serialized_start=2767,
+  serialized_end=2942,
 )
 
 
@@ -69,8 +69,8 @@ _ETEAMPVPTOWERTYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2545,
-  serialized_end=2653,
+  serialized_start=2944,
+  serialized_end=3052,
 )
 
 
@@ -806,6 +806,13 @@ _PBROLESHARD = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='camp', full_name='PBRoleShard.camp', index=4,
+      number=5, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -816,7 +823,7 @@ _PBROLESHARD = descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=1721,
-  serialized_end=1816,
+  serialized_end=1830,
 )
 
 
@@ -871,8 +878,8 @@ _PBBATTLEMATCHRES = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1819,
-  serialized_end=1949,
+  serialized_start=1833,
+  serialized_end=1963,
 )
 
 
@@ -906,8 +913,8 @@ _PBBATTLEMATCHQUERYREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1951,
-  serialized_end=2020,
+  serialized_start=1965,
+  serialized_end=2034,
 )
 
 
@@ -941,8 +948,8 @@ _PBBATTLEREWAD = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2022,
-  serialized_end=2068,
+  serialized_start=2036,
+  serialized_end=2082,
 )
 
 
@@ -1018,8 +1025,8 @@ _PBMSGGETMATCHINFOREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2071,
-  serialized_end=2241,
+  serialized_start=2085,
+  serialized_end=2255,
 )
 
 
@@ -1046,8 +1053,8 @@ _PBBATTLEFIELDSENDCALLFRIENDNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2243,
-  serialized_end=2301,
+  serialized_start=2257,
+  serialized_end=2315,
 )
 
 
@@ -1081,8 +1088,176 @@ _PBBATTLEFIELDAFKNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2303,
-  serialized_end=2365,
+  serialized_start=2317,
+  serialized_end=2379,
+)
+
+
+_PBTEAMBATTLEMATCH = descriptor.Descriptor(
+  name='PBTeamBattleMatch',
+  full_name='PBTeamBattleMatch',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='bigworld_id', full_name='PBTeamBattleMatch.bigworld_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='group_type', full_name='PBTeamBattleMatch.group_type', index=1,
+      number=2, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='activity_id', full_name='PBTeamBattleMatch.activity_id', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='is_no_span', full_name='PBTeamBattleMatch.is_no_span', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='dungeon_sheet', full_name='PBTeamBattleMatch.dungeon_sheet', index=4,
+      number=5, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='team_id', full_name='PBTeamBattleMatch.team_id', index=5,
+      number=6, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='role_list', full_name='PBTeamBattleMatch.role_list', index=6,
+      number=7, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=2382,
+  serialized_end=2564,
+)
+
+
+_PBTEAMMATCHROLEINFO = descriptor.Descriptor(
+  name='PBTeamMatchRoleInfo',
+  full_name='PBTeamMatchRoleInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBTeamMatchRoleInfo.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='battle_score', full_name='PBTeamMatchRoleInfo.battle_score', index=1,
+      number=2, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='shard_id', full_name='PBTeamMatchRoleInfo.shard_id', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=2566,
+  serialized_end=2644,
+)
+
+
+_PBCANCELTEAMMATCH = descriptor.Descriptor(
+  name='PBCancelTeamMatch',
+  full_name='PBCancelTeamMatch',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='team_id', full_name='PBCancelTeamMatch.team_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='bigworld_id', full_name='PBCancelTeamMatch.bigworld_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='activity_id', full_name='PBCancelTeamMatch.activity_id', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='is_no_span', full_name='PBCancelTeamMatch.is_no_span', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='group_type', full_name='PBCancelTeamMatch.group_type', index=4,
+      number=5, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=2646,
+  serialized_end=2764,
 )
 
 _PBBATTLEFIELDSTATINFORM.fields_by_name['stat_info'].message_type = _PBBATTLEFIELDSTATINFO
@@ -1094,6 +1269,7 @@ _PBBATTLEFIELDTOWERINFO.fields_by_name['type'].enum_type = _ETEAMPVPTOWERTYPE
 _PBBATTLEFIELDCAMPINFO.fields_by_name['tower_info'].message_type = _PBBATTLEFIELDTOWERINFO
 _PBBATTLEFIELDSTATINFO.fields_by_name['reward_item_list'].message_type = _PBBATTLEREWAD
 _PBBATTLEMATCHRES.fields_by_name['roles'].message_type = _PBROLESHARD
+_PBTEAMBATTLEMATCH.fields_by_name['role_list'].message_type = _PBTEAMMATCHROLEINFO
 DESCRIPTOR.message_types_by_name['PBBattlefieldHarvestRequest'] = _PBBATTLEFIELDHARVESTREQUEST
 DESCRIPTOR.message_types_by_name['PBBattlefieldHarvestCancelRequest'] = _PBBATTLEFIELDHARVESTCANCELREQUEST
 DESCRIPTOR.message_types_by_name['PBBattlefieldHarvestStatusResponse'] = _PBBATTLEFIELDHARVESTSTATUSRESPONSE
@@ -1118,6 +1294,9 @@ DESCRIPTOR.message_types_by_name['PBBattleRewad'] = _PBBATTLEREWAD
 DESCRIPTOR.message_types_by_name['PBMsgGetMatchInfoRequest'] = _PBMSGGETMATCHINFOREQUEST
 DESCRIPTOR.message_types_by_name['PBBattlefieldsendCallFriendNotice'] = _PBBATTLEFIELDSENDCALLFRIENDNOTICE
 DESCRIPTOR.message_types_by_name['PBBattlefieldAFKNotice'] = _PBBATTLEFIELDAFKNOTICE
+DESCRIPTOR.message_types_by_name['PBTeamBattleMatch'] = _PBTEAMBATTLEMATCH
+DESCRIPTOR.message_types_by_name['PBTeamMatchRoleInfo'] = _PBTEAMMATCHROLEINFO
+DESCRIPTOR.message_types_by_name['PBCancelTeamMatch'] = _PBCANCELTEAMMATCH
 
 class PBBattlefieldHarvestRequest(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
@@ -1262,5 +1441,23 @@ class PBBattlefieldAFKNotice(message.Message):
   DESCRIPTOR = _PBBATTLEFIELDAFKNOTICE
   
   # @@protoc_insertion_point(class_scope:PBBattlefieldAFKNotice)
+
+class PBTeamBattleMatch(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBTEAMBATTLEMATCH
+  
+  # @@protoc_insertion_point(class_scope:PBTeamBattleMatch)
+
+class PBTeamMatchRoleInfo(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBTEAMMATCHROLEINFO
+  
+  # @@protoc_insertion_point(class_scope:PBTeamMatchRoleInfo)
+
+class PBCancelTeamMatch(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBCANCELTEAMMATCH
+  
+  # @@protoc_insertion_point(class_scope:PBCancelTeamMatch)
 
 # @@protoc_insertion_point(module_scope)

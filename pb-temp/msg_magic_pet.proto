@@ -1,0 +1,310 @@
+option optimize_for = SPEED;
+
+//灵宝界面请求;
+message PBMsgMagicPetInfoRequest
+{
+	
+};
+
+//灵宝界面回复;
+message PBMsgMagicPetInfoResponse
+{
+	optional sint32	ret_code					= 1;	// 返回值;
+	repeated PBMagicPetItem	magic_pet_list		= 2;	// 激活的灵宝列表;
+	optional sint32 battle_magic_pet_id			= 3;	// 出战的灵宝;
+	optional sint32 gift_magic_pet_id			= 4;	// 应用特效的灵宝id;
+	optional string gift_effect_name			= 5;	// 应用的的灵宝特效(增加提示);
+};
+
+
+//阵法界面请求;
+message PBMsgMagicPetTeamSlotRequest
+{
+	
+};
+
+//灵宝激活请求;
+message PBMsgMagicPetActiveRequest
+{
+	optional sint32 magic_pet_id		= 1;	// 灵宝id;
+};
+
+//灵宝激活回复;
+message PBMsgMagicPetActiveResponse
+{
+	optional sint32			ret_code	= 1;	// 返回值;
+	optional PBMagicPetItem	magic_pet	= 2;
+};
+
+//灵宝升级请求;
+message PBMsgMagicPetUpgradeRequest
+{
+	optional sint32 magic_pet_id		= 1;	// 灵宝id;
+};
+
+//灵宝升级回复;
+message PBMsgMagicPetUpgradeResponse
+{
+	optional sint32			ret_code	= 1;	// 返回值;
+	optional PBMagicPetItem	magic_pet	= 2;
+};
+
+//灵宝升星请求;
+message PBMsgMagicPetStarUpRequest
+{
+	optional sint32 magic_pet_id		= 1;	// 灵宝id;
+};
+
+//灵宝升星回复;
+message PBMsgMagicPetStarUpResponse
+{
+	optional sint32			ret_code	= 1;	// 返回值;
+	optional PBMagicPetItem	magic_pet	= 2;
+};
+
+//灵宝属性培养请求;
+message PBMsgMagicPetProTrainRequest
+{
+	optional sint32 magic_pet_id		= 1;	// 灵宝id;
+	optional sint32 pro_slot_id			= 2;	// 属性槽id;
+};
+
+//灵宝属性培养回复;
+message PBMsgMagicPetProTrainResponse
+{
+	optional sint32			ret_code	= 1;	// 返回值;
+	optional PBMagicPetItem	magic_pet	= 2;
+};
+
+//灵宝技能槽培养请求;
+message PBMsgMagicPetSkillSlotTrainRequest
+{
+	optional sint32 magic_pet_id		= 1;	// 灵宝id;
+	optional sint32 skill_slot_id		= 2;	// 技能槽id;
+};
+
+//灵宝技能槽培养回复;
+message PBMsgMagicPetSkillSlotTrainResponse
+{
+	optional sint32			ret_code	= 1;	// 返回值;
+	optional PBMagicPetItem	magic_pet	= 2;
+};
+
+//灵宝技能槽装备请求;
+message PBMsgMagicPetSkillSlotEquimentRequest
+{
+	optional sint32 magic_pet_id		= 1;	// 灵宝id;
+	optional sint32 skill_slot_id		= 2;	// 技能槽id;
+	optional sint32 skill_id		    = 3;	// 技能id;
+};
+
+//灵宝技能槽装备回复;
+message PBMsgMagicPetSkillSlotEquimentResponse
+{
+	optional sint32			ret_code	= 1;	// 返回值;
+	optional PBMagicPetItem	magic_pet	= 2;
+};
+
+//灵宝技能槽解除装备请求;
+message PBMsgMagicPetSkillSlotRemoveEquimentRequest
+{
+	optional sint32 magic_pet_id		= 1;	// 灵宝id;
+	optional sint32 skill_slot_id		= 2;	// 技能槽id;
+};
+
+//灵宝技能槽解除装备回复;
+message PBMsgMagicPetSkillSlotRemoveEquimentResponse
+{
+	optional sint32			ret_code	= 1;	// 返回值;
+	optional PBMagicPetItem	magic_pet	= 2;
+};
+
+//灵宝出战请求;
+message PBMsgMagicPetBattleRequest
+{
+	optional sint32 magic_pet_id		= 1;	// 灵宝id;
+};
+
+//灵宝出战回复;
+message PBMsgMagicPetBattleResponse
+{
+	optional sint32	ret_code			= 1;	// 返回值;
+	optional sint32 battle_magic_pet_id	= 2;	// 出战的灵宝;
+};
+
+//灵宝休息请求;
+message PBMsgMagicPetRestRequest
+{
+	optional sint32 magic_pet_id		= 1;	// 灵宝id;
+};
+
+//灵宝休息回复;
+message PBMsgMagicPetRestResponse
+{
+	optional sint32	ret_code			= 1;	// 返回值;
+	optional sint32 rest_magic_pet_id	= 2;	// 休息的灵宝;
+};
+
+//灵宝上阵请求;
+message PBMsgMagicPetJoinTeamRequest
+{
+	optional sint32 magic_pet_id		= 1;	// 灵宝id;
+	optional sint32 slot_id				= 2;	// 上阵槽位;
+};
+
+//灵宝上阵回复;
+message PBMsgMagicPetJoinTeamResponse
+{
+	optional sint32	ret_code			= 1;	// 返回值;
+};
+
+//灵宝下阵请求;
+message PBMsgMagicPetExitTeamRequest
+{
+	optional sint32 magic_pet_id		= 1;	// 灵宝id;
+};
+
+//灵宝下阵回复;
+message PBMsgMagicPetExitTeamResponse
+{
+	optional sint32	ret_code			= 1;	// 返回值;
+};
+
+//灵宝阵容改变推送（解锁阵容槽位、出战、上下阵）;
+message PBMsgMagicPetTeamSlotChangeNotice
+{
+	repeated PBMagicPetTeamPage team_page_list	= 1;	// 阵容列表;
+	repeated TProDataItem   proData_list		= 2;	// 属性列表;
+	optional sint32 total_score					= 3;	// 总战力;
+};
+
+message TProDataItem
+{
+	
+	optional sint32	func_type		=	1;	// 属性类型 Pro_Type::EPropertyAttr;
+	optional sint32	value			=	2;	// 属性值;
+};
+
+//灵宝;
+message PBMagicPetItem
+{
+	optional sint32 id								= 1;	// 灵宝id;
+	optional string sheet_name						= 2;	// 灵宝sheet name;
+	optional uint32 cur_level						= 3;	// 当前等级;
+	optional sint32 cur_exp							= 4;	// 当前经验;
+	optional sint32 max_exp							= 5;	// 经验最大值;
+	optional uint32 star_level						= 6;	// 星级;
+	optional sint32 battle_score					= 7;	// 战力;
+	repeated PBMagicPetProItem pro_list				= 8;	// 属性列表;
+	repeated PBMagicPetSkillSlot skill_slot_list	= 9;	// 技能槽列表;
+	optional PBMagicPetSkill skill_list				= 10;	// 技能列表;
+	optional bool is_unlock                         = 11;   // 是否解锁;
+	optional string pro_cost_item					= 12;	// 属性培养消耗道具;
+	optional sint32 pro_cost_num					= 13;	// 属性培养消耗数量;
+	optional string levelup_cost_item				= 14;	// 升级消耗道具;
+	optional sint32 levelup_cost_num				= 15;	// 升级消耗数量;
+	optional string starup_cost_item				= 16;	// 升星消耗道具;
+	optional sint32 starup_cost_num					= 17;	// 升星消耗数量;
+	optional sint32 levelup_score_limit				= 18;	// 升级所需战力;
+	optional sint32 gift_level						= 19;	// 天赋等级;
+	optional sint32 gift_exp						= 20;	// 天赋经验;
+	optional sint32 gift_battle_score				= 21;	// 天赋战力;
+	repeated PBMagicPetProItem extra_pro_list		= 22;	// 当前灵宝天赋增加的额外属性;
+};
+
+//灵宝属性;
+message PBMagicPetProItem
+{
+	optional sint32 slot_id			=	1;	// 属性槽id;
+	optional sint32	func_mode		=	2;	// 属性生效方式 Pro_Type::TPro_Func;
+	optional sint32	func_type		=	3;	// 属性类型 Pro_Type::EPropertyAttr;
+	optional sint32	value			=	4;	// 属性值;
+	optional sint32 max				=	5;	// 上限;
+};
+
+//灵宝技能列表;
+message PBMagicPetSkill
+{
+	repeated PBMagicPetSkillItem	active_skill_list	=	1;	// 主动技能列表;
+	repeated PBMagicPetSkillItem	talent_skill_list	=	2;	// 天赋技能列表;
+	repeated PBMagicPetSkillItem	generic_skill_list	=	3;	// 通用技能列表;
+};
+
+//灵宝技能;
+message PBMagicPetSkillItem
+{
+	optional sint32	skill_id	=	1;	// 技能id;
+	optional bool is_unlock		=	2;	// 是否解锁;
+	optional sint32 unlock_star	=	3;	// 解锁星级;
+};
+
+//灵宝技能槽;
+message PBMagicPetSkillSlot
+{
+	optional sint32	slot_id						=	1;	// 技能槽id;
+	optional sint32	slot_level					=	2;	// 等级;
+	optional sint32 slot_type					=	3;	// 槽位类型;
+	optional sint32	skill_id					=	4;	// 技能id，0为该槽位没有技能;
+	optional sint32 is_unlock					=	5;	// 是否解锁;
+	repeated PBMagicPetSkillSlotProp prop_list	=	6;	// 属性列表;
+	optional sint32	next_level					=	7;	// 下一级别等级;
+	repeated PBMagicPetSlotCost   cost_list     =   8;  // 消耗列表;
+	optional sint32 unlock_star					=	9;	// 解锁星级;
+};
+
+//灵宝技能槽属性;
+message PBMagicPetSkillSlotProp
+{
+	optional sint32	func_mode		=	1;	// 属性生效方式 Pro_Type::TPro_Func;
+	optional sint32	func_type		=	2;	// 属性类型 Pro_Type::EPropertyAttr;
+	optional sint32	value			=	3;	// 属性值;
+	optional sint32	nextvalue		=	4;	// 下一级别属性值;
+
+};
+
+message PBMagicPetSlotCost
+{
+	optional  sint32        level        =1;//级别
+	optional  string        CostItem     =2;//消耗的道具类型
+	optional  sint32        CostNum      =3;//消耗的道具数量
+};
+
+//灵宝阵容页;
+message PBMagicPetTeamPage
+{
+	repeated PBMagicPetTeam team_list	= 1;	// 阵容列表;
+};
+
+//灵宝阵容;
+message PBMagicPetTeam
+{
+	optional sint32	slot_id			=	1;	// 槽位id;
+	optional sint32	magic_pet_id	=	2;	// 灵宝id，0为该槽位没有灵宝;
+	optional bool is_unlock			=	3;	// 是否解锁;
+};
+// 灵宝天赋
+// 
+message PBMagicPetApplyRequest
+{
+	optional sint32	magic_pet_id			=	1;	// 灵宝id，0为该槽位没有灵宝;
+	optional string	effect_name				=   2;  // 外形名称
+};
+
+message PBMagicPetApplyResponse
+{
+	optional sint32	ret_code			=	1;	// 提示
+	optional sint32 gift_magic_pet_id	=   2;	// 应用特效的灵宝id;
+	optional string gift_effect_name	=   3;	// 应用的的灵宝特效(增加提示);
+};
+message PBMagicPetUpOrBreakRequest
+{
+	optional sint32	flag			=	1;	// 0 升级 1突破
+	optional uint32	count			=   2;  // 使用数量
+	optional string sheet_name		=   3;  // sheet名称     
+	optional sint32	magic_pet_id	=	4;	// 灵宝id，0为该槽位没有灵宝;
+};
+message PBMagicPetUpOrBreakResponse
+{
+	optional sint32			ret_code			=	1;	// 提示
+	optional PBMagicPetItem	magic_pet			=	2;  // 改变的灵宝
+};

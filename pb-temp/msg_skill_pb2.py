@@ -11,7 +11,7 @@ from google.protobuf import descriptor_pb2
 DESCRIPTOR = descriptor.FileDescriptor(
   name='msg_skill.proto',
   package='',
-  serialized_pb='\n\x0fmsg_skill.proto\"6\n\x0bPBMoneyCost\x12\x12\n\nmoney_type\x18\x01 \x01(\x11\x12\x13\n\x0bmoney_value\x18\x02 \x01(\x11\"7\n\nPBItemCost\x12\x17\n\x0fitem_sheet_name\x18\x01 \x01(\t\x12\x10\n\x08item_cnt\x18\x02 \x01(\x11\"\x8f\x01\n\x0bPBSkillInfo\x12\x17\n\x0fskill_secial_id\x18\x01 \x01(\x11\x12\r\n\x05level\x18\x02 \x01(\x11\x12\x16\n\x0elevel_up_index\x18\x03 \x01(\x11\x12 \n\nmoney_cost\x18\x04 \x03(\x0b\x32\x0c.PBMoneyCost\x12\x1e\n\titem_cost\x18\x05 \x03(\x0b\x32\x0b.PBItemCost\"9\n\x0cPBSkillEquip\x12\x17\n\x0fskill_secial_id\x18\x01 \x01(\x11\x12\x10\n\x08slot_idx\x18\x02 \x01(\x11\"\xb3\x01\n\nPBAllSkill\x12 \n\ninitiative\x18\x01 \x03(\x0b\x32\x0c.PBSkillInfo\x12\x1d\n\x07passive\x18\x02 \x03(\x0b\x32\x0c.PBSkillInfo\x12\x1d\n\x06\x65quips\x18\x03 \x03(\x0b\x32\r.PBSkillEquip\x12\"\n\x0cunique_skill\x18\x04 \x03(\x0b\x32\x0c.PBSkillInfo\x12!\n\x0bmarry_skill\x18\x05 \x03(\x0b\x32\x0c.PBSkillInfo\"@\n\x11PBSkillInfoNotice\x12\x1b\n\x06skills\x18\x01 \x01(\x0b\x32\x0b.PBAllSkill\x12\x0e\n\x06school\x18\x02 \x01(\x11\"0\n\x15PBMsgSkillLvUpRequest\x12\x17\n\x0fskill_secial_id\x18\x01 \x01(\x11\"d\n\x16PBMsgSkillLvUpResponse\x12\x1a\n\x04info\x18\x01 \x01(\x0b\x32\x0c.PBSkillInfo\x12\x1c\n\x05\x65quip\x18\x02 \x01(\x0b\x32\r.PBSkillEquip\x12\x10\n\x08ret_code\x18\x03 \x01(\x11\"S\n\x16PBMsgSkillEquipRequest\x12\x11\n\tfrom_slot\x18\x01 \x01(\x11\x12\x15\n\rfrom_skill_id\x18\x02 \x01(\x11\x12\x0f\n\x07to_slot\x18\x03 \x01(\x11\"J\n\x17PBMsgSkillEquipResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1d\n\x06\x65quips\x18\x02 \x03(\x0b\x32\r.PBSkillEquip*)\n\nESkillSlot\x12\x1b\n\x0eSkill_SlotType\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01\x42\x02H\x01')
+  serialized_pb='\n\x0fmsg_skill.proto\"6\n\x0bPBMoneyCost\x12\x12\n\nmoney_type\x18\x01 \x01(\x11\x12\x13\n\x0bmoney_value\x18\x02 \x01(\x11\"7\n\nPBItemCost\x12\x17\n\x0fitem_sheet_name\x18\x01 \x01(\t\x12\x10\n\x08item_cnt\x18\x02 \x01(\x11\"\x8f\x01\n\x0bPBSkillInfo\x12\x17\n\x0fskill_secial_id\x18\x01 \x01(\x11\x12\r\n\x05level\x18\x02 \x01(\x11\x12\x16\n\x0elevel_up_index\x18\x03 \x01(\x11\x12 \n\nmoney_cost\x18\x04 \x03(\x0b\x32\x0c.PBMoneyCost\x12\x1e\n\titem_cost\x18\x05 \x03(\x0b\x32\x0b.PBItemCost\"9\n\x0cPBSkillEquip\x12\x17\n\x0fskill_secial_id\x18\x01 \x01(\x11\x12\x10\n\x08slot_idx\x18\x02 \x01(\x11\"\xd9\x01\n\nPBAllSkill\x12 \n\ninitiative\x18\x01 \x03(\x0b\x32\x0c.PBSkillInfo\x12\x1d\n\x07passive\x18\x02 \x03(\x0b\x32\x0c.PBSkillInfo\x12\x1d\n\x06\x65quips\x18\x03 \x03(\x0b\x32\r.PBSkillEquip\x12\"\n\x0cunique_skill\x18\x04 \x03(\x0b\x32\x0c.PBSkillInfo\x12!\n\x0bmarry_skill\x18\x05 \x03(\x0b\x32\x0c.PBSkillInfo\x12$\n\x0emagicpet_skill\x18\x06 \x03(\x0b\x32\x0c.PBSkillInfo\"@\n\x11PBSkillInfoNotice\x12\x1b\n\x06skills\x18\x01 \x01(\x0b\x32\x0b.PBAllSkill\x12\x0e\n\x06school\x18\x02 \x01(\x11\"0\n\x15PBMsgSkillLvUpRequest\x12\x17\n\x0fskill_secial_id\x18\x01 \x01(\x11\"d\n\x16PBMsgSkillLvUpResponse\x12\x1a\n\x04info\x18\x01 \x01(\x0b\x32\x0c.PBSkillInfo\x12\x1c\n\x05\x65quip\x18\x02 \x01(\x0b\x32\r.PBSkillEquip\x12\x10\n\x08ret_code\x18\x03 \x01(\x11\"S\n\x16PBMsgSkillEquipRequest\x12\x11\n\tfrom_slot\x18\x01 \x01(\x11\x12\x15\n\rfrom_skill_id\x18\x02 \x01(\x11\x12\x0f\n\x07to_slot\x18\x03 \x01(\x11\"J\n\x17PBMsgSkillEquipResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1d\n\x06\x65quips\x18\x02 \x03(\x0b\x32\r.PBSkillEquip*)\n\nESkillSlot\x12\x1b\n\x0eSkill_SlotType\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01\x42\x02H\x01')
 
 _ESKILLSLOT = descriptor.EnumDescriptor(
   name='ESkillSlot',
@@ -26,8 +26,8 @@ _ESKILLSLOT = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=898,
-  serialized_end=939,
+  serialized_start=936,
+  serialized_end=977,
 )
 
 
@@ -238,6 +238,13 @@ _PBALLSKILL = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='magicpet_skill', full_name='PBAllSkill.magicpet_skill', index=5,
+      number=6, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -248,7 +255,7 @@ _PBALLSKILL = descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=338,
-  serialized_end=517,
+  serialized_end=555,
 )
 
 
@@ -282,8 +289,8 @@ _PBSKILLINFONOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=519,
-  serialized_end=583,
+  serialized_start=557,
+  serialized_end=621,
 )
 
 
@@ -310,8 +317,8 @@ _PBMSGSKILLLVUPREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=585,
-  serialized_end=633,
+  serialized_start=623,
+  serialized_end=671,
 )
 
 
@@ -352,8 +359,8 @@ _PBMSGSKILLLVUPRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=635,
-  serialized_end=735,
+  serialized_start=673,
+  serialized_end=773,
 )
 
 
@@ -394,8 +401,8 @@ _PBMSGSKILLEQUIPREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=737,
-  serialized_end=820,
+  serialized_start=775,
+  serialized_end=858,
 )
 
 
@@ -429,8 +436,8 @@ _PBMSGSKILLEQUIPRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=822,
-  serialized_end=896,
+  serialized_start=860,
+  serialized_end=934,
 )
 
 _PBSKILLINFO.fields_by_name['money_cost'].message_type = _PBMONEYCOST
@@ -440,6 +447,7 @@ _PBALLSKILL.fields_by_name['passive'].message_type = _PBSKILLINFO
 _PBALLSKILL.fields_by_name['equips'].message_type = _PBSKILLEQUIP
 _PBALLSKILL.fields_by_name['unique_skill'].message_type = _PBSKILLINFO
 _PBALLSKILL.fields_by_name['marry_skill'].message_type = _PBSKILLINFO
+_PBALLSKILL.fields_by_name['magicpet_skill'].message_type = _PBSKILLINFO
 _PBSKILLINFONOTICE.fields_by_name['skills'].message_type = _PBALLSKILL
 _PBMSGSKILLLVUPRESPONSE.fields_by_name['info'].message_type = _PBSKILLINFO
 _PBMSGSKILLLVUPRESPONSE.fields_by_name['equip'].message_type = _PBSKILLEQUIP

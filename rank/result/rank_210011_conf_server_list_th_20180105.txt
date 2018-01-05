@@ -1,0 +1,2 @@
+排行榜level网关210011
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point

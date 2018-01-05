@@ -119,6 +119,26 @@ message PBMsgIngoreChargeRegressReport
 	optional uint32 act_id						= 1; // 活动ID
 };
 
+// 绑定贵宾玩家
+message PBBindVipPlayerInfo
+{
+	optional uint32 act_id						= 1; // 活动ID
+	optional PBTemplateItemQuantityList award_list	= 2; // 奖励物品
+	optional uint32 ignore_count				= 3; // 忽略的剩余次数
+	optional uint32 is_show_window				= 4; // 是否显示推送窗口
+};
+
+// 绑定贵宾玩家通知
+message PBMsgBindVipPlayerActNotice
+{
+	optional PBBindVipPlayerInfo act_info	= 1;
+};
+
+// 忽略绑定贵宾玩家
+message PBMsgIngoreBindVipPlayerReport
+{
+	optional uint32 act_id						= 1; // 活动ID
+};
 
 // 烟火活动通知
 message PBMsgActFireworksInfoNotice
@@ -312,4 +332,33 @@ message PBOnearmBanditHistoryData
 message PBOnearmBanditClearReport
 {
 
+};
+message PBVipLevelInfo
+{
+	optional sint32         vip_level				= 1;    // vip 等级
+	optional sint32         rolling_times			= 2;    // 该vip等级摇过的次数
+	optional sint32         rolling_config_times	= 3;    // 该vip等级配置允许摇的最大次数
+};
+message PBRollingtreeData
+{
+	optional sint32         roll_type				= 1;    // 1 铜钱 2 元宝
+	optional sint32			roll_times				= 2;	// 该树摇过的总次数;
+	optional sint32			roll_config_times		= 3;	// 该树配置允许摇的最大次数
+	optional sint32         start_num				= 4;    // 随机起始数
+	optional sint32			end_num					= 5;    // 随机终止数
+	repeated PBVipLevelInfo	vip_info				= 6;	// vip等级对应的使用次数;
+	optional sint32			single_cost				= 7;    // 单次消耗
+};
+// 摇钱树玩家通知
+message PBMsgRollingtreeNotice
+{
+	optional sint32							 ret_code		= 1;
+	repeated PBRollingtreeData				 tree_data_list = 2;
+	optional sint32							 left_seconds	= 3;
+};
+// 摇钱树客户端请求
+message PBMsgRollingtreeRequest
+{
+	optional sint32         roll_type		= 1;    // 0 请求 1 铜钱 2 元宝
+	optional uint32			act_id			= 2;    // 活动 id
 };

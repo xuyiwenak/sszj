@@ -1,0 +1,40 @@
+import "tmpl_base.proto";
+
+message PBMagicPetCfg
+{
+	repeated PBMagicPetFormationPage formation_page = 1;
+	repeated PBMagicPetIdPair idpairs				= 2;
+	repeated PBMagicPetIdGift idgift				= 3;
+};
+
+message PBMagicPetFormationPage
+{
+	optional sint32 is_open							= 1;	    //该页是否开放;
+	repeated PBMagicPetFormationSlot formation_slot	= 2;		//槽位;
+};
+
+message PBMagicPetFormationSlot
+{
+	optional sint32 slot_id							= 1;	    //槽位ID;
+	optional sint32 player_level_limit				= 2;	    //玩家等级;
+	optional sint32 score_limit						= 3;	    //上阵灵宝战力;
+	repeated PBMagicPetFormationSlotProp property	= 4;		//槽位属性;
+};
+
+message PBMagicPetFormationSlotProp
+{
+	optional sint32 prop_id				= 1;	    //属性ID;
+	optional sint32 prop_func			= 2;	    //属性生效方式;
+	optional sint32 prop_value			= 3;	    //属性值;
+};
+
+message PBMagicPetIdPair
+{
+	optional sint32	ID					= 1;		//灵宝唯一ID;
+	optional string sheet_name			= 2;		//sheetname;
+}
+message PBMagicPetIdGift
+{
+	optional sint32	effect_id			= 1;		//灵宝天赋唯一ID;
+	optional string gift_name			= 2;		//灵宝天赋名称;
+}

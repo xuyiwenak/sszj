@@ -31,4 +31,6 @@ message PBMessageSet
 	optional PBSpanWildRank			data_21 = 21;//[(OptionDBNamePrefix) = "su"];
 	optional PBGMSCommonData		data_22 = 22;//[(OptionDBNamePrefix) = "su"];
 	optional PBPetPvPRankData       data_23 = 23;//[(OptionDBNamePrefix) = "gamedb"];
+	optional PBCropsInfoData		data_24 = 24;//[(OptionDBNamePrefix) = "gamedb"];
+	optional PBCommonCropsInfoData	data_25 = 25;//[(OptionDBNamePrefix) = "su"];
 }

@@ -1,0 +1,12 @@
+æŽ’è¡Œæ¦œlevelç½‘å…³210001
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,tstach12xx@gmail.com,100000472,2197,¥M??LLsJ¥,269494, 105, 1, 3, 1171, 216
+210,15kopsk@gmail.com,100000562,1231,?????,227748, 104, 1, 3, 347, 783
+210,elkosza1995@gmail.com,100000543,1310,?Elkos?,304115, 104, 1, 1, 361, 81
+210,rosemary_0614@hotmail.com,100000508,1395,?Queen~Bee?,266508, 104, 2, 3, 1221, 13492
+210,adtawood200@gmail.com,100007818,1704,??????,232646, 104, 3, 3, 775, 522
+210,facebook100007362,100007362,2166,CuxDreaM,254285, 104, 3, 3, 924, 450
+210,masterthailand44@gmail.com,100007212,2473,?King~Size?,264289, 104, 3, 3, 570, 2712
+210,xoen1a77@gmail.com,100000527,2994,?u?????Š???,249447, 104, 1, 3, 1234, 702
+210,fahfon175@gmail.com,100000695,3334,???????Š???,233323, 104, 2, 3, 603, 2087
+210,poppnarak_20@hotmail.com,100008612,3697,•×???????×•,232710, 104, 2, 3, 786, 400

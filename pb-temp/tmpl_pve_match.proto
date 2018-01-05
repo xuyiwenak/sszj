@@ -1,0 +1,21 @@
+import "tmpl_base.proto";
+
+message PBPvEMatchCfg
+{
+	repeated PBPvEMatchDungeon dungeon = 1;
+};
+
+message PBPvEMatchDungeon
+{
+	optional string	dungeon_sheet			= 1;		//副本sheet;
+	optional sint32 match_time				= 2;		//匹配时间;
+	optional sint32 match_level				= 3;		//匹配等级;
+	repeated PBPvEMatchCreature creature	= 4;		//助战npc;
+}
+
+message PBPvEMatchCreature
+{
+	optional string	creature_sheet			= 1;		//creature sheet;
+	optional string group_name				= 2;		//组名;
+	optional sint32 creature_level			= 3;		//等级;
+}

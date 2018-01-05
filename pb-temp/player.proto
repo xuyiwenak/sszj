@@ -17,6 +17,7 @@ import "msg_mount_luck.proto";
 import "msg_potential.proto";
 import "msg_wardrobe.proto";
 import "msg_wing.proto";
+import "msg_magic_pet.proto";
 
 //================================================================================
 // 数据字段设计规范：
@@ -174,6 +175,9 @@ message PBCharProperty
 	optional uint32	pvp_lastupdatetime 	= 104;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'"];	//pvp赛季最后更新时间;
 	optional sint64 pet_pvp_jifen		= 105 ;//[(OptionDBFieldExtra) = "bigint(22) NOT NULL DEFAULT '0'"];			//宠物pvp积分;
 	optional uint32	send_flower_socre 	= 106;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'"];	//送花获得积分;
+	optional uint64	crop_id 			= 107;//[(OptionDBFieldExtra) = "bigint(22) NOT NULL DEFAULT '0'"];	//跨服组队战战队ID;
+	optional uint32	last_create_crop_time = 108;//[(OptionDBFieldExtra) = "int(11) NOT NULL DEFAULT '0'"];	//上次创建战队时间，防止战队ID重复;
+	optional sint64 spanteam_score		= 109 ;//[(OptionDBFieldExtra) = "bigint(22) NOT NULL DEFAULT '0'"];			//跨服组队积分;
 };
 
 message PBUserInfo// 玩家基础信息
@@ -254,8 +258,9 @@ message PBPlayerData
 	repeated PBPlayerChargeRecord		charge_record		= 5; // 充值记录
 	repeated PBPlayerChargeSign			charge_sign			= 6; // 充值签到
 	repeated PBPlayerChargeRegress		charge_regress		= 7; // 充值回归
+	repeated PBVipGetRewardInfo			vip_change_reward	= 8; // vip充值奖励记录
+	optional string						last_vip_version	= 9; // 最后一次领取的版本ID
 };
-
 message PBPlayerChargeRecord
 {
 	optional uint64 detailId = 1;
@@ -266,7 +271,12 @@ message PBPlayerChargeRecord
 	optional sint32 total_amount = 6;
 	optional uint32 charge_goods_id = 7;
 };
-
+message PBVipGetRewardInfo
+{
+	optional string						version_id		= 1; // 版本ID
+	optional uint32						index			= 2; // 版本下标
+	optional bool						ifGetReward		= 3; // 是否领取了奖励
+};
 message PBPlayerChargeSign
 {
 	optional uint32						act_id		= 1; // 活动ID
@@ -291,7 +301,12 @@ message PBPlayerChargeRegress
 	optional uint32						item_index	= 5; // 参加的索引号
 };
 
-
+message PBPlayerBindVipData
+{
+	optional uint32						act_id		= 1; // 活动ID
+	optional uint32                     act_end_time = 2; // 活动结束时间
+	optional uint32						ignore_count= 3; // 忽略次数
+};
 message PBDBQuest
 {
 	optional uint32 quest_id			=	1;//任务模板id;
@@ -301,6 +316,7 @@ message PBDBQuest
 	optional uint32 finish_time			=	5;//完成时间;
 	optional bool   force_complete      =   6;//是否强制完成的标志
 	optional uint32 start_time			=	7;//任务开始时间
+
 };
 
 message PBDBTask
@@ -396,14 +412,19 @@ message PBCharBlob
 	optional PBPotential	potential_data						= 66;//[(OptionDBFieldExtra) = "MediumBlob"]; //潜能系统
 	optional PBDBSpanImbattle  span_imbattle_data				= 67;//[(OptionDBFieldExtra) = "MediumBlob"]; //社团战副本信息
 	optional PBDBWardrobe   wardrobe_data                       = 68;//[(OptionDBFieldExtra) = "MediumBlob"]; //衣橱信息
-	optional PBDBPetBattleArray pet_pve_battle_array = 69;//[(OptionDBFieldExtra) = "MediumBlob"]; // 宠物PVE阵容
+	optional PBDBPetBattleArray pet_pve_battle_array			= 69;//[(OptionDBFieldExtra) = "MediumBlob"]; // 宠物PVE阵容
 	optional PBDBWingTrain  wing_train_data                     = 70;//[(OptionDBFieldExtra) = "MediumBlob"]; // 翅膀培养
-	optional PBDBPetBattleArray pet_pvp_battle_array = 71;//[(OptionDBFieldExtra) = "MediumBlob"]; // 宠物PVP阵容
-	optional PBDBLoginGiftsData login_gifts_data     = 72;//[(OptionDBFieldExtra) = "MediumBlob"]; // 登录礼包数据
-	optional PBDBOnearmBanditData onearmbandit_data     = 73;//[(OptionDBFieldExtra) = "MediumBlob"]; // 祈福数据;
-	optional PBDBXinfaData xinfa_data					= 74;//[(OptionDBFieldExtra) = "MediumBlob"]; // 心法数据;
-	optional PBOldPlayerBackData oldplayer_back_data    = 75;//[(OptionDBFieldExtra) = "MediumBlob"]; // 老玩家回归数据
-	optional PBDBXiuzhenData xiuzhen_data					= 76;//[(OptionDBFieldExtra) = "MediumBlob"]; // 修真数据;
+	optional PBDBPetBattleArray pet_pvp_battle_array			= 71;//[(OptionDBFieldExtra) = "MediumBlob"]; // 宠物PVP阵容
+	optional PBDBLoginGiftsData login_gifts_data				= 72;//[(OptionDBFieldExtra) = "MediumBlob"]; // 登录礼包数据
+	optional PBDBOnearmBanditData onearmbandit_data			    = 73;//[(OptionDBFieldExtra) = "MediumBlob"]; // 祈福数据;
+	optional PBDBXinfaData xinfa_data							= 74;//[(OptionDBFieldExtra) = "MediumBlob"]; // 心法数据;
+	optional PBOldPlayerBackData oldplayer_back_data			= 75;//[(OptionDBFieldExtra) = "MediumBlob"]; // 老玩家回归数据;
+	optional PBDBXiuzhenData xiuzhen_data						= 76;//[(OptionDBFieldExtra) = "MediumBlob"]; // 修真数据;
+	optional PBDBSpanTeamData spanteam_data						= 77;//[(OptionDBFieldExtra) = "MediumBlob"]; // 跨服组队数据;
+	optional PBDBMagicPetData magic_pet_data					= 78;//[(OptionDBFieldExtra) = "MediumBlob"]; // 灵宝数据;
+	optional PBDBCharGuildLivenessData guild_liveness_data		= 79;//[(OptionDBFieldExtra) = "MediumBlob"]; // 帮派活跃度数据
+	optional PBPlayerBindVipData player_bind_vip_data			= 80;//[(OptionDBFieldExtra) = "MediumBlob"];  // 绑定贵宾vip
+	optional PBDBCharRollingtreeData char_rollingtree_data		= 81;//[(OptionDBFieldExtra) = "MediumBlob"];  // 摇钱树数据
 };
 	
 message PBRep 
@@ -1340,3 +1361,70 @@ message PBOldPlayerBackData
     repeated PBOldPlayerBackStruct old_player_back_data = 1;
 }
 
+message PBDBSpanTeamData
+{
+	optional uint32 match_id				= 1;					//赛季id，用于新赛季清理数据;
+	optional uint32 battle_count			= 2;					//场次,用于计算活跃度;
+	optional uint32 score_limit				= 3;					//本赛季获得的积分;
+	optional uint32 liveness				= 4;					//记录活跃度领取过的宝箱id;
+}
+
+message PBDBMagicPetData
+{
+	repeated PBDBMagicPetItem	magic_pet_list			= 1;	// 激活的灵宝列表;
+	repeated PBMagicPetTeamPage team_page_list			= 2;	// 阵容列表;
+	optional sint32 battle_magic_pet_id					= 3;	// 出战的灵宝;
+	repeated PBDBMagicPetSkillUseInfo skill_use_info	= 4;	// 技能使用统计;
+	optional sint32 gift_magic_pet_id					= 5;	// 灵宝特效左侧的标签;
+	optional string gift_effect_name					= 6;	// 灵宝特效右侧的标签;
+}
+
+message PBDBMagicPetItem
+{
+	optional sint32 id								= 1;	// 灵宝id;
+	optional string sheet_name						= 2;	// 灵宝sheet name;
+	optional uint32 cur_level						= 3;	// 当前等级;
+	optional sint32 cur_exp							= 4;	// 当前经验;
+	optional sint32 max_exp							= 5;	// 经验最大值;
+	optional uint32 star_level						= 6;	// 星级;
+	optional sint32 battle_score					= 7;	// 战力;
+	repeated PBDBMagicPetProItem pro_list			= 8;	// 属性列表;
+	repeated PBMagicPetSkillSlot skill_slot_list	= 9;	// 技能槽列表;
+	optional PBMagicPetSkill skill_list				= 10;	// 技能列表;
+	optional bool is_unlock                         = 11;   // 是否解锁;
+	optional sint32 gift_level						= 12;	// 当前灵宝天赋等级;
+	optional sint64 gift_exp						= 13;	// 当前灵宝经验条经验;
+	optional sint32 gift_battle_score				= 14;	// 当前灵宝天赋增加的战斗力;
+};
+
+message PBDBMagicPetProItem
+{
+	optional sint32 slot_id			=	1;	// 属性槽id;
+	optional sint32	func_mode		=	2;	// 属性生效方式 Pro_Type::TPro_Func;
+	optional sint32	func_type		=	3;	// 属性类型 Pro_Type::EPropertyAttr;
+	optional sint32	value			=	4;	// 属性值;
+	optional sint32 max				=	5;	// 上限;
+	optional sint32 train_count		=	6;	// 培养次数;
+};
+
+message PBDBMagicPetSkillUseInfo
+{
+	optional sint32 skill_id			=	1;	// 技能id;
+	optional sint32	use_count			=	2;	// 使用次数;
+};
+
+message PBDBCharGuildLivenessData
+{
+    optional uint32 liveness               = 1;             //记录领取过的宝箱
+    optional uint32 last_reset_time        = 2;             // 上次清空时间
+}
+message PBDBCharRollingtreeData
+{
+	repeated PBDBCharRollingtreeSingle  one_tree               = 1;   // 每棵树单独记录次数
+}
+message PBDBCharRollingtreeSingle
+{
+	optional PBRollingtreeData	tree_data	 = 1 ;			  // 一棵树的必要数据
+	optional sint32 weight					 = 2 ;			  // 概率权重
+	optional sint32 roll_times				 = 3 ;			  // 该树摇过的次数
+}

@@ -14,6 +14,8 @@ message PBConfigChangeCamp
 	optional sint32				npc_check_distance	= 8;//[default=10]; // NPC的距离
 	optional sint32				npc_check_flag		= 9;//[default=0]; // NPC的距离是否判断哦
 	optional PBConfigCampCreature	camp_creature	= 10; // 弱国怪物死亡全服奖励
+	optional sint32				server_merge_check_time	= 11;//[default=0]; // 合服时间的检测（秒）
+	optional sint32				server_merge_check_flag	= 12;//[default=1]; // 合服时间的检测判断
 }
 
 message PBConfigTransRule				

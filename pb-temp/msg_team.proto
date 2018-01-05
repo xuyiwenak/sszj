@@ -580,3 +580,28 @@ message PBMsgCanSpanPveMatchResponse
 	optional sint32					reasoncode			= 3;
 	optional sint64					param				= 4;
 };
+
+message PBMsgCanTeamPVPMatchRequest
+{
+	optional uint32					leaderid			= 1;
+	optional uint32					memberid			= 2;
+	optional uint32					sessionid			= 3;
+	optional uint32					functype			= 4;
+	optional uint32					sheetid				= 5;
+};
+
+message PBMsgCanTeamPVPMatchResponse
+{
+	optional sint32					ret_code			= 1;
+	optional uint32					sessionid			= 2;
+	optional sint32					reasoncode			= 3;
+	optional sint64					param				= 4;
+};
+
+message PBMsgTeamPVPMatchStatusNotice
+{
+	optional uint32					role_id				= 1;
+	optional uint32					functype			= 2;
+	optional uint32					sheetid				= 3;
+	optional bool					b_match				= 4;// «∑Ò‘⁄∆•≈‰;
+};

@@ -17,6 +17,7 @@ def create_table(DB_HOST, DB_USER, DB_PWD ,DB_NAME , TABLE_NAME):
                        log_host_ip char(32),\
                        log_name char(32),\
                        server_ip char(32),\
+                       game_channel char(255),\
                        PRIMARY KEY (`gateway_id`))\
                        ENGINE=InnoDB DEFAULT CHARSET=utf8' %TABLE_NAME)
     dest_cur.close()

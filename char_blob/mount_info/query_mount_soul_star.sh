@@ -1,1 +1,1 @@
-mysql -usszj -pDR9m_wqsgF8a -P3306 data_stat_ss -e "select gateway_id, role_id, item_type, b.value, sheet_id, quantity from mount_item_stat a, dictionary b where item_type = 2 and INSTR(b.key, a.sheet_id) > 0 order by gateway_id, role_id, sheet_id" > ./mount_soul_star_last_month.txt
+mysql -usszj -pDR9m_wqsgF8a -P3306 data_stat_ss -e "select gateway_id, role_id, item_type, b.value, sheet_id, quantity from stat_mount_item a, dictionary b where item_type = 2 and INSTR(b.key, a.sheet_id) > 0 order by gateway_id, role_id, sheet_id" > ./mount_soul_star_20170901.txt

@@ -1,0 +1,17 @@
+import "tmpl_base.proto";
+
+message PBResourcePunishmentCfg
+{
+	option (OptionXmlFile)		= "resource_punishment.xml";
+	
+	repeated PBResourcePunishment   resource_punishment = 1;         // 惩罚配置
+}
+
+message PBResourcePunishment
+{
+	optional sint32 resource_type                   = 1;                                 // 资源类型
+	optional sint32  gain_resource_per           = 2;//[default=5000];         // 获得资源万分比
+	optional string  punishment_start_time     = 3;                                 // 惩罚开始时间
+	optional string  punishment_end_time     = 4;                                  //  惩罚结束时间
+	repeated uint32 punishment_role_id         = 5;                                 //   惩罚的玩家
+}

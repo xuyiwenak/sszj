@@ -15,7 +15,7 @@ import msg_base_pb2
 DESCRIPTOR = descriptor.FileDescriptor(
   name='msg_activity.proto',
   package='',
-  serialized_pb='\n\x12msg_activity.proto\x1a\x0ftmpl_base.proto\x1a\x0fmsg_quest.proto\x1a\x1dtmpl_activity_fireworks.proto\x1a\x0emsg_base.proto\"7\n\x17PBMsgDrawLotteryRequest\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x0c\n\x04type\x18\x02 \x01(\x11\"\x9a\x01\n\x18PBMsgDrwaLotteryResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0e\n\x06\x61\x63t_id\x18\x02 \x01(\r\x12\x0c\n\x04type\x18\x03 \x01(\x11\x12\x1f\n\x04item\x18\x04 \x03(\x0b\x32\x11.PBOneLotteryItem\x12\x16\n\x0e\x66ree_left_time\x18\x05 \x01(\r\x12\x15\n\rfree_left_cnt\x18\x06 \x01(\x11\"~\n\x1ePBMsgDrawLotteryGoodItemNotice\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x0c\n\x04type\x18\x02 \x01(\x11\x12\x13\n\x0bplayer_name\x18\x03 \x01(\t\x12)\n\x0egood_item_list\x18\x04 \x03(\x0b\x32\x11.PBOneLotteryItem\"b\n\x13PBLotteryStatusData\x12$\n\nact_status\x18\x01 \x03(\x0b\x32\x10.PBLotteryStatus\x12\x15\n\rlottery_jifen\x18\x02 \x01(\r\x12\x0e\n\x06period\x18\x03 \x01(\r\"~\n\x0fPBLotteryStatus\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x15\n\rnext_act_time\x18\x02 \x01(\r\x12\x14\n\x0c\x66ree_use_cnt\x18\x03 \x01(\x11\x12\x14\n\x0cnext_cd_time\x18\x04 \x01(\r\x12\x18\n\x10get_item_use_cnt\x18\x05 \x01(\x11\"E\n\x10PBOneLotteryItem\x12\x12\n\nitem_sheet\x18\x01 \x01(\t\x12\x0b\n\x03num\x18\x02 \x01(\r\x12\x10\n\x08valuable\x18\x03 \x01(\x08\"f\n\x18PBDrawLotteryOneActItems\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\x11\x12:\n\x11\x64raw_lottery_data\x18\x02 \x03(\x0b\x32\x1f.PBMsgDrawLotteryGoodItemNotice\"@\n\x14PBDrwaLotteryALLData\x12(\n\x05items\x18\x01 \x03(\x0b\x32\x19.PBDrawLotteryOneActItems\"\xda\x01\n\x13PBChargeRegressInfo\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x13\n\x0b\x65xpire_time\x18\x02 \x01(\r\x12\x12\n\ncharge_sum\x18\x03 \x01(\r\x12/\n\naward_list\x18\x04 \x01(\x0b\x32\x1b.PBTemplateItemQuantityList\x12\x14\n\x0cignore_count\x18\x05 \x01(\r\x12\x16\n\x0eis_show_window\x18\x06 \x01(\r\x12\x16\n\x0e\x63ur_charge_sum\x18\x07 \x01(\r\x12\x13\n\x0b\x63harge_desc\x18\x08 \x01(\t\"E\n\x18PBMsgChargeRegressNotice\x12)\n\x0b\x63harge_info\x18\x01 \x01(\x0b\x32\x14.PBChargeRegressInfo\"0\n\x1ePBMsgIngoreChargeRegressReport\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\"G\n\x1bPBMsgActFireworksInfoNotice\x12(\n\x08\x61\x63t_info\x18\x01 \x01(\x0b\x32\x16.PBMsgActFireworksInfo\"?\n\x1cPBMsgActFireworksInfoRequest\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\"I\n\x1dPBMsgActFireworksInfoResponse\x12(\n\x08\x61\x63t_info\x18\x01 \x01(\x0b\x32\x16.PBMsgActFireworksInfo\"\xe4\x03\n\x15PBMsgActFireworksInfo\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x12\n\nstart_time\x18\x02 \x01(\r\x12\x10\n\x08\x65nd_time\x18\x03 \x01(\r\x12\x12\n\ngain_score\x18\x04 \x01(\r\x12\x18\n\x10server_cur_score\x18\x05 \x01(\r\x12\x1c\n\x14server_score_percent\x18\x06 \x01(\r\x12\x33\n\x0cshow_percent\x18\x07 \x03(\x0b\x32\x1d.PBMsgActFireworksShowPercent\x12&\n\x05quest\x18\x08 \x03(\x0b\x32\x17.PBMsgActFireworksQuest\x12\x1b\n\x13next_fireworks_time\x18\t \x01(\r\x12\x36\n\x11server_award_list\x18\n \x01(\x0b\x32\x1b.PBTemplateItemQuantityList\x12\x18\n\x10is_show_firework\x18\x0b \x01(\r\x12\x1a\n\x12server_total_score\x18\x0c \x01(\r\x12-\n\ract_desc_info\x18\r \x01(\x0b\x32\x16.PBConfigFireworksDesc\x12\x32\n\x10\x66ireworks_status\x18\x0e \x01(\x0e\x32\x18.TActFireworksTimeStatus\"E\n\x16PBMsgActFireworksQuest\x12\x12\n\ngain_score\x18\x01 \x01(\r\x12\x17\n\x05quest\x18\x02 \x01(\x0b\x32\x08.PBQuest\":\n\x1cPBMsgActFireworksShowPercent\x12\x1a\n\x12show_score_percent\x18\x01 \x01(\r\"J\n\x11PBMsgNpcBtnNotice\x12\x11\n\tnpc_alias\x18\x01 \x01(\r\x12\"\n\x08\x62tn_info\x18\x02 \x03(\x0b\x32\x10.PBMsgNpcBtnInfo\"7\n\x0fPBMsgNpcBtnInfo\x12\x10\n\x08name_key\x18\x01 \x01(\t\x12\x12\n\nevent_link\x18\x02 \x01(\t\"E\n\x18PBMsgGateActStatusNotice\x12)\n\x08\x61\x63t_info\x18\x01 \x03(\x0b\x32\x17.PBMsgGateActStatusInfo\"_\n\x16PBMsgGateActStatusInfo\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x1f\n\x06status\x18\x02 \x01(\x0e\x32\x0f.TGateActStatus\x12\x14\n\x0c\x61\x63t_tip_type\x18\x03 \x01(\r\"Q\n!PBMsgLoginGiftsRewardStatusNotice\x12,\n\x0bstatus_info\x18\x01 \x03(\x0b\x32\x17.PBLoginGiftsStatusInfo\"S\n\x16PBLoginGiftsStatusInfo\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12)\n\x06status\x18\x02 \x03(\x0b\x32\x19.PBLoginGiftsRewardStatus\"L\n\x18PBLoginGiftsRewardStatus\x12\r\n\x05\x64\x61yth\x18\x01 \x01(\x11\x12!\n\x06status\x18\x02 \x01(\x0e\x32\x11.TActRewardStatus\":\n\x19PBMsgGetLoginGiftsRequest\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\r\n\x05\x64\x61yth\x18\x02 \x01(\r\".\n\x1aPBMsgGetLoginGiftsResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"S\n\"PBMsgOnlineGiftsRewardStatusNotice\x12-\n\x0bstatus_info\x18\x01 \x01(\x0b\x32\x18.PBOnlineGiftsStatusInfo\"c\n\x17PBOnlineGiftsStatusInfo\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\'\n\x06status\x18\x02 \x03(\x0b\x32\x17.PBOnlineGiftsGetStatus\x12\x0f\n\x07is_open\x18\x03 \x01(\x08\"\\\n\x16PBOnlineGiftsGetStatus\x12\r\n\x05index\x18\x01 \x01(\r\x12!\n\x06status\x18\x02 \x01(\x0e\x32\x11.TActRewardStatus\x12\x10\n\x08leftTime\x18\x03 \x01(\r\";\n\x1aPBMsgGetOnlineGiftsRequest\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\r\n\x05index\x18\x02 \x01(\r\"/\n\x1bPBMsgGetOnlineGiftsResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"/\n\x1dPBMsgOnearmBanditBlessRequest\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\"^\n\x1ePBMsgOnearmBanditBlessResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x12\n\nitem_index\x18\x02 \x01(\r\x12\x16\n\x0emultiple_index\x18\x03 \x01(\r\"0\n\x1ePBMsgOnearmBanditRewardRequest\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\"\x7f\n\x1fPBMsgOnearmBanditRewardResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x12\n\nitem_sheet\x18\x02 \x01(\t\x12\x10\n\x08item_num\x18\x03 \x01(\r\x12\x10\n\x08multiple\x18\x04 \x01(\r\x12\x12\n\nleft_times\x18\x05 \x01(\x11\"Y\n\x1dPBMsgOnearmBanditRecordNotice\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12(\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32\x1a.PBOnearmBanditHistoryData\"`\n\x19PBOnearmBanditHistoryData\x12\x0f\n\x07sheetid\x18\x01 \x01(\t\x12\x0b\n\x03num\x18\x02 \x01(\x11\x12\x10\n\x08multiple\x18\x03 \x01(\x11\x12\x13\n\x0bplayer_name\x18\x04 \x01(\t\"\x1b\n\x19PBOnearmBanditClearReport*e\n\x12TActChargeSignType\x12\x18\n\x14\x65nActChargeSign_None\x10\x00\x12\x18\n\x14\x65nActChargeSign_Over\x10\x01\x12\x1b\n\x17\x65nActChargeSign_Express\x10\x02*k\n\x17TActFireworksTimeStatus\x12\x18\n\x14\x65nActFireStatus_None\x10\x00\x12\x19\n\x15\x65nActFireStatus_Score\x10\x01\x12\x1b\n\x17\x65nActFireStatus_Display\x10\x02*G\n\x0eTGateActStatus\x12\x18\n\x14\x65nGateActStatus_Idle\x10\x00\x12\x1b\n\x17\x65nGateActStatus_Running\x10\x01*t\n\x10TActRewardStatus\x12\x14\n\x10\x65nActReward_None\x10\x00\x12\x19\n\x15\x65nActReward_CanNotGet\x10\x01\x12\x16\n\x12\x65nActReward_CanGet\x10\x02\x12\x17\n\x13\x65nActReward_HaveGet\x10\x03\x42\x02H\x01')
+  serialized_pb='\n\x12msg_activity.proto\x1a\x0ftmpl_base.proto\x1a\x0fmsg_quest.proto\x1a\x1dtmpl_activity_fireworks.proto\x1a\x0emsg_base.proto\"7\n\x17PBMsgDrawLotteryRequest\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x0c\n\x04type\x18\x02 \x01(\x11\"\x9a\x01\n\x18PBMsgDrwaLotteryResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0e\n\x06\x61\x63t_id\x18\x02 \x01(\r\x12\x0c\n\x04type\x18\x03 \x01(\x11\x12\x1f\n\x04item\x18\x04 \x03(\x0b\x32\x11.PBOneLotteryItem\x12\x16\n\x0e\x66ree_left_time\x18\x05 \x01(\r\x12\x15\n\rfree_left_cnt\x18\x06 \x01(\x11\"~\n\x1ePBMsgDrawLotteryGoodItemNotice\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x0c\n\x04type\x18\x02 \x01(\x11\x12\x13\n\x0bplayer_name\x18\x03 \x01(\t\x12)\n\x0egood_item_list\x18\x04 \x03(\x0b\x32\x11.PBOneLotteryItem\"b\n\x13PBLotteryStatusData\x12$\n\nact_status\x18\x01 \x03(\x0b\x32\x10.PBLotteryStatus\x12\x15\n\rlottery_jifen\x18\x02 \x01(\r\x12\x0e\n\x06period\x18\x03 \x01(\r\"~\n\x0fPBLotteryStatus\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x15\n\rnext_act_time\x18\x02 \x01(\r\x12\x14\n\x0c\x66ree_use_cnt\x18\x03 \x01(\x11\x12\x14\n\x0cnext_cd_time\x18\x04 \x01(\r\x12\x18\n\x10get_item_use_cnt\x18\x05 \x01(\x11\"E\n\x10PBOneLotteryItem\x12\x12\n\nitem_sheet\x18\x01 \x01(\t\x12\x0b\n\x03num\x18\x02 \x01(\r\x12\x10\n\x08valuable\x18\x03 \x01(\x08\"f\n\x18PBDrawLotteryOneActItems\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\x11\x12:\n\x11\x64raw_lottery_data\x18\x02 \x03(\x0b\x32\x1f.PBMsgDrawLotteryGoodItemNotice\"@\n\x14PBDrwaLotteryALLData\x12(\n\x05items\x18\x01 \x03(\x0b\x32\x19.PBDrawLotteryOneActItems\"\xda\x01\n\x13PBChargeRegressInfo\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x13\n\x0b\x65xpire_time\x18\x02 \x01(\r\x12\x12\n\ncharge_sum\x18\x03 \x01(\r\x12/\n\naward_list\x18\x04 \x01(\x0b\x32\x1b.PBTemplateItemQuantityList\x12\x14\n\x0cignore_count\x18\x05 \x01(\r\x12\x16\n\x0eis_show_window\x18\x06 \x01(\r\x12\x16\n\x0e\x63ur_charge_sum\x18\x07 \x01(\r\x12\x13\n\x0b\x63harge_desc\x18\x08 \x01(\t\"E\n\x18PBMsgChargeRegressNotice\x12)\n\x0b\x63harge_info\x18\x01 \x01(\x0b\x32\x14.PBChargeRegressInfo\"0\n\x1ePBMsgIngoreChargeRegressReport\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\"\x84\x01\n\x13PBBindVipPlayerInfo\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12/\n\naward_list\x18\x02 \x01(\x0b\x32\x1b.PBTemplateItemQuantityList\x12\x14\n\x0cignore_count\x18\x03 \x01(\r\x12\x16\n\x0eis_show_window\x18\x04 \x01(\r\"E\n\x1bPBMsgBindVipPlayerActNotice\x12&\n\x08\x61\x63t_info\x18\x01 \x01(\x0b\x32\x14.PBBindVipPlayerInfo\"0\n\x1ePBMsgIngoreBindVipPlayerReport\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\"G\n\x1bPBMsgActFireworksInfoNotice\x12(\n\x08\x61\x63t_info\x18\x01 \x01(\x0b\x32\x16.PBMsgActFireworksInfo\"?\n\x1cPBMsgActFireworksInfoRequest\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\"I\n\x1dPBMsgActFireworksInfoResponse\x12(\n\x08\x61\x63t_info\x18\x01 \x01(\x0b\x32\x16.PBMsgActFireworksInfo\"\xe4\x03\n\x15PBMsgActFireworksInfo\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x12\n\nstart_time\x18\x02 \x01(\r\x12\x10\n\x08\x65nd_time\x18\x03 \x01(\r\x12\x12\n\ngain_score\x18\x04 \x01(\r\x12\x18\n\x10server_cur_score\x18\x05 \x01(\r\x12\x1c\n\x14server_score_percent\x18\x06 \x01(\r\x12\x33\n\x0cshow_percent\x18\x07 \x03(\x0b\x32\x1d.PBMsgActFireworksShowPercent\x12&\n\x05quest\x18\x08 \x03(\x0b\x32\x17.PBMsgActFireworksQuest\x12\x1b\n\x13next_fireworks_time\x18\t \x01(\r\x12\x36\n\x11server_award_list\x18\n \x01(\x0b\x32\x1b.PBTemplateItemQuantityList\x12\x18\n\x10is_show_firework\x18\x0b \x01(\r\x12\x1a\n\x12server_total_score\x18\x0c \x01(\r\x12-\n\ract_desc_info\x18\r \x01(\x0b\x32\x16.PBConfigFireworksDesc\x12\x32\n\x10\x66ireworks_status\x18\x0e \x01(\x0e\x32\x18.TActFireworksTimeStatus\"E\n\x16PBMsgActFireworksQuest\x12\x12\n\ngain_score\x18\x01 \x01(\r\x12\x17\n\x05quest\x18\x02 \x01(\x0b\x32\x08.PBQuest\":\n\x1cPBMsgActFireworksShowPercent\x12\x1a\n\x12show_score_percent\x18\x01 \x01(\r\"J\n\x11PBMsgNpcBtnNotice\x12\x11\n\tnpc_alias\x18\x01 \x01(\r\x12\"\n\x08\x62tn_info\x18\x02 \x03(\x0b\x32\x10.PBMsgNpcBtnInfo\"7\n\x0fPBMsgNpcBtnInfo\x12\x10\n\x08name_key\x18\x01 \x01(\t\x12\x12\n\nevent_link\x18\x02 \x01(\t\"E\n\x18PBMsgGateActStatusNotice\x12)\n\x08\x61\x63t_info\x18\x01 \x03(\x0b\x32\x17.PBMsgGateActStatusInfo\"_\n\x16PBMsgGateActStatusInfo\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x1f\n\x06status\x18\x02 \x01(\x0e\x32\x0f.TGateActStatus\x12\x14\n\x0c\x61\x63t_tip_type\x18\x03 \x01(\r\"Q\n!PBMsgLoginGiftsRewardStatusNotice\x12,\n\x0bstatus_info\x18\x01 \x03(\x0b\x32\x17.PBLoginGiftsStatusInfo\"S\n\x16PBLoginGiftsStatusInfo\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12)\n\x06status\x18\x02 \x03(\x0b\x32\x19.PBLoginGiftsRewardStatus\"L\n\x18PBLoginGiftsRewardStatus\x12\r\n\x05\x64\x61yth\x18\x01 \x01(\x11\x12!\n\x06status\x18\x02 \x01(\x0e\x32\x11.TActRewardStatus\":\n\x19PBMsgGetLoginGiftsRequest\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\r\n\x05\x64\x61yth\x18\x02 \x01(\r\".\n\x1aPBMsgGetLoginGiftsResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"S\n\"PBMsgOnlineGiftsRewardStatusNotice\x12-\n\x0bstatus_info\x18\x01 \x01(\x0b\x32\x18.PBOnlineGiftsStatusInfo\"c\n\x17PBOnlineGiftsStatusInfo\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\'\n\x06status\x18\x02 \x03(\x0b\x32\x17.PBOnlineGiftsGetStatus\x12\x0f\n\x07is_open\x18\x03 \x01(\x08\"\\\n\x16PBOnlineGiftsGetStatus\x12\r\n\x05index\x18\x01 \x01(\r\x12!\n\x06status\x18\x02 \x01(\x0e\x32\x11.TActRewardStatus\x12\x10\n\x08leftTime\x18\x03 \x01(\r\";\n\x1aPBMsgGetOnlineGiftsRequest\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\r\n\x05index\x18\x02 \x01(\r\"/\n\x1bPBMsgGetOnlineGiftsResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"/\n\x1dPBMsgOnearmBanditBlessRequest\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\"^\n\x1ePBMsgOnearmBanditBlessResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x12\n\nitem_index\x18\x02 \x01(\r\x12\x16\n\x0emultiple_index\x18\x03 \x01(\r\"0\n\x1ePBMsgOnearmBanditRewardRequest\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\"\x7f\n\x1fPBMsgOnearmBanditRewardResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x12\n\nitem_sheet\x18\x02 \x01(\t\x12\x10\n\x08item_num\x18\x03 \x01(\r\x12\x10\n\x08multiple\x18\x04 \x01(\r\x12\x12\n\nleft_times\x18\x05 \x01(\x11\"Y\n\x1dPBMsgOnearmBanditRecordNotice\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12(\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32\x1a.PBOnearmBanditHistoryData\"`\n\x19PBOnearmBanditHistoryData\x12\x0f\n\x07sheetid\x18\x01 \x01(\t\x12\x0b\n\x03num\x18\x02 \x01(\x11\x12\x10\n\x08multiple\x18\x03 \x01(\x11\x12\x13\n\x0bplayer_name\x18\x04 \x01(\t\"\x1b\n\x19PBOnearmBanditClearReport\"X\n\x0ePBVipLevelInfo\x12\x11\n\tvip_level\x18\x01 \x01(\x11\x12\x15\n\rrolling_times\x18\x02 \x01(\x11\x12\x1c\n\x14rolling_config_times\x18\x03 \x01(\x11\"\xb1\x01\n\x11PBRollingtreeData\x12\x11\n\troll_type\x18\x01 \x01(\x11\x12\x12\n\nroll_times\x18\x02 \x01(\x11\x12\x19\n\x11roll_config_times\x18\x03 \x01(\x11\x12\x11\n\tstart_num\x18\x04 \x01(\x11\x12\x0f\n\x07\x65nd_num\x18\x05 \x01(\x11\x12!\n\x08vip_info\x18\x06 \x03(\x0b\x32\x0f.PBVipLevelInfo\x12\x13\n\x0bsingle_cost\x18\x07 \x01(\x11\"l\n\x16PBMsgRollingtreeNotice\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12*\n\x0etree_data_list\x18\x02 \x03(\x0b\x32\x12.PBRollingtreeData\x12\x14\n\x0cleft_seconds\x18\x03 \x01(\x11\"<\n\x17PBMsgRollingtreeRequest\x12\x11\n\troll_type\x18\x01 \x01(\x11\x12\x0e\n\x06\x61\x63t_id\x18\x02 \x01(\r*e\n\x12TActChargeSignType\x12\x18\n\x14\x65nActChargeSign_None\x10\x00\x12\x18\n\x14\x65nActChargeSign_Over\x10\x01\x12\x1b\n\x17\x65nActChargeSign_Express\x10\x02*k\n\x17TActFireworksTimeStatus\x12\x18\n\x14\x65nActFireStatus_None\x10\x00\x12\x19\n\x15\x65nActFireStatus_Score\x10\x01\x12\x1b\n\x17\x65nActFireStatus_Display\x10\x02*G\n\x0eTGateActStatus\x12\x18\n\x14\x65nGateActStatus_Idle\x10\x00\x12\x1b\n\x17\x65nGateActStatus_Running\x10\x01*t\n\x10TActRewardStatus\x12\x14\n\x10\x65nActReward_None\x10\x00\x12\x19\n\x15\x65nActReward_CanNotGet\x10\x01\x12\x16\n\x12\x65nActReward_CanGet\x10\x02\x12\x17\n\x13\x65nActReward_HaveGet\x10\x03\x42\x02H\x01')
 
 _TACTCHARGESIGNTYPE = descriptor.EnumDescriptor(
   name='TActChargeSignType',
@@ -38,8 +38,8 @@ _TACTCHARGESIGNTYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=3674,
-  serialized_end=3775,
+  serialized_start=4372,
+  serialized_end=4473,
 )
 
 
@@ -64,8 +64,8 @@ _TACTFIREWORKSTIMESTATUS = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=3777,
-  serialized_end=3884,
+  serialized_start=4475,
+  serialized_end=4582,
 )
 
 
@@ -86,8 +86,8 @@ _TGATEACTSTATUS = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=3886,
-  serialized_end=3957,
+  serialized_start=4584,
+  serialized_end=4655,
 )
 
 
@@ -116,8 +116,8 @@ _TACTREWARDSTATUS = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=3959,
-  serialized_end=4075,
+  serialized_start=4657,
+  serialized_end=4773,
 )
 
 
@@ -619,6 +619,111 @@ _PBMSGINGORECHARGEREGRESSREPORT = descriptor.Descriptor(
 )
 
 
+_PBBINDVIPPLAYERINFO = descriptor.Descriptor(
+  name='PBBindVipPlayerInfo',
+  full_name='PBBindVipPlayerInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='act_id', full_name='PBBindVipPlayerInfo.act_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='award_list', full_name='PBBindVipPlayerInfo.award_list', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='ignore_count', full_name='PBBindVipPlayerInfo.ignore_count', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='is_show_window', full_name='PBBindVipPlayerInfo.is_show_window', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=1257,
+  serialized_end=1389,
+)
+
+
+_PBMSGBINDVIPPLAYERACTNOTICE = descriptor.Descriptor(
+  name='PBMsgBindVipPlayerActNotice',
+  full_name='PBMsgBindVipPlayerActNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='act_info', full_name='PBMsgBindVipPlayerActNotice.act_info', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=1391,
+  serialized_end=1460,
+)
+
+
+_PBMSGINGOREBINDVIPPLAYERREPORT = descriptor.Descriptor(
+  name='PBMsgIngoreBindVipPlayerReport',
+  full_name='PBMsgIngoreBindVipPlayerReport',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='act_id', full_name='PBMsgIngoreBindVipPlayerReport.act_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=1462,
+  serialized_end=1510,
+)
+
+
 _PBMSGACTFIREWORKSINFONOTICE = descriptor.Descriptor(
   name='PBMsgActFireworksInfoNotice',
   full_name='PBMsgActFireworksInfoNotice',
@@ -642,8 +747,8 @@ _PBMSGACTFIREWORKSINFONOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1256,
-  serialized_end=1327,
+  serialized_start=1512,
+  serialized_end=1583,
 )
 
 
@@ -677,8 +782,8 @@ _PBMSGACTFIREWORKSINFOREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1329,
-  serialized_end=1392,
+  serialized_start=1585,
+  serialized_end=1648,
 )
 
 
@@ -705,8 +810,8 @@ _PBMSGACTFIREWORKSINFORESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1394,
-  serialized_end=1467,
+  serialized_start=1650,
+  serialized_end=1723,
 )
 
 
@@ -824,8 +929,8 @@ _PBMSGACTFIREWORKSINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1470,
-  serialized_end=1954,
+  serialized_start=1726,
+  serialized_end=2210,
 )
 
 
@@ -859,8 +964,8 @@ _PBMSGACTFIREWORKSQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1956,
-  serialized_end=2025,
+  serialized_start=2212,
+  serialized_end=2281,
 )
 
 
@@ -887,8 +992,8 @@ _PBMSGACTFIREWORKSSHOWPERCENT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2027,
-  serialized_end=2085,
+  serialized_start=2283,
+  serialized_end=2341,
 )
 
 
@@ -922,8 +1027,8 @@ _PBMSGNPCBTNNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2087,
-  serialized_end=2161,
+  serialized_start=2343,
+  serialized_end=2417,
 )
 
 
@@ -957,8 +1062,8 @@ _PBMSGNPCBTNINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2163,
-  serialized_end=2218,
+  serialized_start=2419,
+  serialized_end=2474,
 )
 
 
@@ -985,8 +1090,8 @@ _PBMSGGATEACTSTATUSNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2220,
-  serialized_end=2289,
+  serialized_start=2476,
+  serialized_end=2545,
 )
 
 
@@ -1027,8 +1132,8 @@ _PBMSGGATEACTSTATUSINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2291,
-  serialized_end=2386,
+  serialized_start=2547,
+  serialized_end=2642,
 )
 
 
@@ -1055,8 +1160,8 @@ _PBMSGLOGINGIFTSREWARDSTATUSNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2388,
-  serialized_end=2469,
+  serialized_start=2644,
+  serialized_end=2725,
 )
 
 
@@ -1090,8 +1195,8 @@ _PBLOGINGIFTSSTATUSINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2471,
-  serialized_end=2554,
+  serialized_start=2727,
+  serialized_end=2810,
 )
 
 
@@ -1125,8 +1230,8 @@ _PBLOGINGIFTSREWARDSTATUS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2556,
-  serialized_end=2632,
+  serialized_start=2812,
+  serialized_end=2888,
 )
 
 
@@ -1160,8 +1265,8 @@ _PBMSGGETLOGINGIFTSREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2634,
-  serialized_end=2692,
+  serialized_start=2890,
+  serialized_end=2948,
 )
 
 
@@ -1188,8 +1293,8 @@ _PBMSGGETLOGINGIFTSRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2694,
-  serialized_end=2740,
+  serialized_start=2950,
+  serialized_end=2996,
 )
 
 
@@ -1216,8 +1321,8 @@ _PBMSGONLINEGIFTSREWARDSTATUSNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2742,
-  serialized_end=2825,
+  serialized_start=2998,
+  serialized_end=3081,
 )
 
 
@@ -1258,8 +1363,8 @@ _PBONLINEGIFTSSTATUSINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2827,
-  serialized_end=2926,
+  serialized_start=3083,
+  serialized_end=3182,
 )
 
 
@@ -1300,8 +1405,8 @@ _PBONLINEGIFTSGETSTATUS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2928,
-  serialized_end=3020,
+  serialized_start=3184,
+  serialized_end=3276,
 )
 
 
@@ -1335,8 +1440,8 @@ _PBMSGGETONLINEGIFTSREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3022,
-  serialized_end=3081,
+  serialized_start=3278,
+  serialized_end=3337,
 )
 
 
@@ -1363,8 +1468,8 @@ _PBMSGGETONLINEGIFTSRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3083,
-  serialized_end=3130,
+  serialized_start=3339,
+  serialized_end=3386,
 )
 
 
@@ -1391,8 +1496,8 @@ _PBMSGONEARMBANDITBLESSREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3132,
-  serialized_end=3179,
+  serialized_start=3388,
+  serialized_end=3435,
 )
 
 
@@ -1433,8 +1538,8 @@ _PBMSGONEARMBANDITBLESSRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3181,
-  serialized_end=3275,
+  serialized_start=3437,
+  serialized_end=3531,
 )
 
 
@@ -1461,8 +1566,8 @@ _PBMSGONEARMBANDITREWARDREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3277,
-  serialized_end=3325,
+  serialized_start=3533,
+  serialized_end=3581,
 )
 
 
@@ -1517,8 +1622,8 @@ _PBMSGONEARMBANDITREWARDRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3327,
-  serialized_end=3454,
+  serialized_start=3583,
+  serialized_end=3710,
 )
 
 
@@ -1552,8 +1657,8 @@ _PBMSGONEARMBANDITRECORDNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3456,
-  serialized_end=3545,
+  serialized_start=3712,
+  serialized_end=3801,
 )
 
 
@@ -1601,8 +1706,8 @@ _PBONEARMBANDITHISTORYDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3547,
-  serialized_end=3643,
+  serialized_start=3803,
+  serialized_end=3899,
 )
 
 
@@ -1622,8 +1727,197 @@ _PBONEARMBANDITCLEARREPORT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3645,
-  serialized_end=3672,
+  serialized_start=3901,
+  serialized_end=3928,
+)
+
+
+_PBVIPLEVELINFO = descriptor.Descriptor(
+  name='PBVipLevelInfo',
+  full_name='PBVipLevelInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='vip_level', full_name='PBVipLevelInfo.vip_level', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='rolling_times', full_name='PBVipLevelInfo.rolling_times', index=1,
+      number=2, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='rolling_config_times', full_name='PBVipLevelInfo.rolling_config_times', index=2,
+      number=3, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=3930,
+  serialized_end=4018,
+)
+
+
+_PBROLLINGTREEDATA = descriptor.Descriptor(
+  name='PBRollingtreeData',
+  full_name='PBRollingtreeData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='roll_type', full_name='PBRollingtreeData.roll_type', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='roll_times', full_name='PBRollingtreeData.roll_times', index=1,
+      number=2, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='roll_config_times', full_name='PBRollingtreeData.roll_config_times', index=2,
+      number=3, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='start_num', full_name='PBRollingtreeData.start_num', index=3,
+      number=4, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='end_num', full_name='PBRollingtreeData.end_num', index=4,
+      number=5, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='vip_info', full_name='PBRollingtreeData.vip_info', index=5,
+      number=6, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='single_cost', full_name='PBRollingtreeData.single_cost', index=6,
+      number=7, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=4021,
+  serialized_end=4198,
+)
+
+
+_PBMSGROLLINGTREENOTICE = descriptor.Descriptor(
+  name='PBMsgRollingtreeNotice',
+  full_name='PBMsgRollingtreeNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='ret_code', full_name='PBMsgRollingtreeNotice.ret_code', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='tree_data_list', full_name='PBMsgRollingtreeNotice.tree_data_list', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='left_seconds', full_name='PBMsgRollingtreeNotice.left_seconds', index=2,
+      number=3, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=4200,
+  serialized_end=4308,
+)
+
+
+_PBMSGROLLINGTREEREQUEST = descriptor.Descriptor(
+  name='PBMsgRollingtreeRequest',
+  full_name='PBMsgRollingtreeRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='roll_type', full_name='PBMsgRollingtreeRequest.roll_type', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='act_id', full_name='PBMsgRollingtreeRequest.act_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=4310,
+  serialized_end=4370,
 )
 
 _PBMSGDRWALOTTERYRESPONSE.fields_by_name['item'].message_type = _PBONELOTTERYITEM
@@ -1633,6 +1927,8 @@ _PBDRAWLOTTERYONEACTITEMS.fields_by_name['draw_lottery_data'].message_type = _PB
 _PBDRWALOTTERYALLDATA.fields_by_name['items'].message_type = _PBDRAWLOTTERYONEACTITEMS
 _PBCHARGEREGRESSINFO.fields_by_name['award_list'].message_type = tmpl_base_pb2._PBTEMPLATEITEMQUANTITYLIST
 _PBMSGCHARGEREGRESSNOTICE.fields_by_name['charge_info'].message_type = _PBCHARGEREGRESSINFO
+_PBBINDVIPPLAYERINFO.fields_by_name['award_list'].message_type = tmpl_base_pb2._PBTEMPLATEITEMQUANTITYLIST
+_PBMSGBINDVIPPLAYERACTNOTICE.fields_by_name['act_info'].message_type = _PBBINDVIPPLAYERINFO
 _PBMSGACTFIREWORKSINFONOTICE.fields_by_name['act_info'].message_type = _PBMSGACTFIREWORKSINFO
 _PBMSGACTFIREWORKSINFORESPONSE.fields_by_name['act_info'].message_type = _PBMSGACTFIREWORKSINFO
 _PBMSGACTFIREWORKSINFO.fields_by_name['show_percent'].message_type = _PBMSGACTFIREWORKSSHOWPERCENT
@@ -1651,6 +1947,8 @@ _PBMSGONLINEGIFTSREWARDSTATUSNOTICE.fields_by_name['status_info'].message_type =
 _PBONLINEGIFTSSTATUSINFO.fields_by_name['status'].message_type = _PBONLINEGIFTSGETSTATUS
 _PBONLINEGIFTSGETSTATUS.fields_by_name['status'].enum_type = _TACTREWARDSTATUS
 _PBMSGONEARMBANDITRECORDNOTICE.fields_by_name['data'].message_type = _PBONEARMBANDITHISTORYDATA
+_PBROLLINGTREEDATA.fields_by_name['vip_info'].message_type = _PBVIPLEVELINFO
+_PBMSGROLLINGTREENOTICE.fields_by_name['tree_data_list'].message_type = _PBROLLINGTREEDATA
 DESCRIPTOR.message_types_by_name['PBMsgDrawLotteryRequest'] = _PBMSGDRAWLOTTERYREQUEST
 DESCRIPTOR.message_types_by_name['PBMsgDrwaLotteryResponse'] = _PBMSGDRWALOTTERYRESPONSE
 DESCRIPTOR.message_types_by_name['PBMsgDrawLotteryGoodItemNotice'] = _PBMSGDRAWLOTTERYGOODITEMNOTICE
@@ -1662,6 +1960,9 @@ DESCRIPTOR.message_types_by_name['PBDrwaLotteryALLData'] = _PBDRWALOTTERYALLDATA
 DESCRIPTOR.message_types_by_name['PBChargeRegressInfo'] = _PBCHARGEREGRESSINFO
 DESCRIPTOR.message_types_by_name['PBMsgChargeRegressNotice'] = _PBMSGCHARGEREGRESSNOTICE
 DESCRIPTOR.message_types_by_name['PBMsgIngoreChargeRegressReport'] = _PBMSGINGORECHARGEREGRESSREPORT
+DESCRIPTOR.message_types_by_name['PBBindVipPlayerInfo'] = _PBBINDVIPPLAYERINFO
+DESCRIPTOR.message_types_by_name['PBMsgBindVipPlayerActNotice'] = _PBMSGBINDVIPPLAYERACTNOTICE
+DESCRIPTOR.message_types_by_name['PBMsgIngoreBindVipPlayerReport'] = _PBMSGINGOREBINDVIPPLAYERREPORT
 DESCRIPTOR.message_types_by_name['PBMsgActFireworksInfoNotice'] = _PBMSGACTFIREWORKSINFONOTICE
 DESCRIPTOR.message_types_by_name['PBMsgActFireworksInfoRequest'] = _PBMSGACTFIREWORKSINFOREQUEST
 DESCRIPTOR.message_types_by_name['PBMsgActFireworksInfoResponse'] = _PBMSGACTFIREWORKSINFORESPONSE
@@ -1689,6 +1990,10 @@ DESCRIPTOR.message_types_by_name['PBMsgOnearmBanditRewardResponse'] = _PBMSGONEA
 DESCRIPTOR.message_types_by_name['PBMsgOnearmBanditRecordNotice'] = _PBMSGONEARMBANDITRECORDNOTICE
 DESCRIPTOR.message_types_by_name['PBOnearmBanditHistoryData'] = _PBONEARMBANDITHISTORYDATA
 DESCRIPTOR.message_types_by_name['PBOnearmBanditClearReport'] = _PBONEARMBANDITCLEARREPORT
+DESCRIPTOR.message_types_by_name['PBVipLevelInfo'] = _PBVIPLEVELINFO
+DESCRIPTOR.message_types_by_name['PBRollingtreeData'] = _PBROLLINGTREEDATA
+DESCRIPTOR.message_types_by_name['PBMsgRollingtreeNotice'] = _PBMSGROLLINGTREENOTICE
+DESCRIPTOR.message_types_by_name['PBMsgRollingtreeRequest'] = _PBMSGROLLINGTREEREQUEST
 
 class PBMsgDrawLotteryRequest(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
@@ -1755,6 +2060,24 @@ class PBMsgIngoreChargeRegressReport(message.Message):
   DESCRIPTOR = _PBMSGINGORECHARGEREGRESSREPORT
   
   # @@protoc_insertion_point(class_scope:PBMsgIngoreChargeRegressReport)
+
+class PBBindVipPlayerInfo(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBBINDVIPPLAYERINFO
+  
+  # @@protoc_insertion_point(class_scope:PBBindVipPlayerInfo)
+
+class PBMsgBindVipPlayerActNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGBINDVIPPLAYERACTNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgBindVipPlayerActNotice)
+
+class PBMsgIngoreBindVipPlayerReport(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGINGOREBINDVIPPLAYERREPORT
+  
+  # @@protoc_insertion_point(class_scope:PBMsgIngoreBindVipPlayerReport)
 
 class PBMsgActFireworksInfoNotice(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
@@ -1917,5 +2240,29 @@ class PBOnearmBanditClearReport(message.Message):
   DESCRIPTOR = _PBONEARMBANDITCLEARREPORT
   
   # @@protoc_insertion_point(class_scope:PBOnearmBanditClearReport)
+
+class PBVipLevelInfo(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBVIPLEVELINFO
+  
+  # @@protoc_insertion_point(class_scope:PBVipLevelInfo)
+
+class PBRollingtreeData(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBROLLINGTREEDATA
+  
+  # @@protoc_insertion_point(class_scope:PBRollingtreeData)
+
+class PBMsgRollingtreeNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGROLLINGTREENOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgRollingtreeNotice)
+
+class PBMsgRollingtreeRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGROLLINGTREEREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgRollingtreeRequest)
 
 # @@protoc_insertion_point(module_scope)

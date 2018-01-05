@@ -16,6 +16,7 @@ import "msg_activity.proto";
 import "msg_spanbattle.proto";
 import "msg_guild_redbag.proto";
 import "msg_pet_battle.proto";
+import "msg_magic_pet.proto";
 
 
 // TODO 
@@ -372,6 +373,13 @@ message PBGateWayData//区服数据表;
 	optional PBWildBossLevelContain wild_boss_add_level = 21;//[(OptionDBFieldExtra) = "MediumBlob"];// 野外BOSS增加的等级
 };
 
+enum EServerMergeStatus
+{
+	EServerMerge_None			= 0; // 无
+	EServerMerge_Oper			= 1; // 操作完成，合服时间未改
+	EServerMerge_Over			= 2; // 操作完成，合服时间已改
+};
+
 message PBGateWaySocialData
 {
 	option (OptionPrimaryKey)						= "gateway_id";
@@ -383,7 +391,28 @@ message PBGateWaySocialData
 	optional PBChangeCampData		change_camp_data= 6 ;//[(OptionDBFieldExtra) = "Blob"];		//转阵营信息
 	optional PBWorldCharmRankTop3   charm_rank_top3  = 7;//[(OptionDBFieldExtra) = "Blob"];    // 魅力值排名前三
 	optional uint32         last_pet_pvp_rank_reward_time = 8 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"]; //上次宠物pvp排行榜奖励时间
+	optional uint32					server_merge_status	= 9 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"]; //合服状态
+	optional uint32					server_merge_time	= 10 ;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"]; //合服时间
+    optional PBLastDayPersonRankContaint  rank_data_list = 11;//[(OptionDBFieldExtra) = "MediumBlob"];   //昨天10点排行榜的值
 };
+
+message PBLastDayPersonRank
+{
+	optional sint32 type            = 1;    // 排行榜类型
+	repeated PBRankDataInfo rank_info = 2;
+};
+
+message PBRankDataInfo
+{
+	optional uint32 role_id       = 1;     // 角色Id
+	optional uint32 rank           = 2;     // 角色排名
+	optional uint32 rank_value = 3;     // 排行榜的值
+}
+
+message PBLastDayPersonRankContaint
+{
+	repeated PBLastDayPersonRank rank_data = 1; 
+}
 
 message PBMarriageTable
 {
@@ -442,6 +471,9 @@ message PBSocialChar
 	optional uint32				mount_battlescore= 31;// 飞剑战斗力
 	optional PBPetInfo			pet_info		= 32;// 上榜的那只宠物的信息，只存一只，离线的时候查看用 
 	optional uint32				send_flower		= 33;//送花;
+	optional string             magicpet_sheet		= 34;//灵宝sheet
+	optional sint32             magicpet_battlescore = 35; //灵宝上阵总战力
+	optional PBMagicPetItem		magicpet_info		= 36;// 上榜的那只灵宝的信息，只存一只，离线的时候查看用 
 };
 
 message PBPetBattleRecordList
@@ -473,6 +505,7 @@ message PBGuildData
 	repeated PBGuildDataRetain	data_retain		= 4; // 数据的临时保留
 	optional PBGuildStoreData  guild_store_data = 5;  //帮派仓库数据
 	optional PBGuildRedBag	  guild_redbag_data = 6;  //帮派红包数据
+	optional PBDBGuildLivenessData guild_liveness_data = 7;  // 帮派活跃度数据
 
 };
 
@@ -765,3 +798,51 @@ message PBActOnearmBandit
 	optional uint32 act_id								= 1; 
 	repeated PBOnearmBanditHistoryData history_data		= 2;
 };
+
+// 战队表
+message PBCropsInfoData
+{
+	option (OptionPrimaryKey)													= "crops_id";
+    optional uint64 crops_id                 = 1;//[(OptionDBFieldExtra) = "bigint(22) unsigned NOT NULL DEFAULT 0"];    // 战队id
+    optional string crops_name               = 2;//[(OptionDBFieldExtra) = "char(32) CHARACTER SET utf8 NOT NULL", (OptionDBNeedEscape) = true];    // 战队名字
+    optional uint32 create_time              = 3;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];    // 创建时间
+    optional uint32 application_disband_time = 4;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];    // 申请解散的时间
+    optional uint32 disband_time             = 5;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];    // 解散时间
+    optional uint32 master_role_id           = 6;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];       // 队长Id
+    optional string master_name              = 7;//[(OptionDBFieldExtra) = "char(32) CHARACTER SET utf8 NOT NULL", (OptionDBNeedEscape) = true]; // 队长名字
+    optional PBOtherCropsInfo other_info     = 8;//[(OptionDBFieldExtra) = "MediumBlob"];    // 其他信息
+}
+
+message PBOtherCropsInfo
+{
+    repeated PBMemberInfo member          = 1;     // 成员信息
+	repeated PBCropApplicant applicants   = 2;     // 申请人信息
+}
+
+message PBMemberInfo
+{
+    optional uint32 role_id           = 1;
+    optional uint32 join_time         = 2;
+	optional bool is_ready            = 3;
+}
+
+message PBCropApplicant
+{
+	optional uint32 role_id           = 1;
+	optional uint32 apply_time         = 2;  //申请时间;
+};
+
+message PBDBGuildLivenessInfo
+{
+    optional sint32 type         = 1;          // 类型
+    optional sint32 sum_liveness = 2;          // 总活跃度
+    optional sint32 curday_liveness = 3;       // 今日获得活跃度
+    optional string dungeon_id   = 4;          // 副本Id
+    optional string creature_id  = 5;          // BOSSId
+}
+
+message PBDBGuildLivenessData
+{
+    repeated PBDBGuildLivenessInfo liveness_data = 1;
+	optional uint32  last_rest_time = 2;//[default=0];
+}

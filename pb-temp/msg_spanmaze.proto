@@ -1,0 +1,37 @@
+
+
+enum ESpanMazeStatus
+{
+	Undefine	= 0;
+	SignUp		= 1;
+	Round1		= 2;
+	Round2		= 3;
+	Round3		= 4;
+};
+
+//报名请求
+message PBMsgSpanMazeSignRequest
+{
+	
+};
+
+message PBMsgSpanMazeSignResponse
+{
+	optional sint32 ret_code	= 1;
+};
+
+//进入;
+message PBMsgSpanMazeEnterRequest
+{
+
+};
+
+message PBMsgSpanMazeEnterResponse
+{
+	optional sint32 ret_code	= 1;
+};
+
+message PBMsgSpanMazeEnterDungeonNotice
+{
+
+};

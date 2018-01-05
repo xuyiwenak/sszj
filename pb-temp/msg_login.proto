@@ -204,6 +204,7 @@ message PBEnterGameRequest
 	optional uint32 gateway_id	= 3;
 	optional PBLoginToken		login_token = 4;	// 连接token
 	optional PBClientDeviceInfo	device_info = 5;
+	optional string client_chid = 6;         // 客户端产品ID
 }
 
 // 游戏服连接Token
@@ -251,7 +252,7 @@ message PBPlayerEnterGame
 	optional uint32 client_ip	 = 10;
 	optional uint32 client_type	= 12;
 	optional ELoginConnectType connect_type	= 13; // 连接的方式
-	
+	optional string client_chid = 14;   //客户端产品ID
 }
 
 //登陆时候的排队位置 FS >> Client

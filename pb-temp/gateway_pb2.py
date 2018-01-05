@@ -22,12 +22,42 @@ import msg_activity_pb2
 import msg_spanbattle_pb2
 import msg_guild_redbag_pb2
 import msg_pet_battle_pb2
+import msg_magic_pet_pb2
 
 DESCRIPTOR = descriptor.FileDescriptor(
   name='gateway.proto',
   package='',
-  serialized_pb='\n\rgateway.proto\x1a\rdb_base.proto\x1a\x0cplayer.proto\x1a\x11magicweapon.proto\x1a\x0fmsg_guild.proto\x1a\x10msg_friend.proto\x1a\x10msg_common.proto\x1a\rdb_shop.proto\x1a\x15\x64\x62_logic_common.proto\x1a\x11msg_service.proto\x1a\rmsg_pet.proto\x1a\x0emsg_item.proto\x1a\x12msg_activity.proto\x1a\x14msg_spanbattle.proto\x1a\x16msg_guild_redbag.proto\x1a\x14msg_pet_battle.proto\"7\n\x0ePBAllGameEvent\x12%\n\x0bgame_events\x18\x03 \x03(\x0b\x32\x10.PBGameEventData\"g\n\x0fPBGameEventData\x12\x10\n\x08\x65vent_id\x18\x01 \x01(\x04\x12\x0f\n\x07param_0\x18\x02 \x01(\x05\x12\x0f\n\x07param_1\x18\x03 \x01(\x05\x12\x0f\n\x07param_2\x18\x04 \x01(\x05\x12\x0f\n\x07param_3\x18\x05 \x01(\r\":\n\x0ePBConsignInfos\x12(\n\x10\x63onsignment_info\x18\x01 \x03(\x0b\x32\x0e.PBConsignInfo\"A\n\x10PBImmortalUnions\x12-\n\x13immortal_union_list\x18\x01 \x03(\x0b\x32\x10.PBImmortalUnion\"\xd8\x06\n\x0fPBImmortalUnion\x12\r\n\x05iu_id\x18\x01 \x01(\x04\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x14\n\x0c\x63reated_time\x18\x03 \x01(\x04\x12\x17\n\x0f\x61pplied_members\x18\x04 \x01(\t\x12\x0f\n\x07\x64\x65leted\x18\x05 \x01(\r\x12\x14\n\x0cgrowup_value\x18\x06 \x01(\x12\x12\r\n\x05level\x18\x07 \x01(\r\x12\x1a\n\x12repaired_last_time\x18\x08 \x01(\r\x12\x13\n\x0brepair_debt\x18\t \x01(\x11\x12\x13\n\x0b\x63\x61pital_sum\x18\n \x01(\x12\x12\x0e\n\x06notice\x18\x0b \x01(\t\x12\x14\n\x0cskill_opened\x18\x0c \x01(\t\x12\x19\n\x11join_in_condition\x18\r \x01(\x11\x12\x37\n\x16immortal_union_members\x18\x0e \x03(\x0b\x32\x17.PBImmortalUnionMembers\x12\x13\n\x0bresearch_lv\x18\x0f \x01(\r\x12\x10\n\x08sacri_lv\x18\x10 \x01(\r\x12\x0f\n\x07ware_lv\x18\x11 \x01(\r\x12\x0f\n\x07mall_lv\x18\x12 \x01(\r\x12\x0f\n\x07tree_lv\x18\x13 \x01(\r\x12\x12\n\nbuild_time\x18\x14 \x01(\r\x12\x1c\n\x14\x63reated_with_erating\x18\x15 \x01(\r\x12\x13\n\x0b\x63\x61pital_new\x18\x16 \x01(\x12\x12\x12\n\nopen_times\x18\x17 \x01(\x11\x12\x17\n\x0fis_buildtime_ok\x18\x18 \x01(\r\x12\x18\n\x10union_boss_times\x18\x19 \x03(\x11\x12\x13\n\x0bunion_state\x18\x1a \x01(\x11\x12\x1a\n\x12union_disband_time\x18\x1b \x01(\r\x12\x1e\n\x16\x64isband_handler_userid\x18\x1c \x01(\r\x12\x1d\n\x15union_boss_grow_level\x18\x1d \x01(\x11\x12\x1e\n\x08im_store\x18\x1e \x01(\x0b\x32\x0c.PBInventory\x12\x30\n\x0eitem_op_record\x18\x1f \x01(\x0b\x32\x18.PBItemOperateRecordList\x12\x1d\n\x15last_season_blt_score\x18  \x01(\x11\x12\x1c\n\x14last_season_blt_rank\x18! \x01(\x11\x12\x1c\n\x14\x63ur_season_blt_score\x18\" \x01(\x11\"$\n\x0bPBInventory\x12\x15\n\x04item\x18\x01 \x03(\x0b\x32\x07.PBItem\"D\n\x17PBItemOperateRecordList\x12)\n\x0brecord_list\x18\x01 \x03(\x0b\x32\x14.PBItemOperateRecord\"\x90\x01\n\x13PBItemOperateRecord\x12\x0f\n\x07op_type\x18\x01 \x01(\x05\x12\x0f\n\x07op_time\x18\x02 \x01(\r\x12\x0c\n\x04rank\x18\x03 \x01(\x05\x12\x15\n\roperator_name\x18\x04 \x01(\t\x12\x13\n\x0bmember_name\x18\x05 \x01(\t\x12\x1d\n\x04item\x18\x06 \x03(\x0b\x32\x0f.PBItemQuantity\"1\n\x0ePBItemQuantity\x12\x10\n\x08sheet_id\x18\x01 \x01(\r\x12\r\n\x05\x63ount\x18\x02 \x01(\x11\"\xbd\x01\n\x16PBImmortalUnionMembers\x12\x0e\n\x06mem_id\x18\x01 \x01(\x04\x12\r\n\x05iu_id\x18\x02 \x01(\x04\x12\r\n\x05title\x18\x03 \x01(\x04\x12\x14\n\x0cjoin_in_time\x18\x04 \x01(\x04\x12\x0f\n\x07\x64\x65leted\x18\x05 \x01(\r\x12\x0f\n\x07\x63\x61ptial\x18\x06 \x01(\x11\x12\x13\n\x0b\x63\x61ptial_sum\x18\x07 \x01(\x11\x12\x12\n\nleave_time\x18\x08 \x01(\r\x12\x14\n\x0coffline_time\x18\t \x01(\r\"\xf3\x01\n\x0ePBIMBattleCamp\x12\x0f\n\x07\x63\x61mp_id\x18\x01 \x01(\x04\x12\x13\n\x0bimmortal_id\x18\x02 \x01(\x04\x12\x11\n\tbattle_id\x18\x03 \x01(\x04\x12\x12\n\napply_cost\x18\x04 \x01(\r\x12\x12\n\napply_time\x18\x05 \x01(\r\x12\x0e\n\x06status\x18\x06 \x01(\r\x12\r\n\x05score\x18\x07 \x01(\r\x12\x13\n\x0b\x62\x61ttle_info\x18\x08 \x01(\t\x12\x0e\n\x06member\x18\t \x03(\x04\x12\x12\n\ncamp_index\x18\n \x01(\x11\x12\x11\n\tcamp_name\x18\x0b \x01(\t\x12\x15\n\rbattle_result\x18\x0c \x01(\x11\"\xc0\x01\n\x10PBImmortalBattle\x12\x11\n\tbattle_id\x18\x01 \x01(\x04\x12\x12\n\nstart_time\x18\x02 \x01(\r\x12\x0e\n\x06map_id\x18\x03 \x01(\t\x12\x12\n\npro_status\x18\x04 \x01(\r\x12\x12\n\nowner_imid\x18\x05 \x01(\x04\x12\x15\n\roccupied_time\x18\x06 \x01(\r\x12\x12\n\ndungeon_id\x18\x07 \x01(\x04\x12\"\n\tcamp_list\x18\x08 \x03(\x0b\x32\x0f.PBIMBattleCamp\"W\n\rPBIMBattleAll\x12$\n\tim_battle\x18\x01 \x03(\x0b\x32\x11.PBImmortalBattle\x12 \n\x07im_camp\x18\x02 \x03(\x0b\x32\x0f.PBIMBattleCamp\">\n\x11PBLeaderBoardList\x12)\n\x11leader_board_list\x18\x01 \x03(\x0b\x32\x0e.PBLeaderBoard\"C\n\rPBLeaderBoard\x12\x10\n\x08\x62oard_id\x18\x01 \x01(\x04\x12\x12\n\ntime_stamp\x18\x02 \x01(\r\x12\x0c\n\x04info\x18\x03 \x03(\t\":\n\x12PBShortMessageList\x12$\n\x0bmessageList\x18\x01 \x03(\x0b\x32\x0f.PBShortMessage\"s\n\x0ePBShortMessage\x12\x12\n\nmessage_id\x18\x01 \x01(\x04\x12\x13\n\x0breceiver_id\x18\x02 \x01(\x04\x12\x10\n\x08\x65vent_id\x18\x03 \x01(\r\x12\x13\n\x0b\x65vent_param\x18\x04 \x01(\t\x12\x11\n\tplayer_id\x18\x05 \x01(\x04\"3\n\x0ePBDungeonInfos\x12!\n\tinfo_list\x18\x01 \x03(\x0b\x32\x0e.PBDungeonInfo\"^\n\rPBDungeonInfo\x12\x10\n\x08owner_id\x18\x01 \x01(\x04\x12\x12\n\nsheet_name\x18\x02 \x01(\t\x12\x14\n\x0c\x66\x61stest_time\x18\x03 \x01(\x05\x12\x11\n\tuser_name\x18\x04 \x01(\t\"6\n\x10PBRankRewardList\x12\"\n\x0breward_list\x18\x01 \x03(\x0b\x32\r.PBRewardInfo\"\xc4\x02\n\x0cPBRewardInfo\x12\x11\n\treward_id\x18\x01 \x01(\x04\x12\x13\n\x0b\x61\x63tivity_id\x18\x02 \x01(\r\x12\x12\n\nstart_time\x18\x03 \x01(\r\x12\x10\n\x08\x65nd_time\x18\x04 \x01(\r\x12\x11\n\tplayer_id\x18\x05 \x01(\r\x12\x0f\n\x07\x63har_id\x18\x06 \x01(\x04\x12\x15\n\rreward_status\x18\x07 \x01(\r\x12\r\n\x05item1\x18\x08 \x01(\t\x12\x0e\n\x06\x63ount1\x18\t \x01(\x05\x12\r\n\x05item2\x18\n \x01(\t\x12\x0e\n\x06\x63ount2\x18\x0b \x01(\x05\x12\r\n\x05item3\x18\x0c \x01(\t\x12\x0e\n\x06\x63ount3\x18\r \x01(\x05\x12\r\n\x05item4\x18\x0e \x01(\t\x12\x0e\n\x06\x63ount4\x18\x0f \x01(\x05\x12\x13\n\x0b\x64\x65scription\x18\x10 \x01(\t\x12\x0b\n\x03pad\x18\x11 \x01(\t\x12\r\n\x05param\x18\x12 \x01(\r\")\n\x11PBRankRefreshInfo\x12\x14\n\x0crefresh_time\x18\x01 \x01(\r\"M\n\x0ePBBetRoundInfo\x12\x13\n\x0bround_index\x18\x01 \x01(\x11\x12&\n\x0e\x62\x65t_char_infos\x18\x02 \x03(\x0b\x32\x0e.PBBetCharInfo\"N\n\x10PBSpanBtlBetInfo\x12\x10\n\x08match_id\x18\x01 \x01(\x04\x12(\n\x0f\x62\x65t_round_infos\x18\x02 \x03(\x0b\x32\x0f.PBBetRoundInfo\":\n\x0fPBShopLimitTime\x12\x12\n\nlimit_type\x18\x01 \x01(\x11\x12\x13\n\x0brecord_time\x18\x02 \x01(\x11\"7\n\x0fPBShopLimitList\x12$\n\nlimit_time\x18\x01 \x03(\x0b\x32\x10.PBShopLimitTime\"\x95\x02\n\x0fPBGateWayDataEx\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12\'\n\x0fimmortal_battle\x18\x02 \x01(\x0b\x32\x0e.PBIMBattleAll\x12+\n\x0cguild_common\x18\x03 \x01(\x0b\x32\x15.PBGateWayGuildCommon\x12\x30\n\x11\x64raw_lottery_data\x18\x04 \x01(\x0b\x32\x15.PBDrwaLotteryALLData\x12\'\n\x0e\x66ireworks_data\x18\x05 \x01(\x0b\x32\x0f.PBActFireworks\x12-\n\x11onearmbandit_data\x18\x06 \x01(\x0b\x32\x12.PBActOnearmBandit:\x0e\x92\xb5\x18\ngateway_id\"\x1f\n\x0cPBGmMailRole\x12\x0f\n\x07role_id\x18\x01 \x01(\x11\"/\n\x0cPBGmMailList\x12\x1f\n\x07gm_mail\x18\x01 \x03(\x0b\x32\x0e.PBGMSendMails\"\xb6\x06\n\rPBGateWayData\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12#\n\ngame_event\x18\x02 \x01(\x0b\x32\x0f.PBAllGameEvent\x12%\n\x0c\x63onsign_info\x18\x03 \x01(\x0b\x32\x0f.PBConsignInfos\x12*\n\x0fimmortal_unions\x18\x04 \x01(\x0b\x32\x11.PBImmortalUnions\x12\x15\n\rconsum_record\x18\x05 \x01(\t\x12\x12\n\npvp_season\x18\x06 \x01(\x11\x12\'\n\x0fimmortal_battle\x18\x07 \x01(\x0b\x32\x0e.PBIMBattleAll\x12,\n\x10leaderboard_list\x18\x08 \x01(\x0b\x32\x12.PBLeaderBoardList\x12/\n\x12short_message_list\x18\t \x01(\x0b\x32\x13.PBShortMessageList\x12*\n\x11\x64ungeon_info_list\x18\n \x01(\x0b\x32\x0f.PBDungeonInfos\x12&\n\x0breward_list\x18\x0b \x01(\x0b\x32\x11.PBRankRewardList\x12*\n\x0f\x61uthority_datas\x18\x0c \x01(\x0b\x32\x11.PBAuthorityDatas\x12(\n\x0crank_refresh\x18\r \x01(\x0b\x32\x12.PBRankRefreshInfo\x12\'\n\x0cspan_btl_bet\x18\x0e \x01(\x0b\x32\x11.PBSpanBtlBetInfo\x12$\n\nguild_list\x18\x0f \x01(\x0b\x32\x10.PBGuildDataList\x12)\n\x0fshop_limit_list\x18\x10 \x01(\x0b\x32\x10.PBShopLimitList\x12\x13\n\x0bwboss_level\x18\x11 \x01(\x11\x12,\n\rexchange_shop\x18\x12 \x01(\x0b\x32\x15.PBSocialExchangeShop\x12#\n\x0cgm_mail_list\x18\x13 \x01(\x0b\x32\r.PBGmMailList\x12\x14\n\x0cpvp_lasttime\x18\x14 \x01(\r\x12\x34\n\x13wild_boss_add_level\x18\x15 \x01(\x0b\x32\x17.PBWildBossLevelContain:\x0e\x92\xb5\x18\ngateway_id\"\xd6\x02\n\x13PBGateWaySocialData\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12$\n\tchar_list\x18\x02 \x01(\x0b\x32\x11.PBSocialCharList\x12&\n\x0b\x66riend_list\x18\x03 \x01(\x0b\x32\x11.PBCharFriendList\x12%\n\x0bworld_level\x18\x04 \x01(\x0b\x32\x10.PBWLAllRankInfo\x12\"\n\ncamp_union\x18\x05 \x01(\x0b\x32\x0e.PBPBCampUnion\x12+\n\x10\x63hange_camp_data\x18\x06 \x01(\x0b\x32\x11.PBChangeCampData\x12.\n\x0f\x63harm_rank_top3\x18\x07 \x01(\x0b\x32\x15.PBWorldCharmRankTop3\x12%\n\x1dlast_pet_pvp_rank_reward_time\x18\x08 \x01(\r:\x0e\x92\xb5\x18\ngateway_id\"\xa1\x01\n\x0fPBMarriageTable\x12\x13\n\x0bmarriage_id\x18\x01 \x01(\x04\x12\x12\n\nhusband_id\x18\x02 \x01(\r\x12\x0f\n\x07wife_id\x18\x03 \x01(\r\x12\x16\n\x0emarriage_state\x18\x04 \x01(\r\x12\x15\n\rmarriage_time\x18\x05 \x01(\r\x12\x14\n\x0c\x64ivorce_time\x18\x06 \x01(\r:\x0f\x92\xb5\x18\x0bmarriage_id\"U\n\x14PBSocialExchangeShop\x12(\n\tshop_data\x18\x01 \x01(\x0b\x32\x15.PBDBExchangeShopData\x12\x13\n\x0b\x64\x61y_refresh\x18\x02 \x01(\r\"6\n\x10PBSocialCharList\x12\"\n\x0bsocial_char\x18\x01 \x03(\x0b\x32\r.PBSocialChar\"\xba\x05\n\x0cPBSocialChar\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x10\n\x08shard_id\x18\x02 \x01(\r\x12\x12\n\npf_role_id\x18\x03 \x01(\r\x12\x11\n\tchar_name\x18\x04 \x01(\t\x12\x11\n\tchar_role\x18\x05 \x01(\r\x12\x13\n\x0b\x63har_gender\x18\x06 \x01(\r\x12\x12\n\nchar_level\x18\x07 \x01(\x11\x12\x14\n\x0c\x62\x61ttle_score\x18\x08 \x01(\x11\x12\x11\n\tpvp_score\x18\t \x01(\x11\x12\x12\n\ntreasue_lq\x18\n \x01(\x11\x12\x0f\n\x07shilian\x18\x0b \x01(\x11\x12\x13\n\x0b\x63harm_point\x18\x0c \x01(\x11\x12\x0e\n\x06killer\x18\r \x01(\x11\x12\x0f\n\x07\x63ur_exp\x18\x0e \x01(\x12\x12\x11\n\tchar_camp\x18\x0f \x01(\x11\x12\x11\n\tpet_Level\x18\x10 \x01(\x11\x12\x17\n\x0fpet_battlescore\x18\x11 \x01(\x11\x12\x14\n\x0c\x63har_justice\x18\x12 \x01(\x11\x12\x11\n\tchar_evil\x18\x13 \x01(\x11\x12\x12\n\nchar_death\x18\x14 \x01(\x11\x12\x12\n\nguild_name\x18\x15 \x01(\t\x12\x11\n\tpet_sheet\x18\x16 \x01(\t\x12\x11\n\thead_icon\x18\x17 \x01(\t\x12\x13\n\x0bjustice_exp\x18\x18 \x01(\x11\x12\x10\n\x08\x65vil_exp\x18\x19 \x01(\x11\x12\x18\n\x10\x63limbtower_group\x18\x1a \x01(\x11\x12\x17\n\x0f\x63limbtower_time\x18\x1b \x01(\r\x12\x14\n\x0c\x61nswer_score\x18\x1c \x01(\r\x12\x11\n\tquit_time\x18\x1d \x01(\x11\x12\x19\n\x11\x61nswer_score_time\x18\x1e \x01(\r\x12\x19\n\x11mount_battlescore\x18\x1f \x01(\r\x12\x1c\n\x08pet_info\x18  \x01(\x0b\x32\n.PBPetInfo\x12\x13\n\x0bsend_flower\x18! \x01(\r\"`\n\x15PBPetBattleRecordList\x12\'\n\x0epet_pvp_record\x18\x01 \x03(\x0b\x32\x0f.PBBattleRecord\x12\x1e\n\x16is_have_fix_char_level\x18\x02 \x01(\x08\"\xc9\x01\n\rPBCharOffLine\x12\x12\n\npf_role_id\x18\x01 \x01(\r\x12\"\n\x0b\x63har_social\x18\x02 \x01(\x0b\x32\r.PBSocialChar\x12&\n\x0b\x63har_friend\x18\x03 \x01(\x0b\x32\x11.PBCharFriendData\x12\x13\n\x0bupdate_time\x18\x04 \x01(\x05\x12\x33\n\x13pet_pvp_record_list\x18\x05 \x01(\x0b\x32\x16.PBPetBattleRecordList:\x0e\x92\xb5\x18\npf_role_id\";\n\x10PBCharFriendList\x12\'\n\x0c\x63har_friends\x18\x01 \x03(\x0b\x32\x11.PBCharFriendData\"\x88\x02\n\x0bPBGuildData\x12&\n\rguild_summary\x18\x01 \x01(\x0b\x32\x0f.PBGuildSummary\x12$\n\x0cguild_member\x18\x02 \x03(\x0b\x32\x0e.PBGuildMember\x12*\n\x0fguild_applicant\x18\x03 \x03(\x0b\x32\x11.PBGuildApplicant\x12\'\n\x0b\x64\x61ta_retain\x18\x04 \x03(\x0b\x32\x12.PBGuildDataRetain\x12+\n\x10guild_store_data\x18\x05 \x01(\x0b\x32\x11.PBGuildStoreData\x12)\n\x11guild_redbag_data\x18\x06 \x01(\x0b\x32\x0e.PBGuildRedBag\"-\n\x0bPBGuildTask\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x0c\n\x04time\x18\x02 \x01(\x11\".\n\rPBGuildQuitCD\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x0c\n\x04time\x18\x02 \x01(\x11\"X\n\x11PBGuildDataRetain\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x0c\n\x04time\x18\x02 \x01(\x11\x12#\n\x0bmember_info\x18\x03 \x01(\x0b\x32\x0e.PBGuildMember\"4\n\x0ePBGuildBanquet\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x10\n\x08\x65nd_time\x18\x02 \x01(\x11\"5\n\x12PBGuildBattleScore\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\r\n\x05score\x18\x02 \x01(\x11\"\xcd\x02\n\x0fPBGuildDataList\x12 \n\nguild_data\x18\x01 \x03(\x0b\x32\x0c.PBGuildData\x12 \n\nguild_task\x18\x02 \x03(\x0b\x32\x0c.PBGuildTask\x12\x1f\n\x07quit_cd\x18\x03 \x03(\x0b\x32\x0e.PBGuildQuitCD\x12\'\n\x0b\x64\x61ta_retain\x18\x04 \x03(\x0b\x32\x12.PBGuildDataRetain\x12 \n\x07\x62\x61nquet\x18\x05 \x03(\x0b\x32\x0f.PBGuildBanquet\x12\x13\n\x0b\x64\x61y_refresh\x18\x06 \x01(\r\x12\x14\n\x0cweek_refresh\x18\x07 \x01(\r\x12)\n\x0c\x62\x61ttle_score\x18\x08 \x03(\x0b\x32\x13.PBGuildBattleScore\x12\"\n\nall_battle\x18\t \x01(\x0b\x32\x0e.PBIMBattleAll\x12\x10\n\x08is_trans\x18\n \x01(\x08\"|\n\x11PBGuildBT_SignRet\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tsigner_id\x18\x02 \x01(\x04\x12\"\n\tsign_info\x18\x03 \x01(\x0b\x32\x0f.PBIMBattleCamp\x12\x1e\n\x06\x62\x61ttle\x18\x04 \x01(\x0b\x32\x0e.PBIMBattleAll\"{\n\x16PBGuildBT_StatusChange\x12\x11\n\tbattle_id\x18\x01 \x01(\x04\x12\x12\n\npre_status\x18\x02 \x01(\x11\x12\x14\n\x0c\x61\x66ter_status\x18\x03 \x01(\x11\x12$\n\tpb_battle\x18\x04 \x01(\x0b\x32\x11.PBImmortalBattle\"j\n\x15PBGuildBT_CreateField\x12\x11\n\tbattle_id\x18\x01 \x01(\x04\x12\x0e\n\x06map_id\x18\x02 \x01(\t\x12\x0e\n\x06\x63\x61mp_a\x18\x03 \x01(\x04\x12\x0e\n\x06\x63\x61mp_b\x18\x04 \x01(\x04\x12\x0e\n\x06\x63reate\x18\x05 \x01(\x08\"\x81\x01\n\x18PBGuildBT_CreateFieldRet\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12*\n\nfield_info\x18\x02 \x01(\x0b\x32\x16.PBGuildBT_CreateField\x12\x13\n\x0binstance_id\x18\x03 \x01(\x04\x12\x12\n\ndun_map_id\x18\x04 \x01(\r\"Z\n\x15PBGuildBT_PepleReport\x12\x11\n\tbattle_id\x18\x01 \x01(\x04\x12\x16\n\x0e\x63\x61mp_a_members\x18\x02 \x01(\x11\x12\x16\n\x0e\x63\x61mp_b_members\x18\x03 \x01(\x11\"w\n\x10PBGuildBT_Report\x12\x11\n\tbattle_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x63\x61mp_a_score\x18\x02 \x01(\x11\x12\x14\n\x0c\x63\x61mp_b_score\x18\x03 \x01(\x11\x12\x11\n\tcamp_a_id\x18\x04 \x01(\x04\x12\x11\n\tcamp_b_id\x18\x05 \x01(\x04\"^\n\x17PBGuildBT_DrawbackApply\x12\x11\n\tbattle_id\x18\x01 \x01(\x04\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x03(\x04\x12\x1f\n\x07pb_data\x18\x03 \x01(\x0b\x32\x0e.PBIMBattleAll\"F\n\x11PBGuildBT_JoinPVP\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x11\n\tbattle_id\x18\x02 \x01(\x04\x12\r\n\x05im_id\x18\x03 \x01(\x04\"\xb4\x01\n\x14PBGuildBT_JoinPVPRet\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x11\n\tbattle_id\x18\x03 \x01(\x04\x12\x16\n\x0etarget_camp_id\x18\x04 \x01(\x11\x12\x19\n\x11target_dun_ins_id\x18\x05 \x01(\x04\x12\x0f\n\x07\x63\x61mp_id\x18\x06 \x01(\x04\x12\x0e\n\x06map_id\x18\x07 \x01(\t\x12\x12\n\ndun_map_id\x18\x08 \x01(\r\"T\n\x18PBIMBattleEndAwardExtend\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x13\n\x0bguild_money\x18\x02 \x01(\x11\x12\x11\n\tbattle_id\x18\x03 \x01(\x04\"h\n\x11PBGatWayGuildData\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12 \n\nguild_data\x18\x02 \x01(\x0b\x32\x0c.PBGuildData\x12\x11\n\tis_delete\x18\x03 \x01(\r:\x0c\x92\xb5\x18\x08guild_id\"8\n\x0ePBAllGuildData\x12&\n\nguild_data\x18\x01 \x03(\x0b\x32\x12.PBGatWayGuildData\"\x85\x01\n\x14PBGateWayGuildCommon\x12\x18\n\x10last_day_refresh\x18\x01 \x01(\r\x12\x19\n\x11last_week_refresh\x18\x02 \x01(\r\x12\x1f\n\x07quit_cd\x18\x05 \x03(\x0b\x32\x0e.PBGuildQuitCD\x12\x17\n\x0fneed_change_ver\x18\x06 \x01(\x11\":\n\x11PBChangeCampScore\x12\x0f\n\x07\x63\x61mp_id\x18\x01 \x01(\x11\x12\x14\n\x0c\x62\x61ttle_score\x18\x02 \x01(\x11\"\x96\x01\n\x10PBChangeCampData\x12\x18\n\x10today_score_time\x18\x01 \x01(\r\x12\x17\n\x0flast_score_time\x18\x02 \x01(\r\x12\'\n\x0btoday_score\x18\x03 \x03(\x0b\x32\x12.PBChangeCampScore\x12&\n\nlast_score\x18\x04 \x03(\x0b\x32\x12.PBChangeCampScore\"P\n\x14PBWorldCharmRankTop3\x12%\n\tchar_node\x18\x01 \x03(\x0b\x32\x12.PBMsgRankCharNode\x12\x11\n\trecv_time\x18\x02 \x01(\x04\"Y\n\x10PBGuildStoreSlot\x12\x11\n\tslot_stat\x18\x01 \x01(\x11\x12\x10\n\x08sheet_id\x18\x02 \x01(\r\x12\x0b\n\x03num\x18\x03 \x01(\r\x12\x13\n\x0bsort_weight\x18\x04 \x01(\x11\"\x85\x01\n\x10PBGuildStoreData\x12$\n\tslot_info\x18\x01 \x03(\x0b\x32\x11.PBGuildStoreSlot\x12\x11\n\topen_slot\x18\x02 \x01(\r\x12\x13\n\x0b\x62ought_slot\x18\x03 \x01(\r\x12#\n\x06notice\x18\x04 \x03(\x0b\x32\x13.PBStoreMessageParm\"\xa8\x01\n\x13PBGuildRankLastData\x12\x0c\n\x04rank\x18\x01 \x01(\r\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\x12\x13\n\x0bguild_level\x18\x03 \x01(\r\x12\x12\n\nguild_name\x18\x04 \x01(\t\x12\x13\n\x0bmaster_name\x18\x05 \x01(\t\x12\x11\n\thead_icon\x18\x06 \x01(\t\x12\x0c\n\x04\x63\x61mp\x18\x07 \x01(\r\x12\x12\n\nrank_value\x18\x08 \x01(\x11\"H\n\x17PBGuildRankLastDataList\x12-\n\x10pbguildrank_data\x18\x01 \x03(\x0b\x32\x13.PBMsgRankGuildNode\"f\n\x0ePBRankLastData\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12\x30\n\x0elast_rank_data\x18\x02 \x01(\x0b\x32\x18.PBGuildRankLastDataList:\x0e\x92\xb5\x18\ngateway_id\">\n\x16PBWildBossLevelContain\x12$\n\nboss_level\x18\x01 \x03(\x0b\x32\x10.PBWildBossLevel\"5\n\x0fPBWildBossLevel\x12\x10\n\x08sheet_id\x18\x01 \x01(\t\x12\x10\n\x08up_level\x18\x02 \x01(\x11\"<\n\x0ePBActFireworks\x12*\n\tact_score\x18\x01 \x03(\x0b\x32\x17.PBActFireworksActScore\"\x9b\x01\n\x16PBActFireworksActScore\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x10\n\x08\x65nd_time\x18\x02 \x01(\r\x12\x30\n\x0cplayer_score\x18\x03 \x03(\x0b\x32\x1a.PBActFireworksPlayerScore\x12\x14\n\x0c\x63ur_day_time\x18\x04 \x01(\r\x12\x17\n\x0f\x63ur_total_score\x18\x05 \x01(\r\";\n\x19PBActFireworksPlayerScore\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\r\n\x05score\x18\x02 \x01(\r\"T\n\x11PBMergeServerData\x12\x15\n\rsrc_gatewayid\x18\x01 \x01(\r\x12\x15\n\rdec_gatewayid\x18\x02 \x01(\r:\x11\x92\xb5\x18\rsrc_gatewayid\".\n\x0ePBPetArrayInfo\x12\x1c\n\x08pet_info\x18\x01 \x03(\x0b\x32\n.PBPetInfo\";\n\x10PBRobotArrayInfo\x12\'\n\x0erobot_pet_info\x18\x01 \x03(\x0b\x32\x0f.PBRobotPetInfo\"\xa8\x01\n\x10PBPetPvPRankData\x12\x0c\n\x04rank\x18\x01 \x01(\r\x12\x12\n\npf_role_id\x18\x02 \x01(\r\x12\x10\n\x08is_robot\x18\x03 \x01(\x11\x12&\n\rpet_info_list\x18\x04 \x01(\x0b\x32\x0f.PBPetArrayInfo\x12.\n\x13robot_pet_info_list\x18\x05 \x01(\x0b\x32\x11.PBRobotArrayInfo:\x08\x92\xb5\x18\x04rank\"U\n\x11PBActOnearmBandit\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x30\n\x0chistory_data\x18\x02 \x03(\x0b\x32\x1a.PBOnearmBanditHistoryDataB\x02H\x01')
+  serialized_pb='\n\rgateway.proto\x1a\rdb_base.proto\x1a\x0cplayer.proto\x1a\x11magicweapon.proto\x1a\x0fmsg_guild.proto\x1a\x10msg_friend.proto\x1a\x10msg_common.proto\x1a\rdb_shop.proto\x1a\x15\x64\x62_logic_common.proto\x1a\x11msg_service.proto\x1a\rmsg_pet.proto\x1a\x0emsg_item.proto\x1a\x12msg_activity.proto\x1a\x14msg_spanbattle.proto\x1a\x16msg_guild_redbag.proto\x1a\x14msg_pet_battle.proto\x1a\x13msg_magic_pet.proto\"7\n\x0ePBAllGameEvent\x12%\n\x0bgame_events\x18\x03 \x03(\x0b\x32\x10.PBGameEventData\"g\n\x0fPBGameEventData\x12\x10\n\x08\x65vent_id\x18\x01 \x01(\x04\x12\x0f\n\x07param_0\x18\x02 \x01(\x05\x12\x0f\n\x07param_1\x18\x03 \x01(\x05\x12\x0f\n\x07param_2\x18\x04 \x01(\x05\x12\x0f\n\x07param_3\x18\x05 \x01(\r\":\n\x0ePBConsignInfos\x12(\n\x10\x63onsignment_info\x18\x01 \x03(\x0b\x32\x0e.PBConsignInfo\"A\n\x10PBImmortalUnions\x12-\n\x13immortal_union_list\x18\x01 \x03(\x0b\x32\x10.PBImmortalUnion\"\xd8\x06\n\x0fPBImmortalUnion\x12\r\n\x05iu_id\x18\x01 \x01(\x04\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x14\n\x0c\x63reated_time\x18\x03 \x01(\x04\x12\x17\n\x0f\x61pplied_members\x18\x04 \x01(\t\x12\x0f\n\x07\x64\x65leted\x18\x05 \x01(\r\x12\x14\n\x0cgrowup_value\x18\x06 \x01(\x12\x12\r\n\x05level\x18\x07 \x01(\r\x12\x1a\n\x12repaired_last_time\x18\x08 \x01(\r\x12\x13\n\x0brepair_debt\x18\t \x01(\x11\x12\x13\n\x0b\x63\x61pital_sum\x18\n \x01(\x12\x12\x0e\n\x06notice\x18\x0b \x01(\t\x12\x14\n\x0cskill_opened\x18\x0c \x01(\t\x12\x19\n\x11join_in_condition\x18\r \x01(\x11\x12\x37\n\x16immortal_union_members\x18\x0e \x03(\x0b\x32\x17.PBImmortalUnionMembers\x12\x13\n\x0bresearch_lv\x18\x0f \x01(\r\x12\x10\n\x08sacri_lv\x18\x10 \x01(\r\x12\x0f\n\x07ware_lv\x18\x11 \x01(\r\x12\x0f\n\x07mall_lv\x18\x12 \x01(\r\x12\x0f\n\x07tree_lv\x18\x13 \x01(\r\x12\x12\n\nbuild_time\x18\x14 \x01(\r\x12\x1c\n\x14\x63reated_with_erating\x18\x15 \x01(\r\x12\x13\n\x0b\x63\x61pital_new\x18\x16 \x01(\x12\x12\x12\n\nopen_times\x18\x17 \x01(\x11\x12\x17\n\x0fis_buildtime_ok\x18\x18 \x01(\r\x12\x18\n\x10union_boss_times\x18\x19 \x03(\x11\x12\x13\n\x0bunion_state\x18\x1a \x01(\x11\x12\x1a\n\x12union_disband_time\x18\x1b \x01(\r\x12\x1e\n\x16\x64isband_handler_userid\x18\x1c \x01(\r\x12\x1d\n\x15union_boss_grow_level\x18\x1d \x01(\x11\x12\x1e\n\x08im_store\x18\x1e \x01(\x0b\x32\x0c.PBInventory\x12\x30\n\x0eitem_op_record\x18\x1f \x01(\x0b\x32\x18.PBItemOperateRecordList\x12\x1d\n\x15last_season_blt_score\x18  \x01(\x11\x12\x1c\n\x14last_season_blt_rank\x18! \x01(\x11\x12\x1c\n\x14\x63ur_season_blt_score\x18\" \x01(\x11\"$\n\x0bPBInventory\x12\x15\n\x04item\x18\x01 \x03(\x0b\x32\x07.PBItem\"D\n\x17PBItemOperateRecordList\x12)\n\x0brecord_list\x18\x01 \x03(\x0b\x32\x14.PBItemOperateRecord\"\x90\x01\n\x13PBItemOperateRecord\x12\x0f\n\x07op_type\x18\x01 \x01(\x05\x12\x0f\n\x07op_time\x18\x02 \x01(\r\x12\x0c\n\x04rank\x18\x03 \x01(\x05\x12\x15\n\roperator_name\x18\x04 \x01(\t\x12\x13\n\x0bmember_name\x18\x05 \x01(\t\x12\x1d\n\x04item\x18\x06 \x03(\x0b\x32\x0f.PBItemQuantity\"1\n\x0ePBItemQuantity\x12\x10\n\x08sheet_id\x18\x01 \x01(\r\x12\r\n\x05\x63ount\x18\x02 \x01(\x11\"\xbd\x01\n\x16PBImmortalUnionMembers\x12\x0e\n\x06mem_id\x18\x01 \x01(\x04\x12\r\n\x05iu_id\x18\x02 \x01(\x04\x12\r\n\x05title\x18\x03 \x01(\x04\x12\x14\n\x0cjoin_in_time\x18\x04 \x01(\x04\x12\x0f\n\x07\x64\x65leted\x18\x05 \x01(\r\x12\x0f\n\x07\x63\x61ptial\x18\x06 \x01(\x11\x12\x13\n\x0b\x63\x61ptial_sum\x18\x07 \x01(\x11\x12\x12\n\nleave_time\x18\x08 \x01(\r\x12\x14\n\x0coffline_time\x18\t \x01(\r\"\xf3\x01\n\x0ePBIMBattleCamp\x12\x0f\n\x07\x63\x61mp_id\x18\x01 \x01(\x04\x12\x13\n\x0bimmortal_id\x18\x02 \x01(\x04\x12\x11\n\tbattle_id\x18\x03 \x01(\x04\x12\x12\n\napply_cost\x18\x04 \x01(\r\x12\x12\n\napply_time\x18\x05 \x01(\r\x12\x0e\n\x06status\x18\x06 \x01(\r\x12\r\n\x05score\x18\x07 \x01(\r\x12\x13\n\x0b\x62\x61ttle_info\x18\x08 \x01(\t\x12\x0e\n\x06member\x18\t \x03(\x04\x12\x12\n\ncamp_index\x18\n \x01(\x11\x12\x11\n\tcamp_name\x18\x0b \x01(\t\x12\x15\n\rbattle_result\x18\x0c \x01(\x11\"\xc0\x01\n\x10PBImmortalBattle\x12\x11\n\tbattle_id\x18\x01 \x01(\x04\x12\x12\n\nstart_time\x18\x02 \x01(\r\x12\x0e\n\x06map_id\x18\x03 \x01(\t\x12\x12\n\npro_status\x18\x04 \x01(\r\x12\x12\n\nowner_imid\x18\x05 \x01(\x04\x12\x15\n\roccupied_time\x18\x06 \x01(\r\x12\x12\n\ndungeon_id\x18\x07 \x01(\x04\x12\"\n\tcamp_list\x18\x08 \x03(\x0b\x32\x0f.PBIMBattleCamp\"W\n\rPBIMBattleAll\x12$\n\tim_battle\x18\x01 \x03(\x0b\x32\x11.PBImmortalBattle\x12 \n\x07im_camp\x18\x02 \x03(\x0b\x32\x0f.PBIMBattleCamp\">\n\x11PBLeaderBoardList\x12)\n\x11leader_board_list\x18\x01 \x03(\x0b\x32\x0e.PBLeaderBoard\"C\n\rPBLeaderBoard\x12\x10\n\x08\x62oard_id\x18\x01 \x01(\x04\x12\x12\n\ntime_stamp\x18\x02 \x01(\r\x12\x0c\n\x04info\x18\x03 \x03(\t\":\n\x12PBShortMessageList\x12$\n\x0bmessageList\x18\x01 \x03(\x0b\x32\x0f.PBShortMessage\"s\n\x0ePBShortMessage\x12\x12\n\nmessage_id\x18\x01 \x01(\x04\x12\x13\n\x0breceiver_id\x18\x02 \x01(\x04\x12\x10\n\x08\x65vent_id\x18\x03 \x01(\r\x12\x13\n\x0b\x65vent_param\x18\x04 \x01(\t\x12\x11\n\tplayer_id\x18\x05 \x01(\x04\"3\n\x0ePBDungeonInfos\x12!\n\tinfo_list\x18\x01 \x03(\x0b\x32\x0e.PBDungeonInfo\"^\n\rPBDungeonInfo\x12\x10\n\x08owner_id\x18\x01 \x01(\x04\x12\x12\n\nsheet_name\x18\x02 \x01(\t\x12\x14\n\x0c\x66\x61stest_time\x18\x03 \x01(\x05\x12\x11\n\tuser_name\x18\x04 \x01(\t\"6\n\x10PBRankRewardList\x12\"\n\x0breward_list\x18\x01 \x03(\x0b\x32\r.PBRewardInfo\"\xc4\x02\n\x0cPBRewardInfo\x12\x11\n\treward_id\x18\x01 \x01(\x04\x12\x13\n\x0b\x61\x63tivity_id\x18\x02 \x01(\r\x12\x12\n\nstart_time\x18\x03 \x01(\r\x12\x10\n\x08\x65nd_time\x18\x04 \x01(\r\x12\x11\n\tplayer_id\x18\x05 \x01(\r\x12\x0f\n\x07\x63har_id\x18\x06 \x01(\x04\x12\x15\n\rreward_status\x18\x07 \x01(\r\x12\r\n\x05item1\x18\x08 \x01(\t\x12\x0e\n\x06\x63ount1\x18\t \x01(\x05\x12\r\n\x05item2\x18\n \x01(\t\x12\x0e\n\x06\x63ount2\x18\x0b \x01(\x05\x12\r\n\x05item3\x18\x0c \x01(\t\x12\x0e\n\x06\x63ount3\x18\r \x01(\x05\x12\r\n\x05item4\x18\x0e \x01(\t\x12\x0e\n\x06\x63ount4\x18\x0f \x01(\x05\x12\x13\n\x0b\x64\x65scription\x18\x10 \x01(\t\x12\x0b\n\x03pad\x18\x11 \x01(\t\x12\r\n\x05param\x18\x12 \x01(\r\")\n\x11PBRankRefreshInfo\x12\x14\n\x0crefresh_time\x18\x01 \x01(\r\"M\n\x0ePBBetRoundInfo\x12\x13\n\x0bround_index\x18\x01 \x01(\x11\x12&\n\x0e\x62\x65t_char_infos\x18\x02 \x03(\x0b\x32\x0e.PBBetCharInfo\"N\n\x10PBSpanBtlBetInfo\x12\x10\n\x08match_id\x18\x01 \x01(\x04\x12(\n\x0f\x62\x65t_round_infos\x18\x02 \x03(\x0b\x32\x0f.PBBetRoundInfo\":\n\x0fPBShopLimitTime\x12\x12\n\nlimit_type\x18\x01 \x01(\x11\x12\x13\n\x0brecord_time\x18\x02 \x01(\x11\"7\n\x0fPBShopLimitList\x12$\n\nlimit_time\x18\x01 \x03(\x0b\x32\x10.PBShopLimitTime\"\x95\x02\n\x0fPBGateWayDataEx\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12\'\n\x0fimmortal_battle\x18\x02 \x01(\x0b\x32\x0e.PBIMBattleAll\x12+\n\x0cguild_common\x18\x03 \x01(\x0b\x32\x15.PBGateWayGuildCommon\x12\x30\n\x11\x64raw_lottery_data\x18\x04 \x01(\x0b\x32\x15.PBDrwaLotteryALLData\x12\'\n\x0e\x66ireworks_data\x18\x05 \x01(\x0b\x32\x0f.PBActFireworks\x12-\n\x11onearmbandit_data\x18\x06 \x01(\x0b\x32\x12.PBActOnearmBandit:\x0e\x92\xb5\x18\ngateway_id\"\x1f\n\x0cPBGmMailRole\x12\x0f\n\x07role_id\x18\x01 \x01(\x11\"/\n\x0cPBGmMailList\x12\x1f\n\x07gm_mail\x18\x01 \x03(\x0b\x32\x0e.PBGMSendMails\"\xb6\x06\n\rPBGateWayData\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12#\n\ngame_event\x18\x02 \x01(\x0b\x32\x0f.PBAllGameEvent\x12%\n\x0c\x63onsign_info\x18\x03 \x01(\x0b\x32\x0f.PBConsignInfos\x12*\n\x0fimmortal_unions\x18\x04 \x01(\x0b\x32\x11.PBImmortalUnions\x12\x15\n\rconsum_record\x18\x05 \x01(\t\x12\x12\n\npvp_season\x18\x06 \x01(\x11\x12\'\n\x0fimmortal_battle\x18\x07 \x01(\x0b\x32\x0e.PBIMBattleAll\x12,\n\x10leaderboard_list\x18\x08 \x01(\x0b\x32\x12.PBLeaderBoardList\x12/\n\x12short_message_list\x18\t \x01(\x0b\x32\x13.PBShortMessageList\x12*\n\x11\x64ungeon_info_list\x18\n \x01(\x0b\x32\x0f.PBDungeonInfos\x12&\n\x0breward_list\x18\x0b \x01(\x0b\x32\x11.PBRankRewardList\x12*\n\x0f\x61uthority_datas\x18\x0c \x01(\x0b\x32\x11.PBAuthorityDatas\x12(\n\x0crank_refresh\x18\r \x01(\x0b\x32\x12.PBRankRefreshInfo\x12\'\n\x0cspan_btl_bet\x18\x0e \x01(\x0b\x32\x11.PBSpanBtlBetInfo\x12$\n\nguild_list\x18\x0f \x01(\x0b\x32\x10.PBGuildDataList\x12)\n\x0fshop_limit_list\x18\x10 \x01(\x0b\x32\x10.PBShopLimitList\x12\x13\n\x0bwboss_level\x18\x11 \x01(\x11\x12,\n\rexchange_shop\x18\x12 \x01(\x0b\x32\x15.PBSocialExchangeShop\x12#\n\x0cgm_mail_list\x18\x13 \x01(\x0b\x32\r.PBGmMailList\x12\x14\n\x0cpvp_lasttime\x18\x14 \x01(\r\x12\x34\n\x13wild_boss_add_level\x18\x15 \x01(\x0b\x32\x17.PBWildBossLevelContain:\x0e\x92\xb5\x18\ngateway_id\"\xc4\x03\n\x13PBGateWaySocialData\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12$\n\tchar_list\x18\x02 \x01(\x0b\x32\x11.PBSocialCharList\x12&\n\x0b\x66riend_list\x18\x03 \x01(\x0b\x32\x11.PBCharFriendList\x12%\n\x0bworld_level\x18\x04 \x01(\x0b\x32\x10.PBWLAllRankInfo\x12\"\n\ncamp_union\x18\x05 \x01(\x0b\x32\x0e.PBPBCampUnion\x12+\n\x10\x63hange_camp_data\x18\x06 \x01(\x0b\x32\x11.PBChangeCampData\x12.\n\x0f\x63harm_rank_top3\x18\x07 \x01(\x0b\x32\x15.PBWorldCharmRankTop3\x12%\n\x1dlast_pet_pvp_rank_reward_time\x18\x08 \x01(\r\x12\x1b\n\x13server_merge_status\x18\t \x01(\r\x12\x19\n\x11server_merge_time\x18\n \x01(\r\x12\x34\n\x0erank_data_list\x18\x0b \x01(\x0b\x32\x1c.PBLastDayPersonRankContaint:\x0e\x92\xb5\x18\ngateway_id\"G\n\x13PBLastDayPersonRank\x12\x0c\n\x04type\x18\x01 \x01(\x11\x12\"\n\trank_info\x18\x02 \x03(\x0b\x32\x0f.PBRankDataInfo\"C\n\x0ePBRankDataInfo\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0c\n\x04rank\x18\x02 \x01(\r\x12\x12\n\nrank_value\x18\x03 \x01(\r\"F\n\x1bPBLastDayPersonRankContaint\x12\'\n\trank_data\x18\x01 \x03(\x0b\x32\x14.PBLastDayPersonRank\"\xa1\x01\n\x0fPBMarriageTable\x12\x13\n\x0bmarriage_id\x18\x01 \x01(\x04\x12\x12\n\nhusband_id\x18\x02 \x01(\r\x12\x0f\n\x07wife_id\x18\x03 \x01(\r\x12\x16\n\x0emarriage_state\x18\x04 \x01(\r\x12\x15\n\rmarriage_time\x18\x05 \x01(\r\x12\x14\n\x0c\x64ivorce_time\x18\x06 \x01(\r:\x0f\x92\xb5\x18\x0bmarriage_id\"U\n\x14PBSocialExchangeShop\x12(\n\tshop_data\x18\x01 \x01(\x0b\x32\x15.PBDBExchangeShopData\x12\x13\n\x0b\x64\x61y_refresh\x18\x02 \x01(\r\"6\n\x10PBSocialCharList\x12\"\n\x0bsocial_char\x18\x01 \x03(\x0b\x32\r.PBSocialChar\"\x98\x06\n\x0cPBSocialChar\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x10\n\x08shard_id\x18\x02 \x01(\r\x12\x12\n\npf_role_id\x18\x03 \x01(\r\x12\x11\n\tchar_name\x18\x04 \x01(\t\x12\x11\n\tchar_role\x18\x05 \x01(\r\x12\x13\n\x0b\x63har_gender\x18\x06 \x01(\r\x12\x12\n\nchar_level\x18\x07 \x01(\x11\x12\x14\n\x0c\x62\x61ttle_score\x18\x08 \x01(\x11\x12\x11\n\tpvp_score\x18\t \x01(\x11\x12\x12\n\ntreasue_lq\x18\n \x01(\x11\x12\x0f\n\x07shilian\x18\x0b \x01(\x11\x12\x13\n\x0b\x63harm_point\x18\x0c \x01(\x11\x12\x0e\n\x06killer\x18\r \x01(\x11\x12\x0f\n\x07\x63ur_exp\x18\x0e \x01(\x12\x12\x11\n\tchar_camp\x18\x0f \x01(\x11\x12\x11\n\tpet_Level\x18\x10 \x01(\x11\x12\x17\n\x0fpet_battlescore\x18\x11 \x01(\x11\x12\x14\n\x0c\x63har_justice\x18\x12 \x01(\x11\x12\x11\n\tchar_evil\x18\x13 \x01(\x11\x12\x12\n\nchar_death\x18\x14 \x01(\x11\x12\x12\n\nguild_name\x18\x15 \x01(\t\x12\x11\n\tpet_sheet\x18\x16 \x01(\t\x12\x11\n\thead_icon\x18\x17 \x01(\t\x12\x13\n\x0bjustice_exp\x18\x18 \x01(\x11\x12\x10\n\x08\x65vil_exp\x18\x19 \x01(\x11\x12\x18\n\x10\x63limbtower_group\x18\x1a \x01(\x11\x12\x17\n\x0f\x63limbtower_time\x18\x1b \x01(\r\x12\x14\n\x0c\x61nswer_score\x18\x1c \x01(\r\x12\x11\n\tquit_time\x18\x1d \x01(\x11\x12\x19\n\x11\x61nswer_score_time\x18\x1e \x01(\r\x12\x19\n\x11mount_battlescore\x18\x1f \x01(\r\x12\x1c\n\x08pet_info\x18  \x01(\x0b\x32\n.PBPetInfo\x12\x13\n\x0bsend_flower\x18! \x01(\r\x12\x16\n\x0emagicpet_sheet\x18\" \x01(\t\x12\x1c\n\x14magicpet_battlescore\x18# \x01(\x11\x12&\n\rmagicpet_info\x18$ \x01(\x0b\x32\x0f.PBMagicPetItem\"`\n\x15PBPetBattleRecordList\x12\'\n\x0epet_pvp_record\x18\x01 \x03(\x0b\x32\x0f.PBBattleRecord\x12\x1e\n\x16is_have_fix_char_level\x18\x02 \x01(\x08\"\xc9\x01\n\rPBCharOffLine\x12\x12\n\npf_role_id\x18\x01 \x01(\r\x12\"\n\x0b\x63har_social\x18\x02 \x01(\x0b\x32\r.PBSocialChar\x12&\n\x0b\x63har_friend\x18\x03 \x01(\x0b\x32\x11.PBCharFriendData\x12\x13\n\x0bupdate_time\x18\x04 \x01(\x05\x12\x33\n\x13pet_pvp_record_list\x18\x05 \x01(\x0b\x32\x16.PBPetBattleRecordList:\x0e\x92\xb5\x18\npf_role_id\";\n\x10PBCharFriendList\x12\'\n\x0c\x63har_friends\x18\x01 \x03(\x0b\x32\x11.PBCharFriendData\"\xbd\x02\n\x0bPBGuildData\x12&\n\rguild_summary\x18\x01 \x01(\x0b\x32\x0f.PBGuildSummary\x12$\n\x0cguild_member\x18\x02 \x03(\x0b\x32\x0e.PBGuildMember\x12*\n\x0fguild_applicant\x18\x03 \x03(\x0b\x32\x11.PBGuildApplicant\x12\'\n\x0b\x64\x61ta_retain\x18\x04 \x03(\x0b\x32\x12.PBGuildDataRetain\x12+\n\x10guild_store_data\x18\x05 \x01(\x0b\x32\x11.PBGuildStoreData\x12)\n\x11guild_redbag_data\x18\x06 \x01(\x0b\x32\x0e.PBGuildRedBag\x12\x33\n\x13guild_liveness_data\x18\x07 \x01(\x0b\x32\x16.PBDBGuildLivenessData\"-\n\x0bPBGuildTask\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x0c\n\x04time\x18\x02 \x01(\x11\".\n\rPBGuildQuitCD\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x0c\n\x04time\x18\x02 \x01(\x11\"X\n\x11PBGuildDataRetain\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x0c\n\x04time\x18\x02 \x01(\x11\x12#\n\x0bmember_info\x18\x03 \x01(\x0b\x32\x0e.PBGuildMember\"4\n\x0ePBGuildBanquet\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x10\n\x08\x65nd_time\x18\x02 \x01(\x11\"5\n\x12PBGuildBattleScore\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\r\n\x05score\x18\x02 \x01(\x11\"\xcd\x02\n\x0fPBGuildDataList\x12 \n\nguild_data\x18\x01 \x03(\x0b\x32\x0c.PBGuildData\x12 \n\nguild_task\x18\x02 \x03(\x0b\x32\x0c.PBGuildTask\x12\x1f\n\x07quit_cd\x18\x03 \x03(\x0b\x32\x0e.PBGuildQuitCD\x12\'\n\x0b\x64\x61ta_retain\x18\x04 \x03(\x0b\x32\x12.PBGuildDataRetain\x12 \n\x07\x62\x61nquet\x18\x05 \x03(\x0b\x32\x0f.PBGuildBanquet\x12\x13\n\x0b\x64\x61y_refresh\x18\x06 \x01(\r\x12\x14\n\x0cweek_refresh\x18\x07 \x01(\r\x12)\n\x0c\x62\x61ttle_score\x18\x08 \x03(\x0b\x32\x13.PBGuildBattleScore\x12\"\n\nall_battle\x18\t \x01(\x0b\x32\x0e.PBIMBattleAll\x12\x10\n\x08is_trans\x18\n \x01(\x08\"|\n\x11PBGuildBT_SignRet\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tsigner_id\x18\x02 \x01(\x04\x12\"\n\tsign_info\x18\x03 \x01(\x0b\x32\x0f.PBIMBattleCamp\x12\x1e\n\x06\x62\x61ttle\x18\x04 \x01(\x0b\x32\x0e.PBIMBattleAll\"{\n\x16PBGuildBT_StatusChange\x12\x11\n\tbattle_id\x18\x01 \x01(\x04\x12\x12\n\npre_status\x18\x02 \x01(\x11\x12\x14\n\x0c\x61\x66ter_status\x18\x03 \x01(\x11\x12$\n\tpb_battle\x18\x04 \x01(\x0b\x32\x11.PBImmortalBattle\"j\n\x15PBGuildBT_CreateField\x12\x11\n\tbattle_id\x18\x01 \x01(\x04\x12\x0e\n\x06map_id\x18\x02 \x01(\t\x12\x0e\n\x06\x63\x61mp_a\x18\x03 \x01(\x04\x12\x0e\n\x06\x63\x61mp_b\x18\x04 \x01(\x04\x12\x0e\n\x06\x63reate\x18\x05 \x01(\x08\"\x81\x01\n\x18PBGuildBT_CreateFieldRet\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12*\n\nfield_info\x18\x02 \x01(\x0b\x32\x16.PBGuildBT_CreateField\x12\x13\n\x0binstance_id\x18\x03 \x01(\x04\x12\x12\n\ndun_map_id\x18\x04 \x01(\r\"Z\n\x15PBGuildBT_PepleReport\x12\x11\n\tbattle_id\x18\x01 \x01(\x04\x12\x16\n\x0e\x63\x61mp_a_members\x18\x02 \x01(\x11\x12\x16\n\x0e\x63\x61mp_b_members\x18\x03 \x01(\x11\"w\n\x10PBGuildBT_Report\x12\x11\n\tbattle_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x63\x61mp_a_score\x18\x02 \x01(\x11\x12\x14\n\x0c\x63\x61mp_b_score\x18\x03 \x01(\x11\x12\x11\n\tcamp_a_id\x18\x04 \x01(\x04\x12\x11\n\tcamp_b_id\x18\x05 \x01(\x04\"^\n\x17PBGuildBT_DrawbackApply\x12\x11\n\tbattle_id\x18\x01 \x01(\x04\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x03(\x04\x12\x1f\n\x07pb_data\x18\x03 \x01(\x0b\x32\x0e.PBIMBattleAll\"F\n\x11PBGuildBT_JoinPVP\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x11\n\tbattle_id\x18\x02 \x01(\x04\x12\r\n\x05im_id\x18\x03 \x01(\x04\"\xb4\x01\n\x14PBGuildBT_JoinPVPRet\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x11\n\tbattle_id\x18\x03 \x01(\x04\x12\x16\n\x0etarget_camp_id\x18\x04 \x01(\x11\x12\x19\n\x11target_dun_ins_id\x18\x05 \x01(\x04\x12\x0f\n\x07\x63\x61mp_id\x18\x06 \x01(\x04\x12\x0e\n\x06map_id\x18\x07 \x01(\t\x12\x12\n\ndun_map_id\x18\x08 \x01(\r\"T\n\x18PBIMBattleEndAwardExtend\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x13\n\x0bguild_money\x18\x02 \x01(\x11\x12\x11\n\tbattle_id\x18\x03 \x01(\x04\"h\n\x11PBGatWayGuildData\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12 \n\nguild_data\x18\x02 \x01(\x0b\x32\x0c.PBGuildData\x12\x11\n\tis_delete\x18\x03 \x01(\r:\x0c\x92\xb5\x18\x08guild_id\"8\n\x0ePBAllGuildData\x12&\n\nguild_data\x18\x01 \x03(\x0b\x32\x12.PBGatWayGuildData\"\x85\x01\n\x14PBGateWayGuildCommon\x12\x18\n\x10last_day_refresh\x18\x01 \x01(\r\x12\x19\n\x11last_week_refresh\x18\x02 \x01(\r\x12\x1f\n\x07quit_cd\x18\x05 \x03(\x0b\x32\x0e.PBGuildQuitCD\x12\x17\n\x0fneed_change_ver\x18\x06 \x01(\x11\":\n\x11PBChangeCampScore\x12\x0f\n\x07\x63\x61mp_id\x18\x01 \x01(\x11\x12\x14\n\x0c\x62\x61ttle_score\x18\x02 \x01(\x11\"\x96\x01\n\x10PBChangeCampData\x12\x18\n\x10today_score_time\x18\x01 \x01(\r\x12\x17\n\x0flast_score_time\x18\x02 \x01(\r\x12\'\n\x0btoday_score\x18\x03 \x03(\x0b\x32\x12.PBChangeCampScore\x12&\n\nlast_score\x18\x04 \x03(\x0b\x32\x12.PBChangeCampScore\"P\n\x14PBWorldCharmRankTop3\x12%\n\tchar_node\x18\x01 \x03(\x0b\x32\x12.PBMsgRankCharNode\x12\x11\n\trecv_time\x18\x02 \x01(\x04\"Y\n\x10PBGuildStoreSlot\x12\x11\n\tslot_stat\x18\x01 \x01(\x11\x12\x10\n\x08sheet_id\x18\x02 \x01(\r\x12\x0b\n\x03num\x18\x03 \x01(\r\x12\x13\n\x0bsort_weight\x18\x04 \x01(\x11\"\x85\x01\n\x10PBGuildStoreData\x12$\n\tslot_info\x18\x01 \x03(\x0b\x32\x11.PBGuildStoreSlot\x12\x11\n\topen_slot\x18\x02 \x01(\r\x12\x13\n\x0b\x62ought_slot\x18\x03 \x01(\r\x12#\n\x06notice\x18\x04 \x03(\x0b\x32\x13.PBStoreMessageParm\"\xa8\x01\n\x13PBGuildRankLastData\x12\x0c\n\x04rank\x18\x01 \x01(\r\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\x12\x13\n\x0bguild_level\x18\x03 \x01(\r\x12\x12\n\nguild_name\x18\x04 \x01(\t\x12\x13\n\x0bmaster_name\x18\x05 \x01(\t\x12\x11\n\thead_icon\x18\x06 \x01(\t\x12\x0c\n\x04\x63\x61mp\x18\x07 \x01(\r\x12\x12\n\nrank_value\x18\x08 \x01(\x11\"H\n\x17PBGuildRankLastDataList\x12-\n\x10pbguildrank_data\x18\x01 \x03(\x0b\x32\x13.PBMsgRankGuildNode\"f\n\x0ePBRankLastData\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12\x30\n\x0elast_rank_data\x18\x02 \x01(\x0b\x32\x18.PBGuildRankLastDataList:\x0e\x92\xb5\x18\ngateway_id\">\n\x16PBWildBossLevelContain\x12$\n\nboss_level\x18\x01 \x03(\x0b\x32\x10.PBWildBossLevel\"5\n\x0fPBWildBossLevel\x12\x10\n\x08sheet_id\x18\x01 \x01(\t\x12\x10\n\x08up_level\x18\x02 \x01(\x11\"<\n\x0ePBActFireworks\x12*\n\tact_score\x18\x01 \x03(\x0b\x32\x17.PBActFireworksActScore\"\x9b\x01\n\x16PBActFireworksActScore\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x10\n\x08\x65nd_time\x18\x02 \x01(\r\x12\x30\n\x0cplayer_score\x18\x03 \x03(\x0b\x32\x1a.PBActFireworksPlayerScore\x12\x14\n\x0c\x63ur_day_time\x18\x04 \x01(\r\x12\x17\n\x0f\x63ur_total_score\x18\x05 \x01(\r\";\n\x19PBActFireworksPlayerScore\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\r\n\x05score\x18\x02 \x01(\r\"T\n\x11PBMergeServerData\x12\x15\n\rsrc_gatewayid\x18\x01 \x01(\r\x12\x15\n\rdec_gatewayid\x18\x02 \x01(\r:\x11\x92\xb5\x18\rsrc_gatewayid\".\n\x0ePBPetArrayInfo\x12\x1c\n\x08pet_info\x18\x01 \x03(\x0b\x32\n.PBPetInfo\";\n\x10PBRobotArrayInfo\x12\'\n\x0erobot_pet_info\x18\x01 \x03(\x0b\x32\x0f.PBRobotPetInfo\"\xa8\x01\n\x10PBPetPvPRankData\x12\x0c\n\x04rank\x18\x01 \x01(\r\x12\x12\n\npf_role_id\x18\x02 \x01(\r\x12\x10\n\x08is_robot\x18\x03 \x01(\x11\x12&\n\rpet_info_list\x18\x04 \x01(\x0b\x32\x0f.PBPetArrayInfo\x12.\n\x13robot_pet_info_list\x18\x05 \x01(\x0b\x32\x11.PBRobotArrayInfo:\x08\x92\xb5\x18\x04rank\"U\n\x11PBActOnearmBandit\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x30\n\x0chistory_data\x18\x02 \x03(\x0b\x32\x1a.PBOnearmBanditHistoryData\"\xe6\x01\n\x0fPBCropsInfoData\x12\x10\n\x08\x63rops_id\x18\x01 \x01(\x04\x12\x12\n\ncrops_name\x18\x02 \x01(\t\x12\x13\n\x0b\x63reate_time\x18\x03 \x01(\r\x12 \n\x18\x61pplication_disband_time\x18\x04 \x01(\r\x12\x14\n\x0c\x64isband_time\x18\x05 \x01(\r\x12\x16\n\x0emaster_role_id\x18\x06 \x01(\r\x12\x13\n\x0bmaster_name\x18\x07 \x01(\t\x12%\n\nother_info\x18\x08 \x01(\x0b\x32\x11.PBOtherCropsInfo:\x0c\x92\xb5\x18\x08\x63rops_id\"W\n\x10PBOtherCropsInfo\x12\x1d\n\x06member\x18\x01 \x03(\x0b\x32\r.PBMemberInfo\x12$\n\napplicants\x18\x02 \x03(\x0b\x32\x10.PBCropApplicant\"D\n\x0cPBMemberInfo\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tjoin_time\x18\x02 \x01(\r\x12\x10\n\x08is_ready\x18\x03 \x01(\x08\"6\n\x0fPBCropApplicant\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x12\n\napply_time\x18\x02 \x01(\r\"}\n\x15PBDBGuildLivenessInfo\x12\x0c\n\x04type\x18\x01 \x01(\x11\x12\x14\n\x0csum_liveness\x18\x02 \x01(\x11\x12\x17\n\x0f\x63urday_liveness\x18\x03 \x01(\x11\x12\x12\n\ndungeon_id\x18\x04 \x01(\t\x12\x13\n\x0b\x63reature_id\x18\x05 \x01(\t\"^\n\x15PBDBGuildLivenessData\x12-\n\rliveness_data\x18\x01 \x03(\x0b\x32\x16.PBDBGuildLivenessInfo\x12\x16\n\x0elast_rest_time\x18\x02 \x01(\r*Y\n\x12\x45ServerMergeStatus\x12\x15\n\x11\x45ServerMerge_None\x10\x00\x12\x15\n\x11\x45ServerMerge_Oper\x10\x01\x12\x15\n\x11\x45ServerMerge_Over\x10\x02\x42\x02H\x01')
 
+_ESERVERMERGESTATUS = descriptor.EnumDescriptor(
+  name='EServerMergeStatus',
+  full_name='EServerMergeStatus',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    descriptor.EnumValueDescriptor(
+      name='EServerMerge_None', index=0, number=0,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='EServerMerge_Oper', index=1, number=1,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='EServerMerge_Over', index=2, number=2,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=11759,
+  serialized_end=11848,
+)
+
+
+EServerMerge_None = 0
+EServerMerge_Oper = 1
+EServerMerge_Over = 2
 
 
 
@@ -54,8 +84,8 @@ _PBALLGAMEEVENT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=294,
-  serialized_end=349,
+  serialized_start=315,
+  serialized_end=370,
 )
 
 
@@ -110,8 +140,8 @@ _PBGAMEEVENTDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=351,
-  serialized_end=454,
+  serialized_start=372,
+  serialized_end=475,
 )
 
 
@@ -138,8 +168,8 @@ _PBCONSIGNINFOS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=456,
-  serialized_end=514,
+  serialized_start=477,
+  serialized_end=535,
 )
 
 
@@ -166,8 +196,8 @@ _PBIMMORTALUNIONS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=516,
-  serialized_end=581,
+  serialized_start=537,
+  serialized_end=602,
 )
 
 
@@ -425,8 +455,8 @@ _PBIMMORTALUNION = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=584,
-  serialized_end=1440,
+  serialized_start=605,
+  serialized_end=1461,
 )
 
 
@@ -453,8 +483,8 @@ _PBINVENTORY = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1442,
-  serialized_end=1478,
+  serialized_start=1463,
+  serialized_end=1499,
 )
 
 
@@ -481,8 +511,8 @@ _PBITEMOPERATERECORDLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1480,
-  serialized_end=1548,
+  serialized_start=1501,
+  serialized_end=1569,
 )
 
 
@@ -544,8 +574,8 @@ _PBITEMOPERATERECORD = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1551,
-  serialized_end=1695,
+  serialized_start=1572,
+  serialized_end=1716,
 )
 
 
@@ -579,8 +609,8 @@ _PBITEMQUANTITY = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1697,
-  serialized_end=1746,
+  serialized_start=1718,
+  serialized_end=1767,
 )
 
 
@@ -663,8 +693,8 @@ _PBIMMORTALUNIONMEMBERS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1749,
-  serialized_end=1938,
+  serialized_start=1770,
+  serialized_end=1959,
 )
 
 
@@ -768,8 +798,8 @@ _PBIMBATTLECAMP = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1941,
-  serialized_end=2184,
+  serialized_start=1962,
+  serialized_end=2205,
 )
 
 
@@ -845,8 +875,8 @@ _PBIMMORTALBATTLE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2187,
-  serialized_end=2379,
+  serialized_start=2208,
+  serialized_end=2400,
 )
 
 
@@ -880,8 +910,8 @@ _PBIMBATTLEALL = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2381,
-  serialized_end=2468,
+  serialized_start=2402,
+  serialized_end=2489,
 )
 
 
@@ -908,8 +938,8 @@ _PBLEADERBOARDLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2470,
-  serialized_end=2532,
+  serialized_start=2491,
+  serialized_end=2553,
 )
 
 
@@ -950,8 +980,8 @@ _PBLEADERBOARD = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2534,
-  serialized_end=2601,
+  serialized_start=2555,
+  serialized_end=2622,
 )
 
 
@@ -978,8 +1008,8 @@ _PBSHORTMESSAGELIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2603,
-  serialized_end=2661,
+  serialized_start=2624,
+  serialized_end=2682,
 )
 
 
@@ -1034,8 +1064,8 @@ _PBSHORTMESSAGE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2663,
-  serialized_end=2778,
+  serialized_start=2684,
+  serialized_end=2799,
 )
 
 
@@ -1062,8 +1092,8 @@ _PBDUNGEONINFOS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2780,
-  serialized_end=2831,
+  serialized_start=2801,
+  serialized_end=2852,
 )
 
 
@@ -1111,8 +1141,8 @@ _PBDUNGEONINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2833,
-  serialized_end=2927,
+  serialized_start=2854,
+  serialized_end=2948,
 )
 
 
@@ -1139,8 +1169,8 @@ _PBRANKREWARDLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2929,
-  serialized_end=2983,
+  serialized_start=2950,
+  serialized_end=3004,
 )
 
 
@@ -1286,8 +1316,8 @@ _PBREWARDINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2986,
-  serialized_end=3310,
+  serialized_start=3007,
+  serialized_end=3331,
 )
 
 
@@ -1314,8 +1344,8 @@ _PBRANKREFRESHINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3312,
-  serialized_end=3353,
+  serialized_start=3333,
+  serialized_end=3374,
 )
 
 
@@ -1349,8 +1379,8 @@ _PBBETROUNDINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3355,
-  serialized_end=3432,
+  serialized_start=3376,
+  serialized_end=3453,
 )
 
 
@@ -1384,8 +1414,8 @@ _PBSPANBTLBETINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3434,
-  serialized_end=3512,
+  serialized_start=3455,
+  serialized_end=3533,
 )
 
 
@@ -1419,8 +1449,8 @@ _PBSHOPLIMITTIME = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3514,
-  serialized_end=3572,
+  serialized_start=3535,
+  serialized_end=3593,
 )
 
 
@@ -1447,8 +1477,8 @@ _PBSHOPLIMITLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3574,
-  serialized_end=3629,
+  serialized_start=3595,
+  serialized_end=3650,
 )
 
 
@@ -1510,8 +1540,8 @@ _PBGATEWAYDATAEX = descriptor.Descriptor(
   options=descriptor._ParseOptions(descriptor_pb2.MessageOptions(), '\222\265\030\ngateway_id'),
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3632,
-  serialized_end=3909,
+  serialized_start=3653,
+  serialized_end=3930,
 )
 
 
@@ -1538,8 +1568,8 @@ _PBGMMAILROLE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3911,
-  serialized_end=3942,
+  serialized_start=3932,
+  serialized_end=3963,
 )
 
 
@@ -1566,8 +1596,8 @@ _PBGMMAILLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3944,
-  serialized_end=3991,
+  serialized_start=3965,
+  serialized_end=4012,
 )
 
 
@@ -1734,8 +1764,8 @@ _PBGATEWAYDATA = descriptor.Descriptor(
   options=descriptor._ParseOptions(descriptor_pb2.MessageOptions(), '\222\265\030\ngateway_id'),
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3994,
-  serialized_end=4816,
+  serialized_start=4015,
+  serialized_end=4837,
 )
 
 
@@ -1802,6 +1832,27 @@ _PBGATEWAYSOCIALDATA = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='server_merge_status', full_name='PBGateWaySocialData.server_merge_status', index=8,
+      number=9, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='server_merge_time', full_name='PBGateWaySocialData.server_merge_time', index=9,
+      number=10, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='rank_data_list', full_name='PBGateWaySocialData.rank_data_list', index=10,
+      number=11, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -1811,8 +1862,113 @@ _PBGATEWAYSOCIALDATA = descriptor.Descriptor(
   options=descriptor._ParseOptions(descriptor_pb2.MessageOptions(), '\222\265\030\ngateway_id'),
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4819,
-  serialized_end=5161,
+  serialized_start=4840,
+  serialized_end=5292,
+)
+
+
+_PBLASTDAYPERSONRANK = descriptor.Descriptor(
+  name='PBLastDayPersonRank',
+  full_name='PBLastDayPersonRank',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='type', full_name='PBLastDayPersonRank.type', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='rank_info', full_name='PBLastDayPersonRank.rank_info', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=5294,
+  serialized_end=5365,
+)
+
+
+_PBRANKDATAINFO = descriptor.Descriptor(
+  name='PBRankDataInfo',
+  full_name='PBRankDataInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBRankDataInfo.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='rank', full_name='PBRankDataInfo.rank', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='rank_value', full_name='PBRankDataInfo.rank_value', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=5367,
+  serialized_end=5434,
+)
+
+
+_PBLASTDAYPERSONRANKCONTAINT = descriptor.Descriptor(
+  name='PBLastDayPersonRankContaint',
+  full_name='PBLastDayPersonRankContaint',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='rank_data', full_name='PBLastDayPersonRankContaint.rank_data', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=5436,
+  serialized_end=5506,
 )
 
 
@@ -1874,8 +2030,8 @@ _PBMARRIAGETABLE = descriptor.Descriptor(
   options=descriptor._ParseOptions(descriptor_pb2.MessageOptions(), '\222\265\030\013marriage_id'),
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5164,
-  serialized_end=5325,
+  serialized_start=5509,
+  serialized_end=5670,
 )
 
 
@@ -1909,8 +2065,8 @@ _PBSOCIALEXCHANGESHOP = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5327,
-  serialized_end=5412,
+  serialized_start=5672,
+  serialized_end=5757,
 )
 
 
@@ -1937,8 +2093,8 @@ _PBSOCIALCHARLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5414,
-  serialized_end=5468,
+  serialized_start=5759,
+  serialized_end=5813,
 )
 
 
@@ -2180,6 +2336,27 @@ _PBSOCIALCHAR = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='magicpet_sheet', full_name='PBSocialChar.magicpet_sheet', index=33,
+      number=34, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='magicpet_battlescore', full_name='PBSocialChar.magicpet_battlescore', index=34,
+      number=35, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='magicpet_info', full_name='PBSocialChar.magicpet_info', index=35,
+      number=36, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -2189,8 +2366,8 @@ _PBSOCIALCHAR = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5471,
-  serialized_end=6169,
+  serialized_start=5816,
+  serialized_end=6608,
 )
 
 
@@ -2224,8 +2401,8 @@ _PBPETBATTLERECORDLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6171,
-  serialized_end=6267,
+  serialized_start=6610,
+  serialized_end=6706,
 )
 
 
@@ -2280,8 +2457,8 @@ _PBCHAROFFLINE = descriptor.Descriptor(
   options=descriptor._ParseOptions(descriptor_pb2.MessageOptions(), '\222\265\030\npf_role_id'),
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6270,
-  serialized_end=6471,
+  serialized_start=6709,
+  serialized_end=6910,
 )
 
 
@@ -2308,8 +2485,8 @@ _PBCHARFRIENDLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6473,
-  serialized_end=6532,
+  serialized_start=6912,
+  serialized_end=6971,
 )
 
 
@@ -2362,6 +2539,13 @@ _PBGUILDDATA = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='guild_liveness_data', full_name='PBGuildData.guild_liveness_data', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -2371,8 +2555,8 @@ _PBGUILDDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6535,
-  serialized_end=6799,
+  serialized_start=6974,
+  serialized_end=7291,
 )
 
 
@@ -2406,8 +2590,8 @@ _PBGUILDTASK = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6801,
-  serialized_end=6846,
+  serialized_start=7293,
+  serialized_end=7338,
 )
 
 
@@ -2441,8 +2625,8 @@ _PBGUILDQUITCD = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6848,
-  serialized_end=6894,
+  serialized_start=7340,
+  serialized_end=7386,
 )
 
 
@@ -2483,8 +2667,8 @@ _PBGUILDDATARETAIN = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6896,
-  serialized_end=6984,
+  serialized_start=7388,
+  serialized_end=7476,
 )
 
 
@@ -2518,8 +2702,8 @@ _PBGUILDBANQUET = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6986,
-  serialized_end=7038,
+  serialized_start=7478,
+  serialized_end=7530,
 )
 
 
@@ -2553,8 +2737,8 @@ _PBGUILDBATTLESCORE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7040,
-  serialized_end=7093,
+  serialized_start=7532,
+  serialized_end=7585,
 )
 
 
@@ -2644,8 +2828,8 @@ _PBGUILDDATALIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7096,
-  serialized_end=7429,
+  serialized_start=7588,
+  serialized_end=7921,
 )
 
 
@@ -2693,8 +2877,8 @@ _PBGUILDBT_SIGNRET = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7431,
-  serialized_end=7555,
+  serialized_start=7923,
+  serialized_end=8047,
 )
 
 
@@ -2742,8 +2926,8 @@ _PBGUILDBT_STATUSCHANGE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7557,
-  serialized_end=7680,
+  serialized_start=8049,
+  serialized_end=8172,
 )
 
 
@@ -2798,8 +2982,8 @@ _PBGUILDBT_CREATEFIELD = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7682,
-  serialized_end=7788,
+  serialized_start=8174,
+  serialized_end=8280,
 )
 
 
@@ -2847,8 +3031,8 @@ _PBGUILDBT_CREATEFIELDRET = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7791,
-  serialized_end=7920,
+  serialized_start=8283,
+  serialized_end=8412,
 )
 
 
@@ -2889,8 +3073,8 @@ _PBGUILDBT_PEPLEREPORT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7922,
-  serialized_end=8012,
+  serialized_start=8414,
+  serialized_end=8504,
 )
 
 
@@ -2945,8 +3129,8 @@ _PBGUILDBT_REPORT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8014,
-  serialized_end=8133,
+  serialized_start=8506,
+  serialized_end=8625,
 )
 
 
@@ -2987,8 +3171,8 @@ _PBGUILDBT_DRAWBACKAPPLY = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8135,
-  serialized_end=8229,
+  serialized_start=8627,
+  serialized_end=8721,
 )
 
 
@@ -3029,8 +3213,8 @@ _PBGUILDBT_JOINPVP = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8231,
-  serialized_end=8301,
+  serialized_start=8723,
+  serialized_end=8793,
 )
 
 
@@ -3106,8 +3290,8 @@ _PBGUILDBT_JOINPVPRET = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8304,
-  serialized_end=8484,
+  serialized_start=8796,
+  serialized_end=8976,
 )
 
 
@@ -3148,8 +3332,8 @@ _PBIMBATTLEENDAWARDEXTEND = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8486,
-  serialized_end=8570,
+  serialized_start=8978,
+  serialized_end=9062,
 )
 
 
@@ -3190,8 +3374,8 @@ _PBGATWAYGUILDDATA = descriptor.Descriptor(
   options=descriptor._ParseOptions(descriptor_pb2.MessageOptions(), '\222\265\030\010guild_id'),
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8572,
-  serialized_end=8676,
+  serialized_start=9064,
+  serialized_end=9168,
 )
 
 
@@ -3218,8 +3402,8 @@ _PBALLGUILDDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8678,
-  serialized_end=8734,
+  serialized_start=9170,
+  serialized_end=9226,
 )
 
 
@@ -3267,8 +3451,8 @@ _PBGATEWAYGUILDCOMMON = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8737,
-  serialized_end=8870,
+  serialized_start=9229,
+  serialized_end=9362,
 )
 
 
@@ -3302,8 +3486,8 @@ _PBCHANGECAMPSCORE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8872,
-  serialized_end=8930,
+  serialized_start=9364,
+  serialized_end=9422,
 )
 
 
@@ -3351,8 +3535,8 @@ _PBCHANGECAMPDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8933,
-  serialized_end=9083,
+  serialized_start=9425,
+  serialized_end=9575,
 )
 
 
@@ -3386,8 +3570,8 @@ _PBWORLDCHARMRANKTOP3 = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9085,
-  serialized_end=9165,
+  serialized_start=9577,
+  serialized_end=9657,
 )
 
 
@@ -3435,8 +3619,8 @@ _PBGUILDSTORESLOT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9167,
-  serialized_end=9256,
+  serialized_start=9659,
+  serialized_end=9748,
 )
 
 
@@ -3484,8 +3668,8 @@ _PBGUILDSTOREDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9259,
-  serialized_end=9392,
+  serialized_start=9751,
+  serialized_end=9884,
 )
 
 
@@ -3561,8 +3745,8 @@ _PBGUILDRANKLASTDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9395,
-  serialized_end=9563,
+  serialized_start=9887,
+  serialized_end=10055,
 )
 
 
@@ -3589,8 +3773,8 @@ _PBGUILDRANKLASTDATALIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9565,
-  serialized_end=9637,
+  serialized_start=10057,
+  serialized_end=10129,
 )
 
 
@@ -3624,8 +3808,8 @@ _PBRANKLASTDATA = descriptor.Descriptor(
   options=descriptor._ParseOptions(descriptor_pb2.MessageOptions(), '\222\265\030\ngateway_id'),
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9639,
-  serialized_end=9741,
+  serialized_start=10131,
+  serialized_end=10233,
 )
 
 
@@ -3652,8 +3836,8 @@ _PBWILDBOSSLEVELCONTAIN = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9743,
-  serialized_end=9805,
+  serialized_start=10235,
+  serialized_end=10297,
 )
 
 
@@ -3687,8 +3871,8 @@ _PBWILDBOSSLEVEL = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9807,
-  serialized_end=9860,
+  serialized_start=10299,
+  serialized_end=10352,
 )
 
 
@@ -3715,8 +3899,8 @@ _PBACTFIREWORKS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9862,
-  serialized_end=9922,
+  serialized_start=10354,
+  serialized_end=10414,
 )
 
 
@@ -3771,8 +3955,8 @@ _PBACTFIREWORKSACTSCORE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9925,
-  serialized_end=10080,
+  serialized_start=10417,
+  serialized_end=10572,
 )
 
 
@@ -3806,8 +3990,8 @@ _PBACTFIREWORKSPLAYERSCORE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10082,
-  serialized_end=10141,
+  serialized_start=10574,
+  serialized_end=10633,
 )
 
 
@@ -3841,8 +4025,8 @@ _PBMERGESERVERDATA = descriptor.Descriptor(
   options=descriptor._ParseOptions(descriptor_pb2.MessageOptions(), '\222\265\030\rsrc_gatewayid'),
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10143,
-  serialized_end=10227,
+  serialized_start=10635,
+  serialized_end=10719,
 )
 
 
@@ -3869,8 +4053,8 @@ _PBPETARRAYINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10229,
-  serialized_end=10275,
+  serialized_start=10721,
+  serialized_end=10767,
 )
 
 
@@ -3897,8 +4081,8 @@ _PBROBOTARRAYINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10277,
-  serialized_end=10336,
+  serialized_start=10769,
+  serialized_end=10828,
 )
 
 
@@ -3953,8 +4137,8 @@ _PBPETPVPRANKDATA = descriptor.Descriptor(
   options=descriptor._ParseOptions(descriptor_pb2.MessageOptions(), '\222\265\030\004rank'),
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10339,
-  serialized_end=10507,
+  serialized_start=10831,
+  serialized_end=10999,
 )
 
 
@@ -3988,8 +4172,288 @@ _PBACTONEARMBANDIT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10509,
-  serialized_end=10594,
+  serialized_start=11001,
+  serialized_end=11086,
+)
+
+
+_PBCROPSINFODATA = descriptor.Descriptor(
+  name='PBCropsInfoData',
+  full_name='PBCropsInfoData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='crops_id', full_name='PBCropsInfoData.crops_id', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='crops_name', full_name='PBCropsInfoData.crops_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='create_time', full_name='PBCropsInfoData.create_time', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='application_disband_time', full_name='PBCropsInfoData.application_disband_time', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='disband_time', full_name='PBCropsInfoData.disband_time', index=4,
+      number=5, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='master_role_id', full_name='PBCropsInfoData.master_role_id', index=5,
+      number=6, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='master_name', full_name='PBCropsInfoData.master_name', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='other_info', full_name='PBCropsInfoData.other_info', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=descriptor._ParseOptions(descriptor_pb2.MessageOptions(), '\222\265\030\010crops_id'),
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=11089,
+  serialized_end=11319,
+)
+
+
+_PBOTHERCROPSINFO = descriptor.Descriptor(
+  name='PBOtherCropsInfo',
+  full_name='PBOtherCropsInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='member', full_name='PBOtherCropsInfo.member', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='applicants', full_name='PBOtherCropsInfo.applicants', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=11321,
+  serialized_end=11408,
+)
+
+
+_PBMEMBERINFO = descriptor.Descriptor(
+  name='PBMemberInfo',
+  full_name='PBMemberInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMemberInfo.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='join_time', full_name='PBMemberInfo.join_time', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='is_ready', full_name='PBMemberInfo.is_ready', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=11410,
+  serialized_end=11478,
+)
+
+
+_PBCROPAPPLICANT = descriptor.Descriptor(
+  name='PBCropApplicant',
+  full_name='PBCropApplicant',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBCropApplicant.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='apply_time', full_name='PBCropApplicant.apply_time', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=11480,
+  serialized_end=11534,
+)
+
+
+_PBDBGUILDLIVENESSINFO = descriptor.Descriptor(
+  name='PBDBGuildLivenessInfo',
+  full_name='PBDBGuildLivenessInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='type', full_name='PBDBGuildLivenessInfo.type', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='sum_liveness', full_name='PBDBGuildLivenessInfo.sum_liveness', index=1,
+      number=2, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='curday_liveness', full_name='PBDBGuildLivenessInfo.curday_liveness', index=2,
+      number=3, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='dungeon_id', full_name='PBDBGuildLivenessInfo.dungeon_id', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='creature_id', full_name='PBDBGuildLivenessInfo.creature_id', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=11536,
+  serialized_end=11661,
+)
+
+
+_PBDBGUILDLIVENESSDATA = descriptor.Descriptor(
+  name='PBDBGuildLivenessData',
+  full_name='PBDBGuildLivenessData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='liveness_data', full_name='PBDBGuildLivenessData.liveness_data', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='last_rest_time', full_name='PBDBGuildLivenessData.last_rest_time', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=11663,
+  serialized_end=11757,
 )
 
 _PBALLGAMEEVENT.fields_by_name['game_events'].message_type = _PBGAMEEVENTDATA
@@ -4039,9 +4503,13 @@ _PBGATEWAYSOCIALDATA.fields_by_name['world_level'].message_type = msg_common_pb2
 _PBGATEWAYSOCIALDATA.fields_by_name['camp_union'].message_type = msg_guild_pb2._PBPBCAMPUNION
 _PBGATEWAYSOCIALDATA.fields_by_name['change_camp_data'].message_type = _PBCHANGECAMPDATA
 _PBGATEWAYSOCIALDATA.fields_by_name['charm_rank_top3'].message_type = _PBWORLDCHARMRANKTOP3
+_PBGATEWAYSOCIALDATA.fields_by_name['rank_data_list'].message_type = _PBLASTDAYPERSONRANKCONTAINT
+_PBLASTDAYPERSONRANK.fields_by_name['rank_info'].message_type = _PBRANKDATAINFO
+_PBLASTDAYPERSONRANKCONTAINT.fields_by_name['rank_data'].message_type = _PBLASTDAYPERSONRANK
 _PBSOCIALEXCHANGESHOP.fields_by_name['shop_data'].message_type = db_shop_pb2._PBDBEXCHANGESHOPDATA
 _PBSOCIALCHARLIST.fields_by_name['social_char'].message_type = _PBSOCIALCHAR
 _PBSOCIALCHAR.fields_by_name['pet_info'].message_type = msg_pet_pb2._PBPETINFO
+_PBSOCIALCHAR.fields_by_name['magicpet_info'].message_type = msg_magic_pet_pb2._PBMAGICPETITEM
 _PBPETBATTLERECORDLIST.fields_by_name['pet_pvp_record'].message_type = msg_pet_battle_pb2._PBBATTLERECORD
 _PBCHAROFFLINE.fields_by_name['char_social'].message_type = _PBSOCIALCHAR
 _PBCHAROFFLINE.fields_by_name['char_friend'].message_type = msg_friend_pb2._PBCHARFRIENDDATA
@@ -4053,6 +4521,7 @@ _PBGUILDDATA.fields_by_name['guild_applicant'].message_type = msg_guild_pb2._PBG
 _PBGUILDDATA.fields_by_name['data_retain'].message_type = _PBGUILDDATARETAIN
 _PBGUILDDATA.fields_by_name['guild_store_data'].message_type = _PBGUILDSTOREDATA
 _PBGUILDDATA.fields_by_name['guild_redbag_data'].message_type = msg_guild_redbag_pb2._PBGUILDREDBAG
+_PBGUILDDATA.fields_by_name['guild_liveness_data'].message_type = _PBDBGUILDLIVENESSDATA
 _PBGUILDDATARETAIN.fields_by_name['member_info'].message_type = msg_guild_pb2._PBGUILDMEMBER
 _PBGUILDDATALIST.fields_by_name['guild_data'].message_type = _PBGUILDDATA
 _PBGUILDDATALIST.fields_by_name['guild_task'].message_type = _PBGUILDTASK
@@ -4084,6 +4553,10 @@ _PBROBOTARRAYINFO.fields_by_name['robot_pet_info'].message_type = msg_pet_battle
 _PBPETPVPRANKDATA.fields_by_name['pet_info_list'].message_type = _PBPETARRAYINFO
 _PBPETPVPRANKDATA.fields_by_name['robot_pet_info_list'].message_type = _PBROBOTARRAYINFO
 _PBACTONEARMBANDIT.fields_by_name['history_data'].message_type = msg_activity_pb2._PBONEARMBANDITHISTORYDATA
+_PBCROPSINFODATA.fields_by_name['other_info'].message_type = _PBOTHERCROPSINFO
+_PBOTHERCROPSINFO.fields_by_name['member'].message_type = _PBMEMBERINFO
+_PBOTHERCROPSINFO.fields_by_name['applicants'].message_type = _PBCROPAPPLICANT
+_PBDBGUILDLIVENESSDATA.fields_by_name['liveness_data'].message_type = _PBDBGUILDLIVENESSINFO
 DESCRIPTOR.message_types_by_name['PBAllGameEvent'] = _PBALLGAMEEVENT
 DESCRIPTOR.message_types_by_name['PBGameEventData'] = _PBGAMEEVENTDATA
 DESCRIPTOR.message_types_by_name['PBConsignInfos'] = _PBCONSIGNINFOS
@@ -4115,6 +4588,9 @@ DESCRIPTOR.message_types_by_name['PBGmMailRole'] = _PBGMMAILROLE
 DESCRIPTOR.message_types_by_name['PBGmMailList'] = _PBGMMAILLIST
 DESCRIPTOR.message_types_by_name['PBGateWayData'] = _PBGATEWAYDATA
 DESCRIPTOR.message_types_by_name['PBGateWaySocialData'] = _PBGATEWAYSOCIALDATA
+DESCRIPTOR.message_types_by_name['PBLastDayPersonRank'] = _PBLASTDAYPERSONRANK
+DESCRIPTOR.message_types_by_name['PBRankDataInfo'] = _PBRANKDATAINFO
+DESCRIPTOR.message_types_by_name['PBLastDayPersonRankContaint'] = _PBLASTDAYPERSONRANKCONTAINT
 DESCRIPTOR.message_types_by_name['PBMarriageTable'] = _PBMARRIAGETABLE
 DESCRIPTOR.message_types_by_name['PBSocialExchangeShop'] = _PBSOCIALEXCHANGESHOP
 DESCRIPTOR.message_types_by_name['PBSocialCharList'] = _PBSOCIALCHARLIST
@@ -4160,6 +4636,12 @@ DESCRIPTOR.message_types_by_name['PBPetArrayInfo'] = _PBPETARRAYINFO
 DESCRIPTOR.message_types_by_name['PBRobotArrayInfo'] = _PBROBOTARRAYINFO
 DESCRIPTOR.message_types_by_name['PBPetPvPRankData'] = _PBPETPVPRANKDATA
 DESCRIPTOR.message_types_by_name['PBActOnearmBandit'] = _PBACTONEARMBANDIT
+DESCRIPTOR.message_types_by_name['PBCropsInfoData'] = _PBCROPSINFODATA
+DESCRIPTOR.message_types_by_name['PBOtherCropsInfo'] = _PBOTHERCROPSINFO
+DESCRIPTOR.message_types_by_name['PBMemberInfo'] = _PBMEMBERINFO
+DESCRIPTOR.message_types_by_name['PBCropApplicant'] = _PBCROPAPPLICANT
+DESCRIPTOR.message_types_by_name['PBDBGuildLivenessInfo'] = _PBDBGUILDLIVENESSINFO
+DESCRIPTOR.message_types_by_name['PBDBGuildLivenessData'] = _PBDBGUILDLIVENESSDATA
 
 class PBAllGameEvent(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
@@ -4346,6 +4828,24 @@ class PBGateWaySocialData(message.Message):
   DESCRIPTOR = _PBGATEWAYSOCIALDATA
   
   # @@protoc_insertion_point(class_scope:PBGateWaySocialData)
+
+class PBLastDayPersonRank(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBLASTDAYPERSONRANK
+  
+  # @@protoc_insertion_point(class_scope:PBLastDayPersonRank)
+
+class PBRankDataInfo(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBRANKDATAINFO
+  
+  # @@protoc_insertion_point(class_scope:PBRankDataInfo)
+
+class PBLastDayPersonRankContaint(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBLASTDAYPERSONRANKCONTAINT
+  
+  # @@protoc_insertion_point(class_scope:PBLastDayPersonRankContaint)
 
 class PBMarriageTable(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
@@ -4616,5 +5116,41 @@ class PBActOnearmBandit(message.Message):
   DESCRIPTOR = _PBACTONEARMBANDIT
   
   # @@protoc_insertion_point(class_scope:PBActOnearmBandit)
+
+class PBCropsInfoData(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBCROPSINFODATA
+  
+  # @@protoc_insertion_point(class_scope:PBCropsInfoData)
+
+class PBOtherCropsInfo(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBOTHERCROPSINFO
+  
+  # @@protoc_insertion_point(class_scope:PBOtherCropsInfo)
+
+class PBMemberInfo(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMEMBERINFO
+  
+  # @@protoc_insertion_point(class_scope:PBMemberInfo)
+
+class PBCropApplicant(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBCROPAPPLICANT
+  
+  # @@protoc_insertion_point(class_scope:PBCropApplicant)
+
+class PBDBGuildLivenessInfo(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBDBGUILDLIVENESSINFO
+  
+  # @@protoc_insertion_point(class_scope:PBDBGuildLivenessInfo)
+
+class PBDBGuildLivenessData(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBDBGUILDLIVENESSDATA
+  
+  # @@protoc_insertion_point(class_scope:PBDBGuildLivenessData)
 
 # @@protoc_insertion_point(module_scope)

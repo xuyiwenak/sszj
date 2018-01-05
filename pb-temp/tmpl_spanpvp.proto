@@ -74,6 +74,7 @@ message PBSpanTeamPVP
 	optional sint32					five_kill				= 20; // 5杀时间间隔(单位:秒)
 	optional string 				NoAfkWinReward			= 21;
 	optional string 				NoAfkLoseReward			= 22;
+	repeated string					TeamMatchRule			= 23; //组队匹配队伍人数分配规则;
 };
 
 message PBTeamPVPRoleBuff

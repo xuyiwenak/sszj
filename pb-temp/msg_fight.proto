@@ -30,6 +30,7 @@ enum EFightAction
 	AbSorbHp		= 23;	//吸收血量;
 	FlushBuff		= 24;	//刷新BUFF信息;
 	Immune			= 25;	//免疫;
+	ReduceMp		= 26;	//掉篮;
 };
 
 enum EFightDamageType

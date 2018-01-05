@@ -14,6 +14,9 @@ import "msg_base.proto";
 import "msg_match.proto";
 import "msg_spanbattle.proto";
 import "msg_pet_battle.proto";
+import "msg_spanteambattle.proto";
+import "msg_spanmaze.proto";
+import "msg_magic_pet.proto";
 
 enum EServiceMessageId
 {
@@ -264,6 +267,14 @@ enum EServiceMessageId
 	MSG_GUILD_MANOR_STATUE_FLUSH_REPORT		= 1551; // 领地创建雕像报告给RKS
 	// rks向egs发送报名列表请求
 	MSG_RKS_TO_EGS_SIGNLIST_REQUEST			= 1552; // 让EGS同步报名数据
+	// rks向EGS同步帮派活跃度
+	MSG_EGS_GUILD_ADD_LIVENESS_NOTICE        = 1553; // EGS通知RKS增加活跃度
+	MSG_RKS_GUILD_LIVENESS_SYNC                     = 1554; // RKS同步帮派活跃度到EGS
+	
+	MSG_EGS_GUILD_LAST_HIT_REWARD_REQUEST = 1555; // EGS发放最后一击奖励请求
+	MSG_RKS_GUILD_LAST_HIT_REWARD_RESPONSE = 1556; // RKS发最后一击奖励响应
+	MSG_EGS_GUILD_MAX_DMG_REWARD_REQUEST = 1557; // EGS发放最大伤害奖励请求
+	MSG_RKS_GUILD_MAX_DMG_REWARD_RESPONSE = 1558; // RKS发最大伤害奖励响应
 
 	// 排行榜宠物信息更新 1600~1620
 	MSG_PETINFO_UPDATE_NOTICE				= 1600;
@@ -441,6 +452,9 @@ enum EServiceMessageId
 	MSG_RKS_PETBATTLE_SENDMAIL_REWARD_NOTICE = 3043; //RKS通知发送宠物PVP排行榜奖励
 	MSG_EGS_PETBATTLE_ADD_ROBOT_NOTICE = 3044; // EGS插入机器人通知
 
+	// 排行榜灵宝信息更新 
+	MSG_MAGICPETINFO_UPDATE_NOTICE				= 3050;
+
 	// 夫妻竞技
 	MSG_COUPLEPVP_INFO_SYNC				= 35000; // BWS向EGS同步夫妻竞技信息
 	MSG_COUPLEPVP_SIGNIN_REQUEST		= 35001; // 报名
@@ -469,6 +483,67 @@ enum EServiceMessageId
 	MSG_RKS_REDBAG_PF_ERROR				= 36008;// RKS返回平台的错误消息
 	MSG_RKS_REDBAG_BALANCE_NOTICE		= 36009;// RKS向EGS通知刷新账户
 
+	// 跨服组队战;
+	MSG_EGS_CROPINFO_REQUEST			= 37000;//egs战队信息请求;
+	MSG_EGS_CROPRANKLIST_REQUEST			= 37001;//esg战队列表请求;
+	MSG_EGS_CREATECROP_REQUEST			= 37002;//EGS创建战队请求;
+	MSG_RKS_CREATECROP_RESPONSE			= 37003;//rks创建战队回复;
+	MSG_EGS_EXITCROP_REQUEST			= 37004;//egs退出战队请求;
+	MSG_RKS_EXITCROP_RESPONSE			= 37005;//rks退出战队回复;
+	MSG_EGS_APPLYJOINCROP_REQUEST		= 37006;//egs申请入队请求;
+	MSG_EGS_AGREEJOINCROP_REQUEST		= 37007;//egs同意入队请求;
+	MSG_RKS_AGREEJOINCROP_RESPONSE		= 37008;//rks同意入队回复;
+	MSG_EGS_INVITE_REQUEST				= 37009;//egs邀请入队请求;
+	MSG_EGS_INVITEANSWER_REQUEST		= 37010;//egs邀请入队答复请求;
+	MSG_RKS_INVITEANSWER_RESPONSE		= 37011;//rks邀请入队答复回复;
+	MSG_EGS_LEADEREXAMINE_REQUEST		= 37012;//egs队长审核请求;
+	MSG_EGS_CHANGELEADER_REQUEST		= 37013;//egs移交队长请求;
+	MSG_EGS_KICKOUT_REQUEST				= 37014;//egs踢人请求;
+	MSG_RKS_KICKOUT_RESPONSE			= 37015;//rks踢人回复;
+	MSG_EGS_DISBAND_REQUEST				= 37016;//egs解散战队请求;
+	MSG_RKS_DISBAND_RESPONSE			= 37017;//rks解散战队回复;
+	MSG_EGS_MYCROPINFO_REQUEST			= 37018;//egs玩家自身战队信息请求;
+	MSG_RKS_STARTMATCH_NOTICE           = 37018; // EGS->BWS 开始匹配
+	MSG_BWS_MATCHSUCCESS_NOTICE         = 37019; // BWS->Egs 通知匹配成功
+	MSG_EGS_NORMALRACE_RESULT_NOTICE    = 37020; // EGS->BWS 常规赛结果通知
+	MSG_BWS_CREATE_FINALBATTLE_NOTICE   = 37021; // BWS通知创建决赛战场
+	MSG_EGS_JOIN_FINAL_BATTLE_NOTICE    = 37022; // EGS进入决赛战场请求
+	MSG_EGS_FINALBATTLE_RESULT_NOTICE   = 37023; // EGS决赛结果通知
+	MSG_BWS_SEND_REWARD_NOTICE          = 37024; // BWS发奖请求
+	MSG_RKS_SEND_TEAMMAIL_REWARD_NOTICE = 37025; //RKS向EGS发送战队邮件奖励
+	MSG_BWS_TEAM_INFO_SYNC              = 37026; // BWS同步战队信息
+	MSG_BWS_TEAMBATTLE_STATUS_SYNC      = 37027; // BWS同步活动状态到EGS
+	MSG_BWS_CROPSCOREINFO_NOTICE		= 37028; // BWS通知战队积分信息;
+	MSG_RKS_CREATECROP_REQUEST			= 37029; // RSK创建战队同步到BWS;
+	MSG_RKS_DISBANDCROP_REQUEST			= 37030; // RKS解散战队同步到BWS;
+	MSG_EGS_FRIENDCROPLIST_REQUEST		= 37031; // EGS请求好友战队列表;
+	MSG_EGS_STARTMATCHING_NOTICE        = 37032; // EGS通知RKS开始匹配
+	MSG_EGS_GETREADYMATCHING_NOTICE     = 37033; // EGS通知RKS准备匹配
+	MSG_EGS_STWATCHBATTLE_REQUEST	= 37034; // EGS->BWS观战请求;
+	MSG_EGS_STWATCHBATTLE_RESPONSE		= 37035; // BWS->EGS观战回复;
+	MSG_EGS_SPANTEAM_FIGHTTABLE_REQUEST = 37036; // EGS->BWS请求对战表
+	MSG_BWS_SPANTEAM_NEXTMATCH_NOTICE   = 37037; // 下一届通知
+	MSG_RKS_CROPSLIST_NOTICE            = 37038; // RKS上报战队列表
+	MSG_RKS_ROLECROP_NOTICE				= 37039; // rks向egs同步玩家战队;
+	MSG_BWS_SPANTEAM_CANCELMATCH_STATUS = 37040; // BWS->RKS取消战队匹配状态
+	MSG_RKS_SPANTEAM_CANCELMATCH_STATUS = 37041; // RKS->EGS取消战队匹配状态
+	MSG_EGS_STFINAL_MATCH_NOTICE		= 37042; // EGS->BWS 公告通知
+	MSG_EGS_SPANTEAM_CANCELREADY_NOTICE = 37043; // 向RKS通知取消准备
+	MSG_RKS_SPANTEAM_CANCELMATCH_NOTICE = 37044; // RKS向BWS发送取消匹配
+
+	// 跨服迷宫;
+	MSG_EGS_SPANMAZE_SIGN_REQUEST			= 38001; // EGS报名请求;
+	MSG_BWS_SPANMAZE_SIGN_RESPONSE			= 38002; // BWS报名回复;
+	MSG_EGS_SPANMAZE_ENTER_REQUEST			= 38003; // EGS请求进入;
+	MSG_BWS_SPANMAZE_ENTER_RESPONSE			= 38004; // BWS进入回复;
+	MSG_BWS_SPANMAZE_STATUS_NOTICE			= 38005; // BWS状态同步;
+	MSG_EGS_SPANMAZE_SIGN_CHECK_REQUEST		= 38006; // EGS报名条件检测;
+	MSG_BWS_SPANMAZE_SIGN_CHECK_RESPONSE	= 38007; // BWS报名条件回复;
+	MSG_BWS_SPANMAZE_CREATEDUNGEON_REQUEST	= 38008; // BWS创建副本请求;
+	MSG_EGS_SPANMAZE_CREATEDUNGEON_RESPONSE = 38009; // EGS创建副本回复;
+	MSG_BWS_SPANMAZE_ENTERDUNGEON_REQUEST	= 38010; // BWS请求目标服务器拉人;
+	MSG_EGS_SPANMAZE_ENTERDUNGEON_RESPONSE	= 38011; // EGS回复拉人请求;
+	MSG_BWS_SPANMAZE_ROLELIST_NOTICE		= 38012; // bws通知目标服务器都有谁要进来;
 
 	///////////////////////////////////////////////////////////////////////////////////////////////
 	/////////////////world->gateway消息
@@ -2071,6 +2146,8 @@ message PBMsgChangeCampData
 message PBMsgGateChangeCampInfoNotice
 {
 	optional PBMsgChangeCampData		camp_data	= 1; // 各阵营战力
+	optional uint32						server_merge_status	= 2; // 战斗力计算时间
+	optional uint32						server_merge_time	= 3; // 战斗力计算时间
 };
 
 message PBMsgEgsGmMailReport
@@ -2945,6 +3022,13 @@ message PBMsgGuildStatus
 
 /////////////////领地争夺战 end ///////////////////////////////
 
+/////////////////跨服组队战 start ///////////////////////////////
+
+message PBMsgRksRoleCropNotice
+{
+	optional uint32 role_id = 1;
+	optional uint64 crop_id = 2;
+};
 
 message PBMsgMsgCountNotice
 {
@@ -2956,5 +3040,472 @@ message PBMsgCount
 	optional uint32 msg_id = 1;  // 消息Id
 	optional uint32 count  = 2;  // 收到的数量
 };
+message PBMsgEgsMyCropInfoRequest
+{
+	optional uint32 role_id	   = 1;
+	optional uint64 crop_id    = 2; 
+};
+
+message PBMsgEgsCropsInfoRequest
+{
+	optional uint32 role_id	   = 1;
+	optional uint64 crop_id    = 2; 
+};
+
+message PBMsgEgsFriendCropListRequest
+{
+	optional uint32 role_id = 1;
+};
+
+// EGS->RKS创建战队请求
+message PBMsgEgsCreateCropsRequest
+{
+    optional string crops_name = 1;       // 战队名字
+    optional uint32 role_id    = 2;       // 创建者id
+}
+// RKS->EGS创建战队响应
+message PBMsgRksCreateCropsResponse
+{
+    optional sint32 ret_code   = 1; 
+    optional uint64 crops_id   = 2;       // 战队id
+    optional string crops_name = 3;       // 战队名字
+    optional uint32 role_id    = 4;       // 玩家id
+	optional uint32 last_create_crop_time   = 5; // 上次创建战队时间，防止战队ID重复;
+}
+// RKS->BWS 创建战队通知
+message PBMsgCreateCropsNotice
+{
+    optional uint64 crops_id = 1;   // 战队id
+    optional string crops_name = 2; // 战队名字
+    optional uint32 battle_score = 3;
+}
+
+// RKS->BWS 解散战队通知
+message PBMsgDisbandCropsNotice
+{
+    optional uint64 crops_id = 1;  // 战队id
+}
+
+//EGS->RKS退出战队请求;
+message PBMsgEgsExitCropsRequest
+{
+	optional uint32 role_id    = 1;       // role_id;
+};
+//RKS->EGS退出战队回应;
+message PBMsgRksExitCropsResponse
+{
+	optional sint32 ret_code   = 1;
+	optional uint32 role_id    = 2;       // 玩家id
+};
+
+// EGS->RKS加入战队请求
+message PBMsgEgsApplyJoinCropsRequest
+{
+    optional uint32 role_id  = 1;   // 玩家
+    optional uint64 crops_id = 2;   // 战队id
+}
+
+//EGS->RKS同意申请加入战队
+message PBMsgEgsAgreeJoinCropsRequest
+{
+	optional uint32 role_id		= 1;   // 玩家
+	optional uint32 leader_id	= 3;   // 队长;
+	optional bool bagree		= 4;	// 是否同意加入;
+};
+
+message PBMsgRksAgreeJoinCropsResponse
+{
+	optional sint32 ret_code = 1;
+	optional uint32 role_id		= 2;   // 玩家
+	optional uint64 crops_id	= 3;   // 战队id
+};
+
+// EGS->RKS邀请加入战队请求
+message PBMsgEgsInviteRequest
+{
+    optional uint32 invitor_id  = 1; // 邀请者id
+    optional uint32 be_invitor_id = 2; // 被邀请者id
+}
+
+// EGS->RKS玩家答复请求;
+message PBMsgEgsInviteAnswerRequest
+{
+	optional uint32 invitor_id  = 1;
+	optional uint32 role_id     = 2;        // 玩家id
+	optional uint64 crop_id		= 3;		// 战队ID;
+	optional bool baccept		= 4;		// 是否接受邀请;
+};
+
+message PBMsgRksInviteAnswerResponse
+{
+	optional sint32 ret_code	= 1;
+	optional uint32 role_id     = 2;        // 玩家id
+	optional uint64 crop_id		= 3;		// 战队ID;
+};
+
+// EGS->RKS队长审核请求;
+message PBMsgEgsLeaderExamineRequest
+{
+	optional uint32 master_id	  = 1;		 // 队长ID;
+	optional uint32 invitor_id    = 2;       // 邀请者id;
+	optional uint32 invited_id    = 3;       // 被邀请者id;
+	optional bool bagree		  = 4;		 // 是否同意邀请;
+};
+//移交队长;
+message PNMsgEgsCropChangeLeaderRequest
+{
+	optional uint32 old_leader = 1;
+	optional uint32 new_leader = 2;
+	optional uint64 crop_id = 3;
+};
+//踢出战队;
+message PBMsgEgsKickOutCropsRequest
+{
+	optional uint32 role_id = 1;
+	optional uint32 kick_out_role = 2;
+};
+
+message PBMsgRksKickOutCropResponse
+{
+	optional sint32 ret_code = 1;
+	optional uint32	role_id = 2;
+};
+
+//解散战队;
+message PBMsgEgsDisbandedCropsRequest
+{
+	optional uint32 role_id = 1;
+}
+
+message PBMsgRksDisbandCropResponse
+{
+	optional sint32 ret_code = 1;
+	optional uint32 role_id = 2;
+};
+
+//BWS->RKS所有战队积分信息,rks启动之后bws自动推送;
+message PBMsgBwsCropsScoreInfoNotice
+{
+	repeated PBCropScoreInfo crop_list = 1;
+};
+//EGS->Bws请求所有战队排行信息,egs转发客户端请求，BWS回给客户端;
+message PBMsgEgsCropRankInfoRequest
+{
+    optional uint32 gateway_id = 1;
+    optional uint32 camp_id = 2;
+    optional uint32 role_id = 3;
+};
+
+// RKS->BWS开始匹配
+message PBMsgEgsStartCropsMatchRequest
+{
+    optional uint64 crops_id = 1;  // 战队id
+    repeated PBCropsBattleMember member  = 2;  // 匹配时的玩家id
+	optional uint32 src_gateway_id		= 3;
+}
+
+// BWS->EGS开始匹配响应
+message PBMsgEgsStartCropsMatchResponse
+{
+    optional sint32 ret_code   = 1; 
+}
+
+// BWS->EGS匹配成功通知
+message PBMsgBwsCropsMatchSuccessNotice
+{
+    optional PBCropsBattleCamp campA = 1;
+    optional PBCropsBattleCamp campB = 2;
+}
+
+// BWS->EGS创建决赛副本通知
+message PBMsgBwsCropsFinalMatchNotice
+{
+	repeated PBCropsBattleFinalCamp camps = 1;
+}
+
+message PBCropsBattleCamp
+{
+	optional uint64 crops_id			= 1;
+	optional string crops_name			= 2;
+    optional uint32 src_gateway_id		= 3;        // 战斗的服务器;
+	optional sint32 score				= 4;		// 战队积分;
+    repeated PBCropsBattleMember member	= 5;        // 玩家id;
+}
+
+message PBCropsBattleFinalCamp
+{
+	optional uint64 crops_id			= 1;
+	optional string crops_name			= 2;
+	optional uint32 src_gateway_id		= 3;        // 战斗的服务器;
+	optional sint32 score				= 4;		// 战队积分;
+	optional uint32 rank				= 5;		// 排名;
+}
+
+message PBCropsBattleMember
+{
+	optional uint32 role_id				= 1;
+	optional uint64 char_id				= 2;
+};
+
+// EGS->BWS通知基础战结果
+message PBMsgEgsCropsBattleResultNotice
+{
+    optional uint64 vectory_crops_id = 1;   // 胜利的战队id
+    optional uint64 loser_crops_id   = 2;   // 失败的战队id
+}
+
+// EGS->BWS通知决赛结果
+message PBMsgBwsCropsLastBattleResultNotice
+{
+	optional uint32 cur_round			= 1;	//当前轮;
+	optional uint32 total_round			= 2;	//总轮次;
+	optional uint64 vectory_crops_id	= 3;   // 胜利的战队id;
+	optional uint64 loser_crops_id		= 4;   // 失败的战队id;
+}
+
+// BWS->RKS发放奖励通知
+message PBMailCropsReward
+{
+    optional uint64 crops_id			= 1;
+    optional string mail_id				= 2;	// 邮件id;
+    repeated PBMsgItemQuantity  items	= 3;	// 奖励;
+	repeated string param				= 4;	// 参数;
+	optional bool force_send			= 5;//[default=false];	//强制发送邮件;
+}
+
+message PBMsgBwsSendRewardMailNotice
+{
+    repeated PBMailCropsReward mail = 1;
+}
+// RKS->EGS发奖
+message PBMsgRksSendCropsMailNotice
+{
+    optional uint32 role_id				= 1;
+    optional string mail_id				= 2;
+    repeated PBMsgItemQuantity  items	= 3;  // 奖励;
+    repeated string param				= 4;  // 参数;
+	optional bool force_send			= 5;//[default=false];	//强制发送邮件;
+}
+
+//EGS->BWS决赛进副本
+message PBMsgEgsFinalMatchRequest
+{
+	optional uint64 crops_id			= 1;  // 战队id
+	optional uint32 role_id				= 2;  // 匹配时的玩家id
+	optional uint32 src_gateway_id		= 3;
+};
+
+message PBMsgTeamBattleStatusNotice
+{
+    optional sint32 status = 1;    // 活动状态
+}
+
+message PBMsgEgsStartMatchingNotice
+{
+    optional uint32 role_id = 1;
+    optional uint64 crops_id = 2;
+}
+
+message PBMsgEgsGetReadyMatchingNotice
+{
+    optional uint32 role_id = 1;
+    optional uint64 crops_id = 2; 
+}
+
+// BWS->EGS加入决赛副本通知
+message PBMsgBwsCropsEnterFinalMatchNotice
+{
+	optional uint32 role_id				= 1;
+	optional uint32 src_gateway_id		= 2;
+}
+
+message PBMsgSpanTeamFightTableRequest
+{
+    optional uint32 gateway_id = 1;
+    optional uint32 camp_id = 2;
+    optional uint32 role_id = 3;
+}
+
+message PBMsgSpanTeamNextMatchNotice
+{
+    
+}
+
+message PBCropsInfoNotice
+{
+    optional uint64 crops_id     = 1;
+    optional string crops_name   = 2;
+    optional uint32 battle_score = 3;
+}
+
+message PBMsgCropsInfoListNotice
+{
+    repeated PBCropsInfoNotice crops_list = 1;
+}
+
+message PBMsgBwsSpanTeamCancelMatchingNotice
+{
+    optional uint64 crops_id = 1;
+}
+
+message PBMsgRksSpanTeamCancelMatchingNotice
+{
+    optional uint32 role_id = 1;
+    optional bool is_cancel_matching = 2;
+}
+
+message PBMsgEgsCancelReadyStatusNotice
+{
+    optional uint32 role_id = 1;      // 玩家
+    optional uint64 crops_id = 2;     // 战队
+}
+
+message PBMsgRksCancelMatchingNotice
+{
+    optional uint64 crops_id = 1;  // 战队
+}
+
+/////////////////跨服组队战 end ///////////////////////////////
 
 
+
+//////////////////////////////////跨服迷宫////////////////////////////////////////
+
+//报名请求;
+message PBMsgEgsSpanMazeSignRequest
+{
+	optional uint32 gatewayid	= 1;
+	optional uint32 campid		= 2;
+	optional uint32 roleid		= 3;
+	optional uint32 level		= 4;
+};
+//报名回复;
+message PBMsgBwsSpanMazeSignResponse
+{
+	optional sint32 ret_code	= 1; 
+	optional uint32 role_id		= 2;
+};
+//报名条件检测请求;
+message PBMsgEgsSpanMazeSignCheckRequest
+{
+	optional uint32 gatewayid	= 1;
+	optional uint32 roleid		= 2;
+	optional uint32 level		= 3;
+};
+//报名条件检测回复;
+message PBMsgBwsSpanMazeSignCheckResponse
+{
+	optional sint32 ret_code	= 1;
+	optional uint32 role_id		= 2;
+};
+//请求进入副本;
+message PBMsgEgsSpanMazeEnterRequest
+{
+	optional uint32 gatewayid	= 1;
+	optional uint32 campid		= 2;
+	optional uint32 roleid		= 3;
+	optional uint32 level		= 4;
+};
+//进入副本回复;
+message PBMsgBwsSpanMazeEnterResponse
+{
+	optional sint32 ret_code	= 1; 
+	optional uint32 role_id		= 2;
+};
+//告诉目标egs，让他拉人;
+message PBMsgBwsSpanMazeEnterDungeonRequest
+{
+	optional uint32 dungeon		= 1;
+	optional uint32 gatewayid	= 2;
+	optional uint32 roleid		= 3;
+};
+//目标egs请求拉人回复;
+message PBMsgEgsSpanMazeEnterDungeonResponse
+{
+	optional sint32 ret_code	= 1;
+	optional uint32 dungeon		= 2;
+	optional uint32 gatewayid	= 3;
+	optional uint32 roleid		= 4;
+};
+//状态同步;
+message PBMsgBwsSpanMazeStatusNotice
+{
+	optional ESpanMazeStatus status		= 1;
+};
+//创建副本请求;
+message PBMsgBwsSpanMazeCreateDungeonRequest
+{
+	optional string dungeonsheet	= 1;
+	optional uint32 grade			= 2;
+	optional uint32 round			= 3;
+};
+//创建副本回复;
+message PBMsgEgsSpanMazeCreateDungeonResponse
+{
+	optional sint32 ret_code	= 1;
+	optional uint32 gatewayId	= 2;
+	optional uint32 campId		= 3;
+	optional uint32 grade		= 4;
+	optional uint32 dungeonsheet= 5;
+};
+
+//通知EGS可以进入副本的玩家有哪些;
+message PBMsgBwsSpanMazeRoleListNotice
+{
+	repeated uint32 rolelist	= 1;
+};
+
+//////////////////////////////////////////////////////////////////////////////////
+enum  EAddGuildLivenessType
+{
+    EType_Persion       = 1;        // 个人加
+    EType_Salary        = 2;        // 领俸禄加
+    EType_Donation      = 3;       // 捐献加
+    EType_DungeonActive = 4;       // 副本活动加
+    EType_WildBossMaxDmg  = 5;       // 野外Boss加最大伤害
+	EType_WildBossLastHit = 6;       // 野外Boss加最后一击
+	EType_GuildFire       = 7;      // 帮派篝火
+}
+
+message PBAddGuildLivenessNotice
+{
+    optional EAddGuildLivenessType type = 1; 
+    optional sint32             add_liveness = 2;  // 增加的活跃度
+    optional string             dungeon_id  = 3;   // 副本ID
+    optional string             creature_id = 4;   // boss_id
+	optional uint64            guild_id       = 5;   // 帮派Id
+}
+
+// 帮派活跃度同步
+message PBGuildLivenessSyncNotice
+{
+	optional uint64 guild_id           = 1;
+    optional sint32 cur_liveness    = 2; // 当前活跃值
+    optional uint32 last_reset_time = 3; // 上次重置时间 
+}
+
+message PBGuildLastHitRewardRequest
+{
+	optional uint64 guild_id      = 1;
+}
+
+message PBGuildLastHitRewardResponse
+{
+	optional sint32 ret_code = 1;
+}
+
+message PBGuildMaxDmgRewardRequest
+{
+	optional uint64 guild_id           = 1;
+}
+
+message PBGuildMaxDmgRewardResponse
+{
+	optional sint32 ret_code = 1;
+}
+
+message PBMagicPetInfoUpdateNotice
+{
+	optional	uint32					role_id			= 1;
+	optional    PBMagicPetItem			magicpetinfo	= 2;
+};

@@ -60,4 +60,7 @@ message PBRoleBase
 	optional	PBCrossInfo	cross_info	=	27;//跨服信息（只本服玩家有意义）
 	optional	uint64	player_id		=	28;//地图ID
 	optional    ELoginConnectType connect_type = 29; //登陆类型
+	optional	uint64	crops_id		=	30;//跨服组队战战队ID;
+	optional	uint32	last_create_crop_time  = 31;//上次创建战队时间，防止战队ID重复;
+	optional    uint32  last_quittime   = 32;  // 上次退出时间
 };

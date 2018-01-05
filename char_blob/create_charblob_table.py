@@ -21,9 +21,10 @@ def create_table(DB_HOST, DB_USER, DB_PWD ,DB_NAME , TABLE_NAME):
                        xinfa_data MediumBlob,\
                        luck_data MediumBlob,\
                        wardrobe_data MediumBlob,\
+                       xiuzhen_data MediumBlob,\
                        log_time int(22),\
                        PRIMARY KEY (`char_id`))\
                        ENGINE=InnoDB DEFAULT CHARSET=utf8' %TABLE_NAME)
     dest_cur.close()
     dest_conn.close()
-create_table("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss', 'char_blob')
+#create_table("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss', 'char_blob_kr')

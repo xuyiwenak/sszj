@@ -1,0 +1,519 @@
+
+
+//创建战队
+message PBMsgCreateCorpsRequest
+{
+    optional string corps_name = 1;    // 战队名字
+}
+
+message PBMsgCreateCropsResponse
+{
+    optional sint32 ret_code = 1;
+}
+
+message PBMsgExitCropRequest
+{
+
+};
+
+message PBMsgExitCropResponse
+{
+	optional sint32 ret_code = 1;
+};
+
+// 战队成员信息
+message PBCropsMemberInfo
+{
+    optional uint32 role_id       = 1; // 玩家roleId;
+    optional uint64 char_id       = 2; // 玩家char_id;
+    optional string char_name     = 3;     //玩家名字;
+	optional sint32	char_role	  = 4;     //职业;
+	optional sint32	char_gender	  = 5;     //性别;
+	optional sint32	char_level    = 6;     //等级;
+	optional string	head_icon	  = 7;     //头像icon;
+	optional uint32 camp_id       = 8;    // 阵营;
+	optional uint32 battle_score  = 9;    // 战力;
+	optional uint64	vpa			  =	10;	
+	optional uint64	vpb			  =	11;
+	optional uint64	vpc			  =	12;
+	optional uint32	sheet_id	  =	13;
+	optional string guild_name	  = 14;
+}
+
+message PBCropApplicantInfo
+{
+	optional uint32 role_id       = 1; // 玩家roleId;
+	optional uint64 char_id       = 2; // 玩家char_id;
+	optional string char_name     = 3; //玩家名字;
+	optional sint32	char_role	  = 4; //职业;
+	optional sint32	char_gender	  = 5; //性别;
+	optional sint32	char_level    = 6; //等级;
+	optional string	head_icon	  = 7; //头像icon;
+	optional uint32 camp_id       = 8;    // 阵营;
+	optional uint32 battle_score  = 9;    // 战力;
+	optional string guild_name	  = 10;
+};
+
+// 战队信息
+message PBCropsInfo
+{
+    optional uint64 crops_id   = 1;
+    optional string crops_name = 2;
+	optional uint32 score      = 3;     // 积分;
+	optional uint32 history_score = 4;  // 历史总积分;
+    optional sint32 rank_grade = 5;     // 段位;
+    optional uint32 master_role_id = 6; // 队长id;
+    optional string master_name  = 7;   // 队长名字;
+    repeated PBCropsMemberInfo member = 8;  // 成员;
+	repeated PBCropApplicantInfo applicants = 9; //申请列表;
+}
+
+// 请求好友战队信息
+message PBMsgCropsListRequest
+{
+    optional bool is_friend_crop  = 1; //是否请求好友战队列表;
+}
+
+message PBMsgCropsListResponse
+{
+    optional sint32 ret_code        = 1;
+    repeated PBCropsInfo crops_list = 2;   // 战队
+}
+//请求所有服务器排行榜信息;
+message PBMsgCropRankListRequest
+{
+
+};
+
+message PBMsgCropRankListResponse
+{
+	repeated PBCropScoreInfo rank_list = 1;
+};
+
+message PBCropScoreInfo
+{
+	optional uint64 crops_id   = 1;
+	optional sint32 rank_grade = 2;     // 段位;
+	optional uint32 score      = 3;     // 积分;
+	optional uint32 history_score = 4;  // 历史总积分;
+	optional string crop_name = 5;
+};
+
+// 申请加入战队请求
+message PBMsgApplyJoinCropsRequest
+{
+    optional uint64 crops_id = 1;
+}
+
+message PBMsgApplyJoinCropsResponse
+{
+    optional sint32 ret_code = 1; 
+}
+
+message PBMsgJoinCropsNotice
+{
+	optional uint32 role_id       = 1; // 玩家roleId
+	optional string char_name     = 2;     //玩家名字
+	optional sint32	char_role	  = 3;     //职业
+	optional sint32	char_gender	  = 4;     //性别
+	optional sint32	char_level    = 5;     //等级;
+	optional string	head_icon	  = 6;     //头像icon
+	optional uint32 camp_id       = 7;    // 阵营
+};
+
+// 批准入队
+message PBMsgJoinCropsRequest
+{
+	optional uint32 role_id       = 1; // 玩家roleId
+    optional bool bagree		  = 2;
+}
+
+message PBMsgJoinCropsResponse
+{
+    optional sint32 ret_code = 1;
+}
+
+message PBMsgMyCropInfoRequest
+{
+
+};
+
+message PBMsgMyCropInfoResponse
+{
+	optional sint32 ret_code        = 1;
+	optional PBCropsInfo crops_info = 2;
+};
+
+message PBMsgMyCropInfoNotice
+{
+	optional PBCropsInfo crops_info = 1;
+};
+
+// 战队信息请求;
+message PBMsgCropsInfoRequest
+{
+    optional uint64 crop_id = 1;
+}
+
+message PBMsgCropsInfoResponse
+{
+    optional sint32 ret_code        = 1;
+    optional PBCropsInfo crops_info = 2;
+}
+
+// 邀请好友，发起邀请;
+message PBMsgInviteFriendRequest
+{
+	optional uint32 invited_id   = 1;
+}
+//邀请好友回复;
+message PBMsgInviteFriendResponse
+{
+    optional sint32 ret_code = 1;
+}
+
+//邀请好友推送,推给被邀请的玩家;
+message PBMsgCropInviteNotice
+{
+	optional string crops_name   = 1;       // 战队id
+	optional uint32 invitor_id   = 2;
+	optional string invitor_name    = 3;    // 玩家id
+	optional uint64 crop_id			= 4;	   // 战队ID;
+};
+//玩家答复请求;
+message PBMsgCropInviteAnswerRequest
+{
+	optional uint32 invitor_id	= 1;
+	optional uint64 crop_id		= 2;		// 战队ID;
+	optional bool baccept		= 3;		// 是否接受邀请;
+};
+//玩家答复响应;
+message PBMsgCropInviteAnswerResponse
+{
+	optional sint32 ret_code = 1;
+};
+
+//非队长邀请时，给队长发送审核推送;
+message PBMsgCropInviteExamineNotice
+{
+	optional string invitor_name    = 1;       // 邀请者id
+	optional string invited_name    = 2;       // 被邀请者id
+	optional uint32 invitor_id		= 3;
+	optional uint32 invited_id		= 4;
+	optional uint64 crop_id			= 5;	   // 战队ID;
+};
+
+//队长发送审核结果请求;
+message PBMsgCropLeaderExamineRequest
+{
+	optional uint32 invitor_id    = 1;       // 邀请者id;
+	optional uint32 invited_id    = 2;       // 被邀请者id;
+	optional bool bagree		  = 3;		 // 是否同意邀请;
+};
+//队长审核回复;
+message PBMsgCropLeaderExamineResponse
+{
+	optional sint32 ret_code = 1;
+};
+
+message PNMsgCropChangeLeaderRequest
+{
+	optional uint32 old_leader = 1;
+	optional uint32 new_leader = 2;
+	optional uint64 crop_id = 3;
+};
+
+message PBMsgCropChangeLeaderResponse
+{
+	optional uint32 ret_code = 1;
+};
+
+// 踢出战队
+message PBMsgKickOutCropsRequest
+{
+    optional uint32 role_id = 1;
+}
+
+message PBMsgKickOutCropsResponse
+{
+    optional sint32 ret_code = 1;
+}
+
+// 解散战队
+message PBMsgDisbandedCropsRequest
+{
+    
+}
+
+message PBMsgDisbandedCropsResponse
+{
+    optional sint32 ret_code = 1;
+}
+
+// 参加活动
+message PBMsgJoinActivityRequest
+{
+    
+}
+
+message PBMsgJoinActivityResponse
+{
+    optional sint32 ret_code = 1;
+}
+
+message PBMsgMoveLeaderRequest
+{
+    optional uint32 member_role_id  = 1;   // 给谁队长
+}
+
+message PBMsgMoveLeaderResponse
+{
+    optional sint32 ret_code = 1;    // 结果
+}
+
+//常规赛战场消息;
+message PBMsgSTBattleNotice
+{
+	optional PBSTBattleCamp camp_a			= 1;
+	optional PBSTBattleCamp camp_b			= 2;
+}
+
+message PBSTBattleCamp
+{
+	optional uint64 crops_id					= 1;
+	optional string crops_name					= 2;
+};
+
+message PBMsgSTBattleEndNotice
+{
+	optional PBSTBattleEndCamp camp_a			= 1;
+	optional PBSTBattleEndCamp camp_b			= 2;
+}
+
+message PBSTBattleEndCamp
+{
+	optional uint64 crops_id					= 1;
+	repeated PBSTBattleEndMember member_list	= 2;
+	optional bool is_win						= 3;
+};
+
+message PBSTBattleEndMember
+{
+	optional string char_name				= 1;	//名字;
+	optional sint32 score					= 2;	//玩家积分;
+	optional sint32 delta_score				= 3;	//玩家积分变化;
+	optional sint32 rank_score				= 4;	//战队评分;
+	optional sint32 delta_rank_score		= 5;	//战队评分变化;
+};
+
+//决赛战场消息;
+message PBMsgSTFinalBattleNotice
+{
+	optional PBSTFinalBattleCamp camp_a			= 1;
+	optional PBSTFinalBattleCamp camp_b			= 2;
+	optional uint32	cur_round					= 3;
+	optional uint32 total_round					= 4;
+	optional uint32 dungeon_status				= 5;
+	optional uint32 remain_time					= 6;
+}
+
+message PBSTFinalBattleCamp
+{
+	optional uint64 crops_id					= 1;
+	optional string crops_name					= 2;
+	optional uint32 win_count					= 3;		//获胜场次;
+};
+
+message PBMsgSTFinalBattleEndNotice
+{
+	repeated PBSTFinalBattleEndCamp camps		= 1;
+}
+
+message PBSTFinalBattleEndCamp
+{
+	optional uint32 rank						= 1;
+	optional string crops_name					= 2;
+	optional sint32 score						= 3;
+};
+
+
+
+message PBFightTableCropsInfo
+{
+    optional string crops_name = 1;   // 战队名
+    optional uint32 gateway_id = 2;   // 服务器
+    optional uint32 index      = 3;   // 位置
+}
+
+message PBMsgFightTableCropsInfoResponse
+{
+    repeated PBFightTableCropsInfo crops_list = 1;   // 战队
+    optional uint32 cur_round = 2;         // 当前轮次
+}
+
+message PBMsgFightTableCropsInfoRequest
+{
+    
+}
+
+enum EReadyStatus
+{
+    EReadyStatus_UnReady = 1; // 未准备
+    EReadyStatus_Ready   = 2; // 已准备
+}
+
+enum EMatchStatus
+{
+    EMatchStatus_UnMatching = 1; // 未匹配
+    EMatchStatus_Matching  = 2; // 匹配中
+}
+
+// 开始匹配消息
+message PBMsgStartMatchingRequest
+{
+
+}
+
+message PBMsgStartMatchingResponse
+{
+    optional sint32 ret_code = 1;
+    optional EMatchStatus status = 2;
+}
+
+// 准备匹配消息
+message PBMsgGetReadyMatchingRequest
+{
+
+}
+
+message PBMsgGetReadyMatchingResponse
+{
+    optional sint32 ret_code = 1;
+    optional EReadyStatus status = 2;
+}
+
+enum EMemberStatus
+{
+    EStatus_Invail = 0;
+    EStatus_Offline = 1; // 不在线
+    EStatus_UnReady = 2; // 在线未准备
+    EStatus_Ready   = 3; // 在线准备中
+}
+
+message PBCropsMemberStatus
+{
+    optional uint32 role_id       = 1; // 玩家roleId
+	optional string char_name     = 2;     //玩家名字
+	optional sint32	char_role	  = 3;     //职业
+	optional sint32	char_gender	  = 4;     //性别
+	optional sint32	char_level    = 5;     //等级;
+	optional string	head_icon	  = 6;     //头像icon
+	optional uint32 camp_id       = 7;    // 阵营
+	optional EMemberStatus status = 8;  // 玩家状态 
+}
+
+message PBMsgCropsMemberStatusNotice
+{
+    optional uint64 crops_id            = 1;       // 战队ID
+    optional uint32 leader_id           = 2;      // 队长id
+    repeated PBCropsMemberStatus status = 3;      // 队员状态
+}
+
+//决赛进副本请求;
+message PBMsgSTFinalMatchRequest
+{
+	
+}
+
+//决赛进副本回复;
+message PBMsgSTFinalMatchResponse
+{
+	optional sint32 ret_code = 1;
+}
+
+//决赛观战请求;
+message PBMsgSTFinalWatchRequest
+{
+
+}
+
+//决赛观战请求;
+message PBMsgSTFinalWatchResponse
+{
+	optional sint32 ret_code = 1;
+}
+
+message PBMsgSpanTeamBattleStatusNotice
+{
+    optional sint32 status = 1;
+}
+
+message PBMsgRankCropsInfo
+{
+    optional uint32 rank     = 1;   // 排名 
+    optional uint64 crops_id = 2;   // 战队ID
+    optional string crops_name = 3; // 战队名字
+    optional uint32 score    = 4;   // 战队评分
+    optional uint32 history_score = 5; // 历史评分
+    optional uint32 gateway_id = 6;  // 服务器
+    optional uint32 battle_score = 7; // 战力
+	optional uint32 rank_grade = 8;  // 段位
+}
+
+message PBMsgRankCropsInfoResponse
+{
+    repeated PBMsgRankCropsInfo rank_crops_list = 1;
+}
+
+//活跃度数据请求;
+message PBMsgLivenessRequest
+{
+	
+}
+
+//活跃度数据回复;
+message PBMsgLivenessResponse
+{
+	optional sint32 ret_code		= 1;
+	optional sint32 liveness		= 2;	//活跃度;
+	optional uint32 reward_status	= 3;	//领取状态;
+	optional uint32 remain_time		= 4;	//常规赛剩余时间，未开始为0;
+}
+
+//获取活跃度奖励请求;
+message PBMsgLivenessGetRewardRequest
+{
+	optional sint32 reward_id		= 1;
+}
+
+//获取活跃度奖励回复;
+message PBMsgLivenessGetRewardResponse
+{
+	optional sint32 ret_code		= 1;
+	optional uint32 reward_status	= 2;	//领取状态;
+}
+
+// 取消匹配
+message PBMsgCancelMatingRequest
+{
+    
+}
+
+message PBMsgCancelMatchingResponse
+{
+    optional sint32 ret_code = 1;
+    optional EMatchStatus status = 2;
+}
+
+
+
+// 取消准备
+message PBMsgCancelReadyStatusRequest
+{
+    
+}
+message PBMsgCancelReadyStatusResponse
+{
+    optional sint32 ret_code = 1;
+    optional EReadyStatus status = 2;
+}

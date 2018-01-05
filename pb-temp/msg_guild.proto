@@ -63,7 +63,6 @@ message PBGuildSummary
 	optional uint32					refresh_day			= 33; //隔天刷新的时间
 	optional PBRoleBase				leader_base		= 34; //帮主信息
 	optional PBGuildManor 			guild_manor	    = 35; // 帮派领地
-
 };
 
 // 帮会详细信息
@@ -88,6 +87,9 @@ message PBGuildDetail
 
 	repeated PBGuildDailyRecord	daily_record=14; // 工会日志
 	optional int32	history_money			=15; // 历史总资产
+	optional sint32                 maxdmg_reward_cnt = 16;//[default=0];// 最大伤害奖励领取次数
+	optional sint32                 lasthit_reward_cnt = 17;//[default=0]; // 最后一击领取次数
+	optional sint32                 sum_liveness       = 18;//[default=0]; // 总活跃度 //不用了
 };
 
 // 加入帮会的限制类型
@@ -1057,3 +1059,20 @@ message PBOpenGuildFireNotice
 {
 
 }
+
+
+// 野外BOSS伤害量前三的通知
+message PBWildBossDamageGuildInfo
+{
+    optional sint32 rank       = 1;    // 排名
+    optional string guild_name = 2;    // 帮派名字
+    optional sint32 damage     = 3;    // 伤害（万分比）
+}
+
+message PBMsgWildBossRankNotice
+{
+    repeated PBWildBossDamageGuildInfo rank_info      = 1;
+    optional PBWildBossDamageGuildInfo my_damage_info = 2;
+}
+
+

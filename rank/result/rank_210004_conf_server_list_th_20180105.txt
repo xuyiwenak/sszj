@@ -1,0 +1,12 @@
+æŽ’è¡Œæ¦œlevelç½‘å…³210004
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,facebook100020014,100020014,28995,~•??????•~,217756, 100, 1, 3, 214, 848
+210,mzqmilkdh@gmail.com,100011050,29007,??Maruko??,190746, 100, 3, 2, 449, 445
+210,selfrespect_lee@hotmail.com,100001399,29339,??£€€??,197260, 100, 2, 2, 378, 125
+210,facebook100017938,100017938,29376,?ST?,234959, 100, 2, 2, 731, 207
+210,facebook100027459,100027459,29753,?Toey?,229271, 100, 4, 3, 1067, 983
+210,mixmix0551@gmail.com,100025555,30006,???????,210911, 100, 1, 3, 475, 131
+210,ppp111555999@hotmail.com,100007019,30782,SalmonM,193271, 100, 2, 2, 1051, 162
+210,ppp777888999@hotmail.com,100008166,30785,SalmonW,198257, 100, 1, 2, 1056, 63
+210,matoomtaoaey@gmail.com,100028804,31591,Tao×,221505, 100, 3, 3, 1223, 3080
+210,kongsakgamer004@gmail.com,100025946,32915,????™,213633, 100, 2, 2, 595, 432

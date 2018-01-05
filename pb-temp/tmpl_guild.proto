@@ -36,6 +36,8 @@ message PBConfigGuild
 	optional PBGuildBasicConfig	basic		= 20;
 	optional PBGuildStoreCfg store_config = 21;   //帮派仓库配置
 	optional PBGuildChangeJobCfg change_job = 22; // 任命官职配置
+	optional PBGuildDamageRewardCfg boss_damage_reward = 23; // boss伤害量奖励配置
+	optional PBGuildLivenessCfg guild_liveness = 24;   // 帮派活跃度的配置
 };
 
 
@@ -248,6 +250,7 @@ message PBGuildBossCfg
 	repeated PBGBNPCAdjust			npc_adjust		= 5;
 	optional int32					rank_notice		= 6;
 	repeated PBGBOpenCount			open_count		= 7;
+	repeated PBGBOpenTime			open_time		= 8;	// 开放时间
 };
 
 message PBGBossCfg
@@ -264,6 +267,12 @@ message PBGBOpenCost
 {
 	optional int32					open_count		= 1;
 	optional int32					guild_money		= 2;
+};
+
+message PBGBOpenTime
+{
+	optional int32					start_time		= 1;
+	optional int32					end_time		= 2;
 };
 
 message PBGBLevelInfo
@@ -424,6 +433,84 @@ message PBGuildManorStatue
 	optional uint64 default_vpa				= 3	;// 缺省vpa
 	optional uint64 default_vpb				= 4	;// 缺省vpb
 	optional uint64 default_vpc				= 5	;// 缺省vpc
+}
+
+message PBMaxDamageRewardCfg
+{
+	optional sint32                     rank        = 1;            // 名次
+	optional PBTemplateItemQuantityList reward_list = 2;            // 奖励
+}
+
+message PBGuildDamageRewardCfg
+{
+	repeated PBMaxDamageRewardCfg max_damage_reward     = 1;      // 最大伤害排名奖励
+	optional PBTemplateItemQuantityList last_hit_reward = 2;      // 最后一击奖励
+	optional sint32        max_damage_reward_everyday_cnt = 3;    // 最大伤害奖励每日上限
+	optional sint32        last_hit_reward_everyday_cnt = 4;      // 最后一击奖励每日上限
+	repeated string        max_damage_reward_creature_list = 5;   // 最大伤害奖励的boss列表
+	repeated string        last_hit_reward_creature_list  = 6;    // 最后一击奖励的boss列表
+}
+
+message PBLivenessReward
+{
+	optional uint32 id                                  = 1;
+	optional sint32 liveness                            = 2;            // 活跃值
+	optional string bg_srite_name                       = 3;            // 图标
+	optional PBTemplateItemQuantityList reward_list     = 4;            // 奖励
+}
+
+message PBLivenessRewardCfg
+{
+	optional sint32 max_liveness             = 1;        // 最大活跃度
+	repeated PBLivenessReward reward         = 2;        // 活跃度奖励
+}
+
+message PBSalaryLivenessCfg
+{
+	optional sint32 per_liveness         = 1;//[default=0];    // 每次领取增加的活跃度
+	optional sint32 max_liveness_per_day = 2;//[default=0];    // 每日可获得的最大活跃度
+}
+
+message PBDonationLivenessCfg
+{
+	optional sint32 per_liveness         = 1;//[default=0];    // 每次捐献增加的活跃度
+	optional sint32 max_liveness_per_day = 2;//[default=0];    // 每日可获得的最大活跃度
+	optional sint32 add_liveness_cnt     = 3;//[default=0];    // 每天前几次捐献加活跃度
+}
+
+message PBActivityLivenessCfg
+{
+	optional string dungeon_id           = 1;                // 副本Id
+	optional sint32 per_liveness         = 2;//[default=0];     // 每次增加活跃度
+	optional sint32 max_liveness_per_day = 3;//[default=0];     // 每日最大活跃度
+}
+
+message PBWildBossLivenessCfg
+{
+	optional string creature_id                     = 1;    // boss Id
+	repeated PBMaxDmgLiveness  max_damage_liveness_cfg             = 2;    // 最大伤害增加的活跃度
+	optional sint32 max_max_damage_liveness_per_day = 3;//[default=0];    // 最大伤害每日增加的最大值
+	optional sint32 last_hit_liveness               = 4;//[default=0];    // 最后一击增加的活跃度
+	optional sint32 max_last_hit_liveness           = 5;//[default=0];    // 最后一击增加的最大活跃度
+}
+
+message PBMaxDmgLiveness
+{
+	optional sint32 rank = 1;                // 排名
+	optional sint32 max_damage_liveness = 2;//[default=0]; // 最大伤害增加的活跃度
+}
+
+// 帮派活跃度配置
+message PBGuildLivenessCfg
+{
+	optional sint32           player_min_liveness    = 1;          // 个人活跃度加到帮派需要超过的活跃度
+	optional PBSalaryLivenessCfg salary_liveness     = 2;          // 俸禄活跃值
+	optional PBDonationLivenessCfg donation_liveness = 3;          // 捐献活跃值
+	repeated PBActivityLivenessCfg activity_liveness = 4;          // 活动活跃值
+	repeated PBWildBossLivenessCfg boss_liveness     = 5;          // 野外BOSS活跃值
+	optional PBLivenessRewardCfg liveness_reward     = 6;          // 活跃值奖励
+	optional sint32                          max_all_boss_liveness = 7;    // 所有boss总活跃最大值
+	optional sint32                          guild_fire_liveness    = 8;        // 帮派篝火增加的活跃度
 }
 
 

@@ -16,7 +16,7 @@ import msg_role_base_pb2
 DESCRIPTOR = descriptor.FileDescriptor(
   name='msg_guild.proto',
   package='',
-  serialized_pb='\n\x0fmsg_guild.proto\x1a\x10msg_common.proto\x1a\x0fmsg_skill.proto\x1a\x0emsg_item.proto\x1a\x0emsg_base.proto\x1a\x13msg_role_base.proto\"\x86\x06\n\x0ePBGuildSummary\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x12\n\nguild_name\x18\x02 \x01(\t\x12\x13\n\x0bleader_name\x18\x03 \x01(\t\x12\x11\n\tmanifesto\x18\x04 \x01(\t\x12\x0f\n\x07icon_id\x18\x05 \x01(\x05\x12\x12\n\nmember_num\x18\x06 \x01(\x05\x12\x12\n\nmax_member\x18\x07 \x01(\x05\x12\x0f\n\x07\x63ity_id\x18\x08 \x01(\x05\x12\x13\n\x0bguild_level\x18\t \x01(\x05\x12\x13\n\x0bguild_power\x18\n \x01(\x05\x12+\n\nlimit_type\x18\x10 \x01(\x0e\x32\x17.PBEGuildJointLimitType\x12\x13\n\x0blimit_level\x18\x11 \x01(\x05\x12\x1a\n\x12limit_combat_power\x18\x12 \x01(\x05\x12\x1e\n\x06\x64\x65tail\x18\x13 \x01(\x0b\x32\x0e.PBGuildDetail\x12\x11\n\tis_payoff\x18\x14 \x01(\x08\x12-\n\x10last_payoff_type\x18\x15 \x01(\x0e\x32\x13.PBEGuildPayoffType\x12(\n\x0eguild_building\x18\x16 \x01(\x0b\x32\x10.PBGuildBuilding\x12 \n\nguild_boss\x18\x17 \x01(\x0b\x32\x0c.PBGuildBoss\x12$\n\x0cguild_battle\x18\x18 \x01(\x0b\x32\x0e.PBGuildBattle\x12\x0f\n\x07\x63\x61mp_id\x18\x19 \x01(\x04\x12\x0f\n\x07\x64ismiss\x18\x1a \x01(\r\x12\x16\n\x0eleader_char_id\x18\x1b \x01(\x04\x12\x12\n\nguild_icon\x18\x1c \x01(\t\x12\x12\n\nleader_sex\x18\x1d \x01(\x11\x12\x18\n\x10\x64irect_vip_level\x18\x1e \x01(\x11\x12)\n\x0c\x64irect_limit\x18  \x03(\x0e\x32\x13.PBEGuildDirectJoin\x12\x13\n\x0brefresh_day\x18! \x01(\r\x12 \n\x0bleader_base\x18\" \x01(\x0b\x32\x0b.PBRoleBase\x12\"\n\x0bguild_manor\x18# \x01(\x0b\x32\r.PBGuildManor\"\xe1\x02\n\rPBGuildDetail\x12\x13\n\x0b\x63reate_time\x18\x01 \x01(\r\x12\x11\n\tguild_exp\x18\x03 \x01(\x05\x12\x13\n\x0bguild_money\x18\x04 \x01(\x05\x12\x13\n\x0bguild_score\x18\x06 \x01(\x05\x12\x13\n\x0b\x63ity_member\x18\x07 \x01(\x05\x12\x1d\n\x15next_maintenance_cost\x18\x08 \x01(\x05\x12\x1d\n\x15last_maintenance_time\x18\t \x01(\r\x12\x10\n\x08\x62ulletin\x18\n \x01(\t\x12\x14\n\x0clevelup_cost\x18\x0b \x01(\x11\x12 \n\x18levelup_maintenance_cost\x18\x0c \x01(\x05\x12\x1f\n\x07members\x18\r \x03(\x0b\x32\x0e.PBGuildMember\x12)\n\x0c\x64\x61ily_record\x18\x0e \x03(\x0b\x32\x13.PBGuildDailyRecord\x12\x15\n\rhistory_money\x18\x0f \x01(\x05\"b\n\x10PBCharGuildState\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x1e\n\x16last_create_guild_time\x18\x02 \x01(\r\x12\x1c\n\x14last_quit_guild_time\x18\x03 \x01(\r\"\xd0\x04\n\rPBGuildMember\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x11\n\tchar_name\x18\x02 \x01(\t\x12\x12\n\nchar_level\x18\x03 \x01(\x05\x12\x14\n\x0c\x63ombat_power\x18\x04 \x01(\x05\x12\x12\n\noccupation\x18\x05 \x01(\x05\x12\x11\n\tvip_level\x18\x06 \x01(\x05\x12\x0f\n\x07\x63ity_id\x18\x07 \x01(\x05\x12!\n\x04post\x18\x08 \x01(\x0e\x32\x13.PBEGuildMemberPost\x12\x11\n\tis_online\x18\n \x01(\x08\x12\x11\n\tis_friend\x18\x0b \x01(\x08\x12\x14\n\x0cis_same_city\x18\x0c \x01(\x08\x12\x14\n\x0coffline_time\x18\r \x01(\r\x12\x11\n\tjoin_time\x18\x0e \x01(\r\x12\x18\n\x10own_contribution\x18\x0f \x01(\x05\x12\x17\n\x0f\x63ur_week_contri\x18\x10 \x01(\x05\x12\x18\n\x10last_week_contri\x18\x11 \x01(\x05\x12\x12\n\ndo_request\x18\x14 \x01(\x05\x12\x10\n\x08\x64o_bless\x18\x15 \x01(\x05\x12\x1e\n\x06\x61wards\x18\x16 \x03(\x0b\x32\x0e.PBGBlessAward\x12\x11\n\tmake_wine\x18\x17 \x01(\x05\x12\x15\n\x04wine\x18\x18 \x03(\x0b\x32\x07.PBWine\x12\x1a\n\x12make_wine_end_time\x18\x1a \x01(\x11\x12\x0c\n\x04icon\x18\x1b \x01(\t\x12\x0b\n\x03sex\x18\x1c \x01(\x11\x12\x12\n\nlogin_camp\x18\x1d \x01(\r\x12)\n\x0cpost_special\x18\x1e \x01(\x0e\x32\x13.PBEGuildMemberPost\"\x1e\n\x0cPBSignMember\x12\x0e\n\x06member\x18\x01 \x03(\x04\"\xc6\x01\n\x10PBGuildApplicant\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x11\n\tchar_name\x18\x02 \x01(\t\x12\x12\n\nchar_level\x18\x03 \x01(\x05\x12\x14\n\x0c\x63ombat_power\x18\x04 \x01(\x05\x12\x12\n\noccupation\x18\x05 \x01(\x05\x12\x11\n\tvip_level\x18\x06 \x01(\x05\x12\x0f\n\x07\x63ity_id\x18\x07 \x01(\x05\x12\x0b\n\x03sex\x18\x08 \x01(\x05\x12\x11\n\trole_type\x18\t \x01(\x05\x12\x0c\n\x04icon\x18\n \x01(\t\"\xe5\x01\n\x12PBGuildDailyRecord\x12\x13\n\x0brecord_time\x18\x01 \x01(\r\x12-\n\x0brecord_type\x18\x02 \x01(\x0e\x32\x18.PBEGuildDailyRecordType\x12\x0f\n\x07ulong_1\x18\x03 \x01(\x04\x12\x0f\n\x07ulong_2\x18\x04 \x01(\x04\x12\x0f\n\x07ulong_3\x18\x05 \x01(\x04\x12\r\n\x05int_1\x18\x06 \x01(\x05\x12\r\n\x05int_2\x18\x07 \x01(\x05\x12\r\n\x05int_3\x18\x08 \x01(\x05\x12\r\n\x05str_1\x18\n \x01(\t\x12\r\n\x05str_2\x18\x0b \x01(\t\x12\r\n\x05str_3\x18\x0c \x01(\t\">\n\x16PBGuildDailyRecordMore\x12$\n\x07records\x18\x01 \x03(\x0b\x32\x13.PBGuildDailyRecord\"\xf9\x01\n\x0fPBGuildBuilding\x12\x1e\n\tbuildings\x18\x01 \x03(\x0b\x32\x0b.PBBuilding\x12(\n\x11skill_tower_level\x18\x02 \x03(\x0b\x32\r.PBSkillStudy\x12\x15\n\rpublish_count\x18\x03 \x01(\x11\x12\x10\n\x08\x64ue_time\x18\x04 \x01(\x11\x12\"\n\rbuilding_task\x18\x05 \x01(\x0b\x32\x0b.PBBuilding\x12\x19\n\x11\x66inish_task_count\x18\x06 \x01(\x11\x12\x1a\n\x12open_banquet_count\x18\x07 \x01(\x11\x12\x18\n\x10\x62\x61nquet_end_time\x18\x08 \x01(\x11\"C\n\nPBBuilding\x12&\n\x04type\x18\x01 \x01(\x0e\x32\x18.PBEGuildingBuildingType\x12\r\n\x05level\x18\x02 \x01(\x11\"A\n\x0cPBSkillStudy\x12\x11\n\tsecial_id\x18\x01 \x01(\x11\x12\r\n\x05level\x18\x02 \x01(\x11\x12\x0f\n\x07\x63\x64_time\x18\x03 \x01(\r\">\n\x06PBWine\x12\x0c\n\x04type\x18\x01 \x01(\x11\x12\x13\n\x0btoday_drunk\x18\x02 \x01(\x11\x12\x11\n\tremainder\x18\x03 \x01(\x11\"-\n\x0bPBGuildBoss\x12\x1e\n\x04info\x18\x01 \x03(\x0b\x32\x10.PBGuildBossInfo\"\xbe\x01\n\x0fPBGuildBossInfo\x12\x15\n\rdungeon_sheet\x18\x01 \x01(\t\x12\x12\n\nopen_count\x18\x02 \x01(\x11\x12\x16\n\x0e\x64ungeon_entity\x18\x03 \x01(\x04\x12\x10\n\x08kill_min\x18\x04 \x01(\x11\x12(\n\x0b\x62oss_status\x18\x05 \x01(\x0e\x32\x13.PBEGuildBossStatus\x12\x0e\n\x06map_id\x18\x06 \x01(\r\x12\x1c\n\x14yesterday_open_count\x18\x07 \x01(\x11\"i\n\rPBGuildBattle\x12\x12\n\nlevel_rank\x18\x01 \x01(\x11\x12\x14\n\x0c\x62\x61ttle_score\x18\x02 \x01(\x11\x12\x13\n\x0b\x62\x61ttle_rank\x18\x03 \x01(\x11\x12\x19\n\x11\x63\x61n_join_match_id\x18\x04 \x01(\x11\"_\n\x14PBGuildCreateRequest\x12#\n\nguild_info\x18\x01 \x01(\x0b\x32\x0f.PBGuildSummary\x12\"\n\tcost_type\x18\x02 \x01(\x0e\x32\x0f.PBCurrencyType\"<\n\x15PBGuildCreateResponse\x12#\n\nguild_info\x18\x01 \x01(\x0b\x32\x0f.PBGuildSummary\"\\\n\x0fPBGuildIdInform\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12#\n\nguild_info\x18\x02 \x01(\x0b\x32\x0f.PBGuildSummary\x12\x12\n\nmy_char_id\x18\x03 \x01(\x04\"+\n\x17PBGuildApplyJoinRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\"\x19\n\x17PBGuildQuickJoinRequest\"\x1a\n\x18PBGuildMemberListRequest\"\x17\n\x15PBGuildLevelupRequest\"\x14\n\x12PBGuildQuitRequest\"-\n\x19PBGuildCancelApplyRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\"M\n\x1aPBGuildApplyConfirmRequest\x12\x16\n\x0e\x61greed_char_id\x18\x01 \x03(\x04\x12\x17\n\x0frefused_char_id\x18\x02 \x03(\x04\"l\n\x1bPBGuildApplyConfirmResponse\x12&\n\rmy_guild_info\x18\x01 \x01(\x0b\x32\x0f.PBGuildSummary\x12%\n\napplicants\x18\x02 \x03(\x0b\x32\x11.PBGuildApplicant\"[\n\x18PBGuildQuickJoinResponse\x12!\n\x08my_guild\x18\x01 \x01(\x0b\x32\x0f.PBGuildSummary\x12\x1c\n\x14new_applied_guild_id\x18\x03 \x03(\x04\"(\n\x15PBGuildKickoutRequest\x12\x0f\n\x07\x63har_id\x18\x01 \x03(\x04\"<\n\x16PBGuildKickoutResponse\x12\x11\n\topchar_id\x18\x01 \x01(\x04\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\")\n\x15PBGuildDestroyRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\",\n\x18PBGuildApplicantsRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\"B\n\x19PBGuildApplicantsResponse\x12%\n\napplicants\x18\x01 \x03(\x0b\x32\x11.PBGuildApplicant\";\n\x14PBGuildModifyRequest\x12#\n\nguild_info\x18\x01 \x01(\x0b\x32\x0f.PBGuildSummary\"<\n\x15PBGuildModifyResponse\x12#\n\nguild_info\x18\x01 \x01(\x0b\x32\x0f.PBGuildSummary\"B\n\x1aPBGuildMemberModifyRequest\x12$\n\x0cguild_member\x18\x01 \x03(\x0b\x32\x0e.PBGuildMember\"C\n\x1bPBGuildMemberModifyResponse\x12$\n\x0cguild_member\x18\x01 \x03(\x0b\x32\x0e.PBGuildMember\"(\n\x14PBGuildDetailRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\"<\n\x15PBGuildDetailResponse\x12#\n\nguild_info\x18\x01 \x01(\x0b\x32\x0f.PBGuildSummary\";\n\x14PBGuildSearchRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x11\n\tsame_city\x18\x02 \x01(\x08\"~\n\x15PBGuildSearchResponse\x12&\n\x07request\x18\x01 \x01(\x0b\x32\x15.PBGuildSearchRequest\x12#\n\nguild_list\x18\x02 \x03(\x0b\x32\x0f.PBGuildSummary\x12\x18\n\x10\x61pplied_guild_id\x18\x03 \x03(\x04\"H\n\x14PBGuildDonateRequest\x12!\n\x04type\x18\x03 \x01(\x0e\x32\x13.PBEGuildDonateType\x12\r\n\x05\x63ount\x18\x04 \x01(\x05\"\x94\x01\n\x15PBGuildDonateResponse\x12\x13\n\x0bguild_money\x18\x01 \x01(\x05\x12\x1f\n\x07my_info\x18\x02 \x01(\x0b\x32\x0e.PBGuildMember\x12.\n\rdonate_record\x18\x03 \x01(\x0b\x32\x17.PBGuildDailyRecordMore\x12\x15\n\rhistory_money\x18\x05 \x01(\x05\"3\n\x1aPBGuildLeaderChangeRequest\x12\x15\n\rnew_leader_id\x18\x01 \x01(\x04\"b\n\x1bPBGuildLeaderChangeResponse\x12\x1f\n\x07my_info\x18\x01 \x01(\x0b\x32\x0e.PBGuildMember\x12\"\n\nnew_leader\x18\x02 \x01(\x0b\x32\x0e.PBGuildMember\".\n\x17PBGuildRecruitAdRequest\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\"[\n\x1ePBGuildMemberPostChangeRequest\x12\x16\n\x0emember_char_id\x18\x01 \x03(\x04\x12!\n\x04post\x18\x02 \x01(\x0e\x32\x13.PBEGuildMemberPost\"G\n\x1fPBGuildMemberPostChangeResponse\x12$\n\x0cguild_member\x18\x01 \x03(\x0b\x32\x0e.PBGuildMember\"=\n\x16PBGuildLevelupResponse\x12#\n\nguild_info\x18\x01 \x01(\x0b\x32\x0f.PBGuildSummary\"@\n\x18PBGuildMemberListesponse\x12$\n\x0cguild_member\x18\x01 \x03(\x0b\x32\x0e.PBGuildMember\"\x16\n\x14PBGuildPayoffRequest\"S\n\x15PBGuildPayoffResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x14\n\x0cguild_contri\x18\x02 \x01(\x11\x12\x12\n\nall_salary\x18\x03 \x01(\x11\"G\n\x1bPBGuildPayoffConfirmRequest\x12(\n\x0bpayoff_type\x18\x01 \x01(\x0e\x32\x13.PBEGuildPayoffType\"0\n\x1cPBGuildPayoffConfirmResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"\\\n\x14PBGuildRecordRequest\x12-\n\x0brecord_type\x18\x01 \x03(\x0e\x32\x18.PBEGuildDailyRecordType\x12\x15\n\roperator_type\x18\x02 \x01(\x11\"\\\n\x15PBGuildRecordResponse\x12,\n\x0brecord_info\x18\x01 \x01(\x0b\x32\x17.PBGuildDailyRecordMore\x12\x15\n\roperator_type\x18\x02 \x01(\x11\"H\n\x15PBBuildingLvUpRequest\x12/\n\rbuilding_type\x18\x01 \x01(\x0e\x32\x18.PBEGuildingBuildingType\"\xa3\x01\n\x16PBBuildingLvUpResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1d\n\x08\x62uilding\x18\x02 \x01(\x0b\x32\x0b.PBBuilding\x12\x15\n\rpublish_times\x18\x03 \x01(\x11\x12\x11\n\tleft_time\x18\x04 \x01(\x11\x12\x19\n\x11\x66inish_task_count\x18\x05 \x01(\x11\x12\x13\n\x0bguild_money\x18\x06 \x01(\x11\"(\n\x13PBSkillStudyRequest\x12\x11\n\tsecial_id\x18\x01 \x01(\x11\"g\n\x14PBSkillStudyResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12(\n\x11skill_tower_level\x18\x02 \x01(\x0b\x32\r.PBSkillStudy\x12\x13\n\x0bguild_money\x18\x03 \x01(\x11\"\x19\n\x17PBSkillStudyInfoRequest\"V\n\x18PBSkillStudyInfoResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12(\n\x11skill_tower_level\x18\x02 \x03(\x0b\x32\r.PBSkillStudy\")\n\x14PBSkillCDTimeRequest\x12\x11\n\tsecial_id\x18\x01 \x01(\x11\"S\n\x15PBSkillCDTimeResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12(\n\x11skill_tower_level\x18\x02 \x01(\x0b\x32\r.PBSkillStudy\"(\n\x13PBSkillLearnRequest\x12\x11\n\tsecial_id\x18\x01 \x01(\x11\"\x82\x01\n\x14PBSkillLearnResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12 \n\nskill_info\x18\x02 \x01(\x0b\x32\x0c.PBSkillInfo\x12\x13\n\x0b\x66ight_power\x18\x03 \x01(\x11\x12!\n\nproperties\x18\x04 \x01(\x0b\x32\r.PBProperties\"\x19\n\x17PBGuildSkillInfoRequest\"u\n\x18PBGuildSkillInfoResponse\x12!\n\x0bskills_info\x18\x01 \x03(\x0b\x32\x0c.PBSkillInfo\x12!\n\nproperties\x18\x02 \x01(\x0b\x32\r.PBProperties\x12\x13\n\x0b\x66ight_power\x18\x03 \x01(\x11\"2\n\rPBGBlessAward\x12\x11\n\tsheetName\x18\x01 \x01(\t\x12\x0e\n\x06number\x18\x02 \x01(\x11\"\x15\n\x13PBGuildBlessRequest\"Y\n\x14PBGuildBlessResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x10\n\x08\x64o_bless\x18\x02 \x01(\x11\x12\x1d\n\x05\x61ward\x18\x03 \x01(\x0b\x32\x0e.PBGBlessAward\"R\n\x15PBEnterDrunkeryNotice\x12\"\n\x06status\x18\x01 \x01(\x0e\x32\x12.PBEDrunkeryStatus\x12\x15\n\x04wine\x18\x02 \x03(\x0b\x32\x07.PBWine\"\x17\n\x15PBLeaveDrunkeryNotice\"4\n\x0ePBDrinkRequest\x12\x11\n\twine_type\x18\x01 \x01(\x11\x12\x0f\n\x07is_auto\x18\x02 \x01(\x08\"\x8d\x01\n\x10PBDrinkeResponse\x12\"\n\x06status\x18\x01 \x01(\x0e\x32\x12.PBEDrunkeryStatus\x12\x16\n\x0e\x62\x61nquet_number\x18\x02 \x01(\x11\x12\x15\n\x04wine\x18\x03 \x01(\x0b\x32\x07.PBWine\x12\x14\n\x0cincrease_exp\x18\x04 \x01(\x11\x12\x10\n\x08ret_code\x18\x05 \x01(\x11\"\x16\n\x14PBOpenBanquetRequest\"P\n\x15PBOpenBanquetResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tleft_time\x18\x02 \x01(\x11\x12\x12\n\nopen_count\x18\x03 \x01(\x11\"!\n\x11PBMakeWineRequest\x12\x0c\n\x04type\x18\x01 \x01(\x11\"i\n\x12PBMakeWineResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x15\n\x04wine\x18\x05 \x01(\x0b\x32\x07.PBWine\x12\x11\n\tleft_time\x18\x06 \x01(\x11\x12\x17\n\x0fmake_wine_count\x18\x07 \x01(\x11\"\x1a\n\x18PBMakeWineResetCDRequest\"@\n\x19PBMakeWineResetCDResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tleft_time\x18\x03 \x01(\x11\"\x15\n\x13PBBeKickoutedNotice\"\'\n\x14PBGuildInviteRequest\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\")\n\x15PBGuildInviteResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"P\n\x13PBGuildInviteNotice\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x13\n\x0bplayer_name\x18\x02 \x01(\t\x12\x12\n\nguild_name\x18\x03 \x01(\t\",\n\x16PBOpenGuildBossRequest\x12\x12\n\ndungeon_id\x18\x01 \x01(\t\"P\n\x17PBOpenGuildBossResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12#\n\tboss_info\x18\x02 \x01(\x0b\x32\x10.PBGuildBossInfo\",\n\x16PBEnterGuildBossReport\x12\x12\n\ndungeon_id\x18\x01 \x01(\t\"<\n\x15PBOpenGuildBossNotice\x12#\n\tboss_info\x18\x02 \x01(\x0b\x32\x10.PBGuildBossInfo\"c\n\x14PBGuildBossEndNotice\x12\x12\n\ndungeon_id\x18\x01 \x01(\t\x12\x0f\n\x07is_fail\x18\x02 \x01(\x08\x12\x14\n\x0cguild_contri\x18\x03 \x01(\x11\x12\x10\n\x08luck_dog\x18\x04 \x01(\x08\"f\n\x17PBGuildBossDamageNotice\x12\x1c\n\x04rank\x18\x01 \x03(\x0b\x32\x0e.PBGuildDamage\x12\x1c\n\x04self\x18\x02 \x01(\x0b\x32\x0e.PBGuildDamage\x12\x0f\n\x07\x62oss_hp\x18\x03 \x01(\x11\"B\n\rPBGuildDamage\x12\x13\n\x0bplayer_name\x18\x01 \x01(\t\x12\x0e\n\x06\x64\x61mage\x18\x02 \x01(\x11\x12\x0c\n\x04rate\x18\x03 \x01(\x02\"\x1d\n\x1bPBMsgGuildBossStatusRequest\"3\n\x1cPBMsgGuildBossStatusResponse\x12\x13\n\x0b\x63losed_boss\x18\x01 \x03(\r\"\x1d\n\x1bPBMSGApplyJoinConfirmNotice\"\x1d\n\x1bPBMsgGuildMemberKillRequest\"\x94\x01\n\x1cPBMsgGuildMemberKillResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0e\n\x06map_id\x18\x02 \x01(\x11\x12\x12\n\nins_number\x18\x03 \x01(\x11\x12\x0f\n\x07line_id\x18\x04 \x01(\x11\x12\r\n\x05pos_x\x18\x05 \x01(\x11\x12\r\n\x05pos_y\x18\x06 \x01(\x11\x12\x0f\n\x07\x63\x61mp_id\x18\x07 \x01(\x11\"5\n\"PBMsgGuildMemberHelpTelportRequest\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\"\xac\x01\n#PBMsgGuildMemberHelpTelportResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x0e\n\x06map_id\x18\x03 \x01(\x11\x12\x12\n\nins_number\x18\x04 \x01(\x11\x12\x0f\n\x07line_id\x18\x05 \x01(\x11\x12\r\n\x05pos_x\x18\x06 \x01(\x11\x12\r\n\x05pos_y\x18\x07 \x01(\x11\x12\x0f\n\x07\x63\x61mp_id\x18\x08 \x01(\x11\"\x1a\n\x18PBMsgGuildDismissRequest\">\n\x19PBMsgGuildDismissResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07left_cd\x18\x02 \x01(\x11\" \n\x1ePBMsgGuildCancelDismissRequest\"3\n\x1fPBMsgGuildCancelDismissResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"H\n\x0fPBCampUnionData\x12\x0f\n\x07\x63\x61mp_id\x18\x01 \x03(\x11\x12\x12\n\nbegin_time\x18\x02 \x01(\x11\x12\x10\n\x08\x65nd_time\x18\x03 \x01(\x11\"[\n\rPBPBCampUnion\x12$\n\nunion_data\x18\x01 \x03(\x0b\x32\x10.PBCampUnionData\x12\x12\n\nbegin_time\x18\x02 \x01(\x11\x12\x10\n\x08\x65nd_time\x18\x03 \x01(\x11\"7\n\x11PBCampUnionNotice\x12\"\n\nunion_data\x18\x01 \x01(\x0b\x32\x0e.PBPBCampUnion\"G\n\x1dPBMsgGuildDayRewardInfoNotice\x12&\n\tgetreward\x18\x01 \x01(\x0e\x32\x13.EGetGuildDayReward\"\x1f\n\x1dPBMsgGetGuildDayRewardRequest\"2\n\x1ePBMsgGetGuildDayRewardResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"?\n\x12PBStoreMessageParm\x12\x10\n\x08msg_time\x18\x01 \x01(\x04\x12\x17\n\x04parm\x18\x02 \x01(\x0b\x32\t.PBDynStr\"\x8c\x01\n\x10PBGuildStoreInfo\x12\x10\n\x08inv_type\x18\x01 \x01(\x11\x12 \n\tslot_info\x18\x02 \x03(\x0b\x32\r.PBMsgInvSlot\x12\x1f\n\x08inv_grid\x18\x03 \x01(\x0b\x32\r.PBMsgInvGrid\x12#\n\x06notice\x18\x04 \x03(\x0b\x32\x13.PBStoreMessageParm\"8\n\x15PBMsgGuildStoreNotice\x12\x1f\n\x04info\x18\x01 \x01(\x0b\x32\x11.PBGuildStoreInfo\"=\n\x15PBMsgAddMessageNotice\x12$\n\x07message\x18\x01 \x01(\x0b\x32\x13.PBStoreMessageParm\")\n\x0cPBGrantGoods\x12\x0c\n\x04slot\x18\x01 \x01(\r\x12\x0b\n\x03num\x18\x02 \x01(\r\"g\n PBMsgGuildStoreGrantGoodsRequest\x12\x1c\n\x05props\x18\x01 \x03(\x0b\x32\r.PBGrantGoods\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x14\n\x0coper_role_id\x18\x03 \x01(\r\"5\n!PBMsgGuildStoreGrantGoodsResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"\\\n\x1ePBMsgGuildStoreExtenBagRequest\x12\x10\n\x08inv_type\x18\x01 \x01(\x11\x12\x12\n\nsolt_index\x18\x02 \x01(\r\x12\x14\n\x0coper_role_id\x18\x03 \x01(\r\"i\n\x1fPBMsgGuildStoreExtenBagResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1f\n\x08\x62\x61g_grid\x18\x02 \x01(\x0b\x32\r.PBMsgInvGrid\x12\x13\n\x0bguild_money\x18\x03 \x01(\x11\":\n\x0cPBGuildManor\x12\x16\n\x0e\x64ungeon_entity\x18\x01 \x01(\x04\x12\x12\n\nopen_count\x18\x02 \x01(\x11\"\x1a\n\x18PBEnterGuildManorRequest\"-\n\x19PBEnterGuildManorResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"\x19\n\x17PBQuitGuildManorRequest\",\n\x18PBQuitGuildManorResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"\x18\n\x16PBOpenGuildFireRequest\"+\n\x17PBOpenGuildFireResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\")\n\x16PBOGuildFireTimeNotice\x12\x0f\n\x07re_time\x18\x01 \x01(\x11\"\x17\n\x15PBOpenGuildFireNotice*A\n\x12PBEGuildPayoffType\x12\x12\n\x0e\x65Guild_Average\x10\x01\x12\x17\n\x13\x65Guild_Contribution\x10\x02*^\n\x11PBEGuildExpOrigin\x12\x15\n\x11\x65GuildExp_Mission\x10\x01\x12\x18\n\x14\x65GuildExp_DonateBlue\x10\x02\x12\x18\n\x14\x65GuildExp_DonateItem\x10\x03*\x84\x01\n\x15PBEGuildDismissReason\x12\x16\n\x12\x65GuildDismiss_None\x10\x00\x12\x19\n\x15\x65GuildDismiss_Request\x10\x01\x12\x1c\n\x18\x65GuildDismiss_BackSalary\x10\x02\x12\x1a\n\x16\x65GuildDismiss_Election\x10\x03*i\n\x16PBEGuildJointLimitType\x12\x16\n\teGJT_None\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01\x12\x10\n\x0c\x65GJLT_Forbid\x10\x00\x12\x15\n\x11\x65GJLT_Restriction\x10\x01\x12\x0e\n\neGJLT_Open\x10\x02*X\n\x12PBEGuildDirectJoin\x12\r\n\teGDJ_None\x10\x00\x12\x0f\n\x0b\x65GDJ_Direct\x10\x01\x12\x0c\n\x08\x65GDJ_VIP\x10\x02\x12\x14\n\x10\x65GDJ_BattleScore\x10\x03*\x8e\x01\n\x12PBEGuildMemberPost\x12\x0f\n\x0b\x65GMP_Leader\x10\x00\x12\x13\n\x0f\x65GMP_ViceLeader\x10\x01\x12\x0f\n\x0b\x65GMP_Normal\x10\x02\x12\x0e\n\neGMP_Cream\x10\x03\x12\x0e\n\neGMP_Elder\x10\x04\x12\x10\n\x0c\x65GMP_Protect\x10\x05\x12\x0f\n\x0b\x65GMP_flower\x10\x64*\xe3\x01\n\x17PBEGuildDailyRecordType\x12\x10\n\x0c\x65GDRT_Create\x10\x00\x12\x0e\n\neGDRT_Join\x10\x01\x12\x0f\n\x0b\x65GDRT_Leave\x10\x02\x12\x11\n\reGDRT_Kickout\x10\x03\x12\x11\n\reGDRT_Levelup\x10\x04\x12\x10\n\x0c\x65GDRT_Donate\x10\x05\x12\x16\n\x12\x65GDRT_ChangeLeader\x10\x06\x12\x11\n\reGDRT_Consume\x10\x07\x12\x18\n\x14\x65GDRT_PutItemToStore\x10\x08\x12\x18\n\x14\x65GDRT_GiveItemToChar\x10\t*\xbb\x01\n\x17PBEGuildingBuildingType\x12\x17\n\x13\x65GuildBuilding_None\x10\x00\x12\x1d\n\x19\x65GuildBuilding_SkillTower\x10\x01\x12\x18\n\x14\x65GuildBuilding_Bless\x10\x02\x12\x1b\n\x17\x65GuildBuilding_Drunkery\x10\x03\x12\x19\n\x15\x65GuildBuilding_Repair\x10\x04\x12\x16\n\x12\x65GuildBuilding_Dye\x10\x05*T\n\x12PBEGuildBossStatus\x12\x13\n\x0f\x65GuildBoss_None\x10\x00\x12\x13\n\x0f\x65GuildBoss_Open\x10\x01\x12\x14\n\x10\x65GuildBoss_Close\x10\x02*B\n\x12PBEGuildDonateType\x12\x15\n\x11\x65GuildDonate_Blue\x10\x01\x12\x15\n\x11\x65GuildDonate_Item\x10\x02*\xcb\x01\n\x11PBEDrunkeryStatus\x12\x12\n\x0e\x45\x44runkery_None\x10\x00\x12\x12\n\x0e\x45\x44runkery_Full\x10\x01\x12\x14\n\x10\x45\x44runkery_Normal\x10\x02\x12\x13\n\x0f\x45\x44runkery_Empty\x10\x03\x12\x15\n\x11\x45\x44runkery_Banquet\x10\x04\x12\x13\n\x0f\x45\x44runkery_Leave\x10\x05\x12\x1a\n\x16\x45\x44runkery_WineTypeFull\x10\x06\x12\x1b\n\x17\x45\x44runkery_WineTypeEmpty\x10\x07*r\n\x15PBCampUnionUpdateType\x12\x15\n\x11\x65\x43\x61mpUnion_Create\x10\x01\x12\x16\n\x12\x65\x43\x61mpUnion_Destroy\x10\x02\x12\x13\n\x0f\x65\x43\x61mpUnion_Sync\x10\x03\x12\x15\n\x11\x65\x43\x61mpUnion_Notice\x10\x04*U\n\x12\x45GetGuildDayReward\x12 \n\x1c\x45GetGuildDayReward_Un_Pickup\x10\x00\x12\x1d\n\x19\x45GetGuildDayReward_Pickup\x10\x01*?\n\x12PBEGuildFireStatus\x12\x13\n\x0f\x65GuildFire_Open\x10\x01\x12\x14\n\x10\x65GuildFire_Close\x10\x00')
+  serialized_pb='\n\x0fmsg_guild.proto\x1a\x10msg_common.proto\x1a\x0fmsg_skill.proto\x1a\x0emsg_item.proto\x1a\x0emsg_base.proto\x1a\x13msg_role_base.proto\"\x86\x06\n\x0ePBGuildSummary\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x12\n\nguild_name\x18\x02 \x01(\t\x12\x13\n\x0bleader_name\x18\x03 \x01(\t\x12\x11\n\tmanifesto\x18\x04 \x01(\t\x12\x0f\n\x07icon_id\x18\x05 \x01(\x05\x12\x12\n\nmember_num\x18\x06 \x01(\x05\x12\x12\n\nmax_member\x18\x07 \x01(\x05\x12\x0f\n\x07\x63ity_id\x18\x08 \x01(\x05\x12\x13\n\x0bguild_level\x18\t \x01(\x05\x12\x13\n\x0bguild_power\x18\n \x01(\x05\x12+\n\nlimit_type\x18\x10 \x01(\x0e\x32\x17.PBEGuildJointLimitType\x12\x13\n\x0blimit_level\x18\x11 \x01(\x05\x12\x1a\n\x12limit_combat_power\x18\x12 \x01(\x05\x12\x1e\n\x06\x64\x65tail\x18\x13 \x01(\x0b\x32\x0e.PBGuildDetail\x12\x11\n\tis_payoff\x18\x14 \x01(\x08\x12-\n\x10last_payoff_type\x18\x15 \x01(\x0e\x32\x13.PBEGuildPayoffType\x12(\n\x0eguild_building\x18\x16 \x01(\x0b\x32\x10.PBGuildBuilding\x12 \n\nguild_boss\x18\x17 \x01(\x0b\x32\x0c.PBGuildBoss\x12$\n\x0cguild_battle\x18\x18 \x01(\x0b\x32\x0e.PBGuildBattle\x12\x0f\n\x07\x63\x61mp_id\x18\x19 \x01(\x04\x12\x0f\n\x07\x64ismiss\x18\x1a \x01(\r\x12\x16\n\x0eleader_char_id\x18\x1b \x01(\x04\x12\x12\n\nguild_icon\x18\x1c \x01(\t\x12\x12\n\nleader_sex\x18\x1d \x01(\x11\x12\x18\n\x10\x64irect_vip_level\x18\x1e \x01(\x11\x12)\n\x0c\x64irect_limit\x18  \x03(\x0e\x32\x13.PBEGuildDirectJoin\x12\x13\n\x0brefresh_day\x18! \x01(\r\x12 \n\x0bleader_base\x18\" \x01(\x0b\x32\x0b.PBRoleBase\x12\"\n\x0bguild_manor\x18# \x01(\x0b\x32\r.PBGuildManor\"\xae\x03\n\rPBGuildDetail\x12\x13\n\x0b\x63reate_time\x18\x01 \x01(\r\x12\x11\n\tguild_exp\x18\x03 \x01(\x05\x12\x13\n\x0bguild_money\x18\x04 \x01(\x05\x12\x13\n\x0bguild_score\x18\x06 \x01(\x05\x12\x13\n\x0b\x63ity_member\x18\x07 \x01(\x05\x12\x1d\n\x15next_maintenance_cost\x18\x08 \x01(\x05\x12\x1d\n\x15last_maintenance_time\x18\t \x01(\r\x12\x10\n\x08\x62ulletin\x18\n \x01(\t\x12\x14\n\x0clevelup_cost\x18\x0b \x01(\x11\x12 \n\x18levelup_maintenance_cost\x18\x0c \x01(\x05\x12\x1f\n\x07members\x18\r \x03(\x0b\x32\x0e.PBGuildMember\x12)\n\x0c\x64\x61ily_record\x18\x0e \x03(\x0b\x32\x13.PBGuildDailyRecord\x12\x15\n\rhistory_money\x18\x0f \x01(\x05\x12\x19\n\x11maxdmg_reward_cnt\x18\x10 \x01(\x11\x12\x1a\n\x12lasthit_reward_cnt\x18\x11 \x01(\x11\x12\x14\n\x0csum_liveness\x18\x12 \x01(\x11\"b\n\x10PBCharGuildState\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x1e\n\x16last_create_guild_time\x18\x02 \x01(\r\x12\x1c\n\x14last_quit_guild_time\x18\x03 \x01(\r\"\xd0\x04\n\rPBGuildMember\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x11\n\tchar_name\x18\x02 \x01(\t\x12\x12\n\nchar_level\x18\x03 \x01(\x05\x12\x14\n\x0c\x63ombat_power\x18\x04 \x01(\x05\x12\x12\n\noccupation\x18\x05 \x01(\x05\x12\x11\n\tvip_level\x18\x06 \x01(\x05\x12\x0f\n\x07\x63ity_id\x18\x07 \x01(\x05\x12!\n\x04post\x18\x08 \x01(\x0e\x32\x13.PBEGuildMemberPost\x12\x11\n\tis_online\x18\n \x01(\x08\x12\x11\n\tis_friend\x18\x0b \x01(\x08\x12\x14\n\x0cis_same_city\x18\x0c \x01(\x08\x12\x14\n\x0coffline_time\x18\r \x01(\r\x12\x11\n\tjoin_time\x18\x0e \x01(\r\x12\x18\n\x10own_contribution\x18\x0f \x01(\x05\x12\x17\n\x0f\x63ur_week_contri\x18\x10 \x01(\x05\x12\x18\n\x10last_week_contri\x18\x11 \x01(\x05\x12\x12\n\ndo_request\x18\x14 \x01(\x05\x12\x10\n\x08\x64o_bless\x18\x15 \x01(\x05\x12\x1e\n\x06\x61wards\x18\x16 \x03(\x0b\x32\x0e.PBGBlessAward\x12\x11\n\tmake_wine\x18\x17 \x01(\x05\x12\x15\n\x04wine\x18\x18 \x03(\x0b\x32\x07.PBWine\x12\x1a\n\x12make_wine_end_time\x18\x1a \x01(\x11\x12\x0c\n\x04icon\x18\x1b \x01(\t\x12\x0b\n\x03sex\x18\x1c \x01(\x11\x12\x12\n\nlogin_camp\x18\x1d \x01(\r\x12)\n\x0cpost_special\x18\x1e \x01(\x0e\x32\x13.PBEGuildMemberPost\"\x1e\n\x0cPBSignMember\x12\x0e\n\x06member\x18\x01 \x03(\x04\"\xc6\x01\n\x10PBGuildApplicant\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x11\n\tchar_name\x18\x02 \x01(\t\x12\x12\n\nchar_level\x18\x03 \x01(\x05\x12\x14\n\x0c\x63ombat_power\x18\x04 \x01(\x05\x12\x12\n\noccupation\x18\x05 \x01(\x05\x12\x11\n\tvip_level\x18\x06 \x01(\x05\x12\x0f\n\x07\x63ity_id\x18\x07 \x01(\x05\x12\x0b\n\x03sex\x18\x08 \x01(\x05\x12\x11\n\trole_type\x18\t \x01(\x05\x12\x0c\n\x04icon\x18\n \x01(\t\"\xe5\x01\n\x12PBGuildDailyRecord\x12\x13\n\x0brecord_time\x18\x01 \x01(\r\x12-\n\x0brecord_type\x18\x02 \x01(\x0e\x32\x18.PBEGuildDailyRecordType\x12\x0f\n\x07ulong_1\x18\x03 \x01(\x04\x12\x0f\n\x07ulong_2\x18\x04 \x01(\x04\x12\x0f\n\x07ulong_3\x18\x05 \x01(\x04\x12\r\n\x05int_1\x18\x06 \x01(\x05\x12\r\n\x05int_2\x18\x07 \x01(\x05\x12\r\n\x05int_3\x18\x08 \x01(\x05\x12\r\n\x05str_1\x18\n \x01(\t\x12\r\n\x05str_2\x18\x0b \x01(\t\x12\r\n\x05str_3\x18\x0c \x01(\t\">\n\x16PBGuildDailyRecordMore\x12$\n\x07records\x18\x01 \x03(\x0b\x32\x13.PBGuildDailyRecord\"\xf9\x01\n\x0fPBGuildBuilding\x12\x1e\n\tbuildings\x18\x01 \x03(\x0b\x32\x0b.PBBuilding\x12(\n\x11skill_tower_level\x18\x02 \x03(\x0b\x32\r.PBSkillStudy\x12\x15\n\rpublish_count\x18\x03 \x01(\x11\x12\x10\n\x08\x64ue_time\x18\x04 \x01(\x11\x12\"\n\rbuilding_task\x18\x05 \x01(\x0b\x32\x0b.PBBuilding\x12\x19\n\x11\x66inish_task_count\x18\x06 \x01(\x11\x12\x1a\n\x12open_banquet_count\x18\x07 \x01(\x11\x12\x18\n\x10\x62\x61nquet_end_time\x18\x08 \x01(\x11\"C\n\nPBBuilding\x12&\n\x04type\x18\x01 \x01(\x0e\x32\x18.PBEGuildingBuildingType\x12\r\n\x05level\x18\x02 \x01(\x11\"A\n\x0cPBSkillStudy\x12\x11\n\tsecial_id\x18\x01 \x01(\x11\x12\r\n\x05level\x18\x02 \x01(\x11\x12\x0f\n\x07\x63\x64_time\x18\x03 \x01(\r\">\n\x06PBWine\x12\x0c\n\x04type\x18\x01 \x01(\x11\x12\x13\n\x0btoday_drunk\x18\x02 \x01(\x11\x12\x11\n\tremainder\x18\x03 \x01(\x11\"-\n\x0bPBGuildBoss\x12\x1e\n\x04info\x18\x01 \x03(\x0b\x32\x10.PBGuildBossInfo\"\xbe\x01\n\x0fPBGuildBossInfo\x12\x15\n\rdungeon_sheet\x18\x01 \x01(\t\x12\x12\n\nopen_count\x18\x02 \x01(\x11\x12\x16\n\x0e\x64ungeon_entity\x18\x03 \x01(\x04\x12\x10\n\x08kill_min\x18\x04 \x01(\x11\x12(\n\x0b\x62oss_status\x18\x05 \x01(\x0e\x32\x13.PBEGuildBossStatus\x12\x0e\n\x06map_id\x18\x06 \x01(\r\x12\x1c\n\x14yesterday_open_count\x18\x07 \x01(\x11\"i\n\rPBGuildBattle\x12\x12\n\nlevel_rank\x18\x01 \x01(\x11\x12\x14\n\x0c\x62\x61ttle_score\x18\x02 \x01(\x11\x12\x13\n\x0b\x62\x61ttle_rank\x18\x03 \x01(\x11\x12\x19\n\x11\x63\x61n_join_match_id\x18\x04 \x01(\x11\"_\n\x14PBGuildCreateRequest\x12#\n\nguild_info\x18\x01 \x01(\x0b\x32\x0f.PBGuildSummary\x12\"\n\tcost_type\x18\x02 \x01(\x0e\x32\x0f.PBCurrencyType\"<\n\x15PBGuildCreateResponse\x12#\n\nguild_info\x18\x01 \x01(\x0b\x32\x0f.PBGuildSummary\"\\\n\x0fPBGuildIdInform\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12#\n\nguild_info\x18\x02 \x01(\x0b\x32\x0f.PBGuildSummary\x12\x12\n\nmy_char_id\x18\x03 \x01(\x04\"+\n\x17PBGuildApplyJoinRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\"\x19\n\x17PBGuildQuickJoinRequest\"\x1a\n\x18PBGuildMemberListRequest\"\x17\n\x15PBGuildLevelupRequest\"\x14\n\x12PBGuildQuitRequest\"-\n\x19PBGuildCancelApplyRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\"M\n\x1aPBGuildApplyConfirmRequest\x12\x16\n\x0e\x61greed_char_id\x18\x01 \x03(\x04\x12\x17\n\x0frefused_char_id\x18\x02 \x03(\x04\"l\n\x1bPBGuildApplyConfirmResponse\x12&\n\rmy_guild_info\x18\x01 \x01(\x0b\x32\x0f.PBGuildSummary\x12%\n\napplicants\x18\x02 \x03(\x0b\x32\x11.PBGuildApplicant\"[\n\x18PBGuildQuickJoinResponse\x12!\n\x08my_guild\x18\x01 \x01(\x0b\x32\x0f.PBGuildSummary\x12\x1c\n\x14new_applied_guild_id\x18\x03 \x03(\x04\"(\n\x15PBGuildKickoutRequest\x12\x0f\n\x07\x63har_id\x18\x01 \x03(\x04\"<\n\x16PBGuildKickoutResponse\x12\x11\n\topchar_id\x18\x01 \x01(\x04\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\")\n\x15PBGuildDestroyRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\",\n\x18PBGuildApplicantsRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\"B\n\x19PBGuildApplicantsResponse\x12%\n\napplicants\x18\x01 \x03(\x0b\x32\x11.PBGuildApplicant\";\n\x14PBGuildModifyRequest\x12#\n\nguild_info\x18\x01 \x01(\x0b\x32\x0f.PBGuildSummary\"<\n\x15PBGuildModifyResponse\x12#\n\nguild_info\x18\x01 \x01(\x0b\x32\x0f.PBGuildSummary\"B\n\x1aPBGuildMemberModifyRequest\x12$\n\x0cguild_member\x18\x01 \x03(\x0b\x32\x0e.PBGuildMember\"C\n\x1bPBGuildMemberModifyResponse\x12$\n\x0cguild_member\x18\x01 \x03(\x0b\x32\x0e.PBGuildMember\"(\n\x14PBGuildDetailRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\"<\n\x15PBGuildDetailResponse\x12#\n\nguild_info\x18\x01 \x01(\x0b\x32\x0f.PBGuildSummary\";\n\x14PBGuildSearchRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x11\n\tsame_city\x18\x02 \x01(\x08\"~\n\x15PBGuildSearchResponse\x12&\n\x07request\x18\x01 \x01(\x0b\x32\x15.PBGuildSearchRequest\x12#\n\nguild_list\x18\x02 \x03(\x0b\x32\x0f.PBGuildSummary\x12\x18\n\x10\x61pplied_guild_id\x18\x03 \x03(\x04\"H\n\x14PBGuildDonateRequest\x12!\n\x04type\x18\x03 \x01(\x0e\x32\x13.PBEGuildDonateType\x12\r\n\x05\x63ount\x18\x04 \x01(\x05\"\x94\x01\n\x15PBGuildDonateResponse\x12\x13\n\x0bguild_money\x18\x01 \x01(\x05\x12\x1f\n\x07my_info\x18\x02 \x01(\x0b\x32\x0e.PBGuildMember\x12.\n\rdonate_record\x18\x03 \x01(\x0b\x32\x17.PBGuildDailyRecordMore\x12\x15\n\rhistory_money\x18\x05 \x01(\x05\"3\n\x1aPBGuildLeaderChangeRequest\x12\x15\n\rnew_leader_id\x18\x01 \x01(\x04\"b\n\x1bPBGuildLeaderChangeResponse\x12\x1f\n\x07my_info\x18\x01 \x01(\x0b\x32\x0e.PBGuildMember\x12\"\n\nnew_leader\x18\x02 \x01(\x0b\x32\x0e.PBGuildMember\".\n\x17PBGuildRecruitAdRequest\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\"[\n\x1ePBGuildMemberPostChangeRequest\x12\x16\n\x0emember_char_id\x18\x01 \x03(\x04\x12!\n\x04post\x18\x02 \x01(\x0e\x32\x13.PBEGuildMemberPost\"G\n\x1fPBGuildMemberPostChangeResponse\x12$\n\x0cguild_member\x18\x01 \x03(\x0b\x32\x0e.PBGuildMember\"=\n\x16PBGuildLevelupResponse\x12#\n\nguild_info\x18\x01 \x01(\x0b\x32\x0f.PBGuildSummary\"@\n\x18PBGuildMemberListesponse\x12$\n\x0cguild_member\x18\x01 \x03(\x0b\x32\x0e.PBGuildMember\"\x16\n\x14PBGuildPayoffRequest\"S\n\x15PBGuildPayoffResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x14\n\x0cguild_contri\x18\x02 \x01(\x11\x12\x12\n\nall_salary\x18\x03 \x01(\x11\"G\n\x1bPBGuildPayoffConfirmRequest\x12(\n\x0bpayoff_type\x18\x01 \x01(\x0e\x32\x13.PBEGuildPayoffType\"0\n\x1cPBGuildPayoffConfirmResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"\\\n\x14PBGuildRecordRequest\x12-\n\x0brecord_type\x18\x01 \x03(\x0e\x32\x18.PBEGuildDailyRecordType\x12\x15\n\roperator_type\x18\x02 \x01(\x11\"\\\n\x15PBGuildRecordResponse\x12,\n\x0brecord_info\x18\x01 \x01(\x0b\x32\x17.PBGuildDailyRecordMore\x12\x15\n\roperator_type\x18\x02 \x01(\x11\"H\n\x15PBBuildingLvUpRequest\x12/\n\rbuilding_type\x18\x01 \x01(\x0e\x32\x18.PBEGuildingBuildingType\"\xa3\x01\n\x16PBBuildingLvUpResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1d\n\x08\x62uilding\x18\x02 \x01(\x0b\x32\x0b.PBBuilding\x12\x15\n\rpublish_times\x18\x03 \x01(\x11\x12\x11\n\tleft_time\x18\x04 \x01(\x11\x12\x19\n\x11\x66inish_task_count\x18\x05 \x01(\x11\x12\x13\n\x0bguild_money\x18\x06 \x01(\x11\"(\n\x13PBSkillStudyRequest\x12\x11\n\tsecial_id\x18\x01 \x01(\x11\"g\n\x14PBSkillStudyResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12(\n\x11skill_tower_level\x18\x02 \x01(\x0b\x32\r.PBSkillStudy\x12\x13\n\x0bguild_money\x18\x03 \x01(\x11\"\x19\n\x17PBSkillStudyInfoRequest\"V\n\x18PBSkillStudyInfoResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12(\n\x11skill_tower_level\x18\x02 \x03(\x0b\x32\r.PBSkillStudy\")\n\x14PBSkillCDTimeRequest\x12\x11\n\tsecial_id\x18\x01 \x01(\x11\"S\n\x15PBSkillCDTimeResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12(\n\x11skill_tower_level\x18\x02 \x01(\x0b\x32\r.PBSkillStudy\"(\n\x13PBSkillLearnRequest\x12\x11\n\tsecial_id\x18\x01 \x01(\x11\"\x82\x01\n\x14PBSkillLearnResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12 \n\nskill_info\x18\x02 \x01(\x0b\x32\x0c.PBSkillInfo\x12\x13\n\x0b\x66ight_power\x18\x03 \x01(\x11\x12!\n\nproperties\x18\x04 \x01(\x0b\x32\r.PBProperties\"\x19\n\x17PBGuildSkillInfoRequest\"u\n\x18PBGuildSkillInfoResponse\x12!\n\x0bskills_info\x18\x01 \x03(\x0b\x32\x0c.PBSkillInfo\x12!\n\nproperties\x18\x02 \x01(\x0b\x32\r.PBProperties\x12\x13\n\x0b\x66ight_power\x18\x03 \x01(\x11\"2\n\rPBGBlessAward\x12\x11\n\tsheetName\x18\x01 \x01(\t\x12\x0e\n\x06number\x18\x02 \x01(\x11\"\x15\n\x13PBGuildBlessRequest\"Y\n\x14PBGuildBlessResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x10\n\x08\x64o_bless\x18\x02 \x01(\x11\x12\x1d\n\x05\x61ward\x18\x03 \x01(\x0b\x32\x0e.PBGBlessAward\"R\n\x15PBEnterDrunkeryNotice\x12\"\n\x06status\x18\x01 \x01(\x0e\x32\x12.PBEDrunkeryStatus\x12\x15\n\x04wine\x18\x02 \x03(\x0b\x32\x07.PBWine\"\x17\n\x15PBLeaveDrunkeryNotice\"4\n\x0ePBDrinkRequest\x12\x11\n\twine_type\x18\x01 \x01(\x11\x12\x0f\n\x07is_auto\x18\x02 \x01(\x08\"\x8d\x01\n\x10PBDrinkeResponse\x12\"\n\x06status\x18\x01 \x01(\x0e\x32\x12.PBEDrunkeryStatus\x12\x16\n\x0e\x62\x61nquet_number\x18\x02 \x01(\x11\x12\x15\n\x04wine\x18\x03 \x01(\x0b\x32\x07.PBWine\x12\x14\n\x0cincrease_exp\x18\x04 \x01(\x11\x12\x10\n\x08ret_code\x18\x05 \x01(\x11\"\x16\n\x14PBOpenBanquetRequest\"P\n\x15PBOpenBanquetResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tleft_time\x18\x02 \x01(\x11\x12\x12\n\nopen_count\x18\x03 \x01(\x11\"!\n\x11PBMakeWineRequest\x12\x0c\n\x04type\x18\x01 \x01(\x11\"i\n\x12PBMakeWineResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x15\n\x04wine\x18\x05 \x01(\x0b\x32\x07.PBWine\x12\x11\n\tleft_time\x18\x06 \x01(\x11\x12\x17\n\x0fmake_wine_count\x18\x07 \x01(\x11\"\x1a\n\x18PBMakeWineResetCDRequest\"@\n\x19PBMakeWineResetCDResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tleft_time\x18\x03 \x01(\x11\"\x15\n\x13PBBeKickoutedNotice\"\'\n\x14PBGuildInviteRequest\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\")\n\x15PBGuildInviteResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"P\n\x13PBGuildInviteNotice\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x13\n\x0bplayer_name\x18\x02 \x01(\t\x12\x12\n\nguild_name\x18\x03 \x01(\t\",\n\x16PBOpenGuildBossRequest\x12\x12\n\ndungeon_id\x18\x01 \x01(\t\"P\n\x17PBOpenGuildBossResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12#\n\tboss_info\x18\x02 \x01(\x0b\x32\x10.PBGuildBossInfo\",\n\x16PBEnterGuildBossReport\x12\x12\n\ndungeon_id\x18\x01 \x01(\t\"<\n\x15PBOpenGuildBossNotice\x12#\n\tboss_info\x18\x02 \x01(\x0b\x32\x10.PBGuildBossInfo\"c\n\x14PBGuildBossEndNotice\x12\x12\n\ndungeon_id\x18\x01 \x01(\t\x12\x0f\n\x07is_fail\x18\x02 \x01(\x08\x12\x14\n\x0cguild_contri\x18\x03 \x01(\x11\x12\x10\n\x08luck_dog\x18\x04 \x01(\x08\"f\n\x17PBGuildBossDamageNotice\x12\x1c\n\x04rank\x18\x01 \x03(\x0b\x32\x0e.PBGuildDamage\x12\x1c\n\x04self\x18\x02 \x01(\x0b\x32\x0e.PBGuildDamage\x12\x0f\n\x07\x62oss_hp\x18\x03 \x01(\x11\"B\n\rPBGuildDamage\x12\x13\n\x0bplayer_name\x18\x01 \x01(\t\x12\x0e\n\x06\x64\x61mage\x18\x02 \x01(\x11\x12\x0c\n\x04rate\x18\x03 \x01(\x02\"\x1d\n\x1bPBMsgGuildBossStatusRequest\"3\n\x1cPBMsgGuildBossStatusResponse\x12\x13\n\x0b\x63losed_boss\x18\x01 \x03(\r\"\x1d\n\x1bPBMSGApplyJoinConfirmNotice\"\x1d\n\x1bPBMsgGuildMemberKillRequest\"\x94\x01\n\x1cPBMsgGuildMemberKillResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0e\n\x06map_id\x18\x02 \x01(\x11\x12\x12\n\nins_number\x18\x03 \x01(\x11\x12\x0f\n\x07line_id\x18\x04 \x01(\x11\x12\r\n\x05pos_x\x18\x05 \x01(\x11\x12\r\n\x05pos_y\x18\x06 \x01(\x11\x12\x0f\n\x07\x63\x61mp_id\x18\x07 \x01(\x11\"5\n\"PBMsgGuildMemberHelpTelportRequest\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\"\xac\x01\n#PBMsgGuildMemberHelpTelportResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x0e\n\x06map_id\x18\x03 \x01(\x11\x12\x12\n\nins_number\x18\x04 \x01(\x11\x12\x0f\n\x07line_id\x18\x05 \x01(\x11\x12\r\n\x05pos_x\x18\x06 \x01(\x11\x12\r\n\x05pos_y\x18\x07 \x01(\x11\x12\x0f\n\x07\x63\x61mp_id\x18\x08 \x01(\x11\"\x1a\n\x18PBMsgGuildDismissRequest\">\n\x19PBMsgGuildDismissResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07left_cd\x18\x02 \x01(\x11\" \n\x1ePBMsgGuildCancelDismissRequest\"3\n\x1fPBMsgGuildCancelDismissResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"H\n\x0fPBCampUnionData\x12\x0f\n\x07\x63\x61mp_id\x18\x01 \x03(\x11\x12\x12\n\nbegin_time\x18\x02 \x01(\x11\x12\x10\n\x08\x65nd_time\x18\x03 \x01(\x11\"[\n\rPBPBCampUnion\x12$\n\nunion_data\x18\x01 \x03(\x0b\x32\x10.PBCampUnionData\x12\x12\n\nbegin_time\x18\x02 \x01(\x11\x12\x10\n\x08\x65nd_time\x18\x03 \x01(\x11\"7\n\x11PBCampUnionNotice\x12\"\n\nunion_data\x18\x01 \x01(\x0b\x32\x0e.PBPBCampUnion\"G\n\x1dPBMsgGuildDayRewardInfoNotice\x12&\n\tgetreward\x18\x01 \x01(\x0e\x32\x13.EGetGuildDayReward\"\x1f\n\x1dPBMsgGetGuildDayRewardRequest\"2\n\x1ePBMsgGetGuildDayRewardResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"?\n\x12PBStoreMessageParm\x12\x10\n\x08msg_time\x18\x01 \x01(\x04\x12\x17\n\x04parm\x18\x02 \x01(\x0b\x32\t.PBDynStr\"\x8c\x01\n\x10PBGuildStoreInfo\x12\x10\n\x08inv_type\x18\x01 \x01(\x11\x12 \n\tslot_info\x18\x02 \x03(\x0b\x32\r.PBMsgInvSlot\x12\x1f\n\x08inv_grid\x18\x03 \x01(\x0b\x32\r.PBMsgInvGrid\x12#\n\x06notice\x18\x04 \x03(\x0b\x32\x13.PBStoreMessageParm\"8\n\x15PBMsgGuildStoreNotice\x12\x1f\n\x04info\x18\x01 \x01(\x0b\x32\x11.PBGuildStoreInfo\"=\n\x15PBMsgAddMessageNotice\x12$\n\x07message\x18\x01 \x01(\x0b\x32\x13.PBStoreMessageParm\")\n\x0cPBGrantGoods\x12\x0c\n\x04slot\x18\x01 \x01(\r\x12\x0b\n\x03num\x18\x02 \x01(\r\"g\n PBMsgGuildStoreGrantGoodsRequest\x12\x1c\n\x05props\x18\x01 \x03(\x0b\x32\r.PBGrantGoods\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x14\n\x0coper_role_id\x18\x03 \x01(\r\"5\n!PBMsgGuildStoreGrantGoodsResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"\\\n\x1ePBMsgGuildStoreExtenBagRequest\x12\x10\n\x08inv_type\x18\x01 \x01(\x11\x12\x12\n\nsolt_index\x18\x02 \x01(\r\x12\x14\n\x0coper_role_id\x18\x03 \x01(\r\"i\n\x1fPBMsgGuildStoreExtenBagResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1f\n\x08\x62\x61g_grid\x18\x02 \x01(\x0b\x32\r.PBMsgInvGrid\x12\x13\n\x0bguild_money\x18\x03 \x01(\x11\":\n\x0cPBGuildManor\x12\x16\n\x0e\x64ungeon_entity\x18\x01 \x01(\x04\x12\x12\n\nopen_count\x18\x02 \x01(\x11\"\x1a\n\x18PBEnterGuildManorRequest\"-\n\x19PBEnterGuildManorResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"\x19\n\x17PBQuitGuildManorRequest\",\n\x18PBQuitGuildManorResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"\x18\n\x16PBOpenGuildFireRequest\"+\n\x17PBOpenGuildFireResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\")\n\x16PBOGuildFireTimeNotice\x12\x0f\n\x07re_time\x18\x01 \x01(\x11\"\x17\n\x15PBOpenGuildFireNotice\"M\n\x19PBWildBossDamageGuildInfo\x12\x0c\n\x04rank\x18\x01 \x01(\x11\x12\x12\n\nguild_name\x18\x02 \x01(\t\x12\x0e\n\x06\x64\x61mage\x18\x03 \x01(\x11\"|\n\x17PBMsgWildBossRankNotice\x12-\n\trank_info\x18\x01 \x03(\x0b\x32\x1a.PBWildBossDamageGuildInfo\x12\x32\n\x0emy_damage_info\x18\x02 \x01(\x0b\x32\x1a.PBWildBossDamageGuildInfo*A\n\x12PBEGuildPayoffType\x12\x12\n\x0e\x65Guild_Average\x10\x01\x12\x17\n\x13\x65Guild_Contribution\x10\x02*^\n\x11PBEGuildExpOrigin\x12\x15\n\x11\x65GuildExp_Mission\x10\x01\x12\x18\n\x14\x65GuildExp_DonateBlue\x10\x02\x12\x18\n\x14\x65GuildExp_DonateItem\x10\x03*\x84\x01\n\x15PBEGuildDismissReason\x12\x16\n\x12\x65GuildDismiss_None\x10\x00\x12\x19\n\x15\x65GuildDismiss_Request\x10\x01\x12\x1c\n\x18\x65GuildDismiss_BackSalary\x10\x02\x12\x1a\n\x16\x65GuildDismiss_Election\x10\x03*i\n\x16PBEGuildJointLimitType\x12\x16\n\teGJT_None\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01\x12\x10\n\x0c\x65GJLT_Forbid\x10\x00\x12\x15\n\x11\x65GJLT_Restriction\x10\x01\x12\x0e\n\neGJLT_Open\x10\x02*X\n\x12PBEGuildDirectJoin\x12\r\n\teGDJ_None\x10\x00\x12\x0f\n\x0b\x65GDJ_Direct\x10\x01\x12\x0c\n\x08\x65GDJ_VIP\x10\x02\x12\x14\n\x10\x65GDJ_BattleScore\x10\x03*\x8e\x01\n\x12PBEGuildMemberPost\x12\x0f\n\x0b\x65GMP_Leader\x10\x00\x12\x13\n\x0f\x65GMP_ViceLeader\x10\x01\x12\x0f\n\x0b\x65GMP_Normal\x10\x02\x12\x0e\n\neGMP_Cream\x10\x03\x12\x0e\n\neGMP_Elder\x10\x04\x12\x10\n\x0c\x65GMP_Protect\x10\x05\x12\x0f\n\x0b\x65GMP_flower\x10\x64*\xe3\x01\n\x17PBEGuildDailyRecordType\x12\x10\n\x0c\x65GDRT_Create\x10\x00\x12\x0e\n\neGDRT_Join\x10\x01\x12\x0f\n\x0b\x65GDRT_Leave\x10\x02\x12\x11\n\reGDRT_Kickout\x10\x03\x12\x11\n\reGDRT_Levelup\x10\x04\x12\x10\n\x0c\x65GDRT_Donate\x10\x05\x12\x16\n\x12\x65GDRT_ChangeLeader\x10\x06\x12\x11\n\reGDRT_Consume\x10\x07\x12\x18\n\x14\x65GDRT_PutItemToStore\x10\x08\x12\x18\n\x14\x65GDRT_GiveItemToChar\x10\t*\xbb\x01\n\x17PBEGuildingBuildingType\x12\x17\n\x13\x65GuildBuilding_None\x10\x00\x12\x1d\n\x19\x65GuildBuilding_SkillTower\x10\x01\x12\x18\n\x14\x65GuildBuilding_Bless\x10\x02\x12\x1b\n\x17\x65GuildBuilding_Drunkery\x10\x03\x12\x19\n\x15\x65GuildBuilding_Repair\x10\x04\x12\x16\n\x12\x65GuildBuilding_Dye\x10\x05*T\n\x12PBEGuildBossStatus\x12\x13\n\x0f\x65GuildBoss_None\x10\x00\x12\x13\n\x0f\x65GuildBoss_Open\x10\x01\x12\x14\n\x10\x65GuildBoss_Close\x10\x02*B\n\x12PBEGuildDonateType\x12\x15\n\x11\x65GuildDonate_Blue\x10\x01\x12\x15\n\x11\x65GuildDonate_Item\x10\x02*\xcb\x01\n\x11PBEDrunkeryStatus\x12\x12\n\x0e\x45\x44runkery_None\x10\x00\x12\x12\n\x0e\x45\x44runkery_Full\x10\x01\x12\x14\n\x10\x45\x44runkery_Normal\x10\x02\x12\x13\n\x0f\x45\x44runkery_Empty\x10\x03\x12\x15\n\x11\x45\x44runkery_Banquet\x10\x04\x12\x13\n\x0f\x45\x44runkery_Leave\x10\x05\x12\x1a\n\x16\x45\x44runkery_WineTypeFull\x10\x06\x12\x1b\n\x17\x45\x44runkery_WineTypeEmpty\x10\x07*r\n\x15PBCampUnionUpdateType\x12\x15\n\x11\x65\x43\x61mpUnion_Create\x10\x01\x12\x16\n\x12\x65\x43\x61mpUnion_Destroy\x10\x02\x12\x13\n\x0f\x65\x43\x61mpUnion_Sync\x10\x03\x12\x15\n\x11\x65\x43\x61mpUnion_Notice\x10\x04*U\n\x12\x45GetGuildDayReward\x12 \n\x1c\x45GetGuildDayReward_Un_Pickup\x10\x00\x12\x1d\n\x19\x45GetGuildDayReward_Pickup\x10\x01*?\n\x12PBEGuildFireStatus\x12\x13\n\x0f\x65GuildFire_Open\x10\x01\x12\x14\n\x10\x65GuildFire_Close\x10\x00')
 
 _PBEGUILDPAYOFFTYPE = descriptor.EnumDescriptor(
   name='PBEGuildPayoffType',
@@ -35,8 +35,8 @@ _PBEGUILDPAYOFFTYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=10579,
-  serialized_end=10644,
+  serialized_start=10861,
+  serialized_end=10926,
 )
 
 
@@ -61,8 +61,8 @@ _PBEGUILDEXPORIGIN = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=10646,
-  serialized_end=10740,
+  serialized_start=10928,
+  serialized_end=11022,
 )
 
 
@@ -91,8 +91,8 @@ _PBEGUILDDISMISSREASON = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=10743,
-  serialized_end=10875,
+  serialized_start=11025,
+  serialized_end=11157,
 )
 
 
@@ -121,8 +121,8 @@ _PBEGUILDJOINTLIMITTYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=10877,
-  serialized_end=10982,
+  serialized_start=11159,
+  serialized_end=11264,
 )
 
 
@@ -151,8 +151,8 @@ _PBEGUILDDIRECTJOIN = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=10984,
-  serialized_end=11072,
+  serialized_start=11266,
+  serialized_end=11354,
 )
 
 
@@ -193,8 +193,8 @@ _PBEGUILDMEMBERPOST = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=11075,
-  serialized_end=11217,
+  serialized_start=11357,
+  serialized_end=11499,
 )
 
 
@@ -247,8 +247,8 @@ _PBEGUILDDAILYRECORDTYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=11220,
-  serialized_end=11447,
+  serialized_start=11502,
+  serialized_end=11729,
 )
 
 
@@ -285,8 +285,8 @@ _PBEGUILDINGBUILDINGTYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=11450,
-  serialized_end=11637,
+  serialized_start=11732,
+  serialized_end=11919,
 )
 
 
@@ -311,8 +311,8 @@ _PBEGUILDBOSSSTATUS = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=11639,
-  serialized_end=11723,
+  serialized_start=11921,
+  serialized_end=12005,
 )
 
 
@@ -333,8 +333,8 @@ _PBEGUILDDONATETYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=11725,
-  serialized_end=11791,
+  serialized_start=12007,
+  serialized_end=12073,
 )
 
 
@@ -379,8 +379,8 @@ _PBEDRUNKERYSTATUS = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=11794,
-  serialized_end=11997,
+  serialized_start=12076,
+  serialized_end=12279,
 )
 
 
@@ -409,8 +409,8 @@ _PBCAMPUNIONUPDATETYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=11999,
-  serialized_end=12113,
+  serialized_start=12281,
+  serialized_end=12395,
 )
 
 
@@ -431,8 +431,8 @@ _EGETGUILDDAYREWARD = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=12115,
-  serialized_end=12200,
+  serialized_start=12397,
+  serialized_end=12482,
 )
 
 
@@ -453,8 +453,8 @@ _PBEGUILDFIRESTATUS = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=12202,
-  serialized_end=12265,
+  serialized_start=12484,
+  serialized_end=12547,
 )
 
 
@@ -844,6 +844,27 @@ _PBGUILDDETAIL = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='maxdmg_reward_cnt', full_name='PBGuildDetail.maxdmg_reward_cnt', index=13,
+      number=16, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='lasthit_reward_cnt', full_name='PBGuildDetail.lasthit_reward_cnt', index=14,
+      number=17, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='sum_liveness', full_name='PBGuildDetail.sum_liveness', index=15,
+      number=18, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -854,7 +875,7 @@ _PBGUILDDETAIL = descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=885,
-  serialized_end=1238,
+  serialized_end=1315,
 )
 
 
@@ -895,8 +916,8 @@ _PBCHARGUILDSTATE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1240,
-  serialized_end=1338,
+  serialized_start=1317,
+  serialized_end=1415,
 )
 
 
@@ -1098,8 +1119,8 @@ _PBGUILDMEMBER = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1341,
-  serialized_end=1933,
+  serialized_start=1418,
+  serialized_end=2010,
 )
 
 
@@ -1126,8 +1147,8 @@ _PBSIGNMEMBER = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1935,
-  serialized_end=1965,
+  serialized_start=2012,
+  serialized_end=2042,
 )
 
 
@@ -1217,8 +1238,8 @@ _PBGUILDAPPLICANT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1968,
-  serialized_end=2166,
+  serialized_start=2045,
+  serialized_end=2243,
 )
 
 
@@ -1315,8 +1336,8 @@ _PBGUILDDAILYRECORD = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2169,
-  serialized_end=2398,
+  serialized_start=2246,
+  serialized_end=2475,
 )
 
 
@@ -1343,8 +1364,8 @@ _PBGUILDDAILYRECORDMORE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2400,
-  serialized_end=2462,
+  serialized_start=2477,
+  serialized_end=2539,
 )
 
 
@@ -1420,8 +1441,8 @@ _PBGUILDBUILDING = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2465,
-  serialized_end=2714,
+  serialized_start=2542,
+  serialized_end=2791,
 )
 
 
@@ -1455,8 +1476,8 @@ _PBBUILDING = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2716,
-  serialized_end=2783,
+  serialized_start=2793,
+  serialized_end=2860,
 )
 
 
@@ -1497,8 +1518,8 @@ _PBSKILLSTUDY = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2785,
-  serialized_end=2850,
+  serialized_start=2862,
+  serialized_end=2927,
 )
 
 
@@ -1539,8 +1560,8 @@ _PBWINE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2852,
-  serialized_end=2914,
+  serialized_start=2929,
+  serialized_end=2991,
 )
 
 
@@ -1567,8 +1588,8 @@ _PBGUILDBOSS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2916,
-  serialized_end=2961,
+  serialized_start=2993,
+  serialized_end=3038,
 )
 
 
@@ -1637,8 +1658,8 @@ _PBGUILDBOSSINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2964,
-  serialized_end=3154,
+  serialized_start=3041,
+  serialized_end=3231,
 )
 
 
@@ -1686,8 +1707,8 @@ _PBGUILDBATTLE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3156,
-  serialized_end=3261,
+  serialized_start=3233,
+  serialized_end=3338,
 )
 
 
@@ -1721,8 +1742,8 @@ _PBGUILDCREATEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3263,
-  serialized_end=3358,
+  serialized_start=3340,
+  serialized_end=3435,
 )
 
 
@@ -1749,8 +1770,8 @@ _PBGUILDCREATERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3360,
-  serialized_end=3420,
+  serialized_start=3437,
+  serialized_end=3497,
 )
 
 
@@ -1791,8 +1812,8 @@ _PBGUILDIDINFORM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3422,
-  serialized_end=3514,
+  serialized_start=3499,
+  serialized_end=3591,
 )
 
 
@@ -1819,8 +1840,8 @@ _PBGUILDAPPLYJOINREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3516,
-  serialized_end=3559,
+  serialized_start=3593,
+  serialized_end=3636,
 )
 
 
@@ -1840,8 +1861,8 @@ _PBGUILDQUICKJOINREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3561,
-  serialized_end=3586,
+  serialized_start=3638,
+  serialized_end=3663,
 )
 
 
@@ -1861,8 +1882,8 @@ _PBGUILDMEMBERLISTREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3588,
-  serialized_end=3614,
+  serialized_start=3665,
+  serialized_end=3691,
 )
 
 
@@ -1882,8 +1903,8 @@ _PBGUILDLEVELUPREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3616,
-  serialized_end=3639,
+  serialized_start=3693,
+  serialized_end=3716,
 )
 
 
@@ -1903,8 +1924,8 @@ _PBGUILDQUITREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3641,
-  serialized_end=3661,
+  serialized_start=3718,
+  serialized_end=3738,
 )
 
 
@@ -1931,8 +1952,8 @@ _PBGUILDCANCELAPPLYREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3663,
-  serialized_end=3708,
+  serialized_start=3740,
+  serialized_end=3785,
 )
 
 
@@ -1966,8 +1987,8 @@ _PBGUILDAPPLYCONFIRMREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3710,
-  serialized_end=3787,
+  serialized_start=3787,
+  serialized_end=3864,
 )
 
 
@@ -2001,8 +2022,8 @@ _PBGUILDAPPLYCONFIRMRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3789,
-  serialized_end=3897,
+  serialized_start=3866,
+  serialized_end=3974,
 )
 
 
@@ -2036,8 +2057,8 @@ _PBGUILDQUICKJOINRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3899,
-  serialized_end=3990,
+  serialized_start=3976,
+  serialized_end=4067,
 )
 
 
@@ -2064,8 +2085,8 @@ _PBGUILDKICKOUTREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3992,
-  serialized_end=4032,
+  serialized_start=4069,
+  serialized_end=4109,
 )
 
 
@@ -2099,8 +2120,8 @@ _PBGUILDKICKOUTRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4034,
-  serialized_end=4094,
+  serialized_start=4111,
+  serialized_end=4171,
 )
 
 
@@ -2127,8 +2148,8 @@ _PBGUILDDESTROYREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4096,
-  serialized_end=4137,
+  serialized_start=4173,
+  serialized_end=4214,
 )
 
 
@@ -2155,8 +2176,8 @@ _PBGUILDAPPLICANTSREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4139,
-  serialized_end=4183,
+  serialized_start=4216,
+  serialized_end=4260,
 )
 
 
@@ -2183,8 +2204,8 @@ _PBGUILDAPPLICANTSRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4185,
-  serialized_end=4251,
+  serialized_start=4262,
+  serialized_end=4328,
 )
 
 
@@ -2211,8 +2232,8 @@ _PBGUILDMODIFYREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4253,
-  serialized_end=4312,
+  serialized_start=4330,
+  serialized_end=4389,
 )
 
 
@@ -2239,8 +2260,8 @@ _PBGUILDMODIFYRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4314,
-  serialized_end=4374,
+  serialized_start=4391,
+  serialized_end=4451,
 )
 
 
@@ -2267,8 +2288,8 @@ _PBGUILDMEMBERMODIFYREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4376,
-  serialized_end=4442,
+  serialized_start=4453,
+  serialized_end=4519,
 )
 
 
@@ -2295,8 +2316,8 @@ _PBGUILDMEMBERMODIFYRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4444,
-  serialized_end=4511,
+  serialized_start=4521,
+  serialized_end=4588,
 )
 
 
@@ -2323,8 +2344,8 @@ _PBGUILDDETAILREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4513,
-  serialized_end=4553,
+  serialized_start=4590,
+  serialized_end=4630,
 )
 
 
@@ -2351,8 +2372,8 @@ _PBGUILDDETAILRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4555,
-  serialized_end=4615,
+  serialized_start=4632,
+  serialized_end=4692,
 )
 
 
@@ -2386,8 +2407,8 @@ _PBGUILDSEARCHREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4617,
-  serialized_end=4676,
+  serialized_start=4694,
+  serialized_end=4753,
 )
 
 
@@ -2428,8 +2449,8 @@ _PBGUILDSEARCHRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4678,
-  serialized_end=4804,
+  serialized_start=4755,
+  serialized_end=4881,
 )
 
 
@@ -2463,8 +2484,8 @@ _PBGUILDDONATEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4806,
-  serialized_end=4878,
+  serialized_start=4883,
+  serialized_end=4955,
 )
 
 
@@ -2512,8 +2533,8 @@ _PBGUILDDONATERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4881,
-  serialized_end=5029,
+  serialized_start=4958,
+  serialized_end=5106,
 )
 
 
@@ -2540,8 +2561,8 @@ _PBGUILDLEADERCHANGEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5031,
-  serialized_end=5082,
+  serialized_start=5108,
+  serialized_end=5159,
 )
 
 
@@ -2575,8 +2596,8 @@ _PBGUILDLEADERCHANGERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5084,
-  serialized_end=5182,
+  serialized_start=5161,
+  serialized_end=5259,
 )
 
 
@@ -2603,8 +2624,8 @@ _PBGUILDRECRUITADREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5184,
-  serialized_end=5230,
+  serialized_start=5261,
+  serialized_end=5307,
 )
 
 
@@ -2638,8 +2659,8 @@ _PBGUILDMEMBERPOSTCHANGEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5232,
-  serialized_end=5323,
+  serialized_start=5309,
+  serialized_end=5400,
 )
 
 
@@ -2666,8 +2687,8 @@ _PBGUILDMEMBERPOSTCHANGERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5325,
-  serialized_end=5396,
+  serialized_start=5402,
+  serialized_end=5473,
 )
 
 
@@ -2694,8 +2715,8 @@ _PBGUILDLEVELUPRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5398,
-  serialized_end=5459,
+  serialized_start=5475,
+  serialized_end=5536,
 )
 
 
@@ -2722,8 +2743,8 @@ _PBGUILDMEMBERLISTESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5461,
-  serialized_end=5525,
+  serialized_start=5538,
+  serialized_end=5602,
 )
 
 
@@ -2743,8 +2764,8 @@ _PBGUILDPAYOFFREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5527,
-  serialized_end=5549,
+  serialized_start=5604,
+  serialized_end=5626,
 )
 
 
@@ -2785,8 +2806,8 @@ _PBGUILDPAYOFFRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5551,
-  serialized_end=5634,
+  serialized_start=5628,
+  serialized_end=5711,
 )
 
 
@@ -2813,8 +2834,8 @@ _PBGUILDPAYOFFCONFIRMREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5636,
-  serialized_end=5707,
+  serialized_start=5713,
+  serialized_end=5784,
 )
 
 
@@ -2841,8 +2862,8 @@ _PBGUILDPAYOFFCONFIRMRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5709,
-  serialized_end=5757,
+  serialized_start=5786,
+  serialized_end=5834,
 )
 
 
@@ -2876,8 +2897,8 @@ _PBGUILDRECORDREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5759,
-  serialized_end=5851,
+  serialized_start=5836,
+  serialized_end=5928,
 )
 
 
@@ -2911,8 +2932,8 @@ _PBGUILDRECORDRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5853,
-  serialized_end=5945,
+  serialized_start=5930,
+  serialized_end=6022,
 )
 
 
@@ -2939,8 +2960,8 @@ _PBBUILDINGLVUPREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5947,
-  serialized_end=6019,
+  serialized_start=6024,
+  serialized_end=6096,
 )
 
 
@@ -3002,8 +3023,8 @@ _PBBUILDINGLVUPRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6022,
-  serialized_end=6185,
+  serialized_start=6099,
+  serialized_end=6262,
 )
 
 
@@ -3030,8 +3051,8 @@ _PBSKILLSTUDYREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6187,
-  serialized_end=6227,
+  serialized_start=6264,
+  serialized_end=6304,
 )
 
 
@@ -3072,8 +3093,8 @@ _PBSKILLSTUDYRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6229,
-  serialized_end=6332,
+  serialized_start=6306,
+  serialized_end=6409,
 )
 
 
@@ -3093,8 +3114,8 @@ _PBSKILLSTUDYINFOREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6334,
-  serialized_end=6359,
+  serialized_start=6411,
+  serialized_end=6436,
 )
 
 
@@ -3128,8 +3149,8 @@ _PBSKILLSTUDYINFORESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6361,
-  serialized_end=6447,
+  serialized_start=6438,
+  serialized_end=6524,
 )
 
 
@@ -3156,8 +3177,8 @@ _PBSKILLCDTIMEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6449,
-  serialized_end=6490,
+  serialized_start=6526,
+  serialized_end=6567,
 )
 
 
@@ -3191,8 +3212,8 @@ _PBSKILLCDTIMERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6492,
-  serialized_end=6575,
+  serialized_start=6569,
+  serialized_end=6652,
 )
 
 
@@ -3219,8 +3240,8 @@ _PBSKILLLEARNREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6577,
-  serialized_end=6617,
+  serialized_start=6654,
+  serialized_end=6694,
 )
 
 
@@ -3268,8 +3289,8 @@ _PBSKILLLEARNRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6620,
-  serialized_end=6750,
+  serialized_start=6697,
+  serialized_end=6827,
 )
 
 
@@ -3289,8 +3310,8 @@ _PBGUILDSKILLINFOREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6752,
-  serialized_end=6777,
+  serialized_start=6829,
+  serialized_end=6854,
 )
 
 
@@ -3331,8 +3352,8 @@ _PBGUILDSKILLINFORESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6779,
-  serialized_end=6896,
+  serialized_start=6856,
+  serialized_end=6973,
 )
 
 
@@ -3366,8 +3387,8 @@ _PBGBLESSAWARD = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6898,
-  serialized_end=6948,
+  serialized_start=6975,
+  serialized_end=7025,
 )
 
 
@@ -3387,8 +3408,8 @@ _PBGUILDBLESSREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6950,
-  serialized_end=6971,
+  serialized_start=7027,
+  serialized_end=7048,
 )
 
 
@@ -3429,8 +3450,8 @@ _PBGUILDBLESSRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6973,
-  serialized_end=7062,
+  serialized_start=7050,
+  serialized_end=7139,
 )
 
 
@@ -3464,8 +3485,8 @@ _PBENTERDRUNKERYNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7064,
-  serialized_end=7146,
+  serialized_start=7141,
+  serialized_end=7223,
 )
 
 
@@ -3485,8 +3506,8 @@ _PBLEAVEDRUNKERYNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7148,
-  serialized_end=7171,
+  serialized_start=7225,
+  serialized_end=7248,
 )
 
 
@@ -3520,8 +3541,8 @@ _PBDRINKREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7173,
-  serialized_end=7225,
+  serialized_start=7250,
+  serialized_end=7302,
 )
 
 
@@ -3576,8 +3597,8 @@ _PBDRINKERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7228,
-  serialized_end=7369,
+  serialized_start=7305,
+  serialized_end=7446,
 )
 
 
@@ -3597,8 +3618,8 @@ _PBOPENBANQUETREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7371,
-  serialized_end=7393,
+  serialized_start=7448,
+  serialized_end=7470,
 )
 
 
@@ -3639,8 +3660,8 @@ _PBOPENBANQUETRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7395,
-  serialized_end=7475,
+  serialized_start=7472,
+  serialized_end=7552,
 )
 
 
@@ -3667,8 +3688,8 @@ _PBMAKEWINEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7477,
-  serialized_end=7510,
+  serialized_start=7554,
+  serialized_end=7587,
 )
 
 
@@ -3716,8 +3737,8 @@ _PBMAKEWINERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7512,
-  serialized_end=7617,
+  serialized_start=7589,
+  serialized_end=7694,
 )
 
 
@@ -3737,8 +3758,8 @@ _PBMAKEWINERESETCDREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7619,
-  serialized_end=7645,
+  serialized_start=7696,
+  serialized_end=7722,
 )
 
 
@@ -3772,8 +3793,8 @@ _PBMAKEWINERESETCDRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7647,
-  serialized_end=7711,
+  serialized_start=7724,
+  serialized_end=7788,
 )
 
 
@@ -3793,8 +3814,8 @@ _PBBEKICKOUTEDNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7713,
-  serialized_end=7734,
+  serialized_start=7790,
+  serialized_end=7811,
 )
 
 
@@ -3821,8 +3842,8 @@ _PBGUILDINVITEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7736,
-  serialized_end=7775,
+  serialized_start=7813,
+  serialized_end=7852,
 )
 
 
@@ -3849,8 +3870,8 @@ _PBGUILDINVITERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7777,
-  serialized_end=7818,
+  serialized_start=7854,
+  serialized_end=7895,
 )
 
 
@@ -3891,8 +3912,8 @@ _PBGUILDINVITENOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7820,
-  serialized_end=7900,
+  serialized_start=7897,
+  serialized_end=7977,
 )
 
 
@@ -3919,8 +3940,8 @@ _PBOPENGUILDBOSSREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7902,
-  serialized_end=7946,
+  serialized_start=7979,
+  serialized_end=8023,
 )
 
 
@@ -3954,8 +3975,8 @@ _PBOPENGUILDBOSSRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7948,
-  serialized_end=8028,
+  serialized_start=8025,
+  serialized_end=8105,
 )
 
 
@@ -3982,8 +4003,8 @@ _PBENTERGUILDBOSSREPORT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8030,
-  serialized_end=8074,
+  serialized_start=8107,
+  serialized_end=8151,
 )
 
 
@@ -4010,8 +4031,8 @@ _PBOPENGUILDBOSSNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8076,
-  serialized_end=8136,
+  serialized_start=8153,
+  serialized_end=8213,
 )
 
 
@@ -4059,8 +4080,8 @@ _PBGUILDBOSSENDNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8138,
-  serialized_end=8237,
+  serialized_start=8215,
+  serialized_end=8314,
 )
 
 
@@ -4101,8 +4122,8 @@ _PBGUILDBOSSDAMAGENOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8239,
-  serialized_end=8341,
+  serialized_start=8316,
+  serialized_end=8418,
 )
 
 
@@ -4143,8 +4164,8 @@ _PBGUILDDAMAGE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8343,
-  serialized_end=8409,
+  serialized_start=8420,
+  serialized_end=8486,
 )
 
 
@@ -4164,8 +4185,8 @@ _PBMSGGUILDBOSSSTATUSREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8411,
-  serialized_end=8440,
+  serialized_start=8488,
+  serialized_end=8517,
 )
 
 
@@ -4192,8 +4213,8 @@ _PBMSGGUILDBOSSSTATUSRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8442,
-  serialized_end=8493,
+  serialized_start=8519,
+  serialized_end=8570,
 )
 
 
@@ -4213,8 +4234,8 @@ _PBMSGAPPLYJOINCONFIRMNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8495,
-  serialized_end=8524,
+  serialized_start=8572,
+  serialized_end=8601,
 )
 
 
@@ -4234,8 +4255,8 @@ _PBMSGGUILDMEMBERKILLREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8526,
-  serialized_end=8555,
+  serialized_start=8603,
+  serialized_end=8632,
 )
 
 
@@ -4304,8 +4325,8 @@ _PBMSGGUILDMEMBERKILLRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8558,
-  serialized_end=8706,
+  serialized_start=8635,
+  serialized_end=8783,
 )
 
 
@@ -4332,8 +4353,8 @@ _PBMSGGUILDMEMBERHELPTELPORTREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8708,
-  serialized_end=8761,
+  serialized_start=8785,
+  serialized_end=8838,
 )
 
 
@@ -4409,8 +4430,8 @@ _PBMSGGUILDMEMBERHELPTELPORTRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8764,
-  serialized_end=8936,
+  serialized_start=8841,
+  serialized_end=9013,
 )
 
 
@@ -4430,8 +4451,8 @@ _PBMSGGUILDDISMISSREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8938,
-  serialized_end=8964,
+  serialized_start=9015,
+  serialized_end=9041,
 )
 
 
@@ -4465,8 +4486,8 @@ _PBMSGGUILDDISMISSRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8966,
-  serialized_end=9028,
+  serialized_start=9043,
+  serialized_end=9105,
 )
 
 
@@ -4486,8 +4507,8 @@ _PBMSGGUILDCANCELDISMISSREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9030,
-  serialized_end=9062,
+  serialized_start=9107,
+  serialized_end=9139,
 )
 
 
@@ -4514,8 +4535,8 @@ _PBMSGGUILDCANCELDISMISSRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9064,
-  serialized_end=9115,
+  serialized_start=9141,
+  serialized_end=9192,
 )
 
 
@@ -4556,8 +4577,8 @@ _PBCAMPUNIONDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9117,
-  serialized_end=9189,
+  serialized_start=9194,
+  serialized_end=9266,
 )
 
 
@@ -4598,8 +4619,8 @@ _PBPBCAMPUNION = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9191,
-  serialized_end=9282,
+  serialized_start=9268,
+  serialized_end=9359,
 )
 
 
@@ -4626,8 +4647,8 @@ _PBCAMPUNIONNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9284,
-  serialized_end=9339,
+  serialized_start=9361,
+  serialized_end=9416,
 )
 
 
@@ -4654,8 +4675,8 @@ _PBMSGGUILDDAYREWARDINFONOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9341,
-  serialized_end=9412,
+  serialized_start=9418,
+  serialized_end=9489,
 )
 
 
@@ -4675,8 +4696,8 @@ _PBMSGGETGUILDDAYREWARDREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9414,
-  serialized_end=9445,
+  serialized_start=9491,
+  serialized_end=9522,
 )
 
 
@@ -4703,8 +4724,8 @@ _PBMSGGETGUILDDAYREWARDRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9447,
-  serialized_end=9497,
+  serialized_start=9524,
+  serialized_end=9574,
 )
 
 
@@ -4738,8 +4759,8 @@ _PBSTOREMESSAGEPARM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9499,
-  serialized_end=9562,
+  serialized_start=9576,
+  serialized_end=9639,
 )
 
 
@@ -4787,8 +4808,8 @@ _PBGUILDSTOREINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9565,
-  serialized_end=9705,
+  serialized_start=9642,
+  serialized_end=9782,
 )
 
 
@@ -4815,8 +4836,8 @@ _PBMSGGUILDSTORENOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9707,
-  serialized_end=9763,
+  serialized_start=9784,
+  serialized_end=9840,
 )
 
 
@@ -4843,8 +4864,8 @@ _PBMSGADDMESSAGENOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9765,
-  serialized_end=9826,
+  serialized_start=9842,
+  serialized_end=9903,
 )
 
 
@@ -4878,8 +4899,8 @@ _PBGRANTGOODS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9828,
-  serialized_end=9869,
+  serialized_start=9905,
+  serialized_end=9946,
 )
 
 
@@ -4920,8 +4941,8 @@ _PBMSGGUILDSTOREGRANTGOODSREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9871,
-  serialized_end=9974,
+  serialized_start=9948,
+  serialized_end=10051,
 )
 
 
@@ -4948,8 +4969,8 @@ _PBMSGGUILDSTOREGRANTGOODSRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9976,
-  serialized_end=10029,
+  serialized_start=10053,
+  serialized_end=10106,
 )
 
 
@@ -4990,8 +5011,8 @@ _PBMSGGUILDSTOREEXTENBAGREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10031,
-  serialized_end=10123,
+  serialized_start=10108,
+  serialized_end=10200,
 )
 
 
@@ -5032,8 +5053,8 @@ _PBMSGGUILDSTOREEXTENBAGRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10125,
-  serialized_end=10230,
+  serialized_start=10202,
+  serialized_end=10307,
 )
 
 
@@ -5067,8 +5088,8 @@ _PBGUILDMANOR = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10232,
-  serialized_end=10290,
+  serialized_start=10309,
+  serialized_end=10367,
 )
 
 
@@ -5088,8 +5109,8 @@ _PBENTERGUILDMANORREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10292,
-  serialized_end=10318,
+  serialized_start=10369,
+  serialized_end=10395,
 )
 
 
@@ -5116,8 +5137,8 @@ _PBENTERGUILDMANORRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10320,
-  serialized_end=10365,
+  serialized_start=10397,
+  serialized_end=10442,
 )
 
 
@@ -5137,8 +5158,8 @@ _PBQUITGUILDMANORREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10367,
-  serialized_end=10392,
+  serialized_start=10444,
+  serialized_end=10469,
 )
 
 
@@ -5165,8 +5186,8 @@ _PBQUITGUILDMANORRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10394,
-  serialized_end=10438,
+  serialized_start=10471,
+  serialized_end=10515,
 )
 
 
@@ -5186,8 +5207,8 @@ _PBOPENGUILDFIREREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10440,
-  serialized_end=10464,
+  serialized_start=10517,
+  serialized_end=10541,
 )
 
 
@@ -5214,8 +5235,8 @@ _PBOPENGUILDFIRERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10466,
-  serialized_end=10509,
+  serialized_start=10543,
+  serialized_end=10586,
 )
 
 
@@ -5242,8 +5263,8 @@ _PBOGUILDFIRETIMENOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10511,
-  serialized_end=10552,
+  serialized_start=10588,
+  serialized_end=10629,
 )
 
 
@@ -5263,8 +5284,85 @@ _PBOPENGUILDFIRENOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10554,
-  serialized_end=10577,
+  serialized_start=10631,
+  serialized_end=10654,
+)
+
+
+_PBWILDBOSSDAMAGEGUILDINFO = descriptor.Descriptor(
+  name='PBWildBossDamageGuildInfo',
+  full_name='PBWildBossDamageGuildInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='rank', full_name='PBWildBossDamageGuildInfo.rank', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='guild_name', full_name='PBWildBossDamageGuildInfo.guild_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='damage', full_name='PBWildBossDamageGuildInfo.damage', index=2,
+      number=3, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=10656,
+  serialized_end=10733,
+)
+
+
+_PBMSGWILDBOSSRANKNOTICE = descriptor.Descriptor(
+  name='PBMsgWildBossRankNotice',
+  full_name='PBMsgWildBossRankNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='rank_info', full_name='PBMsgWildBossRankNotice.rank_info', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='my_damage_info', full_name='PBMsgWildBossRankNotice.my_damage_info', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=10735,
+  serialized_end=10859,
 )
 
 _PBGUILDSUMMARY.fields_by_name['limit_type'].enum_type = _PBEGUILDJOINTLIMITTYPE
@@ -5347,6 +5445,8 @@ _PBMSGGUILDSTORENOTICE.fields_by_name['info'].message_type = _PBGUILDSTOREINFO
 _PBMSGADDMESSAGENOTICE.fields_by_name['message'].message_type = _PBSTOREMESSAGEPARM
 _PBMSGGUILDSTOREGRANTGOODSREQUEST.fields_by_name['props'].message_type = _PBGRANTGOODS
 _PBMSGGUILDSTOREEXTENBAGRESPONSE.fields_by_name['bag_grid'].message_type = msg_item_pb2._PBMSGINVGRID
+_PBMSGWILDBOSSRANKNOTICE.fields_by_name['rank_info'].message_type = _PBWILDBOSSDAMAGEGUILDINFO
+_PBMSGWILDBOSSRANKNOTICE.fields_by_name['my_damage_info'].message_type = _PBWILDBOSSDAMAGEGUILDINFO
 DESCRIPTOR.message_types_by_name['PBGuildSummary'] = _PBGUILDSUMMARY
 DESCRIPTOR.message_types_by_name['PBGuildDetail'] = _PBGUILDDETAIL
 DESCRIPTOR.message_types_by_name['PBCharGuildState'] = _PBCHARGUILDSTATE
@@ -5473,6 +5573,8 @@ DESCRIPTOR.message_types_by_name['PBOpenGuildFireRequest'] = _PBOPENGUILDFIREREQ
 DESCRIPTOR.message_types_by_name['PBOpenGuildFireResponse'] = _PBOPENGUILDFIRERESPONSE
 DESCRIPTOR.message_types_by_name['PBOGuildFireTimeNotice'] = _PBOGUILDFIRETIMENOTICE
 DESCRIPTOR.message_types_by_name['PBOpenGuildFireNotice'] = _PBOPENGUILDFIRENOTICE
+DESCRIPTOR.message_types_by_name['PBWildBossDamageGuildInfo'] = _PBWILDBOSSDAMAGEGUILDINFO
+DESCRIPTOR.message_types_by_name['PBMsgWildBossRankNotice'] = _PBMSGWILDBOSSRANKNOTICE
 
 class PBGuildSummary(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
@@ -6229,5 +6331,17 @@ class PBOpenGuildFireNotice(message.Message):
   DESCRIPTOR = _PBOPENGUILDFIRENOTICE
   
   # @@protoc_insertion_point(class_scope:PBOpenGuildFireNotice)
+
+class PBWildBossDamageGuildInfo(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBWILDBOSSDAMAGEGUILDINFO
+  
+  # @@protoc_insertion_point(class_scope:PBWildBossDamageGuildInfo)
+
+class PBMsgWildBossRankNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGWILDBOSSRANKNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgWildBossRankNotice)
 
 # @@protoc_insertion_point(module_scope)

@@ -126,6 +126,7 @@ message PBMsgUpdateCharMoneyNotice
 	optional	sint32  exploit			= 14;	// 功勋
 	optional	sint32  jifen			= 15;	// 积分
 	optional    sint32  pet_pvp_jifen   = 16;   // 宠物pvp积分
+	optional    sint32  spanteam_score   = 17;   // 跨服组队积分
 };
 
 message PBMsgPathFindRequest
@@ -262,6 +263,8 @@ message PBMsgRankCharNode
 	optional string pet_sheet		= 13;	// 宠物 sheet
 
 	optional string head_icon		= 14;	// 头像icon
+
+	optional string magicpet_sheet  = 15;   // 灵宝 sheet 
 };
 
 message PBMsgRankGuildNode
@@ -522,6 +525,7 @@ message PBMsgCanTPToSpanWildRequest
 {
 	optional sint32						num				= 1;		// 过去的人数
 	optional uint32						sessionid		= 2;	
+	optional uint32                     role_id         = 3;    // 角色Id
 };
 
 message PBMsgCanTPToSpanWildResponse

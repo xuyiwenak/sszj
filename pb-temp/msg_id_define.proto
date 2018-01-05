@@ -54,6 +54,9 @@ enum EGleoModuleIndex
 	MOD_GuildRedBag			= 0x0032; //帮派红包
 	MOD_Xinfa				= 0x0033; //心法;
 	MOD_Xiuzhen                     = 0x0034; //修真
+	MOD_SpanTeam			= 0x0035; //跨服组队战;
+	MOD_MagicPet			= 0x0036; //灵宝;
+	MOD_DpsnMaze			= 0x0037; //跨服迷宫;
 	MOD_DimensionExampler	= 0x4000;//以0x4开头的都是gateway模块;或许需要把定义拆到不同的文件中去，客户端生成的那份是不需要服务器之间的通信消息的;
 	
 	MOD_BigWorldBattle		= 0x5000;//跨服战模块;以0x5开头的模块都是全局模块;
@@ -227,6 +230,9 @@ enum EGleoMessageId
 	MSG_AllItemEnduranceXianfu_Request	= 0x00030048;	// 耐力帮派全部修理请求
 	MSG_AllItemEnduranceXianfu_Response	= 0x00031048;	// 耐力仙府全部修理响应
 
+	MSG_RankMagicPetInfo_Request			= 0x00030049;	// 请求排行榜灵宝信息
+	MSG_RankMagicPetInfo_Response			= 0x00031049;	// 请求排行榜灵宝信息
+
 	//Quest
 	MSG_NPCPos_Response			= 0x00040000;//发送所有的npc的位置信息
 	MSG_QuestAccept_Request		= 0x00040001;//发送接受任务;
@@ -317,6 +323,7 @@ enum EGleoMessageId
 	//MSG_SinglePvPTimes_Request		= 0x00070009;	// 单人竞技场次数查询;
 	//MSG_SinglePvPTimes_Response		= 0x0007000A;	// 单人竞技场次数回应;
 	
+	MSG_BtlTeamMatchRes				= 0x0007000A;//战场组队匹配结果;
 	MSG_BtlMatchRes					= 0x0007000B;//战场匹配结果;
 	MSG_BtlQuery_Request			= 0x0007000C;//请求报名人数
 
@@ -609,6 +616,8 @@ enum EGleoMessageId
     MSG_SPMonorBattle_RaceThree_Fight_Member_Notice = 0x000C10AA;  // 上阵成员通知
     MSG_SPMonorBattle_RaceThree_Round_Notice  = 0x000C10AB;      // 轮次通知
 
+	MSG_Guild_WildBossDmgRank_Notice          = 0x000C10AC;     // 野外boss帮派伤害排行榜
+
 	//================================================================================
 	//邮件
 	MSG_MailBox_Response			= 0x000D0001;//同步客户端邮箱状态;
@@ -880,6 +889,12 @@ enum EGleoMessageId
 	MSG_Open_GuildFire_Response   = 0x000FC062; 
 	MSG_GuildFire_Time_Notice	  = 0x000F1063; //篝火时间
 	MSG_Open_GuildFire_Notice	  = 0x000F1064; //篝火开启弹窗通知
+
+	// 帮派活跃度
+	MSG_Guild_Liveness_Info_Request = 0x000F0065;  // 请求帮派活跃度信息
+	MSG_Guild_Liveness_Info_Response = 0x000F1065;  // 帮派活跃度回复
+	MSG_Guild_Liveness_Get_Reward_Request = 0x000F0066; // 帮派活跃度领奖请求
+	MSG_Guild_Liveness_Get_Reward_Response = 0x000F1066; // 帮派活跃度领奖响应
 
 	//================================================================================
 	// common消息;
@@ -1296,6 +1311,10 @@ enum EGleoMessageId
 	MSG_TransportApplyResonse				= 0x001A102D;	// 将队员申请的消息转到队长服进行处理
 
 	MSG_GetLeaderPosNotice					= 0x001A102F;	// 获取在异阵营的队长的信息
+
+	MSG_CheckTeamMatchRequest				= 0x001A0030;	// 去队员的阵营验证是否能进入副本
+	MSG_CheckTeamMatchResponse				= 0x001A1030;	// 去队员的阵营验证是否能进入副本
+	MSG_TeamPVPMatchStatusNotice			= 0x001A1031;	// 通知匹配状态;
 	
 	// 匹配功能
 	MSG_MatchList_Request					= 0x001B0001; //请求-正在匹配的列表
@@ -1344,6 +1363,12 @@ enum EGleoMessageId
 	MSG_DuelState_Notice					= 0x001B1018;	//通知egs该玩家的决斗状态改变
 	MSG_DuelMail_Notice						= 0x001B1019;	//通知egs发邮件
 	MSG_DuelSettleUp_Notice					= 0x001B1020;	//结算通知
+
+	//仙之斗组队匹配;
+	MSG_PVPTeamMatch_Request				= 0x001B0021;	//请求组队匹配;
+	MSG_PVPTeamMatch_Response				= 0x001B1021;	//组队匹配回复;
+	MSG_PVPTeamMatch_Cancel_Request			= 0x001B0022;	//取消组队匹配;
+	MSG_PVPTeamMatch_Cancel_Response		= 0x001B1022;	//去小组对回复;
 
 	// 好友功能
 	MSG_SearchFriend_Request				= 0x001C0001;	// 请求 个人查找
@@ -1560,6 +1585,15 @@ enum EGleoMessageId
 	MSG_OnlineGifts_Status_Notice  = 0x0027100D;   // 在线礼包领取状态通知
 	MSG_OnlineGifts_GetReward_Request = 0x0027000E; // 登录礼包领取请求
 	MSG_OnlineGifts_GetReward_Response = 0x0027100E;// 登录礼包领取响应
+	
+	// 贵宾玩家绑定
+	MSG_BindVip_Status_Notice  = 0x00271020;   // 在线礼包领取状态通知
+	MSG_BindVip_Ignore_Report =  0x00270021;   //忽略回归充值消息上报
+
+	// 摇钱树
+	MSG_Rollingtree_Request =  0x00270031;  // 摇钱树请求
+	MSG_Rollingtree_Notice  =  0x00271032;  // 摇钱树回复 
+	
 
 	// 幸运值模块相关的消息
 	MSG_GetLuckInfoRequest              =  0x00280001;   // 获取幸运信息请求
@@ -1629,6 +1663,109 @@ enum EGleoMessageId
 	MSG_Xiuzhen_Upgrade_Request			= 0x00340002;   // 修真升级请求
 	MSG_Xiuzhen_Upgrade_Response		= 0x00341002;   // 修真升级回复
 	MSG_Xiuzhen_Info_Notice		        = 0x00341003;   // 
+	// 跨服组队战;
+	MSG_SpanTeam_CreateCrop_Request		= 0x00350001;	// 创建新战队;
+	MSG_SpanTeam_CreateCrop_Response	= 0x00351001;	// 创建战队回复;
+	MSG_SpanTeam_CropsList_Request		= 0x00350002;	// 战队列表请求;
+	MSG_SpanTeam_CropsList_Response		= 0x00351002;	// 战队列表回复;
+	MSG_SpanTeam_ApplyJoinCrop_Request	= 0x00350003;	// 申请加入战队请求;
+	MSG_SpanTeam_ApplyJoinCrop_Response	= 0x00351003;	// 申请加入战队回复;
+	MSG_SpanTeam_JoinCrops_Notice		= 0x00351004;	// 加入战队给队长推送;
+	MSG_SpanTeam_JoinCrops_Request		= 0x00350005;	// 批准入队请求;
+	MSG_SpanTeam_JoinCrops_Response		= 0x00351005;	// 批准入队回复;
+	MSG_SpanTeam_CropInfo_Request		= 0x00350006;	// 战队信息请求;
+	MSG_SpanTeam_CropInfo_Response		= 0x00351006;	// 战队信息回复;
+	MSG_SpanTeam_InviteFriend_Request	= 0x00350007;	// 邀请好友请求;
+	MSG_SpanTeam_InviteFriend_Response	= 0x00351007;	// 邀请好友回复;
+	MSG_SpanTeam_CropInvite_Notice		= 0x00351008;	// 邀请好友推送;
+	MSG_SpanTeam_InviteAnswer_Request	= 0x00350009;	// 邀请好友答复请求;
+	MSG_SpanTeam_InviteAnswer_Response	= 0x00351009;	// 邀请好友答复回复;
+	MSG_SpanTeam_InviteExamine_Notice	= 0x00351010;	// 邀请好友推送给队长审核;
+	MSG_SpanTeam_LeaderExamine_Request	= 0x00350011;	// 队长审核请求;
+	MSG_SpanTeam_LeaderExamine_Response	= 0x00351011;	// 队长审核回复;
+	MSG_SpanTeam_ChangeLeader_Request	= 0x00350012;	// 移交队长请求;
+	MSG_SpanTeam_ChangeLeader_Response	= 0x00351012;	// 移交队长回复;
+	MSG_SpanTeam_KickOut_Request		= 0x00350013;	// 踢人请求;
+	MSG_SpanTeam_KickOut_Response		= 0x00351013;	// 踢人回复;
+	MSG_SpanTeam_DisbandedCrops_Request = 0x00350014;	// 解散战队;
+	MSG_SpanTeam_DisbandedCrops_Response= 0x00351014;	// 解散战队;
+	MSG_SpanTeam_ExitCrop_Request		= 0x00350015;	// 退出战队;
+	MSG_SpanTeam_ExitCrop_Response		= 0x00351015;	// 退出战队;
+	MSG_SpanTeam_MyCropInfo_Request		= 0x00350016;	// 请求自己战队信息;
+	MSG_SpanTeam_MyCropInfo_Response	= 0x00351016;	// 请求自己战队信息;
+	MSG_SpanTeam_MyCropInfo_Notice		= 0x00351017;	// 自己战队信息推送;
+	MSG_SpanTeam_Battle_End_Notice		= 0x00351018;	// 常规赛结算;
+	MSG_SpanTeam_FinalBattle_End_Notice	= 0x00351019;	// 决赛结算;
+	MSG_SpanTeam_Battle_Notice			= 0x00351020;	// 常规赛战场信息;
+	MSG_SpanTeam_FinalBattle_Notice		= 0x00351021;	// 决赛战场信息;
+	MSG_SpanTeam_CropRankList_Request	= 0x00350022;	// 战队排行信息请求;
+	MSG_SpanTeam_CropRankList_Response	= 0x00351022;	// 战队排行信息回复;
+	MSG_SpanTeam_FinalMatch_Request		= 0x00350023;	// 决赛进副本请求;
+	MSG_SpanTeam_FinalMatch_Response	= 0x00351023;	// 决赛进副本回复;
+	MSG_SpanTeam_FinalWatch_Request		= 0x00350024;	// 决赛观战请求;
+	MSG_SpanTeam_FinalWatch_Response	= 0x00351024;	// 决赛观战回复;
+
+	MSG_SpanTeam_Battle_Status_Notice	= 0x00351025;	// 跨服组队战状态推送;
+	MSG_SpanTeam_FightTable_Info_Request = 0x00350026;	// 决赛对战表请求;
+	MSG_SpanTeam_FightTable_Info_Response	= 0x00351026;	// 决赛对战表回复;
+	MSG_SpanTeam_Start_Matching_Request   = 0x00350027;  // 开始匹配请求
+	MSG_SpanTeam_Start_Matching_Response  = 0x00351027;  // 开始匹配响应
+	MSG_SpanTeam_GetReady_Matching_Request = 0x00350028; // 准备匹配请求
+    MSG_SpanTeam_GetReady_Matching_Response = 0x00351028; // 准备匹配响应
+    MSG_SpanTeam_Ready_Status_Notice       = 0x00351029;  // 成员准备状态通知
+
+	MSG_SpanTeam_GetLivenessReward_Request	= 0x00350030;  // 获取活跃度奖励请求;
+	MSG_SpanTeam_GetLivenessReward_Response = 0x00351030;  // 获取活跃度奖励回复;
+	MSG_SpanTeam_Liveness_Request			= 0x00350031;  // 活跃度信息请求;
+	MSG_SpanTeam_Liveness_Response			= 0x00351031;  // 活跃度信息回复;
+	MSG_SpanTeam_CropsRank_Request          = 0x00350032;  // 战队排行榜请求
+	MSG_SpanTeam_CropsRank_Response         = 0x00351032;  // 战队排行榜响应
+
+	MSG_SpanTeam_Member_Ready_Notice		= 0x00351033;  // 成员准备通知;
+	MSG_SpanTeam_CancelMatchingRequest      = 0x00350034;  // 取消匹配请求
+	MSG_SpanTeam_CancelMatchingResponse     = 0x00351034;  // 取消匹配响应
+	MSG_SpanTeam_CancelReadyRequest         = 0x00350035;  // 取消准备请求
+	MSG_SpanTeam_CancelReadyResponse        = 0x00351035;  // 取消准备响应
+
+	//灵宝;
+	MSG_MagicPet_Info_Request				= 0x00360001;	// 灵宝信息请求;
+	MSG_MagicPet_Info_Response				= 0x00361001;	// 灵宝信息回复;
+	MSG_MagicPet_Active_Request				= 0x00360002;	// 灵宝激活请求;
+	MSG_MagicPet_Active_Response			= 0x00361002;	// 灵宝激活回复;
+	MSG_MagicPet_Upgrade_Request			= 0x00360003;	// 灵宝升级请求;
+	MSG_MagicPet_Upgrade_Response			= 0x00361003;	// 灵宝升级回复;
+	MSG_MagicPet_StarUp_Request				= 0x00360004;	// 灵宝升星请求;
+	MSG_MagicPet_StarUp_Response			= 0x00361004;	// 灵宝升星回复;
+	MSG_MagicPet_ProTrain_Request			= 0x00360005;	// 灵宝属性培养请求;
+	MSG_MagicPet_ProTrain_Response			= 0x00361005;	// 灵宝属性培养回复;
+	MSG_MagicPet_SkillSlotTrain_Request		= 0x00360006;	// 灵宝技能槽培养请求;
+	MSG_MagicPet_SkillSlotTrain_Response	= 0x00361006;	// 灵宝技能槽培养回复;
+	MSG_MagicPet_Battle_Request				= 0x00360007;	// 灵宝出战请求;
+	MSG_MagicPet_Battle_Response			= 0x00361007;	// 灵宝出战回复;
+	MSG_MagicPet_Rest_Request				= 0x00360008;	// 灵宝休息请求;
+	MSG_MagicPet_Rest_Response				= 0x00361008;	// 灵宝休息回复;
+	MSG_MagicPet_JoinTeam_Request			= 0x00360009;	// 灵宝上阵请求;
+	MSG_MagicPet_JoinTeam_Response			= 0x00361009;	// 灵宝上阵回复;
+	MSG_MagicPet_ExitTeam_Request			= 0x00360010;	// 灵宝下阵请求;
+	MSG_MagicPet_ExitTeam_Response			= 0x00361010;	// 灵宝下阵回复;
+	MSG_MagicPet_TeamSlot_Change_Notice		= 0x00361011;	// 灵宝阵容变化通知;
+	MSG_MagicPet_SlotEquiment_Request		= 0x00360012;	// 技能槽装备请求;
+	MSG_MagicPet_SlotEquiment_Response		= 0x00361012;	// 技能槽装备回复;
+	MSG_MagicPet_SlotRemoveEquiment_Request	= 0x00360013;	// 技能槽解除装备请求;
+	MSG_MagicPet_SlotRemoveEquiment_Response= 0x00361013;	// 技能槽解除装备回复;
+	MSG_MagicPet_TeamSlot_Request			= 0x00360014;	// 灵宝阵法请求;
+	//
+	MSG_MagicPet_Apply_Request				= 0x00360015;	// 灵宝天赋特效应用请求;
+	MSG_MagicPet_Apply_Response				= 0x00361015;	// 灵宝天赋特效应用回复
+	MSG_MagicPet_UpOrBreak_Request			= 0x00360016;	// 灵宝天赋经验升级突破请求
+	MSG_MagicPet_UpOrBreak_Response			= 0x00361016;	// 灵宝天赋经验升级突破回复
+
+	//跨服迷宫;
+	MSG_SpanMaze_SignUp_Request				= 0x00370001;	//报名请求;
+	MSG_SpanMaze_SignUp_Response			= 0x00371001;	//报名回复;
+	MSG_SpanMaze_Enter_Request				= 0x00370002;	//进入请求;
+	MSG_SpanMaze_Enter_Response				= 0x00371002;	//进入回复;
+	MSG_SpanMaze_EnterDungeon_Notice		= 0x00371003;	//进入副本通知;
 
 	//================================================================================
 	// Common
@@ -1647,6 +1784,8 @@ enum EGleoMessageId
 	MSG_BattleCancel_Request			= 0x50000002;//取消匹配;
 	MSG_BattleQuery_Request				= 0x50000003;//查询请求
 	MSG_BigGetMatchInfo_Request			= 0x50000004;// 获取匹配信息（五鬼乱阵，封魔战场，仙之斗）
+	MSG_BattleTeamMatchRequest			= 0x50000005;//请求组队匹配;
+	MSG_BattleTeamCancel_Request		= 0x50000006;//请求取消组队匹配;
 
 	//向客户端同步的消息;
 	MSG_Battle_Inform					= 0x70000001;//通知客户端战场状况;

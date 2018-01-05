@@ -21,11 +21,14 @@ import msg_base_pb2
 import msg_match_pb2
 import msg_spanbattle_pb2
 import msg_pet_battle_pb2
+import msg_spanteambattle_pb2
+import msg_spanmaze_pb2
+import msg_magic_pet_pb2
 
 DESCRIPTOR = descriptor.FileDescriptor(
   name='msg_service.proto',
   package='',
-  serialized_pb='\n\x11msg_service.proto\x1a\x0fmsg_login.proto\x1a\x10msg_common.proto\x1a\x13msg_role_base.proto\x1a\x0emsg_team.proto\x1a\x0emsg_user.proto\x1a\x0emsg_item.proto\x1a\x10msg_friend.proto\x1a\x0fmsg_guild.proto\x1a\x12msg_relation.proto\x1a\rmsg_pet.proto\x1a\x0emsg_base.proto\x1a\x0fmsg_match.proto\x1a\x14msg_spanbattle.proto\x1a\x14msg_pet_battle.proto\"-\n\x1aPBEgsToGateRegisterRequest\x12\x0f\n\x07\x63\x61mp_id\x18\x01 \x01(\x11\"/\n\x1bPBEgsToGateRegisterResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"\x9f\x01\n\x15PBMsgCrossStateReport\x12\x12\n\nrequest_id\x18\x01 \x01(\r\x12\"\n\x0b\x63ross_state\x18\x02 \x01(\x0e\x32\r.ECrossStatus\x12\x0f\n\x07role_id\x18\x03 \x01(\r\x12\x17\n\x0f\x66rom_gateway_id\x18\x04 \x01(\r\x12$\n\x05param\x18\x05 \x01(\x0b\x32\x15.PBBianJingTPResponse\"Y\n\x1dPBMsgCrossStateReportCallBack\x12\x12\n\nrequest_id\x18\x01 \x01(\r\x12$\n\x05param\x18\x02 \x01(\x0b\x32\x15.PBBianJingTPResponse\",\n\x16PBMsgGatewayDownNotice\x12\x12\n\ngateway_id\x18\x01 \x01(\r\"*\n\x17PBMsgKickRoleListNotice\x12\x0f\n\x07role_id\x18\x01 \x03(\r\"\xdb\x01\n\x13PBMsgStartDBRequest\x12\x1b\n\x07op_type\x18\x01 \x01(\x0e\x32\n.EDBOpType\x12\x16\n\x0esrc_gateway_id\x18\x02 \x01(\x11\x12\x15\n\rsrc_camp_type\x18\x03 \x01(\x11\x12\x16\n\x0e\x64st_gateway_id\x18\x04 \x01(\x11\x12\x1d\n\x08key_type\x18\x05 \x01(\x0e\x32\x0b.EDBKeyType\x12\x0b\n\x03key\x18\x06 \x01(\x04\x12\x0f\n\x07pb_name\x18\x07 \x01(\t\x12\x0f\n\x07pb_data\x18\x08 \x01(\t\x12\x12\n\nrequest_id\x18\t \x01(\r\"r\n\x14PBMsgStartDBResponse\x12\x14\n\x0cresult_state\x18\x01 \x01(\x11\x12\x12\n\nrequest_id\x18\x02 \x01(\r\x12\x1b\n\x07op_type\x18\x03 \x01(\x0e\x32\n.EDBOpType\x12\x13\n\x0bresult_data\x18\x04 \x01(\t\":\n\x13PBConsignTipRequire\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x12\n\nconsign_id\x18\x02 \x01(\x04\"`\n\x14PBConsignTipResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x12\n\nconsign_id\x18\x03 \x01(\x04\x12\x11\n\titem_info\x18\x04 \x01(\t\"\x83\x01\n\x16PBConsignListExRequire\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x10\n\x08key_list\x18\x03 \x03(\r\x12\x13\n\x0bstart_index\x18\x04 \x01(\x11\x12\x0e\n\x06number\x18\x05 \x01(\x11\x12\x14\n\x0c\x61\x63\x63ount_type\x18\x06 \x01(\x11\"\x96\x01\n\x17PBConsignListExResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x13\n\x0bstart_index\x18\x04 \x01(\x11\x12\x0e\n\x06number\x18\x05 \x01(\x11\x12\x11\n\tinfo_list\x18\x06 \x03(\t\x12\x13\n\x0btotal_count\x18\x07 \x01(\x11\"@\n\x19PBConsignGetRewardRequire\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x12\n\nconsign_id\x18\x02 \x01(\x04\"f\n\x1aPBConsignGetRewardResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x12\n\nconsign_id\x18\x03 \x01(\x04\x12\x11\n\tinfo_list\x18\x04 \x03(\t\")\n\x16PBConsignMyListRequire\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\"O\n\x17PBConsignMyListResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x11\n\tinfo_list\x18\x03 \x03(\t\"\'\n\x14PBConsignListRequire\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\"M\n\x15PBConsignListResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x11\n\tinfo_list\x18\x03 \x03(\t\"\xaf\x01\n\x12PBConsignUpRequire\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x0f\n\x07user_id\x18\x02 \x01(\r\x12\x0f\n\x07role_id\x18\x03 \x01(\r\x12\x0f\n\x07game_id\x18\x04 \x01(\r\x12\x0e\n\x06pbItem\x18\x05 \x01(\t\x12\r\n\x05price\x18\x06 \x01(\x11\x12\x12\n\nprice_type\x18\x07 \x01(\r\x12\x0c\n\x04\x63ost\x18\x08 \x01(\x11\x12\x14\n\x0c\x61\x63\x63ount_type\x18\t \x01(\x11\"h\n\x13PBConsignUpResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x0f\n\x07item_id\x18\x03 \x01(\x04\x12\x0c\n\x04\x63ost\x18\x04 \x01(\x11\x12\x0f\n\x07my_list\x18\x05 \x03(\t\";\n\x14PBConsignDownRequire\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x12\n\nconsign_id\x18\x02 \x01(\x04\"\\\n\x15PBConsignDownResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x0f\n\x07pb_item\x18\x03 \x01(\t\x12\x0f\n\x07my_list\x18\x04 \x03(\t\"\x18\n\x16PBConsignGetRwdRequire\"\x19\n\x17PBConsignGetRwdResponse\"\x84\x01\n\x13PBConsignBuyRequire\x12\x0f\n\x07game_id\x18\x01 \x01(\r\x12\r\n\x05gw_id\x18\x02 \x01(\r\x12\x0f\n\x07user_id\x18\x03 \x01(\r\x12\x0f\n\x07role_id\x18\x04 \x01(\r\x12\x12\n\nconsign_id\x18\x05 \x01(\x04\x12\x17\n\x0f\x62\x61lance_account\x18\x06 \x01(\x11\"\xea\x01\n\x14PBConsignBuyResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07game_id\x18\x02 \x01(\r\x12\r\n\x05gw_id\x18\x03 \x01(\r\x12\x0f\n\x07user_id\x18\x04 \x01(\r\x12\x0f\n\x07role_id\x18\x05 \x01(\r\x12\x12\n\nconsign_id\x18\x06 \x01(\x04\x12\x0b\n\x03tax\x18\x07 \x01(\x11\x12\x0f\n\x07pb_item\x18\x08 \x01(\t\x12\x13\n\x0bsrc_balance\x18\t \x01(\x11\x12\x13\n\x0b\x64st_balance\x18\n \x01(\x11\x12\x13\n\x0b\x64st_role_id\x18\x0b \x01(\r\x12\r\n\x05price\x18\x0c \x01(\x11\"\x83\x01\n\x0ePBRoleEnterEGS\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x1d\n\x04sync\x18\x02 \x01(\x0b\x32\x0f.PBRoleInfoSync\x12\x17\n\x0frole_gateway_id\x18\x03 \x01(\r\x12(\n\x0c\x63onnect_type\x18\x04 \x01(\x0e\x32\x12.ELoginConnectType\"\xff\x02\n\x0ePBRoleInfoSync\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0f\n\x07\x63\x61mp_id\x18\x04 \x01(\r\x12\x0c\n\x04role\x18\x05 \x01(\r\x12\x0e\n\x06gender\x18\x06 \x01(\r\x12\r\n\x05level\x18\x07 \x01(\x11\x12\x0b\n\x03\x65xp\x18\x08 \x01(\x12\x12\x14\n\x0c\x62\x61ttle_score\x18\t \x01(\x11\x12\x11\n\tpvp_score\x18\n \x01(\x11\x12\r\n\x05kills\x18\x0b \x01(\x11\x12\x11\n\tvip_level\x18\x0c \x01(\x11\x12\x0b\n\x03vpa\x18\r \x01(\x04\x12\x0b\n\x03vpb\x18\x0e \x01(\x04\x12\x0b\n\x03vpc\x18\x0f \x01(\x04\x12\x10\n\x08sheet_id\x18\x10 \x01(\r\x12\x10\n\x08guild_id\x18\x13 \x01(\x04\x12\x12\n\nguild_name\x18\x14 \x01(\t\x12\x11\n\thead_icon\x18\x15 \x01(\t\x12\x12\n\ndungeon_id\x18\x16 \x01(\x04\x12\x0e\n\x06map_id\x18\x17 \x01(\x04\x12\x11\n\tplayer_id\x18\x18 \x01(\x04\"!\n\x0ePBRoleLeaveEGS\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"\x1f\n\x0cPBRoleDelete\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"\x1f\n\x0cPBGMKickRole\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"\x1e\n\x0bPBGMAnnouce\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\"\x1f\n\x0cPBGMMoveRole\x12\x0f\n\x07user_id\x18\x01 \x01(\r\">\n\nPBGMShutUp\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63hannel\x18\x02 \x01(\r\x12\x0e\n\x06period\x18\x03 \x01(\r\"#\n\x10PBGMCancelShutUp\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"F\n\x11PBGMTransferGroup\x12\r\n\x05iu_id\x18\x01 \x01(\x04\x12\x11\n\tfrom_role\x18\x02 \x01(\x04\x12\x0f\n\x07to_role\x18\x03 \x01(\x04\" \n\x0fPBGMDeleteGroup\x12\r\n\x05iu_id\x18\x01 \x01(\x04\"E\n\x0ePBGMRenameRole\x12\x0f\n\x07user_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x11\n\trole_name\x18\x03 \x01(\t\"d\n\x0ePBGMRecoverPet\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0e\n\x06pet_id\x18\x02 \x01(\x04\x12\x10\n\x08pet_info\x18\x03 \x01(\t\x12\x11\n\trequestId\x18\x04 \x01(\r\x12\x0c\n\x04type\x18\x05 \x01(\r\"r\n\x0cPBGMSendMail\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0c\n\x04\x62ody\x18\x03 \x01(\t\x12\x11\n\titem_info\x18\x04 \x01(\t\x12\x0c\n\x04type\x18\x05 \x01(\r\x12\x13\n\x0bsender_name\x18\x06 \x01(\t\"\xe7\x01\n\rPBGMSendMails\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12\x11\n\titem_info\x18\x03 \x01(\t\x12\x18\n\x10min_total_charge\x18\x04 \x01(\r\x12\x18\n\x10max_total_charge\x18\x05 \x01(\r\x12\x16\n\x0emin_role_level\x18\x06 \x01(\r\x12\x16\n\x0emax_role_level\x18\x07 \x01(\r\x12\x11\n\tsend_time\x18\x08 \x01(\r\x12\x0f\n\x07mail_id\x18\t \x01(\x04\x12\r\n\x05param\x18\n \x03(\t\x12\x0f\n\x07\x63\x61mp_id\x18\x0b \x01(\r\"D\n\x0fPBGmRecoverRole\x12\x0f\n\x07user_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x0f\n\x07game_id\x18\x03 \x01(\r\"C\n\x0ePBGmDeleteRole\x12\x0f\n\x07user_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x0f\n\x07game_id\x18\x03 \x01(\r\"g\n\rPBGMClearItem\x12\x0f\n\x07user_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x0f\n\x07item_id\x18\x03 \x01(\t\x12\x10\n\x08item_num\x18\x04 \x01(\r\x12\x11\n\trequestId\x18\x05 \x01(\r\"\x1e\n\x0bPBGMCommand\x12\x0f\n\x07\x63ommand\x18\x01 \x01(\t\"C\n\x0cPBGMRoleItem\x12\x0f\n\x07item_id\x18\x01 \x01(\t\x12\x10\n\x08sheet_id\x18\x02 \x01(\t\x12\x10\n\x08quantity\x18\x03 \x01(\r\"7\n\x10PBGMRoleItemList\x12#\n\x0citems_tosave\x18\x01 \x03(\x0b\x32\r.PBGMRoleItem\"L\n\x13PBGMRecoverRoleItem\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\titem_info\x18\x02 \x01(\t\x12\x11\n\trequestId\x18\x03 \x01(\r\"4\n\x0ePBGMEGSRespone\x12\x11\n\trequestId\x18\x01 \x01(\r\x12\x0f\n\x07retcode\x18\x02 \x01(\r\"*\n\x0cPBGMRolePair\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"2\n\x0ePBGMRoleDetail\x12 \n\trole_pair\x18\x01 \x03(\x0b\x32\r.PBGMRolePair\"\xfe\x01\n\x13PBBianJingTPRequire\x12\x12\n\nrequest_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x13\n\x0bsrc_camp_id\x18\x03 \x01(\r\x12\x13\n\x0b\x64st_camp_id\x18\x04 \x01(\r\x12\x1d\n\x08position\x18\x05 \x01(\x0b\x32\x0b.PBPosition\x12\x1c\n\x05token\x18\x06 \x01(\x0b\x32\r.PBLoginToken\x12\x16\n\x0eserver_list_ip\x18\x07 \x01(\r\x12\x13\n\x0b\x63lient_type\x18\x08 \x01(\r\x12\x16\n\x0esrc_gateway_id\x18\t \x01(\r\x12\x16\n\x0e\x64st_gateway_id\x18\n \x01(\r\"\xc4\x01\n\x14PBBianJingTPResponse\x12\x13\n\x0bsrc_camp_id\x18\x01 \x01(\r\x12\x12\n\nrequest_id\x18\x02 \x01(\r\x12\x12\n\nfs_address\x18\x03 \x01(\t\x12\x1c\n\x05token\x18\x04 \x01(\x0b\x32\r.PBLoginToken\x12\x16\n\x0esrc_gateway_id\x18\x05 \x01(\r\x12\x16\n\x0e\x64st_gateway_id\x18\x06 \x01(\r\x12\x0f\n\x07role_id\x18\x07 \x01(\r\x12\x10\n\x08ret_code\x18\x08 \x01(\x11\"%\n\x12PBBianJingTPCancel\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"y\n\x0fPBChatExRequire\x12\x11\n\tchat_type\x18\x01 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\x12\x0f\n\x07role_id\x18\x03 \x03(\r\x12\x10\n\x08guild_id\x18\x04 \x01(\x04\x12\x1f\n\x07\x63ontent\x18\x05 \x01(\x0b\x32\x0e.PBChatContent\"N\n\x11PBGatePrivateChat\x12\x18\n\x10receiver_role_id\x18\x01 \x01(\r\x12\x1f\n\x07\x63ontent\x18\x02 \x01(\x0b\x32\x0e.PBChatContent\"9\n\x12PBTeamBuildRequire\x12\x12\n\nsession_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\"K\n\x11PBTeamSystemBuild\x12\x12\n\nsession_id\x18\x01 \x01(\r\x12\x0f\n\x07team_id\x18\x02 \x01(\r\x12\x11\n\tmember_id\x18\x03 \x03(\r\"R\n\x19PBTeamSystemBuildResponse\x12\x12\n\nsession_id\x18\x01 \x01(\r\x12\x10\n\x08ret_code\x18\x02 \x01(\r\x12\x0f\n\x07team_id\x18\x03 \x01(\r\";\n\x13PBTeamBuildResponse\x12\x12\n\nsession_id\x18\x01 \x01(\r\x12\x10\n\x08ret_code\x18\x02 \x01(\r\"U\n\x0fPBTeamBuildSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x1b\n\x06leader\x18\x02 \x01(\x0b\x32\x0b.PBRoleBase\x12\x14\n\x0cisnot_notice\x18\x03 \x01(\x08\"\'\n\x14PBTeamDismissRequire\x12\x0f\n\x07role_id\x18\x01 \x01(\r\":\n\x11PBTeamDismissSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x14\n\x0cisnot_notice\x18\x02 \x01(\x08\"C\n\x19PBTeamChangeLeaderRequire\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x15\n\rnew_leader_id\x18\x02 \x01(\r\"V\n\x16PBTeamChangeLeaderSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x15\n\rnew_leader_id\x18\x02 \x01(\r\x12\x14\n\x0cisnot_notice\x18\x03 \x01(\x08\"%\n\x12PBTeamLeaveRequire\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"W\n\x13PBTeamAddMemberSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x19\n\x04role\x18\x02 \x01(\x0b\x32\x0b.PBRoleBase\x12\x14\n\x0cisnot_notice\x18\x03 \x01(\x08\"P\n\x16PBTeamRemoveMemberSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x14\n\x0cisnot_notice\x18\x03 \x01(\x08\"D\n\x16PBTeamAddApplicantSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x19\n\x04role\x18\x02 \x01(\x0b\x32\x0b.PBRoleBase\"B\n\x19PBTeamRemoveApplicantSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x14\n\x0c\x61pplicant_id\x18\x02 \x01(\r\"E\n\x12PBTeamRoleBaseSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x1e\n\trole_base\x18\x02 \x01(\x0b\x32\x0b.PBRoleBase\"K\n\x18PBTeamRoleEnterSceneSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x1e\n\trole_base\x18\x02 \x01(\x0b\x32\x0b.PBRoleBase\"K\n\x18PBTeamRoleLeaveSceneSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x1e\n\trole_base\x18\x02 \x01(\x0b\x32\x0b.PBRoleBase\"7\n\x11PBTeamKickRequire\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tmember_id\x18\x02 \x01(\r\"7\n\x13PBTeamInviteRequire\x12\x0f\n\x07inviter\x18\x01 \x01(\r\x12\x0f\n\x07invitee\x18\x02 \x01(\r\"w\n\x17PBTeamInviteExamRequire\x12\x11\n\tleader_id\x18\x01 \x01(\r\x12\x12\n\ninviter_id\x18\x02 \x01(\r\x12\x12\n\ninvitee_id\x18\x03 \x01(\r\x12!\n\x06\x61nswer\x18\x04 \x01(\x0e\x32\x11.PBTeamAnswerType\"[\n\x14PBTeamInviteResponse\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0f\n\x07team_id\x18\x02 \x01(\r\x12!\n\x06\x61nswer\x18\x03 \x01(\x0e\x32\x11.PBTeamAnswerType\"I\n\x12PBTeamApplyRequire\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\ttarget_id\x18\x02 \x01(\r\x12\x0f\n\x07team_id\x18\x03 \x01(\r\"d\n\x18PBTeamApplyAnswerRequire\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x14\n\x0c\x61pplicant_id\x18\x02 \x01(\r\x12!\n\x06\x61nswer\x18\x03 \x01(\x0e\x32\x11.PBTeamAnswerType\")\n\x16PBTeamLeaveTeamDungeon\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"@\n\x19PBTeamSessionLeaveRequire\x12\x12\n\nsession_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\"B\n\x1aPBTeamSessionLeaveResponse\x12\x12\n\nsession_id\x18\x01 \x01(\r\x12\x10\n\x08ret_code\x18\x02 \x01(\r\"Q\n\x15PBGateCharInfoRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\'\n\x07request\x18\x02 \x01(\x0b\x32\x16.PBMsgCharInfoResquest\"S\n\x16PBGateCharInfoResponse\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12(\n\x08response\x18\x02 \x01(\x0b\x32\x16.PBMsgCharInfoResponse\"\x8a\x01\n\x18PBSpanGetCharInfoRequest\x12\x11\n\tgatewayid\x18\x01 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x02 \x01(\r\x12\x0e\n\x06roleid\x18\x03 \x01(\r\x12\'\n\x07request\x18\x04 \x01(\x0b\x32\x16.PBMsgCharInfoResquest\x12\x12\n\nrouter_num\x18\x05 \x01(\r\"#\n\nPBTeamSync\x12\x15\n\x04team\x18\x01 \x03(\x0b\x32\x07.PBTeam\"i\n\x06PBTeam\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x11\n\tleader_id\x18\x02 \x01(\r\x12\x1b\n\x06member\x18\x03 \x03(\x0b\x32\x0b.PBRoleBase\x12\x1e\n\tapplicant\x18\x04 \x03(\x0b\x32\x0b.PBRoleBase\"V\n\x1dPBServerTeamSetPurposeRequest\x12\x11\n\tleader_id\x18\x01 \x01(\r\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\"Q\n\x1aPBServerPurposeTeamRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\"U\n\x1ePBServerFetchTargetTeamRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\"g\n\x1fPBServerFetchTargetTeamResponse\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\x12\x0f\n\x07role_id\x18\x04 \x01(\r\"{\n\x19PBTeamDungeonCheckRequest\x12\x12\n\nsession_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x0f\n\x07team_id\x18\x03 \x01(\r\x12\x10\n\x08sheet_id\x18\x04 \x01(\r\x12\x16\n\x0esource_camp_id\x18\x05 \x01(\r\"g\n\x1aPBTeamDungeonCheckResponse\x12\x12\n\nsession_id\x18\x01 \x01(\r\x12\x10\n\x08ret_code\x18\x02 \x01(\r\x12\x10\n\x08\x65rr_type\x18\x03 \x01(\r\x12\x11\n\terr_param\x18\x04 \x01(\x12\"F\n\x0fPBTeamMatchSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\"P\n\x19PBServerTeamSignupRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\"g\n PBServerMsgRedPacketShakeRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x0f\n\x07user_ip\x18\x03 \x01(\r\x12\x10\n\x08user_mac\x18\x04 \x01(\t\"w\n!PBServerMsgRedPacketShakeResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x14\n\x0cpoint_amount\x18\x02 \x01(\x11\x12\x14\n\x0cuser_balance\x18\x03 \x01(\x11\x12\x14\n\x0cpool_balance\x18\x04 \x01(\x11\"j\n#PBServerMsgRedPacketExchangeRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x0f\n\x07user_ip\x18\x03 \x01(\r\x12\x10\n\x08user_mac\x18\x04 \x01(\t\"q\n$PBServerMsgRedPacketExchangeResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\r\n\x05token\x18\x02 \x01(\t\x12\x12\n\ntoken_type\x18\x03 \x01(\x11\x12\x14\n\x0cpoint_amount\x18\x04 \x01(\x11\"K\n\'PBServerMsgRedPacketExchangeListRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\"\x7f\n\x1aPBServerWeiXinExchangeInfo\x12\r\n\x05token\x18\x01 \x01(\t\x12\x12\n\ntoken_type\x18\x02 \x01(\x11\x12\x11\n\tuse_state\x18\x03 \x01(\x11\x12\x14\n\x0cpoint_amount\x18\x04 \x01(\x11\x12\x15\n\rgenerate_time\x18\x05 \x01(\r\"w\n(PBServerMsgRedPacketExchangeListResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x39\n\x14weixin_exchange_info\x18\x02 \x03(\x0b\x32\x1b.PBServerWeiXinExchangeInfo\"D\n PBServerMsgRedPacketJifenRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\"K\n!PBServerMsgRedPacketJifenResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x14\n\x0cuser_balance\x18\x02 \x01(\x11\"6\n\x0fPBEnterRoleInfo\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x12\n\ngateway_id\x18\x02 \x01(\r\"\xb1\x01\n\x15PBCreateArenaResponse\x12#\n\trole_info\x18\x01 \x03(\x0b\x32\x10.PBEnterRoleInfo\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\x12\x10\n\x08sheet_id\x18\x03 \x01(\r\x12\x1d\n\x08position\x18\x04 \x01(\x0b\x32\x0b.PBPosition\x12\x11\n\tisspanpve\x18\x05 \x01(\x08\x12\x10\n\x08isrevive\x18\x06 \x01(\x08\x12\x0c\n\x04loop\x18\x07 \x01(\x08\"\xb1\x01\n\x13PBEnterArenaRequire\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\x12\x10\n\x08sheet_id\x18\x03 \x01(\r\x12\x1d\n\x08position\x18\x04 \x01(\x0b\x32\x0b.PBPosition\x12\x12\n\ngateway_id\x18\x05 \x01(\r\x12\x11\n\tisspanpve\x18\x06 \x01(\x08\x12\x10\n\x08isrevive\x18\x07 \x01(\x08\x12\x0e\n\x06router\x18\x08 \x01(\r\"k\n\x14PBGuildKillMapReport\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\x12\x1d\n\x08position\x18\x03 \x01(\x0b\x32\x0b.PBPosition\x12\x12\n\nins_number\x18\x04 \x01(\r\"Z\n\x15PBGuildKillMapRequest\x12\x15\n\rdeath_char_id\x18\x01 \x01(\x04\x12\x14\n\x0chelp_camp_id\x18\x02 \x01(\r\x12\x14\n\x0chelp_char_id\x18\x03 \x01(\x04\"\xa7\x01\n\x16PBGuildKillMapResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\r\x12\x14\n\x0chelp_char_id\x18\x02 \x01(\x04\x12\x15\n\rdeath_camp_id\x18\x03 \x01(\r\x12#\n\x0e\x64\x65\x61th_position\x18\x04 \x01(\x0b\x32\x0b.PBPosition\x12\x12\n\nins_number\x18\x05 \x01(\r\x12\x15\n\rdeath_char_id\x18\x06 \x01(\x04\"\x95\x01\n\x11PBGateItemRequest\x12\x15\n\rasker_role_id\x18\x01 \x01(\r\x12\x16\n\x0eshower_role_id\x18\x02 \x01(\r\x12\"\n\x07request\x18\x03 \x01(\x0b\x32\x11.PBMsgItemRequest\x12\x17\n\x0f\x61sker_gatewayid\x18\x04 \x01(\r\x12\x14\n\x0c\x61sker_campid\x18\x05 \x01(\r\"\x9c\x01\n\x12PBGateItemResponse\x12\x15\n\rasker_role_id\x18\x01 \x01(\r\x12\x16\n\x0eshower_role_id\x18\x02 \x01(\r\x12(\n\x08response\x18\x03 \x01(\x0b\x32\x16.PBMsgItemInfoResponse\x12\x17\n\x0f\x61sker_gatewayid\x18\x04 \x01(\r\x12\x14\n\x0c\x61sker_campid\x18\x05 \x01(\r\"C\n\x17PBPlayerIsOnlineRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x17\n\x0f\x63urrent_camp_id\x18\x02 \x01(\r\"\x83\x01\n\x18PBplayerIsOnlineResponse\x12\x11\n\tis_online\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x17\n\x0f\x63urrent_camp_id\x18\x03 \x01(\r\x12\x15\n\rstart_camp_id\x18\x04 \x01(\r\x12\x13\n\x0bplayer_name\x18\x05 \x01(\t\"\x93\x01\n\x18PBSendFlowerOfSenderInfo\x12\x16\n\x0esender_role_id\x18\x01 \x01(\r\x12\x16\n\x0esender_camp_id\x18\x02 \x01(\r\x12\x0c\n\x04slot\x18\x03 \x01(\r\x12\r\n\x05\x63ount\x18\x04 \x01(\x11\x12\x14\n\x0crecv_role_id\x18\x05 \x01(\r\x12\x14\n\x0crecv_camp_id\x18\x06 \x01(\r\"\x96\x01\n-PBplayerSendFlowerSearchRecvPlayerInfoRequest\x12\x35\n\x13online_request_info\x18\x01 \x01(\x0b\x32\x18.PBPlayerIsOnlineRequest\x12.\n\x0bsender_info\x18\x02 \x01(\x0b\x32\x19.PBSendFlowerOfSenderInfo\"\x99\x01\n.PBplayerSendFlowerSearchRecvPlayerInfoResponse\x12\x37\n\x14online_response_info\x18\x01 \x01(\x0b\x32\x19.PBplayerIsOnlineResponse\x12.\n\x0bsender_info\x18\x02 \x01(\x0b\x32\x19.PBSendFlowerOfSenderInfo\"\xeb\x01\n\x1ePBplayerSendFlowerToPlayerInfo\x12\x16\n\x0esender_role_id\x18\x01 \x01(\r\x12\x13\n\x0bsender_name\x18\x02 \x01(\t\x12\x1c\n\x14sender_start_camp_id\x18\x03 \x01(\r\x12\x14\n\x0crecv_role_id\x18\x04 \x01(\r\x12\x10\n\x08sheet_id\x18\x05 \x01(\r\x12\x11\n\tshow_name\x18\x06 \x01(\t\x12\r\n\x05\x63ount\x18\x07 \x01(\x11\x12\x19\n\x11\x66lower_item_class\x18\x08 \x01(\x11\x12\x19\n\x11s_charm_point_cnt\x18\t \x01(\x11\"f\n\x1ePBFriendServerAddFriendRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x64\x65st_char_id\x18\x02 \x01(\x04\x12\x19\n\x11src_justice_level\x18\x03 \x01(\x04\"^\n\x1fPBFriendServerAddFriendResponse\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x64\x65st_char_id\x18\x02 \x01(\x04\x12\x10\n\x08ret_code\x18\x03 \x01(\x11\"`\n!PBFriendServerAddFriendAckRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x64\x65st_char_id\x18\x02 \x01(\x04\x12\x10\n\x08is_agree\x18\x03 \x01(\x05\"Y\n\x19PBFriendServerLoginNotice\x12\x16\n\x0e\x66riend_char_id\x18\x02 \x01(\x04\x12$\n\tchar_base\x18\x03 \x01(\x0b\x32\x11.PBCharFriendBase\"W\n\x1cPBFriendServerDataSyncNotice\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12&\n\x0b\x66riend_data\x18\x02 \x01(\x0b\x32\x11.PBCharFriendData\"N\n!PBFriendServerRemoveFriendRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x64\x65st_char_id\x18\x02 \x01(\x04\"s\n\x1fPBFriendServerGiveEnergyRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x64\x65st_char_id\x18\x02 \x01(\x04\x12\x0e\n\x06is_all\x18\x03 \x01(\x04\x12\x15\n\rsrc_vip_times\x18\x04 \x01(\x04\"\xab\x01\n!PBFriendServerGatherEnergyRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x64\x65st_char_id\x18\x02 \x01(\x04\x12\x0e\n\x06is_all\x18\x03 \x01(\x04\x12\x15\n\rsrc_vip_times\x18\x04 \x01(\x04\x12\x18\n\x10now_enerty_count\x18\x05 \x01(\x04\x12\x1a\n\x12limit_enerty_count\x18\x06 \x01(\x04\"J\n\x1dPBFriendServerAddEnergyNotice\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x65nerty_count\x18\x02 \x01(\x04\"r\n#PBFriendServerChangeHeadIconRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x11\n\tis_update\x18\x02 \x01(\x04\x12\x11\n\thead_icon\x18\x03 \x01(\t\x12\x10\n\x08\x63ur_time\x18\x04 \x01(\x04\"\x97\x01\n$PBFriendServerChangeHeadIconResponse\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x11\n\tis_update\x18\x02 \x01(\x04\x12\x11\n\thead_icon\x18\x03 \x01(\t\x12\x10\n\x08\x63ur_time\x18\x04 \x01(\x04\x12\x10\n\x08new_time\x18\x05 \x01(\x04\x12\x10\n\x08ret_code\x18\x06 \x01(\x04\"@\n\x1bPBFriendServerSearchRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x0c\n\x04info\x18\x02 \x01(\t\"\x7f\n$PBFriendServerConditionSearchRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12,\n\x0e\x63ondition_type\x18\x02 \x01(\x0e\x32\x14.EFriendCondtionType\x12\x14\n\x0csearch_param\x18\x03 \x01(\x11\"L\n\x1fPBFriendServerAddContactRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x64\x65st_char_id\x18\x02 \x01(\x04\"l\n\x1fPBFriendServerMoveTargetRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x0f\n\x07\x66rom_ty\x18\x02 \x01(\x05\x12\r\n\x05to_ty\x18\x03 \x01(\x05\x12\x14\n\x0c\x64\x65st_char_id\x18\x04 \x01(\x04\"n\n\x1fPBFriendServerPlayerEventNotice\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x10\n\x08\x65vent_id\x18\x02 \x01(\r\x12\x11\n\tint_param\x18\x03 \x01(\r\x12\x11\n\tstr_param\x18\x04 \x01(\t\"o\n!PBFriendServerAddFriendOneRequest\x12\x1f\n\x06\x61\x64\x64_ty\x18\x01 \x01(\x0e\x32\x0f.EFriendAddType\x12\x13\n\x0bsrc_char_id\x18\x02 \x01(\x04\x12\x14\n\x0c\x64\x65st_char_id\x18\x03 \x01(\x04\"`\n\"PBFriendServerHeadIconCheckRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x14\n\x0coperate_type\x18\x02 \x01(\x11\x12\x0f\n\x07\x63\x64_time\x18\x03 \x01(\x04\"V\n\x1aPBServerQuestOpEventNotice\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x12\n\nevent_type\x18\x02 \x01(\t\x12\x13\n\x0b\x65vent_count\x18\x03 \x01(\x11\"L\n\x1dPBFriendServerIsFriendRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x16\n\x0etarget_char_id\x18\x02 \x01(\x04\"_\n\x1ePBFriendServerisFriendResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x13\n\x0bsrc_char_id\x18\x02 \x01(\x04\x12\x16\n\x0etarget_char_id\x18\x03 \x01(\x04\"n\n\x14PBMsgConsignInitData\x12(\n\rhot_item_data\x18\x01 \x01(\x0b\x32\x11.PBMsgHotItemList\x12,\n\x11\x63onsign_data_list\x18\x02 \x01(\x0b\x32\x11.PBMsgConsignList\"8\n\x10PBMsgConsignList\x12$\n\x0c\x63onsign_data\x18\x01 \x03(\x0b\x32\x0e.PBConsignData\"\xc7\x01\n\rPBConsignData\x12\x12\n\nconsign_id\x18\x01 \x01(\x04\x12\r\n\x05price\x18\x02 \x01(\x05\x12\x12\n\nprice_type\x18\x03 \x01(\x05\x12\x14\n\x0c\x63onsign_flag\x18\x04 \x01(\x11\x12\x12\n\nsheet_name\x18\x05 \x01(\t\x12\x10\n\x08quantity\x18\x06 \x01(\r\x12\x17\n\x0f\x65xpiration_time\x18\x07 \x01(\r\x12\x14\n\x0c\x61\x63\x63ount_type\x18\x08 \x01(\x11\x12\x14\n\x0cpet_sheet_id\x18\t \x01(\x11\"f\n\x16PBMsgUpdateConsignData\x12\'\n\nactionType\x18\x01 \x01(\x0e\x32\x13.EConsignActionType\x12#\n\x0b\x63onsignInfo\x18\x02 \x01(\x0b\x32\x0e.PBConsignData\"8\n\x10PBMsgHotItemList\x12$\n\rhot_item_list\x18\x01 \x03(\x0b\x32\r.PBMsgHotItem\"3\n\x0cPBMsgHotItem\x12\x10\n\x08sheet_id\x18\x01 \x01(\x11\x12\x11\n\tbuy_times\x18\x02 \x01(\x11\"h\n\x1dPBFriendAddIntimateNumRequest\x12\x16\n\x0esender_role_id\x18\x01 \x01(\r\x12\x19\n\x11recv_role_id_list\x18\x02 \x03(\r\x12\x14\n\x0cintimate_num\x18\x03 \x01(\x11\"h\n\x1dPBFriendDelIntimateNumRequest\x12\x16\n\x0esender_role_id\x18\x01 \x01(\r\x12\x19\n\x11recv_role_id_list\x18\x02 \x03(\r\x12\x14\n\x0cintimate_num\x18\x03 \x01(\x11\"O\n\x1fPBFriendClearIntimateNumRequest\x12\x16\n\x0esender_role_id\x18\x01 \x01(\r\x12\x14\n\x0crecv_role_id\x18\x02 \x01(\r\"\x94\x01\n PBFriendNotifyIntimateNumRequest\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x13\n\x0b\x66riend_name\x18\x02 \x01(\t\x12\x1a\n\x12\x66riend_notify_type\x18\x03 \x01(\x11\x12\x14\n\x0cintimate_num\x18\x04 \x01(\x11\x12\x18\n\x10\x63ur_intimate_num\x18\x05 \x01(\x11\"b\n\"PBFriendNotifyMaxIntimateNumNotice\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x11\n\tfriend_id\x18\x02 \x01(\x04\x12\x18\n\x10max_intimate_num\x18\x03 \x01(\x11\"o\n\x15PBGateCampUnionNotice\x12\x13\n\x0bsrc_camp_id\x18\x01 \x01(\x11\x12\x14\n\x0c\x64\x65st_camp_id\x18\x02 \x01(\x11\x12+\n\x0bupdate_type\x18\x03 \x01(\x0e\x32\x16.PBCampUnionUpdateType\"J\n\x19PBCampUnionActivityNotice\x12-\n\ractivity_type\x18\x01 \x01(\x0e\x32\x16.PBCampUnionUpdateType\"i\n\x1cPBServerMarriageMarryRequest\x12\x12\n\nhusband_id\x18\x01 \x01(\r\x12\x0f\n\x07wife_id\x18\x02 \x01(\r\x12\x11\n\tleader_id\x18\x03 \x01(\x04\x12\x11\n\tmember_id\x18\x04 \x01(\x04\"+\n\x16PBServerMarriageFriend\x12\x11\n\tfriend_id\x18\x01 \x03(\r\"\xc5\x01\n\x1dPBServerMarriageMarryResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\r\x12&\n\rmarriage_info\x18\x02 \x01(\x0b\x32\x0f.PBMarriageInfo\x12\x11\n\tleader_id\x18\x03 \x01(\x04\x12\x11\n\tmember_id\x18\x04 \x01(\x04\x12,\n\x0b\x66riend_list\x18\x05 \x01(\x0b\x32\x17.PBServerMarriageFriend\x12\x16\n\x0emarriage_index\x18\x06 \x01(\r\"]\n PBServerMarriageMarryRollRequest\x12\x13\n\x0bmarriage_id\x18\x01 \x01(\x04\x12\x11\n\tleader_id\x18\x02 \x01(\x04\x12\x11\n\tmember_id\x18\x03 \x01(\x04\"[\n!PBServerMarriageMarryRollResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\r\x12\x11\n\tleader_id\x18\x02 \x01(\x04\x12\x11\n\tmember_id\x18\x03 \x01(\x04\"\x80\x01\n\x1ePBServerMarriageDivorceRequest\x12\x13\n\x0bmarriage_id\x18\x01 \x01(\x04\x12\x12\n\nhusband_id\x18\x02 \x01(\r\x12\x0f\n\x07wife_id\x18\x03 \x01(\r\x12\x11\n\tleader_id\x18\x04 \x01(\x04\x12\x11\n\tmember_id\x18\x05 \x01(\x04\"\x81\x01\n\x1fPBServerMarriageDivorceResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\r\x12&\n\rmarriage_info\x18\x02 \x01(\x0b\x32\x0f.PBMarriageInfo\x12\x11\n\tleader_id\x18\x03 \x01(\x04\x12\x11\n\tmember_id\x18\x04 \x01(\x04\"p\n#PBServerMarriageDivorceForceRequest\x12\x13\n\x0bmarriage_id\x18\x01 \x01(\x04\x12\x12\n\nhusband_id\x18\x02 \x01(\r\x12\x0f\n\x07wife_id\x18\x03 \x01(\r\x12\x0f\n\x07\x63har_id\x18\x04 \x01(\x04\"q\n$PBServerMarriageDivorceForceResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\r\x12&\n\rmarriage_info\x18\x02 \x01(\x0b\x32\x0f.PBMarriageInfo\x12\x0f\n\x07\x63har_id\x18\x03 \x01(\x04\".\n\x1bPBServerMarriageInfoRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"W\n\x1cPBServerMarriageInfoResponse\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12&\n\rmarriage_info\x18\x02 \x01(\x0b\x32\x0f.PBMarriageInfo\"Q\n PBServerMarriageReadyInfoRequest\x12\x16\n\x0eplayer_role_id\x18\x01 \x01(\r\x12\x15\n\rother_role_id\x18\x02 \x01(\r\"d\n!PBServerMarriageReadyInfoResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x16\n\x0eplayer_role_id\x18\x02 \x01(\r\x12\x15\n\rother_role_id\x18\x03 \x01(\r\"\x86\x01\n(PBServerTitleChangeAskRksIntimacyRequest\x12\x16\n\x0eplayer_role_id\x18\x01 \x01(\r\x12\x15\n\rother_role_id\x18\x02 \x01(\r\x12+\n\x0csave_request\x18\x03 \x01(\x0b\x32\x15.PBTitleChangeRequest\"\x99\x01\n)PBServerTitleChangeAskRksIntimacyResponse\x12\x16\n\x0eplayer_role_id\x18\x01 \x01(\r\x12\x15\n\rother_role_id\x18\x02 \x01(\r\x12+\n\x0csave_request\x18\x03 \x01(\x0b\x32\x15.PBTitleChangeRequest\x12\x10\n\x08intimacy\x18\x04 \x01(\x11\";\n\x11PBGuildCreateSync\x12&\n\rguild_summary\x18\x01 \x01(\x0b\x32\x0f.PBGuildSummary\"&\n\x12PBGuildDismissSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\"H\n\x12PBGuildSummarySync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12 \n\x07summary\x18\x02 \x01(\x0b\x32\x0f.PBGuildSummary\"N\n\x14PBGuildMemberAddSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12$\n\x0cguild_member\x18\x02 \x01(\x0b\x32\x0e.PBGuildMember\"\x14\n\x12PBGuildGetSignList\">\n\x17PBGuildMemberRemoveSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x11\n\tmember_id\x18\x02 \x01(\x04\"Q\n\x17PBGuildMemberChangeSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12$\n\x0cguild_member\x18\x02 \x01(\x0b\x32\x0e.PBGuildMember\"Q\n\x17PBGuildApplicantAddSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12$\n\tapplicant\x18\x02 \x01(\x0b\x32\x11.PBGuildApplicant\"D\n\x1aPBGuildApplicantRemoveSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x61pplicant_id\x18\x02 \x01(\x04\"K\n\x13PBGuildBuildingSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\"\n\x08\x62uilding\x18\x02 \x01(\x0b\x32\x10.PBGuildBuilding\"?\n\x0fPBGuildBossSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x1a\n\x04\x62oss\x18\x02 \x01(\x0b\x32\x0c.PBGuildBoss\"\x81\x01\n\x18PBGuildGateCreateRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x12\n\ncreator_id\x18\x02 \x01(\r\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0f\n\x07icon_id\x18\x04 \x01(\x11\x12\x11\n\tmanifesto\x18\x05 \x01(\t\x12\r\n\x05power\x18\x06 \x01(\x11\"<\n\x17PBGuildGateApplyRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\"B\n\x1dPBGuildGateApplyCancelRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\")\n\x16PBGuildGateQuitRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\".\n\x1bPBGuildGateQuickJoinRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"_\n\x1ePBGuildGateApplyConfirmRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12,\n\x07request\x18\x02 \x01(\x0b\x32\x1b.PBGuildApplyConfirmRequest\"R\n\x16PBGuildGateKickRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\'\n\x07request\x18\x02 \x01(\x0b\x32\x16.PBGuildKickoutRequest\"S\n\x18PBGuildGateModifyRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12&\n\x07request\x18\x02 \x01(\x0b\x32\x15.PBGuildModifyRequest\"a\n\x1cPBGuildGateChangePostRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x30\n\x07request\x18\x02 \x01(\x0b\x32\x1f.PBGuildMemberPostChangeRequest\"]\n\x11PBGuildGateDonate\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12(\n\x0b\x64onate_type\x18\x02 \x01(\x0e\x32\x13.PBEGuildDonateType\x12\r\n\x05\x63ount\x18\x03 \x01(\x11\"H\n\x1ePBGuildGateChangeLeaderRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x15\n\rnew_leader_id\x18\x02 \x01(\x04\",\n\x19PBGuildGateLevelUPRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"e\n!PBGuildGateBuildingLevelUPRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12/\n\rbuilding_type\x18\x02 \x01(\x0e\x32\x18.PBEGuildingBuildingType\"B\n\x1cPBGuildGateSkillStudyRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tsecial_id\x18\x02 \x01(\x11\"b\n\x15PBGuildSkillStudySync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x11\n\tsecial_id\x18\x03 \x01(\x11\x12\x13\n\x0bskill_level\x18\x04 \x01(\x11\"D\n\x1ePBGuildGateResetSkillCDRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tsecial_id\x18\x02 \x01(\x11\"A\n\x1aPBGuildGateOpenBossRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x12\n\ndungeon_id\x18\x02 \x01(\t\"?\n\x17PBGuildGateOpenBossSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x12\n\ndungeon_id\x18\x02 \x01(\t\"k\n\x1bPBGuildGateBossChangeReport\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x12\n\ndungeon_id\x18\x02 \x01(\t\x12\x16\n\x0e\x64ungeon_entity\x18\x03 \x01(\x04\x12\x0e\n\x06map_id\x18\x04 \x01(\r\",\n\x19PBGuildGateDismissRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"2\n\x1fPBGuildGateCancelDismissRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"*\n\x16PBGuildGateDestorySync\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\"8\n\x0ePBGateTimeCome\x12&\n\ttime_come\x18\x01 \x01(\x0e\x32\x13.PBEGataWayTimeCome\"r\n\x1aPBGateGuildMaintenanceSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x13\n\x0bguild_level\x18\x02 \x01(\x11\x12\x18\n\x10maintenance_cost\x18\x03 \x01(\x11\x12\x13\n\x0bguild_money\x18\x04 \x01(\x11\"u\n\x18PBGuildGateBTSignRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x12\n\napply_cost\x18\x02 \x01(\x11\x12\"\n\tsign_info\x18\x03 \x01(\x0b\x32\x0f.PBGuildBT_Sign\x12\x0f\n\x07role_id\x18\x04 \x01(\r\"j\n\x0ePBGuildBT_Sign\x12\x11\n\tsigner_id\x18\x01 \x01(\x04\x12\x11\n\tbattle_id\x18\x02 \x01(\x04\x12\x12\n\napply_cost\x18\x03 \x01(\x11\x12\r\n\x05im_id\x18\x04 \x01(\x04\x12\x0f\n\x07im_name\x18\x05 \x01(\t\"\\\n\x19PBGuildGateAddMoneyNotice\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\r\n\x05\x63ount\x18\x02 \x01(\x11\x12\x1e\n\x08log_info\x18\x03 \x01(\x0b\x32\x0c.PBLogAction\"M\n\x19PBGuildPowerUpdateRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\r\n\x05power\x18\x03 \x01(\x11\"b\n\x12PBGuildPowerChange\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x14\n\x0cmember_power\x18\x03 \x01(\x11\x12\x13\n\x0bguild_power\x18\x04 \x01(\x11\"E\n\x15PBPetInfoUpdateNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x1b\n\x07petinfo\x18\x02 \x01(\x0b\x32\n.PBPetInfo\"P\n\x18PBRankMsgTranspondNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x12\n\nrank_scope\x18\x02 \x01(\x11\x12\x0f\n\x07rank_ty\x18\x03 \x01(\x11\"K\n\x14PBMsgChangeCampScore\x12\x0f\n\x07\x63\x61mp_id\x18\x01 \x01(\x11\x12\x14\n\x0c\x62\x61ttle_score\x18\x02 \x01(\x11\x12\x0c\n\x04rank\x18\x03 \x01(\x11\"S\n\x13PBMsgChangeCampData\x12\x11\n\tlast_time\x18\x01 \x01(\r\x12)\n\ncamp_socre\x18\x02 \x03(\x0b\x32\x15.PBMsgChangeCampScore\"H\n\x1dPBMsgGateChangeCampInfoNotice\x12\'\n\tcamp_data\x18\x01 \x01(\x0b\x32\x14.PBMsgChangeCampData\">\n\x14PBMsgEgsGmMailReport\x12&\n\tmail_info\x18\x01 \x03(\x0b\x32\x13.PBMsgEgsGmMailInfo\"\xca\x01\n\x12PBMsgEgsGmMailInfo\x12\x12\n\nmail_title\x18\x01 \x01(\t\x12\x11\n\tmail_body\x18\x02 \x01(\t\x12\x12\n\nmail_param\x18\x03 \x03(\t\x12\x15\n\rcon_level_min\x18\x04 \x01(\x11\x12\x15\n\rcon_level_max\x18\x05 \x01(\x11\x12\x10\n\x08\x63on_camp\x18\x06 \x01(\x11\x12&\n\titem_info\x18\x07 \x03(\x0b\x32\x13.PBMsgEgsGmMailItem\x12\x11\n\tsend_time\x18\x08 \x01(\r\":\n\x12PBMsgEgsGmMailItem\x12\x12\n\nsheet_name\x18\x01 \x01(\t\x12\x10\n\x08quantity\x18\x02 \x01(\x11\".\n\x1bPBBillingChargeNoticeNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"l\n\x10PBSpanChatNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\x12\x10\n\x08\x63hattype\x18\x03 \x01(\r\x12#\n\x0b\x63hatContent\x18\x04 \x01(\x0b\x32\x0e.PBChatContent\"C\n\x17PBWorldWorldLevelNotice\x12(\n\x0cgateway_info\x18\x01 \x03(\x0b\x32\x12.PBSpanGatewayInfo\"B\n\x16PBGateWorldLevelReport\x12(\n\x0cgateway_info\x18\x01 \x01(\x0b\x32\x12.PBSpanGatewayInfo\"<\n\x11PBSpanGatewayInfo\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12\x13\n\x0bworld_level\x18\x02 \x01(\r\"U\n\x10PBSpanMuteNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63hannel\x18\x02 \x01(\r\x12\x0e\n\x06period\x18\x03 \x01(\r\x12\x0f\n\x07op_type\x18\x04 \x01(\r\"\x11\n\x0fPBRksStopNotice\"\x81\x01\n\x14PBSpanGetRankRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\x04\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\x12\x11\n\tgatewayid\x18\x03 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x04 \x01(\r\x12\x12\n\nrank_scope\x18\x05 \x01(\x11\x12\x0f\n\x07rank_ty\x18\x06 \x01(\x11\"u\n\x15PBSpanGetRankResponse\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tgatewayid\x18\x02 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x03 \x01(\r\x12(\n\x08response\x18\x04 \x01(\x0b\x32\x16.PBMsgCharRankResponse\"{\n\x1aPBSpanGetGuildRankResponse\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tgatewayid\x18\x02 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x03 \x01(\r\x12)\n\x08response\x18\x04 \x01(\x0b\x32\x17.PBMsgGuildRankResponse\"}\n\x19PBSpanGetMainRankResponse\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tgatewayid\x18\x02 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x03 \x01(\r\x12,\n\x08response\x18\x04 \x01(\x0b\x32\x1a.PBMsgCharMineRankResponse\"\x83\x01\n\x1ePBSpanGetMainGuildRankResponse\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tgatewayid\x18\x02 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x03 \x01(\r\x12-\n\x08response\x18\x04 \x01(\x0b\x32\x1b.PBMsgGuildMineRankResponse\"l\n\x14PBPlayerQuestionInfo\x12\x14\n\x0c\x63har_role_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\x12\x11\n\tchar_name\x18\x03 \x01(\t\x12\x1a\n\x12\x63ur_question_score\x18\x04 \x01(\x11\"j\n\x14PBMsgEgsAnswerNotice\x12,\n\rquestion_info\x18\x01 \x03(\x0b\x32\x15.PBPlayerQuestionInfo\x12\x0f\n\x07top_num\x18\x02 \x01(\x11\x12\x13\n\x0bquestion_id\x18\x03 \x01(\r\"/\n\x19PBMsgEgsActivityEndNotice\x12\x12\n\nreward_num\x18\x01 \x01(\x11\"`\n\x10PBQuestionReward\x12\x14\n\x0c\x63har_role_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\x12\x11\n\tchar_rank\x18\x03 \x01(\r\x12\x12\n\nchar_score\x18\x04 \x01(\x11\">\n\x14PBMsgRksRewardNotice\x12&\n\x0breward_info\x18\x01 \x03(\x0b\x32\x11.PBQuestionReward\"?\n\x16PBMsgEgsActivityNotice\x12\x14\n\x0c\x63har_role_id\x18\x01 \x01(\r\x12\x0f\n\x07top_num\x18\x02 \x01(\x11\"Z\n\nPBPostItem\x12 \n\x04item\x18\x01 \x01(\x0b\x32\x12.PBMsgItemQuantity\x12\x15\n\rmax_stack_num\x18\x02 \x01(\x11\x12\x13\n\x0bsort_weight\x18\x03 \x01(\x11\":\n\x13PBGuildActivityInfo\x12\x15\n\ractivity_type\x18\x01 \x01(\x11\x12\x0c\n\x04rank\x18\x02 \x01(\x11\"p\n\x14PBMsgPostItemRequest\x12\x1e\n\titem_list\x18\x01 \x03(\x0b\x32\x0b.PBPostItem\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\x12&\n\x08\x61\x63tivity\x18\x03 \x01(\x0b\x32\x14.PBGuildActivityInfo\"x\n\x0fPBMailGrantItem\x12\x11\n\tmail_body\x18\x01 \x01(\x11\x12\x12\n\nlog_action\x18\x02 \x01(\x11\x12\x17\n\x05param\x18\x03 \x03(\x0b\x32\x08.PBParam\x12%\n\titem_info\x18\x04 \x03(\x0b\x32\x12.PBMsgItemQuantity\"J\n\x12PBMsgMailGrantItem\x12\x14\n\x0c\x63har_role_id\x18\x01 \x01(\r\x12\x1e\n\x04mail\x18\x02 \x01(\x0b\x32\x10.PBMailGrantItem\"R\n\x19PBMsgGuildSpanSignRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x12\n\napply_cost\x18\x02 \x01(\x11\x12\x10\n\x08match_id\x18\x03 \x01(\x04\"B\n\x1fPBMsgSpanPveKeepTeamInfoRequire\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0e\n\x06\x64un_id\x18\x02 \x01(\x04\"@\n\x1dPBMsgSpanPveRegainTeamRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0e\n\x06\x64un_id\x18\x02 \x01(\x04\"e\n\x1ePBMsgSpanPveRegainTeamResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x0f\n\x07op_type\x18\x03 \x01(\r\x12\x0f\n\x07team_id\x18\x04 \x01(\r\"E\n!PBMsgSpanPveRegainJoinTeamRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0f\n\x07team_id\x18\x02 \x01(\r\"P\n\x15PBSpanPveLeaveDungeon\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x12\n\ndungeon_id\x18\x02 \x01(\x04\x12\x12\n\ncamp_index\x18\x03 \x01(\x11\"c\n\x15PBSpanPveEnterDungeon\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x12\n\ndungeon_id\x18\x02 \x01(\x04\x12\x11\n\tis_leader\x18\x03 \x01(\x08\x12\x12\n\ncamp_index\x18\x04 \x01(\x11\"f\n\x1cPBSpanPveGetMatchListRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\x12\x11\n\tgatewayid\x18\x04 \x01(\r\"k\n\x1dPBSpanPveGetMatchListResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\'\n\x03res\x18\x03 \x01(\x0b\x32\x1a.PBMsgGetMatchListResponse\"e\n\x1aPBMsgGuildSpanSignResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x12\n\napply_cost\x18\x03 \x01(\x11\x12\x10\n\x08match_id\x18\x04 \x01(\x04\"\x1d\n\x1bPBMsgGuildFinalSignResponse\"@\n\x19PBGateGuildIMBattleReward\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x11\n\tbtl_score\x18\x02 \x01(\x11\"\x99\x01\n#PBMsgEGSSpanImbattleWatchingRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x10\n\x08match_id\x18\x02 \x01(\x04\x12\x11\n\tbattle_id\x18\x03 \x01(\x04\x12\x16\n\x0esrc_gateway_id\x18\x04 \x01(\r\x12\x13\n\x0bsrc_camp_id\x18\x05 \x01(\r\x12\x0f\n\x07\x63har_id\x18\x06 \x01(\x04\"\xeb\x01\n$PBMsgEGSSpanImbattleWatchingResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x10\n\x08match_id\x18\x03 \x01(\x04\x12\x11\n\tbattle_id\x18\x04 \x01(\x04\x12\x17\n\x0f\x64\x65st_gateway_id\x18\x05 \x01(\r\x12\x14\n\x0c\x64\x65st_camp_id\x18\x06 \x01(\r\x12\"\n\rdest_position\x18\x07 \x01(\x0b\x32\x0b.PBPosition\x12\x11\n\tdest_time\x18\x08 \x01(\r\x12\x15\n\rdungeon_sheet\x18\t \x01(\r\"T\n\x1ePBMsgEGSSpanImbattleBetRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x0f\n\x07\x62\x65t_byb\x18\x02 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x03 \x01(\x04\"Z\n\x1fPBMsgBWSSpanImbattleBetResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12%\n\nbet_battle\x18\x02 \x03(\x0b\x32\x11.PBSpanbtlBetData\"+\n\x17PBMsgBWSBetClearRequest\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"q\n\x18PBMsgSpanGuildMailNotice\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x0f\n\x07mail_id\x18\x02 \x01(\t\x12\r\n\x05param\x18\x03 \x03(\t\x12#\n\x08receiver\x18\x04 \x01(\x0e\x32\x11.ESpanGuildNotice\"\x82\x01\n#PBMsgEGSSpanImbattleGuildDataReport\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\x12 \n\x0bleader_base\x18\x03 \x01(\x0b\x32\x0b.PBRoleBase\x12\'\n\x10sign_member_info\x18\x04 \x01(\x0b\x32\r.PBSignMember\"|\n%PBMsgBWSSpanImbattleHistoryDataNotice\x12)\n\x0chistory_data\x18\x01 \x01(\x0b\x32\x13.PBMatchHistoryData\x12(\n\x0chistory_rank\x18\x02 \x01(\x0b\x32\x12.PBSPIMHistoryRank\"+\n\x17PBMsgSpanRaceIdleNotice\x12\x10\n\x08match_id\x18\x01 \x01(\x11\"A\n\x1aPBMsgSpanBattleStartNotice\x12\x11\n\tbattle_id\x18\x01 \x01(\x04\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\"=\n\x19PBMsgSpanRaceStatusChange\x12\x10\n\x08match_id\x18\x01 \x01(\x11\x12\x0e\n\x06status\x18\x02 \x01(\x11\"C\n\x1bPBMsgSpanGetSignListRequest\x12\x10\n\x08\x65xternId\x18\x01 \x01(\x04\x12\x12\n\nexternGWId\x18\x02 \x01(\r\"3\n\x0ePBMsgGuildCamp\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\"M\n\x16PBMsgServerGuildReport\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12\x1f\n\x06guilds\x18\x02 \x03(\x0b\x32\x0f.PBMsgGuildCamp\"@\n\x17PBMsgSpanWildRankReport\x12%\n\tchar_node\x18\x01 \x03(\x0b\x32\x12.PBMsgRankCharNode\"z\n\x1bPBMsgGetSpanWildRankRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x12\n\ngateway_id\x18\x02 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x03 \x01(\r\x12\x11\n\trank_type\x18\x04 \x01(\x11\x12\x12\n\nrank_score\x18\x05 \x01(\x11\"\xc7\x01\n\x1cPBMsgGetSpanWildRankResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x12\n\ngateway_id\x18\x03 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x04 \x01(\r\x12\x11\n\trank_type\x18\x05 \x01(\x11\x12\x12\n\nrank_score\x18\x06 \x01(\x11\x12%\n\tchar_node\x18\x07 \x03(\x0b\x32\x12.PBMsgRankCharNode\x12\x11\n\trank_mine\x18\x08 \x01(\x11\"y\n\x1dPBMsgGetSpanWildBossLvRequest\x12\x11\n\tgatewayid\x18\x01 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x02 \x01(\r\x12\r\n\x05state\x18\x03 \x01(\x11\x12&\n\x04info\x18\x04 \x01(\x0b\x32\x18.PBSpanWildBossLevelInfo\"C\n\x17PBSpanWildBossLevelInfo\x12(\n\nboss_level\x18\x01 \x03(\x0b\x32\x14.PBSpanWildBossLevel\"9\n\x13PBSpanWildBossLevel\x12\x10\n\x08sheet_id\x18\x01 \x01(\t\x12\x10\n\x08up_level\x18\x02 \x01(\x11\"m\n\x1ePBMsgGetSpanWildBossLvResponse\x12\x11\n\tgatewayid\x18\x01 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x02 \x01(\r\x12(\n\x06\x62osslv\x18\x03 \x01(\x0b\x32\x18.PBSpanWildBossLevelInfo\"<\n\x1aPBMsgSpanWildPlayerGateNum\x12\x11\n\tgatewayid\x18\x01 \x01(\r\x12\x0b\n\x03num\x18\x02 \x01(\x11\"_\n\x1cPBMsgSpanWildPlayerNumNotice\x12/\n\ngatewaynum\x18\x01 \x03(\x0b\x32\x1b.PBMsgSpanWildPlayerGateNum\x12\x0e\n\x06\x61llnum\x18\x02 \x01(\x11\"\x80\x01\n\"PBMsgSaveTeamInfoToSpanWildRequest\x12\x10\n\x08leaderid\x18\x01 \x01(\r\x12\x12\n\nmemberlist\x18\x02 \x03(\r\x12\x11\n\tsessionid\x18\x03 \x01(\r\x12\x11\n\tgatewayid\x18\x04 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x05 \x01(\r\"J\n#PBMsgSaveTeamInfoToSpanWildResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tsessionid\x18\x02 \x01(\r\"1\n\x1ePBMsgSpanWildRegainTeamRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"3\n\x1fPBMsgSpanWildRegainTeamResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\";\n\x0bPBMergeData\x12\x15\n\rsrc_gatewayid\x18\x01 \x01(\r\x12\x15\n\rdec_gatewayid\x18\x02 \x01(\r\";\n\x14PBMsgMergeDataReport\x12#\n\rmegredatalist\x18\x01 \x03(\x0b\x32\x0c.PBMergeData\"*\n\x16PBMsgMergeDataResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"L\n\x1dPBMsgRksFireworksStatusNotice\x12+\n\x08\x61\x63t_info\x18\x01 \x03(\x0b\x32\x19.PBMsgRksFireworksActInfo\":\n\x18PBMsgRksFireworksActInfo\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\x11\x12\x0e\n\x06status\x18\x02 \x01(\x11\"Q\n\x1fPBMsgEgsFireworksActScoreReport\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0e\n\x06\x61\x63t_id\x18\x02 \x01(\x11\x12\r\n\x05score\x18\x03 \x01(\x11\"U\n\x1fPBMsgRksFireworksActScoreNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0e\n\x06\x61\x63t_id\x18\x02 \x01(\x11\x12\x11\n\tcur_score\x18\x03 \x01(\x11\"B\n\x1bPBMsgRksFireworksOpenNotice\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\x11\x12\x13\n\x0b\x61\x63t_percent\x18\x02 \x01(\x11\"+\n\x19PBMsgRksFireworksFxNotice\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\x11\"K\n\x18PBMsgSpanWildShardNotice\x12\x11\n\tgatewayid\x18\x01 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x02 \x01(\r\x12\x0c\n\x04isup\x18\x03 \x01(\x08\"k\n\x1ePBMsgPetBattleFightDataRequest\x12\x1a\n\x12\x63hallenger_role_id\x18\x01 \x01(\r\x12\x13\n\x0brequest_key\x18\x02 \x01(\r\x12\x18\n\x10is_request_robot\x18\x03 \x01(\x08\"\x95\x01\n\x1fPBMsgPetBattleFightDataResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1a\n\x12\x63hallenger_role_id\x18\x02 \x01(\r\x12\x33\n\x14\x63har_pet_battle_info\x18\x03 \x01(\x0b\x32\x15.PBCharPetPVPRankInfo\x12\x0f\n\x07my_rank\x18\x04 \x01(\r\"Y\n\"PBMsgPetBattleChallengerDataNotice\x12\x33\n\x14\x63har_pet_bettle_info\x18\x01 \x01(\x0b\x32\x15.PBCharPetPVPRankInfo\"\x91\x01\n\x1aPBMsgPetBattleResultNotice\x12\x1a\n\x12\x63hallenger_role_id\x18\x01 \x01(\r\x12\x17\n\x0f\x66ighter_role_id\x18\x02 \x01(\r\x12\x0e\n\x06is_win\x18\x03 \x01(\x08\x12\x18\n\x10is_fighter_robot\x18\x04 \x01(\x08\x12\x14\n\x0c\x66ighter_rank\x18\x05 \x01(\r\"1\n\x1ePBMsgPetBattleFlushArrayNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"2\n\x1fPBMsgPetBattleQueryRecordNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"2\n\x1fPBMsgGetPetBattlePvPInfoRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"~\n PBMsgGetPetBattlePvPInfoResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x0c\n\x04rank\x18\x03 \x01(\r\x12)\n\x0erank_info_list\x18\x04 \x03(\x0b\x32\x11.PBPetPvPRankInfo\"6\n\x15PBMsgModifyRankNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0c\n\x04rank\x18\x02 \x01(\r\"\x1c\n\x1aPBMsgClearPetPvPRankNotice\"+\n\x16PBMsgAddRobotPetNotice\x12\x11\n\trobot_num\x18\x01 \x01(\r\"H\n\x1cPBGuildGateManorCreateReport\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x16\n\x0e\x64ungeon_entity\x18\x02 \x01(\x04\"F\n\x1aPBGuildGateManorCreateSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x16\n\x0e\x64ungeon_entity\x18\x03 \x01(\x04\"-\n\x1aPBGuildGateOpenFireRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"+\n\x17PBGuildGateOpenFireSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\"U\n\x1fPBGuildGateManorStatueFlushSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12 \n\x0bleader_base\x18\x02 \x01(\x0b\x32\x0b.PBRoleBase\"5\n!PBGuildGateManorStatueFlushReport\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\"\xc5\x01\n\x1bPBMsgSignMonorBattleRequest\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\x12\x12\n\nappay_cost\x18\x03 \x01(\x11\x12\x1a\n\x12guild_battle_score\x18\x04 \x01(\r\x12\x12\n\nguild_name\x18\x05 \x01(\t\x12\x13\n\x0bguild_level\x18\x06 \x01(\r\x12\x16\n\x0esigner_role_id\x18\x07 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x08 \x01(\r\"\xa1\x01\n\x1cPBMsgSignMonorBattleResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x12\n\ngateway_id\x18\x02 \x01(\r\x12\x10\n\x08guild_id\x18\x03 \x01(\x04\x12\x15\n\rsigner_roleid\x18\x04 \x01(\r\x12\x12\n\napply_cost\x18\x05 \x01(\r\x12\x1e\n\tsign_info\x18\x06 \x01(\x0b\x32\x0b.PBSignInfo\".\n\x1cPBMsgMonorBattleStatusNotice\x12\x0e\n\x06status\x18\x01 \x01(\x11\"i\n\x0ePBWinGuildInfo\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\x12\x10\n\x08guild_id\x18\x03 \x01(\x04\x12\x0c\n\x04rank\x18\x04 \x01(\r\x12\x12\n\nguild_name\x18\x05 \x01(\t\"\x7f\n\x18PBMsgEnterDungeonRequest\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x11\n\tbattle_id\x18\x02 \x01(\x04\x12\x17\n\x0f\x63har_gateway_id\x18\x03 \x01(\r\x12\x14\n\x0c\x63har_camp_id\x18\x04 \x01(\r\x12\x10\n\x08guild_id\x18\x05 \x01(\x04\"\xbf\x01\n\x19PBMsgEnterDungeonResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x16\n\x0esrc_gateway_id\x18\x03 \x01(\r\x12\x13\n\x0bsrc_camp_id\x18\x04 \x01(\r\x12\x17\n\x0f\x64\x65st_gateway_id\x18\x05 \x01(\r\x12\x14\n\x0c\x64\x65st_camp_id\x18\x06 \x01(\r\x12\x11\n\tbattle_id\x18\x07 \x01(\x04\x12\x10\n\x08guild_id\x18\x08 \x01(\x04\"y\n\x18PBMsgDungeonResultNotice\x12\"\n\x0b\x62\x61ttle_type\x18\x01 \x01(\x0e\x32\r.PBBattleType\x12\x14\n\x0cis_fight_win\x18\x02 \x01(\x08\x12#\n\nguild_info\x18\x03 \x03(\x0b\x32\x0f.PBWinGuildInfo\"A\n\x1aPBMsgRaceOneWinGuildNotice\x12#\n\nguild_info\x18\x01 \x03(\x0b\x32\x0f.PBWinGuildInfo\"A\n\x1aPBMsgRaceTwoWinGuildNotice\x12#\n\nguild_info\x18\x01 \x03(\x0b\x32\x0f.PBWinGuildInfo\"\x93\x01\n\x18PBMsgCreateBattleRequest\x12\"\n\x0b\x62\x61ttle_type\x18\x01 \x01(\x0e\x32\r.PBBattleType\x12\x11\n\tbattle_id\x18\x02 \x01(\x04\x12\x15\n\rdungeon_sheet\x18\x03 \x01(\t\x12\x16\n\x0e\x62oss_add_level\x18\x04 \x01(\r\x12\x11\n\tguild_num\x18\x05 \x01(\r\"\x89\x01\n\x19PBMsgCreateBattleResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\"\n\x0b\x62\x61ttle_type\x18\x02 \x01(\x0e\x32\r.PBBattleType\x12\x11\n\tbattle_id\x18\x03 \x01(\x04\x12\x12\n\ngateway_id\x18\x04 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x05 \x01(\r\"-\n\x18PBMsgDestoryBattleNotice\x12\x11\n\tbattle_id\x18\x01 \x01(\x04\"c\n\x19PBMsgEGSEnterMonorRequest\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\x12\x12\n\ngateway_id\x18\x03 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x04 \x01(\r\"x\n\x1aPBMsgBWSEnterMonorResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x12\n\ngateway_id\x18\x03 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x04 \x01(\r\x12\x12\n\nguild_name\x18\x05 \x01(\t\"R\n\x19PBMsgBWSCreateMonorNotice\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\x12\x10\n\x08guild_id\x18\x03 \x01(\x04\"\x1c\n\x1aPBMsgBWSDestoryMonorNotice\":\n\x18PBMsgFlushSignDataNotice\x12\x1e\n\tsign_info\x18\x01 \x01(\x0b\x32\x0b.PBSignInfo\"\xc5\x01\n\x1aPBMsgMonorBattleRewardInfo\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x0f\n\x07mail_id\x18\x02 \x01(\t\x12\r\n\x05param\x18\x03 \x03(\t\x12!\n\x05items\x18\x04 \x03(\x0b\x32\x12.PBMsgItemQuantity\x12(\n\x0cleader_items\x18\x05 \x03(\x0b\x32\x12.PBMsgItemQuantity\x12(\n\x0cmember_items\x18\x06 \x03(\x0b\x32\x12.PBMsgItemQuantity\":\n\x18PBMsgGiveBackMoneyNotice\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x0c\n\x04\x63ost\x18\x02 \x01(\x11\"A\n\x1bPBMsgGiveBackMoneyRetNotice\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\"~\n\x15PBGuildTopBattleScore\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\x12\x10\n\x08guild_id\x18\x03 \x01(\x04\x12\x17\n\x0fguild_top_score\x18\x04 \x01(\r\x12\x15\n\rguild_top_num\x18\x05 \x01(\r\"2\n\x1fPBMsgGuildTopBattleScoreRequest\x12\x0f\n\x07top_num\x18\x01 \x01(\x11\"j\n PBMsgGuildTopBattleScoreResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x34\n\x14guild_top_score_info\x18\x02 \x03(\x0b\x32\x16.PBGuildTopBattleScore\"-\n\x19PBMsgGuildMemberIdRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\"\x93\x01\n\x1aPBMsgGuildMemberIdResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x12\n\ngateway_id\x18\x02 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x03 \x01(\r\x12\x10\n\x08guild_id\x18\x04 \x01(\x04\x12,\n\x0emember_id_list\x18\x05 \x01(\x0b\x32\x14.PBGuildMemberIdList\"H\n\x10PBMsgGuildStatus\x12\"\n\x0b\x62\x61ttle_type\x18\x01 \x01(\x0e\x32\r.PBBattleType\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\"5\n\x13PBMsgMsgCountNotice\x12\x1e\n\tmsg_count\x18\x01 \x03(\x0b\x32\x0b.PBMsgCount\"+\n\nPBMsgCount\x12\x0e\n\x06msg_id\x18\x01 \x01(\r\x12\r\n\x05\x63ount\x18\x02 \x01(\r*\xfck\n\x11\x45ServiceMessageId\x12\x16\n\x12MSG_ROLE_ENTER_EGS\x10\x01\x12\x16\n\x12MSG_ROLE_LEAVE_EGS\x10\x02\x12\x13\n\x0fMSG_ROLE_DELETE\x10\x03\x12\x11\n\rMSG_ROLE_SYNC\x10\x04\x12$\n MSG_EGS_TO_GATE_REGISTER_REQUEST\x10\x0b\x12%\n!MSG_EGS_TO_GATE_REGISTER_RESPONSE\x10\x0c\x12\x15\n\x11MSG_DB_OP_REQUEST\x10\r\x12\x16\n\x12MSG_DB_OP_RESPONSE\x10\x0e\x12\x14\n\x10MSG_GATEWAY_DOWN\x10\x0f\x12\x1d\n\x19MSG_KICK_ROLE_LIST_NOTICE\x10\x10\x12\x14\n\x10MSG_GM_KICK_ROLE\x10\x65\x12\x12\n\x0eMSG_GM_ANNOUCE\x10\x66\x12\x14\n\x10MSG_GM_MOVE_ROLE\x10g\x12\x11\n\rMSG_GM_SHUTUP\x10h\x12\x18\n\x14MSG_GM_CANCEL_SHUTUP\x10i\x12\x19\n\x15MSG_GM_TRANSFER_GROUP\x10j\x12\x17\n\x13MSG_GM_DELETE_GROUP\x10k\x12\x16\n\x12MSG_GM_RENAME_ROLE\x10l\x12\x14\n\x10MSG_GM_SEND_MAIL\x10m\x12\x17\n\x13MSG_GM_RECOVER_ROLE\x10n\x12\x15\n\x11MSG_GM_CLEAR_ITEM\x10o\x12\x12\n\x0eMSG_GM_COMMAND\x10p\x12\x15\n\x11MSG_GM_SEND_MAILS\x10q\x12\x16\n\x12MSG_GM_RECOVER_PET\x10r\x12\x17\n\x13MSG_GM_RECOVER_ITEM\x10s\x12\x17\n\x13MSG_GM_EGS_RESPONSE\x10t\x12\x17\n\x12MSG_CONSIGN_MYLIST\x10\xc9\x01\x12\x15\n\x10MSG_CONSIGN_LIST\x10\xca\x01\x12\x13\n\x0eMSG_CONSIGN_UP\x10\xcb\x01\x12\x15\n\x10MSG_CONSIGN_DOWN\x10\xcc\x01\x12\x17\n\x12MSG_CONSIGN_GETRWD\x10\xcd\x01\x12\x14\n\x0fMSG_CONSIGN_BUY\x10\xce\x01\x12\x17\n\x12MSG_CONSIGN_LISTEX\x10\xcf\x01\x12\x1a\n\x15MSG_CONSIGN_GETREWARD\x10\xd0\x01\x12\x14\n\x0fMSG_CONSIGN_TIP\x10\xd1\x01\x12\x19\n\x14MSG_CONSIGN_INITDATA\x10\xd2\x01\x12\x1b\n\x16MSG_CONSIGN_UPDATEDATA\x10\xd3\x01\x12\x1e\n\x19MSG_CONSIGN_UPDATEHOTITEM\x10\xd4\x01\x12\x1c\n\x17MSG_BIANJING_TP_REQUIRE\x10\xac\x02\x12\x1d\n\x18MSG_BIANJING_TP_RESPONSE\x10\xad\x02\x12\x1b\n\x16MSG_BIANJING_TP_CANCEL\x10\xae\x02\x12\x18\n\x13MSG_CHAT_EX_REQUIRE\x10\x90\x03\x12\x1a\n\x15MSG_GATE_PRIVATE_CHAT\x10\x91\x03\x12\x1b\n\x16MSG_TEAM_BUILD_REQUIRE\x10\xf4\x03\x12\x1c\n\x17MSG_TEAM_BUILD_RESPONSE\x10\xf5\x03\x12\x1d\n\x18MSG_TEAM_DISMISS_REQUIRE\x10\xf6\x03\x12#\n\x1eMSG_TEAM_CHANGE_LEADER_REQUIRE\x10\xf7\x03\x12\x1b\n\x16MSG_TEAM_LEAVE_REQUIRE\x10\xf8\x03\x12\x1a\n\x15MSG_TEAM_KICK_REQUIRE\x10\xf9\x03\x12\x1c\n\x17MSG_TEAM_INVITE_REQUIRE\x10\xfa\x03\x12!\n\x1cMSG_TEAM_INVITE_EXAM_REQUIRE\x10\xfb\x03\x12\x1d\n\x18MSG_TEAM_INVITE_RESPONSE\x10\xfc\x03\x12\x1b\n\x16MSG_TEAM_APPLY_REQUIRE\x10\xfd\x03\x12\"\n\x1dMSG_TEAM_APPLY_ANSWER_REQUIRE\x10\xfe\x03\x12\x1a\n\x15MSG_TEAM_SYSTEM_BUILD\x10\xff\x03\x12#\n\x1eMSG_TEAM_SYSTEM_BUILD_RESPONSE\x10\x80\x04\x12 \n\x1bMSG_TEAM_LEAVE_TEAM_DUNGEON\x10\x81\x04\x12\x1a\n\x15MSG_TEAM_DISMISS_SYNC\x10\x82\x04\x12 \n\x1bMSG_TEAM_CHANGE_LEADER_SYNC\x10\x83\x04\x12\x1d\n\x18MSG_TEAM_ADD_MEMBER_SYNC\x10\x84\x04\x12 \n\x1bMSG_TEAM_REMOVE_MEMBER_SYNC\x10\x85\x04\x12 \n\x1bMSG_TEAM_ADD_APPLICANT_SYNC\x10\x86\x04\x12#\n\x1eMSG_TEAM_REMOVE_APPLICANT_SYNC\x10\x87\x04\x12\x1c\n\x17MSG_TEAM_ROLE_BASE_SYNC\x10\x88\x04\x12#\n\x1eMSG_TEAM_ROLE_ENTER_SCENE_SYNC\x10\x89\x04\x12#\n\x1eMSG_TEAM_ROLE_LEAVE_SCENE_SYNC\x10\x8a\x04\x12\x12\n\rMSG_TEAM_SYNC\x10\x8b\x04\x12\x18\n\x13MSG_TEAM_BUILD_SYNC\x10\x8c\x04\x12\x19\n\x14MSG_TEAM_SET_PURPOSE\x10\x8d\x04\x12\"\n\x1dMSG_TEAM_PURPOSE_LIST_REQUIRE\x10\x8e\x04\x12\'\n\"MSG_TEAM_FETCH_TARGET_TEAM_REQUIRE\x10\x8f\x04\x12(\n#MSG_TEAM_FETCH_TARGET_TEAM_RESPONSE\x10\x90\x04\x12#\n\x1eMSG_TEAM_DUNGEON_CHECK_REQUIRE\x10\x91\x04\x12$\n\x1fMSG_TEAM_DUNGEON_CHECK_RESPONSE\x10\x92\x04\x12\x18\n\x13MSG_TEAM_MATCH_SYNC\x10\x93\x04\x12\x1c\n\x17MSG_TEAM_SIGNUP_REQUIRE\x10\x94\x04\x12#\n\x1eMSG_TEAM_SESSION_LEAVE_REQUIRE\x10\x95\x04\x12$\n\x1fMSG_TEAM_SESSION_LEAVE_RESPONSE\x10\x96\x04\x12!\n\x1cMSG_WORLD_LEVEL_FINISH_QUEST\x10\xd8\x04\x12\x1b\n\x16MSG_WORLD_LEVEL_UPDATE\x10\xd9\x04\x12\x1a\n\x15MSG_WORLD_LEVEL_AWARD\x10\xda\x04\x12\x19\n\x14MSG_WORLD_LEVEL_INFO\x10\xdb\x04\x12 \n\x1bMSG_WORLD_LEVEL_CHANGE_ICON\x10\xdc\x04\x12 \n\x1bMSG_REDPACKET_SHAKE_REQUEST\x10\x8a\x05\x12!\n\x1cMSG_REDPACKET_SHAKE_RESPONSE\x10\x8b\x05\x12#\n\x1eMSG_REDPACKET_EXCHANGE_REQUEST\x10\x8c\x05\x12$\n\x1fMSG_REDPACKET_EXCHANGE_RESPONSE\x10\x8d\x05\x12(\n#MSG_REDPACKET_EXCHANGE_LIST_REQUEST\x10\x8e\x05\x12)\n$MSG_REDPACKET_EXCHANGE_LIST_RESPONSE\x10\x8f\x05\x12 \n\x1bMSG_REDPACKET_JIFEN_REQUEST\x10\x90\x05\x12!\n\x1cMSG_REDPACKET_JIFEN_RESPONSE\x10\x91\x05\x12\x1e\n\x19MSG_GATE_CHARINFO_REQUEST\x10\xbc\x05\x12\x1f\n\x1aMSG_GATE_CHARINFO_RESPONSE\x10\xbd\x05\x12\x1a\n\x15MSG_GATE_ITEM_REQUEST\x10\xbe\x05\x12\x1b\n\x16MSG_GATE_ITEM_RESPONSE\x10\xbf\x05\x12\x1b\n\x16MSG_GATE_GMMAIL_REPORT\x10\xc0\x05\x12\x1a\n\x15MSG_SPAN_ITEM_REQUEST\x10\xc1\x05\x12\x1e\n\x19MSG_CREATE_ARENA_RESPONSE\x10\xa1\x06\x12\x1c\n\x17MSG_ENTER_ARENA_REQUIRE\x10\xa2\x06\x12\x1e\n\x19MSG_GUILD_KILL_MAP_REPORT\x10\x85\x07\x12\x1f\n\x1aMSG_GUILD_KILL_MAP_REQUEST\x10\x86\x07\x12 \n\x1bMSG_GUILD_KILL_MAP_RESPONSE\x10\x87\x07\x12(\n#MSG_FRIEND_SERVER_ADDFRIEND_REQUEST\x10\x88\x07\x12)\n$MSG_FRIEND_SERVER_ADDFRIEND_RESPONSE\x10\x89\x07\x12+\n&MSG_FRIEND_SERVER_ADDFRIENDACK_REQUEST\x10\x8a\x07\x12+\n&MSG_FRIEND_SERVER_REMOVEFRIEND_REQUEST\x10\x8b\x07\x12,\n\'MSG_FRIEND_SERVER_REMOVEFRIEND_RESPONSE\x10\x8c\x07\x12)\n$MSG_FRIEND_SERVER_GIVEENERGY_REQUEST\x10\x8d\x07\x12+\n&MSG_FRIEND_SERVER_GATHERENERGY_REQUEST\x10\x8e\x07\x12#\n\x1eMSG_FRIEND_SERVER_LOGIN_NOTICE\x10\x8f\x07\x12&\n!MSG_FRIEND_SERVER_DATASYNC_NOTICE\x10\x90\x07\x12\'\n\"MSG_FRIEND_SERVER_ADDENERGY_NOTICE\x10\x91\x07\x12-\n(MSG_FRIEND_SERVER_CHANGEHEADICON_REQUEST\x10\x92\x07\x12.\n)MSG_FRIEND_SERVER_CHANGEHEADICON_RESPONSE\x10\x93\x07\x12%\n MSG_FRIEND_SERVER_SEARCH_REQUEST\x10\x94\x07\x12.\n)MSG_FRIEND_SERVER_CONDITIONSEARCH_REQUEST\x10\x95\x07\x12)\n$MSG_FRIEND_SERVER_ADDCONTACT_REQUEST\x10\x96\x07\x12)\n$MSG_FRIEND_SERVER_MOVETARGET_REQUEST\x10\x97\x07\x12)\n$MSG_FRIEND_SERVER_PLAYEREVENT_NOTICE\x10\x98\x07\x12+\n&MSG_FRIEND_SERVER_ADDFRIENDONE_REQUEST\x10\x99\x07\x12,\n\'MSG_FRIEND_SERVER_HEADICONCHECK_REQUEST\x10\x9a\x07\x12+\n&MSG_FRIEND_SERVER_ADDFRIENDINTIMATENUM\x10\x9b\x07\x12+\n&MSG_FRIEND_SERVER_DELFRIENDINTIMATENUM\x10\x9c\x07\x12-\n(MSG_FRIEND_SERVER_CLEARFRIENDINTIMATENUM\x10\x9d\x07\x12-\n(MSG_FRIEND_SERVER_NOTIFYABOUTINTIMATENUM\x10\x9e\x07\x12\'\n\"MSG_FRIEND_SERVER_ISFRIEND_REQUEST\x10\x9f\x07\x12(\n#MSG_FRIEND_SERVER_ISFRIEND_RESPONSE\x10\xa0\x07\x12/\n*MSG_FRIEND_SERVER_UPDATE_EGS_FRIEND_NORMAL\x10\xa1\x07\x12.\n)MSG_FRIEND_SERVER_UPDATE_EGS_FRIEND_ENEMY\x10\xa2\x07\x12.\n)MSG_FRIEND_SERVER_UPDATE_EGS_FRIEND_BLACK\x10\xa3\x07\x12\x30\n+MSG_FRIEND_SERVER_UPDATE_EGS_FRIEND_CONTACT\x10\xa4\x07\x12*\n%MSG_FRIEND_SERVER_NOTIFYMAXINTIMATEUM\x10\xa5\x07\x12,\n\'MSG_FRIEND_SERVER_REMOVE_RECENT_CONTACT\x10\xa6\x07\x12<\n7MSG_CHAR_SEND_FLOWER_OF_SEARCH_PLAYER_IS_ONLINE_REQUEST\x10\xe9\x07\x12=\n8MSG_CHAR_SEND_FLOWER_OF_SEARCH_PLAYER_IS_ONLINE_RESPONSE\x10\xea\x07\x12-\n(MSG_CHAR_SEND_FLOWER_TO_DIFF_CAMP_PLAYER\x10\xeb\x07\x12\x18\n\x13MSG_GUILDBT_IMPULSE\x10\xcc\x08\x12\x15\n\x10MSG_GUILDBT_SIGN\x10\xcd\x08\x12\x15\n\x10MSG_GUILDBT_JOIN\x10\xce\x08\x12\x1e\n\x19MSG_GUILDBT_STATUS_CHANGE\x10\xcf\x08\x12\x1d\n\x18MSG_GUILDBT_CREATE_FIELD\x10\xd0\x08\x12\x17\n\x12MSG_GUILDBT_REPORT\x10\xd1\x08\x12\x1e\n\x19MSG_GUILDBT_REPORT_PEOPLE\x10\xd2\x08\x12\x1f\n\x1aMSG_GUILDBT_DRAWBACK_APPLY\x10\xd3\x08\x12&\n!MSG_SERVER_MARRIAGE_MARRY_REQUEST\x10\xb0\t\x12\'\n\"MSG_SERVER_MARRIAGE_MARRY_RESPONSE\x10\xb1\t\x12(\n#MSG_SERVER_MARRIAGE_DIVORCE_REQUEST\x10\xb2\t\x12)\n$MSG_SERVER_MARRIAGE_DIVORCE_RESPONSE\x10\xb3\t\x12*\n%MSG_SERVER_MARRIAGE_MARRYROLL_REQUEST\x10\xb4\t\x12+\n&MSG_SERVER_MARRIAGE_MARRYROLL_RESPONSE\x10\xb5\t\x12%\n MSG_SERVER_MARRIAGE_INFO_REQUEST\x10\xb6\t\x12&\n!MSG_SERVER_MARRIAGE_INFO_RESPONSE\x10\xb7\t\x12-\n(MSG_SERVER_MARRIAGE_DIVORCEFORCE_REQUEST\x10\xb8\t\x12.\n)MSG_SERVER_MARRIAGE_DIVORCEFORCE_RESPONSE\x10\xb9\t\x12,\n\'MSG_SERVER_MARRIAGE_MARRY_READY_REQUEST\x10\xba\t\x12-\n(MSG_SERVER_MARRIAGE_MARRY_READY_RESPONSE\x10\xbb\t\x12\x39\n4MSG_SERVER_MARRIAGE_TITLECHANGE_ASK_INTIMACY_REQUEST\x10\xbc\t\x12:\n5MSG_SERVER_MARRIAGE_TITLECHANGE_ASK_INTIMACY_RESPONSE\x10\xbd\t\x12\x1e\n\x19MSG_QUEST_OP_EVENT_NOTICE\x10\x94\n\x12!\n\x1cMSG_NATION_CAMP_UNION_NOTICE\x10\xf8\n\x12*\n%MSG_NATION_CAMP_UNION_ACTIVITY_NOTICE\x10\xf9\n\x12 \n\x1bMSG_GATE_CHANGE_CAMP_NOTICE\x10\xfa\n\x12\x1a\n\x15MSG_GUILD_CREATE_SYNC\x10\xdc\x0b\x12\x1b\n\x16MSG_GUILD_DISMISS_SYNC\x10\xdd\x0b\x12\x1b\n\x16MSG_GUILD_SUMMARY_SYNC\x10\xde\x0b\x12\x1e\n\x19MSG_GUILD_MEMBER_ADD_SYNC\x10\xdf\x0b\x12!\n\x1cMSG_GUILD_MEMBER_REMOVE_SYNC\x10\xe0\x0b\x12!\n\x1cMSG_GUILD_MEMBER_CHANGE_SYNC\x10\xe1\x0b\x12!\n\x1cMSG_GUILD_APPLICANT_ADD_SYNC\x10\xe2\x0b\x12$\n\x1fMSG_GUILD_APPLICANT_REMOVE_SYNC\x10\xe3\x0b\x12\x1c\n\x17MSG_GUILD_BUILDING_SYNC\x10\xe4\x0b\x12\"\n\x1dMSG_GUILD_GATE_CREATE_REQUEST\x10\xe5\x0b\x12!\n\x1cMSG_GUILD_GATE_APPLY_REQUEST\x10\xe6\x0b\x12 \n\x1bMSG_GUILD_GATE_QUIT_REQUEST\x10\xe7\x0b\x12(\n#MSG_GUILD_GATE_APPLY_CANCEL_REQUEST\x10\xe8\x0b\x12\x1e\n\x19MSG_GUILD_GATE_QUICK_JOIN\x10\xe9\x0b\x12)\n$MSG_GUILD_GATE_APPLY_CONFIRM_REQUEST\x10\xea\x0b\x12 \n\x1bMSG_GUILD_GATE_KICK_REQUEST\x10\xeb\x0b\x12\"\n\x1dMSG_GUILD_GATE_MODIFY_REQUEST\x10\xec\x0b\x12\'\n\"MSG_GUILD_GATE_CHANGE_POST_REQUEST\x10\xed\x0b\x12\x1a\n\x15MSG_GUILD_GATE_DONATE\x10\xee\x0b\x12!\n\x1cMSG_GUILD_GATE_CHANGE_LEADER\x10\xef\x0b\x12%\n MSG_GUILD_GATE_LEAVEL_UP_REQUEST\x10\xf0\x0b\x12)\n$MSG_GUILD_GATE_BUILDING_LVUP_REQUEST\x10\xf1\x0b\x12\"\n\x1dMSG_GUILD_SKILL_STUDY_REQUEST\x10\xf2\x0b\x12\x1f\n\x1aMSG_GUILD_SKILL_STUDY_SYNC\x10\xf3\x0b\x12%\n MSG_GUILD_RESET_SKILL_CD_REQUEST\x10\xf4\x0b\x12 \n\x1bMSG_GUILD_OPEN_BOSS_REQUEST\x10\xf5\x0b\x12\x1d\n\x18MSG_GUILD_OPEN_BOSS_SYNC\x10\xf6\x0b\x12!\n\x1cMSG_GUILD_BOSS_CHANGE_REPORT\x10\xf7\x0b\x12\x1e\n\x19MSG_GUILD_DISMISS_REQUEST\x10\xf8\x0b\x12%\n MSG_GUILD_CANCEL_DISMISS_REQUEST\x10\xf9\x0b\x12\x1b\n\x16MSG_GUILD_DATA_IMPULSE\x10\xfa\x0b\x12!\n\x1cMSG_GATEWAY_TIME_COME_REPORT\x10\xfb\x0b\x12\x1f\n\x1aMSG_GUILD_MAINTENANCE_SYNC\x10\xfc\x0b\x12\'\n\"MSG_GUILD_GATE_BATTLE_SIGN_REQUEST\x10\xfd\x0b\x12$\n\x1fMSG_GUILD_GATE_ADD_MONEY_REPORT\x10\xfe\x0b\x12#\n\x1eMSG_GUILD_POWER_UPDATE_REQUEST\x10\xff\x0b\x12$\n\x1fMSG_GUILD_POWER_UPDATE_RESPONSE\x10\x80\x0c\x12%\n MSG_GUILD_STORE_POSTITEM_REQUEST\x10\x81\x0c\x12&\n!MSG_GUILD_STORE_POSTITEM_RESPONSE\x10\x82\x0c\x12&\n!MSG_GUILD_STORE_GRANTITEM_REQUEST\x10\x83\x0c\x12\'\n\"MSG_GUILD_STORE_GRANTITEM_RESPONSE\x10\x84\x0c\x12&\n!MSG_GUILD_STORE_EXPANDBAG_REQUEST\x10\x85\x0c\x12\'\n\"MSG_GUILD_STORE_EXPANDBAG_RESPONSE\x10\x86\x0c\x12 \n\x1bMSG_GUILD_SPAN_SIGN_REQUEST\x10\x87\x0c\x12!\n\x1cMSG_GUILD_SPAN_SIGN_RESPONSE\x10\x88\x0c\x12%\n MSG_GUILD_IMBATTLE_REWARD_REPORT\x10\x89\x0c\x12\"\n\x1dMSG_GUILD_MANOR_CREATE_REPORT\x10\x8a\x0c\x12 \n\x1bMSG_GUILD_MANOR_CREATE_SYNC\x10\x8b\x0c\x12%\n MSG_GUILD_MANOR_OPENFIRE_REQUEST\x10\x8c\x0c\x12\x1d\n\x18MSG_GUILD_OPEN_FIRE_SYNC\x10\x8d\x0c\x12&\n!MSG_GUILD_MANOR_STATUE_FLUSH_SYNC\x10\x8e\x0c\x12(\n#MSG_GUILD_MANOR_STATUE_FLUSH_REPORT\x10\x8f\x0c\x12$\n\x1fMSG_RKS_TO_EGS_SIGNLIST_REQUEST\x10\x90\x0c\x12\x1e\n\x19MSG_PETINFO_UPDATE_NOTICE\x10\xc0\x0c\x12!\n\x1cMSG_RANKMSG_TRANSPOND_NOTICE\x10\xc1\x0c\x12\x1a\n\x15MSG_DRAW_LOTTERY_SYNC\x10\xc2\x0c\x12\"\n\x1dMSG_DRAW_LOTTERY_DATA_REQUEST\x10\xc3\x0c\x12#\n\x1eMSG_DRAW_LOTTERY_DATA_RESPONSE\x10\xc4\x0c\x12!\n\x1cMSG_DRAW_LOTTERY_DATA_NOTICE\x10\xc5\x0c\x12\x1a\n\x15MSG_ONEARMBANDIT_SYNC\x10\xca\x0c\x12\x1c\n\x17MSG_ONEARMBANDIT_REPORT\x10\xcb\x0c\x12\x1c\n\x17MSG_ONEARMBANDIT_NOTICE\x10\xcc\x0c\x12 \n\x1bMSG_ONEARMBANDIT_END_REPORT\x10\xcd\x0c\x12\x1f\n\x1aMSG_RANK_CHARM_TOP3_REPORT\x10\xd4\x0c\x12(\n#MSG_RANK_CHARM_TOP3_REPORT_CALLBACK\x10\xd5\x0c\x12%\n MSG_SPANPVE_KEEPTEAMINFO_REQUIRE\x10\xdf\x0c\x12#\n\x1eMSG_SPANPVE_REGAINTEAM_REQUEST\x10\xe0\x0c\x12$\n\x1fMSG_SPANPVE_REGAINTEAM_RESPONSE\x10\xe1\x0c\x12%\n MSG_SPANPVE_LEAVEDUNGEON_REQUEST\x10\xe2\x0c\x12%\n MSG_SPANPVE_ENTERDUNGEON_REQUEST\x10\xe3\x0c\x12%\n MSG_SPANPVE_GETMATCHLIST_REQUEST\x10\xe4\x0c\x12&\n!MSG_SPANPVE_GETMATCHLIST_RESPONSE\x10\xe5\x0c\x12\x19\n\x14MSG_SEND_MAIL_REWARD\x10\xf2\x0c\x12\x1b\n\x16MSG_CROSS_STATE_REPORT\x10\xa4\r\x12$\n\x1fMSG_CROSS_STATE_REPORT_CALLBACK\x10\xa5\r\x12\x1e\n\x19MSG_BILLING_CHARGE_NOTICE\x10\xa6\r\x12\x19\n\x14MSG_SPAN_CHAT_NOTICE\x10\xa7\r\x12\x19\n\x14MSG_SPAN_MUTE_NOTICE\x10\xa8\r\x12\x18\n\x13MSG_RKS_STOP_NOTICE\x10\xa9\r\x12\x1d\n\x18MSG_SPAN_GETRANK_REQUEST\x10\xaa\r\x12\x1e\n\x19MSG_SPAN_GETRANK_RESPONSE\x10\xab\r\x12#\n\x1eMSG_SPAN_GETGUILDRANK_RESPONSE\x10\xac\r\x12\"\n\x1dMSG_SPAN_GETMAINRANK_RESPONSE\x10\xad\r\x12\'\n\"MSG_SPAN_GETMAINGUILDRANK_RESPONSE\x10\xae\r\x12,\n\'MSG_EGS_ACTIVITY_QUESTION_ANSWER_NOTICE\x10\x88\x0e\x12)\n$MSG_EGS_ACTIVITY_QUESTION_END_NOTICE\x10\x89\x0e\x12,\n\'MSG_RKS_ACTIVITY_QUESTION_REWARD_NOTICE\x10\x8a\x0e\x12+\n&MSG_EGS_ACTIVITY_QUESTION_ENTER_NOTICE\x10\x8b\x0e\x12#\n\x1eMSG_WORLD_BOSS_TO_CAMP_REQUEST\x10\xec\x0e\x12$\n\x1fMSG_WORLD_BOSS_TO_CAMP_RESPONSE\x10\xed\x0e\x12*\n%MSG_EGS_SPANIMBATTLE_WATCHING_REQUEST\x10\xd0\x0f\x12+\n&MSG_EGS_SPANIMBATTLE_WATCHING_RESPONSE\x10\xd1\x0f\x12\x1d\n\x18MSG_EGS_SPAN_MAIL_NOTICE\x10\xd2\x0f\x12*\n%MSG_EGS_SPANIMBATTLE_GUILDDATA_REPORT\x10\xd3\x0f\x12,\n\'MSG_BWS_SPANIMBATTLE_HISTORYDATA_NOTICE\x10\xd4\x0f\x12%\n MSG_EGS_SPANIMBATTLE_BET_REQUEST\x10\xd5\x0f\x12&\n!MSG_BWS_SPANIMBATTLE_BET_RESPONSE\x10\xd6\x0f\x12\"\n\x1dMSG_BWS_SPAN_RACE_IDLE_NOTICE\x10\xd7\x0f\x12#\n\x1eMSG_BWS_SPANIMBATTLE_BET_ROUND\x10\xd8\x0f\x12\x1e\n\x19MSG_BWS_BET_CLEAR_REQUEST\x10\xd9\x0f\x12&\n!MSG_BWS_SPANIMBATTLE_START_NOTICE\x10\xda\x0f\x12&\n!MSG_BWS_SPAN_STATUS_CHANGE_NOTICE\x10\xdb\x0f\x12$\n\x1fMSG_BWS_SPANIMBATTLE_BET_NOTICE\x10\xdc\x0f\x12\x1f\n\x1aMSG_SERVER_GUILD_ID_REPORT\x10\xdd\x0f\x12 \n\x1bMSG_BWS_LOAD_SUCCESS_NOTICE\x10\xde\x0f\x12\x1e\n\x19MSG_BWS_REQUEST_SIGN_LIST\x10\xdf\x0f\x12&\n!MSG_EGS_SPANIMBATTLE_FINAL_REPORT\x10\xe0\x0f\x12(\n#MSG_EGS_SPANMONORBATTLE_BET_REQUEST\x10\xe4\x0f\x12)\n$MSG_BWS_SPANMONORBATTLE_BET_RESPONSE\x10\xe5\x0f\x12+\n&MSG_EGS_SPAN_MONOR_ENTER_MONOR_REQUEST\x10\xe6\x0f\x12,\n\'MSG_BWS_SPAN_MONOR_ENTER_MONOR_RESPONSE\x10\xe7\x0f\x12\'\n\"MSG_BWS_SPAN_MONOR_ACT_IDLE_NOTICE\x10\xe8\x0f\x12+\n&MSG_BWS_MONOR_DATA_LOAD_SUCCESS_NOTICE\x10\xe9\x0f\x12,\n\'MSG_BWS_SPAN_MONOR_STATUS_CHANGE_NOTICE\x10\xea\x0f\x12-\n(MSG_EGS_SPAN_MONOR_ENTER_DUNGEON_REQUEST\x10\xeb\x0f\x12.\n)MSG_BWS_SPAN_MONOR_ENTER_DUNGEON_RESPONSE\x10\xec\x0f\x12-\n(MSG_EGS_SPAN_MONOR_DUNGEON_RESULT_NOTICE\x10\xed\x0f\x12-\n(MSG_BWS_SPAN_MONOR_CREATE_BATTLE_REQUEST\x10\xee\x0f\x12.\n)MSG_EGS_SPAN_MONOR_CREATE_BATTLE_RESPONSE\x10\xef\x0f\x12-\n(MSG_BWS_SPAN_MONOR_DESTORY_BATTLE_NOTICE\x10\xf0\x0f\x12\x30\n+MSG_BWS_SPAN_MONOR_RACEONE_WIN_GUILD_NOTICE\x10\xf1\x0f\x12+\n&MSG_BWS_SPAN_MONOR_CREATE_MONOR_NOTICE\x10\xf2\x0f\x12,\n\'MSG_BWS_SPAN_MONOR_DESTORY_MONOR_NOTICE\x10\xf3\x0f\x12.\n)MSG_EGS_SPAN_MONOR_SIGN_COSTMONOY_REQUEST\x10\xf4\x0f\x12/\n*MSG_RKS_SPAN_MONOR_SIGN_COSTMONOY_RESPONSE\x10\xf5\x0f\x12.\n)MSG_BWS_SPAN_MONOR_FLUSH_SIGN_DATA_NOTICE\x10\xf6\x0f\x12\x30\n+MSG_BWS_SPAN_MONOR_RACETWO_WIN_GUILD_NOTICE\x10\xf7\x0f\x12\x30\n+MSG_BWS_SPAN_MONOR_SEND_GUILD_REWARD_NOTICE\x10\xf8\x0f\x12.\n)MSG_BWS_SPAN_MONOR_GIVE_BACK_MONEY_NOTICE\x10\xf9\x0f\x12\x32\n-MSG_BWS_SPAN_MONOR_GIVE_BACK_MONEY_RET_NOTICE\x10\xfa\x0f\x12,\n\'MSG_EGS_SPAN_MONOR_WATCH_BATTLE_REQUEST\x10\xfb\x0f\x12-\n(MSG_BWS_SPAN_MONOR_WATCH_BATTLE_RESPONSE\x10\xfc\x0f\x12/\n*MSG_BWS_SPAN_MONOR_GUILD_TOP_SCORE_REQUEST\x10\xfd\x0f\x12\x30\n+MSG_EGS_SPAN_MONOR_GUILD_TOP_SCORE_RESPONSE\x10\xfe\x0f\x12,\n\'MSG_BWS_SPAN_MONOR_GUILD_MEMBER_REQUEST\x10\xff\x0f\x12-\n(MSG_RKS_SPAN_MONOR_GUILD_MEMBER_RESPONSE\x10\x80\x10\x12$\n\x1fMSG_BWS_SPAN_MONOR_BATTLE_START\x10\x81\x10\x12 \n\x1bMSG_EGS_SPANWILDRANK_REPORT\x10\x82\x10\x12$\n\x1fMSG_EGS_GETSPANWILDRANK_REQUEST\x10\x83\x10\x12%\n MSG_EGS_GETSPANWILDRANK_RESPONSE\x10\x84\x10\x12&\n!MSG_EGS_GETSPANWILDBOSSLV_REQUEST\x10\x85\x10\x12\'\n\"MSG_EGS_GETSPANWILDBOSSLV_RESPONSE\x10\x86\x10\x12!\n\x1cMSG_SPANWILDPLAYERNUM_NOTICE\x10\x87\x10\x12$\n\x1fMSG_SAVETEAMINFOSPANWILDREQUEST\x10\x88\x10\x12%\n MSG_SAVETEAMINFOSPANWILDRESPONSE\x10\x89\x10\x12$\n\x1fMSG_SPANWILD_REGAINTEAM_REQUEST\x10\x8a\x10\x12%\n MSG_SPANWILD_REGAINTEAM_RESPONSE\x10\x8b\x10\x12\x1f\n\x1aMSG_MERGESERVERDATA_REPORT\x10\x96\x10\x12!\n\x1cMSG_MERGESERVERDATA_RESPONSE\x10\x97\x10\x12 \n\x1bMSG_GETSPANCHARINFO_REQUEST\x10\xa0\x10\x12\x18\n\x13MSG_BWSDUEL_REQUEST\x10\xa1\x10\x12\x19\n\x14MSG_BWSDUEL_RESPONSE\x10\xa2\x10\x12\x1e\n\x19MSG_BWSDUELDELITEM_NOTICE\x10\xa3\x10\x12\x19\n\x14MSG_BWSDODUEL_NOTICE\x10\xa4\x10\x12&\n!MSG_BWSDUELPLAYERENTERGAME_NOTICE\x10\xa5\x10\x12 \n\x1bMSG_BWSDESPISESUCCEEDNOTICE\x10\xa6\x10\x12\x1c\n\x17MSG_BWSLOSEREQUIPNOTICE\x10\xa7\x10\x12\x1d\n\x18MSG_BWSLOSEREQUIPREQUEST\x10\xa8\x10\x12\x1e\n\x19MSG_BWSLOSEREQUIPRESPONSE\x10\xa9\x10\x12!\n\x1cMSG_GETSPANCHARINFO_REQUEST2\x10\xaa\x10\x12\x1d\n\x18MSG_EGS_PLAYERPK_REQUEST\x10\xb8\x17\x12\x1e\n\x19MSG_RKS_PLAYERPK_RESPONSE\x10\xb9\x17\x12#\n\x1eMSG_EGS_CANCEL_PLAYERPK_NOTICE\x10\xba\x17\x12#\n\x1eMSG_EGS_REJECT_PLAYERPK_NOTICE\x10\xbb\x17\x12$\n\x1fMSG_EGS_ACCEPT_PLAYERPK_REQUEST\x10\xbc\x17\x12%\n MSG_RKS_ACCEPT_PLAYERPK_RESPONSE\x10\xbd\x17\x12#\n\x1eMSG_EGS_REMOVE_PALYERPK_NOTICE\x10\xbe\x17\x12$\n\x1fMSG_RSK_FORWARD_PLAYERPK_NOTICE\x10\xbf\x17\x12+\n&MSG_RSK_FORWARD_REJECT_PLAYERPK_NOTICE\x10\xc0\x17\x12$\n\x1fMSG_RSK_FIREWORKS_STATUS_NOTICE\x10\xcc\x17\x12\"\n\x1dMSG_RSK_FIREWORKS_OPEN_NOTICE\x10\xcd\x17\x12#\n\x1eMSG_EGS_FIREWORKS_SCORE_REPORT\x10\xce\x17\x12#\n\x1eMSG_RSK_FIREWORKS_SCORE_NOTICE\x10\xcf\x17\x12 \n\x1bMSG_RSK_FIREWORKS_FX_NOTICE\x10\xd0\x17\x12(\n#MSG_EGS_PETBATTLE_FIGHTDATA_REQUEST\x10\xd6\x17\x12)\n$MSG_RKS_PETBATTLE_FIGHTDATA_RESPONSE\x10\xd7\x17\x12,\n\'MSG_EGS_PETBATTLE_CHALLENGERDATA_NOTICE\x10\xd8\x17\x12$\n\x1fMSG_EGS_PETBATTLE_RESULT_NOTICE\x10\xd9\x17\x12-\n(MSG_EGS_PETBATTLE_FLUSH_PVP_MATCH_NOTICE\x10\xda\x17\x12*\n%MSG_EGS_PETBATTLE_QUERY_RECORD_NOTICE\x10\xdb\x17\x12)\n$MSG_EGS_PETBATTLE_GETPVPINFO_REQUEST\x10\xdc\x17\x12*\n%MSG_RKS_PETBATTLE_GETPVPINFO_RESPONSE\x10\xdd\x17\x12.\n)MSG_RKS_PETBATTLE_SEND_MATCH_INFO_REQUEST\x10\xde\x17\x12\x31\n,MSG_RKS_PETBATTLE_RECIVE_MATCH_INFO_RESPONSE\x10\xdf\x17\x12,\n\'MSG_EGS_PETBATTLE_SETPLAYER_RANK_NOTICE\x10\xe0\x17\x12(\n#MSG_EGS_PETBATTLE_CLEAR_RANK_NOTICE\x10\xe1\x17\x12*\n%MSG_RKS_PETBATTLE_QUERY_RECORD_NOTICE\x10\xe2\x17\x12-\n(MSG_RKS_PETBATTLE_SENDMAIL_REWARD_NOTICE\x10\xe3\x17\x12\'\n\"MSG_EGS_PETBATTLE_ADD_ROBOT_NOTICE\x10\xe4\x17\x12\x1d\n\x17MSG_COUPLEPVP_INFO_SYNC\x10\xb8\x91\x02\x12\"\n\x1cMSG_COUPLEPVP_SIGNIN_REQUEST\x10\xb9\x91\x02\x12#\n\x1dMSG_COUPLEPVP_SIGNIN_RESPONSE\x10\xba\x91\x02\x12\'\n!MSG_COUPLEPVP_SIGNIN_BEGIN_NOTICE\x10\xbb\x91\x02\x12$\n\x1eMSG_COUPLEPVP_CREATEDG_REQUEST\x10\xbc\x91\x02\x12%\n\x1fMSG_COUPLEPVP_CREATEDG_RESPONSE\x10\xbd\x91\x02\x12&\n MSG_COUPLEPVP_DUNGEON_END_REPORT\x10\xbe\x91\x02\x12$\n\x1eMSG_COUPLEPVP_FORCE_END_NOTICE\x10\xbf\x91\x02\x12\'\n!MSG_COUPLEPVP_BATTLE_BEGIN_NOTICE\x10\xc0\x91\x02\x12#\n\x1dMSG_COUPLEPVP_RACE_END_NOTICE\x10\xc1\x91\x02\x12&\n MSG_COUPLEPVP_RACE_REWARD_NOTICE\x10\xc2\x91\x02\x12)\n#MSG_COUPLEPVP_CANCEL_SIGNIN_REQUEST\x10\xc3\x91\x02\x12*\n$MSG_COUPLEPVP_CANCEL_SIGNIN_RESPONSE\x10\xc4\x91\x02\x12!\n\x1bMSG_EGS_REDBAG_SEND_REQUEST\x10\xa0\x99\x02\x12\x1b\n\x15MSG_RKS_REDBAG_NOTICE\x10\xa1\x99\x02\x12!\n\x1bMSG_EGS_REDBAG_OPEN_REQUEST\x10\xa2\x99\x02\x12\"\n\x1cMSG_EGS_REDBAG_OPEN_RESPONSE\x10\xa3\x99\x02\x12!\n\x1bMSG_EGS_REDBAG_LIST_REQUEST\x10\xa4\x99\x02\x12\"\n\x1cMSG_RKS_REDBAG_LIST_RESPONSE\x10\xa5\x99\x02\x12\x1e\n\x18MSG_RKS_REDBAG_COUNT_SYN\x10\xa6\x99\x02\x12 \n\x1aMSG_RKS_REDBAG_MAIL_REPORT\x10\xa7\x99\x02\x12\x1d\n\x17MSG_RKS_REDBAG_PF_ERROR\x10\xa8\x99\x02\x12#\n\x1dMSG_RKS_REDBAG_BALANCE_NOTICE\x10\xa9\x99\x02\x12\x1f\n\x1aMSG_GATE_WORLDlEVEL_REPORT\x10\x91N\x12 \n\x1bMSG_WORLD_WORLDlEVEL_NOTICE\x10\x92N\x12\x1f\n\x1aMSG_SPANWILDSHARDID_NOTICE\x10\x93N\x12\x18\n\x13MSG_MSGCOUNT_NOTICE\x10\x94N*L\n\tEDBOpType\x12\x13\n\x0f\x65nDBOpType_Save\x10\x01\x12\x15\n\x11\x65nDBOpType_Update\x10\x02\x12\x13\n\x0f\x65nDBOpType_Load\x10\x03*:\n\nEDBKeyType\x12\x14\n\x10\x65nDBKeyType_Char\x10\x01\x12\x16\n\x12\x65nDBKeyType_Player\x10\x02*o\n\x13\x45PlayerOnlineStatus\x12\x1d\n\x19MSG_OFFLINESTATUS_OFFLINE\x10\x00\x12\x1b\n\x17MSG_OFFLINESTATUS_CACHE\x10\x01\x12\x1c\n\x18MSG_OFFLINESTATUS_ONLINE\x10\x02*D\n\x12\x45\x43onsignActionType\x12\x16\n\x12\x45\x43ONSIGNACTION_ADD\x10\x01\x12\x16\n\x12\x45\x43ONSIGNACTION_DEL\x10\x02*\xc7\x01\n\x1f\x45\x46riendNotifyIntimacyChangeType\x12\'\n#EFRIENDNOTIFYINTIMACYCHANGETYPE_ADD\x10\x01\x12\'\n#EFRIENDNOTIFYINTIMACYCHANGETYPE_DEL\x10\x02\x12)\n%EFRIENDNOTIFYINTIMACYCHANGETYPE_CLEAR\x10\x03\x12\'\n#EFRIENDNOTIFYINTIMACYCHANGETYPE_SET\x10\x04*^\n\x12PBEGataWayTimeCome\x12\x15\n\x11\x45GateWayTime_None\x10\x00\x12\x17\n\x13\x45GataWayTime_NewDay\x10\x01\x12\x18\n\x14\x45GateWayTime_NewWeek\x10\x02*,\n\tEActivity\x12\x1f\n\x1b\x65\x41\x63tivity_CrossServerBattle\x10\x01*W\n\x10\x45SpanGuildNotice\x12\x16\n\x12\x65SpanNotice_Leader\x10\x00\x12\x16\n\x12\x65SpanNotice_Office\x10\x01\x12\x13\n\x0f\x65SpanNotice_All\x10\x02\x42\x02H\x01')
+  serialized_pb='\n\x11msg_service.proto\x1a\x0fmsg_login.proto\x1a\x10msg_common.proto\x1a\x13msg_role_base.proto\x1a\x0emsg_team.proto\x1a\x0emsg_user.proto\x1a\x0emsg_item.proto\x1a\x10msg_friend.proto\x1a\x0fmsg_guild.proto\x1a\x12msg_relation.proto\x1a\rmsg_pet.proto\x1a\x0emsg_base.proto\x1a\x0fmsg_match.proto\x1a\x14msg_spanbattle.proto\x1a\x14msg_pet_battle.proto\x1a\x18msg_spanteambattle.proto\x1a\x12msg_spanmaze.proto\x1a\x13msg_magic_pet.proto\"-\n\x1aPBEgsToGateRegisterRequest\x12\x0f\n\x07\x63\x61mp_id\x18\x01 \x01(\x11\"/\n\x1bPBEgsToGateRegisterResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"\x9f\x01\n\x15PBMsgCrossStateReport\x12\x12\n\nrequest_id\x18\x01 \x01(\r\x12\"\n\x0b\x63ross_state\x18\x02 \x01(\x0e\x32\r.ECrossStatus\x12\x0f\n\x07role_id\x18\x03 \x01(\r\x12\x17\n\x0f\x66rom_gateway_id\x18\x04 \x01(\r\x12$\n\x05param\x18\x05 \x01(\x0b\x32\x15.PBBianJingTPResponse\"Y\n\x1dPBMsgCrossStateReportCallBack\x12\x12\n\nrequest_id\x18\x01 \x01(\r\x12$\n\x05param\x18\x02 \x01(\x0b\x32\x15.PBBianJingTPResponse\",\n\x16PBMsgGatewayDownNotice\x12\x12\n\ngateway_id\x18\x01 \x01(\r\"*\n\x17PBMsgKickRoleListNotice\x12\x0f\n\x07role_id\x18\x01 \x03(\r\"\xdb\x01\n\x13PBMsgStartDBRequest\x12\x1b\n\x07op_type\x18\x01 \x01(\x0e\x32\n.EDBOpType\x12\x16\n\x0esrc_gateway_id\x18\x02 \x01(\x11\x12\x15\n\rsrc_camp_type\x18\x03 \x01(\x11\x12\x16\n\x0e\x64st_gateway_id\x18\x04 \x01(\x11\x12\x1d\n\x08key_type\x18\x05 \x01(\x0e\x32\x0b.EDBKeyType\x12\x0b\n\x03key\x18\x06 \x01(\x04\x12\x0f\n\x07pb_name\x18\x07 \x01(\t\x12\x0f\n\x07pb_data\x18\x08 \x01(\t\x12\x12\n\nrequest_id\x18\t \x01(\r\"r\n\x14PBMsgStartDBResponse\x12\x14\n\x0cresult_state\x18\x01 \x01(\x11\x12\x12\n\nrequest_id\x18\x02 \x01(\r\x12\x1b\n\x07op_type\x18\x03 \x01(\x0e\x32\n.EDBOpType\x12\x13\n\x0bresult_data\x18\x04 \x01(\t\":\n\x13PBConsignTipRequire\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x12\n\nconsign_id\x18\x02 \x01(\x04\"`\n\x14PBConsignTipResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x12\n\nconsign_id\x18\x03 \x01(\x04\x12\x11\n\titem_info\x18\x04 \x01(\t\"\x83\x01\n\x16PBConsignListExRequire\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x0b\n\x03key\x18\x02 \x01(\t\x12\x10\n\x08key_list\x18\x03 \x03(\r\x12\x13\n\x0bstart_index\x18\x04 \x01(\x11\x12\x0e\n\x06number\x18\x05 \x01(\x11\x12\x14\n\x0c\x61\x63\x63ount_type\x18\x06 \x01(\x11\"\x96\x01\n\x17PBConsignListExResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x13\n\x0bstart_index\x18\x04 \x01(\x11\x12\x0e\n\x06number\x18\x05 \x01(\x11\x12\x11\n\tinfo_list\x18\x06 \x03(\t\x12\x13\n\x0btotal_count\x18\x07 \x01(\x11\"@\n\x19PBConsignGetRewardRequire\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x12\n\nconsign_id\x18\x02 \x01(\x04\"f\n\x1aPBConsignGetRewardResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x12\n\nconsign_id\x18\x03 \x01(\x04\x12\x11\n\tinfo_list\x18\x04 \x03(\t\")\n\x16PBConsignMyListRequire\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\"O\n\x17PBConsignMyListResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x11\n\tinfo_list\x18\x03 \x03(\t\"\'\n\x14PBConsignListRequire\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\"M\n\x15PBConsignListResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x11\n\tinfo_list\x18\x03 \x03(\t\"\xaf\x01\n\x12PBConsignUpRequire\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x0f\n\x07user_id\x18\x02 \x01(\r\x12\x0f\n\x07role_id\x18\x03 \x01(\r\x12\x0f\n\x07game_id\x18\x04 \x01(\r\x12\x0e\n\x06pbItem\x18\x05 \x01(\t\x12\r\n\x05price\x18\x06 \x01(\x11\x12\x12\n\nprice_type\x18\x07 \x01(\r\x12\x0c\n\x04\x63ost\x18\x08 \x01(\x11\x12\x14\n\x0c\x61\x63\x63ount_type\x18\t \x01(\x11\"h\n\x13PBConsignUpResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x0f\n\x07item_id\x18\x03 \x01(\x04\x12\x0c\n\x04\x63ost\x18\x04 \x01(\x11\x12\x0f\n\x07my_list\x18\x05 \x03(\t\";\n\x14PBConsignDownRequire\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x12\n\nconsign_id\x18\x02 \x01(\x04\"\\\n\x15PBConsignDownResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x0f\n\x07pb_item\x18\x03 \x01(\t\x12\x0f\n\x07my_list\x18\x04 \x03(\t\"\x18\n\x16PBConsignGetRwdRequire\"\x19\n\x17PBConsignGetRwdResponse\"\x84\x01\n\x13PBConsignBuyRequire\x12\x0f\n\x07game_id\x18\x01 \x01(\r\x12\r\n\x05gw_id\x18\x02 \x01(\r\x12\x0f\n\x07user_id\x18\x03 \x01(\r\x12\x0f\n\x07role_id\x18\x04 \x01(\r\x12\x12\n\nconsign_id\x18\x05 \x01(\x04\x12\x17\n\x0f\x62\x61lance_account\x18\x06 \x01(\x11\"\xea\x01\n\x14PBConsignBuyResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07game_id\x18\x02 \x01(\r\x12\r\n\x05gw_id\x18\x03 \x01(\r\x12\x0f\n\x07user_id\x18\x04 \x01(\r\x12\x0f\n\x07role_id\x18\x05 \x01(\r\x12\x12\n\nconsign_id\x18\x06 \x01(\x04\x12\x0b\n\x03tax\x18\x07 \x01(\x11\x12\x0f\n\x07pb_item\x18\x08 \x01(\t\x12\x13\n\x0bsrc_balance\x18\t \x01(\x11\x12\x13\n\x0b\x64st_balance\x18\n \x01(\x11\x12\x13\n\x0b\x64st_role_id\x18\x0b \x01(\r\x12\r\n\x05price\x18\x0c \x01(\x11\"\x83\x01\n\x0ePBRoleEnterEGS\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x1d\n\x04sync\x18\x02 \x01(\x0b\x32\x0f.PBRoleInfoSync\x12\x17\n\x0frole_gateway_id\x18\x03 \x01(\r\x12(\n\x0c\x63onnect_type\x18\x04 \x01(\x0e\x32\x12.ELoginConnectType\"\xff\x02\n\x0ePBRoleInfoSync\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0f\n\x07\x63\x61mp_id\x18\x04 \x01(\r\x12\x0c\n\x04role\x18\x05 \x01(\r\x12\x0e\n\x06gender\x18\x06 \x01(\r\x12\r\n\x05level\x18\x07 \x01(\x11\x12\x0b\n\x03\x65xp\x18\x08 \x01(\x12\x12\x14\n\x0c\x62\x61ttle_score\x18\t \x01(\x11\x12\x11\n\tpvp_score\x18\n \x01(\x11\x12\r\n\x05kills\x18\x0b \x01(\x11\x12\x11\n\tvip_level\x18\x0c \x01(\x11\x12\x0b\n\x03vpa\x18\r \x01(\x04\x12\x0b\n\x03vpb\x18\x0e \x01(\x04\x12\x0b\n\x03vpc\x18\x0f \x01(\x04\x12\x10\n\x08sheet_id\x18\x10 \x01(\r\x12\x10\n\x08guild_id\x18\x13 \x01(\x04\x12\x12\n\nguild_name\x18\x14 \x01(\t\x12\x11\n\thead_icon\x18\x15 \x01(\t\x12\x12\n\ndungeon_id\x18\x16 \x01(\x04\x12\x0e\n\x06map_id\x18\x17 \x01(\x04\x12\x11\n\tplayer_id\x18\x18 \x01(\x04\"!\n\x0ePBRoleLeaveEGS\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"\x1f\n\x0cPBRoleDelete\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"\x1f\n\x0cPBGMKickRole\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"\x1e\n\x0bPBGMAnnouce\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\"\x1f\n\x0cPBGMMoveRole\x12\x0f\n\x07user_id\x18\x01 \x01(\r\">\n\nPBGMShutUp\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63hannel\x18\x02 \x01(\r\x12\x0e\n\x06period\x18\x03 \x01(\r\"#\n\x10PBGMCancelShutUp\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"F\n\x11PBGMTransferGroup\x12\r\n\x05iu_id\x18\x01 \x01(\x04\x12\x11\n\tfrom_role\x18\x02 \x01(\x04\x12\x0f\n\x07to_role\x18\x03 \x01(\x04\" \n\x0fPBGMDeleteGroup\x12\r\n\x05iu_id\x18\x01 \x01(\x04\"E\n\x0ePBGMRenameRole\x12\x0f\n\x07user_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x11\n\trole_name\x18\x03 \x01(\t\"d\n\x0ePBGMRecoverPet\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0e\n\x06pet_id\x18\x02 \x01(\x04\x12\x10\n\x08pet_info\x18\x03 \x01(\t\x12\x11\n\trequestId\x18\x04 \x01(\r\x12\x0c\n\x04type\x18\x05 \x01(\r\"r\n\x0cPBGMSendMail\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0c\n\x04\x62ody\x18\x03 \x01(\t\x12\x11\n\titem_info\x18\x04 \x01(\t\x12\x0c\n\x04type\x18\x05 \x01(\r\x12\x13\n\x0bsender_name\x18\x06 \x01(\t\"\xe7\x01\n\rPBGMSendMails\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0c\n\x04\x62ody\x18\x02 \x01(\t\x12\x11\n\titem_info\x18\x03 \x01(\t\x12\x18\n\x10min_total_charge\x18\x04 \x01(\r\x12\x18\n\x10max_total_charge\x18\x05 \x01(\r\x12\x16\n\x0emin_role_level\x18\x06 \x01(\r\x12\x16\n\x0emax_role_level\x18\x07 \x01(\r\x12\x11\n\tsend_time\x18\x08 \x01(\r\x12\x0f\n\x07mail_id\x18\t \x01(\x04\x12\r\n\x05param\x18\n \x03(\t\x12\x0f\n\x07\x63\x61mp_id\x18\x0b \x01(\r\"D\n\x0fPBGmRecoverRole\x12\x0f\n\x07user_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x0f\n\x07game_id\x18\x03 \x01(\r\"C\n\x0ePBGmDeleteRole\x12\x0f\n\x07user_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x0f\n\x07game_id\x18\x03 \x01(\r\"g\n\rPBGMClearItem\x12\x0f\n\x07user_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x0f\n\x07item_id\x18\x03 \x01(\t\x12\x10\n\x08item_num\x18\x04 \x01(\r\x12\x11\n\trequestId\x18\x05 \x01(\r\"\x1e\n\x0bPBGMCommand\x12\x0f\n\x07\x63ommand\x18\x01 \x01(\t\"C\n\x0cPBGMRoleItem\x12\x0f\n\x07item_id\x18\x01 \x01(\t\x12\x10\n\x08sheet_id\x18\x02 \x01(\t\x12\x10\n\x08quantity\x18\x03 \x01(\r\"7\n\x10PBGMRoleItemList\x12#\n\x0citems_tosave\x18\x01 \x03(\x0b\x32\r.PBGMRoleItem\"L\n\x13PBGMRecoverRoleItem\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\titem_info\x18\x02 \x01(\t\x12\x11\n\trequestId\x18\x03 \x01(\r\"4\n\x0ePBGMEGSRespone\x12\x11\n\trequestId\x18\x01 \x01(\r\x12\x0f\n\x07retcode\x18\x02 \x01(\r\"*\n\x0cPBGMRolePair\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"2\n\x0ePBGMRoleDetail\x12 \n\trole_pair\x18\x01 \x03(\x0b\x32\r.PBGMRolePair\"\xfe\x01\n\x13PBBianJingTPRequire\x12\x12\n\nrequest_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x13\n\x0bsrc_camp_id\x18\x03 \x01(\r\x12\x13\n\x0b\x64st_camp_id\x18\x04 \x01(\r\x12\x1d\n\x08position\x18\x05 \x01(\x0b\x32\x0b.PBPosition\x12\x1c\n\x05token\x18\x06 \x01(\x0b\x32\r.PBLoginToken\x12\x16\n\x0eserver_list_ip\x18\x07 \x01(\r\x12\x13\n\x0b\x63lient_type\x18\x08 \x01(\r\x12\x16\n\x0esrc_gateway_id\x18\t \x01(\r\x12\x16\n\x0e\x64st_gateway_id\x18\n \x01(\r\"\xc4\x01\n\x14PBBianJingTPResponse\x12\x13\n\x0bsrc_camp_id\x18\x01 \x01(\r\x12\x12\n\nrequest_id\x18\x02 \x01(\r\x12\x12\n\nfs_address\x18\x03 \x01(\t\x12\x1c\n\x05token\x18\x04 \x01(\x0b\x32\r.PBLoginToken\x12\x16\n\x0esrc_gateway_id\x18\x05 \x01(\r\x12\x16\n\x0e\x64st_gateway_id\x18\x06 \x01(\r\x12\x0f\n\x07role_id\x18\x07 \x01(\r\x12\x10\n\x08ret_code\x18\x08 \x01(\x11\"%\n\x12PBBianJingTPCancel\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"y\n\x0fPBChatExRequire\x12\x11\n\tchat_type\x18\x01 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\x12\x0f\n\x07role_id\x18\x03 \x03(\r\x12\x10\n\x08guild_id\x18\x04 \x01(\x04\x12\x1f\n\x07\x63ontent\x18\x05 \x01(\x0b\x32\x0e.PBChatContent\"N\n\x11PBGatePrivateChat\x12\x18\n\x10receiver_role_id\x18\x01 \x01(\r\x12\x1f\n\x07\x63ontent\x18\x02 \x01(\x0b\x32\x0e.PBChatContent\"9\n\x12PBTeamBuildRequire\x12\x12\n\nsession_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\"K\n\x11PBTeamSystemBuild\x12\x12\n\nsession_id\x18\x01 \x01(\r\x12\x0f\n\x07team_id\x18\x02 \x01(\r\x12\x11\n\tmember_id\x18\x03 \x03(\r\"R\n\x19PBTeamSystemBuildResponse\x12\x12\n\nsession_id\x18\x01 \x01(\r\x12\x10\n\x08ret_code\x18\x02 \x01(\r\x12\x0f\n\x07team_id\x18\x03 \x01(\r\";\n\x13PBTeamBuildResponse\x12\x12\n\nsession_id\x18\x01 \x01(\r\x12\x10\n\x08ret_code\x18\x02 \x01(\r\"U\n\x0fPBTeamBuildSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x1b\n\x06leader\x18\x02 \x01(\x0b\x32\x0b.PBRoleBase\x12\x14\n\x0cisnot_notice\x18\x03 \x01(\x08\"\'\n\x14PBTeamDismissRequire\x12\x0f\n\x07role_id\x18\x01 \x01(\r\":\n\x11PBTeamDismissSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x14\n\x0cisnot_notice\x18\x02 \x01(\x08\"C\n\x19PBTeamChangeLeaderRequire\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x15\n\rnew_leader_id\x18\x02 \x01(\r\"V\n\x16PBTeamChangeLeaderSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x15\n\rnew_leader_id\x18\x02 \x01(\r\x12\x14\n\x0cisnot_notice\x18\x03 \x01(\x08\"%\n\x12PBTeamLeaveRequire\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"W\n\x13PBTeamAddMemberSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x19\n\x04role\x18\x02 \x01(\x0b\x32\x0b.PBRoleBase\x12\x14\n\x0cisnot_notice\x18\x03 \x01(\x08\"P\n\x16PBTeamRemoveMemberSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x14\n\x0cisnot_notice\x18\x03 \x01(\x08\"D\n\x16PBTeamAddApplicantSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x19\n\x04role\x18\x02 \x01(\x0b\x32\x0b.PBRoleBase\"B\n\x19PBTeamRemoveApplicantSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x14\n\x0c\x61pplicant_id\x18\x02 \x01(\r\"E\n\x12PBTeamRoleBaseSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x1e\n\trole_base\x18\x02 \x01(\x0b\x32\x0b.PBRoleBase\"K\n\x18PBTeamRoleEnterSceneSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x1e\n\trole_base\x18\x02 \x01(\x0b\x32\x0b.PBRoleBase\"K\n\x18PBTeamRoleLeaveSceneSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x1e\n\trole_base\x18\x02 \x01(\x0b\x32\x0b.PBRoleBase\"7\n\x11PBTeamKickRequire\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tmember_id\x18\x02 \x01(\r\"7\n\x13PBTeamInviteRequire\x12\x0f\n\x07inviter\x18\x01 \x01(\r\x12\x0f\n\x07invitee\x18\x02 \x01(\r\"w\n\x17PBTeamInviteExamRequire\x12\x11\n\tleader_id\x18\x01 \x01(\r\x12\x12\n\ninviter_id\x18\x02 \x01(\r\x12\x12\n\ninvitee_id\x18\x03 \x01(\r\x12!\n\x06\x61nswer\x18\x04 \x01(\x0e\x32\x11.PBTeamAnswerType\"[\n\x14PBTeamInviteResponse\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0f\n\x07team_id\x18\x02 \x01(\r\x12!\n\x06\x61nswer\x18\x03 \x01(\x0e\x32\x11.PBTeamAnswerType\"I\n\x12PBTeamApplyRequire\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\ttarget_id\x18\x02 \x01(\r\x12\x0f\n\x07team_id\x18\x03 \x01(\r\"d\n\x18PBTeamApplyAnswerRequire\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x14\n\x0c\x61pplicant_id\x18\x02 \x01(\r\x12!\n\x06\x61nswer\x18\x03 \x01(\x0e\x32\x11.PBTeamAnswerType\")\n\x16PBTeamLeaveTeamDungeon\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"@\n\x19PBTeamSessionLeaveRequire\x12\x12\n\nsession_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\"B\n\x1aPBTeamSessionLeaveResponse\x12\x12\n\nsession_id\x18\x01 \x01(\r\x12\x10\n\x08ret_code\x18\x02 \x01(\r\"Q\n\x15PBGateCharInfoRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\'\n\x07request\x18\x02 \x01(\x0b\x32\x16.PBMsgCharInfoResquest\"S\n\x16PBGateCharInfoResponse\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12(\n\x08response\x18\x02 \x01(\x0b\x32\x16.PBMsgCharInfoResponse\"\x8a\x01\n\x18PBSpanGetCharInfoRequest\x12\x11\n\tgatewayid\x18\x01 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x02 \x01(\r\x12\x0e\n\x06roleid\x18\x03 \x01(\r\x12\'\n\x07request\x18\x04 \x01(\x0b\x32\x16.PBMsgCharInfoResquest\x12\x12\n\nrouter_num\x18\x05 \x01(\r\"#\n\nPBTeamSync\x12\x15\n\x04team\x18\x01 \x03(\x0b\x32\x07.PBTeam\"i\n\x06PBTeam\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x11\n\tleader_id\x18\x02 \x01(\r\x12\x1b\n\x06member\x18\x03 \x03(\x0b\x32\x0b.PBRoleBase\x12\x1e\n\tapplicant\x18\x04 \x03(\x0b\x32\x0b.PBRoleBase\"V\n\x1dPBServerTeamSetPurposeRequest\x12\x11\n\tleader_id\x18\x01 \x01(\r\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\"Q\n\x1aPBServerPurposeTeamRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\"U\n\x1ePBServerFetchTargetTeamRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\"g\n\x1fPBServerFetchTargetTeamResponse\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\x12\x0f\n\x07role_id\x18\x04 \x01(\r\"{\n\x19PBTeamDungeonCheckRequest\x12\x12\n\nsession_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x0f\n\x07team_id\x18\x03 \x01(\r\x12\x10\n\x08sheet_id\x18\x04 \x01(\r\x12\x16\n\x0esource_camp_id\x18\x05 \x01(\r\"g\n\x1aPBTeamDungeonCheckResponse\x12\x12\n\nsession_id\x18\x01 \x01(\r\x12\x10\n\x08ret_code\x18\x02 \x01(\r\x12\x10\n\x08\x65rr_type\x18\x03 \x01(\r\x12\x11\n\terr_param\x18\x04 \x01(\x12\"F\n\x0fPBTeamMatchSync\x12\x0f\n\x07team_id\x18\x01 \x01(\r\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\"P\n\x19PBServerTeamSignupRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\"g\n PBServerMsgRedPacketShakeRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x0f\n\x07user_ip\x18\x03 \x01(\r\x12\x10\n\x08user_mac\x18\x04 \x01(\t\"w\n!PBServerMsgRedPacketShakeResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x14\n\x0cpoint_amount\x18\x02 \x01(\x11\x12\x14\n\x0cuser_balance\x18\x03 \x01(\x11\x12\x14\n\x0cpool_balance\x18\x04 \x01(\x11\"j\n#PBServerMsgRedPacketExchangeRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x0f\n\x07user_ip\x18\x03 \x01(\r\x12\x10\n\x08user_mac\x18\x04 \x01(\t\"q\n$PBServerMsgRedPacketExchangeResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\r\n\x05token\x18\x02 \x01(\t\x12\x12\n\ntoken_type\x18\x03 \x01(\x11\x12\x14\n\x0cpoint_amount\x18\x04 \x01(\x11\"K\n\'PBServerMsgRedPacketExchangeListRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\"\x7f\n\x1aPBServerWeiXinExchangeInfo\x12\r\n\x05token\x18\x01 \x01(\t\x12\x12\n\ntoken_type\x18\x02 \x01(\x11\x12\x11\n\tuse_state\x18\x03 \x01(\x11\x12\x14\n\x0cpoint_amount\x18\x04 \x01(\x11\x12\x15\n\rgenerate_time\x18\x05 \x01(\r\"w\n(PBServerMsgRedPacketExchangeListResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x39\n\x14weixin_exchange_info\x18\x02 \x03(\x0b\x32\x1b.PBServerWeiXinExchangeInfo\"D\n PBServerMsgRedPacketJifenRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\"K\n!PBServerMsgRedPacketJifenResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x14\n\x0cuser_balance\x18\x02 \x01(\x11\"6\n\x0fPBEnterRoleInfo\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x12\n\ngateway_id\x18\x02 \x01(\r\"\xb1\x01\n\x15PBCreateArenaResponse\x12#\n\trole_info\x18\x01 \x03(\x0b\x32\x10.PBEnterRoleInfo\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\x12\x10\n\x08sheet_id\x18\x03 \x01(\r\x12\x1d\n\x08position\x18\x04 \x01(\x0b\x32\x0b.PBPosition\x12\x11\n\tisspanpve\x18\x05 \x01(\x08\x12\x10\n\x08isrevive\x18\x06 \x01(\x08\x12\x0c\n\x04loop\x18\x07 \x01(\x08\"\xb1\x01\n\x13PBEnterArenaRequire\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\x12\x10\n\x08sheet_id\x18\x03 \x01(\r\x12\x1d\n\x08position\x18\x04 \x01(\x0b\x32\x0b.PBPosition\x12\x12\n\ngateway_id\x18\x05 \x01(\r\x12\x11\n\tisspanpve\x18\x06 \x01(\x08\x12\x10\n\x08isrevive\x18\x07 \x01(\x08\x12\x0e\n\x06router\x18\x08 \x01(\r\"k\n\x14PBGuildKillMapReport\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\x12\x1d\n\x08position\x18\x03 \x01(\x0b\x32\x0b.PBPosition\x12\x12\n\nins_number\x18\x04 \x01(\r\"Z\n\x15PBGuildKillMapRequest\x12\x15\n\rdeath_char_id\x18\x01 \x01(\x04\x12\x14\n\x0chelp_camp_id\x18\x02 \x01(\r\x12\x14\n\x0chelp_char_id\x18\x03 \x01(\x04\"\xa7\x01\n\x16PBGuildKillMapResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\r\x12\x14\n\x0chelp_char_id\x18\x02 \x01(\x04\x12\x15\n\rdeath_camp_id\x18\x03 \x01(\r\x12#\n\x0e\x64\x65\x61th_position\x18\x04 \x01(\x0b\x32\x0b.PBPosition\x12\x12\n\nins_number\x18\x05 \x01(\r\x12\x15\n\rdeath_char_id\x18\x06 \x01(\x04\"\x95\x01\n\x11PBGateItemRequest\x12\x15\n\rasker_role_id\x18\x01 \x01(\r\x12\x16\n\x0eshower_role_id\x18\x02 \x01(\r\x12\"\n\x07request\x18\x03 \x01(\x0b\x32\x11.PBMsgItemRequest\x12\x17\n\x0f\x61sker_gatewayid\x18\x04 \x01(\r\x12\x14\n\x0c\x61sker_campid\x18\x05 \x01(\r\"\x9c\x01\n\x12PBGateItemResponse\x12\x15\n\rasker_role_id\x18\x01 \x01(\r\x12\x16\n\x0eshower_role_id\x18\x02 \x01(\r\x12(\n\x08response\x18\x03 \x01(\x0b\x32\x16.PBMsgItemInfoResponse\x12\x17\n\x0f\x61sker_gatewayid\x18\x04 \x01(\r\x12\x14\n\x0c\x61sker_campid\x18\x05 \x01(\r\"C\n\x17PBPlayerIsOnlineRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x17\n\x0f\x63urrent_camp_id\x18\x02 \x01(\r\"\x83\x01\n\x18PBplayerIsOnlineResponse\x12\x11\n\tis_online\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x17\n\x0f\x63urrent_camp_id\x18\x03 \x01(\r\x12\x15\n\rstart_camp_id\x18\x04 \x01(\r\x12\x13\n\x0bplayer_name\x18\x05 \x01(\t\"\x93\x01\n\x18PBSendFlowerOfSenderInfo\x12\x16\n\x0esender_role_id\x18\x01 \x01(\r\x12\x16\n\x0esender_camp_id\x18\x02 \x01(\r\x12\x0c\n\x04slot\x18\x03 \x01(\r\x12\r\n\x05\x63ount\x18\x04 \x01(\x11\x12\x14\n\x0crecv_role_id\x18\x05 \x01(\r\x12\x14\n\x0crecv_camp_id\x18\x06 \x01(\r\"\x96\x01\n-PBplayerSendFlowerSearchRecvPlayerInfoRequest\x12\x35\n\x13online_request_info\x18\x01 \x01(\x0b\x32\x18.PBPlayerIsOnlineRequest\x12.\n\x0bsender_info\x18\x02 \x01(\x0b\x32\x19.PBSendFlowerOfSenderInfo\"\x99\x01\n.PBplayerSendFlowerSearchRecvPlayerInfoResponse\x12\x37\n\x14online_response_info\x18\x01 \x01(\x0b\x32\x19.PBplayerIsOnlineResponse\x12.\n\x0bsender_info\x18\x02 \x01(\x0b\x32\x19.PBSendFlowerOfSenderInfo\"\xeb\x01\n\x1ePBplayerSendFlowerToPlayerInfo\x12\x16\n\x0esender_role_id\x18\x01 \x01(\r\x12\x13\n\x0bsender_name\x18\x02 \x01(\t\x12\x1c\n\x14sender_start_camp_id\x18\x03 \x01(\r\x12\x14\n\x0crecv_role_id\x18\x04 \x01(\r\x12\x10\n\x08sheet_id\x18\x05 \x01(\r\x12\x11\n\tshow_name\x18\x06 \x01(\t\x12\r\n\x05\x63ount\x18\x07 \x01(\x11\x12\x19\n\x11\x66lower_item_class\x18\x08 \x01(\x11\x12\x19\n\x11s_charm_point_cnt\x18\t \x01(\x11\"f\n\x1ePBFriendServerAddFriendRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x64\x65st_char_id\x18\x02 \x01(\x04\x12\x19\n\x11src_justice_level\x18\x03 \x01(\x04\"^\n\x1fPBFriendServerAddFriendResponse\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x64\x65st_char_id\x18\x02 \x01(\x04\x12\x10\n\x08ret_code\x18\x03 \x01(\x11\"`\n!PBFriendServerAddFriendAckRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x64\x65st_char_id\x18\x02 \x01(\x04\x12\x10\n\x08is_agree\x18\x03 \x01(\x05\"Y\n\x19PBFriendServerLoginNotice\x12\x16\n\x0e\x66riend_char_id\x18\x02 \x01(\x04\x12$\n\tchar_base\x18\x03 \x01(\x0b\x32\x11.PBCharFriendBase\"W\n\x1cPBFriendServerDataSyncNotice\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12&\n\x0b\x66riend_data\x18\x02 \x01(\x0b\x32\x11.PBCharFriendData\"N\n!PBFriendServerRemoveFriendRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x64\x65st_char_id\x18\x02 \x01(\x04\"s\n\x1fPBFriendServerGiveEnergyRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x64\x65st_char_id\x18\x02 \x01(\x04\x12\x0e\n\x06is_all\x18\x03 \x01(\x04\x12\x15\n\rsrc_vip_times\x18\x04 \x01(\x04\"\xab\x01\n!PBFriendServerGatherEnergyRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x64\x65st_char_id\x18\x02 \x01(\x04\x12\x0e\n\x06is_all\x18\x03 \x01(\x04\x12\x15\n\rsrc_vip_times\x18\x04 \x01(\x04\x12\x18\n\x10now_enerty_count\x18\x05 \x01(\x04\x12\x1a\n\x12limit_enerty_count\x18\x06 \x01(\x04\"J\n\x1dPBFriendServerAddEnergyNotice\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x65nerty_count\x18\x02 \x01(\x04\"r\n#PBFriendServerChangeHeadIconRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x11\n\tis_update\x18\x02 \x01(\x04\x12\x11\n\thead_icon\x18\x03 \x01(\t\x12\x10\n\x08\x63ur_time\x18\x04 \x01(\x04\"\x97\x01\n$PBFriendServerChangeHeadIconResponse\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x11\n\tis_update\x18\x02 \x01(\x04\x12\x11\n\thead_icon\x18\x03 \x01(\t\x12\x10\n\x08\x63ur_time\x18\x04 \x01(\x04\x12\x10\n\x08new_time\x18\x05 \x01(\x04\x12\x10\n\x08ret_code\x18\x06 \x01(\x04\"@\n\x1bPBFriendServerSearchRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x0c\n\x04info\x18\x02 \x01(\t\"\x7f\n$PBFriendServerConditionSearchRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12,\n\x0e\x63ondition_type\x18\x02 \x01(\x0e\x32\x14.EFriendCondtionType\x12\x14\n\x0csearch_param\x18\x03 \x01(\x11\"L\n\x1fPBFriendServerAddContactRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x64\x65st_char_id\x18\x02 \x01(\x04\"l\n\x1fPBFriendServerMoveTargetRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x0f\n\x07\x66rom_ty\x18\x02 \x01(\x05\x12\r\n\x05to_ty\x18\x03 \x01(\x05\x12\x14\n\x0c\x64\x65st_char_id\x18\x04 \x01(\x04\"n\n\x1fPBFriendServerPlayerEventNotice\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x10\n\x08\x65vent_id\x18\x02 \x01(\r\x12\x11\n\tint_param\x18\x03 \x01(\r\x12\x11\n\tstr_param\x18\x04 \x01(\t\"o\n!PBFriendServerAddFriendOneRequest\x12\x1f\n\x06\x61\x64\x64_ty\x18\x01 \x01(\x0e\x32\x0f.EFriendAddType\x12\x13\n\x0bsrc_char_id\x18\x02 \x01(\x04\x12\x14\n\x0c\x64\x65st_char_id\x18\x03 \x01(\x04\"`\n\"PBFriendServerHeadIconCheckRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x14\n\x0coperate_type\x18\x02 \x01(\x11\x12\x0f\n\x07\x63\x64_time\x18\x03 \x01(\x04\"V\n\x1aPBServerQuestOpEventNotice\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x12\n\nevent_type\x18\x02 \x01(\t\x12\x13\n\x0b\x65vent_count\x18\x03 \x01(\x11\"L\n\x1dPBFriendServerIsFriendRequest\x12\x13\n\x0bsrc_char_id\x18\x01 \x01(\x04\x12\x16\n\x0etarget_char_id\x18\x02 \x01(\x04\"_\n\x1ePBFriendServerisFriendResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x13\n\x0bsrc_char_id\x18\x02 \x01(\x04\x12\x16\n\x0etarget_char_id\x18\x03 \x01(\x04\"n\n\x14PBMsgConsignInitData\x12(\n\rhot_item_data\x18\x01 \x01(\x0b\x32\x11.PBMsgHotItemList\x12,\n\x11\x63onsign_data_list\x18\x02 \x01(\x0b\x32\x11.PBMsgConsignList\"8\n\x10PBMsgConsignList\x12$\n\x0c\x63onsign_data\x18\x01 \x03(\x0b\x32\x0e.PBConsignData\"\xc7\x01\n\rPBConsignData\x12\x12\n\nconsign_id\x18\x01 \x01(\x04\x12\r\n\x05price\x18\x02 \x01(\x05\x12\x12\n\nprice_type\x18\x03 \x01(\x05\x12\x14\n\x0c\x63onsign_flag\x18\x04 \x01(\x11\x12\x12\n\nsheet_name\x18\x05 \x01(\t\x12\x10\n\x08quantity\x18\x06 \x01(\r\x12\x17\n\x0f\x65xpiration_time\x18\x07 \x01(\r\x12\x14\n\x0c\x61\x63\x63ount_type\x18\x08 \x01(\x11\x12\x14\n\x0cpet_sheet_id\x18\t \x01(\x11\"f\n\x16PBMsgUpdateConsignData\x12\'\n\nactionType\x18\x01 \x01(\x0e\x32\x13.EConsignActionType\x12#\n\x0b\x63onsignInfo\x18\x02 \x01(\x0b\x32\x0e.PBConsignData\"8\n\x10PBMsgHotItemList\x12$\n\rhot_item_list\x18\x01 \x03(\x0b\x32\r.PBMsgHotItem\"3\n\x0cPBMsgHotItem\x12\x10\n\x08sheet_id\x18\x01 \x01(\x11\x12\x11\n\tbuy_times\x18\x02 \x01(\x11\"h\n\x1dPBFriendAddIntimateNumRequest\x12\x16\n\x0esender_role_id\x18\x01 \x01(\r\x12\x19\n\x11recv_role_id_list\x18\x02 \x03(\r\x12\x14\n\x0cintimate_num\x18\x03 \x01(\x11\"h\n\x1dPBFriendDelIntimateNumRequest\x12\x16\n\x0esender_role_id\x18\x01 \x01(\r\x12\x19\n\x11recv_role_id_list\x18\x02 \x03(\r\x12\x14\n\x0cintimate_num\x18\x03 \x01(\x11\"O\n\x1fPBFriendClearIntimateNumRequest\x12\x16\n\x0esender_role_id\x18\x01 \x01(\r\x12\x14\n\x0crecv_role_id\x18\x02 \x01(\r\"\x94\x01\n PBFriendNotifyIntimateNumRequest\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x13\n\x0b\x66riend_name\x18\x02 \x01(\t\x12\x1a\n\x12\x66riend_notify_type\x18\x03 \x01(\x11\x12\x14\n\x0cintimate_num\x18\x04 \x01(\x11\x12\x18\n\x10\x63ur_intimate_num\x18\x05 \x01(\x11\"b\n\"PBFriendNotifyMaxIntimateNumNotice\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x11\n\tfriend_id\x18\x02 \x01(\x04\x12\x18\n\x10max_intimate_num\x18\x03 \x01(\x11\"o\n\x15PBGateCampUnionNotice\x12\x13\n\x0bsrc_camp_id\x18\x01 \x01(\x11\x12\x14\n\x0c\x64\x65st_camp_id\x18\x02 \x01(\x11\x12+\n\x0bupdate_type\x18\x03 \x01(\x0e\x32\x16.PBCampUnionUpdateType\"J\n\x19PBCampUnionActivityNotice\x12-\n\ractivity_type\x18\x01 \x01(\x0e\x32\x16.PBCampUnionUpdateType\"i\n\x1cPBServerMarriageMarryRequest\x12\x12\n\nhusband_id\x18\x01 \x01(\r\x12\x0f\n\x07wife_id\x18\x02 \x01(\r\x12\x11\n\tleader_id\x18\x03 \x01(\x04\x12\x11\n\tmember_id\x18\x04 \x01(\x04\"+\n\x16PBServerMarriageFriend\x12\x11\n\tfriend_id\x18\x01 \x03(\r\"\xc5\x01\n\x1dPBServerMarriageMarryResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\r\x12&\n\rmarriage_info\x18\x02 \x01(\x0b\x32\x0f.PBMarriageInfo\x12\x11\n\tleader_id\x18\x03 \x01(\x04\x12\x11\n\tmember_id\x18\x04 \x01(\x04\x12,\n\x0b\x66riend_list\x18\x05 \x01(\x0b\x32\x17.PBServerMarriageFriend\x12\x16\n\x0emarriage_index\x18\x06 \x01(\r\"]\n PBServerMarriageMarryRollRequest\x12\x13\n\x0bmarriage_id\x18\x01 \x01(\x04\x12\x11\n\tleader_id\x18\x02 \x01(\x04\x12\x11\n\tmember_id\x18\x03 \x01(\x04\"[\n!PBServerMarriageMarryRollResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\r\x12\x11\n\tleader_id\x18\x02 \x01(\x04\x12\x11\n\tmember_id\x18\x03 \x01(\x04\"\x80\x01\n\x1ePBServerMarriageDivorceRequest\x12\x13\n\x0bmarriage_id\x18\x01 \x01(\x04\x12\x12\n\nhusband_id\x18\x02 \x01(\r\x12\x0f\n\x07wife_id\x18\x03 \x01(\r\x12\x11\n\tleader_id\x18\x04 \x01(\x04\x12\x11\n\tmember_id\x18\x05 \x01(\x04\"\x81\x01\n\x1fPBServerMarriageDivorceResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\r\x12&\n\rmarriage_info\x18\x02 \x01(\x0b\x32\x0f.PBMarriageInfo\x12\x11\n\tleader_id\x18\x03 \x01(\x04\x12\x11\n\tmember_id\x18\x04 \x01(\x04\"p\n#PBServerMarriageDivorceForceRequest\x12\x13\n\x0bmarriage_id\x18\x01 \x01(\x04\x12\x12\n\nhusband_id\x18\x02 \x01(\r\x12\x0f\n\x07wife_id\x18\x03 \x01(\r\x12\x0f\n\x07\x63har_id\x18\x04 \x01(\x04\"q\n$PBServerMarriageDivorceForceResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\r\x12&\n\rmarriage_info\x18\x02 \x01(\x0b\x32\x0f.PBMarriageInfo\x12\x0f\n\x07\x63har_id\x18\x03 \x01(\x04\".\n\x1bPBServerMarriageInfoRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"W\n\x1cPBServerMarriageInfoResponse\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12&\n\rmarriage_info\x18\x02 \x01(\x0b\x32\x0f.PBMarriageInfo\"Q\n PBServerMarriageReadyInfoRequest\x12\x16\n\x0eplayer_role_id\x18\x01 \x01(\r\x12\x15\n\rother_role_id\x18\x02 \x01(\r\"d\n!PBServerMarriageReadyInfoResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x16\n\x0eplayer_role_id\x18\x02 \x01(\r\x12\x15\n\rother_role_id\x18\x03 \x01(\r\"\x86\x01\n(PBServerTitleChangeAskRksIntimacyRequest\x12\x16\n\x0eplayer_role_id\x18\x01 \x01(\r\x12\x15\n\rother_role_id\x18\x02 \x01(\r\x12+\n\x0csave_request\x18\x03 \x01(\x0b\x32\x15.PBTitleChangeRequest\"\x99\x01\n)PBServerTitleChangeAskRksIntimacyResponse\x12\x16\n\x0eplayer_role_id\x18\x01 \x01(\r\x12\x15\n\rother_role_id\x18\x02 \x01(\r\x12+\n\x0csave_request\x18\x03 \x01(\x0b\x32\x15.PBTitleChangeRequest\x12\x10\n\x08intimacy\x18\x04 \x01(\x11\";\n\x11PBGuildCreateSync\x12&\n\rguild_summary\x18\x01 \x01(\x0b\x32\x0f.PBGuildSummary\"&\n\x12PBGuildDismissSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\"H\n\x12PBGuildSummarySync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12 \n\x07summary\x18\x02 \x01(\x0b\x32\x0f.PBGuildSummary\"N\n\x14PBGuildMemberAddSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12$\n\x0cguild_member\x18\x02 \x01(\x0b\x32\x0e.PBGuildMember\"\x14\n\x12PBGuildGetSignList\">\n\x17PBGuildMemberRemoveSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x11\n\tmember_id\x18\x02 \x01(\x04\"Q\n\x17PBGuildMemberChangeSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12$\n\x0cguild_member\x18\x02 \x01(\x0b\x32\x0e.PBGuildMember\"Q\n\x17PBGuildApplicantAddSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12$\n\tapplicant\x18\x02 \x01(\x0b\x32\x11.PBGuildApplicant\"D\n\x1aPBGuildApplicantRemoveSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x61pplicant_id\x18\x02 \x01(\x04\"K\n\x13PBGuildBuildingSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\"\n\x08\x62uilding\x18\x02 \x01(\x0b\x32\x10.PBGuildBuilding\"?\n\x0fPBGuildBossSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x1a\n\x04\x62oss\x18\x02 \x01(\x0b\x32\x0c.PBGuildBoss\"\x81\x01\n\x18PBGuildGateCreateRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x12\n\ncreator_id\x18\x02 \x01(\r\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0f\n\x07icon_id\x18\x04 \x01(\x11\x12\x11\n\tmanifesto\x18\x05 \x01(\t\x12\r\n\x05power\x18\x06 \x01(\x11\"<\n\x17PBGuildGateApplyRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\"B\n\x1dPBGuildGateApplyCancelRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\")\n\x16PBGuildGateQuitRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\".\n\x1bPBGuildGateQuickJoinRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"_\n\x1ePBGuildGateApplyConfirmRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12,\n\x07request\x18\x02 \x01(\x0b\x32\x1b.PBGuildApplyConfirmRequest\"R\n\x16PBGuildGateKickRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\'\n\x07request\x18\x02 \x01(\x0b\x32\x16.PBGuildKickoutRequest\"S\n\x18PBGuildGateModifyRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12&\n\x07request\x18\x02 \x01(\x0b\x32\x15.PBGuildModifyRequest\"a\n\x1cPBGuildGateChangePostRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x30\n\x07request\x18\x02 \x01(\x0b\x32\x1f.PBGuildMemberPostChangeRequest\"]\n\x11PBGuildGateDonate\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12(\n\x0b\x64onate_type\x18\x02 \x01(\x0e\x32\x13.PBEGuildDonateType\x12\r\n\x05\x63ount\x18\x03 \x01(\x11\"H\n\x1ePBGuildGateChangeLeaderRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x15\n\rnew_leader_id\x18\x02 \x01(\x04\",\n\x19PBGuildGateLevelUPRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"e\n!PBGuildGateBuildingLevelUPRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12/\n\rbuilding_type\x18\x02 \x01(\x0e\x32\x18.PBEGuildingBuildingType\"B\n\x1cPBGuildGateSkillStudyRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tsecial_id\x18\x02 \x01(\x11\"b\n\x15PBGuildSkillStudySync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x11\n\tsecial_id\x18\x03 \x01(\x11\x12\x13\n\x0bskill_level\x18\x04 \x01(\x11\"D\n\x1ePBGuildGateResetSkillCDRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tsecial_id\x18\x02 \x01(\x11\"A\n\x1aPBGuildGateOpenBossRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x12\n\ndungeon_id\x18\x02 \x01(\t\"?\n\x17PBGuildGateOpenBossSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x12\n\ndungeon_id\x18\x02 \x01(\t\"k\n\x1bPBGuildGateBossChangeReport\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x12\n\ndungeon_id\x18\x02 \x01(\t\x12\x16\n\x0e\x64ungeon_entity\x18\x03 \x01(\x04\x12\x0e\n\x06map_id\x18\x04 \x01(\r\",\n\x19PBGuildGateDismissRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"2\n\x1fPBGuildGateCancelDismissRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"*\n\x16PBGuildGateDestorySync\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\"8\n\x0ePBGateTimeCome\x12&\n\ttime_come\x18\x01 \x01(\x0e\x32\x13.PBEGataWayTimeCome\"r\n\x1aPBGateGuildMaintenanceSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x13\n\x0bguild_level\x18\x02 \x01(\x11\x12\x18\n\x10maintenance_cost\x18\x03 \x01(\x11\x12\x13\n\x0bguild_money\x18\x04 \x01(\x11\"u\n\x18PBGuildGateBTSignRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x12\n\napply_cost\x18\x02 \x01(\x11\x12\"\n\tsign_info\x18\x03 \x01(\x0b\x32\x0f.PBGuildBT_Sign\x12\x0f\n\x07role_id\x18\x04 \x01(\r\"j\n\x0ePBGuildBT_Sign\x12\x11\n\tsigner_id\x18\x01 \x01(\x04\x12\x11\n\tbattle_id\x18\x02 \x01(\x04\x12\x12\n\napply_cost\x18\x03 \x01(\x11\x12\r\n\x05im_id\x18\x04 \x01(\x04\x12\x0f\n\x07im_name\x18\x05 \x01(\t\"\\\n\x19PBGuildGateAddMoneyNotice\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\r\n\x05\x63ount\x18\x02 \x01(\x11\x12\x1e\n\x08log_info\x18\x03 \x01(\x0b\x32\x0c.PBLogAction\"M\n\x19PBGuildPowerUpdateRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\r\n\x05power\x18\x03 \x01(\x11\"b\n\x12PBGuildPowerChange\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x14\n\x0cmember_power\x18\x03 \x01(\x11\x12\x13\n\x0bguild_power\x18\x04 \x01(\x11\"E\n\x15PBPetInfoUpdateNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x1b\n\x07petinfo\x18\x02 \x01(\x0b\x32\n.PBPetInfo\"P\n\x18PBRankMsgTranspondNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x12\n\nrank_scope\x18\x02 \x01(\x11\x12\x0f\n\x07rank_ty\x18\x03 \x01(\x11\"K\n\x14PBMsgChangeCampScore\x12\x0f\n\x07\x63\x61mp_id\x18\x01 \x01(\x11\x12\x14\n\x0c\x62\x61ttle_score\x18\x02 \x01(\x11\x12\x0c\n\x04rank\x18\x03 \x01(\x11\"S\n\x13PBMsgChangeCampData\x12\x11\n\tlast_time\x18\x01 \x01(\r\x12)\n\ncamp_socre\x18\x02 \x03(\x0b\x32\x15.PBMsgChangeCampScore\"\x80\x01\n\x1dPBMsgGateChangeCampInfoNotice\x12\'\n\tcamp_data\x18\x01 \x01(\x0b\x32\x14.PBMsgChangeCampData\x12\x1b\n\x13server_merge_status\x18\x02 \x01(\r\x12\x19\n\x11server_merge_time\x18\x03 \x01(\r\">\n\x14PBMsgEgsGmMailReport\x12&\n\tmail_info\x18\x01 \x03(\x0b\x32\x13.PBMsgEgsGmMailInfo\"\xca\x01\n\x12PBMsgEgsGmMailInfo\x12\x12\n\nmail_title\x18\x01 \x01(\t\x12\x11\n\tmail_body\x18\x02 \x01(\t\x12\x12\n\nmail_param\x18\x03 \x03(\t\x12\x15\n\rcon_level_min\x18\x04 \x01(\x11\x12\x15\n\rcon_level_max\x18\x05 \x01(\x11\x12\x10\n\x08\x63on_camp\x18\x06 \x01(\x11\x12&\n\titem_info\x18\x07 \x03(\x0b\x32\x13.PBMsgEgsGmMailItem\x12\x11\n\tsend_time\x18\x08 \x01(\r\":\n\x12PBMsgEgsGmMailItem\x12\x12\n\nsheet_name\x18\x01 \x01(\t\x12\x10\n\x08quantity\x18\x02 \x01(\x11\".\n\x1bPBBillingChargeNoticeNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"l\n\x10PBSpanChatNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\x12\x10\n\x08\x63hattype\x18\x03 \x01(\r\x12#\n\x0b\x63hatContent\x18\x04 \x01(\x0b\x32\x0e.PBChatContent\"C\n\x17PBWorldWorldLevelNotice\x12(\n\x0cgateway_info\x18\x01 \x03(\x0b\x32\x12.PBSpanGatewayInfo\"B\n\x16PBGateWorldLevelReport\x12(\n\x0cgateway_info\x18\x01 \x01(\x0b\x32\x12.PBSpanGatewayInfo\"<\n\x11PBSpanGatewayInfo\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12\x13\n\x0bworld_level\x18\x02 \x01(\r\"U\n\x10PBSpanMuteNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63hannel\x18\x02 \x01(\r\x12\x0e\n\x06period\x18\x03 \x01(\r\x12\x0f\n\x07op_type\x18\x04 \x01(\r\"\x11\n\x0fPBRksStopNotice\"\x81\x01\n\x14PBSpanGetRankRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\x04\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\x12\x11\n\tgatewayid\x18\x03 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x04 \x01(\r\x12\x12\n\nrank_scope\x18\x05 \x01(\x11\x12\x0f\n\x07rank_ty\x18\x06 \x01(\x11\"u\n\x15PBSpanGetRankResponse\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tgatewayid\x18\x02 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x03 \x01(\r\x12(\n\x08response\x18\x04 \x01(\x0b\x32\x16.PBMsgCharRankResponse\"{\n\x1aPBSpanGetGuildRankResponse\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tgatewayid\x18\x02 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x03 \x01(\r\x12)\n\x08response\x18\x04 \x01(\x0b\x32\x17.PBMsgGuildRankResponse\"}\n\x19PBSpanGetMainRankResponse\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tgatewayid\x18\x02 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x03 \x01(\r\x12,\n\x08response\x18\x04 \x01(\x0b\x32\x1a.PBMsgCharMineRankResponse\"\x83\x01\n\x1ePBSpanGetMainGuildRankResponse\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tgatewayid\x18\x02 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x03 \x01(\r\x12-\n\x08response\x18\x04 \x01(\x0b\x32\x1b.PBMsgGuildMineRankResponse\"l\n\x14PBPlayerQuestionInfo\x12\x14\n\x0c\x63har_role_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\x12\x11\n\tchar_name\x18\x03 \x01(\t\x12\x1a\n\x12\x63ur_question_score\x18\x04 \x01(\x11\"j\n\x14PBMsgEgsAnswerNotice\x12,\n\rquestion_info\x18\x01 \x03(\x0b\x32\x15.PBPlayerQuestionInfo\x12\x0f\n\x07top_num\x18\x02 \x01(\x11\x12\x13\n\x0bquestion_id\x18\x03 \x01(\r\"/\n\x19PBMsgEgsActivityEndNotice\x12\x12\n\nreward_num\x18\x01 \x01(\x11\"`\n\x10PBQuestionReward\x12\x14\n\x0c\x63har_role_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\x12\x11\n\tchar_rank\x18\x03 \x01(\r\x12\x12\n\nchar_score\x18\x04 \x01(\x11\">\n\x14PBMsgRksRewardNotice\x12&\n\x0breward_info\x18\x01 \x03(\x0b\x32\x11.PBQuestionReward\"?\n\x16PBMsgEgsActivityNotice\x12\x14\n\x0c\x63har_role_id\x18\x01 \x01(\r\x12\x0f\n\x07top_num\x18\x02 \x01(\x11\"Z\n\nPBPostItem\x12 \n\x04item\x18\x01 \x01(\x0b\x32\x12.PBMsgItemQuantity\x12\x15\n\rmax_stack_num\x18\x02 \x01(\x11\x12\x13\n\x0bsort_weight\x18\x03 \x01(\x11\":\n\x13PBGuildActivityInfo\x12\x15\n\ractivity_type\x18\x01 \x01(\x11\x12\x0c\n\x04rank\x18\x02 \x01(\x11\"p\n\x14PBMsgPostItemRequest\x12\x1e\n\titem_list\x18\x01 \x03(\x0b\x32\x0b.PBPostItem\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\x12&\n\x08\x61\x63tivity\x18\x03 \x01(\x0b\x32\x14.PBGuildActivityInfo\"x\n\x0fPBMailGrantItem\x12\x11\n\tmail_body\x18\x01 \x01(\x11\x12\x12\n\nlog_action\x18\x02 \x01(\x11\x12\x17\n\x05param\x18\x03 \x03(\x0b\x32\x08.PBParam\x12%\n\titem_info\x18\x04 \x03(\x0b\x32\x12.PBMsgItemQuantity\"J\n\x12PBMsgMailGrantItem\x12\x14\n\x0c\x63har_role_id\x18\x01 \x01(\r\x12\x1e\n\x04mail\x18\x02 \x01(\x0b\x32\x10.PBMailGrantItem\"R\n\x19PBMsgGuildSpanSignRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x12\n\napply_cost\x18\x02 \x01(\x11\x12\x10\n\x08match_id\x18\x03 \x01(\x04\"B\n\x1fPBMsgSpanPveKeepTeamInfoRequire\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0e\n\x06\x64un_id\x18\x02 \x01(\x04\"@\n\x1dPBMsgSpanPveRegainTeamRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0e\n\x06\x64un_id\x18\x02 \x01(\x04\"e\n\x1ePBMsgSpanPveRegainTeamResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x0f\n\x07op_type\x18\x03 \x01(\r\x12\x0f\n\x07team_id\x18\x04 \x01(\r\"E\n!PBMsgSpanPveRegainJoinTeamRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0f\n\x07team_id\x18\x02 \x01(\r\"P\n\x15PBSpanPveLeaveDungeon\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x12\n\ndungeon_id\x18\x02 \x01(\x04\x12\x12\n\ncamp_index\x18\x03 \x01(\x11\"c\n\x15PBSpanPveEnterDungeon\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x12\n\ndungeon_id\x18\x02 \x01(\x04\x12\x11\n\tis_leader\x18\x03 \x01(\x08\x12\x12\n\ncamp_index\x18\x04 \x01(\x11\"f\n\x1cPBSpanPveGetMatchListRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\x12\x11\n\tgatewayid\x18\x04 \x01(\r\"k\n\x1dPBSpanPveGetMatchListResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\'\n\x03res\x18\x03 \x01(\x0b\x32\x1a.PBMsgGetMatchListResponse\"e\n\x1aPBMsgGuildSpanSignResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x12\n\napply_cost\x18\x03 \x01(\x11\x12\x10\n\x08match_id\x18\x04 \x01(\x04\"\x1d\n\x1bPBMsgGuildFinalSignResponse\"@\n\x19PBGateGuildIMBattleReward\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x11\n\tbtl_score\x18\x02 \x01(\x11\"\x99\x01\n#PBMsgEGSSpanImbattleWatchingRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x10\n\x08match_id\x18\x02 \x01(\x04\x12\x11\n\tbattle_id\x18\x03 \x01(\x04\x12\x16\n\x0esrc_gateway_id\x18\x04 \x01(\r\x12\x13\n\x0bsrc_camp_id\x18\x05 \x01(\r\x12\x0f\n\x07\x63har_id\x18\x06 \x01(\x04\"\xeb\x01\n$PBMsgEGSSpanImbattleWatchingResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x10\n\x08match_id\x18\x03 \x01(\x04\x12\x11\n\tbattle_id\x18\x04 \x01(\x04\x12\x17\n\x0f\x64\x65st_gateway_id\x18\x05 \x01(\r\x12\x14\n\x0c\x64\x65st_camp_id\x18\x06 \x01(\r\x12\"\n\rdest_position\x18\x07 \x01(\x0b\x32\x0b.PBPosition\x12\x11\n\tdest_time\x18\x08 \x01(\r\x12\x15\n\rdungeon_sheet\x18\t \x01(\r\"T\n\x1ePBMsgEGSSpanImbattleBetRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x0f\n\x07\x62\x65t_byb\x18\x02 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x03 \x01(\x04\"Z\n\x1fPBMsgBWSSpanImbattleBetResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12%\n\nbet_battle\x18\x02 \x03(\x0b\x32\x11.PBSpanbtlBetData\"+\n\x17PBMsgBWSBetClearRequest\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"q\n\x18PBMsgSpanGuildMailNotice\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x0f\n\x07mail_id\x18\x02 \x01(\t\x12\r\n\x05param\x18\x03 \x03(\t\x12#\n\x08receiver\x18\x04 \x01(\x0e\x32\x11.ESpanGuildNotice\"\x82\x01\n#PBMsgEGSSpanImbattleGuildDataReport\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\x12 \n\x0bleader_base\x18\x03 \x01(\x0b\x32\x0b.PBRoleBase\x12\'\n\x10sign_member_info\x18\x04 \x01(\x0b\x32\r.PBSignMember\"|\n%PBMsgBWSSpanImbattleHistoryDataNotice\x12)\n\x0chistory_data\x18\x01 \x01(\x0b\x32\x13.PBMatchHistoryData\x12(\n\x0chistory_rank\x18\x02 \x01(\x0b\x32\x12.PBSPIMHistoryRank\"+\n\x17PBMsgSpanRaceIdleNotice\x12\x10\n\x08match_id\x18\x01 \x01(\x11\"A\n\x1aPBMsgSpanBattleStartNotice\x12\x11\n\tbattle_id\x18\x01 \x01(\x04\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\"=\n\x19PBMsgSpanRaceStatusChange\x12\x10\n\x08match_id\x18\x01 \x01(\x11\x12\x0e\n\x06status\x18\x02 \x01(\x11\"C\n\x1bPBMsgSpanGetSignListRequest\x12\x10\n\x08\x65xternId\x18\x01 \x01(\x04\x12\x12\n\nexternGWId\x18\x02 \x01(\r\"3\n\x0ePBMsgGuildCamp\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\"M\n\x16PBMsgServerGuildReport\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12\x1f\n\x06guilds\x18\x02 \x03(\x0b\x32\x0f.PBMsgGuildCamp\"@\n\x17PBMsgSpanWildRankReport\x12%\n\tchar_node\x18\x01 \x03(\x0b\x32\x12.PBMsgRankCharNode\"z\n\x1bPBMsgGetSpanWildRankRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x12\n\ngateway_id\x18\x02 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x03 \x01(\r\x12\x11\n\trank_type\x18\x04 \x01(\x11\x12\x12\n\nrank_score\x18\x05 \x01(\x11\"\xc7\x01\n\x1cPBMsgGetSpanWildRankResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x12\n\ngateway_id\x18\x03 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x04 \x01(\r\x12\x11\n\trank_type\x18\x05 \x01(\x11\x12\x12\n\nrank_score\x18\x06 \x01(\x11\x12%\n\tchar_node\x18\x07 \x03(\x0b\x32\x12.PBMsgRankCharNode\x12\x11\n\trank_mine\x18\x08 \x01(\x11\"y\n\x1dPBMsgGetSpanWildBossLvRequest\x12\x11\n\tgatewayid\x18\x01 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x02 \x01(\r\x12\r\n\x05state\x18\x03 \x01(\x11\x12&\n\x04info\x18\x04 \x01(\x0b\x32\x18.PBSpanWildBossLevelInfo\"C\n\x17PBSpanWildBossLevelInfo\x12(\n\nboss_level\x18\x01 \x03(\x0b\x32\x14.PBSpanWildBossLevel\"9\n\x13PBSpanWildBossLevel\x12\x10\n\x08sheet_id\x18\x01 \x01(\t\x12\x10\n\x08up_level\x18\x02 \x01(\x11\"m\n\x1ePBMsgGetSpanWildBossLvResponse\x12\x11\n\tgatewayid\x18\x01 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x02 \x01(\r\x12(\n\x06\x62osslv\x18\x03 \x01(\x0b\x32\x18.PBSpanWildBossLevelInfo\"<\n\x1aPBMsgSpanWildPlayerGateNum\x12\x11\n\tgatewayid\x18\x01 \x01(\r\x12\x0b\n\x03num\x18\x02 \x01(\x11\"_\n\x1cPBMsgSpanWildPlayerNumNotice\x12/\n\ngatewaynum\x18\x01 \x03(\x0b\x32\x1b.PBMsgSpanWildPlayerGateNum\x12\x0e\n\x06\x61llnum\x18\x02 \x01(\x11\"\x80\x01\n\"PBMsgSaveTeamInfoToSpanWildRequest\x12\x10\n\x08leaderid\x18\x01 \x01(\r\x12\x12\n\nmemberlist\x18\x02 \x03(\r\x12\x11\n\tsessionid\x18\x03 \x01(\r\x12\x11\n\tgatewayid\x18\x04 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x05 \x01(\r\"J\n#PBMsgSaveTeamInfoToSpanWildResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tsessionid\x18\x02 \x01(\r\"1\n\x1ePBMsgSpanWildRegainTeamRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"3\n\x1fPBMsgSpanWildRegainTeamResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\";\n\x0bPBMergeData\x12\x15\n\rsrc_gatewayid\x18\x01 \x01(\r\x12\x15\n\rdec_gatewayid\x18\x02 \x01(\r\";\n\x14PBMsgMergeDataReport\x12#\n\rmegredatalist\x18\x01 \x03(\x0b\x32\x0c.PBMergeData\"*\n\x16PBMsgMergeDataResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"L\n\x1dPBMsgRksFireworksStatusNotice\x12+\n\x08\x61\x63t_info\x18\x01 \x03(\x0b\x32\x19.PBMsgRksFireworksActInfo\":\n\x18PBMsgRksFireworksActInfo\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\x11\x12\x0e\n\x06status\x18\x02 \x01(\x11\"Q\n\x1fPBMsgEgsFireworksActScoreReport\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0e\n\x06\x61\x63t_id\x18\x02 \x01(\x11\x12\r\n\x05score\x18\x03 \x01(\x11\"U\n\x1fPBMsgRksFireworksActScoreNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0e\n\x06\x61\x63t_id\x18\x02 \x01(\x11\x12\x11\n\tcur_score\x18\x03 \x01(\x11\"B\n\x1bPBMsgRksFireworksOpenNotice\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\x11\x12\x13\n\x0b\x61\x63t_percent\x18\x02 \x01(\x11\"+\n\x19PBMsgRksFireworksFxNotice\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\x11\"K\n\x18PBMsgSpanWildShardNotice\x12\x11\n\tgatewayid\x18\x01 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x02 \x01(\r\x12\x0c\n\x04isup\x18\x03 \x01(\x08\"k\n\x1ePBMsgPetBattleFightDataRequest\x12\x1a\n\x12\x63hallenger_role_id\x18\x01 \x01(\r\x12\x13\n\x0brequest_key\x18\x02 \x01(\r\x12\x18\n\x10is_request_robot\x18\x03 \x01(\x08\"\x95\x01\n\x1fPBMsgPetBattleFightDataResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1a\n\x12\x63hallenger_role_id\x18\x02 \x01(\r\x12\x33\n\x14\x63har_pet_battle_info\x18\x03 \x01(\x0b\x32\x15.PBCharPetPVPRankInfo\x12\x0f\n\x07my_rank\x18\x04 \x01(\r\"Y\n\"PBMsgPetBattleChallengerDataNotice\x12\x33\n\x14\x63har_pet_bettle_info\x18\x01 \x01(\x0b\x32\x15.PBCharPetPVPRankInfo\"\x91\x01\n\x1aPBMsgPetBattleResultNotice\x12\x1a\n\x12\x63hallenger_role_id\x18\x01 \x01(\r\x12\x17\n\x0f\x66ighter_role_id\x18\x02 \x01(\r\x12\x0e\n\x06is_win\x18\x03 \x01(\x08\x12\x18\n\x10is_fighter_robot\x18\x04 \x01(\x08\x12\x14\n\x0c\x66ighter_rank\x18\x05 \x01(\r\"1\n\x1ePBMsgPetBattleFlushArrayNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"2\n\x1fPBMsgPetBattleQueryRecordNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"2\n\x1fPBMsgGetPetBattlePvPInfoRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"~\n PBMsgGetPetBattlePvPInfoResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x0c\n\x04rank\x18\x03 \x01(\r\x12)\n\x0erank_info_list\x18\x04 \x03(\x0b\x32\x11.PBPetPvPRankInfo\"6\n\x15PBMsgModifyRankNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0c\n\x04rank\x18\x02 \x01(\r\"\x1c\n\x1aPBMsgClearPetPvPRankNotice\"+\n\x16PBMsgAddRobotPetNotice\x12\x11\n\trobot_num\x18\x01 \x01(\r\"H\n\x1cPBGuildGateManorCreateReport\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x16\n\x0e\x64ungeon_entity\x18\x02 \x01(\x04\"F\n\x1aPBGuildGateManorCreateSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x16\n\x0e\x64ungeon_entity\x18\x03 \x01(\x04\"-\n\x1aPBGuildGateOpenFireRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"+\n\x17PBGuildGateOpenFireSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\"U\n\x1fPBGuildGateManorStatueFlushSync\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12 \n\x0bleader_base\x18\x02 \x01(\x0b\x32\x0b.PBRoleBase\"5\n!PBGuildGateManorStatueFlushReport\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\"\xc5\x01\n\x1bPBMsgSignMonorBattleRequest\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\x12\x12\n\nappay_cost\x18\x03 \x01(\x11\x12\x1a\n\x12guild_battle_score\x18\x04 \x01(\r\x12\x12\n\nguild_name\x18\x05 \x01(\t\x12\x13\n\x0bguild_level\x18\x06 \x01(\r\x12\x16\n\x0esigner_role_id\x18\x07 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x08 \x01(\r\"\xa1\x01\n\x1cPBMsgSignMonorBattleResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x12\n\ngateway_id\x18\x02 \x01(\r\x12\x10\n\x08guild_id\x18\x03 \x01(\x04\x12\x15\n\rsigner_roleid\x18\x04 \x01(\r\x12\x12\n\napply_cost\x18\x05 \x01(\r\x12\x1e\n\tsign_info\x18\x06 \x01(\x0b\x32\x0b.PBSignInfo\".\n\x1cPBMsgMonorBattleStatusNotice\x12\x0e\n\x06status\x18\x01 \x01(\x11\"i\n\x0ePBWinGuildInfo\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\x12\x10\n\x08guild_id\x18\x03 \x01(\x04\x12\x0c\n\x04rank\x18\x04 \x01(\r\x12\x12\n\nguild_name\x18\x05 \x01(\t\"\x7f\n\x18PBMsgEnterDungeonRequest\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x11\n\tbattle_id\x18\x02 \x01(\x04\x12\x17\n\x0f\x63har_gateway_id\x18\x03 \x01(\r\x12\x14\n\x0c\x63har_camp_id\x18\x04 \x01(\r\x12\x10\n\x08guild_id\x18\x05 \x01(\x04\"\xbf\x01\n\x19PBMsgEnterDungeonResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x16\n\x0esrc_gateway_id\x18\x03 \x01(\r\x12\x13\n\x0bsrc_camp_id\x18\x04 \x01(\r\x12\x17\n\x0f\x64\x65st_gateway_id\x18\x05 \x01(\r\x12\x14\n\x0c\x64\x65st_camp_id\x18\x06 \x01(\r\x12\x11\n\tbattle_id\x18\x07 \x01(\x04\x12\x10\n\x08guild_id\x18\x08 \x01(\x04\"y\n\x18PBMsgDungeonResultNotice\x12\"\n\x0b\x62\x61ttle_type\x18\x01 \x01(\x0e\x32\r.PBBattleType\x12\x14\n\x0cis_fight_win\x18\x02 \x01(\x08\x12#\n\nguild_info\x18\x03 \x03(\x0b\x32\x0f.PBWinGuildInfo\"A\n\x1aPBMsgRaceOneWinGuildNotice\x12#\n\nguild_info\x18\x01 \x03(\x0b\x32\x0f.PBWinGuildInfo\"A\n\x1aPBMsgRaceTwoWinGuildNotice\x12#\n\nguild_info\x18\x01 \x03(\x0b\x32\x0f.PBWinGuildInfo\"\x93\x01\n\x18PBMsgCreateBattleRequest\x12\"\n\x0b\x62\x61ttle_type\x18\x01 \x01(\x0e\x32\r.PBBattleType\x12\x11\n\tbattle_id\x18\x02 \x01(\x04\x12\x15\n\rdungeon_sheet\x18\x03 \x01(\t\x12\x16\n\x0e\x62oss_add_level\x18\x04 \x01(\r\x12\x11\n\tguild_num\x18\x05 \x01(\r\"\x89\x01\n\x19PBMsgCreateBattleResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\"\n\x0b\x62\x61ttle_type\x18\x02 \x01(\x0e\x32\r.PBBattleType\x12\x11\n\tbattle_id\x18\x03 \x01(\x04\x12\x12\n\ngateway_id\x18\x04 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x05 \x01(\r\"-\n\x18PBMsgDestoryBattleNotice\x12\x11\n\tbattle_id\x18\x01 \x01(\x04\"c\n\x19PBMsgEGSEnterMonorRequest\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\x12\x12\n\ngateway_id\x18\x03 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x04 \x01(\r\"x\n\x1aPBMsgBWSEnterMonorResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\x12\x12\n\ngateway_id\x18\x03 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x04 \x01(\r\x12\x12\n\nguild_name\x18\x05 \x01(\t\"R\n\x19PBMsgBWSCreateMonorNotice\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\x12\x10\n\x08guild_id\x18\x03 \x01(\x04\"\x1c\n\x1aPBMsgBWSDestoryMonorNotice\":\n\x18PBMsgFlushSignDataNotice\x12\x1e\n\tsign_info\x18\x01 \x01(\x0b\x32\x0b.PBSignInfo\"\xc5\x01\n\x1aPBMsgMonorBattleRewardInfo\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x0f\n\x07mail_id\x18\x02 \x01(\t\x12\r\n\x05param\x18\x03 \x03(\t\x12!\n\x05items\x18\x04 \x03(\x0b\x32\x12.PBMsgItemQuantity\x12(\n\x0cleader_items\x18\x05 \x03(\x0b\x32\x12.PBMsgItemQuantity\x12(\n\x0cmember_items\x18\x06 \x03(\x0b\x32\x12.PBMsgItemQuantity\":\n\x18PBMsgGiveBackMoneyNotice\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x0c\n\x04\x63ost\x18\x02 \x01(\x11\"A\n\x1bPBMsgGiveBackMoneyRetNotice\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\"~\n\x15PBGuildTopBattleScore\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\x12\x10\n\x08guild_id\x18\x03 \x01(\x04\x12\x17\n\x0fguild_top_score\x18\x04 \x01(\r\x12\x15\n\rguild_top_num\x18\x05 \x01(\r\"2\n\x1fPBMsgGuildTopBattleScoreRequest\x12\x0f\n\x07top_num\x18\x01 \x01(\x11\"j\n PBMsgGuildTopBattleScoreResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x34\n\x14guild_top_score_info\x18\x02 \x03(\x0b\x32\x16.PBGuildTopBattleScore\"-\n\x19PBMsgGuildMemberIdRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\"\x93\x01\n\x1aPBMsgGuildMemberIdResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x12\n\ngateway_id\x18\x02 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x03 \x01(\r\x12\x10\n\x08guild_id\x18\x04 \x01(\x04\x12,\n\x0emember_id_list\x18\x05 \x01(\x0b\x32\x14.PBGuildMemberIdList\"H\n\x10PBMsgGuildStatus\x12\"\n\x0b\x62\x61ttle_type\x18\x01 \x01(\x0e\x32\r.PBBattleType\x12\x10\n\x08guild_id\x18\x02 \x01(\x04\":\n\x16PBMsgRksRoleCropNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63rop_id\x18\x02 \x01(\x04\"5\n\x13PBMsgMsgCountNotice\x12\x1e\n\tmsg_count\x18\x01 \x03(\x0b\x32\x0b.PBMsgCount\"+\n\nPBMsgCount\x12\x0e\n\x06msg_id\x18\x01 \x01(\r\x12\r\n\x05\x63ount\x18\x02 \x01(\r\"=\n\x19PBMsgEgsMyCropInfoRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63rop_id\x18\x02 \x01(\x04\"<\n\x18PBMsgEgsCropsInfoRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63rop_id\x18\x02 \x01(\x04\"0\n\x1dPBMsgEgsFriendCropListRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"A\n\x1aPBMsgEgsCreateCropsRequest\x12\x12\n\ncrops_name\x18\x01 \x01(\t\x12\x0f\n\x07role_id\x18\x02 \x01(\r\"\x85\x01\n\x1bPBMsgRksCreateCropsResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x10\n\x08\x63rops_id\x18\x02 \x01(\x04\x12\x12\n\ncrops_name\x18\x03 \x01(\t\x12\x0f\n\x07role_id\x18\x04 \x01(\r\x12\x1d\n\x15last_create_crop_time\x18\x05 \x01(\r\"T\n\x16PBMsgCreateCropsNotice\x12\x10\n\x08\x63rops_id\x18\x01 \x01(\x04\x12\x12\n\ncrops_name\x18\x02 \x01(\t\x12\x14\n\x0c\x62\x61ttle_score\x18\x03 \x01(\r\"+\n\x17PBMsgDisbandCropsNotice\x12\x10\n\x08\x63rops_id\x18\x01 \x01(\x04\"+\n\x18PBMsgEgsExitCropsRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\">\n\x19PBMsgRksExitCropsResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\"B\n\x1dPBMsgEgsApplyJoinCropsRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x10\n\x08\x63rops_id\x18\x02 \x01(\x04\"S\n\x1dPBMsgEgsAgreeJoinCropsRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x11\n\tleader_id\x18\x03 \x01(\r\x12\x0e\n\x06\x62\x61gree\x18\x04 \x01(\x08\"U\n\x1ePBMsgRksAgreeJoinCropsResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x10\n\x08\x63rops_id\x18\x03 \x01(\x04\"B\n\x15PBMsgEgsInviteRequest\x12\x12\n\ninvitor_id\x18\x01 \x01(\r\x12\x15\n\rbe_invitor_id\x18\x02 \x01(\r\"d\n\x1bPBMsgEgsInviteAnswerRequest\x12\x12\n\ninvitor_id\x18\x01 \x01(\r\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x0f\n\x07\x63rop_id\x18\x03 \x01(\x04\x12\x0f\n\x07\x62\x61\x63\x63\x65pt\x18\x04 \x01(\x08\"R\n\x1cPBMsgRksInviteAnswerResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x0f\n\x07\x63rop_id\x18\x03 \x01(\x04\"i\n\x1cPBMsgEgsLeaderExamineRequest\x12\x11\n\tmaster_id\x18\x01 \x01(\r\x12\x12\n\ninvitor_id\x18\x02 \x01(\r\x12\x12\n\ninvited_id\x18\x03 \x01(\r\x12\x0e\n\x06\x62\x61gree\x18\x04 \x01(\x08\"Z\n\x1fPNMsgEgsCropChangeLeaderRequest\x12\x12\n\nold_leader\x18\x01 \x01(\r\x12\x12\n\nnew_leader\x18\x02 \x01(\r\x12\x0f\n\x07\x63rop_id\x18\x03 \x01(\x04\"E\n\x1bPBMsgEgsKickOutCropsRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x15\n\rkick_out_role\x18\x02 \x01(\r\"@\n\x1bPBMsgRksKickOutCropResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\"0\n\x1dPBMsgEgsDisbandedCropsRequest\x12\x0f\n\x07role_id\x18\x01 \x01(\r\"@\n\x1bPBMsgRksDisbandCropResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\"C\n\x1cPBMsgBwsCropsScoreInfoNotice\x12#\n\tcrop_list\x18\x01 \x03(\x0b\x32\x10.PBCropScoreInfo\"S\n\x1bPBMsgEgsCropRankInfoRequest\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\x12\x0f\n\x07role_id\x18\x03 \x01(\r\"p\n\x1ePBMsgEgsStartCropsMatchRequest\x12\x10\n\x08\x63rops_id\x18\x01 \x01(\x04\x12$\n\x06member\x18\x02 \x03(\x0b\x32\x14.PBCropsBattleMember\x12\x16\n\x0esrc_gateway_id\x18\x03 \x01(\r\"3\n\x1fPBMsgEgsStartCropsMatchResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"g\n\x1fPBMsgBwsCropsMatchSuccessNotice\x12!\n\x05\x63\x61mpA\x18\x01 \x01(\x0b\x32\x12.PBCropsBattleCamp\x12!\n\x05\x63\x61mpB\x18\x02 \x01(\x0b\x32\x12.PBCropsBattleCamp\"G\n\x1dPBMsgBwsCropsFinalMatchNotice\x12&\n\x05\x63\x61mps\x18\x01 \x03(\x0b\x32\x17.PBCropsBattleFinalCamp\"\x86\x01\n\x11PBCropsBattleCamp\x12\x10\n\x08\x63rops_id\x18\x01 \x01(\x04\x12\x12\n\ncrops_name\x18\x02 \x01(\t\x12\x16\n\x0esrc_gateway_id\x18\x03 \x01(\r\x12\r\n\x05score\x18\x04 \x01(\x11\x12$\n\x06member\x18\x05 \x03(\x0b\x32\x14.PBCropsBattleMember\"s\n\x16PBCropsBattleFinalCamp\x12\x10\n\x08\x63rops_id\x18\x01 \x01(\x04\x12\x12\n\ncrops_name\x18\x02 \x01(\t\x12\x16\n\x0esrc_gateway_id\x18\x03 \x01(\r\x12\r\n\x05score\x18\x04 \x01(\x11\x12\x0c\n\x04rank\x18\x05 \x01(\r\"7\n\x13PBCropsBattleMember\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63har_id\x18\x02 \x01(\x04\"S\n\x1fPBMsgEgsCropsBattleResultNotice\x12\x18\n\x10vectory_crops_id\x18\x01 \x01(\x04\x12\x16\n\x0eloser_crops_id\x18\x02 \x01(\x04\"\x7f\n#PBMsgBwsCropsLastBattleResultNotice\x12\x11\n\tcur_round\x18\x01 \x01(\r\x12\x13\n\x0btotal_round\x18\x02 \x01(\r\x12\x18\n\x10vectory_crops_id\x18\x03 \x01(\x04\x12\x16\n\x0eloser_crops_id\x18\x04 \x01(\x04\"|\n\x11PBMailCropsReward\x12\x10\n\x08\x63rops_id\x18\x01 \x01(\x04\x12\x0f\n\x07mail_id\x18\x02 \x01(\t\x12!\n\x05items\x18\x03 \x03(\x0b\x32\x12.PBMsgItemQuantity\x12\r\n\x05param\x18\x04 \x03(\t\x12\x12\n\nforce_send\x18\x05 \x01(\x08\"@\n\x1cPBMsgBwsSendRewardMailNotice\x12 \n\x04mail\x18\x01 \x03(\x0b\x32\x12.PBMailCropsReward\"\x85\x01\n\x1bPBMsgRksSendCropsMailNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x0f\n\x07mail_id\x18\x02 \x01(\t\x12!\n\x05items\x18\x03 \x03(\x0b\x32\x12.PBMsgItemQuantity\x12\r\n\x05param\x18\x04 \x03(\t\x12\x12\n\nforce_send\x18\x05 \x01(\x08\"V\n\x19PBMsgEgsFinalMatchRequest\x12\x10\n\x08\x63rops_id\x18\x01 \x01(\x04\x12\x0f\n\x07role_id\x18\x02 \x01(\r\x12\x16\n\x0esrc_gateway_id\x18\x03 \x01(\r\"-\n\x1bPBMsgTeamBattleStatusNotice\x12\x0e\n\x06status\x18\x01 \x01(\x11\"@\n\x1bPBMsgEgsStartMatchingNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x10\n\x08\x63rops_id\x18\x02 \x01(\x04\"C\n\x1ePBMsgEgsGetReadyMatchingNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x10\n\x08\x63rops_id\x18\x02 \x01(\x04\"M\n\"PBMsgBwsCropsEnterFinalMatchNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x16\n\x0esrc_gateway_id\x18\x02 \x01(\r\"V\n\x1ePBMsgSpanTeamFightTableRequest\x12\x12\n\ngateway_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\r\x12\x0f\n\x07role_id\x18\x03 \x01(\r\"\x1e\n\x1cPBMsgSpanTeamNextMatchNotice\"O\n\x11PBCropsInfoNotice\x12\x10\n\x08\x63rops_id\x18\x01 \x01(\x04\x12\x12\n\ncrops_name\x18\x02 \x01(\t\x12\x14\n\x0c\x62\x61ttle_score\x18\x03 \x01(\r\"B\n\x18PBMsgCropsInfoListNotice\x12&\n\ncrops_list\x18\x01 \x03(\x0b\x32\x12.PBCropsInfoNotice\"8\n$PBMsgBwsSpanTeamCancelMatchingNotice\x12\x10\n\x08\x63rops_id\x18\x01 \x01(\x04\"S\n$PBMsgRksSpanTeamCancelMatchingNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x1a\n\x12is_cancel_matching\x18\x02 \x01(\x08\"D\n\x1fPBMsgEgsCancelReadyStatusNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x10\n\x08\x63rops_id\x18\x02 \x01(\x04\"0\n\x1cPBMsgRksCancelMatchingNotice\x12\x10\n\x08\x63rops_id\x18\x01 \x01(\x04\"_\n\x1bPBMsgEgsSpanMazeSignRequest\x12\x11\n\tgatewayid\x18\x01 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x02 \x01(\r\x12\x0e\n\x06roleid\x18\x03 \x01(\r\x12\r\n\x05level\x18\x04 \x01(\r\"A\n\x1cPBMsgBwsSpanMazeSignResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\"T\n PBMsgEgsSpanMazeSignCheckRequest\x12\x11\n\tgatewayid\x18\x01 \x01(\r\x12\x0e\n\x06roleid\x18\x02 \x01(\r\x12\r\n\x05level\x18\x03 \x01(\r\"F\n!PBMsgBwsSpanMazeSignCheckResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\"`\n\x1cPBMsgEgsSpanMazeEnterRequest\x12\x11\n\tgatewayid\x18\x01 \x01(\r\x12\x0e\n\x06\x63\x61mpid\x18\x02 \x01(\r\x12\x0e\n\x06roleid\x18\x03 \x01(\r\x12\r\n\x05level\x18\x04 \x01(\r\"B\n\x1dPBMsgBwsSpanMazeEnterResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07role_id\x18\x02 \x01(\r\"Y\n#PBMsgBwsSpanMazeEnterDungeonRequest\x12\x0f\n\x07\x64ungeon\x18\x01 \x01(\r\x12\x11\n\tgatewayid\x18\x02 \x01(\r\x12\x0e\n\x06roleid\x18\x03 \x01(\r\"l\n$PBMsgEgsSpanMazeEnterDungeonResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0f\n\x07\x64ungeon\x18\x02 \x01(\r\x12\x11\n\tgatewayid\x18\x03 \x01(\r\x12\x0e\n\x06roleid\x18\x04 \x01(\r\"@\n\x1cPBMsgBwsSpanMazeStatusNotice\x12 \n\x06status\x18\x01 \x01(\x0e\x32\x10.ESpanMazeStatus\"Z\n$PBMsgBwsSpanMazeCreateDungeonRequest\x12\x14\n\x0c\x64ungeonsheet\x18\x01 \x01(\t\x12\r\n\x05grade\x18\x02 \x01(\r\x12\r\n\x05round\x18\x03 \x01(\r\"\x81\x01\n%PBMsgEgsSpanMazeCreateDungeonResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tgatewayId\x18\x02 \x01(\r\x12\x0e\n\x06\x63\x61mpId\x18\x03 \x01(\r\x12\r\n\x05grade\x18\x04 \x01(\r\x12\x14\n\x0c\x64ungeonsheet\x18\x05 \x01(\r\"2\n\x1ePBMsgBwsSpanMazeRoleListNotice\x12\x10\n\x08rolelist\x18\x01 \x03(\r\"\x91\x01\n\x18PBAddGuildLivenessNotice\x12$\n\x04type\x18\x01 \x01(\x0e\x32\x16.EAddGuildLivenessType\x12\x14\n\x0c\x61\x64\x64_liveness\x18\x02 \x01(\x11\x12\x12\n\ndungeon_id\x18\x03 \x01(\t\x12\x13\n\x0b\x63reature_id\x18\x04 \x01(\t\x12\x10\n\x08guild_id\x18\x05 \x01(\x04\"\\\n\x19PBGuildLivenessSyncNotice\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x63ur_liveness\x18\x02 \x01(\x11\x12\x17\n\x0flast_reset_time\x18\x03 \x01(\r\"/\n\x1bPBGuildLastHitRewardRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\"0\n\x1cPBGuildLastHitRewardResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\".\n\x1aPBGuildMaxDmgRewardRequest\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\"/\n\x1bPBGuildMaxDmgRewardResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"T\n\x1aPBMagicPetInfoUpdateNotice\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12%\n\x0cmagicpetinfo\x18\x02 \x01(\x0b\x32\x0f.PBMagicPetItem*\x99\x7f\n\x11\x45ServiceMessageId\x12\x16\n\x12MSG_ROLE_ENTER_EGS\x10\x01\x12\x16\n\x12MSG_ROLE_LEAVE_EGS\x10\x02\x12\x13\n\x0fMSG_ROLE_DELETE\x10\x03\x12\x11\n\rMSG_ROLE_SYNC\x10\x04\x12$\n MSG_EGS_TO_GATE_REGISTER_REQUEST\x10\x0b\x12%\n!MSG_EGS_TO_GATE_REGISTER_RESPONSE\x10\x0c\x12\x15\n\x11MSG_DB_OP_REQUEST\x10\r\x12\x16\n\x12MSG_DB_OP_RESPONSE\x10\x0e\x12\x14\n\x10MSG_GATEWAY_DOWN\x10\x0f\x12\x1d\n\x19MSG_KICK_ROLE_LIST_NOTICE\x10\x10\x12\x14\n\x10MSG_GM_KICK_ROLE\x10\x65\x12\x12\n\x0eMSG_GM_ANNOUCE\x10\x66\x12\x14\n\x10MSG_GM_MOVE_ROLE\x10g\x12\x11\n\rMSG_GM_SHUTUP\x10h\x12\x18\n\x14MSG_GM_CANCEL_SHUTUP\x10i\x12\x19\n\x15MSG_GM_TRANSFER_GROUP\x10j\x12\x17\n\x13MSG_GM_DELETE_GROUP\x10k\x12\x16\n\x12MSG_GM_RENAME_ROLE\x10l\x12\x14\n\x10MSG_GM_SEND_MAIL\x10m\x12\x17\n\x13MSG_GM_RECOVER_ROLE\x10n\x12\x15\n\x11MSG_GM_CLEAR_ITEM\x10o\x12\x12\n\x0eMSG_GM_COMMAND\x10p\x12\x15\n\x11MSG_GM_SEND_MAILS\x10q\x12\x16\n\x12MSG_GM_RECOVER_PET\x10r\x12\x17\n\x13MSG_GM_RECOVER_ITEM\x10s\x12\x17\n\x13MSG_GM_EGS_RESPONSE\x10t\x12\x17\n\x12MSG_CONSIGN_MYLIST\x10\xc9\x01\x12\x15\n\x10MSG_CONSIGN_LIST\x10\xca\x01\x12\x13\n\x0eMSG_CONSIGN_UP\x10\xcb\x01\x12\x15\n\x10MSG_CONSIGN_DOWN\x10\xcc\x01\x12\x17\n\x12MSG_CONSIGN_GETRWD\x10\xcd\x01\x12\x14\n\x0fMSG_CONSIGN_BUY\x10\xce\x01\x12\x17\n\x12MSG_CONSIGN_LISTEX\x10\xcf\x01\x12\x1a\n\x15MSG_CONSIGN_GETREWARD\x10\xd0\x01\x12\x14\n\x0fMSG_CONSIGN_TIP\x10\xd1\x01\x12\x19\n\x14MSG_CONSIGN_INITDATA\x10\xd2\x01\x12\x1b\n\x16MSG_CONSIGN_UPDATEDATA\x10\xd3\x01\x12\x1e\n\x19MSG_CONSIGN_UPDATEHOTITEM\x10\xd4\x01\x12\x1c\n\x17MSG_BIANJING_TP_REQUIRE\x10\xac\x02\x12\x1d\n\x18MSG_BIANJING_TP_RESPONSE\x10\xad\x02\x12\x1b\n\x16MSG_BIANJING_TP_CANCEL\x10\xae\x02\x12\x18\n\x13MSG_CHAT_EX_REQUIRE\x10\x90\x03\x12\x1a\n\x15MSG_GATE_PRIVATE_CHAT\x10\x91\x03\x12\x1b\n\x16MSG_TEAM_BUILD_REQUIRE\x10\xf4\x03\x12\x1c\n\x17MSG_TEAM_BUILD_RESPONSE\x10\xf5\x03\x12\x1d\n\x18MSG_TEAM_DISMISS_REQUIRE\x10\xf6\x03\x12#\n\x1eMSG_TEAM_CHANGE_LEADER_REQUIRE\x10\xf7\x03\x12\x1b\n\x16MSG_TEAM_LEAVE_REQUIRE\x10\xf8\x03\x12\x1a\n\x15MSG_TEAM_KICK_REQUIRE\x10\xf9\x03\x12\x1c\n\x17MSG_TEAM_INVITE_REQUIRE\x10\xfa\x03\x12!\n\x1cMSG_TEAM_INVITE_EXAM_REQUIRE\x10\xfb\x03\x12\x1d\n\x18MSG_TEAM_INVITE_RESPONSE\x10\xfc\x03\x12\x1b\n\x16MSG_TEAM_APPLY_REQUIRE\x10\xfd\x03\x12\"\n\x1dMSG_TEAM_APPLY_ANSWER_REQUIRE\x10\xfe\x03\x12\x1a\n\x15MSG_TEAM_SYSTEM_BUILD\x10\xff\x03\x12#\n\x1eMSG_TEAM_SYSTEM_BUILD_RESPONSE\x10\x80\x04\x12 \n\x1bMSG_TEAM_LEAVE_TEAM_DUNGEON\x10\x81\x04\x12\x1a\n\x15MSG_TEAM_DISMISS_SYNC\x10\x82\x04\x12 \n\x1bMSG_TEAM_CHANGE_LEADER_SYNC\x10\x83\x04\x12\x1d\n\x18MSG_TEAM_ADD_MEMBER_SYNC\x10\x84\x04\x12 \n\x1bMSG_TEAM_REMOVE_MEMBER_SYNC\x10\x85\x04\x12 \n\x1bMSG_TEAM_ADD_APPLICANT_SYNC\x10\x86\x04\x12#\n\x1eMSG_TEAM_REMOVE_APPLICANT_SYNC\x10\x87\x04\x12\x1c\n\x17MSG_TEAM_ROLE_BASE_SYNC\x10\x88\x04\x12#\n\x1eMSG_TEAM_ROLE_ENTER_SCENE_SYNC\x10\x89\x04\x12#\n\x1eMSG_TEAM_ROLE_LEAVE_SCENE_SYNC\x10\x8a\x04\x12\x12\n\rMSG_TEAM_SYNC\x10\x8b\x04\x12\x18\n\x13MSG_TEAM_BUILD_SYNC\x10\x8c\x04\x12\x19\n\x14MSG_TEAM_SET_PURPOSE\x10\x8d\x04\x12\"\n\x1dMSG_TEAM_PURPOSE_LIST_REQUIRE\x10\x8e\x04\x12\'\n\"MSG_TEAM_FETCH_TARGET_TEAM_REQUIRE\x10\x8f\x04\x12(\n#MSG_TEAM_FETCH_TARGET_TEAM_RESPONSE\x10\x90\x04\x12#\n\x1eMSG_TEAM_DUNGEON_CHECK_REQUIRE\x10\x91\x04\x12$\n\x1fMSG_TEAM_DUNGEON_CHECK_RESPONSE\x10\x92\x04\x12\x18\n\x13MSG_TEAM_MATCH_SYNC\x10\x93\x04\x12\x1c\n\x17MSG_TEAM_SIGNUP_REQUIRE\x10\x94\x04\x12#\n\x1eMSG_TEAM_SESSION_LEAVE_REQUIRE\x10\x95\x04\x12$\n\x1fMSG_TEAM_SESSION_LEAVE_RESPONSE\x10\x96\x04\x12!\n\x1cMSG_WORLD_LEVEL_FINISH_QUEST\x10\xd8\x04\x12\x1b\n\x16MSG_WORLD_LEVEL_UPDATE\x10\xd9\x04\x12\x1a\n\x15MSG_WORLD_LEVEL_AWARD\x10\xda\x04\x12\x19\n\x14MSG_WORLD_LEVEL_INFO\x10\xdb\x04\x12 \n\x1bMSG_WORLD_LEVEL_CHANGE_ICON\x10\xdc\x04\x12 \n\x1bMSG_REDPACKET_SHAKE_REQUEST\x10\x8a\x05\x12!\n\x1cMSG_REDPACKET_SHAKE_RESPONSE\x10\x8b\x05\x12#\n\x1eMSG_REDPACKET_EXCHANGE_REQUEST\x10\x8c\x05\x12$\n\x1fMSG_REDPACKET_EXCHANGE_RESPONSE\x10\x8d\x05\x12(\n#MSG_REDPACKET_EXCHANGE_LIST_REQUEST\x10\x8e\x05\x12)\n$MSG_REDPACKET_EXCHANGE_LIST_RESPONSE\x10\x8f\x05\x12 \n\x1bMSG_REDPACKET_JIFEN_REQUEST\x10\x90\x05\x12!\n\x1cMSG_REDPACKET_JIFEN_RESPONSE\x10\x91\x05\x12\x1e\n\x19MSG_GATE_CHARINFO_REQUEST\x10\xbc\x05\x12\x1f\n\x1aMSG_GATE_CHARINFO_RESPONSE\x10\xbd\x05\x12\x1a\n\x15MSG_GATE_ITEM_REQUEST\x10\xbe\x05\x12\x1b\n\x16MSG_GATE_ITEM_RESPONSE\x10\xbf\x05\x12\x1b\n\x16MSG_GATE_GMMAIL_REPORT\x10\xc0\x05\x12\x1a\n\x15MSG_SPAN_ITEM_REQUEST\x10\xc1\x05\x12\x1e\n\x19MSG_CREATE_ARENA_RESPONSE\x10\xa1\x06\x12\x1c\n\x17MSG_ENTER_ARENA_REQUIRE\x10\xa2\x06\x12\x1e\n\x19MSG_GUILD_KILL_MAP_REPORT\x10\x85\x07\x12\x1f\n\x1aMSG_GUILD_KILL_MAP_REQUEST\x10\x86\x07\x12 \n\x1bMSG_GUILD_KILL_MAP_RESPONSE\x10\x87\x07\x12(\n#MSG_FRIEND_SERVER_ADDFRIEND_REQUEST\x10\x88\x07\x12)\n$MSG_FRIEND_SERVER_ADDFRIEND_RESPONSE\x10\x89\x07\x12+\n&MSG_FRIEND_SERVER_ADDFRIENDACK_REQUEST\x10\x8a\x07\x12+\n&MSG_FRIEND_SERVER_REMOVEFRIEND_REQUEST\x10\x8b\x07\x12,\n\'MSG_FRIEND_SERVER_REMOVEFRIEND_RESPONSE\x10\x8c\x07\x12)\n$MSG_FRIEND_SERVER_GIVEENERGY_REQUEST\x10\x8d\x07\x12+\n&MSG_FRIEND_SERVER_GATHERENERGY_REQUEST\x10\x8e\x07\x12#\n\x1eMSG_FRIEND_SERVER_LOGIN_NOTICE\x10\x8f\x07\x12&\n!MSG_FRIEND_SERVER_DATASYNC_NOTICE\x10\x90\x07\x12\'\n\"MSG_FRIEND_SERVER_ADDENERGY_NOTICE\x10\x91\x07\x12-\n(MSG_FRIEND_SERVER_CHANGEHEADICON_REQUEST\x10\x92\x07\x12.\n)MSG_FRIEND_SERVER_CHANGEHEADICON_RESPONSE\x10\x93\x07\x12%\n MSG_FRIEND_SERVER_SEARCH_REQUEST\x10\x94\x07\x12.\n)MSG_FRIEND_SERVER_CONDITIONSEARCH_REQUEST\x10\x95\x07\x12)\n$MSG_FRIEND_SERVER_ADDCONTACT_REQUEST\x10\x96\x07\x12)\n$MSG_FRIEND_SERVER_MOVETARGET_REQUEST\x10\x97\x07\x12)\n$MSG_FRIEND_SERVER_PLAYEREVENT_NOTICE\x10\x98\x07\x12+\n&MSG_FRIEND_SERVER_ADDFRIENDONE_REQUEST\x10\x99\x07\x12,\n\'MSG_FRIEND_SERVER_HEADICONCHECK_REQUEST\x10\x9a\x07\x12+\n&MSG_FRIEND_SERVER_ADDFRIENDINTIMATENUM\x10\x9b\x07\x12+\n&MSG_FRIEND_SERVER_DELFRIENDINTIMATENUM\x10\x9c\x07\x12-\n(MSG_FRIEND_SERVER_CLEARFRIENDINTIMATENUM\x10\x9d\x07\x12-\n(MSG_FRIEND_SERVER_NOTIFYABOUTINTIMATENUM\x10\x9e\x07\x12\'\n\"MSG_FRIEND_SERVER_ISFRIEND_REQUEST\x10\x9f\x07\x12(\n#MSG_FRIEND_SERVER_ISFRIEND_RESPONSE\x10\xa0\x07\x12/\n*MSG_FRIEND_SERVER_UPDATE_EGS_FRIEND_NORMAL\x10\xa1\x07\x12.\n)MSG_FRIEND_SERVER_UPDATE_EGS_FRIEND_ENEMY\x10\xa2\x07\x12.\n)MSG_FRIEND_SERVER_UPDATE_EGS_FRIEND_BLACK\x10\xa3\x07\x12\x30\n+MSG_FRIEND_SERVER_UPDATE_EGS_FRIEND_CONTACT\x10\xa4\x07\x12*\n%MSG_FRIEND_SERVER_NOTIFYMAXINTIMATEUM\x10\xa5\x07\x12,\n\'MSG_FRIEND_SERVER_REMOVE_RECENT_CONTACT\x10\xa6\x07\x12<\n7MSG_CHAR_SEND_FLOWER_OF_SEARCH_PLAYER_IS_ONLINE_REQUEST\x10\xe9\x07\x12=\n8MSG_CHAR_SEND_FLOWER_OF_SEARCH_PLAYER_IS_ONLINE_RESPONSE\x10\xea\x07\x12-\n(MSG_CHAR_SEND_FLOWER_TO_DIFF_CAMP_PLAYER\x10\xeb\x07\x12\x18\n\x13MSG_GUILDBT_IMPULSE\x10\xcc\x08\x12\x15\n\x10MSG_GUILDBT_SIGN\x10\xcd\x08\x12\x15\n\x10MSG_GUILDBT_JOIN\x10\xce\x08\x12\x1e\n\x19MSG_GUILDBT_STATUS_CHANGE\x10\xcf\x08\x12\x1d\n\x18MSG_GUILDBT_CREATE_FIELD\x10\xd0\x08\x12\x17\n\x12MSG_GUILDBT_REPORT\x10\xd1\x08\x12\x1e\n\x19MSG_GUILDBT_REPORT_PEOPLE\x10\xd2\x08\x12\x1f\n\x1aMSG_GUILDBT_DRAWBACK_APPLY\x10\xd3\x08\x12&\n!MSG_SERVER_MARRIAGE_MARRY_REQUEST\x10\xb0\t\x12\'\n\"MSG_SERVER_MARRIAGE_MARRY_RESPONSE\x10\xb1\t\x12(\n#MSG_SERVER_MARRIAGE_DIVORCE_REQUEST\x10\xb2\t\x12)\n$MSG_SERVER_MARRIAGE_DIVORCE_RESPONSE\x10\xb3\t\x12*\n%MSG_SERVER_MARRIAGE_MARRYROLL_REQUEST\x10\xb4\t\x12+\n&MSG_SERVER_MARRIAGE_MARRYROLL_RESPONSE\x10\xb5\t\x12%\n MSG_SERVER_MARRIAGE_INFO_REQUEST\x10\xb6\t\x12&\n!MSG_SERVER_MARRIAGE_INFO_RESPONSE\x10\xb7\t\x12-\n(MSG_SERVER_MARRIAGE_DIVORCEFORCE_REQUEST\x10\xb8\t\x12.\n)MSG_SERVER_MARRIAGE_DIVORCEFORCE_RESPONSE\x10\xb9\t\x12,\n\'MSG_SERVER_MARRIAGE_MARRY_READY_REQUEST\x10\xba\t\x12-\n(MSG_SERVER_MARRIAGE_MARRY_READY_RESPONSE\x10\xbb\t\x12\x39\n4MSG_SERVER_MARRIAGE_TITLECHANGE_ASK_INTIMACY_REQUEST\x10\xbc\t\x12:\n5MSG_SERVER_MARRIAGE_TITLECHANGE_ASK_INTIMACY_RESPONSE\x10\xbd\t\x12\x1e\n\x19MSG_QUEST_OP_EVENT_NOTICE\x10\x94\n\x12!\n\x1cMSG_NATION_CAMP_UNION_NOTICE\x10\xf8\n\x12*\n%MSG_NATION_CAMP_UNION_ACTIVITY_NOTICE\x10\xf9\n\x12 \n\x1bMSG_GATE_CHANGE_CAMP_NOTICE\x10\xfa\n\x12\x1a\n\x15MSG_GUILD_CREATE_SYNC\x10\xdc\x0b\x12\x1b\n\x16MSG_GUILD_DISMISS_SYNC\x10\xdd\x0b\x12\x1b\n\x16MSG_GUILD_SUMMARY_SYNC\x10\xde\x0b\x12\x1e\n\x19MSG_GUILD_MEMBER_ADD_SYNC\x10\xdf\x0b\x12!\n\x1cMSG_GUILD_MEMBER_REMOVE_SYNC\x10\xe0\x0b\x12!\n\x1cMSG_GUILD_MEMBER_CHANGE_SYNC\x10\xe1\x0b\x12!\n\x1cMSG_GUILD_APPLICANT_ADD_SYNC\x10\xe2\x0b\x12$\n\x1fMSG_GUILD_APPLICANT_REMOVE_SYNC\x10\xe3\x0b\x12\x1c\n\x17MSG_GUILD_BUILDING_SYNC\x10\xe4\x0b\x12\"\n\x1dMSG_GUILD_GATE_CREATE_REQUEST\x10\xe5\x0b\x12!\n\x1cMSG_GUILD_GATE_APPLY_REQUEST\x10\xe6\x0b\x12 \n\x1bMSG_GUILD_GATE_QUIT_REQUEST\x10\xe7\x0b\x12(\n#MSG_GUILD_GATE_APPLY_CANCEL_REQUEST\x10\xe8\x0b\x12\x1e\n\x19MSG_GUILD_GATE_QUICK_JOIN\x10\xe9\x0b\x12)\n$MSG_GUILD_GATE_APPLY_CONFIRM_REQUEST\x10\xea\x0b\x12 \n\x1bMSG_GUILD_GATE_KICK_REQUEST\x10\xeb\x0b\x12\"\n\x1dMSG_GUILD_GATE_MODIFY_REQUEST\x10\xec\x0b\x12\'\n\"MSG_GUILD_GATE_CHANGE_POST_REQUEST\x10\xed\x0b\x12\x1a\n\x15MSG_GUILD_GATE_DONATE\x10\xee\x0b\x12!\n\x1cMSG_GUILD_GATE_CHANGE_LEADER\x10\xef\x0b\x12%\n MSG_GUILD_GATE_LEAVEL_UP_REQUEST\x10\xf0\x0b\x12)\n$MSG_GUILD_GATE_BUILDING_LVUP_REQUEST\x10\xf1\x0b\x12\"\n\x1dMSG_GUILD_SKILL_STUDY_REQUEST\x10\xf2\x0b\x12\x1f\n\x1aMSG_GUILD_SKILL_STUDY_SYNC\x10\xf3\x0b\x12%\n MSG_GUILD_RESET_SKILL_CD_REQUEST\x10\xf4\x0b\x12 \n\x1bMSG_GUILD_OPEN_BOSS_REQUEST\x10\xf5\x0b\x12\x1d\n\x18MSG_GUILD_OPEN_BOSS_SYNC\x10\xf6\x0b\x12!\n\x1cMSG_GUILD_BOSS_CHANGE_REPORT\x10\xf7\x0b\x12\x1e\n\x19MSG_GUILD_DISMISS_REQUEST\x10\xf8\x0b\x12%\n MSG_GUILD_CANCEL_DISMISS_REQUEST\x10\xf9\x0b\x12\x1b\n\x16MSG_GUILD_DATA_IMPULSE\x10\xfa\x0b\x12!\n\x1cMSG_GATEWAY_TIME_COME_REPORT\x10\xfb\x0b\x12\x1f\n\x1aMSG_GUILD_MAINTENANCE_SYNC\x10\xfc\x0b\x12\'\n\"MSG_GUILD_GATE_BATTLE_SIGN_REQUEST\x10\xfd\x0b\x12$\n\x1fMSG_GUILD_GATE_ADD_MONEY_REPORT\x10\xfe\x0b\x12#\n\x1eMSG_GUILD_POWER_UPDATE_REQUEST\x10\xff\x0b\x12$\n\x1fMSG_GUILD_POWER_UPDATE_RESPONSE\x10\x80\x0c\x12%\n MSG_GUILD_STORE_POSTITEM_REQUEST\x10\x81\x0c\x12&\n!MSG_GUILD_STORE_POSTITEM_RESPONSE\x10\x82\x0c\x12&\n!MSG_GUILD_STORE_GRANTITEM_REQUEST\x10\x83\x0c\x12\'\n\"MSG_GUILD_STORE_GRANTITEM_RESPONSE\x10\x84\x0c\x12&\n!MSG_GUILD_STORE_EXPANDBAG_REQUEST\x10\x85\x0c\x12\'\n\"MSG_GUILD_STORE_EXPANDBAG_RESPONSE\x10\x86\x0c\x12 \n\x1bMSG_GUILD_SPAN_SIGN_REQUEST\x10\x87\x0c\x12!\n\x1cMSG_GUILD_SPAN_SIGN_RESPONSE\x10\x88\x0c\x12%\n MSG_GUILD_IMBATTLE_REWARD_REPORT\x10\x89\x0c\x12\"\n\x1dMSG_GUILD_MANOR_CREATE_REPORT\x10\x8a\x0c\x12 \n\x1bMSG_GUILD_MANOR_CREATE_SYNC\x10\x8b\x0c\x12%\n MSG_GUILD_MANOR_OPENFIRE_REQUEST\x10\x8c\x0c\x12\x1d\n\x18MSG_GUILD_OPEN_FIRE_SYNC\x10\x8d\x0c\x12&\n!MSG_GUILD_MANOR_STATUE_FLUSH_SYNC\x10\x8e\x0c\x12(\n#MSG_GUILD_MANOR_STATUE_FLUSH_REPORT\x10\x8f\x0c\x12$\n\x1fMSG_RKS_TO_EGS_SIGNLIST_REQUEST\x10\x90\x0c\x12&\n!MSG_EGS_GUILD_ADD_LIVENESS_NOTICE\x10\x91\x0c\x12 \n\x1bMSG_RKS_GUILD_LIVENESS_SYNC\x10\x92\x0c\x12*\n%MSG_EGS_GUILD_LAST_HIT_REWARD_REQUEST\x10\x93\x0c\x12+\n&MSG_RKS_GUILD_LAST_HIT_REWARD_RESPONSE\x10\x94\x0c\x12)\n$MSG_EGS_GUILD_MAX_DMG_REWARD_REQUEST\x10\x95\x0c\x12*\n%MSG_RKS_GUILD_MAX_DMG_REWARD_RESPONSE\x10\x96\x0c\x12\x1e\n\x19MSG_PETINFO_UPDATE_NOTICE\x10\xc0\x0c\x12!\n\x1cMSG_RANKMSG_TRANSPOND_NOTICE\x10\xc1\x0c\x12\x1a\n\x15MSG_DRAW_LOTTERY_SYNC\x10\xc2\x0c\x12\"\n\x1dMSG_DRAW_LOTTERY_DATA_REQUEST\x10\xc3\x0c\x12#\n\x1eMSG_DRAW_LOTTERY_DATA_RESPONSE\x10\xc4\x0c\x12!\n\x1cMSG_DRAW_LOTTERY_DATA_NOTICE\x10\xc5\x0c\x12\x1a\n\x15MSG_ONEARMBANDIT_SYNC\x10\xca\x0c\x12\x1c\n\x17MSG_ONEARMBANDIT_REPORT\x10\xcb\x0c\x12\x1c\n\x17MSG_ONEARMBANDIT_NOTICE\x10\xcc\x0c\x12 \n\x1bMSG_ONEARMBANDIT_END_REPORT\x10\xcd\x0c\x12\x1f\n\x1aMSG_RANK_CHARM_TOP3_REPORT\x10\xd4\x0c\x12(\n#MSG_RANK_CHARM_TOP3_REPORT_CALLBACK\x10\xd5\x0c\x12%\n MSG_SPANPVE_KEEPTEAMINFO_REQUIRE\x10\xdf\x0c\x12#\n\x1eMSG_SPANPVE_REGAINTEAM_REQUEST\x10\xe0\x0c\x12$\n\x1fMSG_SPANPVE_REGAINTEAM_RESPONSE\x10\xe1\x0c\x12%\n MSG_SPANPVE_LEAVEDUNGEON_REQUEST\x10\xe2\x0c\x12%\n MSG_SPANPVE_ENTERDUNGEON_REQUEST\x10\xe3\x0c\x12%\n MSG_SPANPVE_GETMATCHLIST_REQUEST\x10\xe4\x0c\x12&\n!MSG_SPANPVE_GETMATCHLIST_RESPONSE\x10\xe5\x0c\x12\x19\n\x14MSG_SEND_MAIL_REWARD\x10\xf2\x0c\x12\x1b\n\x16MSG_CROSS_STATE_REPORT\x10\xa4\r\x12$\n\x1fMSG_CROSS_STATE_REPORT_CALLBACK\x10\xa5\r\x12\x1e\n\x19MSG_BILLING_CHARGE_NOTICE\x10\xa6\r\x12\x19\n\x14MSG_SPAN_CHAT_NOTICE\x10\xa7\r\x12\x19\n\x14MSG_SPAN_MUTE_NOTICE\x10\xa8\r\x12\x18\n\x13MSG_RKS_STOP_NOTICE\x10\xa9\r\x12\x1d\n\x18MSG_SPAN_GETRANK_REQUEST\x10\xaa\r\x12\x1e\n\x19MSG_SPAN_GETRANK_RESPONSE\x10\xab\r\x12#\n\x1eMSG_SPAN_GETGUILDRANK_RESPONSE\x10\xac\r\x12\"\n\x1dMSG_SPAN_GETMAINRANK_RESPONSE\x10\xad\r\x12\'\n\"MSG_SPAN_GETMAINGUILDRANK_RESPONSE\x10\xae\r\x12,\n\'MSG_EGS_ACTIVITY_QUESTION_ANSWER_NOTICE\x10\x88\x0e\x12)\n$MSG_EGS_ACTIVITY_QUESTION_END_NOTICE\x10\x89\x0e\x12,\n\'MSG_RKS_ACTIVITY_QUESTION_REWARD_NOTICE\x10\x8a\x0e\x12+\n&MSG_EGS_ACTIVITY_QUESTION_ENTER_NOTICE\x10\x8b\x0e\x12#\n\x1eMSG_WORLD_BOSS_TO_CAMP_REQUEST\x10\xec\x0e\x12$\n\x1fMSG_WORLD_BOSS_TO_CAMP_RESPONSE\x10\xed\x0e\x12*\n%MSG_EGS_SPANIMBATTLE_WATCHING_REQUEST\x10\xd0\x0f\x12+\n&MSG_EGS_SPANIMBATTLE_WATCHING_RESPONSE\x10\xd1\x0f\x12\x1d\n\x18MSG_EGS_SPAN_MAIL_NOTICE\x10\xd2\x0f\x12*\n%MSG_EGS_SPANIMBATTLE_GUILDDATA_REPORT\x10\xd3\x0f\x12,\n\'MSG_BWS_SPANIMBATTLE_HISTORYDATA_NOTICE\x10\xd4\x0f\x12%\n MSG_EGS_SPANIMBATTLE_BET_REQUEST\x10\xd5\x0f\x12&\n!MSG_BWS_SPANIMBATTLE_BET_RESPONSE\x10\xd6\x0f\x12\"\n\x1dMSG_BWS_SPAN_RACE_IDLE_NOTICE\x10\xd7\x0f\x12#\n\x1eMSG_BWS_SPANIMBATTLE_BET_ROUND\x10\xd8\x0f\x12\x1e\n\x19MSG_BWS_BET_CLEAR_REQUEST\x10\xd9\x0f\x12&\n!MSG_BWS_SPANIMBATTLE_START_NOTICE\x10\xda\x0f\x12&\n!MSG_BWS_SPAN_STATUS_CHANGE_NOTICE\x10\xdb\x0f\x12$\n\x1fMSG_BWS_SPANIMBATTLE_BET_NOTICE\x10\xdc\x0f\x12\x1f\n\x1aMSG_SERVER_GUILD_ID_REPORT\x10\xdd\x0f\x12 \n\x1bMSG_BWS_LOAD_SUCCESS_NOTICE\x10\xde\x0f\x12\x1e\n\x19MSG_BWS_REQUEST_SIGN_LIST\x10\xdf\x0f\x12&\n!MSG_EGS_SPANIMBATTLE_FINAL_REPORT\x10\xe0\x0f\x12(\n#MSG_EGS_SPANMONORBATTLE_BET_REQUEST\x10\xe4\x0f\x12)\n$MSG_BWS_SPANMONORBATTLE_BET_RESPONSE\x10\xe5\x0f\x12+\n&MSG_EGS_SPAN_MONOR_ENTER_MONOR_REQUEST\x10\xe6\x0f\x12,\n\'MSG_BWS_SPAN_MONOR_ENTER_MONOR_RESPONSE\x10\xe7\x0f\x12\'\n\"MSG_BWS_SPAN_MONOR_ACT_IDLE_NOTICE\x10\xe8\x0f\x12+\n&MSG_BWS_MONOR_DATA_LOAD_SUCCESS_NOTICE\x10\xe9\x0f\x12,\n\'MSG_BWS_SPAN_MONOR_STATUS_CHANGE_NOTICE\x10\xea\x0f\x12-\n(MSG_EGS_SPAN_MONOR_ENTER_DUNGEON_REQUEST\x10\xeb\x0f\x12.\n)MSG_BWS_SPAN_MONOR_ENTER_DUNGEON_RESPONSE\x10\xec\x0f\x12-\n(MSG_EGS_SPAN_MONOR_DUNGEON_RESULT_NOTICE\x10\xed\x0f\x12-\n(MSG_BWS_SPAN_MONOR_CREATE_BATTLE_REQUEST\x10\xee\x0f\x12.\n)MSG_EGS_SPAN_MONOR_CREATE_BATTLE_RESPONSE\x10\xef\x0f\x12-\n(MSG_BWS_SPAN_MONOR_DESTORY_BATTLE_NOTICE\x10\xf0\x0f\x12\x30\n+MSG_BWS_SPAN_MONOR_RACEONE_WIN_GUILD_NOTICE\x10\xf1\x0f\x12+\n&MSG_BWS_SPAN_MONOR_CREATE_MONOR_NOTICE\x10\xf2\x0f\x12,\n\'MSG_BWS_SPAN_MONOR_DESTORY_MONOR_NOTICE\x10\xf3\x0f\x12.\n)MSG_EGS_SPAN_MONOR_SIGN_COSTMONOY_REQUEST\x10\xf4\x0f\x12/\n*MSG_RKS_SPAN_MONOR_SIGN_COSTMONOY_RESPONSE\x10\xf5\x0f\x12.\n)MSG_BWS_SPAN_MONOR_FLUSH_SIGN_DATA_NOTICE\x10\xf6\x0f\x12\x30\n+MSG_BWS_SPAN_MONOR_RACETWO_WIN_GUILD_NOTICE\x10\xf7\x0f\x12\x30\n+MSG_BWS_SPAN_MONOR_SEND_GUILD_REWARD_NOTICE\x10\xf8\x0f\x12.\n)MSG_BWS_SPAN_MONOR_GIVE_BACK_MONEY_NOTICE\x10\xf9\x0f\x12\x32\n-MSG_BWS_SPAN_MONOR_GIVE_BACK_MONEY_RET_NOTICE\x10\xfa\x0f\x12,\n\'MSG_EGS_SPAN_MONOR_WATCH_BATTLE_REQUEST\x10\xfb\x0f\x12-\n(MSG_BWS_SPAN_MONOR_WATCH_BATTLE_RESPONSE\x10\xfc\x0f\x12/\n*MSG_BWS_SPAN_MONOR_GUILD_TOP_SCORE_REQUEST\x10\xfd\x0f\x12\x30\n+MSG_EGS_SPAN_MONOR_GUILD_TOP_SCORE_RESPONSE\x10\xfe\x0f\x12,\n\'MSG_BWS_SPAN_MONOR_GUILD_MEMBER_REQUEST\x10\xff\x0f\x12-\n(MSG_RKS_SPAN_MONOR_GUILD_MEMBER_RESPONSE\x10\x80\x10\x12$\n\x1fMSG_BWS_SPAN_MONOR_BATTLE_START\x10\x81\x10\x12 \n\x1bMSG_EGS_SPANWILDRANK_REPORT\x10\x82\x10\x12$\n\x1fMSG_EGS_GETSPANWILDRANK_REQUEST\x10\x83\x10\x12%\n MSG_EGS_GETSPANWILDRANK_RESPONSE\x10\x84\x10\x12&\n!MSG_EGS_GETSPANWILDBOSSLV_REQUEST\x10\x85\x10\x12\'\n\"MSG_EGS_GETSPANWILDBOSSLV_RESPONSE\x10\x86\x10\x12!\n\x1cMSG_SPANWILDPLAYERNUM_NOTICE\x10\x87\x10\x12$\n\x1fMSG_SAVETEAMINFOSPANWILDREQUEST\x10\x88\x10\x12%\n MSG_SAVETEAMINFOSPANWILDRESPONSE\x10\x89\x10\x12$\n\x1fMSG_SPANWILD_REGAINTEAM_REQUEST\x10\x8a\x10\x12%\n MSG_SPANWILD_REGAINTEAM_RESPONSE\x10\x8b\x10\x12\x1f\n\x1aMSG_MERGESERVERDATA_REPORT\x10\x96\x10\x12!\n\x1cMSG_MERGESERVERDATA_RESPONSE\x10\x97\x10\x12 \n\x1bMSG_GETSPANCHARINFO_REQUEST\x10\xa0\x10\x12\x18\n\x13MSG_BWSDUEL_REQUEST\x10\xa1\x10\x12\x19\n\x14MSG_BWSDUEL_RESPONSE\x10\xa2\x10\x12\x1e\n\x19MSG_BWSDUELDELITEM_NOTICE\x10\xa3\x10\x12\x19\n\x14MSG_BWSDODUEL_NOTICE\x10\xa4\x10\x12&\n!MSG_BWSDUELPLAYERENTERGAME_NOTICE\x10\xa5\x10\x12 \n\x1bMSG_BWSDESPISESUCCEEDNOTICE\x10\xa6\x10\x12\x1c\n\x17MSG_BWSLOSEREQUIPNOTICE\x10\xa7\x10\x12\x1d\n\x18MSG_BWSLOSEREQUIPREQUEST\x10\xa8\x10\x12\x1e\n\x19MSG_BWSLOSEREQUIPRESPONSE\x10\xa9\x10\x12!\n\x1cMSG_GETSPANCHARINFO_REQUEST2\x10\xaa\x10\x12\x1d\n\x18MSG_EGS_PLAYERPK_REQUEST\x10\xb8\x17\x12\x1e\n\x19MSG_RKS_PLAYERPK_RESPONSE\x10\xb9\x17\x12#\n\x1eMSG_EGS_CANCEL_PLAYERPK_NOTICE\x10\xba\x17\x12#\n\x1eMSG_EGS_REJECT_PLAYERPK_NOTICE\x10\xbb\x17\x12$\n\x1fMSG_EGS_ACCEPT_PLAYERPK_REQUEST\x10\xbc\x17\x12%\n MSG_RKS_ACCEPT_PLAYERPK_RESPONSE\x10\xbd\x17\x12#\n\x1eMSG_EGS_REMOVE_PALYERPK_NOTICE\x10\xbe\x17\x12$\n\x1fMSG_RSK_FORWARD_PLAYERPK_NOTICE\x10\xbf\x17\x12+\n&MSG_RSK_FORWARD_REJECT_PLAYERPK_NOTICE\x10\xc0\x17\x12$\n\x1fMSG_RSK_FIREWORKS_STATUS_NOTICE\x10\xcc\x17\x12\"\n\x1dMSG_RSK_FIREWORKS_OPEN_NOTICE\x10\xcd\x17\x12#\n\x1eMSG_EGS_FIREWORKS_SCORE_REPORT\x10\xce\x17\x12#\n\x1eMSG_RSK_FIREWORKS_SCORE_NOTICE\x10\xcf\x17\x12 \n\x1bMSG_RSK_FIREWORKS_FX_NOTICE\x10\xd0\x17\x12(\n#MSG_EGS_PETBATTLE_FIGHTDATA_REQUEST\x10\xd6\x17\x12)\n$MSG_RKS_PETBATTLE_FIGHTDATA_RESPONSE\x10\xd7\x17\x12,\n\'MSG_EGS_PETBATTLE_CHALLENGERDATA_NOTICE\x10\xd8\x17\x12$\n\x1fMSG_EGS_PETBATTLE_RESULT_NOTICE\x10\xd9\x17\x12-\n(MSG_EGS_PETBATTLE_FLUSH_PVP_MATCH_NOTICE\x10\xda\x17\x12*\n%MSG_EGS_PETBATTLE_QUERY_RECORD_NOTICE\x10\xdb\x17\x12)\n$MSG_EGS_PETBATTLE_GETPVPINFO_REQUEST\x10\xdc\x17\x12*\n%MSG_RKS_PETBATTLE_GETPVPINFO_RESPONSE\x10\xdd\x17\x12.\n)MSG_RKS_PETBATTLE_SEND_MATCH_INFO_REQUEST\x10\xde\x17\x12\x31\n,MSG_RKS_PETBATTLE_RECIVE_MATCH_INFO_RESPONSE\x10\xdf\x17\x12,\n\'MSG_EGS_PETBATTLE_SETPLAYER_RANK_NOTICE\x10\xe0\x17\x12(\n#MSG_EGS_PETBATTLE_CLEAR_RANK_NOTICE\x10\xe1\x17\x12*\n%MSG_RKS_PETBATTLE_QUERY_RECORD_NOTICE\x10\xe2\x17\x12-\n(MSG_RKS_PETBATTLE_SENDMAIL_REWARD_NOTICE\x10\xe3\x17\x12\'\n\"MSG_EGS_PETBATTLE_ADD_ROBOT_NOTICE\x10\xe4\x17\x12#\n\x1eMSG_MAGICPETINFO_UPDATE_NOTICE\x10\xea\x17\x12\x1d\n\x17MSG_COUPLEPVP_INFO_SYNC\x10\xb8\x91\x02\x12\"\n\x1cMSG_COUPLEPVP_SIGNIN_REQUEST\x10\xb9\x91\x02\x12#\n\x1dMSG_COUPLEPVP_SIGNIN_RESPONSE\x10\xba\x91\x02\x12\'\n!MSG_COUPLEPVP_SIGNIN_BEGIN_NOTICE\x10\xbb\x91\x02\x12$\n\x1eMSG_COUPLEPVP_CREATEDG_REQUEST\x10\xbc\x91\x02\x12%\n\x1fMSG_COUPLEPVP_CREATEDG_RESPONSE\x10\xbd\x91\x02\x12&\n MSG_COUPLEPVP_DUNGEON_END_REPORT\x10\xbe\x91\x02\x12$\n\x1eMSG_COUPLEPVP_FORCE_END_NOTICE\x10\xbf\x91\x02\x12\'\n!MSG_COUPLEPVP_BATTLE_BEGIN_NOTICE\x10\xc0\x91\x02\x12#\n\x1dMSG_COUPLEPVP_RACE_END_NOTICE\x10\xc1\x91\x02\x12&\n MSG_COUPLEPVP_RACE_REWARD_NOTICE\x10\xc2\x91\x02\x12)\n#MSG_COUPLEPVP_CANCEL_SIGNIN_REQUEST\x10\xc3\x91\x02\x12*\n$MSG_COUPLEPVP_CANCEL_SIGNIN_RESPONSE\x10\xc4\x91\x02\x12!\n\x1bMSG_EGS_REDBAG_SEND_REQUEST\x10\xa0\x99\x02\x12\x1b\n\x15MSG_RKS_REDBAG_NOTICE\x10\xa1\x99\x02\x12!\n\x1bMSG_EGS_REDBAG_OPEN_REQUEST\x10\xa2\x99\x02\x12\"\n\x1cMSG_EGS_REDBAG_OPEN_RESPONSE\x10\xa3\x99\x02\x12!\n\x1bMSG_EGS_REDBAG_LIST_REQUEST\x10\xa4\x99\x02\x12\"\n\x1cMSG_RKS_REDBAG_LIST_RESPONSE\x10\xa5\x99\x02\x12\x1e\n\x18MSG_RKS_REDBAG_COUNT_SYN\x10\xa6\x99\x02\x12 \n\x1aMSG_RKS_REDBAG_MAIL_REPORT\x10\xa7\x99\x02\x12\x1d\n\x17MSG_RKS_REDBAG_PF_ERROR\x10\xa8\x99\x02\x12#\n\x1dMSG_RKS_REDBAG_BALANCE_NOTICE\x10\xa9\x99\x02\x12\x1e\n\x18MSG_EGS_CROPINFO_REQUEST\x10\x88\xa1\x02\x12\"\n\x1cMSG_EGS_CROPRANKLIST_REQUEST\x10\x89\xa1\x02\x12 \n\x1aMSG_EGS_CREATECROP_REQUEST\x10\x8a\xa1\x02\x12!\n\x1bMSG_RKS_CREATECROP_RESPONSE\x10\x8b\xa1\x02\x12\x1e\n\x18MSG_EGS_EXITCROP_REQUEST\x10\x8c\xa1\x02\x12\x1f\n\x19MSG_RKS_EXITCROP_RESPONSE\x10\x8d\xa1\x02\x12#\n\x1dMSG_EGS_APPLYJOINCROP_REQUEST\x10\x8e\xa1\x02\x12#\n\x1dMSG_EGS_AGREEJOINCROP_REQUEST\x10\x8f\xa1\x02\x12$\n\x1eMSG_RKS_AGREEJOINCROP_RESPONSE\x10\x90\xa1\x02\x12\x1c\n\x16MSG_EGS_INVITE_REQUEST\x10\x91\xa1\x02\x12\"\n\x1cMSG_EGS_INVITEANSWER_REQUEST\x10\x92\xa1\x02\x12#\n\x1dMSG_RKS_INVITEANSWER_RESPONSE\x10\x93\xa1\x02\x12#\n\x1dMSG_EGS_LEADEREXAMINE_REQUEST\x10\x94\xa1\x02\x12\"\n\x1cMSG_EGS_CHANGELEADER_REQUEST\x10\x95\xa1\x02\x12\x1d\n\x17MSG_EGS_KICKOUT_REQUEST\x10\x96\xa1\x02\x12\x1e\n\x18MSG_RKS_KICKOUT_RESPONSE\x10\x97\xa1\x02\x12\x1d\n\x17MSG_EGS_DISBAND_REQUEST\x10\x98\xa1\x02\x12\x1e\n\x18MSG_RKS_DISBAND_RESPONSE\x10\x99\xa1\x02\x12 \n\x1aMSG_EGS_MYCROPINFO_REQUEST\x10\x9a\xa1\x02\x12\x1f\n\x19MSG_RKS_STARTMATCH_NOTICE\x10\x9a\xa1\x02\x12!\n\x1bMSG_BWS_MATCHSUCCESS_NOTICE\x10\x9b\xa1\x02\x12&\n MSG_EGS_NORMALRACE_RESULT_NOTICE\x10\x9c\xa1\x02\x12\'\n!MSG_BWS_CREATE_FINALBATTLE_NOTICE\x10\x9d\xa1\x02\x12&\n MSG_EGS_JOIN_FINAL_BATTLE_NOTICE\x10\x9e\xa1\x02\x12\'\n!MSG_EGS_FINALBATTLE_RESULT_NOTICE\x10\x9f\xa1\x02\x12 \n\x1aMSG_BWS_SEND_REWARD_NOTICE\x10\xa0\xa1\x02\x12)\n#MSG_RKS_SEND_TEAMMAIL_REWARD_NOTICE\x10\xa1\xa1\x02\x12\x1c\n\x16MSG_BWS_TEAM_INFO_SYNC\x10\xa2\xa1\x02\x12$\n\x1eMSG_BWS_TEAMBATTLE_STATUS_SYNC\x10\xa3\xa1\x02\x12\"\n\x1cMSG_BWS_CROPSCOREINFO_NOTICE\x10\xa4\xa1\x02\x12 \n\x1aMSG_RKS_CREATECROP_REQUEST\x10\xa5\xa1\x02\x12!\n\x1bMSG_RKS_DISBANDCROP_REQUEST\x10\xa6\xa1\x02\x12$\n\x1eMSG_EGS_FRIENDCROPLIST_REQUEST\x10\xa7\xa1\x02\x12\"\n\x1cMSG_EGS_STARTMATCHING_NOTICE\x10\xa8\xa1\x02\x12%\n\x1fMSG_EGS_GETREADYMATCHING_NOTICE\x10\xa9\xa1\x02\x12#\n\x1dMSG_EGS_STWATCHBATTLE_REQUEST\x10\xaa\xa1\x02\x12$\n\x1eMSG_EGS_STWATCHBATTLE_RESPONSE\x10\xab\xa1\x02\x12)\n#MSG_EGS_SPANTEAM_FIGHTTABLE_REQUEST\x10\xac\xa1\x02\x12\'\n!MSG_BWS_SPANTEAM_NEXTMATCH_NOTICE\x10\xad\xa1\x02\x12\x1e\n\x18MSG_RKS_CROPSLIST_NOTICE\x10\xae\xa1\x02\x12\x1d\n\x17MSG_RKS_ROLECROP_NOTICE\x10\xaf\xa1\x02\x12)\n#MSG_BWS_SPANTEAM_CANCELMATCH_STATUS\x10\xb0\xa1\x02\x12)\n#MSG_RKS_SPANTEAM_CANCELMATCH_STATUS\x10\xb1\xa1\x02\x12\"\n\x1cMSG_EGS_STFINAL_MATCH_NOTICE\x10\xb2\xa1\x02\x12)\n#MSG_EGS_SPANTEAM_CANCELREADY_NOTICE\x10\xb3\xa1\x02\x12)\n#MSG_RKS_SPANTEAM_CANCELMATCH_NOTICE\x10\xb4\xa1\x02\x12#\n\x1dMSG_EGS_SPANMAZE_SIGN_REQUEST\x10\xf1\xa8\x02\x12$\n\x1eMSG_BWS_SPANMAZE_SIGN_RESPONSE\x10\xf2\xa8\x02\x12$\n\x1eMSG_EGS_SPANMAZE_ENTER_REQUEST\x10\xf3\xa8\x02\x12%\n\x1fMSG_BWS_SPANMAZE_ENTER_RESPONSE\x10\xf4\xa8\x02\x12$\n\x1eMSG_BWS_SPANMAZE_STATUS_NOTICE\x10\xf5\xa8\x02\x12)\n#MSG_EGS_SPANMAZE_SIGN_CHECK_REQUEST\x10\xf6\xa8\x02\x12*\n$MSG_BWS_SPANMAZE_SIGN_CHECK_RESPONSE\x10\xf7\xa8\x02\x12,\n&MSG_BWS_SPANMAZE_CREATEDUNGEON_REQUEST\x10\xf8\xa8\x02\x12-\n\'MSG_EGS_SPANMAZE_CREATEDUNGEON_RESPONSE\x10\xf9\xa8\x02\x12+\n%MSG_BWS_SPANMAZE_ENTERDUNGEON_REQUEST\x10\xfa\xa8\x02\x12,\n&MSG_EGS_SPANMAZE_ENTERDUNGEON_RESPONSE\x10\xfb\xa8\x02\x12&\n MSG_BWS_SPANMAZE_ROLELIST_NOTICE\x10\xfc\xa8\x02\x12\x1f\n\x1aMSG_GATE_WORLDlEVEL_REPORT\x10\x91N\x12 \n\x1bMSG_WORLD_WORLDlEVEL_NOTICE\x10\x92N\x12\x1f\n\x1aMSG_SPANWILDSHARDID_NOTICE\x10\x93N\x12\x18\n\x13MSG_MSGCOUNT_NOTICE\x10\x94N*L\n\tEDBOpType\x12\x13\n\x0f\x65nDBOpType_Save\x10\x01\x12\x15\n\x11\x65nDBOpType_Update\x10\x02\x12\x13\n\x0f\x65nDBOpType_Load\x10\x03*:\n\nEDBKeyType\x12\x14\n\x10\x65nDBKeyType_Char\x10\x01\x12\x16\n\x12\x65nDBKeyType_Player\x10\x02*o\n\x13\x45PlayerOnlineStatus\x12\x1d\n\x19MSG_OFFLINESTATUS_OFFLINE\x10\x00\x12\x1b\n\x17MSG_OFFLINESTATUS_CACHE\x10\x01\x12\x1c\n\x18MSG_OFFLINESTATUS_ONLINE\x10\x02*D\n\x12\x45\x43onsignActionType\x12\x16\n\x12\x45\x43ONSIGNACTION_ADD\x10\x01\x12\x16\n\x12\x45\x43ONSIGNACTION_DEL\x10\x02*\xc7\x01\n\x1f\x45\x46riendNotifyIntimacyChangeType\x12\'\n#EFRIENDNOTIFYINTIMACYCHANGETYPE_ADD\x10\x01\x12\'\n#EFRIENDNOTIFYINTIMACYCHANGETYPE_DEL\x10\x02\x12)\n%EFRIENDNOTIFYINTIMACYCHANGETYPE_CLEAR\x10\x03\x12\'\n#EFRIENDNOTIFYINTIMACYCHANGETYPE_SET\x10\x04*^\n\x12PBEGataWayTimeCome\x12\x15\n\x11\x45GateWayTime_None\x10\x00\x12\x17\n\x13\x45GataWayTime_NewDay\x10\x01\x12\x18\n\x14\x45GateWayTime_NewWeek\x10\x02*,\n\tEActivity\x12\x1f\n\x1b\x65\x41\x63tivity_CrossServerBattle\x10\x01*W\n\x10\x45SpanGuildNotice\x12\x16\n\x12\x65SpanNotice_Leader\x10\x00\x12\x16\n\x12\x65SpanNotice_Office\x10\x01\x12\x13\n\x0f\x65SpanNotice_All\x10\x02*\xb3\x01\n\x15\x45\x41\x64\x64GuildLivenessType\x12\x11\n\rEType_Persion\x10\x01\x12\x10\n\x0c\x45Type_Salary\x10\x02\x12\x12\n\x0e\x45Type_Donation\x10\x03\x12\x17\n\x13\x45Type_DungeonActive\x10\x04\x12\x18\n\x14\x45Type_WildBossMaxDmg\x10\x05\x12\x19\n\x15\x45Type_WildBossLastHit\x10\x06\x12\x13\n\x0f\x45Type_GuildFire\x10\x07\x42\x02H\x01')
 
 _ESERVICEMESSAGEID = descriptor.EnumDescriptor(
   name='EServiceMessageId',
@@ -894,662 +897,922 @@ _ESERVICEMESSAGEID = descriptor.EnumDescriptor(
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PETINFO_UPDATE_NOTICE', index=215, number=1600,
+      name='MSG_EGS_GUILD_ADD_LIVENESS_NOTICE', index=215, number=1553,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RANKMSG_TRANSPOND_NOTICE', index=216, number=1601,
+      name='MSG_RKS_GUILD_LIVENESS_SYNC', index=216, number=1554,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DRAW_LOTTERY_SYNC', index=217, number=1602,
+      name='MSG_EGS_GUILD_LAST_HIT_REWARD_REQUEST', index=217, number=1555,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DRAW_LOTTERY_DATA_REQUEST', index=218, number=1603,
+      name='MSG_RKS_GUILD_LAST_HIT_REWARD_RESPONSE', index=218, number=1556,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DRAW_LOTTERY_DATA_RESPONSE', index=219, number=1604,
+      name='MSG_EGS_GUILD_MAX_DMG_REWARD_REQUEST', index=219, number=1557,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DRAW_LOTTERY_DATA_NOTICE', index=220, number=1605,
+      name='MSG_RKS_GUILD_MAX_DMG_REWARD_RESPONSE', index=220, number=1558,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ONEARMBANDIT_SYNC', index=221, number=1610,
+      name='MSG_PETINFO_UPDATE_NOTICE', index=221, number=1600,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ONEARMBANDIT_REPORT', index=222, number=1611,
+      name='MSG_RANKMSG_TRANSPOND_NOTICE', index=222, number=1601,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ONEARMBANDIT_NOTICE', index=223, number=1612,
+      name='MSG_DRAW_LOTTERY_SYNC', index=223, number=1602,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ONEARMBANDIT_END_REPORT', index=224, number=1613,
+      name='MSG_DRAW_LOTTERY_DATA_REQUEST', index=224, number=1603,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RANK_CHARM_TOP3_REPORT', index=225, number=1620,
+      name='MSG_DRAW_LOTTERY_DATA_RESPONSE', index=225, number=1604,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RANK_CHARM_TOP3_REPORT_CALLBACK', index=226, number=1621,
+      name='MSG_DRAW_LOTTERY_DATA_NOTICE', index=226, number=1605,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPANPVE_KEEPTEAMINFO_REQUIRE', index=227, number=1631,
+      name='MSG_ONEARMBANDIT_SYNC', index=227, number=1610,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPANPVE_REGAINTEAM_REQUEST', index=228, number=1632,
+      name='MSG_ONEARMBANDIT_REPORT', index=228, number=1611,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPANPVE_REGAINTEAM_RESPONSE', index=229, number=1633,
+      name='MSG_ONEARMBANDIT_NOTICE', index=229, number=1612,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPANPVE_LEAVEDUNGEON_REQUEST', index=230, number=1634,
+      name='MSG_ONEARMBANDIT_END_REPORT', index=230, number=1613,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPANPVE_ENTERDUNGEON_REQUEST', index=231, number=1635,
+      name='MSG_RANK_CHARM_TOP3_REPORT', index=231, number=1620,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPANPVE_GETMATCHLIST_REQUEST', index=232, number=1636,
+      name='MSG_RANK_CHARM_TOP3_REPORT_CALLBACK', index=232, number=1621,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPANPVE_GETMATCHLIST_RESPONSE', index=233, number=1637,
+      name='MSG_SPANPVE_KEEPTEAMINFO_REQUIRE', index=233, number=1631,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SEND_MAIL_REWARD', index=234, number=1650,
+      name='MSG_SPANPVE_REGAINTEAM_REQUEST', index=234, number=1632,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CROSS_STATE_REPORT', index=235, number=1700,
+      name='MSG_SPANPVE_REGAINTEAM_RESPONSE', index=235, number=1633,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CROSS_STATE_REPORT_CALLBACK', index=236, number=1701,
+      name='MSG_SPANPVE_LEAVEDUNGEON_REQUEST', index=236, number=1634,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BILLING_CHARGE_NOTICE', index=237, number=1702,
+      name='MSG_SPANPVE_ENTERDUNGEON_REQUEST', index=237, number=1635,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPAN_CHAT_NOTICE', index=238, number=1703,
+      name='MSG_SPANPVE_GETMATCHLIST_REQUEST', index=238, number=1636,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPAN_MUTE_NOTICE', index=239, number=1704,
+      name='MSG_SPANPVE_GETMATCHLIST_RESPONSE', index=239, number=1637,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RKS_STOP_NOTICE', index=240, number=1705,
+      name='MSG_SEND_MAIL_REWARD', index=240, number=1650,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPAN_GETRANK_REQUEST', index=241, number=1706,
+      name='MSG_CROSS_STATE_REPORT', index=241, number=1700,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPAN_GETRANK_RESPONSE', index=242, number=1707,
+      name='MSG_CROSS_STATE_REPORT_CALLBACK', index=242, number=1701,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPAN_GETGUILDRANK_RESPONSE', index=243, number=1708,
+      name='MSG_BILLING_CHARGE_NOTICE', index=243, number=1702,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPAN_GETMAINRANK_RESPONSE', index=244, number=1709,
+      name='MSG_SPAN_CHAT_NOTICE', index=244, number=1703,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPAN_GETMAINGUILDRANK_RESPONSE', index=245, number=1710,
+      name='MSG_SPAN_MUTE_NOTICE', index=245, number=1704,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_ACTIVITY_QUESTION_ANSWER_NOTICE', index=246, number=1800,
+      name='MSG_RKS_STOP_NOTICE', index=246, number=1705,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_ACTIVITY_QUESTION_END_NOTICE', index=247, number=1801,
+      name='MSG_SPAN_GETRANK_REQUEST', index=247, number=1706,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RKS_ACTIVITY_QUESTION_REWARD_NOTICE', index=248, number=1802,
+      name='MSG_SPAN_GETRANK_RESPONSE', index=248, number=1707,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_ACTIVITY_QUESTION_ENTER_NOTICE', index=249, number=1803,
+      name='MSG_SPAN_GETGUILDRANK_RESPONSE', index=249, number=1708,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WORLD_BOSS_TO_CAMP_REQUEST', index=250, number=1900,
+      name='MSG_SPAN_GETMAINRANK_RESPONSE', index=250, number=1709,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WORLD_BOSS_TO_CAMP_RESPONSE', index=251, number=1901,
+      name='MSG_SPAN_GETMAINGUILDRANK_RESPONSE', index=251, number=1710,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_SPANIMBATTLE_WATCHING_REQUEST', index=252, number=2000,
+      name='MSG_EGS_ACTIVITY_QUESTION_ANSWER_NOTICE', index=252, number=1800,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_SPANIMBATTLE_WATCHING_RESPONSE', index=253, number=2001,
+      name='MSG_EGS_ACTIVITY_QUESTION_END_NOTICE', index=253, number=1801,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_SPAN_MAIL_NOTICE', index=254, number=2002,
+      name='MSG_RKS_ACTIVITY_QUESTION_REWARD_NOTICE', index=254, number=1802,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_SPANIMBATTLE_GUILDDATA_REPORT', index=255, number=2003,
+      name='MSG_EGS_ACTIVITY_QUESTION_ENTER_NOTICE', index=255, number=1803,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPANIMBATTLE_HISTORYDATA_NOTICE', index=256, number=2004,
+      name='MSG_WORLD_BOSS_TO_CAMP_REQUEST', index=256, number=1900,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_SPANIMBATTLE_BET_REQUEST', index=257, number=2005,
+      name='MSG_WORLD_BOSS_TO_CAMP_RESPONSE', index=257, number=1901,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPANIMBATTLE_BET_RESPONSE', index=258, number=2006,
+      name='MSG_EGS_SPANIMBATTLE_WATCHING_REQUEST', index=258, number=2000,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPAN_RACE_IDLE_NOTICE', index=259, number=2007,
+      name='MSG_EGS_SPANIMBATTLE_WATCHING_RESPONSE', index=259, number=2001,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPANIMBATTLE_BET_ROUND', index=260, number=2008,
+      name='MSG_EGS_SPAN_MAIL_NOTICE', index=260, number=2002,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_BET_CLEAR_REQUEST', index=261, number=2009,
+      name='MSG_EGS_SPANIMBATTLE_GUILDDATA_REPORT', index=261, number=2003,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPANIMBATTLE_START_NOTICE', index=262, number=2010,
+      name='MSG_BWS_SPANIMBATTLE_HISTORYDATA_NOTICE', index=262, number=2004,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPAN_STATUS_CHANGE_NOTICE', index=263, number=2011,
+      name='MSG_EGS_SPANIMBATTLE_BET_REQUEST', index=263, number=2005,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPANIMBATTLE_BET_NOTICE', index=264, number=2012,
+      name='MSG_BWS_SPANIMBATTLE_BET_RESPONSE', index=264, number=2006,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SERVER_GUILD_ID_REPORT', index=265, number=2013,
+      name='MSG_BWS_SPAN_RACE_IDLE_NOTICE', index=265, number=2007,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_LOAD_SUCCESS_NOTICE', index=266, number=2014,
+      name='MSG_BWS_SPANIMBATTLE_BET_ROUND', index=266, number=2008,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_REQUEST_SIGN_LIST', index=267, number=2015,
+      name='MSG_BWS_BET_CLEAR_REQUEST', index=267, number=2009,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_SPANIMBATTLE_FINAL_REPORT', index=268, number=2016,
+      name='MSG_BWS_SPANIMBATTLE_START_NOTICE', index=268, number=2010,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_SPANMONORBATTLE_BET_REQUEST', index=269, number=2020,
+      name='MSG_BWS_SPAN_STATUS_CHANGE_NOTICE', index=269, number=2011,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPANMONORBATTLE_BET_RESPONSE', index=270, number=2021,
+      name='MSG_BWS_SPANIMBATTLE_BET_NOTICE', index=270, number=2012,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_SPAN_MONOR_ENTER_MONOR_REQUEST', index=271, number=2022,
+      name='MSG_SERVER_GUILD_ID_REPORT', index=271, number=2013,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPAN_MONOR_ENTER_MONOR_RESPONSE', index=272, number=2023,
+      name='MSG_BWS_LOAD_SUCCESS_NOTICE', index=272, number=2014,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPAN_MONOR_ACT_IDLE_NOTICE', index=273, number=2024,
+      name='MSG_BWS_REQUEST_SIGN_LIST', index=273, number=2015,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_MONOR_DATA_LOAD_SUCCESS_NOTICE', index=274, number=2025,
+      name='MSG_EGS_SPANIMBATTLE_FINAL_REPORT', index=274, number=2016,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPAN_MONOR_STATUS_CHANGE_NOTICE', index=275, number=2026,
+      name='MSG_EGS_SPANMONORBATTLE_BET_REQUEST', index=275, number=2020,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_SPAN_MONOR_ENTER_DUNGEON_REQUEST', index=276, number=2027,
+      name='MSG_BWS_SPANMONORBATTLE_BET_RESPONSE', index=276, number=2021,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPAN_MONOR_ENTER_DUNGEON_RESPONSE', index=277, number=2028,
+      name='MSG_EGS_SPAN_MONOR_ENTER_MONOR_REQUEST', index=277, number=2022,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_SPAN_MONOR_DUNGEON_RESULT_NOTICE', index=278, number=2029,
+      name='MSG_BWS_SPAN_MONOR_ENTER_MONOR_RESPONSE', index=278, number=2023,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPAN_MONOR_CREATE_BATTLE_REQUEST', index=279, number=2030,
+      name='MSG_BWS_SPAN_MONOR_ACT_IDLE_NOTICE', index=279, number=2024,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_SPAN_MONOR_CREATE_BATTLE_RESPONSE', index=280, number=2031,
+      name='MSG_BWS_MONOR_DATA_LOAD_SUCCESS_NOTICE', index=280, number=2025,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPAN_MONOR_DESTORY_BATTLE_NOTICE', index=281, number=2032,
+      name='MSG_BWS_SPAN_MONOR_STATUS_CHANGE_NOTICE', index=281, number=2026,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPAN_MONOR_RACEONE_WIN_GUILD_NOTICE', index=282, number=2033,
+      name='MSG_EGS_SPAN_MONOR_ENTER_DUNGEON_REQUEST', index=282, number=2027,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPAN_MONOR_CREATE_MONOR_NOTICE', index=283, number=2034,
+      name='MSG_BWS_SPAN_MONOR_ENTER_DUNGEON_RESPONSE', index=283, number=2028,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPAN_MONOR_DESTORY_MONOR_NOTICE', index=284, number=2035,
+      name='MSG_EGS_SPAN_MONOR_DUNGEON_RESULT_NOTICE', index=284, number=2029,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_SPAN_MONOR_SIGN_COSTMONOY_REQUEST', index=285, number=2036,
+      name='MSG_BWS_SPAN_MONOR_CREATE_BATTLE_REQUEST', index=285, number=2030,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RKS_SPAN_MONOR_SIGN_COSTMONOY_RESPONSE', index=286, number=2037,
+      name='MSG_EGS_SPAN_MONOR_CREATE_BATTLE_RESPONSE', index=286, number=2031,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPAN_MONOR_FLUSH_SIGN_DATA_NOTICE', index=287, number=2038,
+      name='MSG_BWS_SPAN_MONOR_DESTORY_BATTLE_NOTICE', index=287, number=2032,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPAN_MONOR_RACETWO_WIN_GUILD_NOTICE', index=288, number=2039,
+      name='MSG_BWS_SPAN_MONOR_RACEONE_WIN_GUILD_NOTICE', index=288, number=2033,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPAN_MONOR_SEND_GUILD_REWARD_NOTICE', index=289, number=2040,
+      name='MSG_BWS_SPAN_MONOR_CREATE_MONOR_NOTICE', index=289, number=2034,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPAN_MONOR_GIVE_BACK_MONEY_NOTICE', index=290, number=2041,
+      name='MSG_BWS_SPAN_MONOR_DESTORY_MONOR_NOTICE', index=290, number=2035,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPAN_MONOR_GIVE_BACK_MONEY_RET_NOTICE', index=291, number=2042,
+      name='MSG_EGS_SPAN_MONOR_SIGN_COSTMONOY_REQUEST', index=291, number=2036,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_SPAN_MONOR_WATCH_BATTLE_REQUEST', index=292, number=2043,
+      name='MSG_RKS_SPAN_MONOR_SIGN_COSTMONOY_RESPONSE', index=292, number=2037,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPAN_MONOR_WATCH_BATTLE_RESPONSE', index=293, number=2044,
+      name='MSG_BWS_SPAN_MONOR_FLUSH_SIGN_DATA_NOTICE', index=293, number=2038,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPAN_MONOR_GUILD_TOP_SCORE_REQUEST', index=294, number=2045,
+      name='MSG_BWS_SPAN_MONOR_RACETWO_WIN_GUILD_NOTICE', index=294, number=2039,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_SPAN_MONOR_GUILD_TOP_SCORE_RESPONSE', index=295, number=2046,
+      name='MSG_BWS_SPAN_MONOR_SEND_GUILD_REWARD_NOTICE', index=295, number=2040,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPAN_MONOR_GUILD_MEMBER_REQUEST', index=296, number=2047,
+      name='MSG_BWS_SPAN_MONOR_GIVE_BACK_MONEY_NOTICE', index=296, number=2041,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RKS_SPAN_MONOR_GUILD_MEMBER_RESPONSE', index=297, number=2048,
+      name='MSG_BWS_SPAN_MONOR_GIVE_BACK_MONEY_RET_NOTICE', index=297, number=2042,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWS_SPAN_MONOR_BATTLE_START', index=298, number=2049,
+      name='MSG_EGS_SPAN_MONOR_WATCH_BATTLE_REQUEST', index=298, number=2043,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_SPANWILDRANK_REPORT', index=299, number=2050,
+      name='MSG_BWS_SPAN_MONOR_WATCH_BATTLE_RESPONSE', index=299, number=2044,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_GETSPANWILDRANK_REQUEST', index=300, number=2051,
+      name='MSG_BWS_SPAN_MONOR_GUILD_TOP_SCORE_REQUEST', index=300, number=2045,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_GETSPANWILDRANK_RESPONSE', index=301, number=2052,
+      name='MSG_EGS_SPAN_MONOR_GUILD_TOP_SCORE_RESPONSE', index=301, number=2046,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_GETSPANWILDBOSSLV_REQUEST', index=302, number=2053,
+      name='MSG_BWS_SPAN_MONOR_GUILD_MEMBER_REQUEST', index=302, number=2047,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_GETSPANWILDBOSSLV_RESPONSE', index=303, number=2054,
+      name='MSG_RKS_SPAN_MONOR_GUILD_MEMBER_RESPONSE', index=303, number=2048,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPANWILDPLAYERNUM_NOTICE', index=304, number=2055,
+      name='MSG_BWS_SPAN_MONOR_BATTLE_START', index=304, number=2049,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SAVETEAMINFOSPANWILDREQUEST', index=305, number=2056,
+      name='MSG_EGS_SPANWILDRANK_REPORT', index=305, number=2050,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SAVETEAMINFOSPANWILDRESPONSE', index=306, number=2057,
+      name='MSG_EGS_GETSPANWILDRANK_REQUEST', index=306, number=2051,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPANWILD_REGAINTEAM_REQUEST', index=307, number=2058,
+      name='MSG_EGS_GETSPANWILDRANK_RESPONSE', index=307, number=2052,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPANWILD_REGAINTEAM_RESPONSE', index=308, number=2059,
+      name='MSG_EGS_GETSPANWILDBOSSLV_REQUEST', index=308, number=2053,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MERGESERVERDATA_REPORT', index=309, number=2070,
+      name='MSG_EGS_GETSPANWILDBOSSLV_RESPONSE', index=309, number=2054,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MERGESERVERDATA_RESPONSE', index=310, number=2071,
+      name='MSG_SPANWILDPLAYERNUM_NOTICE', index=310, number=2055,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GETSPANCHARINFO_REQUEST', index=311, number=2080,
+      name='MSG_SAVETEAMINFOSPANWILDREQUEST', index=311, number=2056,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWSDUEL_REQUEST', index=312, number=2081,
+      name='MSG_SAVETEAMINFOSPANWILDRESPONSE', index=312, number=2057,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWSDUEL_RESPONSE', index=313, number=2082,
+      name='MSG_SPANWILD_REGAINTEAM_REQUEST', index=313, number=2058,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWSDUELDELITEM_NOTICE', index=314, number=2083,
+      name='MSG_SPANWILD_REGAINTEAM_RESPONSE', index=314, number=2059,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWSDODUEL_NOTICE', index=315, number=2084,
+      name='MSG_MERGESERVERDATA_REPORT', index=315, number=2070,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWSDUELPLAYERENTERGAME_NOTICE', index=316, number=2085,
+      name='MSG_MERGESERVERDATA_RESPONSE', index=316, number=2071,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWSDESPISESUCCEEDNOTICE', index=317, number=2086,
+      name='MSG_GETSPANCHARINFO_REQUEST', index=317, number=2080,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWSLOSEREQUIPNOTICE', index=318, number=2087,
+      name='MSG_BWSDUEL_REQUEST', index=318, number=2081,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWSLOSEREQUIPREQUEST', index=319, number=2088,
+      name='MSG_BWSDUEL_RESPONSE', index=319, number=2082,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BWSLOSEREQUIPRESPONSE', index=320, number=2089,
+      name='MSG_BWSDUELDELITEM_NOTICE', index=320, number=2083,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GETSPANCHARINFO_REQUEST2', index=321, number=2090,
+      name='MSG_BWSDODUEL_NOTICE', index=321, number=2084,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_PLAYERPK_REQUEST', index=322, number=3000,
+      name='MSG_BWSDUELPLAYERENTERGAME_NOTICE', index=322, number=2085,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RKS_PLAYERPK_RESPONSE', index=323, number=3001,
+      name='MSG_BWSDESPISESUCCEEDNOTICE', index=323, number=2086,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_CANCEL_PLAYERPK_NOTICE', index=324, number=3002,
+      name='MSG_BWSLOSEREQUIPNOTICE', index=324, number=2087,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_REJECT_PLAYERPK_NOTICE', index=325, number=3003,
+      name='MSG_BWSLOSEREQUIPREQUEST', index=325, number=2088,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_ACCEPT_PLAYERPK_REQUEST', index=326, number=3004,
+      name='MSG_BWSLOSEREQUIPRESPONSE', index=326, number=2089,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RKS_ACCEPT_PLAYERPK_RESPONSE', index=327, number=3005,
+      name='MSG_GETSPANCHARINFO_REQUEST2', index=327, number=2090,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_REMOVE_PALYERPK_NOTICE', index=328, number=3006,
+      name='MSG_EGS_PLAYERPK_REQUEST', index=328, number=3000,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RSK_FORWARD_PLAYERPK_NOTICE', index=329, number=3007,
+      name='MSG_RKS_PLAYERPK_RESPONSE', index=329, number=3001,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RSK_FORWARD_REJECT_PLAYERPK_NOTICE', index=330, number=3008,
+      name='MSG_EGS_CANCEL_PLAYERPK_NOTICE', index=330, number=3002,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RSK_FIREWORKS_STATUS_NOTICE', index=331, number=3020,
+      name='MSG_EGS_REJECT_PLAYERPK_NOTICE', index=331, number=3003,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RSK_FIREWORKS_OPEN_NOTICE', index=332, number=3021,
+      name='MSG_EGS_ACCEPT_PLAYERPK_REQUEST', index=332, number=3004,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_FIREWORKS_SCORE_REPORT', index=333, number=3022,
+      name='MSG_RKS_ACCEPT_PLAYERPK_RESPONSE', index=333, number=3005,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RSK_FIREWORKS_SCORE_NOTICE', index=334, number=3023,
+      name='MSG_EGS_REMOVE_PALYERPK_NOTICE', index=334, number=3006,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RSK_FIREWORKS_FX_NOTICE', index=335, number=3024,
+      name='MSG_RSK_FORWARD_PLAYERPK_NOTICE', index=335, number=3007,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_PETBATTLE_FIGHTDATA_REQUEST', index=336, number=3030,
+      name='MSG_RSK_FORWARD_REJECT_PLAYERPK_NOTICE', index=336, number=3008,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RKS_PETBATTLE_FIGHTDATA_RESPONSE', index=337, number=3031,
+      name='MSG_RSK_FIREWORKS_STATUS_NOTICE', index=337, number=3020,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_PETBATTLE_CHALLENGERDATA_NOTICE', index=338, number=3032,
+      name='MSG_RSK_FIREWORKS_OPEN_NOTICE', index=338, number=3021,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_PETBATTLE_RESULT_NOTICE', index=339, number=3033,
+      name='MSG_EGS_FIREWORKS_SCORE_REPORT', index=339, number=3022,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_PETBATTLE_FLUSH_PVP_MATCH_NOTICE', index=340, number=3034,
+      name='MSG_RSK_FIREWORKS_SCORE_NOTICE', index=340, number=3023,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_PETBATTLE_QUERY_RECORD_NOTICE', index=341, number=3035,
+      name='MSG_RSK_FIREWORKS_FX_NOTICE', index=341, number=3024,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_PETBATTLE_GETPVPINFO_REQUEST', index=342, number=3036,
+      name='MSG_EGS_PETBATTLE_FIGHTDATA_REQUEST', index=342, number=3030,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RKS_PETBATTLE_GETPVPINFO_RESPONSE', index=343, number=3037,
+      name='MSG_RKS_PETBATTLE_FIGHTDATA_RESPONSE', index=343, number=3031,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RKS_PETBATTLE_SEND_MATCH_INFO_REQUEST', index=344, number=3038,
+      name='MSG_EGS_PETBATTLE_CHALLENGERDATA_NOTICE', index=344, number=3032,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RKS_PETBATTLE_RECIVE_MATCH_INFO_RESPONSE', index=345, number=3039,
+      name='MSG_EGS_PETBATTLE_RESULT_NOTICE', index=345, number=3033,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_PETBATTLE_SETPLAYER_RANK_NOTICE', index=346, number=3040,
+      name='MSG_EGS_PETBATTLE_FLUSH_PVP_MATCH_NOTICE', index=346, number=3034,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_PETBATTLE_CLEAR_RANK_NOTICE', index=347, number=3041,
+      name='MSG_EGS_PETBATTLE_QUERY_RECORD_NOTICE', index=347, number=3035,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RKS_PETBATTLE_QUERY_RECORD_NOTICE', index=348, number=3042,
+      name='MSG_EGS_PETBATTLE_GETPVPINFO_REQUEST', index=348, number=3036,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RKS_PETBATTLE_SENDMAIL_REWARD_NOTICE', index=349, number=3043,
+      name='MSG_RKS_PETBATTLE_GETPVPINFO_RESPONSE', index=349, number=3037,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_PETBATTLE_ADD_ROBOT_NOTICE', index=350, number=3044,
+      name='MSG_RKS_PETBATTLE_SEND_MATCH_INFO_REQUEST', index=350, number=3038,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_COUPLEPVP_INFO_SYNC', index=351, number=35000,
+      name='MSG_RKS_PETBATTLE_RECIVE_MATCH_INFO_RESPONSE', index=351, number=3039,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_COUPLEPVP_SIGNIN_REQUEST', index=352, number=35001,
+      name='MSG_EGS_PETBATTLE_SETPLAYER_RANK_NOTICE', index=352, number=3040,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_COUPLEPVP_SIGNIN_RESPONSE', index=353, number=35002,
+      name='MSG_EGS_PETBATTLE_CLEAR_RANK_NOTICE', index=353, number=3041,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_COUPLEPVP_SIGNIN_BEGIN_NOTICE', index=354, number=35003,
+      name='MSG_RKS_PETBATTLE_QUERY_RECORD_NOTICE', index=354, number=3042,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_COUPLEPVP_CREATEDG_REQUEST', index=355, number=35004,
+      name='MSG_RKS_PETBATTLE_SENDMAIL_REWARD_NOTICE', index=355, number=3043,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_COUPLEPVP_CREATEDG_RESPONSE', index=356, number=35005,
+      name='MSG_EGS_PETBATTLE_ADD_ROBOT_NOTICE', index=356, number=3044,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_COUPLEPVP_DUNGEON_END_REPORT', index=357, number=35006,
+      name='MSG_MAGICPETINFO_UPDATE_NOTICE', index=357, number=3050,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_COUPLEPVP_FORCE_END_NOTICE', index=358, number=35007,
+      name='MSG_COUPLEPVP_INFO_SYNC', index=358, number=35000,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_COUPLEPVP_BATTLE_BEGIN_NOTICE', index=359, number=35008,
+      name='MSG_COUPLEPVP_SIGNIN_REQUEST', index=359, number=35001,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_COUPLEPVP_RACE_END_NOTICE', index=360, number=35009,
+      name='MSG_COUPLEPVP_SIGNIN_RESPONSE', index=360, number=35002,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_COUPLEPVP_RACE_REWARD_NOTICE', index=361, number=35010,
+      name='MSG_COUPLEPVP_SIGNIN_BEGIN_NOTICE', index=361, number=35003,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_COUPLEPVP_CANCEL_SIGNIN_REQUEST', index=362, number=35011,
+      name='MSG_COUPLEPVP_CREATEDG_REQUEST', index=362, number=35004,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_COUPLEPVP_CANCEL_SIGNIN_RESPONSE', index=363, number=35012,
+      name='MSG_COUPLEPVP_CREATEDG_RESPONSE', index=363, number=35005,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_REDBAG_SEND_REQUEST', index=364, number=36000,
+      name='MSG_COUPLEPVP_DUNGEON_END_REPORT', index=364, number=35006,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RKS_REDBAG_NOTICE', index=365, number=36001,
+      name='MSG_COUPLEPVP_FORCE_END_NOTICE', index=365, number=35007,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_REDBAG_OPEN_REQUEST', index=366, number=36002,
+      name='MSG_COUPLEPVP_BATTLE_BEGIN_NOTICE', index=366, number=35008,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_REDBAG_OPEN_RESPONSE', index=367, number=36003,
+      name='MSG_COUPLEPVP_RACE_END_NOTICE', index=367, number=35009,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGS_REDBAG_LIST_REQUEST', index=368, number=36004,
+      name='MSG_COUPLEPVP_RACE_REWARD_NOTICE', index=368, number=35010,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RKS_REDBAG_LIST_RESPONSE', index=369, number=36005,
+      name='MSG_COUPLEPVP_CANCEL_SIGNIN_REQUEST', index=369, number=35011,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RKS_REDBAG_COUNT_SYN', index=370, number=36006,
+      name='MSG_COUPLEPVP_CANCEL_SIGNIN_RESPONSE', index=370, number=35012,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RKS_REDBAG_MAIL_REPORT', index=371, number=36007,
+      name='MSG_EGS_REDBAG_SEND_REQUEST', index=371, number=36000,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RKS_REDBAG_PF_ERROR', index=372, number=36008,
+      name='MSG_RKS_REDBAG_NOTICE', index=372, number=36001,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RKS_REDBAG_BALANCE_NOTICE', index=373, number=36009,
+      name='MSG_EGS_REDBAG_OPEN_REQUEST', index=373, number=36002,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GATE_WORLDlEVEL_REPORT', index=374, number=10001,
+      name='MSG_EGS_REDBAG_OPEN_RESPONSE', index=374, number=36003,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WORLD_WORLDlEVEL_NOTICE', index=375, number=10002,
+      name='MSG_EGS_REDBAG_LIST_REQUEST', index=375, number=36004,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPANWILDSHARDID_NOTICE', index=376, number=10003,
+      name='MSG_RKS_REDBAG_LIST_RESPONSE', index=376, number=36005,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MSGCOUNT_NOTICE', index=377, number=10004,
+      name='MSG_RKS_REDBAG_COUNT_SYN', index=377, number=36006,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_RKS_REDBAG_MAIL_REPORT', index=378, number=36007,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_RKS_REDBAG_PF_ERROR', index=379, number=36008,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_RKS_REDBAG_BALANCE_NOTICE', index=380, number=36009,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_CROPINFO_REQUEST', index=381, number=37000,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_CROPRANKLIST_REQUEST', index=382, number=37001,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_CREATECROP_REQUEST', index=383, number=37002,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_RKS_CREATECROP_RESPONSE', index=384, number=37003,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_EXITCROP_REQUEST', index=385, number=37004,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_RKS_EXITCROP_RESPONSE', index=386, number=37005,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_APPLYJOINCROP_REQUEST', index=387, number=37006,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_AGREEJOINCROP_REQUEST', index=388, number=37007,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_RKS_AGREEJOINCROP_RESPONSE', index=389, number=37008,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_INVITE_REQUEST', index=390, number=37009,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_INVITEANSWER_REQUEST', index=391, number=37010,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_RKS_INVITEANSWER_RESPONSE', index=392, number=37011,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_LEADEREXAMINE_REQUEST', index=393, number=37012,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_CHANGELEADER_REQUEST', index=394, number=37013,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_KICKOUT_REQUEST', index=395, number=37014,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_RKS_KICKOUT_RESPONSE', index=396, number=37015,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_DISBAND_REQUEST', index=397, number=37016,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_RKS_DISBAND_RESPONSE', index=398, number=37017,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_MYCROPINFO_REQUEST', index=399, number=37018,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_RKS_STARTMATCH_NOTICE', index=400, number=37018,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BWS_MATCHSUCCESS_NOTICE', index=401, number=37019,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_NORMALRACE_RESULT_NOTICE', index=402, number=37020,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BWS_CREATE_FINALBATTLE_NOTICE', index=403, number=37021,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_JOIN_FINAL_BATTLE_NOTICE', index=404, number=37022,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_FINALBATTLE_RESULT_NOTICE', index=405, number=37023,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BWS_SEND_REWARD_NOTICE', index=406, number=37024,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_RKS_SEND_TEAMMAIL_REWARD_NOTICE', index=407, number=37025,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BWS_TEAM_INFO_SYNC', index=408, number=37026,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BWS_TEAMBATTLE_STATUS_SYNC', index=409, number=37027,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BWS_CROPSCOREINFO_NOTICE', index=410, number=37028,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_RKS_CREATECROP_REQUEST', index=411, number=37029,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_RKS_DISBANDCROP_REQUEST', index=412, number=37030,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_FRIENDCROPLIST_REQUEST', index=413, number=37031,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_STARTMATCHING_NOTICE', index=414, number=37032,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_GETREADYMATCHING_NOTICE', index=415, number=37033,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_STWATCHBATTLE_REQUEST', index=416, number=37034,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_STWATCHBATTLE_RESPONSE', index=417, number=37035,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_SPANTEAM_FIGHTTABLE_REQUEST', index=418, number=37036,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BWS_SPANTEAM_NEXTMATCH_NOTICE', index=419, number=37037,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_RKS_CROPSLIST_NOTICE', index=420, number=37038,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_RKS_ROLECROP_NOTICE', index=421, number=37039,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BWS_SPANTEAM_CANCELMATCH_STATUS', index=422, number=37040,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_RKS_SPANTEAM_CANCELMATCH_STATUS', index=423, number=37041,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_STFINAL_MATCH_NOTICE', index=424, number=37042,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_SPANTEAM_CANCELREADY_NOTICE', index=425, number=37043,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_RKS_SPANTEAM_CANCELMATCH_NOTICE', index=426, number=37044,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_SPANMAZE_SIGN_REQUEST', index=427, number=38001,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BWS_SPANMAZE_SIGN_RESPONSE', index=428, number=38002,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_SPANMAZE_ENTER_REQUEST', index=429, number=38003,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BWS_SPANMAZE_ENTER_RESPONSE', index=430, number=38004,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BWS_SPANMAZE_STATUS_NOTICE', index=431, number=38005,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_SPANMAZE_SIGN_CHECK_REQUEST', index=432, number=38006,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BWS_SPANMAZE_SIGN_CHECK_RESPONSE', index=433, number=38007,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BWS_SPANMAZE_CREATEDUNGEON_REQUEST', index=434, number=38008,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_SPANMAZE_CREATEDUNGEON_RESPONSE', index=435, number=38009,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BWS_SPANMAZE_ENTERDUNGEON_REQUEST', index=436, number=38010,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_EGS_SPANMAZE_ENTERDUNGEON_RESPONSE', index=437, number=38011,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BWS_SPANMAZE_ROLELIST_NOTICE', index=438, number=38012,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_GATE_WORLDlEVEL_REPORT', index=439, number=10001,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_WORLD_WORLDlEVEL_NOTICE', index=440, number=10002,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SPANWILDSHARDID_NOTICE', index=441, number=10003,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MSGCOUNT_NOTICE', index=442, number=10004,
       options=None,
       type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=30832,
-  serialized_end=44652,
+  serialized_start=36368,
+  serialized_end=52649,
 )
 
 
@@ -1574,8 +1837,8 @@ _EDBOPTYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=44654,
-  serialized_end=44730,
+  serialized_start=52651,
+  serialized_end=52727,
 )
 
 
@@ -1596,8 +1859,8 @@ _EDBKEYTYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=44732,
-  serialized_end=44790,
+  serialized_start=52729,
+  serialized_end=52787,
 )
 
 
@@ -1622,8 +1885,8 @@ _EPLAYERONLINESTATUS = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=44792,
-  serialized_end=44903,
+  serialized_start=52789,
+  serialized_end=52900,
 )
 
 
@@ -1644,8 +1907,8 @@ _ECONSIGNACTIONTYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=44905,
-  serialized_end=44973,
+  serialized_start=52902,
+  serialized_end=52970,
 )
 
 
@@ -1674,8 +1937,8 @@ _EFRIENDNOTIFYINTIMACYCHANGETYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=44976,
-  serialized_end=45175,
+  serialized_start=52973,
+  serialized_end=53172,
 )
 
 
@@ -1700,8 +1963,8 @@ _PBEGATAWAYTIMECOME = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=45177,
-  serialized_end=45271,
+  serialized_start=53174,
+  serialized_end=53268,
 )
 
 
@@ -1718,8 +1981,8 @@ _EACTIVITY = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=45273,
-  serialized_end=45317,
+  serialized_start=53270,
+  serialized_end=53314,
 )
 
 
@@ -1744,8 +2007,50 @@ _ESPANGUILDNOTICE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=45319,
-  serialized_end=45406,
+  serialized_start=53316,
+  serialized_end=53403,
+)
+
+
+_EADDGUILDLIVENESSTYPE = descriptor.EnumDescriptor(
+  name='EAddGuildLivenessType',
+  full_name='EAddGuildLivenessType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    descriptor.EnumValueDescriptor(
+      name='EType_Persion', index=0, number=1,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='EType_Salary', index=1, number=2,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='EType_Donation', index=2, number=3,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='EType_DungeonActive', index=3, number=4,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='EType_WildBossMaxDmg', index=4, number=5,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='EType_WildBossLastHit', index=5, number=6,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='EType_GuildFire', index=6, number=7,
+      options=None,
+      type=None),
+  ],
+  containing_type=None,
+  options=None,
+  serialized_start=53406,
+  serialized_end=53585,
 )
 
 
@@ -1964,6 +2269,12 @@ MSG_GUILD_OPEN_FIRE_SYNC = 1549
 MSG_GUILD_MANOR_STATUE_FLUSH_SYNC = 1550
 MSG_GUILD_MANOR_STATUE_FLUSH_REPORT = 1551
 MSG_RKS_TO_EGS_SIGNLIST_REQUEST = 1552
+MSG_EGS_GUILD_ADD_LIVENESS_NOTICE = 1553
+MSG_RKS_GUILD_LIVENESS_SYNC = 1554
+MSG_EGS_GUILD_LAST_HIT_REWARD_REQUEST = 1555
+MSG_RKS_GUILD_LAST_HIT_REWARD_RESPONSE = 1556
+MSG_EGS_GUILD_MAX_DMG_REWARD_REQUEST = 1557
+MSG_RKS_GUILD_MAX_DMG_REWARD_RESPONSE = 1558
 MSG_PETINFO_UPDATE_NOTICE = 1600
 MSG_RANKMSG_TRANSPOND_NOTICE = 1601
 MSG_DRAW_LOTTERY_SYNC = 1602
@@ -2100,6 +2411,7 @@ MSG_EGS_PETBATTLE_CLEAR_RANK_NOTICE = 3041
 MSG_RKS_PETBATTLE_QUERY_RECORD_NOTICE = 3042
 MSG_RKS_PETBATTLE_SENDMAIL_REWARD_NOTICE = 3043
 MSG_EGS_PETBATTLE_ADD_ROBOT_NOTICE = 3044
+MSG_MAGICPETINFO_UPDATE_NOTICE = 3050
 MSG_COUPLEPVP_INFO_SYNC = 35000
 MSG_COUPLEPVP_SIGNIN_REQUEST = 35001
 MSG_COUPLEPVP_SIGNIN_RESPONSE = 35002
@@ -2123,6 +2435,64 @@ MSG_RKS_REDBAG_COUNT_SYN = 36006
 MSG_RKS_REDBAG_MAIL_REPORT = 36007
 MSG_RKS_REDBAG_PF_ERROR = 36008
 MSG_RKS_REDBAG_BALANCE_NOTICE = 36009
+MSG_EGS_CROPINFO_REQUEST = 37000
+MSG_EGS_CROPRANKLIST_REQUEST = 37001
+MSG_EGS_CREATECROP_REQUEST = 37002
+MSG_RKS_CREATECROP_RESPONSE = 37003
+MSG_EGS_EXITCROP_REQUEST = 37004
+MSG_RKS_EXITCROP_RESPONSE = 37005
+MSG_EGS_APPLYJOINCROP_REQUEST = 37006
+MSG_EGS_AGREEJOINCROP_REQUEST = 37007
+MSG_RKS_AGREEJOINCROP_RESPONSE = 37008
+MSG_EGS_INVITE_REQUEST = 37009
+MSG_EGS_INVITEANSWER_REQUEST = 37010
+MSG_RKS_INVITEANSWER_RESPONSE = 37011
+MSG_EGS_LEADEREXAMINE_REQUEST = 37012
+MSG_EGS_CHANGELEADER_REQUEST = 37013
+MSG_EGS_KICKOUT_REQUEST = 37014
+MSG_RKS_KICKOUT_RESPONSE = 37015
+MSG_EGS_DISBAND_REQUEST = 37016
+MSG_RKS_DISBAND_RESPONSE = 37017
+MSG_EGS_MYCROPINFO_REQUEST = 37018
+MSG_RKS_STARTMATCH_NOTICE = 37018
+MSG_BWS_MATCHSUCCESS_NOTICE = 37019
+MSG_EGS_NORMALRACE_RESULT_NOTICE = 37020
+MSG_BWS_CREATE_FINALBATTLE_NOTICE = 37021
+MSG_EGS_JOIN_FINAL_BATTLE_NOTICE = 37022
+MSG_EGS_FINALBATTLE_RESULT_NOTICE = 37023
+MSG_BWS_SEND_REWARD_NOTICE = 37024
+MSG_RKS_SEND_TEAMMAIL_REWARD_NOTICE = 37025
+MSG_BWS_TEAM_INFO_SYNC = 37026
+MSG_BWS_TEAMBATTLE_STATUS_SYNC = 37027
+MSG_BWS_CROPSCOREINFO_NOTICE = 37028
+MSG_RKS_CREATECROP_REQUEST = 37029
+MSG_RKS_DISBANDCROP_REQUEST = 37030
+MSG_EGS_FRIENDCROPLIST_REQUEST = 37031
+MSG_EGS_STARTMATCHING_NOTICE = 37032
+MSG_EGS_GETREADYMATCHING_NOTICE = 37033
+MSG_EGS_STWATCHBATTLE_REQUEST = 37034
+MSG_EGS_STWATCHBATTLE_RESPONSE = 37035
+MSG_EGS_SPANTEAM_FIGHTTABLE_REQUEST = 37036
+MSG_BWS_SPANTEAM_NEXTMATCH_NOTICE = 37037
+MSG_RKS_CROPSLIST_NOTICE = 37038
+MSG_RKS_ROLECROP_NOTICE = 37039
+MSG_BWS_SPANTEAM_CANCELMATCH_STATUS = 37040
+MSG_RKS_SPANTEAM_CANCELMATCH_STATUS = 37041
+MSG_EGS_STFINAL_MATCH_NOTICE = 37042
+MSG_EGS_SPANTEAM_CANCELREADY_NOTICE = 37043
+MSG_RKS_SPANTEAM_CANCELMATCH_NOTICE = 37044
+MSG_EGS_SPANMAZE_SIGN_REQUEST = 38001
+MSG_BWS_SPANMAZE_SIGN_RESPONSE = 38002
+MSG_EGS_SPANMAZE_ENTER_REQUEST = 38003
+MSG_BWS_SPANMAZE_ENTER_RESPONSE = 38004
+MSG_BWS_SPANMAZE_STATUS_NOTICE = 38005
+MSG_EGS_SPANMAZE_SIGN_CHECK_REQUEST = 38006
+MSG_BWS_SPANMAZE_SIGN_CHECK_RESPONSE = 38007
+MSG_BWS_SPANMAZE_CREATEDUNGEON_REQUEST = 38008
+MSG_EGS_SPANMAZE_CREATEDUNGEON_RESPONSE = 38009
+MSG_BWS_SPANMAZE_ENTERDUNGEON_REQUEST = 38010
+MSG_EGS_SPANMAZE_ENTERDUNGEON_RESPONSE = 38011
+MSG_BWS_SPANMAZE_ROLELIST_NOTICE = 38012
 MSG_GATE_WORLDlEVEL_REPORT = 10001
 MSG_WORLD_WORLDlEVEL_NOTICE = 10002
 MSG_SPANWILDSHARDID_NOTICE = 10003
@@ -2148,6 +2518,13 @@ eActivity_CrossServerBattle = 1
 eSpanNotice_Leader = 0
 eSpanNotice_Office = 1
 eSpanNotice_All = 2
+EType_Persion = 1
+EType_Salary = 2
+EType_Donation = 3
+EType_DungeonActive = 4
+EType_WildBossMaxDmg = 5
+EType_WildBossLastHit = 6
+EType_GuildFire = 7
 
 
 
@@ -2174,8 +2551,8 @@ _PBEGSTOGATEREGISTERREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=272,
-  serialized_end=317,
+  serialized_start=339,
+  serialized_end=384,
 )
 
 
@@ -2202,8 +2579,8 @@ _PBEGSTOGATEREGISTERRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=319,
-  serialized_end=366,
+  serialized_start=386,
+  serialized_end=433,
 )
 
 
@@ -2258,8 +2635,8 @@ _PBMSGCROSSSTATEREPORT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=369,
-  serialized_end=528,
+  serialized_start=436,
+  serialized_end=595,
 )
 
 
@@ -2293,8 +2670,8 @@ _PBMSGCROSSSTATEREPORTCALLBACK = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=530,
-  serialized_end=619,
+  serialized_start=597,
+  serialized_end=686,
 )
 
 
@@ -2321,8 +2698,8 @@ _PBMSGGATEWAYDOWNNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=621,
-  serialized_end=665,
+  serialized_start=688,
+  serialized_end=732,
 )
 
 
@@ -2349,8 +2726,8 @@ _PBMSGKICKROLELISTNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=667,
-  serialized_end=709,
+  serialized_start=734,
+  serialized_end=776,
 )
 
 
@@ -2433,8 +2810,8 @@ _PBMSGSTARTDBREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=712,
-  serialized_end=931,
+  serialized_start=779,
+  serialized_end=998,
 )
 
 
@@ -2482,8 +2859,8 @@ _PBMSGSTARTDBRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=933,
-  serialized_end=1047,
+  serialized_start=1000,
+  serialized_end=1114,
 )
 
 
@@ -2517,8 +2894,8 @@ _PBCONSIGNTIPREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1049,
-  serialized_end=1107,
+  serialized_start=1116,
+  serialized_end=1174,
 )
 
 
@@ -2566,8 +2943,8 @@ _PBCONSIGNTIPRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1109,
-  serialized_end=1205,
+  serialized_start=1176,
+  serialized_end=1272,
 )
 
 
@@ -2629,8 +3006,8 @@ _PBCONSIGNLISTEXREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1208,
-  serialized_end=1339,
+  serialized_start=1275,
+  serialized_end=1406,
 )
 
 
@@ -2699,8 +3076,8 @@ _PBCONSIGNLISTEXRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1342,
-  serialized_end=1492,
+  serialized_start=1409,
+  serialized_end=1559,
 )
 
 
@@ -2734,8 +3111,8 @@ _PBCONSIGNGETREWARDREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1494,
-  serialized_end=1558,
+  serialized_start=1561,
+  serialized_end=1625,
 )
 
 
@@ -2783,8 +3160,8 @@ _PBCONSIGNGETREWARDRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1560,
-  serialized_end=1662,
+  serialized_start=1627,
+  serialized_end=1729,
 )
 
 
@@ -2811,8 +3188,8 @@ _PBCONSIGNMYLISTREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1664,
-  serialized_end=1705,
+  serialized_start=1731,
+  serialized_end=1772,
 )
 
 
@@ -2853,8 +3230,8 @@ _PBCONSIGNMYLISTRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1707,
-  serialized_end=1786,
+  serialized_start=1774,
+  serialized_end=1853,
 )
 
 
@@ -2881,8 +3258,8 @@ _PBCONSIGNLISTREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1788,
-  serialized_end=1827,
+  serialized_start=1855,
+  serialized_end=1894,
 )
 
 
@@ -2923,8 +3300,8 @@ _PBCONSIGNLISTRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1829,
-  serialized_end=1906,
+  serialized_start=1896,
+  serialized_end=1973,
 )
 
 
@@ -3007,8 +3384,8 @@ _PBCONSIGNUPREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1909,
-  serialized_end=2084,
+  serialized_start=1976,
+  serialized_end=2151,
 )
 
 
@@ -3063,8 +3440,8 @@ _PBCONSIGNUPRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2086,
-  serialized_end=2190,
+  serialized_start=2153,
+  serialized_end=2257,
 )
 
 
@@ -3098,8 +3475,8 @@ _PBCONSIGNDOWNREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2192,
-  serialized_end=2251,
+  serialized_start=2259,
+  serialized_end=2318,
 )
 
 
@@ -3147,8 +3524,8 @@ _PBCONSIGNDOWNRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2253,
-  serialized_end=2345,
+  serialized_start=2320,
+  serialized_end=2412,
 )
 
 
@@ -3168,8 +3545,8 @@ _PBCONSIGNGETRWDREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2347,
-  serialized_end=2371,
+  serialized_start=2414,
+  serialized_end=2438,
 )
 
 
@@ -3189,8 +3566,8 @@ _PBCONSIGNGETRWDRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2373,
-  serialized_end=2398,
+  serialized_start=2440,
+  serialized_end=2465,
 )
 
 
@@ -3252,8 +3629,8 @@ _PBCONSIGNBUYREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2401,
-  serialized_end=2533,
+  serialized_start=2468,
+  serialized_end=2600,
 )
 
 
@@ -3357,8 +3734,8 @@ _PBCONSIGNBUYRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2536,
-  serialized_end=2770,
+  serialized_start=2603,
+  serialized_end=2837,
 )
 
 
@@ -3406,8 +3783,8 @@ _PBROLEENTEREGS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2773,
-  serialized_end=2904,
+  serialized_start=2840,
+  serialized_end=2971,
 )
 
 
@@ -3581,8 +3958,8 @@ _PBROLEINFOSYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2907,
-  serialized_end=3290,
+  serialized_start=2974,
+  serialized_end=3357,
 )
 
 
@@ -3609,8 +3986,8 @@ _PBROLELEAVEEGS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3292,
-  serialized_end=3325,
+  serialized_start=3359,
+  serialized_end=3392,
 )
 
 
@@ -3637,8 +4014,8 @@ _PBROLEDELETE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3327,
-  serialized_end=3358,
+  serialized_start=3394,
+  serialized_end=3425,
 )
 
 
@@ -3665,8 +4042,8 @@ _PBGMKICKROLE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3360,
-  serialized_end=3391,
+  serialized_start=3427,
+  serialized_end=3458,
 )
 
 
@@ -3693,8 +4070,8 @@ _PBGMANNOUCE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3393,
-  serialized_end=3423,
+  serialized_start=3460,
+  serialized_end=3490,
 )
 
 
@@ -3721,8 +4098,8 @@ _PBGMMOVEROLE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3425,
-  serialized_end=3456,
+  serialized_start=3492,
+  serialized_end=3523,
 )
 
 
@@ -3763,8 +4140,8 @@ _PBGMSHUTUP = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3458,
-  serialized_end=3520,
+  serialized_start=3525,
+  serialized_end=3587,
 )
 
 
@@ -3791,8 +4168,8 @@ _PBGMCANCELSHUTUP = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3522,
-  serialized_end=3557,
+  serialized_start=3589,
+  serialized_end=3624,
 )
 
 
@@ -3833,8 +4210,8 @@ _PBGMTRANSFERGROUP = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3559,
-  serialized_end=3629,
+  serialized_start=3626,
+  serialized_end=3696,
 )
 
 
@@ -3861,8 +4238,8 @@ _PBGMDELETEGROUP = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3631,
-  serialized_end=3663,
+  serialized_start=3698,
+  serialized_end=3730,
 )
 
 
@@ -3903,8 +4280,8 @@ _PBGMRENAMEROLE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3665,
-  serialized_end=3734,
+  serialized_start=3732,
+  serialized_end=3801,
 )
 
 
@@ -3959,8 +4336,8 @@ _PBGMRECOVERPET = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3736,
-  serialized_end=3836,
+  serialized_start=3803,
+  serialized_end=3903,
 )
 
 
@@ -4022,8 +4399,8 @@ _PBGMSENDMAIL = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3838,
-  serialized_end=3952,
+  serialized_start=3905,
+  serialized_end=4019,
 )
 
 
@@ -4120,8 +4497,8 @@ _PBGMSENDMAILS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3955,
-  serialized_end=4186,
+  serialized_start=4022,
+  serialized_end=4253,
 )
 
 
@@ -4162,8 +4539,8 @@ _PBGMRECOVERROLE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4188,
-  serialized_end=4256,
+  serialized_start=4255,
+  serialized_end=4323,
 )
 
 
@@ -4204,8 +4581,8 @@ _PBGMDELETEROLE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4258,
-  serialized_end=4325,
+  serialized_start=4325,
+  serialized_end=4392,
 )
 
 
@@ -4260,8 +4637,8 @@ _PBGMCLEARITEM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4327,
-  serialized_end=4430,
+  serialized_start=4394,
+  serialized_end=4497,
 )
 
 
@@ -4288,8 +4665,8 @@ _PBGMCOMMAND = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4432,
-  serialized_end=4462,
+  serialized_start=4499,
+  serialized_end=4529,
 )
 
 
@@ -4330,8 +4707,8 @@ _PBGMROLEITEM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4464,
-  serialized_end=4531,
+  serialized_start=4531,
+  serialized_end=4598,
 )
 
 
@@ -4358,8 +4735,8 @@ _PBGMROLEITEMLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4533,
-  serialized_end=4588,
+  serialized_start=4600,
+  serialized_end=4655,
 )
 
 
@@ -4400,8 +4777,8 @@ _PBGMRECOVERROLEITEM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4590,
-  serialized_end=4666,
+  serialized_start=4657,
+  serialized_end=4733,
 )
 
 
@@ -4435,8 +4812,8 @@ _PBGMEGSRESPONE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4668,
-  serialized_end=4720,
+  serialized_start=4735,
+  serialized_end=4787,
 )
 
 
@@ -4470,8 +4847,8 @@ _PBGMROLEPAIR = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4722,
-  serialized_end=4764,
+  serialized_start=4789,
+  serialized_end=4831,
 )
 
 
@@ -4498,8 +4875,8 @@ _PBGMROLEDETAIL = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4766,
-  serialized_end=4816,
+  serialized_start=4833,
+  serialized_end=4883,
 )
 
 
@@ -4589,8 +4966,8 @@ _PBBIANJINGTPREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4819,
-  serialized_end=5073,
+  serialized_start=4886,
+  serialized_end=5140,
 )
 
 
@@ -4666,8 +5043,8 @@ _PBBIANJINGTPRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5076,
-  serialized_end=5272,
+  serialized_start=5143,
+  serialized_end=5339,
 )
 
 
@@ -4694,8 +5071,8 @@ _PBBIANJINGTPCANCEL = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5274,
-  serialized_end=5311,
+  serialized_start=5341,
+  serialized_end=5378,
 )
 
 
@@ -4750,8 +5127,8 @@ _PBCHATEXREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5313,
-  serialized_end=5434,
+  serialized_start=5380,
+  serialized_end=5501,
 )
 
 
@@ -4785,8 +5162,8 @@ _PBGATEPRIVATECHAT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5436,
-  serialized_end=5514,
+  serialized_start=5503,
+  serialized_end=5581,
 )
 
 
@@ -4820,8 +5197,8 @@ _PBTEAMBUILDREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5516,
-  serialized_end=5573,
+  serialized_start=5583,
+  serialized_end=5640,
 )
 
 
@@ -4862,8 +5239,8 @@ _PBTEAMSYSTEMBUILD = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5575,
-  serialized_end=5650,
+  serialized_start=5642,
+  serialized_end=5717,
 )
 
 
@@ -4904,8 +5281,8 @@ _PBTEAMSYSTEMBUILDRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5652,
-  serialized_end=5734,
+  serialized_start=5719,
+  serialized_end=5801,
 )
 
 
@@ -4939,8 +5316,8 @@ _PBTEAMBUILDRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5736,
-  serialized_end=5795,
+  serialized_start=5803,
+  serialized_end=5862,
 )
 
 
@@ -4981,8 +5358,8 @@ _PBTEAMBUILDSYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5797,
-  serialized_end=5882,
+  serialized_start=5864,
+  serialized_end=5949,
 )
 
 
@@ -5009,8 +5386,8 @@ _PBTEAMDISMISSREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5884,
-  serialized_end=5923,
+  serialized_start=5951,
+  serialized_end=5990,
 )
 
 
@@ -5044,8 +5421,8 @@ _PBTEAMDISMISSSYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5925,
-  serialized_end=5983,
+  serialized_start=5992,
+  serialized_end=6050,
 )
 
 
@@ -5079,8 +5456,8 @@ _PBTEAMCHANGELEADERREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5985,
-  serialized_end=6052,
+  serialized_start=6052,
+  serialized_end=6119,
 )
 
 
@@ -5121,8 +5498,8 @@ _PBTEAMCHANGELEADERSYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6054,
-  serialized_end=6140,
+  serialized_start=6121,
+  serialized_end=6207,
 )
 
 
@@ -5149,8 +5526,8 @@ _PBTEAMLEAVEREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6142,
-  serialized_end=6179,
+  serialized_start=6209,
+  serialized_end=6246,
 )
 
 
@@ -5191,8 +5568,8 @@ _PBTEAMADDMEMBERSYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6181,
-  serialized_end=6268,
+  serialized_start=6248,
+  serialized_end=6335,
 )
 
 
@@ -5233,8 +5610,8 @@ _PBTEAMREMOVEMEMBERSYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6270,
-  serialized_end=6350,
+  serialized_start=6337,
+  serialized_end=6417,
 )
 
 
@@ -5268,8 +5645,8 @@ _PBTEAMADDAPPLICANTSYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6352,
-  serialized_end=6420,
+  serialized_start=6419,
+  serialized_end=6487,
 )
 
 
@@ -5303,8 +5680,8 @@ _PBTEAMREMOVEAPPLICANTSYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6422,
-  serialized_end=6488,
+  serialized_start=6489,
+  serialized_end=6555,
 )
 
 
@@ -5338,8 +5715,8 @@ _PBTEAMROLEBASESYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6490,
-  serialized_end=6559,
+  serialized_start=6557,
+  serialized_end=6626,
 )
 
 
@@ -5373,8 +5750,8 @@ _PBTEAMROLEENTERSCENESYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6561,
-  serialized_end=6636,
+  serialized_start=6628,
+  serialized_end=6703,
 )
 
 
@@ -5408,8 +5785,8 @@ _PBTEAMROLELEAVESCENESYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6638,
-  serialized_end=6713,
+  serialized_start=6705,
+  serialized_end=6780,
 )
 
 
@@ -5443,8 +5820,8 @@ _PBTEAMKICKREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6715,
-  serialized_end=6770,
+  serialized_start=6782,
+  serialized_end=6837,
 )
 
 
@@ -5478,8 +5855,8 @@ _PBTEAMINVITEREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6772,
-  serialized_end=6827,
+  serialized_start=6839,
+  serialized_end=6894,
 )
 
 
@@ -5527,8 +5904,8 @@ _PBTEAMINVITEEXAMREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6829,
-  serialized_end=6948,
+  serialized_start=6896,
+  serialized_end=7015,
 )
 
 
@@ -5569,8 +5946,8 @@ _PBTEAMINVITERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6950,
-  serialized_end=7041,
+  serialized_start=7017,
+  serialized_end=7108,
 )
 
 
@@ -5611,8 +5988,8 @@ _PBTEAMAPPLYREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7043,
-  serialized_end=7116,
+  serialized_start=7110,
+  serialized_end=7183,
 )
 
 
@@ -5653,8 +6030,8 @@ _PBTEAMAPPLYANSWERREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7118,
-  serialized_end=7218,
+  serialized_start=7185,
+  serialized_end=7285,
 )
 
 
@@ -5681,8 +6058,8 @@ _PBTEAMLEAVETEAMDUNGEON = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7220,
-  serialized_end=7261,
+  serialized_start=7287,
+  serialized_end=7328,
 )
 
 
@@ -5716,8 +6093,8 @@ _PBTEAMSESSIONLEAVEREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7263,
-  serialized_end=7327,
+  serialized_start=7330,
+  serialized_end=7394,
 )
 
 
@@ -5751,8 +6128,8 @@ _PBTEAMSESSIONLEAVERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7329,
-  serialized_end=7395,
+  serialized_start=7396,
+  serialized_end=7462,
 )
 
 
@@ -5786,8 +6163,8 @@ _PBGATECHARINFOREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7397,
-  serialized_end=7478,
+  serialized_start=7464,
+  serialized_end=7545,
 )
 
 
@@ -5821,8 +6198,8 @@ _PBGATECHARINFORESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7480,
-  serialized_end=7563,
+  serialized_start=7547,
+  serialized_end=7630,
 )
 
 
@@ -5877,8 +6254,8 @@ _PBSPANGETCHARINFOREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7566,
-  serialized_end=7704,
+  serialized_start=7633,
+  serialized_end=7771,
 )
 
 
@@ -5905,8 +6282,8 @@ _PBTEAMSYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7706,
-  serialized_end=7741,
+  serialized_start=7773,
+  serialized_end=7808,
 )
 
 
@@ -5954,8 +6331,8 @@ _PBTEAM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7743,
-  serialized_end=7848,
+  serialized_start=7810,
+  serialized_end=7915,
 )
 
 
@@ -5996,8 +6373,8 @@ _PBSERVERTEAMSETPURPOSEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7850,
-  serialized_end=7936,
+  serialized_start=7917,
+  serialized_end=8003,
 )
 
 
@@ -6038,8 +6415,8 @@ _PBSERVERPURPOSETEAMREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7938,
-  serialized_end=8019,
+  serialized_start=8005,
+  serialized_end=8086,
 )
 
 
@@ -6080,8 +6457,8 @@ _PBSERVERFETCHTARGETTEAMREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8021,
-  serialized_end=8106,
+  serialized_start=8088,
+  serialized_end=8173,
 )
 
 
@@ -6129,8 +6506,8 @@ _PBSERVERFETCHTARGETTEAMRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8108,
-  serialized_end=8211,
+  serialized_start=8175,
+  serialized_end=8278,
 )
 
 
@@ -6185,8 +6562,8 @@ _PBTEAMDUNGEONCHECKREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8213,
-  serialized_end=8336,
+  serialized_start=8280,
+  serialized_end=8403,
 )
 
 
@@ -6234,8 +6611,8 @@ _PBTEAMDUNGEONCHECKRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8338,
-  serialized_end=8441,
+  serialized_start=8405,
+  serialized_end=8508,
 )
 
 
@@ -6276,8 +6653,8 @@ _PBTEAMMATCHSYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8443,
-  serialized_end=8513,
+  serialized_start=8510,
+  serialized_end=8580,
 )
 
 
@@ -6318,8 +6695,8 @@ _PBSERVERTEAMSIGNUPREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8515,
-  serialized_end=8595,
+  serialized_start=8582,
+  serialized_end=8662,
 )
 
 
@@ -6367,8 +6744,8 @@ _PBSERVERMSGREDPACKETSHAKEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8597,
-  serialized_end=8700,
+  serialized_start=8664,
+  serialized_end=8767,
 )
 
 
@@ -6416,8 +6793,8 @@ _PBSERVERMSGREDPACKETSHAKERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8702,
-  serialized_end=8821,
+  serialized_start=8769,
+  serialized_end=8888,
 )
 
 
@@ -6465,8 +6842,8 @@ _PBSERVERMSGREDPACKETEXCHANGEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8823,
-  serialized_end=8929,
+  serialized_start=8890,
+  serialized_end=8996,
 )
 
 
@@ -6514,8 +6891,8 @@ _PBSERVERMSGREDPACKETEXCHANGERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8931,
-  serialized_end=9044,
+  serialized_start=8998,
+  serialized_end=9111,
 )
 
 
@@ -6549,8 +6926,8 @@ _PBSERVERMSGREDPACKETEXCHANGELISTREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9046,
-  serialized_end=9121,
+  serialized_start=9113,
+  serialized_end=9188,
 )
 
 
@@ -6605,8 +6982,8 @@ _PBSERVERWEIXINEXCHANGEINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9123,
-  serialized_end=9250,
+  serialized_start=9190,
+  serialized_end=9317,
 )
 
 
@@ -6640,8 +7017,8 @@ _PBSERVERMSGREDPACKETEXCHANGELISTRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9252,
-  serialized_end=9371,
+  serialized_start=9319,
+  serialized_end=9438,
 )
 
 
@@ -6675,8 +7052,8 @@ _PBSERVERMSGREDPACKETJIFENREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9373,
-  serialized_end=9441,
+  serialized_start=9440,
+  serialized_end=9508,
 )
 
 
@@ -6710,8 +7087,8 @@ _PBSERVERMSGREDPACKETJIFENRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9443,
-  serialized_end=9518,
+  serialized_start=9510,
+  serialized_end=9585,
 )
 
 
@@ -6745,8 +7122,8 @@ _PBENTERROLEINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9520,
-  serialized_end=9574,
+  serialized_start=9587,
+  serialized_end=9641,
 )
 
 
@@ -6815,8 +7192,8 @@ _PBCREATEARENARESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9577,
-  serialized_end=9754,
+  serialized_start=9644,
+  serialized_end=9821,
 )
 
 
@@ -6892,8 +7269,8 @@ _PBENTERARENAREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9757,
-  serialized_end=9934,
+  serialized_start=9824,
+  serialized_end=10001,
 )
 
 
@@ -6941,8 +7318,8 @@ _PBGUILDKILLMAPREPORT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=9936,
-  serialized_end=10043,
+  serialized_start=10003,
+  serialized_end=10110,
 )
 
 
@@ -6983,8 +7360,8 @@ _PBGUILDKILLMAPREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10045,
-  serialized_end=10135,
+  serialized_start=10112,
+  serialized_end=10202,
 )
 
 
@@ -7046,8 +7423,8 @@ _PBGUILDKILLMAPRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10138,
-  serialized_end=10305,
+  serialized_start=10205,
+  serialized_end=10372,
 )
 
 
@@ -7102,8 +7479,8 @@ _PBGATEITEMREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10308,
-  serialized_end=10457,
+  serialized_start=10375,
+  serialized_end=10524,
 )
 
 
@@ -7158,8 +7535,8 @@ _PBGATEITEMRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10460,
-  serialized_end=10616,
+  serialized_start=10527,
+  serialized_end=10683,
 )
 
 
@@ -7193,8 +7570,8 @@ _PBPLAYERISONLINEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10618,
-  serialized_end=10685,
+  serialized_start=10685,
+  serialized_end=10752,
 )
 
 
@@ -7249,8 +7626,8 @@ _PBPLAYERISONLINERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10688,
-  serialized_end=10819,
+  serialized_start=10755,
+  serialized_end=10886,
 )
 
 
@@ -7312,8 +7689,8 @@ _PBSENDFLOWEROFSENDERINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10822,
-  serialized_end=10969,
+  serialized_start=10889,
+  serialized_end=11036,
 )
 
 
@@ -7347,8 +7724,8 @@ _PBPLAYERSENDFLOWERSEARCHRECVPLAYERINFOREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10972,
-  serialized_end=11122,
+  serialized_start=11039,
+  serialized_end=11189,
 )
 
 
@@ -7382,8 +7759,8 @@ _PBPLAYERSENDFLOWERSEARCHRECVPLAYERINFORESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=11125,
-  serialized_end=11278,
+  serialized_start=11192,
+  serialized_end=11345,
 )
 
 
@@ -7466,8 +7843,8 @@ _PBPLAYERSENDFLOWERTOPLAYERINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=11281,
-  serialized_end=11516,
+  serialized_start=11348,
+  serialized_end=11583,
 )
 
 
@@ -7508,8 +7885,8 @@ _PBFRIENDSERVERADDFRIENDREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=11518,
-  serialized_end=11620,
+  serialized_start=11585,
+  serialized_end=11687,
 )
 
 
@@ -7550,8 +7927,8 @@ _PBFRIENDSERVERADDFRIENDRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=11622,
-  serialized_end=11716,
+  serialized_start=11689,
+  serialized_end=11783,
 )
 
 
@@ -7592,8 +7969,8 @@ _PBFRIENDSERVERADDFRIENDACKREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=11718,
-  serialized_end=11814,
+  serialized_start=11785,
+  serialized_end=11881,
 )
 
 
@@ -7627,8 +8004,8 @@ _PBFRIENDSERVERLOGINNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=11816,
-  serialized_end=11905,
+  serialized_start=11883,
+  serialized_end=11972,
 )
 
 
@@ -7662,8 +8039,8 @@ _PBFRIENDSERVERDATASYNCNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=11907,
-  serialized_end=11994,
+  serialized_start=11974,
+  serialized_end=12061,
 )
 
 
@@ -7697,8 +8074,8 @@ _PBFRIENDSERVERREMOVEFRIENDREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=11996,
-  serialized_end=12074,
+  serialized_start=12063,
+  serialized_end=12141,
 )
 
 
@@ -7746,8 +8123,8 @@ _PBFRIENDSERVERGIVEENERGYREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=12076,
-  serialized_end=12191,
+  serialized_start=12143,
+  serialized_end=12258,
 )
 
 
@@ -7809,8 +8186,8 @@ _PBFRIENDSERVERGATHERENERGYREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=12194,
-  serialized_end=12365,
+  serialized_start=12261,
+  serialized_end=12432,
 )
 
 
@@ -7844,8 +8221,8 @@ _PBFRIENDSERVERADDENERGYNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=12367,
-  serialized_end=12441,
+  serialized_start=12434,
+  serialized_end=12508,
 )
 
 
@@ -7893,8 +8270,8 @@ _PBFRIENDSERVERCHANGEHEADICONREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=12443,
-  serialized_end=12557,
+  serialized_start=12510,
+  serialized_end=12624,
 )
 
 
@@ -7956,8 +8333,8 @@ _PBFRIENDSERVERCHANGEHEADICONRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=12560,
-  serialized_end=12711,
+  serialized_start=12627,
+  serialized_end=12778,
 )
 
 
@@ -7991,8 +8368,8 @@ _PBFRIENDSERVERSEARCHREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=12713,
-  serialized_end=12777,
+  serialized_start=12780,
+  serialized_end=12844,
 )
 
 
@@ -8033,8 +8410,8 @@ _PBFRIENDSERVERCONDITIONSEARCHREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=12779,
-  serialized_end=12906,
+  serialized_start=12846,
+  serialized_end=12973,
 )
 
 
@@ -8068,8 +8445,8 @@ _PBFRIENDSERVERADDCONTACTREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=12908,
-  serialized_end=12984,
+  serialized_start=12975,
+  serialized_end=13051,
 )
 
 
@@ -8117,8 +8494,8 @@ _PBFRIENDSERVERMOVETARGETREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=12986,
-  serialized_end=13094,
+  serialized_start=13053,
+  serialized_end=13161,
 )
 
 
@@ -8166,8 +8543,8 @@ _PBFRIENDSERVERPLAYEREVENTNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13096,
-  serialized_end=13206,
+  serialized_start=13163,
+  serialized_end=13273,
 )
 
 
@@ -8208,8 +8585,8 @@ _PBFRIENDSERVERADDFRIENDONEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13208,
-  serialized_end=13319,
+  serialized_start=13275,
+  serialized_end=13386,
 )
 
 
@@ -8250,8 +8627,8 @@ _PBFRIENDSERVERHEADICONCHECKREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13321,
-  serialized_end=13417,
+  serialized_start=13388,
+  serialized_end=13484,
 )
 
 
@@ -8292,8 +8669,8 @@ _PBSERVERQUESTOPEVENTNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13419,
-  serialized_end=13505,
+  serialized_start=13486,
+  serialized_end=13572,
 )
 
 
@@ -8327,8 +8704,8 @@ _PBFRIENDSERVERISFRIENDREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13507,
-  serialized_end=13583,
+  serialized_start=13574,
+  serialized_end=13650,
 )
 
 
@@ -8369,8 +8746,8 @@ _PBFRIENDSERVERISFRIENDRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13585,
-  serialized_end=13680,
+  serialized_start=13652,
+  serialized_end=13747,
 )
 
 
@@ -8404,8 +8781,8 @@ _PBMSGCONSIGNINITDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13682,
-  serialized_end=13792,
+  serialized_start=13749,
+  serialized_end=13859,
 )
 
 
@@ -8432,8 +8809,8 @@ _PBMSGCONSIGNLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13794,
-  serialized_end=13850,
+  serialized_start=13861,
+  serialized_end=13917,
 )
 
 
@@ -8516,8 +8893,8 @@ _PBCONSIGNDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13853,
-  serialized_end=14052,
+  serialized_start=13920,
+  serialized_end=14119,
 )
 
 
@@ -8551,8 +8928,8 @@ _PBMSGUPDATECONSIGNDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=14054,
-  serialized_end=14156,
+  serialized_start=14121,
+  serialized_end=14223,
 )
 
 
@@ -8579,8 +8956,8 @@ _PBMSGHOTITEMLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=14158,
-  serialized_end=14214,
+  serialized_start=14225,
+  serialized_end=14281,
 )
 
 
@@ -8614,8 +8991,8 @@ _PBMSGHOTITEM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=14216,
-  serialized_end=14267,
+  serialized_start=14283,
+  serialized_end=14334,
 )
 
 
@@ -8656,8 +9033,8 @@ _PBFRIENDADDINTIMATENUMREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=14269,
-  serialized_end=14373,
+  serialized_start=14336,
+  serialized_end=14440,
 )
 
 
@@ -8698,8 +9075,8 @@ _PBFRIENDDELINTIMATENUMREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=14375,
-  serialized_end=14479,
+  serialized_start=14442,
+  serialized_end=14546,
 )
 
 
@@ -8733,8 +9110,8 @@ _PBFRIENDCLEARINTIMATENUMREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=14481,
-  serialized_end=14560,
+  serialized_start=14548,
+  serialized_end=14627,
 )
 
 
@@ -8789,8 +9166,8 @@ _PBFRIENDNOTIFYINTIMATENUMREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=14563,
-  serialized_end=14711,
+  serialized_start=14630,
+  serialized_end=14778,
 )
 
 
@@ -8831,8 +9208,8 @@ _PBFRIENDNOTIFYMAXINTIMATENUMNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=14713,
-  serialized_end=14811,
+  serialized_start=14780,
+  serialized_end=14878,
 )
 
 
@@ -8873,8 +9250,8 @@ _PBGATECAMPUNIONNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=14813,
-  serialized_end=14924,
+  serialized_start=14880,
+  serialized_end=14991,
 )
 
 
@@ -8901,8 +9278,8 @@ _PBCAMPUNIONACTIVITYNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=14926,
-  serialized_end=15000,
+  serialized_start=14993,
+  serialized_end=15067,
 )
 
 
@@ -8950,8 +9327,8 @@ _PBSERVERMARRIAGEMARRYREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=15002,
-  serialized_end=15107,
+  serialized_start=15069,
+  serialized_end=15174,
 )
 
 
@@ -8978,8 +9355,8 @@ _PBSERVERMARRIAGEFRIEND = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=15109,
-  serialized_end=15152,
+  serialized_start=15176,
+  serialized_end=15219,
 )
 
 
@@ -9041,8 +9418,8 @@ _PBSERVERMARRIAGEMARRYRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=15155,
-  serialized_end=15352,
+  serialized_start=15222,
+  serialized_end=15419,
 )
 
 
@@ -9083,8 +9460,8 @@ _PBSERVERMARRIAGEMARRYROLLREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=15354,
-  serialized_end=15447,
+  serialized_start=15421,
+  serialized_end=15514,
 )
 
 
@@ -9125,8 +9502,8 @@ _PBSERVERMARRIAGEMARRYROLLRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=15449,
-  serialized_end=15540,
+  serialized_start=15516,
+  serialized_end=15607,
 )
 
 
@@ -9181,8 +9558,8 @@ _PBSERVERMARRIAGEDIVORCEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=15543,
-  serialized_end=15671,
+  serialized_start=15610,
+  serialized_end=15738,
 )
 
 
@@ -9230,8 +9607,8 @@ _PBSERVERMARRIAGEDIVORCERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=15674,
-  serialized_end=15803,
+  serialized_start=15741,
+  serialized_end=15870,
 )
 
 
@@ -9279,8 +9656,8 @@ _PBSERVERMARRIAGEDIVORCEFORCEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=15805,
-  serialized_end=15917,
+  serialized_start=15872,
+  serialized_end=15984,
 )
 
 
@@ -9321,8 +9698,8 @@ _PBSERVERMARRIAGEDIVORCEFORCERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=15919,
-  serialized_end=16032,
+  serialized_start=15986,
+  serialized_end=16099,
 )
 
 
@@ -9349,8 +9726,8 @@ _PBSERVERMARRIAGEINFOREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16034,
-  serialized_end=16080,
+  serialized_start=16101,
+  serialized_end=16147,
 )
 
 
@@ -9384,8 +9761,8 @@ _PBSERVERMARRIAGEINFORESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16082,
-  serialized_end=16169,
+  serialized_start=16149,
+  serialized_end=16236,
 )
 
 
@@ -9419,8 +9796,8 @@ _PBSERVERMARRIAGEREADYINFOREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16171,
-  serialized_end=16252,
+  serialized_start=16238,
+  serialized_end=16319,
 )
 
 
@@ -9461,8 +9838,8 @@ _PBSERVERMARRIAGEREADYINFORESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16254,
-  serialized_end=16354,
+  serialized_start=16321,
+  serialized_end=16421,
 )
 
 
@@ -9503,8 +9880,8 @@ _PBSERVERTITLECHANGEASKRKSINTIMACYREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16357,
-  serialized_end=16491,
+  serialized_start=16424,
+  serialized_end=16558,
 )
 
 
@@ -9552,8 +9929,8 @@ _PBSERVERTITLECHANGEASKRKSINTIMACYRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16494,
-  serialized_end=16647,
+  serialized_start=16561,
+  serialized_end=16714,
 )
 
 
@@ -9580,8 +9957,8 @@ _PBGUILDCREATESYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16649,
-  serialized_end=16708,
+  serialized_start=16716,
+  serialized_end=16775,
 )
 
 
@@ -9608,8 +9985,8 @@ _PBGUILDDISMISSSYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16710,
-  serialized_end=16748,
+  serialized_start=16777,
+  serialized_end=16815,
 )
 
 
@@ -9643,8 +10020,8 @@ _PBGUILDSUMMARYSYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16750,
-  serialized_end=16822,
+  serialized_start=16817,
+  serialized_end=16889,
 )
 
 
@@ -9678,8 +10055,8 @@ _PBGUILDMEMBERADDSYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16824,
-  serialized_end=16902,
+  serialized_start=16891,
+  serialized_end=16969,
 )
 
 
@@ -9699,8 +10076,8 @@ _PBGUILDGETSIGNLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16904,
-  serialized_end=16924,
+  serialized_start=16971,
+  serialized_end=16991,
 )
 
 
@@ -9734,8 +10111,8 @@ _PBGUILDMEMBERREMOVESYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16926,
-  serialized_end=16988,
+  serialized_start=16993,
+  serialized_end=17055,
 )
 
 
@@ -9769,8 +10146,8 @@ _PBGUILDMEMBERCHANGESYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16990,
-  serialized_end=17071,
+  serialized_start=17057,
+  serialized_end=17138,
 )
 
 
@@ -9804,8 +10181,8 @@ _PBGUILDAPPLICANTADDSYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17073,
-  serialized_end=17154,
+  serialized_start=17140,
+  serialized_end=17221,
 )
 
 
@@ -9839,8 +10216,8 @@ _PBGUILDAPPLICANTREMOVESYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17156,
-  serialized_end=17224,
+  serialized_start=17223,
+  serialized_end=17291,
 )
 
 
@@ -9874,8 +10251,8 @@ _PBGUILDBUILDINGSYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17226,
-  serialized_end=17301,
+  serialized_start=17293,
+  serialized_end=17368,
 )
 
 
@@ -9909,8 +10286,8 @@ _PBGUILDBOSSSYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17303,
-  serialized_end=17366,
+  serialized_start=17370,
+  serialized_end=17433,
 )
 
 
@@ -9972,8 +10349,8 @@ _PBGUILDGATECREATEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17369,
-  serialized_end=17498,
+  serialized_start=17436,
+  serialized_end=17565,
 )
 
 
@@ -10007,8 +10384,8 @@ _PBGUILDGATEAPPLYREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17500,
-  serialized_end=17560,
+  serialized_start=17567,
+  serialized_end=17627,
 )
 
 
@@ -10042,8 +10419,8 @@ _PBGUILDGATEAPPLYCANCELREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17562,
-  serialized_end=17628,
+  serialized_start=17629,
+  serialized_end=17695,
 )
 
 
@@ -10070,8 +10447,8 @@ _PBGUILDGATEQUITREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17630,
-  serialized_end=17671,
+  serialized_start=17697,
+  serialized_end=17738,
 )
 
 
@@ -10098,8 +10475,8 @@ _PBGUILDGATEQUICKJOINREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17673,
-  serialized_end=17719,
+  serialized_start=17740,
+  serialized_end=17786,
 )
 
 
@@ -10133,8 +10510,8 @@ _PBGUILDGATEAPPLYCONFIRMREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17721,
-  serialized_end=17816,
+  serialized_start=17788,
+  serialized_end=17883,
 )
 
 
@@ -10168,8 +10545,8 @@ _PBGUILDGATEKICKREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17818,
-  serialized_end=17900,
+  serialized_start=17885,
+  serialized_end=17967,
 )
 
 
@@ -10203,8 +10580,8 @@ _PBGUILDGATEMODIFYREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17902,
-  serialized_end=17985,
+  serialized_start=17969,
+  serialized_end=18052,
 )
 
 
@@ -10238,8 +10615,8 @@ _PBGUILDGATECHANGEPOSTREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17987,
-  serialized_end=18084,
+  serialized_start=18054,
+  serialized_end=18151,
 )
 
 
@@ -10280,8 +10657,8 @@ _PBGUILDGATEDONATE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18086,
-  serialized_end=18179,
+  serialized_start=18153,
+  serialized_end=18246,
 )
 
 
@@ -10315,8 +10692,8 @@ _PBGUILDGATECHANGELEADERREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18181,
-  serialized_end=18253,
+  serialized_start=18248,
+  serialized_end=18320,
 )
 
 
@@ -10343,8 +10720,8 @@ _PBGUILDGATELEVELUPREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18255,
-  serialized_end=18299,
+  serialized_start=18322,
+  serialized_end=18366,
 )
 
 
@@ -10378,8 +10755,8 @@ _PBGUILDGATEBUILDINGLEVELUPREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18301,
-  serialized_end=18402,
+  serialized_start=18368,
+  serialized_end=18469,
 )
 
 
@@ -10413,8 +10790,8 @@ _PBGUILDGATESKILLSTUDYREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18404,
-  serialized_end=18470,
+  serialized_start=18471,
+  serialized_end=18537,
 )
 
 
@@ -10462,8 +10839,8 @@ _PBGUILDSKILLSTUDYSYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18472,
-  serialized_end=18570,
+  serialized_start=18539,
+  serialized_end=18637,
 )
 
 
@@ -10497,8 +10874,8 @@ _PBGUILDGATERESETSKILLCDREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18572,
-  serialized_end=18640,
+  serialized_start=18639,
+  serialized_end=18707,
 )
 
 
@@ -10532,8 +10909,8 @@ _PBGUILDGATEOPENBOSSREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18642,
-  serialized_end=18707,
+  serialized_start=18709,
+  serialized_end=18774,
 )
 
 
@@ -10567,8 +10944,8 @@ _PBGUILDGATEOPENBOSSSYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18709,
-  serialized_end=18772,
+  serialized_start=18776,
+  serialized_end=18839,
 )
 
 
@@ -10616,8 +10993,8 @@ _PBGUILDGATEBOSSCHANGEREPORT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18774,
-  serialized_end=18881,
+  serialized_start=18841,
+  serialized_end=18948,
 )
 
 
@@ -10644,8 +11021,8 @@ _PBGUILDGATEDISMISSREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18883,
-  serialized_end=18927,
+  serialized_start=18950,
+  serialized_end=18994,
 )
 
 
@@ -10672,8 +11049,8 @@ _PBGUILDGATECANCELDISMISSREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18929,
-  serialized_end=18979,
+  serialized_start=18996,
+  serialized_end=19046,
 )
 
 
@@ -10700,8 +11077,8 @@ _PBGUILDGATEDESTORYSYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18981,
-  serialized_end=19023,
+  serialized_start=19048,
+  serialized_end=19090,
 )
 
 
@@ -10728,8 +11105,8 @@ _PBGATETIMECOME = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=19025,
-  serialized_end=19081,
+  serialized_start=19092,
+  serialized_end=19148,
 )
 
 
@@ -10777,8 +11154,8 @@ _PBGATEGUILDMAINTENANCESYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=19083,
-  serialized_end=19197,
+  serialized_start=19150,
+  serialized_end=19264,
 )
 
 
@@ -10826,8 +11203,8 @@ _PBGUILDGATEBTSIGNREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=19199,
-  serialized_end=19316,
+  serialized_start=19266,
+  serialized_end=19383,
 )
 
 
@@ -10882,8 +11259,8 @@ _PBGUILDBT_SIGN = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=19318,
-  serialized_end=19424,
+  serialized_start=19385,
+  serialized_end=19491,
 )
 
 
@@ -10924,8 +11301,8 @@ _PBGUILDGATEADDMONEYNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=19426,
-  serialized_end=19518,
+  serialized_start=19493,
+  serialized_end=19585,
 )
 
 
@@ -10966,8 +11343,8 @@ _PBGUILDPOWERUPDATEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=19520,
-  serialized_end=19597,
+  serialized_start=19587,
+  serialized_end=19664,
 )
 
 
@@ -11015,8 +11392,8 @@ _PBGUILDPOWERCHANGE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=19599,
-  serialized_end=19697,
+  serialized_start=19666,
+  serialized_end=19764,
 )
 
 
@@ -11050,8 +11427,8 @@ _PBPETINFOUPDATENOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=19699,
-  serialized_end=19768,
+  serialized_start=19766,
+  serialized_end=19835,
 )
 
 
@@ -11092,8 +11469,8 @@ _PBRANKMSGTRANSPONDNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=19770,
-  serialized_end=19850,
+  serialized_start=19837,
+  serialized_end=19917,
 )
 
 
@@ -11134,8 +11511,8 @@ _PBMSGCHANGECAMPSCORE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=19852,
-  serialized_end=19927,
+  serialized_start=19919,
+  serialized_end=19994,
 )
 
 
@@ -11169,8 +11546,8 @@ _PBMSGCHANGECAMPDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=19929,
-  serialized_end=20012,
+  serialized_start=19996,
+  serialized_end=20079,
 )
 
 
@@ -11188,6 +11565,20 @@ _PBMSGGATECHANGECAMPINFONOTICE = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='server_merge_status', full_name='PBMsgGateChangeCampInfoNotice.server_merge_status', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='server_merge_time', full_name='PBMsgGateChangeCampInfoNotice.server_merge_time', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -11197,8 +11588,8 @@ _PBMSGGATECHANGECAMPINFONOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=20014,
-  serialized_end=20086,
+  serialized_start=20082,
+  serialized_end=20210,
 )
 
 
@@ -11225,8 +11616,8 @@ _PBMSGEGSGMMAILREPORT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=20088,
-  serialized_end=20150,
+  serialized_start=20212,
+  serialized_end=20274,
 )
 
 
@@ -11302,8 +11693,8 @@ _PBMSGEGSGMMAILINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=20153,
-  serialized_end=20355,
+  serialized_start=20277,
+  serialized_end=20479,
 )
 
 
@@ -11337,8 +11728,8 @@ _PBMSGEGSGMMAILITEM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=20357,
-  serialized_end=20415,
+  serialized_start=20481,
+  serialized_end=20539,
 )
 
 
@@ -11365,8 +11756,8 @@ _PBBILLINGCHARGENOTICENOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=20417,
-  serialized_end=20463,
+  serialized_start=20541,
+  serialized_end=20587,
 )
 
 
@@ -11414,8 +11805,8 @@ _PBSPANCHATNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=20465,
-  serialized_end=20573,
+  serialized_start=20589,
+  serialized_end=20697,
 )
 
 
@@ -11442,8 +11833,8 @@ _PBWORLDWORLDLEVELNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=20575,
-  serialized_end=20642,
+  serialized_start=20699,
+  serialized_end=20766,
 )
 
 
@@ -11470,8 +11861,8 @@ _PBGATEWORLDLEVELREPORT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=20644,
-  serialized_end=20710,
+  serialized_start=20768,
+  serialized_end=20834,
 )
 
 
@@ -11505,8 +11896,8 @@ _PBSPANGATEWAYINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=20712,
-  serialized_end=20772,
+  serialized_start=20836,
+  serialized_end=20896,
 )
 
 
@@ -11554,8 +11945,8 @@ _PBSPANMUTENOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=20774,
-  serialized_end=20859,
+  serialized_start=20898,
+  serialized_end=20983,
 )
 
 
@@ -11575,8 +11966,8 @@ _PBRKSSTOPNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=20861,
-  serialized_end=20878,
+  serialized_start=20985,
+  serialized_end=21002,
 )
 
 
@@ -11638,8 +12029,8 @@ _PBSPANGETRANKREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=20881,
-  serialized_end=21010,
+  serialized_start=21005,
+  serialized_end=21134,
 )
 
 
@@ -11687,8 +12078,8 @@ _PBSPANGETRANKRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=21012,
-  serialized_end=21129,
+  serialized_start=21136,
+  serialized_end=21253,
 )
 
 
@@ -11736,8 +12127,8 @@ _PBSPANGETGUILDRANKRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=21131,
-  serialized_end=21254,
+  serialized_start=21255,
+  serialized_end=21378,
 )
 
 
@@ -11785,8 +12176,8 @@ _PBSPANGETMAINRANKRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=21256,
-  serialized_end=21381,
+  serialized_start=21380,
+  serialized_end=21505,
 )
 
 
@@ -11834,8 +12225,8 @@ _PBSPANGETMAINGUILDRANKRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=21384,
-  serialized_end=21515,
+  serialized_start=21508,
+  serialized_end=21639,
 )
 
 
@@ -11883,8 +12274,8 @@ _PBPLAYERQUESTIONINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=21517,
-  serialized_end=21625,
+  serialized_start=21641,
+  serialized_end=21749,
 )
 
 
@@ -11925,8 +12316,8 @@ _PBMSGEGSANSWERNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=21627,
-  serialized_end=21733,
+  serialized_start=21751,
+  serialized_end=21857,
 )
 
 
@@ -11953,8 +12344,8 @@ _PBMSGEGSACTIVITYENDNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=21735,
-  serialized_end=21782,
+  serialized_start=21859,
+  serialized_end=21906,
 )
 
 
@@ -12002,8 +12393,8 @@ _PBQUESTIONREWARD = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=21784,
-  serialized_end=21880,
+  serialized_start=21908,
+  serialized_end=22004,
 )
 
 
@@ -12030,8 +12421,8 @@ _PBMSGRKSREWARDNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=21882,
-  serialized_end=21944,
+  serialized_start=22006,
+  serialized_end=22068,
 )
 
 
@@ -12065,8 +12456,8 @@ _PBMSGEGSACTIVITYNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=21946,
-  serialized_end=22009,
+  serialized_start=22070,
+  serialized_end=22133,
 )
 
 
@@ -12107,8 +12498,8 @@ _PBPOSTITEM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=22011,
-  serialized_end=22101,
+  serialized_start=22135,
+  serialized_end=22225,
 )
 
 
@@ -12142,8 +12533,8 @@ _PBGUILDACTIVITYINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=22103,
-  serialized_end=22161,
+  serialized_start=22227,
+  serialized_end=22285,
 )
 
 
@@ -12184,8 +12575,8 @@ _PBMSGPOSTITEMREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=22163,
-  serialized_end=22275,
+  serialized_start=22287,
+  serialized_end=22399,
 )
 
 
@@ -12233,8 +12624,8 @@ _PBMAILGRANTITEM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=22277,
-  serialized_end=22397,
+  serialized_start=22401,
+  serialized_end=22521,
 )
 
 
@@ -12268,8 +12659,8 @@ _PBMSGMAILGRANTITEM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=22399,
-  serialized_end=22473,
+  serialized_start=22523,
+  serialized_end=22597,
 )
 
 
@@ -12310,8 +12701,8 @@ _PBMSGGUILDSPANSIGNREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=22475,
-  serialized_end=22557,
+  serialized_start=22599,
+  serialized_end=22681,
 )
 
 
@@ -12345,8 +12736,8 @@ _PBMSGSPANPVEKEEPTEAMINFOREQUIRE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=22559,
-  serialized_end=22625,
+  serialized_start=22683,
+  serialized_end=22749,
 )
 
 
@@ -12380,8 +12771,8 @@ _PBMSGSPANPVEREGAINTEAMREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=22627,
-  serialized_end=22691,
+  serialized_start=22751,
+  serialized_end=22815,
 )
 
 
@@ -12429,8 +12820,8 @@ _PBMSGSPANPVEREGAINTEAMRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=22693,
-  serialized_end=22794,
+  serialized_start=22817,
+  serialized_end=22918,
 )
 
 
@@ -12464,8 +12855,8 @@ _PBMSGSPANPVEREGAINJOINTEAMREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=22796,
-  serialized_end=22865,
+  serialized_start=22920,
+  serialized_end=22989,
 )
 
 
@@ -12506,8 +12897,8 @@ _PBSPANPVELEAVEDUNGEON = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=22867,
-  serialized_end=22947,
+  serialized_start=22991,
+  serialized_end=23071,
 )
 
 
@@ -12555,8 +12946,8 @@ _PBSPANPVEENTERDUNGEON = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=22949,
-  serialized_end=23048,
+  serialized_start=23073,
+  serialized_end=23172,
 )
 
 
@@ -12604,8 +12995,8 @@ _PBSPANPVEGETMATCHLISTREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=23050,
-  serialized_end=23152,
+  serialized_start=23174,
+  serialized_end=23276,
 )
 
 
@@ -12646,8 +13037,8 @@ _PBSPANPVEGETMATCHLISTRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=23154,
-  serialized_end=23261,
+  serialized_start=23278,
+  serialized_end=23385,
 )
 
 
@@ -12695,8 +13086,8 @@ _PBMSGGUILDSPANSIGNRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=23263,
-  serialized_end=23364,
+  serialized_start=23387,
+  serialized_end=23488,
 )
 
 
@@ -12716,8 +13107,8 @@ _PBMSGGUILDFINALSIGNRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=23366,
-  serialized_end=23395,
+  serialized_start=23490,
+  serialized_end=23519,
 )
 
 
@@ -12751,8 +13142,8 @@ _PBGATEGUILDIMBATTLEREWARD = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=23397,
-  serialized_end=23461,
+  serialized_start=23521,
+  serialized_end=23585,
 )
 
 
@@ -12814,8 +13205,8 @@ _PBMSGEGSSPANIMBATTLEWATCHINGREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=23464,
-  serialized_end=23617,
+  serialized_start=23588,
+  serialized_end=23741,
 )
 
 
@@ -12898,8 +13289,8 @@ _PBMSGEGSSPANIMBATTLEWATCHINGRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=23620,
-  serialized_end=23855,
+  serialized_start=23744,
+  serialized_end=23979,
 )
 
 
@@ -12940,8 +13331,8 @@ _PBMSGEGSSPANIMBATTLEBETREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=23857,
-  serialized_end=23941,
+  serialized_start=23981,
+  serialized_end=24065,
 )
 
 
@@ -12975,8 +13366,8 @@ _PBMSGBWSSPANIMBATTLEBETRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=23943,
-  serialized_end=24033,
+  serialized_start=24067,
+  serialized_end=24157,
 )
 
 
@@ -13003,8 +13394,8 @@ _PBMSGBWSBETCLEARREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=24035,
-  serialized_end=24078,
+  serialized_start=24159,
+  serialized_end=24202,
 )
 
 
@@ -13052,8 +13443,8 @@ _PBMSGSPANGUILDMAILNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=24080,
-  serialized_end=24193,
+  serialized_start=24204,
+  serialized_end=24317,
 )
 
 
@@ -13094,8 +13485,8 @@ _PBMSGEGSSPANIMBATTLEGUILDDATAREPORT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=24196,
-  serialized_end=24326,
+  serialized_start=24320,
+  serialized_end=24450,
 )
 
 
@@ -13129,8 +13520,8 @@ _PBMSGBWSSPANIMBATTLEHISTORYDATANOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=24328,
-  serialized_end=24452,
+  serialized_start=24452,
+  serialized_end=24576,
 )
 
 
@@ -13157,8 +13548,8 @@ _PBMSGSPANRACEIDLENOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=24454,
-  serialized_end=24497,
+  serialized_start=24578,
+  serialized_end=24621,
 )
 
 
@@ -13192,8 +13583,8 @@ _PBMSGSPANBATTLESTARTNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=24499,
-  serialized_end=24564,
+  serialized_start=24623,
+  serialized_end=24688,
 )
 
 
@@ -13227,8 +13618,8 @@ _PBMSGSPANRACESTATUSCHANGE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=24566,
-  serialized_end=24627,
+  serialized_start=24690,
+  serialized_end=24751,
 )
 
 
@@ -13262,8 +13653,8 @@ _PBMSGSPANGETSIGNLISTREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=24629,
-  serialized_end=24696,
+  serialized_start=24753,
+  serialized_end=24820,
 )
 
 
@@ -13297,8 +13688,8 @@ _PBMSGGUILDCAMP = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=24698,
-  serialized_end=24749,
+  serialized_start=24822,
+  serialized_end=24873,
 )
 
 
@@ -13332,8 +13723,8 @@ _PBMSGSERVERGUILDREPORT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=24751,
-  serialized_end=24828,
+  serialized_start=24875,
+  serialized_end=24952,
 )
 
 
@@ -13360,8 +13751,8 @@ _PBMSGSPANWILDRANKREPORT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=24830,
-  serialized_end=24894,
+  serialized_start=24954,
+  serialized_end=25018,
 )
 
 
@@ -13416,8 +13807,8 @@ _PBMSGGETSPANWILDRANKREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=24896,
-  serialized_end=25018,
+  serialized_start=25020,
+  serialized_end=25142,
 )
 
 
@@ -13493,8 +13884,8 @@ _PBMSGGETSPANWILDRANKRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=25021,
-  serialized_end=25220,
+  serialized_start=25145,
+  serialized_end=25344,
 )
 
 
@@ -13542,8 +13933,8 @@ _PBMSGGETSPANWILDBOSSLVREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=25222,
-  serialized_end=25343,
+  serialized_start=25346,
+  serialized_end=25467,
 )
 
 
@@ -13570,8 +13961,8 @@ _PBSPANWILDBOSSLEVELINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=25345,
-  serialized_end=25412,
+  serialized_start=25469,
+  serialized_end=25536,
 )
 
 
@@ -13605,8 +13996,8 @@ _PBSPANWILDBOSSLEVEL = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=25414,
-  serialized_end=25471,
+  serialized_start=25538,
+  serialized_end=25595,
 )
 
 
@@ -13647,8 +14038,8 @@ _PBMSGGETSPANWILDBOSSLVRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=25473,
-  serialized_end=25582,
+  serialized_start=25597,
+  serialized_end=25706,
 )
 
 
@@ -13682,8 +14073,8 @@ _PBMSGSPANWILDPLAYERGATENUM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=25584,
-  serialized_end=25644,
+  serialized_start=25708,
+  serialized_end=25768,
 )
 
 
@@ -13717,8 +14108,8 @@ _PBMSGSPANWILDPLAYERNUMNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=25646,
-  serialized_end=25741,
+  serialized_start=25770,
+  serialized_end=25865,
 )
 
 
@@ -13773,8 +14164,8 @@ _PBMSGSAVETEAMINFOTOSPANWILDREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=25744,
-  serialized_end=25872,
+  serialized_start=25868,
+  serialized_end=25996,
 )
 
 
@@ -13808,8 +14199,8 @@ _PBMSGSAVETEAMINFOTOSPANWILDRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=25874,
-  serialized_end=25948,
+  serialized_start=25998,
+  serialized_end=26072,
 )
 
 
@@ -13836,8 +14227,8 @@ _PBMSGSPANWILDREGAINTEAMREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=25950,
-  serialized_end=25999,
+  serialized_start=26074,
+  serialized_end=26123,
 )
 
 
@@ -13864,8 +14255,8 @@ _PBMSGSPANWILDREGAINTEAMRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=26001,
-  serialized_end=26052,
+  serialized_start=26125,
+  serialized_end=26176,
 )
 
 
@@ -13899,8 +14290,8 @@ _PBMERGEDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=26054,
-  serialized_end=26113,
+  serialized_start=26178,
+  serialized_end=26237,
 )
 
 
@@ -13927,8 +14318,8 @@ _PBMSGMERGEDATAREPORT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=26115,
-  serialized_end=26174,
+  serialized_start=26239,
+  serialized_end=26298,
 )
 
 
@@ -13955,8 +14346,8 @@ _PBMSGMERGEDATARESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=26176,
-  serialized_end=26218,
+  serialized_start=26300,
+  serialized_end=26342,
 )
 
 
@@ -13983,8 +14374,8 @@ _PBMSGRKSFIREWORKSSTATUSNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=26220,
-  serialized_end=26296,
+  serialized_start=26344,
+  serialized_end=26420,
 )
 
 
@@ -14018,8 +14409,8 @@ _PBMSGRKSFIREWORKSACTINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=26298,
-  serialized_end=26356,
+  serialized_start=26422,
+  serialized_end=26480,
 )
 
 
@@ -14060,8 +14451,8 @@ _PBMSGEGSFIREWORKSACTSCOREREPORT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=26358,
-  serialized_end=26439,
+  serialized_start=26482,
+  serialized_end=26563,
 )
 
 
@@ -14102,8 +14493,8 @@ _PBMSGRKSFIREWORKSACTSCORENOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=26441,
-  serialized_end=26526,
+  serialized_start=26565,
+  serialized_end=26650,
 )
 
 
@@ -14137,8 +14528,8 @@ _PBMSGRKSFIREWORKSOPENNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=26528,
-  serialized_end=26594,
+  serialized_start=26652,
+  serialized_end=26718,
 )
 
 
@@ -14165,8 +14556,8 @@ _PBMSGRKSFIREWORKSFXNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=26596,
-  serialized_end=26639,
+  serialized_start=26720,
+  serialized_end=26763,
 )
 
 
@@ -14207,8 +14598,8 @@ _PBMSGSPANWILDSHARDNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=26641,
-  serialized_end=26716,
+  serialized_start=26765,
+  serialized_end=26840,
 )
 
 
@@ -14249,8 +14640,8 @@ _PBMSGPETBATTLEFIGHTDATAREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=26718,
-  serialized_end=26825,
+  serialized_start=26842,
+  serialized_end=26949,
 )
 
 
@@ -14298,8 +14689,8 @@ _PBMSGPETBATTLEFIGHTDATARESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=26828,
-  serialized_end=26977,
+  serialized_start=26952,
+  serialized_end=27101,
 )
 
 
@@ -14326,8 +14717,8 @@ _PBMSGPETBATTLECHALLENGERDATANOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=26979,
-  serialized_end=27068,
+  serialized_start=27103,
+  serialized_end=27192,
 )
 
 
@@ -14382,8 +14773,8 @@ _PBMSGPETBATTLERESULTNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=27071,
-  serialized_end=27216,
+  serialized_start=27195,
+  serialized_end=27340,
 )
 
 
@@ -14410,8 +14801,8 @@ _PBMSGPETBATTLEFLUSHARRAYNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=27218,
-  serialized_end=27267,
+  serialized_start=27342,
+  serialized_end=27391,
 )
 
 
@@ -14438,8 +14829,8 @@ _PBMSGPETBATTLEQUERYRECORDNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=27269,
-  serialized_end=27319,
+  serialized_start=27393,
+  serialized_end=27443,
 )
 
 
@@ -14466,8 +14857,8 @@ _PBMSGGETPETBATTLEPVPINFOREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=27321,
-  serialized_end=27371,
+  serialized_start=27445,
+  serialized_end=27495,
 )
 
 
@@ -14515,8 +14906,8 @@ _PBMSGGETPETBATTLEPVPINFORESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=27373,
-  serialized_end=27499,
+  serialized_start=27497,
+  serialized_end=27623,
 )
 
 
@@ -14550,8 +14941,8 @@ _PBMSGMODIFYRANKNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=27501,
-  serialized_end=27555,
+  serialized_start=27625,
+  serialized_end=27679,
 )
 
 
@@ -14571,8 +14962,8 @@ _PBMSGCLEARPETPVPRANKNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=27557,
-  serialized_end=27585,
+  serialized_start=27681,
+  serialized_end=27709,
 )
 
 
@@ -14599,8 +14990,8 @@ _PBMSGADDROBOTPETNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=27587,
-  serialized_end=27630,
+  serialized_start=27711,
+  serialized_end=27754,
 )
 
 
@@ -14634,8 +15025,8 @@ _PBGUILDGATEMANORCREATEREPORT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=27632,
-  serialized_end=27704,
+  serialized_start=27756,
+  serialized_end=27828,
 )
 
 
@@ -14669,8 +15060,8 @@ _PBGUILDGATEMANORCREATESYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=27706,
-  serialized_end=27776,
+  serialized_start=27830,
+  serialized_end=27900,
 )
 
 
@@ -14697,8 +15088,8 @@ _PBGUILDGATEOPENFIREREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=27778,
-  serialized_end=27823,
+  serialized_start=27902,
+  serialized_end=27947,
 )
 
 
@@ -14725,8 +15116,8 @@ _PBGUILDGATEOPENFIRESYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=27825,
-  serialized_end=27868,
+  serialized_start=27949,
+  serialized_end=27992,
 )
 
 
@@ -14760,8 +15151,8 @@ _PBGUILDGATEMANORSTATUEFLUSHSYNC = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=27870,
-  serialized_end=27955,
+  serialized_start=27994,
+  serialized_end=28079,
 )
 
 
@@ -14788,8 +15179,8 @@ _PBGUILDGATEMANORSTATUEFLUSHREPORT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=27957,
-  serialized_end=28010,
+  serialized_start=28081,
+  serialized_end=28134,
 )
 
 
@@ -14865,8 +15256,8 @@ _PBMSGSIGNMONORBATTLEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=28013,
-  serialized_end=28210,
+  serialized_start=28137,
+  serialized_end=28334,
 )
 
 
@@ -14928,8 +15319,8 @@ _PBMSGSIGNMONORBATTLERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=28213,
-  serialized_end=28374,
+  serialized_start=28337,
+  serialized_end=28498,
 )
 
 
@@ -14956,8 +15347,8 @@ _PBMSGMONORBATTLESTATUSNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=28376,
-  serialized_end=28422,
+  serialized_start=28500,
+  serialized_end=28546,
 )
 
 
@@ -15012,8 +15403,8 @@ _PBWINGUILDINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=28424,
-  serialized_end=28529,
+  serialized_start=28548,
+  serialized_end=28653,
 )
 
 
@@ -15068,8 +15459,8 @@ _PBMSGENTERDUNGEONREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=28531,
-  serialized_end=28658,
+  serialized_start=28655,
+  serialized_end=28782,
 )
 
 
@@ -15145,8 +15536,8 @@ _PBMSGENTERDUNGEONRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=28661,
-  serialized_end=28852,
+  serialized_start=28785,
+  serialized_end=28976,
 )
 
 
@@ -15187,8 +15578,8 @@ _PBMSGDUNGEONRESULTNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=28854,
-  serialized_end=28975,
+  serialized_start=28978,
+  serialized_end=29099,
 )
 
 
@@ -15215,8 +15606,8 @@ _PBMSGRACEONEWINGUILDNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=28977,
-  serialized_end=29042,
+  serialized_start=29101,
+  serialized_end=29166,
 )
 
 
@@ -15243,8 +15634,8 @@ _PBMSGRACETWOWINGUILDNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=29044,
-  serialized_end=29109,
+  serialized_start=29168,
+  serialized_end=29233,
 )
 
 
@@ -15299,8 +15690,8 @@ _PBMSGCREATEBATTLEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=29112,
-  serialized_end=29259,
+  serialized_start=29236,
+  serialized_end=29383,
 )
 
 
@@ -15355,8 +15746,8 @@ _PBMSGCREATEBATTLERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=29262,
-  serialized_end=29399,
+  serialized_start=29386,
+  serialized_end=29523,
 )
 
 
@@ -15383,8 +15774,8 @@ _PBMSGDESTORYBATTLENOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=29401,
-  serialized_end=29446,
+  serialized_start=29525,
+  serialized_end=29570,
 )
 
 
@@ -15432,8 +15823,8 @@ _PBMSGEGSENTERMONORREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=29448,
-  serialized_end=29547,
+  serialized_start=29572,
+  serialized_end=29671,
 )
 
 
@@ -15488,8 +15879,8 @@ _PBMSGBWSENTERMONORRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=29549,
-  serialized_end=29669,
+  serialized_start=29673,
+  serialized_end=29793,
 )
 
 
@@ -15530,8 +15921,8 @@ _PBMSGBWSCREATEMONORNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=29671,
-  serialized_end=29753,
+  serialized_start=29795,
+  serialized_end=29877,
 )
 
 
@@ -15551,8 +15942,8 @@ _PBMSGBWSDESTORYMONORNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=29755,
-  serialized_end=29783,
+  serialized_start=29879,
+  serialized_end=29907,
 )
 
 
@@ -15579,8 +15970,8 @@ _PBMSGFLUSHSIGNDATANOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=29785,
-  serialized_end=29843,
+  serialized_start=29909,
+  serialized_end=29967,
 )
 
 
@@ -15642,8 +16033,8 @@ _PBMSGMONORBATTLEREWARDINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=29846,
-  serialized_end=30043,
+  serialized_start=29970,
+  serialized_end=30167,
 )
 
 
@@ -15677,8 +16068,8 @@ _PBMSGGIVEBACKMONEYNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=30045,
-  serialized_end=30103,
+  serialized_start=30169,
+  serialized_end=30227,
 )
 
 
@@ -15712,8 +16103,8 @@ _PBMSGGIVEBACKMONEYRETNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=30105,
-  serialized_end=30170,
+  serialized_start=30229,
+  serialized_end=30294,
 )
 
 
@@ -15768,8 +16159,8 @@ _PBGUILDTOPBATTLESCORE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=30172,
-  serialized_end=30298,
+  serialized_start=30296,
+  serialized_end=30422,
 )
 
 
@@ -15796,8 +16187,8 @@ _PBMSGGUILDTOPBATTLESCOREREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=30300,
-  serialized_end=30350,
+  serialized_start=30424,
+  serialized_end=30474,
 )
 
 
@@ -15831,8 +16222,8 @@ _PBMSGGUILDTOPBATTLESCORERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=30352,
-  serialized_end=30458,
+  serialized_start=30476,
+  serialized_end=30582,
 )
 
 
@@ -15859,8 +16250,8 @@ _PBMSGGUILDMEMBERIDREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=30460,
-  serialized_end=30505,
+  serialized_start=30584,
+  serialized_end=30629,
 )
 
 
@@ -15915,8 +16306,8 @@ _PBMSGGUILDMEMBERIDRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=30508,
-  serialized_end=30655,
+  serialized_start=30632,
+  serialized_end=30779,
 )
 
 
@@ -15950,8 +16341,43 @@ _PBMSGGUILDSTATUS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=30657,
-  serialized_end=30729,
+  serialized_start=30781,
+  serialized_end=30853,
+)
+
+
+_PBMSGRKSROLECROPNOTICE = descriptor.Descriptor(
+  name='PBMsgRksRoleCropNotice',
+  full_name='PBMsgRksRoleCropNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgRksRoleCropNotice.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='crop_id', full_name='PBMsgRksRoleCropNotice.crop_id', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=30855,
+  serialized_end=30913,
 )
 
 
@@ -15978,8 +16404,8 @@ _PBMSGMSGCOUNTNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=30731,
-  serialized_end=30784,
+  serialized_start=30915,
+  serialized_end=30968,
 )
 
 
@@ -16013,8 +16439,2542 @@ _PBMSGCOUNT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=30786,
-  serialized_end=30829,
+  serialized_start=30970,
+  serialized_end=31013,
+)
+
+
+_PBMSGEGSMYCROPINFOREQUEST = descriptor.Descriptor(
+  name='PBMsgEgsMyCropInfoRequest',
+  full_name='PBMsgEgsMyCropInfoRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgEgsMyCropInfoRequest.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='crop_id', full_name='PBMsgEgsMyCropInfoRequest.crop_id', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=31015,
+  serialized_end=31076,
+)
+
+
+_PBMSGEGSCROPSINFOREQUEST = descriptor.Descriptor(
+  name='PBMsgEgsCropsInfoRequest',
+  full_name='PBMsgEgsCropsInfoRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgEgsCropsInfoRequest.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='crop_id', full_name='PBMsgEgsCropsInfoRequest.crop_id', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=31078,
+  serialized_end=31138,
+)
+
+
+_PBMSGEGSFRIENDCROPLISTREQUEST = descriptor.Descriptor(
+  name='PBMsgEgsFriendCropListRequest',
+  full_name='PBMsgEgsFriendCropListRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgEgsFriendCropListRequest.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=31140,
+  serialized_end=31188,
+)
+
+
+_PBMSGEGSCREATECROPSREQUEST = descriptor.Descriptor(
+  name='PBMsgEgsCreateCropsRequest',
+  full_name='PBMsgEgsCreateCropsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='crops_name', full_name='PBMsgEgsCreateCropsRequest.crops_name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgEgsCreateCropsRequest.role_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=31190,
+  serialized_end=31255,
+)
+
+
+_PBMSGRKSCREATECROPSRESPONSE = descriptor.Descriptor(
+  name='PBMsgRksCreateCropsResponse',
+  full_name='PBMsgRksCreateCropsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='ret_code', full_name='PBMsgRksCreateCropsResponse.ret_code', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='crops_id', full_name='PBMsgRksCreateCropsResponse.crops_id', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='crops_name', full_name='PBMsgRksCreateCropsResponse.crops_name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgRksCreateCropsResponse.role_id', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='last_create_crop_time', full_name='PBMsgRksCreateCropsResponse.last_create_crop_time', index=4,
+      number=5, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=31258,
+  serialized_end=31391,
+)
+
+
+_PBMSGCREATECROPSNOTICE = descriptor.Descriptor(
+  name='PBMsgCreateCropsNotice',
+  full_name='PBMsgCreateCropsNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='crops_id', full_name='PBMsgCreateCropsNotice.crops_id', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='crops_name', full_name='PBMsgCreateCropsNotice.crops_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='battle_score', full_name='PBMsgCreateCropsNotice.battle_score', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=31393,
+  serialized_end=31477,
+)
+
+
+_PBMSGDISBANDCROPSNOTICE = descriptor.Descriptor(
+  name='PBMsgDisbandCropsNotice',
+  full_name='PBMsgDisbandCropsNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='crops_id', full_name='PBMsgDisbandCropsNotice.crops_id', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=31479,
+  serialized_end=31522,
+)
+
+
+_PBMSGEGSEXITCROPSREQUEST = descriptor.Descriptor(
+  name='PBMsgEgsExitCropsRequest',
+  full_name='PBMsgEgsExitCropsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgEgsExitCropsRequest.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=31524,
+  serialized_end=31567,
+)
+
+
+_PBMSGRKSEXITCROPSRESPONSE = descriptor.Descriptor(
+  name='PBMsgRksExitCropsResponse',
+  full_name='PBMsgRksExitCropsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='ret_code', full_name='PBMsgRksExitCropsResponse.ret_code', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgRksExitCropsResponse.role_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=31569,
+  serialized_end=31631,
+)
+
+
+_PBMSGEGSAPPLYJOINCROPSREQUEST = descriptor.Descriptor(
+  name='PBMsgEgsApplyJoinCropsRequest',
+  full_name='PBMsgEgsApplyJoinCropsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgEgsApplyJoinCropsRequest.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='crops_id', full_name='PBMsgEgsApplyJoinCropsRequest.crops_id', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=31633,
+  serialized_end=31699,
+)
+
+
+_PBMSGEGSAGREEJOINCROPSREQUEST = descriptor.Descriptor(
+  name='PBMsgEgsAgreeJoinCropsRequest',
+  full_name='PBMsgEgsAgreeJoinCropsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgEgsAgreeJoinCropsRequest.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='leader_id', full_name='PBMsgEgsAgreeJoinCropsRequest.leader_id', index=1,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='bagree', full_name='PBMsgEgsAgreeJoinCropsRequest.bagree', index=2,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=31701,
+  serialized_end=31784,
+)
+
+
+_PBMSGRKSAGREEJOINCROPSRESPONSE = descriptor.Descriptor(
+  name='PBMsgRksAgreeJoinCropsResponse',
+  full_name='PBMsgRksAgreeJoinCropsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='ret_code', full_name='PBMsgRksAgreeJoinCropsResponse.ret_code', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgRksAgreeJoinCropsResponse.role_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='crops_id', full_name='PBMsgRksAgreeJoinCropsResponse.crops_id', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=31786,
+  serialized_end=31871,
+)
+
+
+_PBMSGEGSINVITEREQUEST = descriptor.Descriptor(
+  name='PBMsgEgsInviteRequest',
+  full_name='PBMsgEgsInviteRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='invitor_id', full_name='PBMsgEgsInviteRequest.invitor_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='be_invitor_id', full_name='PBMsgEgsInviteRequest.be_invitor_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=31873,
+  serialized_end=31939,
+)
+
+
+_PBMSGEGSINVITEANSWERREQUEST = descriptor.Descriptor(
+  name='PBMsgEgsInviteAnswerRequest',
+  full_name='PBMsgEgsInviteAnswerRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='invitor_id', full_name='PBMsgEgsInviteAnswerRequest.invitor_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgEgsInviteAnswerRequest.role_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='crop_id', full_name='PBMsgEgsInviteAnswerRequest.crop_id', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='baccept', full_name='PBMsgEgsInviteAnswerRequest.baccept', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=31941,
+  serialized_end=32041,
+)
+
+
+_PBMSGRKSINVITEANSWERRESPONSE = descriptor.Descriptor(
+  name='PBMsgRksInviteAnswerResponse',
+  full_name='PBMsgRksInviteAnswerResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='ret_code', full_name='PBMsgRksInviteAnswerResponse.ret_code', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgRksInviteAnswerResponse.role_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='crop_id', full_name='PBMsgRksInviteAnswerResponse.crop_id', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=32043,
+  serialized_end=32125,
+)
+
+
+_PBMSGEGSLEADEREXAMINEREQUEST = descriptor.Descriptor(
+  name='PBMsgEgsLeaderExamineRequest',
+  full_name='PBMsgEgsLeaderExamineRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='master_id', full_name='PBMsgEgsLeaderExamineRequest.master_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='invitor_id', full_name='PBMsgEgsLeaderExamineRequest.invitor_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='invited_id', full_name='PBMsgEgsLeaderExamineRequest.invited_id', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='bagree', full_name='PBMsgEgsLeaderExamineRequest.bagree', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=32127,
+  serialized_end=32232,
+)
+
+
+_PNMSGEGSCROPCHANGELEADERREQUEST = descriptor.Descriptor(
+  name='PNMsgEgsCropChangeLeaderRequest',
+  full_name='PNMsgEgsCropChangeLeaderRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='old_leader', full_name='PNMsgEgsCropChangeLeaderRequest.old_leader', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='new_leader', full_name='PNMsgEgsCropChangeLeaderRequest.new_leader', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='crop_id', full_name='PNMsgEgsCropChangeLeaderRequest.crop_id', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=32234,
+  serialized_end=32324,
+)
+
+
+_PBMSGEGSKICKOUTCROPSREQUEST = descriptor.Descriptor(
+  name='PBMsgEgsKickOutCropsRequest',
+  full_name='PBMsgEgsKickOutCropsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgEgsKickOutCropsRequest.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='kick_out_role', full_name='PBMsgEgsKickOutCropsRequest.kick_out_role', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=32326,
+  serialized_end=32395,
+)
+
+
+_PBMSGRKSKICKOUTCROPRESPONSE = descriptor.Descriptor(
+  name='PBMsgRksKickOutCropResponse',
+  full_name='PBMsgRksKickOutCropResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='ret_code', full_name='PBMsgRksKickOutCropResponse.ret_code', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgRksKickOutCropResponse.role_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=32397,
+  serialized_end=32461,
+)
+
+
+_PBMSGEGSDISBANDEDCROPSREQUEST = descriptor.Descriptor(
+  name='PBMsgEgsDisbandedCropsRequest',
+  full_name='PBMsgEgsDisbandedCropsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgEgsDisbandedCropsRequest.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=32463,
+  serialized_end=32511,
+)
+
+
+_PBMSGRKSDISBANDCROPRESPONSE = descriptor.Descriptor(
+  name='PBMsgRksDisbandCropResponse',
+  full_name='PBMsgRksDisbandCropResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='ret_code', full_name='PBMsgRksDisbandCropResponse.ret_code', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgRksDisbandCropResponse.role_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=32513,
+  serialized_end=32577,
+)
+
+
+_PBMSGBWSCROPSSCOREINFONOTICE = descriptor.Descriptor(
+  name='PBMsgBwsCropsScoreInfoNotice',
+  full_name='PBMsgBwsCropsScoreInfoNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='crop_list', full_name='PBMsgBwsCropsScoreInfoNotice.crop_list', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=32579,
+  serialized_end=32646,
+)
+
+
+_PBMSGEGSCROPRANKINFOREQUEST = descriptor.Descriptor(
+  name='PBMsgEgsCropRankInfoRequest',
+  full_name='PBMsgEgsCropRankInfoRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='gateway_id', full_name='PBMsgEgsCropRankInfoRequest.gateway_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='camp_id', full_name='PBMsgEgsCropRankInfoRequest.camp_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgEgsCropRankInfoRequest.role_id', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=32648,
+  serialized_end=32731,
+)
+
+
+_PBMSGEGSSTARTCROPSMATCHREQUEST = descriptor.Descriptor(
+  name='PBMsgEgsStartCropsMatchRequest',
+  full_name='PBMsgEgsStartCropsMatchRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='crops_id', full_name='PBMsgEgsStartCropsMatchRequest.crops_id', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='member', full_name='PBMsgEgsStartCropsMatchRequest.member', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='src_gateway_id', full_name='PBMsgEgsStartCropsMatchRequest.src_gateway_id', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=32733,
+  serialized_end=32845,
+)
+
+
+_PBMSGEGSSTARTCROPSMATCHRESPONSE = descriptor.Descriptor(
+  name='PBMsgEgsStartCropsMatchResponse',
+  full_name='PBMsgEgsStartCropsMatchResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='ret_code', full_name='PBMsgEgsStartCropsMatchResponse.ret_code', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=32847,
+  serialized_end=32898,
+)
+
+
+_PBMSGBWSCROPSMATCHSUCCESSNOTICE = descriptor.Descriptor(
+  name='PBMsgBwsCropsMatchSuccessNotice',
+  full_name='PBMsgBwsCropsMatchSuccessNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='campA', full_name='PBMsgBwsCropsMatchSuccessNotice.campA', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='campB', full_name='PBMsgBwsCropsMatchSuccessNotice.campB', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=32900,
+  serialized_end=33003,
+)
+
+
+_PBMSGBWSCROPSFINALMATCHNOTICE = descriptor.Descriptor(
+  name='PBMsgBwsCropsFinalMatchNotice',
+  full_name='PBMsgBwsCropsFinalMatchNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='camps', full_name='PBMsgBwsCropsFinalMatchNotice.camps', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=33005,
+  serialized_end=33076,
+)
+
+
+_PBCROPSBATTLECAMP = descriptor.Descriptor(
+  name='PBCropsBattleCamp',
+  full_name='PBCropsBattleCamp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='crops_id', full_name='PBCropsBattleCamp.crops_id', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='crops_name', full_name='PBCropsBattleCamp.crops_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='src_gateway_id', full_name='PBCropsBattleCamp.src_gateway_id', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='score', full_name='PBCropsBattleCamp.score', index=3,
+      number=4, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='member', full_name='PBCropsBattleCamp.member', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=33079,
+  serialized_end=33213,
+)
+
+
+_PBCROPSBATTLEFINALCAMP = descriptor.Descriptor(
+  name='PBCropsBattleFinalCamp',
+  full_name='PBCropsBattleFinalCamp',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='crops_id', full_name='PBCropsBattleFinalCamp.crops_id', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='crops_name', full_name='PBCropsBattleFinalCamp.crops_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='src_gateway_id', full_name='PBCropsBattleFinalCamp.src_gateway_id', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='score', full_name='PBCropsBattleFinalCamp.score', index=3,
+      number=4, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='rank', full_name='PBCropsBattleFinalCamp.rank', index=4,
+      number=5, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=33215,
+  serialized_end=33330,
+)
+
+
+_PBCROPSBATTLEMEMBER = descriptor.Descriptor(
+  name='PBCropsBattleMember',
+  full_name='PBCropsBattleMember',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBCropsBattleMember.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='char_id', full_name='PBCropsBattleMember.char_id', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=33332,
+  serialized_end=33387,
+)
+
+
+_PBMSGEGSCROPSBATTLERESULTNOTICE = descriptor.Descriptor(
+  name='PBMsgEgsCropsBattleResultNotice',
+  full_name='PBMsgEgsCropsBattleResultNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='vectory_crops_id', full_name='PBMsgEgsCropsBattleResultNotice.vectory_crops_id', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='loser_crops_id', full_name='PBMsgEgsCropsBattleResultNotice.loser_crops_id', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=33389,
+  serialized_end=33472,
+)
+
+
+_PBMSGBWSCROPSLASTBATTLERESULTNOTICE = descriptor.Descriptor(
+  name='PBMsgBwsCropsLastBattleResultNotice',
+  full_name='PBMsgBwsCropsLastBattleResultNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='cur_round', full_name='PBMsgBwsCropsLastBattleResultNotice.cur_round', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='total_round', full_name='PBMsgBwsCropsLastBattleResultNotice.total_round', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='vectory_crops_id', full_name='PBMsgBwsCropsLastBattleResultNotice.vectory_crops_id', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='loser_crops_id', full_name='PBMsgBwsCropsLastBattleResultNotice.loser_crops_id', index=3,
+      number=4, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=33474,
+  serialized_end=33601,
+)
+
+
+_PBMAILCROPSREWARD = descriptor.Descriptor(
+  name='PBMailCropsReward',
+  full_name='PBMailCropsReward',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='crops_id', full_name='PBMailCropsReward.crops_id', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='mail_id', full_name='PBMailCropsReward.mail_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='items', full_name='PBMailCropsReward.items', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='param', full_name='PBMailCropsReward.param', index=3,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='force_send', full_name='PBMailCropsReward.force_send', index=4,
+      number=5, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=33603,
+  serialized_end=33727,
+)
+
+
+_PBMSGBWSSENDREWARDMAILNOTICE = descriptor.Descriptor(
+  name='PBMsgBwsSendRewardMailNotice',
+  full_name='PBMsgBwsSendRewardMailNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='mail', full_name='PBMsgBwsSendRewardMailNotice.mail', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=33729,
+  serialized_end=33793,
+)
+
+
+_PBMSGRKSSENDCROPSMAILNOTICE = descriptor.Descriptor(
+  name='PBMsgRksSendCropsMailNotice',
+  full_name='PBMsgRksSendCropsMailNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgRksSendCropsMailNotice.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='mail_id', full_name='PBMsgRksSendCropsMailNotice.mail_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='items', full_name='PBMsgRksSendCropsMailNotice.items', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='param', full_name='PBMsgRksSendCropsMailNotice.param', index=3,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='force_send', full_name='PBMsgRksSendCropsMailNotice.force_send', index=4,
+      number=5, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=33796,
+  serialized_end=33929,
+)
+
+
+_PBMSGEGSFINALMATCHREQUEST = descriptor.Descriptor(
+  name='PBMsgEgsFinalMatchRequest',
+  full_name='PBMsgEgsFinalMatchRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='crops_id', full_name='PBMsgEgsFinalMatchRequest.crops_id', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgEgsFinalMatchRequest.role_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='src_gateway_id', full_name='PBMsgEgsFinalMatchRequest.src_gateway_id', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=33931,
+  serialized_end=34017,
+)
+
+
+_PBMSGTEAMBATTLESTATUSNOTICE = descriptor.Descriptor(
+  name='PBMsgTeamBattleStatusNotice',
+  full_name='PBMsgTeamBattleStatusNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='status', full_name='PBMsgTeamBattleStatusNotice.status', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=34019,
+  serialized_end=34064,
+)
+
+
+_PBMSGEGSSTARTMATCHINGNOTICE = descriptor.Descriptor(
+  name='PBMsgEgsStartMatchingNotice',
+  full_name='PBMsgEgsStartMatchingNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgEgsStartMatchingNotice.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='crops_id', full_name='PBMsgEgsStartMatchingNotice.crops_id', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=34066,
+  serialized_end=34130,
+)
+
+
+_PBMSGEGSGETREADYMATCHINGNOTICE = descriptor.Descriptor(
+  name='PBMsgEgsGetReadyMatchingNotice',
+  full_name='PBMsgEgsGetReadyMatchingNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgEgsGetReadyMatchingNotice.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='crops_id', full_name='PBMsgEgsGetReadyMatchingNotice.crops_id', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=34132,
+  serialized_end=34199,
+)
+
+
+_PBMSGBWSCROPSENTERFINALMATCHNOTICE = descriptor.Descriptor(
+  name='PBMsgBwsCropsEnterFinalMatchNotice',
+  full_name='PBMsgBwsCropsEnterFinalMatchNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgBwsCropsEnterFinalMatchNotice.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='src_gateway_id', full_name='PBMsgBwsCropsEnterFinalMatchNotice.src_gateway_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=34201,
+  serialized_end=34278,
+)
+
+
+_PBMSGSPANTEAMFIGHTTABLEREQUEST = descriptor.Descriptor(
+  name='PBMsgSpanTeamFightTableRequest',
+  full_name='PBMsgSpanTeamFightTableRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='gateway_id', full_name='PBMsgSpanTeamFightTableRequest.gateway_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='camp_id', full_name='PBMsgSpanTeamFightTableRequest.camp_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgSpanTeamFightTableRequest.role_id', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=34280,
+  serialized_end=34366,
+)
+
+
+_PBMSGSPANTEAMNEXTMATCHNOTICE = descriptor.Descriptor(
+  name='PBMsgSpanTeamNextMatchNotice',
+  full_name='PBMsgSpanTeamNextMatchNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=34368,
+  serialized_end=34398,
+)
+
+
+_PBCROPSINFONOTICE = descriptor.Descriptor(
+  name='PBCropsInfoNotice',
+  full_name='PBCropsInfoNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='crops_id', full_name='PBCropsInfoNotice.crops_id', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='crops_name', full_name='PBCropsInfoNotice.crops_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='battle_score', full_name='PBCropsInfoNotice.battle_score', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=34400,
+  serialized_end=34479,
+)
+
+
+_PBMSGCROPSINFOLISTNOTICE = descriptor.Descriptor(
+  name='PBMsgCropsInfoListNotice',
+  full_name='PBMsgCropsInfoListNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='crops_list', full_name='PBMsgCropsInfoListNotice.crops_list', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=34481,
+  serialized_end=34547,
+)
+
+
+_PBMSGBWSSPANTEAMCANCELMATCHINGNOTICE = descriptor.Descriptor(
+  name='PBMsgBwsSpanTeamCancelMatchingNotice',
+  full_name='PBMsgBwsSpanTeamCancelMatchingNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='crops_id', full_name='PBMsgBwsSpanTeamCancelMatchingNotice.crops_id', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=34549,
+  serialized_end=34605,
+)
+
+
+_PBMSGRKSSPANTEAMCANCELMATCHINGNOTICE = descriptor.Descriptor(
+  name='PBMsgRksSpanTeamCancelMatchingNotice',
+  full_name='PBMsgRksSpanTeamCancelMatchingNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgRksSpanTeamCancelMatchingNotice.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='is_cancel_matching', full_name='PBMsgRksSpanTeamCancelMatchingNotice.is_cancel_matching', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=34607,
+  serialized_end=34690,
+)
+
+
+_PBMSGEGSCANCELREADYSTATUSNOTICE = descriptor.Descriptor(
+  name='PBMsgEgsCancelReadyStatusNotice',
+  full_name='PBMsgEgsCancelReadyStatusNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgEgsCancelReadyStatusNotice.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='crops_id', full_name='PBMsgEgsCancelReadyStatusNotice.crops_id', index=1,
+      number=2, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=34692,
+  serialized_end=34760,
+)
+
+
+_PBMSGRKSCANCELMATCHINGNOTICE = descriptor.Descriptor(
+  name='PBMsgRksCancelMatchingNotice',
+  full_name='PBMsgRksCancelMatchingNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='crops_id', full_name='PBMsgRksCancelMatchingNotice.crops_id', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=34762,
+  serialized_end=34810,
+)
+
+
+_PBMSGEGSSPANMAZESIGNREQUEST = descriptor.Descriptor(
+  name='PBMsgEgsSpanMazeSignRequest',
+  full_name='PBMsgEgsSpanMazeSignRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='gatewayid', full_name='PBMsgEgsSpanMazeSignRequest.gatewayid', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='campid', full_name='PBMsgEgsSpanMazeSignRequest.campid', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='roleid', full_name='PBMsgEgsSpanMazeSignRequest.roleid', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='level', full_name='PBMsgEgsSpanMazeSignRequest.level', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=34812,
+  serialized_end=34907,
+)
+
+
+_PBMSGBWSSPANMAZESIGNRESPONSE = descriptor.Descriptor(
+  name='PBMsgBwsSpanMazeSignResponse',
+  full_name='PBMsgBwsSpanMazeSignResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='ret_code', full_name='PBMsgBwsSpanMazeSignResponse.ret_code', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgBwsSpanMazeSignResponse.role_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=34909,
+  serialized_end=34974,
+)
+
+
+_PBMSGEGSSPANMAZESIGNCHECKREQUEST = descriptor.Descriptor(
+  name='PBMsgEgsSpanMazeSignCheckRequest',
+  full_name='PBMsgEgsSpanMazeSignCheckRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='gatewayid', full_name='PBMsgEgsSpanMazeSignCheckRequest.gatewayid', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='roleid', full_name='PBMsgEgsSpanMazeSignCheckRequest.roleid', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='level', full_name='PBMsgEgsSpanMazeSignCheckRequest.level', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=34976,
+  serialized_end=35060,
+)
+
+
+_PBMSGBWSSPANMAZESIGNCHECKRESPONSE = descriptor.Descriptor(
+  name='PBMsgBwsSpanMazeSignCheckResponse',
+  full_name='PBMsgBwsSpanMazeSignCheckResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='ret_code', full_name='PBMsgBwsSpanMazeSignCheckResponse.ret_code', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgBwsSpanMazeSignCheckResponse.role_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=35062,
+  serialized_end=35132,
+)
+
+
+_PBMSGEGSSPANMAZEENTERREQUEST = descriptor.Descriptor(
+  name='PBMsgEgsSpanMazeEnterRequest',
+  full_name='PBMsgEgsSpanMazeEnterRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='gatewayid', full_name='PBMsgEgsSpanMazeEnterRequest.gatewayid', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='campid', full_name='PBMsgEgsSpanMazeEnterRequest.campid', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='roleid', full_name='PBMsgEgsSpanMazeEnterRequest.roleid', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='level', full_name='PBMsgEgsSpanMazeEnterRequest.level', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=35134,
+  serialized_end=35230,
+)
+
+
+_PBMSGBWSSPANMAZEENTERRESPONSE = descriptor.Descriptor(
+  name='PBMsgBwsSpanMazeEnterResponse',
+  full_name='PBMsgBwsSpanMazeEnterResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='ret_code', full_name='PBMsgBwsSpanMazeEnterResponse.ret_code', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgBwsSpanMazeEnterResponse.role_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=35232,
+  serialized_end=35298,
+)
+
+
+_PBMSGBWSSPANMAZEENTERDUNGEONREQUEST = descriptor.Descriptor(
+  name='PBMsgBwsSpanMazeEnterDungeonRequest',
+  full_name='PBMsgBwsSpanMazeEnterDungeonRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='dungeon', full_name='PBMsgBwsSpanMazeEnterDungeonRequest.dungeon', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='gatewayid', full_name='PBMsgBwsSpanMazeEnterDungeonRequest.gatewayid', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='roleid', full_name='PBMsgBwsSpanMazeEnterDungeonRequest.roleid', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=35300,
+  serialized_end=35389,
+)
+
+
+_PBMSGEGSSPANMAZEENTERDUNGEONRESPONSE = descriptor.Descriptor(
+  name='PBMsgEgsSpanMazeEnterDungeonResponse',
+  full_name='PBMsgEgsSpanMazeEnterDungeonResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='ret_code', full_name='PBMsgEgsSpanMazeEnterDungeonResponse.ret_code', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='dungeon', full_name='PBMsgEgsSpanMazeEnterDungeonResponse.dungeon', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='gatewayid', full_name='PBMsgEgsSpanMazeEnterDungeonResponse.gatewayid', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='roleid', full_name='PBMsgEgsSpanMazeEnterDungeonResponse.roleid', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=35391,
+  serialized_end=35499,
+)
+
+
+_PBMSGBWSSPANMAZESTATUSNOTICE = descriptor.Descriptor(
+  name='PBMsgBwsSpanMazeStatusNotice',
+  full_name='PBMsgBwsSpanMazeStatusNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='status', full_name='PBMsgBwsSpanMazeStatusNotice.status', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=35501,
+  serialized_end=35565,
+)
+
+
+_PBMSGBWSSPANMAZECREATEDUNGEONREQUEST = descriptor.Descriptor(
+  name='PBMsgBwsSpanMazeCreateDungeonRequest',
+  full_name='PBMsgBwsSpanMazeCreateDungeonRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='dungeonsheet', full_name='PBMsgBwsSpanMazeCreateDungeonRequest.dungeonsheet', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='grade', full_name='PBMsgBwsSpanMazeCreateDungeonRequest.grade', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='round', full_name='PBMsgBwsSpanMazeCreateDungeonRequest.round', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=35567,
+  serialized_end=35657,
+)
+
+
+_PBMSGEGSSPANMAZECREATEDUNGEONRESPONSE = descriptor.Descriptor(
+  name='PBMsgEgsSpanMazeCreateDungeonResponse',
+  full_name='PBMsgEgsSpanMazeCreateDungeonResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='ret_code', full_name='PBMsgEgsSpanMazeCreateDungeonResponse.ret_code', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='gatewayId', full_name='PBMsgEgsSpanMazeCreateDungeonResponse.gatewayId', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='campId', full_name='PBMsgEgsSpanMazeCreateDungeonResponse.campId', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='grade', full_name='PBMsgEgsSpanMazeCreateDungeonResponse.grade', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='dungeonsheet', full_name='PBMsgEgsSpanMazeCreateDungeonResponse.dungeonsheet', index=4,
+      number=5, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=35660,
+  serialized_end=35789,
+)
+
+
+_PBMSGBWSSPANMAZEROLELISTNOTICE = descriptor.Descriptor(
+  name='PBMsgBwsSpanMazeRoleListNotice',
+  full_name='PBMsgBwsSpanMazeRoleListNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='rolelist', full_name='PBMsgBwsSpanMazeRoleListNotice.rolelist', index=0,
+      number=1, type=13, cpp_type=3, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=35791,
+  serialized_end=35841,
+)
+
+
+_PBADDGUILDLIVENESSNOTICE = descriptor.Descriptor(
+  name='PBAddGuildLivenessNotice',
+  full_name='PBAddGuildLivenessNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='type', full_name='PBAddGuildLivenessNotice.type', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=1,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='add_liveness', full_name='PBAddGuildLivenessNotice.add_liveness', index=1,
+      number=2, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='dungeon_id', full_name='PBAddGuildLivenessNotice.dungeon_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='creature_id', full_name='PBAddGuildLivenessNotice.creature_id', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='guild_id', full_name='PBAddGuildLivenessNotice.guild_id', index=4,
+      number=5, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=35844,
+  serialized_end=35989,
+)
+
+
+_PBGUILDLIVENESSSYNCNOTICE = descriptor.Descriptor(
+  name='PBGuildLivenessSyncNotice',
+  full_name='PBGuildLivenessSyncNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='guild_id', full_name='PBGuildLivenessSyncNotice.guild_id', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='cur_liveness', full_name='PBGuildLivenessSyncNotice.cur_liveness', index=1,
+      number=2, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='last_reset_time', full_name='PBGuildLivenessSyncNotice.last_reset_time', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=35991,
+  serialized_end=36083,
+)
+
+
+_PBGUILDLASTHITREWARDREQUEST = descriptor.Descriptor(
+  name='PBGuildLastHitRewardRequest',
+  full_name='PBGuildLastHitRewardRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='guild_id', full_name='PBGuildLastHitRewardRequest.guild_id', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=36085,
+  serialized_end=36132,
+)
+
+
+_PBGUILDLASTHITREWARDRESPONSE = descriptor.Descriptor(
+  name='PBGuildLastHitRewardResponse',
+  full_name='PBGuildLastHitRewardResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='ret_code', full_name='PBGuildLastHitRewardResponse.ret_code', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=36134,
+  serialized_end=36182,
+)
+
+
+_PBGUILDMAXDMGREWARDREQUEST = descriptor.Descriptor(
+  name='PBGuildMaxDmgRewardRequest',
+  full_name='PBGuildMaxDmgRewardRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='guild_id', full_name='PBGuildMaxDmgRewardRequest.guild_id', index=0,
+      number=1, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=36184,
+  serialized_end=36230,
+)
+
+
+_PBGUILDMAXDMGREWARDRESPONSE = descriptor.Descriptor(
+  name='PBGuildMaxDmgRewardResponse',
+  full_name='PBGuildMaxDmgRewardResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='ret_code', full_name='PBGuildMaxDmgRewardResponse.ret_code', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=36232,
+  serialized_end=36279,
+)
+
+
+_PBMAGICPETINFOUPDATENOTICE = descriptor.Descriptor(
+  name='PBMagicPetInfoUpdateNotice',
+  full_name='PBMagicPetInfoUpdateNotice',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMagicPetInfoUpdateNotice.role_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='magicpetinfo', full_name='PBMagicPetInfoUpdateNotice.magicpetinfo', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=36281,
+  serialized_end=36365,
 )
 
 _PBMSGCROSSSTATEREPORT.fields_by_name['cross_state'].enum_type = msg_role_base_pb2._ECROSSSTATUS
@@ -16150,6 +19110,19 @@ _PBMSGGUILDTOPBATTLESCORERESPONSE.fields_by_name['guild_top_score_info'].message
 _PBMSGGUILDMEMBERIDRESPONSE.fields_by_name['member_id_list'].message_type = msg_common_pb2._PBGUILDMEMBERIDLIST
 _PBMSGGUILDSTATUS.fields_by_name['battle_type'].enum_type = msg_spanbattle_pb2._PBBATTLETYPE
 _PBMSGMSGCOUNTNOTICE.fields_by_name['msg_count'].message_type = _PBMSGCOUNT
+_PBMSGBWSCROPSSCOREINFONOTICE.fields_by_name['crop_list'].message_type = msg_spanteambattle_pb2._PBCROPSCOREINFO
+_PBMSGEGSSTARTCROPSMATCHREQUEST.fields_by_name['member'].message_type = _PBCROPSBATTLEMEMBER
+_PBMSGBWSCROPSMATCHSUCCESSNOTICE.fields_by_name['campA'].message_type = _PBCROPSBATTLECAMP
+_PBMSGBWSCROPSMATCHSUCCESSNOTICE.fields_by_name['campB'].message_type = _PBCROPSBATTLECAMP
+_PBMSGBWSCROPSFINALMATCHNOTICE.fields_by_name['camps'].message_type = _PBCROPSBATTLEFINALCAMP
+_PBCROPSBATTLECAMP.fields_by_name['member'].message_type = _PBCROPSBATTLEMEMBER
+_PBMAILCROPSREWARD.fields_by_name['items'].message_type = msg_item_pb2._PBMSGITEMQUANTITY
+_PBMSGBWSSENDREWARDMAILNOTICE.fields_by_name['mail'].message_type = _PBMAILCROPSREWARD
+_PBMSGRKSSENDCROPSMAILNOTICE.fields_by_name['items'].message_type = msg_item_pb2._PBMSGITEMQUANTITY
+_PBMSGCROPSINFOLISTNOTICE.fields_by_name['crops_list'].message_type = _PBCROPSINFONOTICE
+_PBMSGBWSSPANMAZESTATUSNOTICE.fields_by_name['status'].enum_type = msg_spanmaze_pb2._ESPANMAZESTATUS
+_PBADDGUILDLIVENESSNOTICE.fields_by_name['type'].enum_type = _EADDGUILDLIVENESSTYPE
+_PBMAGICPETINFOUPDATENOTICE.fields_by_name['magicpetinfo'].message_type = msg_magic_pet_pb2._PBMAGICPETITEM
 DESCRIPTOR.message_types_by_name['PBEgsToGateRegisterRequest'] = _PBEGSTOGATEREGISTERREQUEST
 DESCRIPTOR.message_types_by_name['PBEgsToGateRegisterResponse'] = _PBEGSTOGATEREGISTERRESPONSE
 DESCRIPTOR.message_types_by_name['PBMsgCrossStateReport'] = _PBMSGCROSSSTATEREPORT
@@ -16480,8 +19453,76 @@ DESCRIPTOR.message_types_by_name['PBMsgGuildTopBattleScoreResponse'] = _PBMSGGUI
 DESCRIPTOR.message_types_by_name['PBMsgGuildMemberIdRequest'] = _PBMSGGUILDMEMBERIDREQUEST
 DESCRIPTOR.message_types_by_name['PBMsgGuildMemberIdResponse'] = _PBMSGGUILDMEMBERIDRESPONSE
 DESCRIPTOR.message_types_by_name['PBMsgGuildStatus'] = _PBMSGGUILDSTATUS
+DESCRIPTOR.message_types_by_name['PBMsgRksRoleCropNotice'] = _PBMSGRKSROLECROPNOTICE
 DESCRIPTOR.message_types_by_name['PBMsgMsgCountNotice'] = _PBMSGMSGCOUNTNOTICE
 DESCRIPTOR.message_types_by_name['PBMsgCount'] = _PBMSGCOUNT
+DESCRIPTOR.message_types_by_name['PBMsgEgsMyCropInfoRequest'] = _PBMSGEGSMYCROPINFOREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgEgsCropsInfoRequest'] = _PBMSGEGSCROPSINFOREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgEgsFriendCropListRequest'] = _PBMSGEGSFRIENDCROPLISTREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgEgsCreateCropsRequest'] = _PBMSGEGSCREATECROPSREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgRksCreateCropsResponse'] = _PBMSGRKSCREATECROPSRESPONSE
+DESCRIPTOR.message_types_by_name['PBMsgCreateCropsNotice'] = _PBMSGCREATECROPSNOTICE
+DESCRIPTOR.message_types_by_name['PBMsgDisbandCropsNotice'] = _PBMSGDISBANDCROPSNOTICE
+DESCRIPTOR.message_types_by_name['PBMsgEgsExitCropsRequest'] = _PBMSGEGSEXITCROPSREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgRksExitCropsResponse'] = _PBMSGRKSEXITCROPSRESPONSE
+DESCRIPTOR.message_types_by_name['PBMsgEgsApplyJoinCropsRequest'] = _PBMSGEGSAPPLYJOINCROPSREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgEgsAgreeJoinCropsRequest'] = _PBMSGEGSAGREEJOINCROPSREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgRksAgreeJoinCropsResponse'] = _PBMSGRKSAGREEJOINCROPSRESPONSE
+DESCRIPTOR.message_types_by_name['PBMsgEgsInviteRequest'] = _PBMSGEGSINVITEREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgEgsInviteAnswerRequest'] = _PBMSGEGSINVITEANSWERREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgRksInviteAnswerResponse'] = _PBMSGRKSINVITEANSWERRESPONSE
+DESCRIPTOR.message_types_by_name['PBMsgEgsLeaderExamineRequest'] = _PBMSGEGSLEADEREXAMINEREQUEST
+DESCRIPTOR.message_types_by_name['PNMsgEgsCropChangeLeaderRequest'] = _PNMSGEGSCROPCHANGELEADERREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgEgsKickOutCropsRequest'] = _PBMSGEGSKICKOUTCROPSREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgRksKickOutCropResponse'] = _PBMSGRKSKICKOUTCROPRESPONSE
+DESCRIPTOR.message_types_by_name['PBMsgEgsDisbandedCropsRequest'] = _PBMSGEGSDISBANDEDCROPSREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgRksDisbandCropResponse'] = _PBMSGRKSDISBANDCROPRESPONSE
+DESCRIPTOR.message_types_by_name['PBMsgBwsCropsScoreInfoNotice'] = _PBMSGBWSCROPSSCOREINFONOTICE
+DESCRIPTOR.message_types_by_name['PBMsgEgsCropRankInfoRequest'] = _PBMSGEGSCROPRANKINFOREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgEgsStartCropsMatchRequest'] = _PBMSGEGSSTARTCROPSMATCHREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgEgsStartCropsMatchResponse'] = _PBMSGEGSSTARTCROPSMATCHRESPONSE
+DESCRIPTOR.message_types_by_name['PBMsgBwsCropsMatchSuccessNotice'] = _PBMSGBWSCROPSMATCHSUCCESSNOTICE
+DESCRIPTOR.message_types_by_name['PBMsgBwsCropsFinalMatchNotice'] = _PBMSGBWSCROPSFINALMATCHNOTICE
+DESCRIPTOR.message_types_by_name['PBCropsBattleCamp'] = _PBCROPSBATTLECAMP
+DESCRIPTOR.message_types_by_name['PBCropsBattleFinalCamp'] = _PBCROPSBATTLEFINALCAMP
+DESCRIPTOR.message_types_by_name['PBCropsBattleMember'] = _PBCROPSBATTLEMEMBER
+DESCRIPTOR.message_types_by_name['PBMsgEgsCropsBattleResultNotice'] = _PBMSGEGSCROPSBATTLERESULTNOTICE
+DESCRIPTOR.message_types_by_name['PBMsgBwsCropsLastBattleResultNotice'] = _PBMSGBWSCROPSLASTBATTLERESULTNOTICE
+DESCRIPTOR.message_types_by_name['PBMailCropsReward'] = _PBMAILCROPSREWARD
+DESCRIPTOR.message_types_by_name['PBMsgBwsSendRewardMailNotice'] = _PBMSGBWSSENDREWARDMAILNOTICE
+DESCRIPTOR.message_types_by_name['PBMsgRksSendCropsMailNotice'] = _PBMSGRKSSENDCROPSMAILNOTICE
+DESCRIPTOR.message_types_by_name['PBMsgEgsFinalMatchRequest'] = _PBMSGEGSFINALMATCHREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgTeamBattleStatusNotice'] = _PBMSGTEAMBATTLESTATUSNOTICE
+DESCRIPTOR.message_types_by_name['PBMsgEgsStartMatchingNotice'] = _PBMSGEGSSTARTMATCHINGNOTICE
+DESCRIPTOR.message_types_by_name['PBMsgEgsGetReadyMatchingNotice'] = _PBMSGEGSGETREADYMATCHINGNOTICE
+DESCRIPTOR.message_types_by_name['PBMsgBwsCropsEnterFinalMatchNotice'] = _PBMSGBWSCROPSENTERFINALMATCHNOTICE
+DESCRIPTOR.message_types_by_name['PBMsgSpanTeamFightTableRequest'] = _PBMSGSPANTEAMFIGHTTABLEREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgSpanTeamNextMatchNotice'] = _PBMSGSPANTEAMNEXTMATCHNOTICE
+DESCRIPTOR.message_types_by_name['PBCropsInfoNotice'] = _PBCROPSINFONOTICE
+DESCRIPTOR.message_types_by_name['PBMsgCropsInfoListNotice'] = _PBMSGCROPSINFOLISTNOTICE
+DESCRIPTOR.message_types_by_name['PBMsgBwsSpanTeamCancelMatchingNotice'] = _PBMSGBWSSPANTEAMCANCELMATCHINGNOTICE
+DESCRIPTOR.message_types_by_name['PBMsgRksSpanTeamCancelMatchingNotice'] = _PBMSGRKSSPANTEAMCANCELMATCHINGNOTICE
+DESCRIPTOR.message_types_by_name['PBMsgEgsCancelReadyStatusNotice'] = _PBMSGEGSCANCELREADYSTATUSNOTICE
+DESCRIPTOR.message_types_by_name['PBMsgRksCancelMatchingNotice'] = _PBMSGRKSCANCELMATCHINGNOTICE
+DESCRIPTOR.message_types_by_name['PBMsgEgsSpanMazeSignRequest'] = _PBMSGEGSSPANMAZESIGNREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgBwsSpanMazeSignResponse'] = _PBMSGBWSSPANMAZESIGNRESPONSE
+DESCRIPTOR.message_types_by_name['PBMsgEgsSpanMazeSignCheckRequest'] = _PBMSGEGSSPANMAZESIGNCHECKREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgBwsSpanMazeSignCheckResponse'] = _PBMSGBWSSPANMAZESIGNCHECKRESPONSE
+DESCRIPTOR.message_types_by_name['PBMsgEgsSpanMazeEnterRequest'] = _PBMSGEGSSPANMAZEENTERREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgBwsSpanMazeEnterResponse'] = _PBMSGBWSSPANMAZEENTERRESPONSE
+DESCRIPTOR.message_types_by_name['PBMsgBwsSpanMazeEnterDungeonRequest'] = _PBMSGBWSSPANMAZEENTERDUNGEONREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgEgsSpanMazeEnterDungeonResponse'] = _PBMSGEGSSPANMAZEENTERDUNGEONRESPONSE
+DESCRIPTOR.message_types_by_name['PBMsgBwsSpanMazeStatusNotice'] = _PBMSGBWSSPANMAZESTATUSNOTICE
+DESCRIPTOR.message_types_by_name['PBMsgBwsSpanMazeCreateDungeonRequest'] = _PBMSGBWSSPANMAZECREATEDUNGEONREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgEgsSpanMazeCreateDungeonResponse'] = _PBMSGEGSSPANMAZECREATEDUNGEONRESPONSE
+DESCRIPTOR.message_types_by_name['PBMsgBwsSpanMazeRoleListNotice'] = _PBMSGBWSSPANMAZEROLELISTNOTICE
+DESCRIPTOR.message_types_by_name['PBAddGuildLivenessNotice'] = _PBADDGUILDLIVENESSNOTICE
+DESCRIPTOR.message_types_by_name['PBGuildLivenessSyncNotice'] = _PBGUILDLIVENESSSYNCNOTICE
+DESCRIPTOR.message_types_by_name['PBGuildLastHitRewardRequest'] = _PBGUILDLASTHITREWARDREQUEST
+DESCRIPTOR.message_types_by_name['PBGuildLastHitRewardResponse'] = _PBGUILDLASTHITREWARDRESPONSE
+DESCRIPTOR.message_types_by_name['PBGuildMaxDmgRewardRequest'] = _PBGUILDMAXDMGREWARDREQUEST
+DESCRIPTOR.message_types_by_name['PBGuildMaxDmgRewardResponse'] = _PBGUILDMAXDMGREWARDRESPONSE
+DESCRIPTOR.message_types_by_name['PBMagicPetInfoUpdateNotice'] = _PBMAGICPETINFOUPDATENOTICE
 
 class PBEgsToGateRegisterRequest(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
@@ -18463,6 +21504,12 @@ class PBMsgGuildStatus(message.Message):
   
   # @@protoc_insertion_point(class_scope:PBMsgGuildStatus)
 
+class PBMsgRksRoleCropNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGRKSROLECROPNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgRksRoleCropNotice)
+
 class PBMsgMsgCountNotice(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _PBMSGMSGCOUNTNOTICE
@@ -18474,5 +21521,407 @@ class PBMsgCount(message.Message):
   DESCRIPTOR = _PBMSGCOUNT
   
   # @@protoc_insertion_point(class_scope:PBMsgCount)
+
+class PBMsgEgsMyCropInfoRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSMYCROPINFOREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsMyCropInfoRequest)
+
+class PBMsgEgsCropsInfoRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSCROPSINFOREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsCropsInfoRequest)
+
+class PBMsgEgsFriendCropListRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSFRIENDCROPLISTREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsFriendCropListRequest)
+
+class PBMsgEgsCreateCropsRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSCREATECROPSREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsCreateCropsRequest)
+
+class PBMsgRksCreateCropsResponse(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGRKSCREATECROPSRESPONSE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgRksCreateCropsResponse)
+
+class PBMsgCreateCropsNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGCREATECROPSNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgCreateCropsNotice)
+
+class PBMsgDisbandCropsNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGDISBANDCROPSNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgDisbandCropsNotice)
+
+class PBMsgEgsExitCropsRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSEXITCROPSREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsExitCropsRequest)
+
+class PBMsgRksExitCropsResponse(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGRKSEXITCROPSRESPONSE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgRksExitCropsResponse)
+
+class PBMsgEgsApplyJoinCropsRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSAPPLYJOINCROPSREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsApplyJoinCropsRequest)
+
+class PBMsgEgsAgreeJoinCropsRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSAGREEJOINCROPSREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsAgreeJoinCropsRequest)
+
+class PBMsgRksAgreeJoinCropsResponse(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGRKSAGREEJOINCROPSRESPONSE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgRksAgreeJoinCropsResponse)
+
+class PBMsgEgsInviteRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSINVITEREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsInviteRequest)
+
+class PBMsgEgsInviteAnswerRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSINVITEANSWERREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsInviteAnswerRequest)
+
+class PBMsgRksInviteAnswerResponse(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGRKSINVITEANSWERRESPONSE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgRksInviteAnswerResponse)
+
+class PBMsgEgsLeaderExamineRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSLEADEREXAMINEREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsLeaderExamineRequest)
+
+class PNMsgEgsCropChangeLeaderRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PNMSGEGSCROPCHANGELEADERREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PNMsgEgsCropChangeLeaderRequest)
+
+class PBMsgEgsKickOutCropsRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSKICKOUTCROPSREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsKickOutCropsRequest)
+
+class PBMsgRksKickOutCropResponse(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGRKSKICKOUTCROPRESPONSE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgRksKickOutCropResponse)
+
+class PBMsgEgsDisbandedCropsRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSDISBANDEDCROPSREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsDisbandedCropsRequest)
+
+class PBMsgRksDisbandCropResponse(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGRKSDISBANDCROPRESPONSE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgRksDisbandCropResponse)
+
+class PBMsgBwsCropsScoreInfoNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGBWSCROPSSCOREINFONOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgBwsCropsScoreInfoNotice)
+
+class PBMsgEgsCropRankInfoRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSCROPRANKINFOREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsCropRankInfoRequest)
+
+class PBMsgEgsStartCropsMatchRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSSTARTCROPSMATCHREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsStartCropsMatchRequest)
+
+class PBMsgEgsStartCropsMatchResponse(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSSTARTCROPSMATCHRESPONSE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsStartCropsMatchResponse)
+
+class PBMsgBwsCropsMatchSuccessNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGBWSCROPSMATCHSUCCESSNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgBwsCropsMatchSuccessNotice)
+
+class PBMsgBwsCropsFinalMatchNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGBWSCROPSFINALMATCHNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgBwsCropsFinalMatchNotice)
+
+class PBCropsBattleCamp(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBCROPSBATTLECAMP
+  
+  # @@protoc_insertion_point(class_scope:PBCropsBattleCamp)
+
+class PBCropsBattleFinalCamp(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBCROPSBATTLEFINALCAMP
+  
+  # @@protoc_insertion_point(class_scope:PBCropsBattleFinalCamp)
+
+class PBCropsBattleMember(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBCROPSBATTLEMEMBER
+  
+  # @@protoc_insertion_point(class_scope:PBCropsBattleMember)
+
+class PBMsgEgsCropsBattleResultNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSCROPSBATTLERESULTNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsCropsBattleResultNotice)
+
+class PBMsgBwsCropsLastBattleResultNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGBWSCROPSLASTBATTLERESULTNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgBwsCropsLastBattleResultNotice)
+
+class PBMailCropsReward(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMAILCROPSREWARD
+  
+  # @@protoc_insertion_point(class_scope:PBMailCropsReward)
+
+class PBMsgBwsSendRewardMailNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGBWSSENDREWARDMAILNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgBwsSendRewardMailNotice)
+
+class PBMsgRksSendCropsMailNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGRKSSENDCROPSMAILNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgRksSendCropsMailNotice)
+
+class PBMsgEgsFinalMatchRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSFINALMATCHREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsFinalMatchRequest)
+
+class PBMsgTeamBattleStatusNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGTEAMBATTLESTATUSNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgTeamBattleStatusNotice)
+
+class PBMsgEgsStartMatchingNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSSTARTMATCHINGNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsStartMatchingNotice)
+
+class PBMsgEgsGetReadyMatchingNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSGETREADYMATCHINGNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsGetReadyMatchingNotice)
+
+class PBMsgBwsCropsEnterFinalMatchNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGBWSCROPSENTERFINALMATCHNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgBwsCropsEnterFinalMatchNotice)
+
+class PBMsgSpanTeamFightTableRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGSPANTEAMFIGHTTABLEREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgSpanTeamFightTableRequest)
+
+class PBMsgSpanTeamNextMatchNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGSPANTEAMNEXTMATCHNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgSpanTeamNextMatchNotice)
+
+class PBCropsInfoNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBCROPSINFONOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBCropsInfoNotice)
+
+class PBMsgCropsInfoListNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGCROPSINFOLISTNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgCropsInfoListNotice)
+
+class PBMsgBwsSpanTeamCancelMatchingNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGBWSSPANTEAMCANCELMATCHINGNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgBwsSpanTeamCancelMatchingNotice)
+
+class PBMsgRksSpanTeamCancelMatchingNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGRKSSPANTEAMCANCELMATCHINGNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgRksSpanTeamCancelMatchingNotice)
+
+class PBMsgEgsCancelReadyStatusNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSCANCELREADYSTATUSNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsCancelReadyStatusNotice)
+
+class PBMsgRksCancelMatchingNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGRKSCANCELMATCHINGNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgRksCancelMatchingNotice)
+
+class PBMsgEgsSpanMazeSignRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSSPANMAZESIGNREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsSpanMazeSignRequest)
+
+class PBMsgBwsSpanMazeSignResponse(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGBWSSPANMAZESIGNRESPONSE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgBwsSpanMazeSignResponse)
+
+class PBMsgEgsSpanMazeSignCheckRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSSPANMAZESIGNCHECKREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsSpanMazeSignCheckRequest)
+
+class PBMsgBwsSpanMazeSignCheckResponse(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGBWSSPANMAZESIGNCHECKRESPONSE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgBwsSpanMazeSignCheckResponse)
+
+class PBMsgEgsSpanMazeEnterRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSSPANMAZEENTERREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsSpanMazeEnterRequest)
+
+class PBMsgBwsSpanMazeEnterResponse(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGBWSSPANMAZEENTERRESPONSE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgBwsSpanMazeEnterResponse)
+
+class PBMsgBwsSpanMazeEnterDungeonRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGBWSSPANMAZEENTERDUNGEONREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgBwsSpanMazeEnterDungeonRequest)
+
+class PBMsgEgsSpanMazeEnterDungeonResponse(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSSPANMAZEENTERDUNGEONRESPONSE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsSpanMazeEnterDungeonResponse)
+
+class PBMsgBwsSpanMazeStatusNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGBWSSPANMAZESTATUSNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgBwsSpanMazeStatusNotice)
+
+class PBMsgBwsSpanMazeCreateDungeonRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGBWSSPANMAZECREATEDUNGEONREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgBwsSpanMazeCreateDungeonRequest)
+
+class PBMsgEgsSpanMazeCreateDungeonResponse(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGEGSSPANMAZECREATEDUNGEONRESPONSE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgEgsSpanMazeCreateDungeonResponse)
+
+class PBMsgBwsSpanMazeRoleListNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGBWSSPANMAZEROLELISTNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgBwsSpanMazeRoleListNotice)
+
+class PBAddGuildLivenessNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBADDGUILDLIVENESSNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBAddGuildLivenessNotice)
+
+class PBGuildLivenessSyncNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBGUILDLIVENESSSYNCNOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBGuildLivenessSyncNotice)
+
+class PBGuildLastHitRewardRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBGUILDLASTHITREWARDREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBGuildLastHitRewardRequest)
+
+class PBGuildLastHitRewardResponse(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBGUILDLASTHITREWARDRESPONSE
+  
+  # @@protoc_insertion_point(class_scope:PBGuildLastHitRewardResponse)
+
+class PBGuildMaxDmgRewardRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBGUILDMAXDMGREWARDREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBGuildMaxDmgRewardRequest)
+
+class PBGuildMaxDmgRewardResponse(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBGUILDMAXDMGREWARDRESPONSE
+  
+  # @@protoc_insertion_point(class_scope:PBGuildMaxDmgRewardResponse)
+
+class PBMagicPetInfoUpdateNotice(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMAGICPETINFOUPDATENOTICE
+  
+  # @@protoc_insertion_point(class_scope:PBMagicPetInfoUpdateNotice)
 
 # @@protoc_insertion_point(module_scope)

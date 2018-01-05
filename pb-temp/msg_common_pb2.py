@@ -13,7 +13,7 @@ import msg_login_pb2
 DESCRIPTOR = descriptor.FileDescriptor(
   name='msg_common.proto',
   package='',
-  serialized_pb='\n\x10msg_common.proto\x1a\x0emsg_base.proto\x1a\x0fmsg_login.proto\"<\n\x11PBErrCodeResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x05\x12\x15\n\rret_code_name\x18\x02 \x01(\t\"$\n\x10PBCommonResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x05\"\'\n\x13PBMessageCodeNotice\x12\x10\n\x08ret_code\x18\x01 \x01(\x05\"R\n\x0ePBCharPosition\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\x12\t\n\x01z\x18\x03 \x01(\x05\x12\x0f\n\x07heading\x18\x04 \x01(\x02\x12\x0e\n\x06map_id\x18\x05 \x01(\r\":\n\x08PBDynStr\x12\x10\n\x08str_name\x18\x01 \x01(\t\x12\x1c\n\nstr_params\x18\x02 \x03(\x0b\x32\x08.PBParam\"M\n\x05PBStr\x12\x12\n\nis_dyn_str\x18\x01 \x01(\x08\x12\x14\n\x0coriginal_str\x18\x02 \x01(\t\x12\x1a\n\x07\x64yn_str\x18\x03 \x01(\x0b\x32\t.PBDynStr\"N\n\rPBChatRequire\x12\x14\n\x0c\x63hat_channel\x18\x01 \x01(\r\x12\x14\n\x0c\x63hat_content\x18\x02 \x01(\t\x12\x11\n\titem_slot\x18\x03 \x01(\r\"6\n\rPBPrivateChat\x12\x0f\n\x07role_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x63hat_content\x18\x02 \x01(\t\"\xfc\x01\n\rPBChatContent\x12\x14\n\x0c\x63hat_channel\x18\x01 \x01(\r\x12\x11\n\tsender_id\x18\x02 \x01(\x04\x12\x13\n\x0bsender_name\x18\x03 \x01(\t\x12\x11\n\tvip_level\x18\x04 \x01(\x11\x12\x0f\n\x07team_id\x18\x05 \x01(\x11\x12\x1c\n\x0c\x63hat_content\x18\x06 \x01(\x0b\x32\x06.PBStr\x12\x0c\n\x04role\x18\x07 \x01(\x11\x12\x0e\n\x06gender\x18\x08 \x01(\x11\x12\x11\n\tcamp_type\x18\t \x01(\x11\x12\x13\n\x0bguild_title\x18\n \x01(\r\x12\x11\n\thead_icon\x18\x0b \x01(\t\x12\x12\n\ngateway_id\x18\x0c \x01(\r\"\x86\x01\n\tPBNPCInfo\x12\x11\n\tnpc_alias\x18\x01 \x01(\r\x12\x0e\n\x06map_id\x18\x02 \x01(\r\x12\r\n\x05pos_x\x18\x03 \x01(\x11\x12\r\n\x05pos_y\x18\x04 \x01(\x11\x12\x10\n\x08npc_name\x18\x05 \x01(\t\x12\x14\n\x0cword_welcome\x18\x06 \x01(\t\x12\x10\n\x08sheet_id\x18\x07 \x01(\r\"-\n\rPBNPCInfoList\x12\x1c\n\x08npc_info\x18\x01 \x03(\x0b\x32\n.PBNPCInfo\"\xd4\x02\n\x1aPBMsgUpdateCharMoneyNotice\x12\x17\n\x0funbound_yuanbao\x18\x01 \x01(\x11\x12\x15\n\rbound_yuanbao\x18\x02 \x01(\x11\x12\x0c\n\x04horn\x18\x03 \x01(\x11\x12\x15\n\runbound_money\x18\x04 \x01(\x11\x12\x0e\n\x06lingqi\x18\x05 \x01(\x11\x12\x0e\n\x06zhenqi\x18\x06 \x01(\x12\x12\x15\n\ryouqing_point\x18\x07 \x01(\x11\x12\x0e\n\x06\x65nergy\x18\x08 \x01(\x11\x12\x13\n\x0brush_ticket\x18\t \x01(\x11\x12\x14\n\x0cguild_salary\x18\n \x01(\x11\x12\x1a\n\x12guild_contribution\x18\x0b \x01(\x11\x12\x0c\n\x04qili\x18\x0c \x01(\x11\x12\x0e\n\x06renown\x18\r \x01(\x11\x12\x0f\n\x07\x65xploit\x18\x0e \x01(\x11\x12\r\n\x05jifen\x18\x0f \x01(\x11\x12\x15\n\rpet_pvp_jifen\x18\x10 \x01(\x11\"m\n\x14PBMsgPathFindRequest\x12\x0f\n\x07path_ty\x18\x01 \x01(\x11\x12\x10\n\x08map_from\x18\x02 \x01(\x11\x12\x0e\n\x06map_to\x18\x03 \x01(\x11\x12\x11\n\tcamp_from\x18\x04 \x01(\x11\x12\x0f\n\x07\x63\x61mp_to\x18\x05 \x01(\x11\"U\n\x13PBMsgPathFindOption\x12\x0e\n\x06npc_id\x18\x01 \x01(\x04\x12\x10\n\x08menu_idx\x18\x02 \x01(\x11\x12\r\n\x05pos_x\x18\x03 \x01(\x11\x12\r\n\x05pos_y\x18\x04 \x01(\x11\"O\n\x11PBMsgPathFindNode\x12\x0e\n\x06map_id\x18\x01 \x01(\x11\x12*\n\x0cpath_options\x18\x02 \x03(\x0b\x32\x14.PBMsgPathFindOption\"b\n\x15PBMsgPathFindResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x05\x12\x0f\n\x07path_ty\x18\x02 \x01(\x11\x12&\n\npath_nodes\x18\x03 \x03(\x0b\x32\x12.PBMsgPathFindNode\"^\n\x17PBMsgNpcTeleportRequest\x12\x0f\n\x07line_id\x18\x01 \x01(\x11\x12\x0e\n\x06npc_id\x18\x02 \x01(\x04\x12\x10\n\x08npc_name\x18\x03 \x01(\t\x12\x10\n\x08menu_idx\x18\x04 \x01(\x11\"J\n\x18PBMsgNpcTeleportResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x05\x12\x1c\n\ncode_param\x18\x02 \x01(\x0b\x32\x08.PBParam\"J\n\x18PBMsgItemTeleportRequest\x12\x1d\n\x08position\x18\x01 \x01(\x0b\x32\x0b.PBPosition\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\x05\"K\n\x19PBMsgItemTeleportResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x05\x12\x1c\n\ncode_param\x18\x02 \x01(\x0b\x32\x08.PBParam\"P\n\x1bPBMsgNpcSpanTeleportRequest\x12\x0f\n\x07line_id\x18\x01 \x01(\x11\x12\x0e\n\x06npc_id\x18\x02 \x01(\x04\x12\x10\n\x08npc_name\x18\x03 \x01(\t\"N\n\x1cPBMsgNpcSpanTeleportResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x05\x12\x1c\n\ncode_param\x18\x02 \x01(\x0b\x32\x08.PBParam\"K\n\x18PBMsgClientInBlockReport\x12\x0e\n\x06map_id\x18\x01 \x01(\x05\x12\t\n\x01x\x18\x02 \x01(\x05\x12\t\n\x01y\x18\x03 \x01(\x05\x12\t\n\x01z\x18\x04 \x01(\x05\"D\n\x10PBClientPosition\x12\t\n\x01x\x18\x01 \x01(\x11\x12\t\n\x01y\x18\x02 \x01(\x11\x12\t\n\x01z\x18\x03 \x01(\x11\x12\x0f\n\x07heading\x18\x04 \x01(\x02\"\xb4\x01\n\x18PBMsgPostionUpdateReport\x12\x0e\n\x06seq_id\x18\x01 \x01(\x04\x12\x0f\n\x07version\x18\x02 \x01(\r\x12\x10\n\x08\x63hecksum\x18\x03 \x01(\r\x12\x0c\n\x04tick\x18\x04 \x01(\r\x12\x0e\n\x06reason\x18\x05 \x01(\r\x12\"\n\x07new_pos\x18\x06 \x01(\x0b\x32\x11.PBClientPosition\x12#\n\x08next_pos\x18\x07 \x01(\x0b\x32\x11.PBClientPosition\")\n\x17PBMsgPostionSeqIdNotice\x12\x0e\n\x06seq_id\x18\x01 \x01(\x04\"\xa4\x02\n\x11PBMsgRankCharNode\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x11\n\tchar_name\x18\x02 \x01(\t\x12\x11\n\tchar_role\x18\x03 \x01(\x11\x12\x10\n\x08\x63har_sex\x18\x04 \x01(\x11\x12\x12\n\nchar_level\x18\x05 \x01(\x11\x12\x12\n\nguild_name\x18\x06 \x01(\t\x12\x10\n\x08rank_val\x18\x07 \x01(\x11\x12\x12\n\nrank_trend\x18\x08 \x01(\x11\x12\x11\n\tchar_camp\x18\t \x01(\x11\x12\x18\n\x10\x63har_battlescore\x18\n \x01(\x11\x12\x0f\n\x07role_id\x18\x0b \x01(\x11\x12\x14\n\x0c\x63har_petname\x18\x0c \x01(\t\x12\x11\n\tpet_sheet\x18\r \x01(\t\x12\x11\n\thead_icon\x18\x0e \x01(\t\"\xa7\x02\n\x12PBMsgRankGuildNode\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x12\n\nguild_name\x18\x02 \x01(\t\x12\x13\n\x0bguild_level\x18\x03 \x01(\x11\x12\x11\n\tmaster_id\x18\x04 \x01(\x04\x12\x13\n\x0bmaster_name\x18\x05 \x01(\t\x12\x11\n\tchar_role\x18\x06 \x01(\x11\x12\x10\n\x08\x63har_sex\x18\x07 \x01(\x11\x12\x12\n\nchar_level\x18\x08 \x01(\x11\x12\x11\n\tchar_camp\x18\t \x01(\x11\x12\x18\n\x10\x63har_battlescore\x18\n \x01(\x11\x12\x0f\n\x07role_id\x18\x0b \x01(\x11\x12\x10\n\x08rank_val\x18\x0c \x01(\x11\x12\x12\n\nrank_trend\x18\r \x01(\x11\x12\x11\n\thead_icon\x18\x0e \x01(\t\";\n\x14PBMsgRankInfoRequest\x12\x12\n\nrank_scope\x18\x01 \x01(\x11\x12\x0f\n\x07rank_ty\x18\x02 \x01(\x11\"y\n\x15PBMsgCharRankResponse\x12\x12\n\nrank_scope\x18\x01 \x01(\x11\x12\x0f\n\x07rank_ty\x18\x02 \x01(\x11\x12\x13\n\x0bremain_time\x18\x03 \x01(\r\x12&\n\nrank_chars\x18\x04 \x03(\x0b\x32\x12.PBMsgRankCharNode\"|\n\x16PBMsgGuildRankResponse\x12\x12\n\nrank_scope\x18\x01 \x01(\x11\x12\x0f\n\x07rank_ty\x18\x02 \x01(\x11\x12\x13\n\x0bremain_time\x18\x03 \x01(\r\x12(\n\x0brank_guilds\x18\x04 \x03(\x0b\x32\x13.PBMsgRankGuildNode\"\x8f\x01\n\x19PBMsgCharMineRankResponse\x12\x12\n\nrank_scope\x18\x01 \x01(\x11\x12\x0f\n\x07rank_ty\x18\x02 \x01(\x11\x12\x11\n\trank_mine\x18\x03 \x01(\x11\x12\x12\n\nrank_begin\x18\x04 \x01(\x11\x12&\n\nrank_chars\x18\x05 \x03(\x0b\x32\x12.PBMsgRankCharNode\"\x92\x01\n\x1aPBMsgGuildMineRankResponse\x12\x12\n\nrank_scope\x18\x01 \x01(\x11\x12\x0f\n\x07rank_ty\x18\x02 \x01(\x11\x12\x11\n\trank_mine\x18\x03 \x01(\x11\x12\x12\n\nrank_begin\x18\x04 \x01(\x11\x12(\n\x0brank_guilds\x18\x05 \x03(\x0b\x32\x13.PBMsgRankGuildNode\"\x8a\x02\n\x16PBMsgJusticeInfoNotice\x12\x15\n\rjustice_value\x18\x01 \x01(\x05\x12\x15\n\rjustice_level\x18\x02 \x01(\x05\x12\x18\n\x10justice_dayValue\x18\x03 \x01(\x05\x12\x1a\n\x12justice_limitvalue\x18\x04 \x01(\x05\x12\x17\n\x0fjustice_upvalue\x18\x05 \x01(\x05\x12\x12\n\nevil_value\x18\x06 \x01(\x05\x12\x12\n\nevil_level\x18\x07 \x01(\x05\x12\x14\n\x0c\x65vil_upvalue\x18\x08 \x01(\x05\x12\x1b\n\x13justice_changevalue\x18\t \x01(\x05\x12\x18\n\x10\x65vil_changevalue\x18\n \x01(\x05\"%\n\x15PBMsgChangeLineNotice\x12\x0c\n\x04line\x18\x01 \x01(\x05\",\n\x1aPBMsgWorldLevelInfoRequest\x12\x0e\n\x06wl_ids\x18\x01 \x03(\x11\"R\n\x1bPBMsgWorldLevelInfoResponse\x12\x1f\n\x05infos\x18\x01 \x01(\x0b\x32\x10.PBWLAllRankInfo\x12\x12\n\ncurrent_id\x18\x02 \x01(\x11\"I\n\x0fPBWLAllRankInfo\x12\"\n\x05ranks\x18\x01 \x03(\x0b\x32\x13.PBWLSingleRankInfo\x12\x12\n\ncurrent_id\x18\x02 \x01(\x11\"}\n\x12PBWLSingleRankInfo\x12\r\n\x05wl_id\x18\x01 \x01(\x11\x12 \n\x07players\x18\x02 \x03(\x0b\x32\x0f.PBWLPlayerInfo\x12\x12\n\nstart_time\x18\x03 \x01(\r\x12\x0f\n\x07team_id\x18\x04 \x01(\r\x12\x11\n\topen_time\x18\x05 \x01(\r\"\x9d\x01\n\x0ePBWLPlayerInfo\x12\x11\n\tplayer_id\x18\x01 \x01(\x04\x12\x14\n\x0cplayer_level\x18\x03 \x01(\x11\x12\x13\n\x0bplayer_name\x18\x04 \x01(\t\x12\x11\n\tcamp_type\x18\x05 \x01(\x11\x12\x0b\n\x03sex\x18\x06 \x01(\x11\x12\x0c\n\x04rank\x18\x07 \x01(\x11\x12\x11\n\trole_type\x18\x08 \x01(\x11\x12\x0c\n\x04icon\x18\t \x01(\t\"g\n\x11PBWorldLevelAward\x12\r\n\x05wl_id\x18\x01 \x01(\x11\x12\x10\n\x08is_first\x18\x02 \x01(\x08\x12 \n\x07players\x18\x03 \x03(\x0b\x32\x0f.PBWLPlayerInfo\x12\x0f\n\x07team_id\x18\x04 \x01(\r\"6\n\x13PBMsgCharIconChange\x12\x11\n\tplayer_id\x18\x01 \x01(\x04\x12\x0c\n\x04icon\x18\x02 \x01(\t\"Y\n\x11PBMsgCharBaseInfo\x12\x11\n\thead_icon\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\r\x12\x0e\n\x06gender\x18\x03 \x01(\r\x12\x13\n\x0bserver_camp\x18\x04 \x01(\r\"\x1d\n\x1bPBMsgClientLoadRoleOKReport\"Q\n\x17PBMsgSomeCharInfoNotice\x12\n\n\x02hp\x18\x01 \x01(\r\x12\x0e\n\x06max_hp\x18\x02 \x01(\r\x12\n\n\x02mp\x18\x03 \x01(\r\x12\x0e\n\x06max_mp\x18\x04 \x01(\r\"y\n\x1cPBMsgClientDoSomethingNotice\x12\x1c\n\x08\x63md_type\x18\x01 \x01(\x0e\x32\n.PBCmdType\x12\x11\n\tshow_code\x18\x02 \x01(\x11\x12\x14\n\x0cneed_confirm\x18\x03 \x01(\x08\x12\x12\n\nparameters\x18\x04 \x03(\t\"E\n\x11PBMsgDoCmdRequest\x12\x1c\n\x08\x63md_type\x18\x01 \x01(\x0e\x32\n.PBCmdType\x12\x12\n\nparameters\x18\x02 \x03(\t\"c\n\nPBCostInfo\x12\x19\n\x04type\x18\x01 \x01(\x0e\x32\x0b.PBCostType\x12\x12\n\nitem_sheet\x18\x02 \x01(\x11\x12\x14\n\x0c\x63onsume_type\x18\x03 \x01(\x11\x12\x10\n\x08quantity\x18\x04 \x01(\x11\",\n\x0ePBCostInfoList\x12\x1a\n\x05money\x18\x01 \x03(\x0b\x32\x0b.PBCostInfo\"{\n\x0bPBLogAction\x12\x13\n\x0b\x61\x63tion_type\x18\x01 \x01(\x11\x12\x17\n\x0f\x61\x63tion_son_type\x18\x02 \x01(\x11\x12\x0e\n\x06param1\x18\x03 \x01(\x11\x12\x0e\n\x06param2\x18\x04 \x01(\x11\x12\x0e\n\x06param3\x18\x05 \x01(\x04\x12\x0e\n\x06param4\x18\x06 \x01(\x04\":\n\x16PBMsgSpanWildScoreItem\x12\x11\n\tchar_name\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x11\"\x7f\n\x18PBMsgSpanWildScoreNotice\x12\r\n\x05state\x18\x01 \x01(\x11\x12)\n\x08mineinfo\x18\x02 \x01(\x0b\x32\x17.PBMsgSpanWildScoreItem\x12)\n\x08rankinfo\x18\x03 \x03(\x0b\x32\x17.PBMsgSpanWildScoreItem\"=\n\x1bPBMsgCanTPToSpanWildRequest\x12\x0b\n\x03num\x18\x01 \x01(\x11\x12\x11\n\tsessionid\x18\x02 \x01(\r\"P\n\x1cPBMsgCanTPToSpanWildResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0b\n\x03num\x18\x02 \x01(\x11\x12\x11\n\tsessionid\x18\x03 \x01(\r\",\n\x1dPBMsgTPToSpanWildAddNumNotice\x12\x0b\n\x03num\x18\x01 \x01(\x11\"k\n!PBMsgMemberCanTPToSpanWildRequest\x12\x10\n\x08leaderid\x18\x01 \x01(\r\x12\x10\n\x08memberid\x18\x02 \x01(\r\x12\x0f\n\x07sheetid\x18\x03 \x01(\t\x12\x11\n\tsessionid\x18\x04 \x01(\r\"\x9d\x01\n\"PBMsgMemberCanTPToSpanWildResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0e\n\x06reason\x18\x02 \x01(\x11\x12\r\n\x05param\x18\x03 \x01(\x12\x12\x10\n\x08leaderid\x18\x04 \x01(\r\x12\x10\n\x08memberid\x18\x05 \x01(\r\x12\x0f\n\x07sheetid\x18\x06 \x01(\t\x12\x11\n\tsessionid\x18\x07 \x01(\r\"I\n\x1bPBMsgMemberSpanWildTPNotice\x12\x10\n\x08memberid\x18\x01 \x01(\r\x12\x18\n\x03pos\x18\x02 \x01(\x0b\x32\x0b.PBPosition\"(\n\x13PBGuildMemberIdList\x12\x11\n\tmember_id\x18\x01 \x03(\x04*K\n\x0ePBCurrencyType\x12\x13\n\x0f\x65\x43T_BlueDiamond\x10\x05\x12\x12\n\x0e\x65\x43T_RedDiamond\x10\x06\x12\x10\n\x0c\x65\x43T_GoldCoin\x10\x0e*\x8a\x01\n\x13PBCreatureTitleType\x12\x19\n\x15\x65nCreatureType_Normal\x10\x01\x12\x1f\n\x1b\x65nCreatureType_SpanImbattle\x10\x02\x12\x19\n\x15\x65nCreatureType_DyName\x10\x03\x12\x1c\n\x18\x65nCreatureType_WildManor\x10\x04*s\n\tPBCmdType\x12\x19\n\x15\x65nPBCmdType_PBMessage\x10\x01\x12\x1a\n\x16\x65nPBCmdType_RawMessage\x10\x02\x12\x16\n\x12\x65nPBCmdType_OpenUI\x10\x03\x12\x17\n\x13\x65nPBCmdType_CloseUI\x10\x04*=\n\nPBCostType\x12\x18\n\x14\x65nPBCostType_Curreny\x10\x01\x12\x15\n\x11\x65nPBCostType_Item\x10\x02')
+  serialized_pb='\n\x10msg_common.proto\x1a\x0emsg_base.proto\x1a\x0fmsg_login.proto\"<\n\x11PBErrCodeResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x05\x12\x15\n\rret_code_name\x18\x02 \x01(\t\"$\n\x10PBCommonResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x05\"\'\n\x13PBMessageCodeNotice\x12\x10\n\x08ret_code\x18\x01 \x01(\x05\"R\n\x0ePBCharPosition\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\x12\t\n\x01z\x18\x03 \x01(\x05\x12\x0f\n\x07heading\x18\x04 \x01(\x02\x12\x0e\n\x06map_id\x18\x05 \x01(\r\":\n\x08PBDynStr\x12\x10\n\x08str_name\x18\x01 \x01(\t\x12\x1c\n\nstr_params\x18\x02 \x03(\x0b\x32\x08.PBParam\"M\n\x05PBStr\x12\x12\n\nis_dyn_str\x18\x01 \x01(\x08\x12\x14\n\x0coriginal_str\x18\x02 \x01(\t\x12\x1a\n\x07\x64yn_str\x18\x03 \x01(\x0b\x32\t.PBDynStr\"N\n\rPBChatRequire\x12\x14\n\x0c\x63hat_channel\x18\x01 \x01(\r\x12\x14\n\x0c\x63hat_content\x18\x02 \x01(\t\x12\x11\n\titem_slot\x18\x03 \x01(\r\"6\n\rPBPrivateChat\x12\x0f\n\x07role_id\x18\x01 \x01(\x04\x12\x14\n\x0c\x63hat_content\x18\x02 \x01(\t\"\xfc\x01\n\rPBChatContent\x12\x14\n\x0c\x63hat_channel\x18\x01 \x01(\r\x12\x11\n\tsender_id\x18\x02 \x01(\x04\x12\x13\n\x0bsender_name\x18\x03 \x01(\t\x12\x11\n\tvip_level\x18\x04 \x01(\x11\x12\x0f\n\x07team_id\x18\x05 \x01(\x11\x12\x1c\n\x0c\x63hat_content\x18\x06 \x01(\x0b\x32\x06.PBStr\x12\x0c\n\x04role\x18\x07 \x01(\x11\x12\x0e\n\x06gender\x18\x08 \x01(\x11\x12\x11\n\tcamp_type\x18\t \x01(\x11\x12\x13\n\x0bguild_title\x18\n \x01(\r\x12\x11\n\thead_icon\x18\x0b \x01(\t\x12\x12\n\ngateway_id\x18\x0c \x01(\r\"\x86\x01\n\tPBNPCInfo\x12\x11\n\tnpc_alias\x18\x01 \x01(\r\x12\x0e\n\x06map_id\x18\x02 \x01(\r\x12\r\n\x05pos_x\x18\x03 \x01(\x11\x12\r\n\x05pos_y\x18\x04 \x01(\x11\x12\x10\n\x08npc_name\x18\x05 \x01(\t\x12\x14\n\x0cword_welcome\x18\x06 \x01(\t\x12\x10\n\x08sheet_id\x18\x07 \x01(\r\"-\n\rPBNPCInfoList\x12\x1c\n\x08npc_info\x18\x01 \x03(\x0b\x32\n.PBNPCInfo\"\xec\x02\n\x1aPBMsgUpdateCharMoneyNotice\x12\x17\n\x0funbound_yuanbao\x18\x01 \x01(\x11\x12\x15\n\rbound_yuanbao\x18\x02 \x01(\x11\x12\x0c\n\x04horn\x18\x03 \x01(\x11\x12\x15\n\runbound_money\x18\x04 \x01(\x11\x12\x0e\n\x06lingqi\x18\x05 \x01(\x11\x12\x0e\n\x06zhenqi\x18\x06 \x01(\x12\x12\x15\n\ryouqing_point\x18\x07 \x01(\x11\x12\x0e\n\x06\x65nergy\x18\x08 \x01(\x11\x12\x13\n\x0brush_ticket\x18\t \x01(\x11\x12\x14\n\x0cguild_salary\x18\n \x01(\x11\x12\x1a\n\x12guild_contribution\x18\x0b \x01(\x11\x12\x0c\n\x04qili\x18\x0c \x01(\x11\x12\x0e\n\x06renown\x18\r \x01(\x11\x12\x0f\n\x07\x65xploit\x18\x0e \x01(\x11\x12\r\n\x05jifen\x18\x0f \x01(\x11\x12\x15\n\rpet_pvp_jifen\x18\x10 \x01(\x11\x12\x16\n\x0espanteam_score\x18\x11 \x01(\x11\"m\n\x14PBMsgPathFindRequest\x12\x0f\n\x07path_ty\x18\x01 \x01(\x11\x12\x10\n\x08map_from\x18\x02 \x01(\x11\x12\x0e\n\x06map_to\x18\x03 \x01(\x11\x12\x11\n\tcamp_from\x18\x04 \x01(\x11\x12\x0f\n\x07\x63\x61mp_to\x18\x05 \x01(\x11\"U\n\x13PBMsgPathFindOption\x12\x0e\n\x06npc_id\x18\x01 \x01(\x04\x12\x10\n\x08menu_idx\x18\x02 \x01(\x11\x12\r\n\x05pos_x\x18\x03 \x01(\x11\x12\r\n\x05pos_y\x18\x04 \x01(\x11\"O\n\x11PBMsgPathFindNode\x12\x0e\n\x06map_id\x18\x01 \x01(\x11\x12*\n\x0cpath_options\x18\x02 \x03(\x0b\x32\x14.PBMsgPathFindOption\"b\n\x15PBMsgPathFindResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x05\x12\x0f\n\x07path_ty\x18\x02 \x01(\x11\x12&\n\npath_nodes\x18\x03 \x03(\x0b\x32\x12.PBMsgPathFindNode\"^\n\x17PBMsgNpcTeleportRequest\x12\x0f\n\x07line_id\x18\x01 \x01(\x11\x12\x0e\n\x06npc_id\x18\x02 \x01(\x04\x12\x10\n\x08npc_name\x18\x03 \x01(\t\x12\x10\n\x08menu_idx\x18\x04 \x01(\x11\"J\n\x18PBMsgNpcTeleportResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x05\x12\x1c\n\ncode_param\x18\x02 \x01(\x0b\x32\x08.PBParam\"J\n\x18PBMsgItemTeleportRequest\x12\x1d\n\x08position\x18\x01 \x01(\x0b\x32\x0b.PBPosition\x12\x0f\n\x07\x63\x61mp_id\x18\x02 \x01(\x05\"K\n\x19PBMsgItemTeleportResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x05\x12\x1c\n\ncode_param\x18\x02 \x01(\x0b\x32\x08.PBParam\"P\n\x1bPBMsgNpcSpanTeleportRequest\x12\x0f\n\x07line_id\x18\x01 \x01(\x11\x12\x0e\n\x06npc_id\x18\x02 \x01(\x04\x12\x10\n\x08npc_name\x18\x03 \x01(\t\"N\n\x1cPBMsgNpcSpanTeleportResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x05\x12\x1c\n\ncode_param\x18\x02 \x01(\x0b\x32\x08.PBParam\"K\n\x18PBMsgClientInBlockReport\x12\x0e\n\x06map_id\x18\x01 \x01(\x05\x12\t\n\x01x\x18\x02 \x01(\x05\x12\t\n\x01y\x18\x03 \x01(\x05\x12\t\n\x01z\x18\x04 \x01(\x05\"D\n\x10PBClientPosition\x12\t\n\x01x\x18\x01 \x01(\x11\x12\t\n\x01y\x18\x02 \x01(\x11\x12\t\n\x01z\x18\x03 \x01(\x11\x12\x0f\n\x07heading\x18\x04 \x01(\x02\"\xb4\x01\n\x18PBMsgPostionUpdateReport\x12\x0e\n\x06seq_id\x18\x01 \x01(\x04\x12\x0f\n\x07version\x18\x02 \x01(\r\x12\x10\n\x08\x63hecksum\x18\x03 \x01(\r\x12\x0c\n\x04tick\x18\x04 \x01(\r\x12\x0e\n\x06reason\x18\x05 \x01(\r\x12\"\n\x07new_pos\x18\x06 \x01(\x0b\x32\x11.PBClientPosition\x12#\n\x08next_pos\x18\x07 \x01(\x0b\x32\x11.PBClientPosition\")\n\x17PBMsgPostionSeqIdNotice\x12\x0e\n\x06seq_id\x18\x01 \x01(\x04\"\xbc\x02\n\x11PBMsgRankCharNode\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x11\n\tchar_name\x18\x02 \x01(\t\x12\x11\n\tchar_role\x18\x03 \x01(\x11\x12\x10\n\x08\x63har_sex\x18\x04 \x01(\x11\x12\x12\n\nchar_level\x18\x05 \x01(\x11\x12\x12\n\nguild_name\x18\x06 \x01(\t\x12\x10\n\x08rank_val\x18\x07 \x01(\x11\x12\x12\n\nrank_trend\x18\x08 \x01(\x11\x12\x11\n\tchar_camp\x18\t \x01(\x11\x12\x18\n\x10\x63har_battlescore\x18\n \x01(\x11\x12\x0f\n\x07role_id\x18\x0b \x01(\x11\x12\x14\n\x0c\x63har_petname\x18\x0c \x01(\t\x12\x11\n\tpet_sheet\x18\r \x01(\t\x12\x11\n\thead_icon\x18\x0e \x01(\t\x12\x16\n\x0emagicpet_sheet\x18\x0f \x01(\t\"\xa7\x02\n\x12PBMsgRankGuildNode\x12\x10\n\x08guild_id\x18\x01 \x01(\x04\x12\x12\n\nguild_name\x18\x02 \x01(\t\x12\x13\n\x0bguild_level\x18\x03 \x01(\x11\x12\x11\n\tmaster_id\x18\x04 \x01(\x04\x12\x13\n\x0bmaster_name\x18\x05 \x01(\t\x12\x11\n\tchar_role\x18\x06 \x01(\x11\x12\x10\n\x08\x63har_sex\x18\x07 \x01(\x11\x12\x12\n\nchar_level\x18\x08 \x01(\x11\x12\x11\n\tchar_camp\x18\t \x01(\x11\x12\x18\n\x10\x63har_battlescore\x18\n \x01(\x11\x12\x0f\n\x07role_id\x18\x0b \x01(\x11\x12\x10\n\x08rank_val\x18\x0c \x01(\x11\x12\x12\n\nrank_trend\x18\r \x01(\x11\x12\x11\n\thead_icon\x18\x0e \x01(\t\";\n\x14PBMsgRankInfoRequest\x12\x12\n\nrank_scope\x18\x01 \x01(\x11\x12\x0f\n\x07rank_ty\x18\x02 \x01(\x11\"y\n\x15PBMsgCharRankResponse\x12\x12\n\nrank_scope\x18\x01 \x01(\x11\x12\x0f\n\x07rank_ty\x18\x02 \x01(\x11\x12\x13\n\x0bremain_time\x18\x03 \x01(\r\x12&\n\nrank_chars\x18\x04 \x03(\x0b\x32\x12.PBMsgRankCharNode\"|\n\x16PBMsgGuildRankResponse\x12\x12\n\nrank_scope\x18\x01 \x01(\x11\x12\x0f\n\x07rank_ty\x18\x02 \x01(\x11\x12\x13\n\x0bremain_time\x18\x03 \x01(\r\x12(\n\x0brank_guilds\x18\x04 \x03(\x0b\x32\x13.PBMsgRankGuildNode\"\x8f\x01\n\x19PBMsgCharMineRankResponse\x12\x12\n\nrank_scope\x18\x01 \x01(\x11\x12\x0f\n\x07rank_ty\x18\x02 \x01(\x11\x12\x11\n\trank_mine\x18\x03 \x01(\x11\x12\x12\n\nrank_begin\x18\x04 \x01(\x11\x12&\n\nrank_chars\x18\x05 \x03(\x0b\x32\x12.PBMsgRankCharNode\"\x92\x01\n\x1aPBMsgGuildMineRankResponse\x12\x12\n\nrank_scope\x18\x01 \x01(\x11\x12\x0f\n\x07rank_ty\x18\x02 \x01(\x11\x12\x11\n\trank_mine\x18\x03 \x01(\x11\x12\x12\n\nrank_begin\x18\x04 \x01(\x11\x12(\n\x0brank_guilds\x18\x05 \x03(\x0b\x32\x13.PBMsgRankGuildNode\"\x8a\x02\n\x16PBMsgJusticeInfoNotice\x12\x15\n\rjustice_value\x18\x01 \x01(\x05\x12\x15\n\rjustice_level\x18\x02 \x01(\x05\x12\x18\n\x10justice_dayValue\x18\x03 \x01(\x05\x12\x1a\n\x12justice_limitvalue\x18\x04 \x01(\x05\x12\x17\n\x0fjustice_upvalue\x18\x05 \x01(\x05\x12\x12\n\nevil_value\x18\x06 \x01(\x05\x12\x12\n\nevil_level\x18\x07 \x01(\x05\x12\x14\n\x0c\x65vil_upvalue\x18\x08 \x01(\x05\x12\x1b\n\x13justice_changevalue\x18\t \x01(\x05\x12\x18\n\x10\x65vil_changevalue\x18\n \x01(\x05\"%\n\x15PBMsgChangeLineNotice\x12\x0c\n\x04line\x18\x01 \x01(\x05\",\n\x1aPBMsgWorldLevelInfoRequest\x12\x0e\n\x06wl_ids\x18\x01 \x03(\x11\"R\n\x1bPBMsgWorldLevelInfoResponse\x12\x1f\n\x05infos\x18\x01 \x01(\x0b\x32\x10.PBWLAllRankInfo\x12\x12\n\ncurrent_id\x18\x02 \x01(\x11\"I\n\x0fPBWLAllRankInfo\x12\"\n\x05ranks\x18\x01 \x03(\x0b\x32\x13.PBWLSingleRankInfo\x12\x12\n\ncurrent_id\x18\x02 \x01(\x11\"}\n\x12PBWLSingleRankInfo\x12\r\n\x05wl_id\x18\x01 \x01(\x11\x12 \n\x07players\x18\x02 \x03(\x0b\x32\x0f.PBWLPlayerInfo\x12\x12\n\nstart_time\x18\x03 \x01(\r\x12\x0f\n\x07team_id\x18\x04 \x01(\r\x12\x11\n\topen_time\x18\x05 \x01(\r\"\x9d\x01\n\x0ePBWLPlayerInfo\x12\x11\n\tplayer_id\x18\x01 \x01(\x04\x12\x14\n\x0cplayer_level\x18\x03 \x01(\x11\x12\x13\n\x0bplayer_name\x18\x04 \x01(\t\x12\x11\n\tcamp_type\x18\x05 \x01(\x11\x12\x0b\n\x03sex\x18\x06 \x01(\x11\x12\x0c\n\x04rank\x18\x07 \x01(\x11\x12\x11\n\trole_type\x18\x08 \x01(\x11\x12\x0c\n\x04icon\x18\t \x01(\t\"g\n\x11PBWorldLevelAward\x12\r\n\x05wl_id\x18\x01 \x01(\x11\x12\x10\n\x08is_first\x18\x02 \x01(\x08\x12 \n\x07players\x18\x03 \x03(\x0b\x32\x0f.PBWLPlayerInfo\x12\x0f\n\x07team_id\x18\x04 \x01(\r\"6\n\x13PBMsgCharIconChange\x12\x11\n\tplayer_id\x18\x01 \x01(\x04\x12\x0c\n\x04icon\x18\x02 \x01(\t\"Y\n\x11PBMsgCharBaseInfo\x12\x11\n\thead_icon\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\r\x12\x0e\n\x06gender\x18\x03 \x01(\r\x12\x13\n\x0bserver_camp\x18\x04 \x01(\r\"\x1d\n\x1bPBMsgClientLoadRoleOKReport\"Q\n\x17PBMsgSomeCharInfoNotice\x12\n\n\x02hp\x18\x01 \x01(\r\x12\x0e\n\x06max_hp\x18\x02 \x01(\r\x12\n\n\x02mp\x18\x03 \x01(\r\x12\x0e\n\x06max_mp\x18\x04 \x01(\r\"y\n\x1cPBMsgClientDoSomethingNotice\x12\x1c\n\x08\x63md_type\x18\x01 \x01(\x0e\x32\n.PBCmdType\x12\x11\n\tshow_code\x18\x02 \x01(\x11\x12\x14\n\x0cneed_confirm\x18\x03 \x01(\x08\x12\x12\n\nparameters\x18\x04 \x03(\t\"E\n\x11PBMsgDoCmdRequest\x12\x1c\n\x08\x63md_type\x18\x01 \x01(\x0e\x32\n.PBCmdType\x12\x12\n\nparameters\x18\x02 \x03(\t\"c\n\nPBCostInfo\x12\x19\n\x04type\x18\x01 \x01(\x0e\x32\x0b.PBCostType\x12\x12\n\nitem_sheet\x18\x02 \x01(\x11\x12\x14\n\x0c\x63onsume_type\x18\x03 \x01(\x11\x12\x10\n\x08quantity\x18\x04 \x01(\x11\",\n\x0ePBCostInfoList\x12\x1a\n\x05money\x18\x01 \x03(\x0b\x32\x0b.PBCostInfo\"{\n\x0bPBLogAction\x12\x13\n\x0b\x61\x63tion_type\x18\x01 \x01(\x11\x12\x17\n\x0f\x61\x63tion_son_type\x18\x02 \x01(\x11\x12\x0e\n\x06param1\x18\x03 \x01(\x11\x12\x0e\n\x06param2\x18\x04 \x01(\x11\x12\x0e\n\x06param3\x18\x05 \x01(\x04\x12\x0e\n\x06param4\x18\x06 \x01(\x04\":\n\x16PBMsgSpanWildScoreItem\x12\x11\n\tchar_name\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x11\"\x7f\n\x18PBMsgSpanWildScoreNotice\x12\r\n\x05state\x18\x01 \x01(\x11\x12)\n\x08mineinfo\x18\x02 \x01(\x0b\x32\x17.PBMsgSpanWildScoreItem\x12)\n\x08rankinfo\x18\x03 \x03(\x0b\x32\x17.PBMsgSpanWildScoreItem\"N\n\x1bPBMsgCanTPToSpanWildRequest\x12\x0b\n\x03num\x18\x01 \x01(\x11\x12\x11\n\tsessionid\x18\x02 \x01(\r\x12\x0f\n\x07role_id\x18\x03 \x01(\r\"P\n\x1cPBMsgCanTPToSpanWildResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0b\n\x03num\x18\x02 \x01(\x11\x12\x11\n\tsessionid\x18\x03 \x01(\r\",\n\x1dPBMsgTPToSpanWildAddNumNotice\x12\x0b\n\x03num\x18\x01 \x01(\x11\"k\n!PBMsgMemberCanTPToSpanWildRequest\x12\x10\n\x08leaderid\x18\x01 \x01(\r\x12\x10\n\x08memberid\x18\x02 \x01(\r\x12\x0f\n\x07sheetid\x18\x03 \x01(\t\x12\x11\n\tsessionid\x18\x04 \x01(\r\"\x9d\x01\n\"PBMsgMemberCanTPToSpanWildResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x0e\n\x06reason\x18\x02 \x01(\x11\x12\r\n\x05param\x18\x03 \x01(\x12\x12\x10\n\x08leaderid\x18\x04 \x01(\r\x12\x10\n\x08memberid\x18\x05 \x01(\r\x12\x0f\n\x07sheetid\x18\x06 \x01(\t\x12\x11\n\tsessionid\x18\x07 \x01(\r\"I\n\x1bPBMsgMemberSpanWildTPNotice\x12\x10\n\x08memberid\x18\x01 \x01(\r\x12\x18\n\x03pos\x18\x02 \x01(\x0b\x32\x0b.PBPosition\"(\n\x13PBGuildMemberIdList\x12\x11\n\tmember_id\x18\x01 \x03(\x04*K\n\x0ePBCurrencyType\x12\x13\n\x0f\x65\x43T_BlueDiamond\x10\x05\x12\x12\n\x0e\x65\x43T_RedDiamond\x10\x06\x12\x10\n\x0c\x65\x43T_GoldCoin\x10\x0e*\x8a\x01\n\x13PBCreatureTitleType\x12\x19\n\x15\x65nCreatureType_Normal\x10\x01\x12\x1f\n\x1b\x65nCreatureType_SpanImbattle\x10\x02\x12\x19\n\x15\x65nCreatureType_DyName\x10\x03\x12\x1c\n\x18\x65nCreatureType_WildManor\x10\x04*s\n\tPBCmdType\x12\x19\n\x15\x65nPBCmdType_PBMessage\x10\x01\x12\x1a\n\x16\x65nPBCmdType_RawMessage\x10\x02\x12\x16\n\x12\x65nPBCmdType_OpenUI\x10\x03\x12\x17\n\x13\x65nPBCmdType_CloseUI\x10\x04*=\n\nPBCostType\x12\x18\n\x14\x65nPBCostType_Curreny\x10\x01\x12\x15\n\x11\x65nPBCostType_Item\x10\x02')
 
 _PBCURRENCYTYPE = descriptor.EnumDescriptor(
   name='PBCurrencyType',
@@ -36,8 +36,8 @@ _PBCURRENCYTYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6170,
-  serialized_end=6245,
+  serialized_start=6235,
+  serialized_end=6310,
 )
 
 
@@ -66,8 +66,8 @@ _PBCREATURETITLETYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6248,
-  serialized_end=6386,
+  serialized_start=6313,
+  serialized_end=6451,
 )
 
 
@@ -96,8 +96,8 @@ _PBCMDTYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6388,
-  serialized_end=6503,
+  serialized_start=6453,
+  serialized_end=6568,
 )
 
 
@@ -118,8 +118,8 @@ _PBCOSTTYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6505,
-  serialized_end=6566,
+  serialized_start=6570,
+  serialized_end=6631,
 )
 
 
@@ -762,6 +762,13 @@ _PBMSGUPDATECHARMONEYNOTICE = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='spanteam_score', full_name='PBMsgUpdateCharMoneyNotice.spanteam_score', index=16,
+      number=17, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -772,7 +779,7 @@ _PBMSGUPDATECHARMONEYNOTICE = descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=993,
-  serialized_end=1333,
+  serialized_end=1357,
 )
 
 
@@ -827,8 +834,8 @@ _PBMSGPATHFINDREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1335,
-  serialized_end=1444,
+  serialized_start=1359,
+  serialized_end=1468,
 )
 
 
@@ -876,8 +883,8 @@ _PBMSGPATHFINDOPTION = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1446,
-  serialized_end=1531,
+  serialized_start=1470,
+  serialized_end=1555,
 )
 
 
@@ -911,8 +918,8 @@ _PBMSGPATHFINDNODE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1533,
-  serialized_end=1612,
+  serialized_start=1557,
+  serialized_end=1636,
 )
 
 
@@ -953,8 +960,8 @@ _PBMSGPATHFINDRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1614,
-  serialized_end=1712,
+  serialized_start=1638,
+  serialized_end=1736,
 )
 
 
@@ -1002,8 +1009,8 @@ _PBMSGNPCTELEPORTREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1714,
-  serialized_end=1808,
+  serialized_start=1738,
+  serialized_end=1832,
 )
 
 
@@ -1037,8 +1044,8 @@ _PBMSGNPCTELEPORTRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1810,
-  serialized_end=1884,
+  serialized_start=1834,
+  serialized_end=1908,
 )
 
 
@@ -1072,8 +1079,8 @@ _PBMSGITEMTELEPORTREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1886,
-  serialized_end=1960,
+  serialized_start=1910,
+  serialized_end=1984,
 )
 
 
@@ -1107,8 +1114,8 @@ _PBMSGITEMTELEPORTRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1962,
-  serialized_end=2037,
+  serialized_start=1986,
+  serialized_end=2061,
 )
 
 
@@ -1149,8 +1156,8 @@ _PBMSGNPCSPANTELEPORTREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2039,
-  serialized_end=2119,
+  serialized_start=2063,
+  serialized_end=2143,
 )
 
 
@@ -1184,8 +1191,8 @@ _PBMSGNPCSPANTELEPORTRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2121,
-  serialized_end=2199,
+  serialized_start=2145,
+  serialized_end=2223,
 )
 
 
@@ -1233,8 +1240,8 @@ _PBMSGCLIENTINBLOCKREPORT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2201,
-  serialized_end=2276,
+  serialized_start=2225,
+  serialized_end=2300,
 )
 
 
@@ -1282,8 +1289,8 @@ _PBCLIENTPOSITION = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2278,
-  serialized_end=2346,
+  serialized_start=2302,
+  serialized_end=2370,
 )
 
 
@@ -1352,8 +1359,8 @@ _PBMSGPOSTIONUPDATEREPORT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2349,
-  serialized_end=2529,
+  serialized_start=2373,
+  serialized_end=2553,
 )
 
 
@@ -1380,8 +1387,8 @@ _PBMSGPOSTIONSEQIDNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2531,
-  serialized_end=2572,
+  serialized_start=2555,
+  serialized_end=2596,
 )
 
 
@@ -1490,6 +1497,13 @@ _PBMSGRANKCHARNODE = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='magicpet_sheet', full_name='PBMsgRankCharNode.magicpet_sheet', index=14,
+      number=15, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -1499,8 +1513,8 @@ _PBMSGRANKCHARNODE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2575,
-  serialized_end=2867,
+  serialized_start=2599,
+  serialized_end=2915,
 )
 
 
@@ -1618,8 +1632,8 @@ _PBMSGRANKGUILDNODE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2870,
-  serialized_end=3165,
+  serialized_start=2918,
+  serialized_end=3213,
 )
 
 
@@ -1653,8 +1667,8 @@ _PBMSGRANKINFOREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3167,
-  serialized_end=3226,
+  serialized_start=3215,
+  serialized_end=3274,
 )
 
 
@@ -1702,8 +1716,8 @@ _PBMSGCHARRANKRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3228,
-  serialized_end=3349,
+  serialized_start=3276,
+  serialized_end=3397,
 )
 
 
@@ -1751,8 +1765,8 @@ _PBMSGGUILDRANKRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3351,
-  serialized_end=3475,
+  serialized_start=3399,
+  serialized_end=3523,
 )
 
 
@@ -1807,8 +1821,8 @@ _PBMSGCHARMINERANKRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3478,
-  serialized_end=3621,
+  serialized_start=3526,
+  serialized_end=3669,
 )
 
 
@@ -1863,8 +1877,8 @@ _PBMSGGUILDMINERANKRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3624,
-  serialized_end=3770,
+  serialized_start=3672,
+  serialized_end=3818,
 )
 
 
@@ -1954,8 +1968,8 @@ _PBMSGJUSTICEINFONOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3773,
-  serialized_end=4039,
+  serialized_start=3821,
+  serialized_end=4087,
 )
 
 
@@ -1982,8 +1996,8 @@ _PBMSGCHANGELINENOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4041,
-  serialized_end=4078,
+  serialized_start=4089,
+  serialized_end=4126,
 )
 
 
@@ -2010,8 +2024,8 @@ _PBMSGWORLDLEVELINFOREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4080,
-  serialized_end=4124,
+  serialized_start=4128,
+  serialized_end=4172,
 )
 
 
@@ -2045,8 +2059,8 @@ _PBMSGWORLDLEVELINFORESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4126,
-  serialized_end=4208,
+  serialized_start=4174,
+  serialized_end=4256,
 )
 
 
@@ -2080,8 +2094,8 @@ _PBWLALLRANKINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4210,
-  serialized_end=4283,
+  serialized_start=4258,
+  serialized_end=4331,
 )
 
 
@@ -2136,8 +2150,8 @@ _PBWLSINGLERANKINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4285,
-  serialized_end=4410,
+  serialized_start=4333,
+  serialized_end=4458,
 )
 
 
@@ -2213,8 +2227,8 @@ _PBWLPLAYERINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4413,
-  serialized_end=4570,
+  serialized_start=4461,
+  serialized_end=4618,
 )
 
 
@@ -2262,8 +2276,8 @@ _PBWORLDLEVELAWARD = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4572,
-  serialized_end=4675,
+  serialized_start=4620,
+  serialized_end=4723,
 )
 
 
@@ -2297,8 +2311,8 @@ _PBMSGCHARICONCHANGE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4677,
-  serialized_end=4731,
+  serialized_start=4725,
+  serialized_end=4779,
 )
 
 
@@ -2346,8 +2360,8 @@ _PBMSGCHARBASEINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4733,
-  serialized_end=4822,
+  serialized_start=4781,
+  serialized_end=4870,
 )
 
 
@@ -2367,8 +2381,8 @@ _PBMSGCLIENTLOADROLEOKREPORT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4824,
-  serialized_end=4853,
+  serialized_start=4872,
+  serialized_end=4901,
 )
 
 
@@ -2416,8 +2430,8 @@ _PBMSGSOMECHARINFONOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4855,
-  serialized_end=4936,
+  serialized_start=4903,
+  serialized_end=4984,
 )
 
 
@@ -2465,8 +2479,8 @@ _PBMSGCLIENTDOSOMETHINGNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4938,
-  serialized_end=5059,
+  serialized_start=4986,
+  serialized_end=5107,
 )
 
 
@@ -2500,8 +2514,8 @@ _PBMSGDOCMDREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5061,
-  serialized_end=5130,
+  serialized_start=5109,
+  serialized_end=5178,
 )
 
 
@@ -2549,8 +2563,8 @@ _PBCOSTINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5132,
-  serialized_end=5231,
+  serialized_start=5180,
+  serialized_end=5279,
 )
 
 
@@ -2577,8 +2591,8 @@ _PBCOSTINFOLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5233,
-  serialized_end=5277,
+  serialized_start=5281,
+  serialized_end=5325,
 )
 
 
@@ -2640,8 +2654,8 @@ _PBLOGACTION = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5279,
-  serialized_end=5402,
+  serialized_start=5327,
+  serialized_end=5450,
 )
 
 
@@ -2675,8 +2689,8 @@ _PBMSGSPANWILDSCOREITEM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5404,
-  serialized_end=5462,
+  serialized_start=5452,
+  serialized_end=5510,
 )
 
 
@@ -2717,8 +2731,8 @@ _PBMSGSPANWILDSCORENOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5464,
-  serialized_end=5591,
+  serialized_start=5512,
+  serialized_end=5639,
 )
 
 
@@ -2743,6 +2757,13 @@ _PBMSGCANTPTOSPANWILDREQUEST = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='role_id', full_name='PBMsgCanTPToSpanWildRequest.role_id', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -2752,8 +2773,8 @@ _PBMSGCANTPTOSPANWILDREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5593,
-  serialized_end=5654,
+  serialized_start=5641,
+  serialized_end=5719,
 )
 
 
@@ -2794,8 +2815,8 @@ _PBMSGCANTPTOSPANWILDRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5656,
-  serialized_end=5736,
+  serialized_start=5721,
+  serialized_end=5801,
 )
 
 
@@ -2822,8 +2843,8 @@ _PBMSGTPTOSPANWILDADDNUMNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5738,
-  serialized_end=5782,
+  serialized_start=5803,
+  serialized_end=5847,
 )
 
 
@@ -2871,8 +2892,8 @@ _PBMSGMEMBERCANTPTOSPANWILDREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5784,
-  serialized_end=5891,
+  serialized_start=5849,
+  serialized_end=5956,
 )
 
 
@@ -2941,8 +2962,8 @@ _PBMSGMEMBERCANTPTOSPANWILDRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=5894,
-  serialized_end=6051,
+  serialized_start=5959,
+  serialized_end=6116,
 )
 
 
@@ -2976,8 +2997,8 @@ _PBMSGMEMBERSPANWILDTPNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6053,
-  serialized_end=6126,
+  serialized_start=6118,
+  serialized_end=6191,
 )
 
 
@@ -3004,8 +3025,8 @@ _PBGUILDMEMBERIDLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=6128,
-  serialized_end=6168,
+  serialized_start=6193,
+  serialized_end=6233,
 )
 
 _PBDYNSTR.fields_by_name['str_params'].message_type = msg_base_pb2._PBPARAM

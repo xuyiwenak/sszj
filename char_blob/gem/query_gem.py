@@ -15,7 +15,7 @@ def query_role_gem():
       dest_cur = dest_conn.cursor()
       dest_cur.execute('SET NAMES UTF8')
       sql = "select gateway_id, pf_role_id, gem_enchase_list from\
-      char_blob_last_month"
+      char_blob"
       dest_cur.execute(sql)
       for row in dest_cur.fetchall():
          gateway_id = row[0]
@@ -55,7 +55,7 @@ def query_role_gem():
              #if gem_type == None:
              #   continue;
              #gem_level = level_list[0]
-             dest_sql = "insert into gem_stat values(%d,  %d,  %d, %d,  %d, '%s')" % (gateway_id, role_id, int(gem_type), int(gem_level), 1, data_result[0])
+             dest_sql = "insert into char_gem values(%d,  %d,  %d, %d,  %d, '%s')" % (gateway_id, role_id, int(gem_type), int(gem_level), 1, data_result[0])
              dest_cur.execute(dest_sql)
     except MySQLdb.Error, e:
       print "MySQL Error %d:%s" %(e.args[0], e.args[1])

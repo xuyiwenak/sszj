@@ -118,3 +118,41 @@ message PBMonorOwnerHistoryInfo
 	optional string guild_name = 4;
 	optional uint32 get_time = 5;//[default=0]; // 获得时间
 };
+
+message PBCommonCropsInfo
+{
+    optional uint64 crops_id       = 1;   // 战队id
+    optional string crops_name     = 2;   // 战队名字
+    optional uint32 gateway_id     = 3;   // 服务器
+    optional sint32 match_id       = 4;   // 第几届
+    optional sint32 join_times     = 5;   // 参加次数
+    optional sint32 vectory_times  = 6;   // 胜利次数
+    optional sint32 cur_score      = 7;   // 当前积分
+	optional sint32 rank_grade     = 8;   // 段位
+    repeated PBHistoryInfo history = 9; // 历史数据
+	optional uint32 battle_score   = 10; // 战力
+}
+
+message PBHistoryInfo
+{
+    optional sint32 match_id       = 1;
+    optional sint32 score          = 2; // 积分
+    optional sint32 rank_grade     = 3; // 段位
+}
+
+message PBCommonCropsList
+{
+    repeated PBCommonCropsInfo crops_list = 1;
+}
+
+message PBCommonCropsInfoData
+{
+	option (OptionPrimaryKey)		= "data_id";
+	optional uint32 data_id = 1;//[(OptionDBFieldExtra) = "int(11) unsigned NOT NULL DEFAULT 0"];
+	optional PBCommonCropsList crops_list = 2;//[(OptionDBFieldExtra) = "MediumBlob"];
+}
+
+
+
+
+

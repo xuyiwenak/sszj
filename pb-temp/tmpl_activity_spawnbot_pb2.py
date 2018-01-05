@@ -12,7 +12,7 @@ import tmpl_base_pb2
 DESCRIPTOR = descriptor.FileDescriptor(
   name='tmpl_activity_spawnbot.proto',
   package='',
-  serialized_pb='\n\x1ctmpl_activity_spawnbot.proto\x1a\x0ftmpl_base.proto\"k\n\x18PBActivitySpawnBotConfig\x12\x34\n\titem_list\x18\x01 \x03(\x0b\x32!.PBActivitySpawnBotItemListConfig:\x19\xc2\xf3\x18\x15\x61\x63tivity_spawnbot.xml\"L\n\x16PBActivitySpawnBotFunc\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x11\n\tint_param\x18\x02 \x03(\x05\x12\x11\n\tstr_param\x18\x03 \x03(\t\"x\n\x1cPBActivitySpawnBotItemConfig\x12\x12\n\ngroup_name\x18\x01 \x01(\t\x12\x0e\n\x06map_id\x18\x02 \x01(\x05\x12#\n\x08pos_list\x18\x03 \x03(\x0b\x32\x11.PBTemplateVector\x12\x0f\n\x07line_id\x18\x04 \x01(\x05\"\xa0\x01\n PBActivitySpawnBotItemListConfig\x12\x13\n\x0b\x61\x63tivity_id\x18\x01 \x01(\x05\x12%\n\x04\x66unc\x18\x02 \x03(\x0b\x32\x17.PBActivitySpawnBotFunc\x12+\n\x04item\x18\x03 \x03(\x0b\x32\x1d.PBActivitySpawnBotItemConfig\x12\x13\n\x0bsys_despawn\x18\x04 \x01(\x05')
+  serialized_pb='\n\x1ctmpl_activity_spawnbot.proto\x1a\x0ftmpl_base.proto\"k\n\x18PBActivitySpawnBotConfig\x12\x34\n\titem_list\x18\x01 \x03(\x0b\x32!.PBActivitySpawnBotItemListConfig:\x19\xc2\xf3\x18\x15\x61\x63tivity_spawnbot.xml\"L\n\x16PBActivitySpawnBotFunc\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x11\n\tint_param\x18\x02 \x03(\x05\x12\x11\n\tstr_param\x18\x03 \x03(\t\"\x8f\x01\n\x1cPBActivitySpawnBotItemConfig\x12\x12\n\ngroup_name\x18\x01 \x01(\t\x12\x0e\n\x06map_id\x18\x02 \x01(\x05\x12#\n\x08pos_list\x18\x03 \x03(\x0b\x32\x11.PBTemplateVector\x12\x0f\n\x07line_id\x18\x04 \x01(\x05\x12\x15\n\rwild_boss_cfg\x18\x05 \x01(\t\"\xa0\x01\n PBActivitySpawnBotItemListConfig\x12\x13\n\x0b\x61\x63tivity_id\x18\x01 \x01(\x05\x12%\n\x04\x66unc\x18\x02 \x03(\x0b\x32\x17.PBActivitySpawnBotFunc\x12+\n\x04item\x18\x03 \x03(\x0b\x32\x1d.PBActivitySpawnBotItemConfig\x12\x13\n\x0bsys_despawn\x18\x04 \x01(\x05')
 
 
 
@@ -122,6 +122,13 @@ _PBACTIVITYSPAWNBOTITEMCONFIG = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='wild_boss_cfg', full_name='PBActivitySpawnBotItemConfig.wild_boss_cfg', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -131,8 +138,8 @@ _PBACTIVITYSPAWNBOTITEMCONFIG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=236,
-  serialized_end=356,
+  serialized_start=237,
+  serialized_end=380,
 )
 
 
@@ -180,8 +187,8 @@ _PBACTIVITYSPAWNBOTITEMLISTCONFIG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=359,
-  serialized_end=519,
+  serialized_start=383,
+  serialized_end=543,
 )
 
 _PBACTIVITYSPAWNBOTCONFIG.fields_by_name['item_list'].message_type = _PBACTIVITYSPAWNBOTITEMLISTCONFIG

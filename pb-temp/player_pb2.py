@@ -23,11 +23,12 @@ import msg_mount_luck_pb2
 import msg_potential_pb2
 import msg_wardrobe_pb2
 import msg_wing_pb2
+import msg_magic_pet_pb2
 
 DESCRIPTOR = descriptor.FileDescriptor(
   name='player.proto',
   package='',
-  serialized_pb='\n\x0cplayer.proto\x1a\rdb_base.proto\x1a\x11magicweapon.proto\x1a\x0fmsg_skill.proto\x1a\x0c\x64\x62_pet.proto\x1a\x0emsg_item.proto\x1a\x0fmsg_guild.proto\x1a\x18msg_activity_entry.proto\x1a\x15msg_climb_tower.proto\x1a\rdb_shop.proto\x1a\x10msg_friend.proto\x1a\x12msg_relation.proto\x1a\x12msg_activity.proto\x1a\x14msg_mount_luck.proto\x1a\x13msg_potential.proto\x1a\x12msg_wardrobe.proto\x1a\x0emsg_wing.proto\"@\n\x0cPBStaticItem\x12\x10\n\x08sheet_id\x18\x01 \x01(\r\x12\x10\n\x08quantity\x18\x02 \x01(\x11\x12\x0c\n\x04\x62ind\x18\x03 \x01(\x08\"\xb5\x10\n\x0ePBCharProperty\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x11\n\tplayer_id\x18\x02 \x01(\x04\x12\x12\n\npf_role_id\x18\x03 \x01(\r\x12\x0c\n\x04race\x18\x04 \x01(\r\x12\x0c\n\x04role\x18\x05 \x01(\r\x12\x0e\n\x06gender\x18\x06 \x01(\r\x12\r\n\x05level\x18\x07 \x01(\r\x12\x0b\n\x03\x65xp\x18\x08 \x01(\x12\x12\x0f\n\x07\x61\x63\x63_exp\x18\t \x01(\x12\x12\n\n\x02hp\x18\n \x01(\x11\x12\n\n\x02mp\x18\x0b \x01(\x11\x12\n\n\x02\x61p\x18\x0c \x01(\x11\x12\x15\n\runbuond_money\x18\r \x01(\x12\x12\x13\n\x0b\x64iamond_red\x18\x0e \x01(\x12\x12\x14\n\x0c\x64iamond_blue\x18\x0f \x01(\x12\x12\x0e\n\x06\x65nergy\x18\x10 \x01(\x11\x12\x0e\n\x06zhenqi\x18\x11 \x01(\x12\x12\x11\n\tpvp_score\x18\x12 \x01(\x11\x12\x11\n\tpvp_honor\x18\x13 \x01(\r\x12\x14\n\x0c\x66riend_point\x18\x14 \x01(\x11\x12\x0e\n\x06lingqi\x18\x15 \x01(\x11\x12\x11\n\tlingqi_tr\x18\x16 \x01(\x11\x12\x0f\n\x07shilian\x18\x17 \x01(\x11\x12\x13\n\x0b\x63harm_point\x18\x19 \x01(\x11\x12\x0e\n\x06killer\x18\x1a \x01(\x11\x12\x10\n\x08vitality\x18\x1b \x01(\x11\x12\t\n\x01x\x18\x1c \x01(\x11\x12\t\n\x01y\x18\x1d \x01(\x11\x12\t\n\x01z\x18\x1e \x01(\x05\x12\x0f\n\x07heading\x18\x1f \x01(\x02\x12\x0e\n\x06map_id\x18  \x01(\r\x12\x13\n\x0binstance_id\x18! \x01(\r\x12\x16\n\x0e\x63ur_dungeon_id\x18\" \x01(\x04\x12\x0e\n\x06last_x\x18# \x01(\x11\x12\x0e\n\x06last_y\x18$ \x01(\x11\x12\x0e\n\x06last_z\x18% \x01(\x11\x12\x13\n\x0blast_map_id\x18\' \x01(\r\x12\x0e\n\x06lineid\x18& \x01(\r\x12\x16\n\x0elogout_dungeon\x18( \x01(\r\x12\x15\n\rlast_quittime\x18) \x01(\r\x12\x15\n\rlast_day_time\x18* \x01(\r\x12\x16\n\x0elast_week_time\x18+ \x01(\r\x12\x11\n\tday_cycle\x18, \x01(\x11\x12\x13\n\x0b\x64\x61ily_level\x18- \x01(\r\x12\x11\n\tlive_days\x18. \x01(\x11\x12\x14\n\x0c\x63ombat_power\x18/ \x01(\x05\x12\x15\n\rpvp_rank_open\x18\x30 \x01(\x11\x12\x18\n\x10\x62\x61ttle_rank_open\x18\x31 \x01(\x11\x12\x18\n\x10server_open_days\x18\x32 \x01(\x11\x12\x12\n\npvp_season\x18\x33 \x01(\x11\x12\x14\n\x0c\x63onsume_info\x18\x34 \x01(\t\x12\x10\n\x08ui_state\x18\x35 \x01(\x12\x12\x0e\n\x06ui_use\x18\x36 \x01(\x12\x12\x15\n\rdaily_achieve\x18\x37 \x01(\x04\x12\x15\n\rvip_name_flag\x18\x38 \x01(\r\x12\x14\n\x0c\x63lear_new_dg\x18\x39 \x01(\r\x12\x18\n\x10\x63\x61n_equip_hornor\x18; \x01(\r\x12\x18\n\x10skill_learned_iu\x18< \x01(\t\x12\x14\n\x0ctime_left_iu\x18= \x01(\r\x12\x12\n\nmeet_times\x18> \x01(\r\x12\x1b\n\x13guild_lottery_times\x18? \x01(\x11\x12\x1a\n\x12vipcard_expiration\x18@ \x01(\r\x12\x18\n\x10iu_mission_cycle\x18\x41 \x01(\x11\x12\x18\n\x10iu_mission_index\x18\x42 \x01(\x11\x12\x19\n\x11\x63ur_iu_mission_id\x18\x43 \x01(\r\x12\x12\n\nlast_gs_id\x18\x44 \x01(\r\x12\x17\n\x0fspan_request_id\x18\x45 \x01(\r\x12\x16\n\x0ehideorshow_sth\x18G \x01(\r\x12\x17\n\x0freposition_flag\x18H \x01(\r\x12\r\n\x05gw_id\x18I \x01(\r\x12\x11\n\tchar_name\x18J \x01(\t\x12\x15\n\rpvp_max_score\x18K \x01(\x11\x12\x17\n\x0f\x63hange_job_flag\x18L \x01(\r\x12\x13\n\x0brush_ticket\x18M \x01(\x11\x12\x14\n\x0cguild_salary\x18N \x01(\x11\x12\x14\n\x0cguild_contri\x18O \x01(\x11\x12\x0c\n\x04qili\x18P \x01(\x11\x12\x14\n\x0css_camp_type\x18Q \x01(\r\x12\x0e\n\x06renown\x18R \x01(\x11\x12\x1a\n\x12last_login_camp_id\x18S \x01(\r\x12\x15\n\rlogin_camp_id\x18T \x01(\r\x12\x13\n\x0b\x63reate_time\x18U \x01(\r\x12\x12\n\ngateway_id\x18V \x01(\r\x12\x0f\n\x07\x65xploit\x18W \x01(\r\x12\x11\n\tvip_level\x18X \x01(\x11\x12\x0b\n\x03vpa\x18Y \x01(\x04\x12\x0b\n\x03vpb\x18Z \x01(\x04\x12\x0b\n\x03vpc\x18[ \x01(\x04\x12\x10\n\x08sheet_id\x18\\ \x01(\r\x12\x10\n\x08guild_id\x18] \x01(\x04\x12\x12\n\nguild_name\x18^ \x01(\t\x12\x12\n\npf_user_id\x18_ \x01(\r\x12\x13\n\x0b\x64\x65lete_flag\x18` \x01(\r\x12\x13\n\x0b\x64\x65lete_time\x18\x61 \x01(\r\x12\x11\n\thead_icon\x18\x62 \x01(\t\x12\x14\n\x0chead_icon_ct\x18\x63 \x01(\r\x12\x13\n\x0boffline_exp\x18\x64 \x01(\x11\x12\x18\n\x10total_arenatimes\x18\x65 \x01(\x11\x12\x19\n\x11newserver_version\x18\x66 \x01(\x11\x12\x1e\n\x16quartercard_expiration\x18g \x01(\x11\x12\x1a\n\x12pvp_lastupdatetime\x18h \x01(\r\x12\x15\n\rpet_pvp_jifen\x18i \x01(\x12\x12\x19\n\x11send_flower_socre\x18j \x01(\r:\x0e\x92\xb5\x18\npf_role_id\"\xb4\x02\n\nPBUserInfo\x12\x11\n\tplayer_id\x18\x01 \x01(\x04\x12\x0f\n\x07\x61\x63\x63ount\x18\x02 \x01(\t\x12\x0f\n\x07game_id\x18\x03 \x01(\r\x12\x12\n\npf_user_id\x18\x05 \x01(\r\x12\x11\n\tvip_level\x18\x06 \x01(\x11\x12\x0f\n\x07vip_exp\x18\x07 \x01(\x12\x12\x15\n\rvip_exp_delta\x18\x08 \x01(\x12\x12\x11\n\tprivilege\x18\t \x01(\t\x12\x15\n\rlast_login_ip\x18\n \x01(\r\x12\x0e\n\x06status\x18\x0b \x01(\r\x12\x17\n\x0f\x62ind_phone_flag\x18\x0c \x01(\r\x12\x16\n\x0evip_virtal_exp\x18\r \x01(\x12\x12\'\n\x1flast_get_back_charge_gifts_time\x18\x0e \x01(\r:\x0e\x92\xb5\x18\npf_user_id\"p\n\x0cPBChooseChar\x12\x11\n\tplayer_id\x18\x01 \x01(\x04\x12\x12\n\npf_user_id\x18\x02 \x01(\r\x12)\n\rchar_summarys\x18\x03 \x01(\x0b\x32\x12.PBCharSummaryList:\x0e\x92\xb5\x18\npf_user_id\">\n\x11PBCharSummaryList\x12)\n\x11\x63har_summary_list\x18\x01 \x03(\x0b\x32\x0e.PBCharSummary\"\x8c\x02\n\rPBCharSummary\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x12\n\npf_role_id\x18\x02 \x01(\r\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\r\n\x05level\x18\x04 \x01(\r\x12\x0b\n\x03vpa\x18\x05 \x01(\x04\x12\x0b\n\x03vpb\x18\x06 \x01(\x04\x12\x0b\n\x03vpc\x18\x07 \x01(\x04\x12\x10\n\x08op_state\x18\t \x01(\x11\x12\x0f\n\x07op_time\x18\n \x01(\r\x12\x10\n\x08sheet_id\x18\x0b \x01(\r\x12\x13\n\x0b\x63reate_time\x18\x0c \x01(\r\x12\x14\n\x0css_camp_type\x18\r \x01(\r\x12\x1a\n\x12login_ss_camp_type\x18\x0e \x01(\x04\x12\x16\n\x0eprotect_reason\x18\x0f \x01(\x11\"\x86\x01\n\x08PBPlayer\x12\x11\n\tplayer_id\x18\x01 \x01(\x04\x12\x1e\n\tuser_info\x18\x02 \x01(\x0b\x32\x0b.PBUserInfo\x12\"\n\x0bplayer_blob\x18\x03 \x01(\x0b\x32\r.PBPlayerBlob\x12#\n\x0c\x63har_summary\x18\x04 \x01(\x0b\x32\r.PBChooseChar\"i\n\x0cPBPlayerBlob\x12\x11\n\tplayer_id\x18\x01 \x01(\x04\x12\x12\n\npf_user_id\x18\x02 \x01(\r\x12\"\n\x0bplayer_data\x18\x03 \x01(\x0b\x32\r.PBPlayerData:\x0e\x92\xb5\x18\npf_user_id\"\xb5\x01\n\x0cPBPlayerData\x12\x1d\n\tquest_vip\x18\x04 \x03(\x0b\x32\n.PBDBQuest\x12,\n\rcharge_record\x18\x05 \x03(\x0b\x32\x15.PBPlayerChargeRecord\x12(\n\x0b\x63harge_sign\x18\x06 \x03(\x0b\x32\x13.PBPlayerChargeSign\x12.\n\x0e\x63harge_regress\x18\x07 \x03(\x0b\x32\x16.PBPlayerChargeRegress\"\xa8\x01\n\x14PBPlayerChargeRecord\x12\x10\n\x08\x64\x65tailId\x18\x01 \x01(\x04\x12\x0e\n\x06gameId\x18\x02 \x01(\r\x12\x13\n\x0b\x63harge_time\x18\x03 \x01(\r\x12\x15\n\rcharge_amount\x18\x04 \x01(\x11\x12\x13\n\x0blast_amount\x18\x05 \x01(\x11\x12\x14\n\x0ctotal_amount\x18\x06 \x01(\x11\x12\x17\n\x0f\x63harge_goods_id\x18\x07 \x01(\r\"y\n\x12PBPlayerChargeSign\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x10\n\x08\x65nd_time\x18\x02 \x01(\r\x12*\n\tsign_item\x18\x03 \x03(\x0b\x32\x17.PBPlayerChargeSignItem\x12\x15\n\rserial_status\x18\x04 \x01(\r\"W\n\x16PBPlayerChargeSignItem\x12\x10\n\x08sign_day\x18\x01 \x01(\r\x12\x13\n\x0bsign_status\x18\x02 \x01(\r\x12\x16\n\x0esign_detail_id\x18\x03 \x01(\x04\"|\n\x15PBPlayerChargeRegress\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x12\n\nstart_time\x18\x02 \x01(\r\x12\x15\n\rreward_status\x18\x03 \x01(\r\x12\x14\n\x0cignore_count\x18\x04 \x01(\r\x12\x12\n\nitem_index\x18\x05 \x01(\r\"\x9c\x01\n\tPBDBQuest\x12\x10\n\x08quest_id\x18\x01 \x01(\r\x12\x13\n\x0bquest_state\x18\x02 \x01(\r\x12\x16\n\x0e\x61ward_launched\x18\x03 \x01(\x08\x12\x0f\n\x07quality\x18\x04 \x01(\r\x12\x13\n\x0b\x66inish_time\x18\x05 \x01(\r\x12\x16\n\x0e\x66orce_complete\x18\x06 \x01(\x08\x12\x12\n\nstart_time\x18\x07 \x01(\r\"\xa1\x02\n\x08PBDBTask\x12 \n\x0cquest_normal\x18\x01 \x03(\x0b\x32\n.PBDBQuest\x12\x1f\n\x0bquest_daily\x18\x02 \x03(\x0b\x32\n.PBDBQuest\x12\x1f\n\x0bquest_other\x18\x03 \x03(\x0b\x32\n.PBDBQuest\x12 \n\nmount_info\x18\x04 \x01(\x0b\x32\x0c.PBMountInfo\x12\x1f\n\x0bquest_group\x18\x05 \x03(\x0b\x32\n.PBDBQuest\x12\x1e\n\nquest_rand\x18\x06 \x03(\x0b\x32\n.PBDBQuest\x12\'\n\x10quest_group_data\x18\x07 \x03(\x0b\x32\r.PBQuestGroup\x12%\n\x0fquest_rand_data\x18\x08 \x03(\x0b\x32\x0c.PBQuestRand\"f\n\x0bPBCharacter\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12&\n\rchar_property\x18\x02 \x01(\x0b\x32\x0f.PBCharProperty\x12\x1e\n\tchar_blob\x18\x03 \x01(\x0b\x32\x0b.PBCharBlob\"\x91\x16\n\nPBCharBlob\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x12\n\npf_role_id\x18\x02 \x01(\r\x12\x13\n\x03\x62\x61g\x18\x03 \x01(\x0b\x32\x06.PBBag\x12&\n\x11items_tosave_list\x18\x04 \x01(\x0b\x32\x0b.PBItemList\x12\x1d\n\x08shortcut\x18\x05 \x01(\x0b\x32\x0b.PBShortcut\x12\x19\n\x06\x63\x64time\x18\x06 \x01(\x0b\x32\t.PBCDTime\x12\x34\n\x18mission_done_tosave_list\x18\x07 \x01(\x0b\x32\x12.PBDoneMissionList\x12\x34\n\x18\x63ounter_info_tosave_list\x18\x08 \x01(\x0b\x32\x12.PBCounterInfoList\x12\x1b\n\x07\x64ungeon\x18\t \x01(\x0b\x32\n.PBDungeon\x12$\n\x0clottery_list\x18\n \x01(\x0b\x32\x0e.PBLotteryList\x12+\n\x10gem_enchase_list\x18\x0b \x01(\x0b\x32\x11.PBGemEnchaseList\x12%\n\nchar_title\x18\r \x01(\x0b\x32\x11.PBCharacterTitle\x12 \n\nniuer_info\x18\x0e \x01(\x0b\x32\x0c.PBNiuerInfo\x12+\n\x10offline_exp_info\x18\x0f \x01(\x0b\x32\x11.PBOfflineExpInfo\x12\x1e\n\tbuy_backs\x18\x10 \x01(\x0b\x32\x0b.PBBuyBacks\x12 \n\nblack_list\x18\x11 \x01(\x0b\x32\x0c.PBBlackList\x12/\n\x12\x64\x65lete_friend_info\x18\x12 \x01(\x0b\x32\x13.PBDeleteFriendInfo\x12 \n\nmount_info\x18\x13 \x01(\x0b\x32\x0c.PBMountInfo\x12\x1a\n\x07\x64\x62_task\x18\x15 \x01(\x0b\x32\t.PBDBTask\x12+\n\x10\x63har_gameop_list\x18\x16 \x01(\x0b\x32\x11.PBCharGameOpList\x12\'\n\x0e\x66unc_open_info\x18\x17 \x01(\x0b\x32\x0f.PBFuncOpenInfo\x12-\n\x10magicweapon_info\x18\x18 \x01(\x0b\x32\x13.PBMagicWeaponHouse\x12\x1f\n\nskill_info\x18\x19 \x01(\x0b\x32\x0b.PBAllSkill\x12&\n\x0bguild_state\x18\x1a \x01(\x0b\x32\x11.PBCharGuildState\x12\x1e\n\x08pet_info\x18\x1b \x01(\x0b\x32\x0c.PBDBPetInfo\x12*\n\x0f\x61\x63tivities_data\x18\x1c \x01(\x0b\x32\x11.PBActivitiesData\x12*\n\x10guild_skill_list\x18\x1d \x01(\x0b\x32\x10.PBSkillInfoList\x12\'\n\x0b\x63limb_tower\x18\x1e \x01(\x0b\x32\x12.PBClimbTowerInfos\x12 \n\tshop_info\x18\x1f \x01(\x0b\x32\r.PBDBShopInfo\x12*\n\rsign_activity\x18  \x01(\x0b\x32\x13.PBSignActivityData\x12 \n\tteam_info\x18! \x01(\x0b\x32\r.PBDBTeamData\x12%\n\rall_buff_data\x18\" \x01(\x0b\x32\x0e.PBAllBuffData\x12\x19\n\x11original_closthes\x18# \x01(\r\x12$\n\x0cjustice_data\x18$ \x01(\x0b\x32\x0e.PBJusticeInfo\x12,\n\x0enewserver_data\x18% \x01(\x0b\x32\x14.PBNewserverActivity\x12\x30\n\x12newserver_recharge\x18& \x01(\x0b\x32\x14.PBNewserverRecharge\x12\x1f\n\x17\x63lothes_styleid_default\x18\' \x01(\r\x12%\n\rxiu_xian_data\x18( \x01(\x0b\x32\x0e.PBXiuXianInfo\x12-\n\x11tmp_shard_iu_info\x18) \x01(\x0b\x32\x12.PBShardCharIUInfo\x12:\n\x13\x63onsume_record_list\x18* \x01(\x0b\x32\x1d.PBCharConsumeRecordContainer\x12\x15\n\rhair_style_id\x18+ \x01(\r\x12\x15\n\rhair_sheet_id\x18, \x01(\r\x12+\n\x0b\x66riend_data\x18- \x01(\x0b\x32\x16.PBCharLocalFriendData\x12/\n\x10last_guild_skill\x18. \x01(\x0b\x32\x15.PBCharGuildSkillData\x12&\n\x0bsingle_data\x18/ \x01(\x0b\x32\x11.PBCharSingleData\x12,\n\rexchange_shop\x18\x30 \x01(\x0b\x32\x15.PBDBExchangeShopData\x12#\n\nquest_data\x18\x31 \x01(\x0b\x32\x0f.PBQuestionData\x12(\n\rmarriage_data\x18\x32 \x01(\x0b\x32\x11.PBDBMarriageInfo\x12 \n\thold_data\x18\x33 \x01(\x0b\x32\r.PBDBHoldInfo\x12)\n\x0cgm_mail_list\x18\x37 \x01(\x0b\x32\x13.PBDBCharGmMailList\x12%\n\ncornucopia\x18\x38 \x01(\x0b\x32\x11.PBAuthorityDatas\x12\x19\n\trepertory\x18\x39 \x01(\x0b\x32\x06.PBRep\x12\x41\n\x1b\x65xcuting_treasure_incidents\x18: \x01(\x0b\x32\x1c.PBExcutingTreasureIncidents\x12%\n\nnewroleact\x18; \x01(\x0b\x32\x11.PBNewRoleCornAll\x12\'\n\x10offline_exp_data\x18< \x01(\x0b\x32\r.PBOfflineExp\x12)\n\x10\x63hange_camp_data\x18= \x01(\x0b\x32\x0f.PBDBChangeCamp\x12\x31\n\x13lottery_status_data\x18> \x01(\x0b\x32\x14.PBLotteryStatusData\x12\x19\n\x04mute\x18? \x01(\x0b\x32\x0b.PBMuteData\x12 \n\tluck_data\x18@ \x01(\x0b\x32\r.PBDBLuckInfo\x12\"\n\x0c\x62oating_data\x18\x41 \x01(\x0b\x32\x0c.PBDBBoating\x12$\n\x0epotential_data\x18\x42 \x01(\x0b\x32\x0c.PBPotential\x12-\n\x12span_imbattle_data\x18\x43 \x01(\x0b\x32\x11.PBDBSpanImbattle\x12$\n\rwardrobe_data\x18\x44 \x01(\x0b\x32\r.PBDBWardrobe\x12\x31\n\x14pet_pve_battle_array\x18\x45 \x01(\x0b\x32\x13.PBDBPetBattleArray\x12\'\n\x0fwing_train_data\x18\x46 \x01(\x0b\x32\x0e.PBDBWingTrain\x12\x31\n\x14pet_pvp_battle_array\x18G \x01(\x0b\x32\x13.PBDBPetBattleArray\x12-\n\x10login_gifts_data\x18H \x01(\x0b\x32\x13.PBDBLoginGiftsData\x12\x30\n\x11onearmbandit_data\x18I \x01(\x0b\x32\x15.PBDBOnearmBanditData\x12\"\n\nxinfa_data\x18J \x01(\x0b\x32\x0e.PBDBXinfaData\x12\x31\n\x13oldplayer_back_data\x18K \x01(\x0b\x32\x14.PBOldPlayerBackData\x12&\n\x0cxiuzhen_data\x18L \x01(\x0b\x32\x10.PBDBXiuzhenData:\x0e\x92\xb5\x18\npf_role_id\"#\n\x05PBRep\x12\x1a\n\x06pbcell\x18\x01 \x03(\x0b\x32\n.PBRepCell\"V\n\tPBRepCell\x12\x0b\n\x03idx\x18\x01 \x01(\r\x12\x1a\n\x07rep_bag\x18\x02 \x01(\x0b\x32\t.PBRepBag\x12 \n\x0frepository_item\x18\x03 \x01(\x0b\x32\x07.PBItem\"a\n\x08PBRepBag\x12\x12\n\nbag_itemid\x18\x01 \x01(\x04\x12\x1e\n\titem_list\x18\x02 \x01(\x0b\x32\x0b.PBItemList\x12\x10\n\x08\x62\x61g_size\x18\x03 \x01(\r\x12\x0f\n\x07\x65xpired\x18\x04 \x01(\x04\"`\n\x0ePBQuestionData\x12%\n\ndaily_info\x18\x01 \x01(\x0b\x32\x11.PBQuestDailyInfo\x12\'\n\x0bwisdom_info\x18\x02 \x01(\x0b\x32\x12.PBQuestWisdomInfo\"[\n\x10PBQuestDailyInfo\x12\x13\n\x0b\x64\x61ily_index\x18\x01 \x01(\x11\x12\x19\n\x11\x64\x61ily_right_count\x18\x02 \x01(\x11\x12\x17\n\x0f\x64\x61ily_quest_lib\x18\x03 \x03(\x11\"\xa9\x01\n\x11PBQuestWisdomInfo\x12\x14\n\x0cwisdom_score\x18\x01 \x01(\x11\x12\x1a\n\x12wisdom_right_count\x18\x02 \x01(\x11\x12!\n\x0cwisdom_round\x18\x03 \x03(\x0b\x32\x0b.PBWisRound\x12)\n\x0fweek_score_info\x18\x04 \x01(\x0b\x32\x10.PBWeekScoreInfo\x12\x14\n\x0c\x65xam_version\x18\x05 \x01(\r\"[\n\x0fPBWeekScoreInfo\x12\x14\n\x0cweek_version\x18\x01 \x01(\r\x12\x18\n\x10week_total_score\x18\x02 \x01(\x11\x12\x18\n\x10last_commit_time\x18\x03 \x01(\r\"\x9e\x01\n\nPBWisRound\x12\x13\n\x0bquest_index\x18\x01 \x01(\x11\x12\x10\n\x08quest_id\x18\x02 \x01(\x11\x12\x14\n\x0c\x66irst_answer\x18\x03 \x01(\x11\x12\x15\n\rsecond_answer\x18\x04 \x01(\x11\x12\x13\n\x0b\x61nswer_time\x18\x05 \x01(\x11\x12\x14\n\x0c\x63ommit_times\x18\x06 \x01(\x11\x12\x11\n\tcamp_type\x18\x07 \x01(\x11\"J\n\x1cPBCharConsumeRecordContainer\x12*\n\x0c\x63onsume_list\x18\x01 \x03(\x0b\x32\x14.PBCharConsumeRecord\"\x92\x01\n\x13PBCharConsumeRecord\x12\x11\n\tdetail_id\x18\x01 \x01(\x04\x12\x12\n\nsubject_id\x18\x02 \x01(\x11\x12\x0e\n\x06\x61mount\x18\x03 \x01(\x11\x12\r\n\x05price\x18\x04 \x01(\x11\x12\x0f\n\x07ib_code\x18\x05 \x01(\t\x12\x10\n\x08pay_time\x18\x06 \x01(\r\x12\x12\n\npush_event\x18\x07 \x01(\x08\"4\n\x0fPBSkillInfoList\x12!\n\x0bguild_skill\x18\x01 \x03(\x0b\x32\x0c.PBSkillInfo\"\xe8\x01\n\nPBBuffData\x12\x0f\n\x07\x62uff_id\x18\x01 \x01(\r\x12\x13\n\x0b\x66inish_time\x18\x02 \x01(\x12\x12\x10\n\x08\x62uff_cnt\x18\x03 \x01(\x11\x12\x11\n\tbuff_loop\x18\x04 \x01(\x11\x12\x11\n\tnext_time\x18\x05 \x01(\x12\x12\x11\n\tleft_time\x18\x06 \x01(\x12\x12\x0e\n\x06map_id\x18\x07 \x01(\r\x12\x10\n\x08identity\x18\x08 \x01(\x11\x12\x11\n\tparamList\x18\n \x03(\x11\x12\r\n\x05valid\x18\x0b \x01(\x08\x12\x12\n\ntotal_time\x18\x0c \x01(\x12\x12\x11\n\tbase_time\x18\r \x01(\r\"/\n\rPBAllBuffData\x12\x1e\n\tbuff_data\x18\x01 \x03(\x0b\x32\x0b.PBBuffData\"\xac\x08\n\x06PBItem\x12\x0f\n\x07item_id\x18\x02 \x01(\x04\x12\x10\n\x08owner_id\x18\x03 \x01(\x04\x12\x10\n\x08quantity\x18\x04 \x01(\r\x12\x0f\n\x07sheetid\x18\x05 \x01(\t\x12\x0e\n\x06refinv\x18\x06 \x01(\x05\x12\x13\n\x0brefinv_slot\x18\x07 \x01(\r\x12\r\n\x05\x65lite\x18\x16 \x01(\t\x12\r\n\x05jewel\x18\x17 \x01(\t\x12\x0e\n\x06\x62inded\x18\x18 \x01(\x05\x12\x0b\n\x03inv\x18\x19 \x01(\x05\x12\x12\n\nexpiration\x18\x1a \x01(\r\x12\x11\n\toper_time\x18\x1b \x01(\r\x12\x11\n\telite_new\x18\x1c \x01(\t\x12!\n\nRuneStatic\x18\" \x01(\x0b\x32\r.PBProperties\x12\x1e\n\x07RuneAdd\x18# \x01(\x0b\x32\r.PBProperties\x12 \n\tStaticPro\x18$ \x01(\x0b\x32\r.PBProperties\x12\x1d\n\x06\x41\x64\x64Pro\x18% \x01(\x0b\x32\r.PBProperties\x12$\n\rRandStaticPro\x18& \x01(\x0b\x32\r.PBProperties\x12!\n\nRandAddPro\x18\' \x01(\x0b\x32\r.PBProperties\x12*\n\x0fLastEnchantType\x18( \x01(\x0e\x32\x11.ELastEnchantType\x12\x15\n\rStaticProStar\x18) \x01(\r\x12\"\n\x0bRuneRandAdd\x18* \x01(\x0b\x32\r.PBProperties\x12 \n\tEndurance\x18+ \x01(\x0b\x32\r.PBProperties\x12\x10\n\x08style_id\x18, \x01(\r\x12\x15\n\x03pet\x18- \x01(\x0b\x32\x08.PBDBPet\x12\x14\n\x0c\x64ye_style_id\x18. \x01(\r\x12\x14\n\x0c\x63\x61n_use_time\x18/ \x01(\r\x12\x16\n\x0e\x65valuate_count\x18\x30 \x01(\r\x12\x14\n\x0cRune_cur_exp\x18\x31 \x01(\r\x12\x10\n\x08\x64\x65sc_key\x18\x32 \x01(\t\x12\x12\n\ndesc_param\x18\x33 \x03(\t\x12)\n\x0f\x65quip_rune_list\x18\x34 \x01(\x0b\x32\x10.PBEquipRuneList\x12,\n\x10treasuremap_info\x18\x35 \x01(\x0b\x32\x12.PBTreasureMapInfo\x12 \n\ndyn_mvalue\x18\x36 \x01(\x0b\x32\x0c.PBMoneyInfo\x12!\n\nattach_pro\x18\x37 \x01(\x0b\x32\r.PBProperties\x12&\n\x0fsave_attach_pro\x18\x38 \x01(\x0b\x32\r.PBProperties\x12\x1f\n\x08wing_pro\x18\x39 \x01(\x0b\x32\r.PBProperties\x12\x12\n\nwing_shape\x18: \x01(\t\x12\x13\n\x0b\x66uzhijiujiu\x18; \x01(\x04\x12\x14\n\x0c\x66uzhi_isused\x18< \x01(\x08\x12\x1d\n\x15soulStar_material_num\x18= \x01(\x05\"+\n\nPBItemList\x12\x1d\n\x0citems_tosave\x18\x01 \x03(\x0b\x32\x07.PBItem\"Q\n\rPBDoneMission\x12\x11\n\tmissionid\x18\x01 \x01(\r\x12\x12\n\nsuccessful\x18\x02 \x01(\r\x12\x19\n\x11last_success_date\x18\x03 \x01(\r\"@\n\x11PBDoneMissionList\x12+\n\x13mission_done_tosave\x18\x01 \x03(\x0b\x32\x0e.PBDoneMission\"W\n\tPBLottery\x12\x12\n\nlottery_id\x18\x01 \x01(\x04\x12\x0f\n\x07sheetid\x18\x02 \x01(\t\x12\x10\n\x08\x62uy_time\x18\x03 \x01(\r\x12\x13\n\x0b\x64\x65lete_flag\x18\x04 \x01(\r\",\n\rPBLotteryList\x12\x1b\n\x07lottery\x18\x01 \x03(\x0b\x32\n.PBLottery\"D\n\x05PBBag\x12\r\n\x05guids\x18\x01 \x03(\x04\x12\x13\n\x0b\x62ought_slot\x18\x02 \x01(\x11\x12\x17\n\x0f\x62ought_runeslot\x18\x03 \x01(\x11\"\x1a\n\x07PBSkill\x12\x0f\n\x07sheetid\x18\x01 \x03(\t\"\x19\n\x06PBBuff\x12\x0f\n\x07\x62uffele\x18\x01 \x03(\t\"\x1a\n\nPBShortcut\x12\x0c\n\x04slot\x18\x01 \x03(\t\"\x1a\n\x08PBCDTime\x12\x0e\n\x06\x63\x64time\x18\x01 \x03(\x05\"\x1e\n\x0bPBBlackList\x12\x0f\n\x07\x63har_id\x18\x01 \x03(\x04\")\n\x12PBDeleteFriendInfo\x12\x13\n\x0b\x66riend_info\x18\x01 \x03(\t\"g\n\x1bPBExcutingTreasureIncidents\x12H\n\x1f\x65xcuting_treasure_incident_info\x18\x01 \x03(\x0b\x32\x1f.PBExcutingTreasureIncidentInfo\"a\n\x1ePBExcutingTreasureIncidentInfo\x12\"\n\x1a\x65xcuting_treasure_incident\x18\x01 \x01(\t\x12\x1b\n\x13start_excuting_time\x18\x02 \x01(\x12\"*\n\nPBBuyBacks\x12\x1c\n\x04item\x18\x01 \x03(\x0b\x32\x0e.PBBuyBackInfo\"X\n\rPBBuyBackInfo\x12\r\n\x05price\x18\x01 \x01(\x11\x12\x12\n\nprice_type\x18\x02 \x01(\x11\x12\x15\n\x04item\x18\x03 \x01(\x0b\x32\x07.PBItem\x12\r\n\x05state\x18\x04 \x01(\x11\"`\n\x0cPBGemEnchase\x12\x12\n\nequip_type\x18\x01 \x01(\r\x12\x12\n\nslot_index\x18\x02 \x01(\r\x12\x13\n\x0bslot_enable\x18\x03 \x01(\r\x12\x13\n\x0bgem_sheetid\x18\x04 \x01(\t\"Z\n\x10PBGemEnchaseList\x12\"\n\x0bgem_enchase\x18\x01 \x03(\x0b\x32\r.PBGemEnchase\x12\"\n\x0bgem_cutting\x18\x02 \x03(\x0b\x32\r.PBGemCutting\"@\n\x11PBCounterInfoList\x12+\n\x13\x63ounter_info_tosave\x18\x01 \x03(\x0b\x32\x0e.PBCounterInfo\"E\n\rPBCounterInfo\x12\x12\n\ncounter_id\x18\x01 \x01(\x04\x12\r\n\x05times\x18\x02 \x01(\r\x12\x11\n\tbuy_times\x18\x03 \x01(\r\"&\n\x10PBCharacterTitle\x12\x12\n\ntitle_info\x18\x01 \x03(\t\"I\n\x0bPBNiuerInfo\x12\x11\n\tcard_info\x18\x01 \x03(\t\x12\x13\n\x0bhave_obtain\x18\x02 \x01(\r\x12\x12\n\nis_in_game\x18\x03 \x01(\r\"<\n\x10PBOfflineExpInfo\x12\x16\n\x0eremain_seconds\x18\x01 \x01(\r\x12\x10\n\x08\x65xp_info\x18\x02 \x01(\t\"}\n\x0fPBDungeonRecord\x12\x12\n\nsheet_name\x18\x01 \x01(\t\x12\x17\n\x0f\x63learance_times\x18\x02 \x01(\x05\x12\x11\n\tbest_star\x18\x03 \x01(\x05\x12\x14\n\x0c\x66\x61stest_time\x18\x04 \x01(\x05\x12\x14\n\x0crewarded_got\x18\x05 \x01(\x08\"\xdb\x01\n\tPBDungeon\x12)\n\x0f\x64ungeon_records\x18\x01 \x03(\x0b\x32\x10.PBDungeonRecord\x12\x33\n\rdungeon_chest\x18\x02 \x03(\x0b\x32\x1c.PBDungeonChapterChestRecord\x12\x1f\n\x17last_dynamic_dungeon_id\x18\x03 \x01(\x04\x12\'\n\x1flast_dynamic_dungeon_gateway_id\x18\x04 \x01(\r\x12$\n\x1clast_dynamic_dungeon_camp_id\x18\x05 \x01(\r\"p\n\x1bPBDungeonChapterChestRecord\x12\x16\n\x0e\x63hest_sheet_id\x18\x01 \x01(\r\x12\x1a\n\x12region_chest_state\x18\x02 \x01(\x11\x12\x1d\n\x15road_chest_state_list\x18\x03 \x03(\x11\"E\n\x11PBShardCharIUInfo\x12\r\n\x05iu_id\x18\x01 \x01(\x04\x12\x0f\n\x07iu_name\x18\x02 \x01(\t\x12\x10\n\x08iu_title\x18\x03 \x01(\r\"\x85\x01\n\x0bPBShardChar\x12\x19\n\x06player\x18\x01 \x01(\x0b\x32\t.PBPlayer\x12\x1f\n\tcharacter\x18\x02 \x01(\x0b\x32\x0c.PBCharacter\x12\x15\n\rlast_shard_id\x18\x03 \x01(\r\x12#\n\x07iu_info\x18\x05 \x01(\x0b\x32\x12.PBShardCharIUInfo\"0\n\x0cPBCharGameOp\x12\x11\n\tgameop_id\x18\x01 \x01(\x11\x12\r\n\x05times\x18\x02 \x01(\x11\"6\n\x10PBCharGameOpList\x12\"\n\x0b\x63har_gameop\x18\x01 \x03(\x0b\x32\r.PBCharGameOp\"7\n\nPBRuneItem\x12\x15\n\x04item\x18\x01 \x01(\x0b\x32\x07.PBItem\x12\x12\n\nslot_index\x18\x02 \x01(\r\"Z\n\nPBRuneSlot\x12\x1e\n\trune_item\x18\x01 \x03(\x0b\x32\x0b.PBRuneItem\x12\x15\n\ropen_slot_num\x18\x02 \x01(\r\x12\x15\n\rcur_lotteryid\x18\x03 \x01(\x11\"P\n\x0ePBMountFashion\x12\x12\n\nis_actived\x18\x01 \x01(\r\x12\x16\n\x0eis_timelimited\x18\x02 \x01(\r\x12\x12\n\nexpiration\x18\x03 \x01(\r\">\n\x12PBOpenSlotPageItem\x12\x0f\n\x07page_id\x18\x01 \x01(\x11\x12\x17\n\x0fslot_id_in_page\x18\x02 \x01(\x11\";\n\x0ePBSoulStarItem\x12\x15\n\x04item\x18\x01 \x01(\x0b\x32\x07.PBItem\x12\x12\n\nslot_index\x18\x02 \x01(\r\":\n\x0ePBSoulStarChip\x12\x16\n\x0esoul_direction\x18\x01 \x01(\r\x12\x10\n\x08left_num\x18\x02 \x01(\x11\"\x93\x01\n\x0ePBSoulStarInfo\x12\'\n\x0esoul_star_item\x18\x01 \x03(\x0b\x32\x0f.PBSoulStarItem\x12,\n\x13soul_star_chip_list\x18\x02 \x03(\x0b\x32\x0f.PBSoulStarChip\x12*\n\ropen_num_list\x18\x03 \x03(\x0b\x32\x13.PBOpenSlotPageItem\"\xb4\x01\n\x07PBMount\x12\x10\n\x08sheet_id\x18\x01 \x01(\r\x12\r\n\x05level\x18\x02 \x01(\x11\x12\x0b\n\x03\x65xp\x18\x03 \x01(\x11\x12\x10\n\x08show_idx\x18\x04 \x01(\x11\x12\x1d\n\x08RuneSlot\x18\x05 \x01(\x0b\x32\x0b.PBRuneSlot\x12&\n\rmount_fashion\x18\x06 \x03(\x0b\x32\x0f.PBMountFashion\x12\"\n\tsoul_star\x18\x07 \x01(\x0b\x32\x0f.PBSoulStarInfo\"]\n\x0bPBMountInfo\x12\x17\n\x05mount\x18\x01 \x03(\x0b\x32\x08.PBMount\x12\x1d\n\x15\x61\x63tivate_mount_slotid\x18\x02 \x01(\x11\x12\x16\n\x0eis_high_flying\x18\x03 \x01(\x08\"6\n\x0cPBQuestGroup\x12\x10\n\x08group_id\x18\x01 \x01(\r\x12\x14\n\x0cgroup_number\x18\x02 \x01(\r\"K\n\x0bPBQuestRand\x12\x10\n\x08group_id\x18\x01 \x01(\r\x12\x14\n\x0cgroup_number\x18\x02 \x01(\r\x12\x14\n\x0c\x63\x61nacc_quest\x18\x03 \x01(\r\"\x1f\n\x0bPBFuncStory\x12\x10\n\x08story_id\x18\x01 \x01(\r\"\x1f\n\x0bPBFuncGuide\x12\x10\n\x08guide_id\x18\x01 \x01(\r\"\'\n\x0fPBFuncPushLevel\x12\x14\n\x0cpushlevel_id\x18\x01 \x01(\r\"\x9a\x01\n\x0ePBFuncOpenInfo\x12\x10\n\x08ui_state\x18\x01 \x03(\x12\x12\x0e\n\x06ui_use\x18\x02 \x01(\x12\x12\x1e\n\x08ui_story\x18\x03 \x03(\x0b\x32\x0c.PBFuncStory\x12\x1e\n\x08ui_guide\x18\x04 \x03(\x0b\x32\x0c.PBFuncGuide\x12&\n\x0cui_pushlevel\x18\x05 \x03(\x0b\x32\x10.PBFuncPushLevel\"R\n\x10PBActivitiesData\x12(\n\x0f\x61\x63tivities_data\x18\x01 \x03(\x0b\x32\x0f.PBActivityData\x12\x14\n\x0c\x61ward_status\x18\x02 \x01(\x04\"-\n\x10PBDailySignState\x12\n\n\x02id\x18\x01 \x01(\x11\x12\r\n\x05state\x18\x02 \x01(\x11\"\x92\x02\n\x12PBSignActivityData\x12\x16\n\x0enewerlogindays\x18\x01 \x01(\r\x12\x17\n\x0fnewersignreward\x18\x02 \x01(\r\x12\x16\n\x0emonthlogindays\x18\x03 \x01(\r\x12\x17\n\x0fmonthsignreward\x18\x04 \x01(\r\x12\x13\n\x0blevelreward\x18\x05 \x01(\x04\x12\x12\n\nonlinetime\x18\x06 \x01(\r\x12\x14\n\x0conlinereward\x18\x07 \x01(\r\x12\x16\n\x0emonthvipreward\x18\x08 \x01(\r\x12\x18\n\x10\x61\x64\x64_entergy_time\x18\t \x01(\r\x12)\n\x0e\x64\x61ilysign_list\x18\n \x03(\x0b\x32\x11.PBDailySignState\"%\n\x0cPBDBTeamData\x12\x15\n\ris_autofollow\x18\x01 \x01(\x11\"\xf8\x01\n\rPBJusticeInfo\x12\x15\n\rjustice_value\x18\x01 \x01(\x11\x12\x15\n\rjustice_level\x18\x02 \x01(\x11\x12\x18\n\x10justice_dayvalue\x18\x03 \x01(\x11\x12\x12\n\nevil_value\x18\x04 \x01(\x11\x12\x12\n\nevil_level\x18\x05 \x01(\x11\x12\x12\n\ngain_times\x18\x06 \x01(\x11\x12\x11\n\tuse_times\x18\x07 \x01(\x11\x12%\n\nkillerList\x18\x08 \x03(\x0b\x32\x11.PBEvilKillerList\x12\x15\n\revil_dayvalue\x18\t \x01(\x11\x12\x12\n\nbkill_time\x18\n \x01(\x11\"Q\n\x10PBEvilKillerList\x12\x10\n\x08killerId\x18\x01 \x01(\x04\x12\x17\n\x0f\x65xpiration_time\x18\x02 \x01(\x11\x12\x12\n\nkill_times\x18\x03 \x01(\x11\"W\n\x13PBNewserverDataInfo\x12\x0b\n\x03\x64\x61y\x18\x01 \x01(\x11\x12\r\n\x05state\x18\x02 \x01(\x11\x12\n\n\x02id\x18\x03 \x01(\x11\x12\x0b\n\x03\x63ur\x18\x04 \x01(\x11\x12\x0b\n\x03max\x18\x05 \x01(\x11\">\n\x13PBNewserverActivity\x12\'\n\tdata_list\x18\x01 \x03(\x0b\x32\x14.PBNewserverDataInfo\"D\n\x17PBNewserverRechargeInfo\x12\x0b\n\x03\x64\x61y\x18\x01 \x01(\x11\x12\r\n\x05mount\x18\x02 \x01(\x11\x12\r\n\x05state\x18\x03 \x01(\x11\"F\n\x13PBNewserverRecharge\x12/\n\rrecharge_list\x18\x01 \x03(\x0b\x32\x18.PBNewserverRechargeInfo\"\xec\x02\n\rPBConsignInfo\x12\x12\n\nconsign_id\x18\x01 \x01(\x04\x12\r\n\x05price\x18\x02 \x01(\x05\x12\x12\n\nprice_type\x18\x03 \x01(\x05\x12\x10\n\x08owner_id\x18\x04 \x01(\x04\x12\x18\n\x10owner_pf_role_id\x18\x05 \x01(\x05\x12\x14\n\x0c\x63onsign_flag\x18\x06 \x01(\x11\x12\x12\n\nsheet_name\x18\x07 \x01(\t\x12\x10\n\x08quantity\x18\x08 \x01(\r\x12\x15\n\x04item\x18\t \x01(\x0b\x32\x07.PBItem\x12\x12\n\nsrc_roleid\x18\n \x01(\r\x12\x16\n\x0esrc_pf_user_id\x18\x0b \x01(\r\x12\x14\n\x0csrc_playerid\x18\x0c \x01(\r\x12\x12\n\nsrc_gameid\x18\r \x01(\r\x12\x10\n\x08\x61\x64\x64_time\x18\x0e \x01(\r\x12\x17\n\x0f\x65xpiration_time\x18\x0f \x01(\r\x12\x14\n\x0c\x61\x63\x63ount_type\x18\x10 \x01(\x11:\x0e\x92\xb5\x18\nconsign_id\"\xe8\x02\n\x0cPBConsignLog\x12\x12\n\nconsign_id\x18\x01 \x01(\x04\x12\r\n\x05price\x18\x02 \x01(\x05\x12\x12\n\nprice_type\x18\x03 \x01(\x05\x12\x10\n\x08owner_id\x18\x04 \x01(\x04\x12\x18\n\x10owner_pf_role_id\x18\x05 \x01(\x05\x12\x14\n\x0c\x63onsign_flag\x18\x06 \x01(\x11\x12\x12\n\nsheet_name\x18\x07 \x01(\t\x12\x10\n\x08quantity\x18\x08 \x01(\r\x12\x15\n\x04item\x18\t \x01(\x0b\x32\x07.PBItem\x12\x12\n\nsrc_roleid\x18\n \x01(\r\x12\x16\n\x0esrc_pf_user_id\x18\x0b \x01(\r\x12\x14\n\x0csrc_playerid\x18\x0c \x01(\r\x12\x12\n\nsrc_gameid\x18\r \x01(\r\x12\x14\n\x0c\x63onsign_time\x18\x0e \x01(\r\x12\x10\n\x08\x61\x64\x64_time\x18\x0f \x01(\r\x12\x14\n\x0c\x61\x63\x63ount_type\x18\x10 \x01(\x11:\x0e\x92\xb5\x18\nconsign_id\"E\n\x10PBConsignHotItem\x12\x10\n\x08sheet_id\x18\x01 \x01(\x05\x12\x11\n\tbuy_times\x18\x02 \x01(\x04:\x0c\x92\xb5\x18\x08sheet_id\"\xad\x01\n\x15PBCharLocalFriendData\x12\'\n\x0b\x65nemy_infos\x18\x01 \x03(\x0b\x32\x12.PBCharFriendEnemy\x12+\n\rcontact_infos\x18\x02 \x03(\x0b\x32\x14.PBCharFriendContact\x12\x12\n\ngiven_list\x18\x03 \x03(\x04\x12\x13\n\x0bgive_energy\x18\x04 \x01(\x11\x12\x15\n\rgather_energy\x18\x05 \x01(\x11\">\n\x14PBCharGuildSkillData\x12&\n\x0bguild_skill\x18\x01 \x03(\x0b\x32\x11.PBLastGuildSkill\"5\n\x10PBLastGuildSkill\x12\x12\n\nsercial_id\x18\x01 \x01(\x11\x12\r\n\x05level\x18\x02 \x01(\x11\"\x8d\x02\n\x10PBCharSingleData\x12\x1a\n\x12\x65xp_config_version\x18\x01 \x01(\x11\x12\x15\n\rchannelreward\x18\x02 \x01(\x04\x12\x12\n\ncompensate\x18\x03 \x01(\x08\x12\x16\n\x0e\x65valuate_count\x18\x04 \x01(\x11\x12\x18\n\x10guild_day_reward\x18\x05 \x01(\r\x12\x11\n\tlast_role\x18\x06 \x01(\x11\x12\x13\n\x0b\x62\x65t_matchid\x18\x07 \x01(\x04\x12\x17\n\x0f\x62\x65t_round_index\x18\x08 \x01(\x11\x12\x13\n\x0bspim_raceid\x18\t \x01(\x04\x12\x14\n\x0cspim_guildid\x18\n \x01(\x04\x12\x14\n\x0clast_savelog\x18\x0b \x01(\r\"f\n\x10PBDBMarriageInfo\x12&\n\rmarriage_info\x18\x01 \x01(\x0b\x32\x0f.PBMarriageInfo\x12\x12\n\nhis_number\x18\x02 \x01(\x11\x12\x16\n\x0emarch_gain_exp\x18\x03 \x01(\x11\"4\n\x0cPBDBHoldInfo\x12\x11\n\tis_shield\x18\x01 \x01(\x08\x12\x11\n\tis_action\x18\x02 \x01(\x08\"\\\n\x0ePBDBCharGmMail\x12\x0f\n\x07mail_id\x18\x01 \x01(\x04\x12\x13\n\x0brecv_status\x18\x02 \x01(\x11\x12\x11\n\trecv_time\x18\x03 \x01(\r\x12\x11\n\tsend_time\x18\x04 \x01(\r\"3\n\x12PBDBCharGmMailList\x12\x1d\n\x04mail\x18\x01 \x03(\x0b\x32\x0f.PBDBCharGmMail\"<\n\x10PBAuthorityDatas\x12(\n\x0e\x61uthority_data\x18\x01 \x03(\x0b\x32\x10.PBAuthorityData\"\x9c\x01\n\x0fPBAuthorityData\x12\x13\n\x0b\x61\x63tivity_id\x18\x01 \x01(\r\x12\x15\n\ractivity_type\x18\x02 \x01(\r\x12\x12\n\nstart_time\x18\x03 \x01(\r\x12\x10\n\x08\x65nd_time\x18\x04 \x01(\r\x12\x0f\n\x07user_id\x18\x05 \x01(\r\x12&\n\rjubaopen_data\x18\x06 \x01(\x0b\x32\x0f.PBJuBaoPenData\"\xa5\x01\n\x0ePBJuBaoPenData\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x17\n\x0f\x61uthority_token\x18\x02 \x01(\x11\x12\x15\n\rpurchase_time\x18\x03 \x01(\r\x12\x18\n\x10last_update_time\x18\x04 \x01(\r\x12\x0c\n\x04\x64\x61ys\x18\x05 \x01(\r\x12*\n\x0fjubaopen_reward\x18\x06 \x03(\x0b\x32\x11.PBJuBaoPenReward\"k\n\x10PBJuBaoPenReward\x12\x0e\n\x06\x64\x61y_th\x18\x01 \x01(\r\x12\x15\n\rreward_status\x18\x02 \x01(\r\x12\x10\n\x08tokename\x18\x03 \x01(\t\x12\x1e\n\x04item\x18\x04 \x03(\x0b\x32\x10.PBJBPRewardItem\"B\n\x0fPBJBPRewardItem\x12\x0f\n\x07sheetid\x18\x01 \x01(\t\x12\r\n\x05\x63ount\x18\x02 \x01(\x11\x12\x0f\n\x07percent\x18\x03 \x01(\x08\"L\n\x10PBNewRoleCornAll\x12%\n\npb_roleone\x18\x01 \x03(\x0b\x32\x11.PBNewRoleCornOne\x12\x11\n\tneed_send\x18\x02 \x01(\x08\"{\n\x10PBNewRoleCornOne\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\x04\x12\x10\n\x08\x62uy_time\x18\x02 \x01(\x04\x12!\n\x06reward\x18\x04 \x03(\x0b\x32\x11.PBJuBaoPenReward\x12\x11\n\tbuy_state\x18\x05 \x01(\r\x12\x0f\n\x07\x62uy_idx\x18\x06 \x01(\r\"_\n\x0cPBOfflineExp\x12\x0f\n\x07has_get\x18\x01 \x01(\x08\x12\x12\n\nfresh_time\x18\x02 \x01(\r\x12*\n\x0fofflineexp_list\x18\x03 \x03(\x0b\x32\x11.PBOfflineExpData\"o\n\x10PBOfflineExpData\x12\x15\n\rofflineexp_id\x18\x01 \x01(\x11\x12\x11\n\texp_value\x18\x02 \x01(\x11\x12\x11\n\tworld_add\x18\x03 \x01(\x11\x12\x0f\n\x07vip_add\x18\x04 \x01(\x11\x12\r\n\x05times\x18\x05 \x01(\x11\"P\n\x0cPBGemCutting\x12\x14\n\x0c\x63utting_type\x18\x01 \x01(\r\x12\x15\n\rcutting_level\x18\x02 \x01(\r\x12\x13\n\x0b\x63utting_exp\x18\x03 \x01(\r\"?\n\x0ePBDBChangeCamp\x12\x18\n\x10\x63hange_camp_time\x18\x01 \x01(\r\x12\x13\n\x0bold_camp_id\x18\x02 \x01(\x11\"*\n\x06PBMute\x12\x0f\n\x07\x63hannel\x18\x01 \x01(\r\x12\x0f\n\x07\x65ndtime\x18\x02 \x01(\r\"\'\n\nPBMuteData\x12\x19\n\x08mutedata\x18\x01 \x03(\x0b\x32\x07.PBMute\";\n\x0bPBDBBoating\x12\x16\n\x0e\x62oating_status\x18\x01 \x01(\x11\x12\x14\n\x0c\x63ollecttimes\x18\x02 \x01(\x11\"\x97\x02\n\x0bPBPotential\x12\x1b\n\x13\x63ur_potential_value\x18\x01 \x01(\x11\x12\x1b\n\x13\x63ur_potential_class\x18\x02 \x01(\x11\x12)\n\x12\x63ur_potential_attr\x18\x03 \x01(\x0b\x32\r.PBProperties\x12*\n\x13last_potential_attr\x18\x04 \x01(\x0b\x32\r.PBProperties\x12*\n\x13temp_potential_attr\x18\x05 \x01(\x0b\x32\r.PBProperties\x12\x1c\n\x14honghuangzhili_state\x18\x06 \x01(\x11\x12-\n\x0e\x61ttrstate_list\x18\x07 \x03(\x0b\x32\x15.PBPotentialAttrState\"g\n\x10PBDBSpanImbattle\x12\x17\n\x0fwatching_status\x18\x01 \x01(\x11\x12\x15\n\rwatching_time\x18\x02 \x01(\r\x12\x10\n\x08match_id\x18\x03 \x01(\x04\x12\x11\n\tbattle_id\x18\x04 \x01(\x04\";\n\x0ePBWardrobeItem\x12\x15\n\x04item\x18\x01 \x01(\x0b\x32\x07.PBItem\x12\x12\n\nslot_index\x18\x02 \x01(\r\"G\n\x0ePBWardrobeSlot\x12\x11\n\topen_slot\x18\x01 \x01(\x11\x12\"\n\titem_list\x18\x02 \x03(\x0b\x32\x0f.PBWardrobeItem\"_\n\x0ePBWardrobeData\x12\x1c\n\x04part\x18\x01 \x01(\x0e\x32\x0e.PBFashionPart\x12\x0c\n\x04type\x18\x02 \x01(\x11\x12!\n\x08\x62\x61g_slot\x18\x03 \x01(\x0b\x32\x0f.PBWardrobeSlot\"o\n\x0cPBDBWardrobe\x12\x13\n\x0buItemIdHead\x18\x01 \x01(\x04\x12\x16\n\x0euItemIdFashion\x18\x02 \x01(\x04\x12\x1d\n\x04\x64\x61ta\x18\x03 \x03(\x0b\x32\x0f.PBWardrobeData\x12\x13\n\x0buItemIdWing\x18\x04 \x01(\x04\"f\n\x12PBDBLoginGiftsData\x12&\n\x0blogin_gifts\x18\x01 \x03(\x0b\x32\x11.PBLoginGiftsData\x12(\n\x0conline_gifts\x18\x02 \x01(\x0b\x32\x12.PBOnlineGiftsData\"z\n\x10PBLoginGiftsData\x12\x13\n\x0b\x61\x63tivity_id\x18\x01 \x01(\r\x12\x18\n\x10last_update_time\x18\x02 \x01(\r\x12\x12\n\nlogin_days\x18\x03 \x01(\r\x12#\n\x06reward\x18\x04 \x03(\x0b\x32\x13.PBLoginGiftsReward\"\x82\x01\n\x12PBLoginGiftsReward\x12\x0e\n\x06\x64\x61y_th\x18\x01 \x01(\r\x12\x15\n\rreward_status\x18\x02 \x01(\r\x12\x13\n\x0b\x61\x63tive_time\x18\x03 \x01(\r\x12\x10\n\x08get_time\x18\x04 \x01(\r\x12\x1e\n\x04item\x18\x05 \x03(\x0b\x32\x10.PBJBPRewardItem\"q\n\x11PBOnlineGetStruct\x12\x13\n\x0bonline_time\x18\x01 \x01(\r\x12\x15\n\rreward_status\x18\x02 \x01(\r\x12\x10\n\x08\x63\x66g_time\x18\x03 \x01(\r\x12\x1e\n\x04item\x18\x04 \x03(\x0b\x32\x10.PBJBPRewardItem\"9\n\x11PBOnlineGiftsData\x12$\n\x08getindex\x18\x01 \x03(\x0b\x32\x12.PBOnlineGetStruct\"B\n\x14PBDBOnearmBanditData\x12\x12\n\nitem_index\x18\x01 \x01(\x11\x12\x16\n\x0emultiple_index\x18\x02 \x01(\x11\"4\n\rPBDBXinfaData\x12#\n\tdata_list\x18\x01 \x03(\x0b\x32\x10.PBXinfaItemData\"F\n\x0fPBXinfaItemData\x12\x0f\n\x07slot_id\x18\x01 \x01(\r\x12\x11\n\tcur_level\x18\x02 \x01(\r\x12\x0f\n\x07\x63ur_exp\x18\x03 \x01(\r\"=\n\x0fPBDBXiuzhenData\x12*\n\rmai_item_list\x18\x01 \x03(\x0b\x32\x13.PBDBXiuzhenmaiItem\"R\n\x0bPBDBxueItem\x12\x0e\n\x06xue_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63ur_pin\x18\x02 \x01(\r\x12\x0f\n\x07\x63ur_exp\x18\x03 \x01(\r\x12\x11\n\tcur_state\x18\x04 \x01(\x08\"M\n\x14PBDBXiuzhenchongItem\x12\x10\n\x08\x63hong_id\x18\x01 \x01(\r\x12#\n\rxue_item_list\x18\x02 \x03(\x0b\x32\x0c.PBDBxueItem\"T\n\x12PBDBXiuzhenmaiItem\x12\x0e\n\x06mai_id\x18\x01 \x01(\r\x12.\n\x0f\x63hong_item_list\x18\x02 \x03(\x0b\x32\x15.PBDBXiuzhenchongItem\">\n\x15PBSerialDayRewardData\x12\x0e\n\x06\x64\x61y_th\x18\x01 \x01(\x11\x12\x15\n\rreward_status\x18\x02 \x01(\r\"x\n\x15PBOldPlayerBackStruct\x12\x11\n\tback_time\x18\x01 \x01(\r\x12\x1b\n\x13\x62\x61\x63k_time_vip_level\x18\x02 \x01(\r\x12/\n\x0fserial_day_data\x18\x03 \x03(\x0b\x32\x16.PBSerialDayRewardData\"K\n\x13PBOldPlayerBackData\x12\x34\n\x14old_player_back_data\x18\x01 \x03(\x0b\x32\x16.PBOldPlayerBackStructB\x02H\x01')
+  serialized_pb='\n\x0cplayer.proto\x1a\rdb_base.proto\x1a\x11magicweapon.proto\x1a\x0fmsg_skill.proto\x1a\x0c\x64\x62_pet.proto\x1a\x0emsg_item.proto\x1a\x0fmsg_guild.proto\x1a\x18msg_activity_entry.proto\x1a\x15msg_climb_tower.proto\x1a\rdb_shop.proto\x1a\x10msg_friend.proto\x1a\x12msg_relation.proto\x1a\x12msg_activity.proto\x1a\x14msg_mount_luck.proto\x1a\x13msg_potential.proto\x1a\x12msg_wardrobe.proto\x1a\x0emsg_wing.proto\x1a\x13msg_magic_pet.proto\"@\n\x0cPBStaticItem\x12\x10\n\x08sheet_id\x18\x01 \x01(\r\x12\x10\n\x08quantity\x18\x02 \x01(\x11\x12\x0c\n\x04\x62ind\x18\x03 \x01(\x08\"\xfd\x10\n\x0ePBCharProperty\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x11\n\tplayer_id\x18\x02 \x01(\x04\x12\x12\n\npf_role_id\x18\x03 \x01(\r\x12\x0c\n\x04race\x18\x04 \x01(\r\x12\x0c\n\x04role\x18\x05 \x01(\r\x12\x0e\n\x06gender\x18\x06 \x01(\r\x12\r\n\x05level\x18\x07 \x01(\r\x12\x0b\n\x03\x65xp\x18\x08 \x01(\x12\x12\x0f\n\x07\x61\x63\x63_exp\x18\t \x01(\x12\x12\n\n\x02hp\x18\n \x01(\x11\x12\n\n\x02mp\x18\x0b \x01(\x11\x12\n\n\x02\x61p\x18\x0c \x01(\x11\x12\x15\n\runbuond_money\x18\r \x01(\x12\x12\x13\n\x0b\x64iamond_red\x18\x0e \x01(\x12\x12\x14\n\x0c\x64iamond_blue\x18\x0f \x01(\x12\x12\x0e\n\x06\x65nergy\x18\x10 \x01(\x11\x12\x0e\n\x06zhenqi\x18\x11 \x01(\x12\x12\x11\n\tpvp_score\x18\x12 \x01(\x11\x12\x11\n\tpvp_honor\x18\x13 \x01(\r\x12\x14\n\x0c\x66riend_point\x18\x14 \x01(\x11\x12\x0e\n\x06lingqi\x18\x15 \x01(\x11\x12\x11\n\tlingqi_tr\x18\x16 \x01(\x11\x12\x0f\n\x07shilian\x18\x17 \x01(\x11\x12\x13\n\x0b\x63harm_point\x18\x19 \x01(\x11\x12\x0e\n\x06killer\x18\x1a \x01(\x11\x12\x10\n\x08vitality\x18\x1b \x01(\x11\x12\t\n\x01x\x18\x1c \x01(\x11\x12\t\n\x01y\x18\x1d \x01(\x11\x12\t\n\x01z\x18\x1e \x01(\x05\x12\x0f\n\x07heading\x18\x1f \x01(\x02\x12\x0e\n\x06map_id\x18  \x01(\r\x12\x13\n\x0binstance_id\x18! \x01(\r\x12\x16\n\x0e\x63ur_dungeon_id\x18\" \x01(\x04\x12\x0e\n\x06last_x\x18# \x01(\x11\x12\x0e\n\x06last_y\x18$ \x01(\x11\x12\x0e\n\x06last_z\x18% \x01(\x11\x12\x13\n\x0blast_map_id\x18\' \x01(\r\x12\x0e\n\x06lineid\x18& \x01(\r\x12\x16\n\x0elogout_dungeon\x18( \x01(\r\x12\x15\n\rlast_quittime\x18) \x01(\r\x12\x15\n\rlast_day_time\x18* \x01(\r\x12\x16\n\x0elast_week_time\x18+ \x01(\r\x12\x11\n\tday_cycle\x18, \x01(\x11\x12\x13\n\x0b\x64\x61ily_level\x18- \x01(\r\x12\x11\n\tlive_days\x18. \x01(\x11\x12\x14\n\x0c\x63ombat_power\x18/ \x01(\x05\x12\x15\n\rpvp_rank_open\x18\x30 \x01(\x11\x12\x18\n\x10\x62\x61ttle_rank_open\x18\x31 \x01(\x11\x12\x18\n\x10server_open_days\x18\x32 \x01(\x11\x12\x12\n\npvp_season\x18\x33 \x01(\x11\x12\x14\n\x0c\x63onsume_info\x18\x34 \x01(\t\x12\x10\n\x08ui_state\x18\x35 \x01(\x12\x12\x0e\n\x06ui_use\x18\x36 \x01(\x12\x12\x15\n\rdaily_achieve\x18\x37 \x01(\x04\x12\x15\n\rvip_name_flag\x18\x38 \x01(\r\x12\x14\n\x0c\x63lear_new_dg\x18\x39 \x01(\r\x12\x18\n\x10\x63\x61n_equip_hornor\x18; \x01(\r\x12\x18\n\x10skill_learned_iu\x18< \x01(\t\x12\x14\n\x0ctime_left_iu\x18= \x01(\r\x12\x12\n\nmeet_times\x18> \x01(\r\x12\x1b\n\x13guild_lottery_times\x18? \x01(\x11\x12\x1a\n\x12vipcard_expiration\x18@ \x01(\r\x12\x18\n\x10iu_mission_cycle\x18\x41 \x01(\x11\x12\x18\n\x10iu_mission_index\x18\x42 \x01(\x11\x12\x19\n\x11\x63ur_iu_mission_id\x18\x43 \x01(\r\x12\x12\n\nlast_gs_id\x18\x44 \x01(\r\x12\x17\n\x0fspan_request_id\x18\x45 \x01(\r\x12\x16\n\x0ehideorshow_sth\x18G \x01(\r\x12\x17\n\x0freposition_flag\x18H \x01(\r\x12\r\n\x05gw_id\x18I \x01(\r\x12\x11\n\tchar_name\x18J \x01(\t\x12\x15\n\rpvp_max_score\x18K \x01(\x11\x12\x17\n\x0f\x63hange_job_flag\x18L \x01(\r\x12\x13\n\x0brush_ticket\x18M \x01(\x11\x12\x14\n\x0cguild_salary\x18N \x01(\x11\x12\x14\n\x0cguild_contri\x18O \x01(\x11\x12\x0c\n\x04qili\x18P \x01(\x11\x12\x14\n\x0css_camp_type\x18Q \x01(\r\x12\x0e\n\x06renown\x18R \x01(\x11\x12\x1a\n\x12last_login_camp_id\x18S \x01(\r\x12\x15\n\rlogin_camp_id\x18T \x01(\r\x12\x13\n\x0b\x63reate_time\x18U \x01(\r\x12\x12\n\ngateway_id\x18V \x01(\r\x12\x0f\n\x07\x65xploit\x18W \x01(\r\x12\x11\n\tvip_level\x18X \x01(\x11\x12\x0b\n\x03vpa\x18Y \x01(\x04\x12\x0b\n\x03vpb\x18Z \x01(\x04\x12\x0b\n\x03vpc\x18[ \x01(\x04\x12\x10\n\x08sheet_id\x18\\ \x01(\r\x12\x10\n\x08guild_id\x18] \x01(\x04\x12\x12\n\nguild_name\x18^ \x01(\t\x12\x12\n\npf_user_id\x18_ \x01(\r\x12\x13\n\x0b\x64\x65lete_flag\x18` \x01(\r\x12\x13\n\x0b\x64\x65lete_time\x18\x61 \x01(\r\x12\x11\n\thead_icon\x18\x62 \x01(\t\x12\x14\n\x0chead_icon_ct\x18\x63 \x01(\r\x12\x13\n\x0boffline_exp\x18\x64 \x01(\x11\x12\x18\n\x10total_arenatimes\x18\x65 \x01(\x11\x12\x19\n\x11newserver_version\x18\x66 \x01(\x11\x12\x1e\n\x16quartercard_expiration\x18g \x01(\x11\x12\x1a\n\x12pvp_lastupdatetime\x18h \x01(\r\x12\x15\n\rpet_pvp_jifen\x18i \x01(\x12\x12\x19\n\x11send_flower_socre\x18j \x01(\r\x12\x0f\n\x07\x63rop_id\x18k \x01(\x04\x12\x1d\n\x15last_create_crop_time\x18l \x01(\r\x12\x16\n\x0espanteam_score\x18m \x01(\x12:\x0e\x92\xb5\x18\npf_role_id\"\xb4\x02\n\nPBUserInfo\x12\x11\n\tplayer_id\x18\x01 \x01(\x04\x12\x0f\n\x07\x61\x63\x63ount\x18\x02 \x01(\t\x12\x0f\n\x07game_id\x18\x03 \x01(\r\x12\x12\n\npf_user_id\x18\x05 \x01(\r\x12\x11\n\tvip_level\x18\x06 \x01(\x11\x12\x0f\n\x07vip_exp\x18\x07 \x01(\x12\x12\x15\n\rvip_exp_delta\x18\x08 \x01(\x12\x12\x11\n\tprivilege\x18\t \x01(\t\x12\x15\n\rlast_login_ip\x18\n \x01(\r\x12\x0e\n\x06status\x18\x0b \x01(\r\x12\x17\n\x0f\x62ind_phone_flag\x18\x0c \x01(\r\x12\x16\n\x0evip_virtal_exp\x18\r \x01(\x12\x12\'\n\x1flast_get_back_charge_gifts_time\x18\x0e \x01(\r:\x0e\x92\xb5\x18\npf_user_id\"p\n\x0cPBChooseChar\x12\x11\n\tplayer_id\x18\x01 \x01(\x04\x12\x12\n\npf_user_id\x18\x02 \x01(\r\x12)\n\rchar_summarys\x18\x03 \x01(\x0b\x32\x12.PBCharSummaryList:\x0e\x92\xb5\x18\npf_user_id\">\n\x11PBCharSummaryList\x12)\n\x11\x63har_summary_list\x18\x01 \x03(\x0b\x32\x0e.PBCharSummary\"\x8c\x02\n\rPBCharSummary\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x12\n\npf_role_id\x18\x02 \x01(\r\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\r\n\x05level\x18\x04 \x01(\r\x12\x0b\n\x03vpa\x18\x05 \x01(\x04\x12\x0b\n\x03vpb\x18\x06 \x01(\x04\x12\x0b\n\x03vpc\x18\x07 \x01(\x04\x12\x10\n\x08op_state\x18\t \x01(\x11\x12\x0f\n\x07op_time\x18\n \x01(\r\x12\x10\n\x08sheet_id\x18\x0b \x01(\r\x12\x13\n\x0b\x63reate_time\x18\x0c \x01(\r\x12\x14\n\x0css_camp_type\x18\r \x01(\r\x12\x1a\n\x12login_ss_camp_type\x18\x0e \x01(\x04\x12\x16\n\x0eprotect_reason\x18\x0f \x01(\x11\"\x86\x01\n\x08PBPlayer\x12\x11\n\tplayer_id\x18\x01 \x01(\x04\x12\x1e\n\tuser_info\x18\x02 \x01(\x0b\x32\x0b.PBUserInfo\x12\"\n\x0bplayer_blob\x18\x03 \x01(\x0b\x32\r.PBPlayerBlob\x12#\n\x0c\x63har_summary\x18\x04 \x01(\x0b\x32\r.PBChooseChar\"i\n\x0cPBPlayerBlob\x12\x11\n\tplayer_id\x18\x01 \x01(\x04\x12\x12\n\npf_user_id\x18\x02 \x01(\r\x12\"\n\x0bplayer_data\x18\x03 \x01(\x0b\x32\r.PBPlayerData:\x0e\x92\xb5\x18\npf_user_id\"\xff\x01\n\x0cPBPlayerData\x12\x1d\n\tquest_vip\x18\x04 \x03(\x0b\x32\n.PBDBQuest\x12,\n\rcharge_record\x18\x05 \x03(\x0b\x32\x15.PBPlayerChargeRecord\x12(\n\x0b\x63harge_sign\x18\x06 \x03(\x0b\x32\x13.PBPlayerChargeSign\x12.\n\x0e\x63harge_regress\x18\x07 \x03(\x0b\x32\x16.PBPlayerChargeRegress\x12.\n\x11vip_change_reward\x18\x08 \x03(\x0b\x32\x13.PBVipGetRewardInfo\x12\x18\n\x10last_vip_version\x18\t \x01(\t\"\xa8\x01\n\x14PBPlayerChargeRecord\x12\x10\n\x08\x64\x65tailId\x18\x01 \x01(\x04\x12\x0e\n\x06gameId\x18\x02 \x01(\r\x12\x13\n\x0b\x63harge_time\x18\x03 \x01(\r\x12\x15\n\rcharge_amount\x18\x04 \x01(\x11\x12\x13\n\x0blast_amount\x18\x05 \x01(\x11\x12\x14\n\x0ctotal_amount\x18\x06 \x01(\x11\x12\x17\n\x0f\x63harge_goods_id\x18\x07 \x01(\r\"L\n\x12PBVipGetRewardInfo\x12\x12\n\nversion_id\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\x13\n\x0bifGetReward\x18\x03 \x01(\x08\"y\n\x12PBPlayerChargeSign\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x10\n\x08\x65nd_time\x18\x02 \x01(\r\x12*\n\tsign_item\x18\x03 \x03(\x0b\x32\x17.PBPlayerChargeSignItem\x12\x15\n\rserial_status\x18\x04 \x01(\r\"W\n\x16PBPlayerChargeSignItem\x12\x10\n\x08sign_day\x18\x01 \x01(\r\x12\x13\n\x0bsign_status\x18\x02 \x01(\r\x12\x16\n\x0esign_detail_id\x18\x03 \x01(\x04\"|\n\x15PBPlayerChargeRegress\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x12\n\nstart_time\x18\x02 \x01(\r\x12\x15\n\rreward_status\x18\x03 \x01(\r\x12\x14\n\x0cignore_count\x18\x04 \x01(\r\x12\x12\n\nitem_index\x18\x05 \x01(\r\"Q\n\x13PBPlayerBindVipData\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\r\x12\x14\n\x0c\x61\x63t_end_time\x18\x02 \x01(\r\x12\x14\n\x0cignore_count\x18\x03 \x01(\r\"\x9c\x01\n\tPBDBQuest\x12\x10\n\x08quest_id\x18\x01 \x01(\r\x12\x13\n\x0bquest_state\x18\x02 \x01(\r\x12\x16\n\x0e\x61ward_launched\x18\x03 \x01(\x08\x12\x0f\n\x07quality\x18\x04 \x01(\r\x12\x13\n\x0b\x66inish_time\x18\x05 \x01(\r\x12\x16\n\x0e\x66orce_complete\x18\x06 \x01(\x08\x12\x12\n\nstart_time\x18\x07 \x01(\r\"\xa1\x02\n\x08PBDBTask\x12 \n\x0cquest_normal\x18\x01 \x03(\x0b\x32\n.PBDBQuest\x12\x1f\n\x0bquest_daily\x18\x02 \x03(\x0b\x32\n.PBDBQuest\x12\x1f\n\x0bquest_other\x18\x03 \x03(\x0b\x32\n.PBDBQuest\x12 \n\nmount_info\x18\x04 \x01(\x0b\x32\x0c.PBMountInfo\x12\x1f\n\x0bquest_group\x18\x05 \x03(\x0b\x32\n.PBDBQuest\x12\x1e\n\nquest_rand\x18\x06 \x03(\x0b\x32\n.PBDBQuest\x12\'\n\x10quest_group_data\x18\x07 \x03(\x0b\x32\r.PBQuestGroup\x12%\n\x0fquest_rand_data\x18\x08 \x03(\x0b\x32\x0c.PBQuestRand\"f\n\x0bPBCharacter\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12&\n\rchar_property\x18\x02 \x01(\x0b\x32\x0f.PBCharProperty\x12\x1e\n\tchar_blob\x18\x03 \x01(\x0b\x32\x0b.PBCharBlob\"\x8c\x18\n\nPBCharBlob\x12\x0f\n\x07\x63har_id\x18\x01 \x01(\x04\x12\x12\n\npf_role_id\x18\x02 \x01(\r\x12\x13\n\x03\x62\x61g\x18\x03 \x01(\x0b\x32\x06.PBBag\x12&\n\x11items_tosave_list\x18\x04 \x01(\x0b\x32\x0b.PBItemList\x12\x1d\n\x08shortcut\x18\x05 \x01(\x0b\x32\x0b.PBShortcut\x12\x19\n\x06\x63\x64time\x18\x06 \x01(\x0b\x32\t.PBCDTime\x12\x34\n\x18mission_done_tosave_list\x18\x07 \x01(\x0b\x32\x12.PBDoneMissionList\x12\x34\n\x18\x63ounter_info_tosave_list\x18\x08 \x01(\x0b\x32\x12.PBCounterInfoList\x12\x1b\n\x07\x64ungeon\x18\t \x01(\x0b\x32\n.PBDungeon\x12$\n\x0clottery_list\x18\n \x01(\x0b\x32\x0e.PBLotteryList\x12+\n\x10gem_enchase_list\x18\x0b \x01(\x0b\x32\x11.PBGemEnchaseList\x12%\n\nchar_title\x18\r \x01(\x0b\x32\x11.PBCharacterTitle\x12 \n\nniuer_info\x18\x0e \x01(\x0b\x32\x0c.PBNiuerInfo\x12+\n\x10offline_exp_info\x18\x0f \x01(\x0b\x32\x11.PBOfflineExpInfo\x12\x1e\n\tbuy_backs\x18\x10 \x01(\x0b\x32\x0b.PBBuyBacks\x12 \n\nblack_list\x18\x11 \x01(\x0b\x32\x0c.PBBlackList\x12/\n\x12\x64\x65lete_friend_info\x18\x12 \x01(\x0b\x32\x13.PBDeleteFriendInfo\x12 \n\nmount_info\x18\x13 \x01(\x0b\x32\x0c.PBMountInfo\x12\x1a\n\x07\x64\x62_task\x18\x15 \x01(\x0b\x32\t.PBDBTask\x12+\n\x10\x63har_gameop_list\x18\x16 \x01(\x0b\x32\x11.PBCharGameOpList\x12\'\n\x0e\x66unc_open_info\x18\x17 \x01(\x0b\x32\x0f.PBFuncOpenInfo\x12-\n\x10magicweapon_info\x18\x18 \x01(\x0b\x32\x13.PBMagicWeaponHouse\x12\x1f\n\nskill_info\x18\x19 \x01(\x0b\x32\x0b.PBAllSkill\x12&\n\x0bguild_state\x18\x1a \x01(\x0b\x32\x11.PBCharGuildState\x12\x1e\n\x08pet_info\x18\x1b \x01(\x0b\x32\x0c.PBDBPetInfo\x12*\n\x0f\x61\x63tivities_data\x18\x1c \x01(\x0b\x32\x11.PBActivitiesData\x12*\n\x10guild_skill_list\x18\x1d \x01(\x0b\x32\x10.PBSkillInfoList\x12\'\n\x0b\x63limb_tower\x18\x1e \x01(\x0b\x32\x12.PBClimbTowerInfos\x12 \n\tshop_info\x18\x1f \x01(\x0b\x32\r.PBDBShopInfo\x12*\n\rsign_activity\x18  \x01(\x0b\x32\x13.PBSignActivityData\x12 \n\tteam_info\x18! \x01(\x0b\x32\r.PBDBTeamData\x12%\n\rall_buff_data\x18\" \x01(\x0b\x32\x0e.PBAllBuffData\x12\x19\n\x11original_closthes\x18# \x01(\r\x12$\n\x0cjustice_data\x18$ \x01(\x0b\x32\x0e.PBJusticeInfo\x12,\n\x0enewserver_data\x18% \x01(\x0b\x32\x14.PBNewserverActivity\x12\x30\n\x12newserver_recharge\x18& \x01(\x0b\x32\x14.PBNewserverRecharge\x12\x1f\n\x17\x63lothes_styleid_default\x18\' \x01(\r\x12%\n\rxiu_xian_data\x18( \x01(\x0b\x32\x0e.PBXiuXianInfo\x12-\n\x11tmp_shard_iu_info\x18) \x01(\x0b\x32\x12.PBShardCharIUInfo\x12:\n\x13\x63onsume_record_list\x18* \x01(\x0b\x32\x1d.PBCharConsumeRecordContainer\x12\x15\n\rhair_style_id\x18+ \x01(\r\x12\x15\n\rhair_sheet_id\x18, \x01(\r\x12+\n\x0b\x66riend_data\x18- \x01(\x0b\x32\x16.PBCharLocalFriendData\x12/\n\x10last_guild_skill\x18. \x01(\x0b\x32\x15.PBCharGuildSkillData\x12&\n\x0bsingle_data\x18/ \x01(\x0b\x32\x11.PBCharSingleData\x12,\n\rexchange_shop\x18\x30 \x01(\x0b\x32\x15.PBDBExchangeShopData\x12#\n\nquest_data\x18\x31 \x01(\x0b\x32\x0f.PBQuestionData\x12(\n\rmarriage_data\x18\x32 \x01(\x0b\x32\x11.PBDBMarriageInfo\x12 \n\thold_data\x18\x33 \x01(\x0b\x32\r.PBDBHoldInfo\x12)\n\x0cgm_mail_list\x18\x37 \x01(\x0b\x32\x13.PBDBCharGmMailList\x12%\n\ncornucopia\x18\x38 \x01(\x0b\x32\x11.PBAuthorityDatas\x12\x19\n\trepertory\x18\x39 \x01(\x0b\x32\x06.PBRep\x12\x41\n\x1b\x65xcuting_treasure_incidents\x18: \x01(\x0b\x32\x1c.PBExcutingTreasureIncidents\x12%\n\nnewroleact\x18; \x01(\x0b\x32\x11.PBNewRoleCornAll\x12\'\n\x10offline_exp_data\x18< \x01(\x0b\x32\r.PBOfflineExp\x12)\n\x10\x63hange_camp_data\x18= \x01(\x0b\x32\x0f.PBDBChangeCamp\x12\x31\n\x13lottery_status_data\x18> \x01(\x0b\x32\x14.PBLotteryStatusData\x12\x19\n\x04mute\x18? \x01(\x0b\x32\x0b.PBMuteData\x12 \n\tluck_data\x18@ \x01(\x0b\x32\r.PBDBLuckInfo\x12\"\n\x0c\x62oating_data\x18\x41 \x01(\x0b\x32\x0c.PBDBBoating\x12$\n\x0epotential_data\x18\x42 \x01(\x0b\x32\x0c.PBPotential\x12-\n\x12span_imbattle_data\x18\x43 \x01(\x0b\x32\x11.PBDBSpanImbattle\x12$\n\rwardrobe_data\x18\x44 \x01(\x0b\x32\r.PBDBWardrobe\x12\x31\n\x14pet_pve_battle_array\x18\x45 \x01(\x0b\x32\x13.PBDBPetBattleArray\x12\'\n\x0fwing_train_data\x18\x46 \x01(\x0b\x32\x0e.PBDBWingTrain\x12\x31\n\x14pet_pvp_battle_array\x18G \x01(\x0b\x32\x13.PBDBPetBattleArray\x12-\n\x10login_gifts_data\x18H \x01(\x0b\x32\x13.PBDBLoginGiftsData\x12\x30\n\x11onearmbandit_data\x18I \x01(\x0b\x32\x15.PBDBOnearmBanditData\x12\"\n\nxinfa_data\x18J \x01(\x0b\x32\x0e.PBDBXinfaData\x12\x31\n\x13oldplayer_back_data\x18K \x01(\x0b\x32\x14.PBOldPlayerBackData\x12&\n\x0cxiuzhen_data\x18L \x01(\x0b\x32\x10.PBDBXiuzhenData\x12(\n\rspanteam_data\x18M \x01(\x0b\x32\x11.PBDBSpanTeamData\x12)\n\x0emagic_pet_data\x18N \x01(\x0b\x32\x11.PBDBMagicPetData\x12\x37\n\x13guild_liveness_data\x18O \x01(\x0b\x32\x1a.PBDBCharGuildLivenessData\x12\x32\n\x14player_bind_vip_data\x18P \x01(\x0b\x32\x14.PBPlayerBindVipData\x12\x37\n\x15\x63har_rollingtree_data\x18Q \x01(\x0b\x32\x18.PBDBCharRollingtreeData:\x0e\x92\xb5\x18\npf_role_id\"#\n\x05PBRep\x12\x1a\n\x06pbcell\x18\x01 \x03(\x0b\x32\n.PBRepCell\"V\n\tPBRepCell\x12\x0b\n\x03idx\x18\x01 \x01(\r\x12\x1a\n\x07rep_bag\x18\x02 \x01(\x0b\x32\t.PBRepBag\x12 \n\x0frepository_item\x18\x03 \x01(\x0b\x32\x07.PBItem\"a\n\x08PBRepBag\x12\x12\n\nbag_itemid\x18\x01 \x01(\x04\x12\x1e\n\titem_list\x18\x02 \x01(\x0b\x32\x0b.PBItemList\x12\x10\n\x08\x62\x61g_size\x18\x03 \x01(\r\x12\x0f\n\x07\x65xpired\x18\x04 \x01(\x04\"`\n\x0ePBQuestionData\x12%\n\ndaily_info\x18\x01 \x01(\x0b\x32\x11.PBQuestDailyInfo\x12\'\n\x0bwisdom_info\x18\x02 \x01(\x0b\x32\x12.PBQuestWisdomInfo\"[\n\x10PBQuestDailyInfo\x12\x13\n\x0b\x64\x61ily_index\x18\x01 \x01(\x11\x12\x19\n\x11\x64\x61ily_right_count\x18\x02 \x01(\x11\x12\x17\n\x0f\x64\x61ily_quest_lib\x18\x03 \x03(\x11\"\xa9\x01\n\x11PBQuestWisdomInfo\x12\x14\n\x0cwisdom_score\x18\x01 \x01(\x11\x12\x1a\n\x12wisdom_right_count\x18\x02 \x01(\x11\x12!\n\x0cwisdom_round\x18\x03 \x03(\x0b\x32\x0b.PBWisRound\x12)\n\x0fweek_score_info\x18\x04 \x01(\x0b\x32\x10.PBWeekScoreInfo\x12\x14\n\x0c\x65xam_version\x18\x05 \x01(\r\"[\n\x0fPBWeekScoreInfo\x12\x14\n\x0cweek_version\x18\x01 \x01(\r\x12\x18\n\x10week_total_score\x18\x02 \x01(\x11\x12\x18\n\x10last_commit_time\x18\x03 \x01(\r\"\x9e\x01\n\nPBWisRound\x12\x13\n\x0bquest_index\x18\x01 \x01(\x11\x12\x10\n\x08quest_id\x18\x02 \x01(\x11\x12\x14\n\x0c\x66irst_answer\x18\x03 \x01(\x11\x12\x15\n\rsecond_answer\x18\x04 \x01(\x11\x12\x13\n\x0b\x61nswer_time\x18\x05 \x01(\x11\x12\x14\n\x0c\x63ommit_times\x18\x06 \x01(\x11\x12\x11\n\tcamp_type\x18\x07 \x01(\x11\"J\n\x1cPBCharConsumeRecordContainer\x12*\n\x0c\x63onsume_list\x18\x01 \x03(\x0b\x32\x14.PBCharConsumeRecord\"\x92\x01\n\x13PBCharConsumeRecord\x12\x11\n\tdetail_id\x18\x01 \x01(\x04\x12\x12\n\nsubject_id\x18\x02 \x01(\x11\x12\x0e\n\x06\x61mount\x18\x03 \x01(\x11\x12\r\n\x05price\x18\x04 \x01(\x11\x12\x0f\n\x07ib_code\x18\x05 \x01(\t\x12\x10\n\x08pay_time\x18\x06 \x01(\r\x12\x12\n\npush_event\x18\x07 \x01(\x08\"4\n\x0fPBSkillInfoList\x12!\n\x0bguild_skill\x18\x01 \x03(\x0b\x32\x0c.PBSkillInfo\"\xe8\x01\n\nPBBuffData\x12\x0f\n\x07\x62uff_id\x18\x01 \x01(\r\x12\x13\n\x0b\x66inish_time\x18\x02 \x01(\x12\x12\x10\n\x08\x62uff_cnt\x18\x03 \x01(\x11\x12\x11\n\tbuff_loop\x18\x04 \x01(\x11\x12\x11\n\tnext_time\x18\x05 \x01(\x12\x12\x11\n\tleft_time\x18\x06 \x01(\x12\x12\x0e\n\x06map_id\x18\x07 \x01(\r\x12\x10\n\x08identity\x18\x08 \x01(\x11\x12\x11\n\tparamList\x18\n \x03(\x11\x12\r\n\x05valid\x18\x0b \x01(\x08\x12\x12\n\ntotal_time\x18\x0c \x01(\x12\x12\x11\n\tbase_time\x18\r \x01(\r\"/\n\rPBAllBuffData\x12\x1e\n\tbuff_data\x18\x01 \x03(\x0b\x32\x0b.PBBuffData\"\xac\x08\n\x06PBItem\x12\x0f\n\x07item_id\x18\x02 \x01(\x04\x12\x10\n\x08owner_id\x18\x03 \x01(\x04\x12\x10\n\x08quantity\x18\x04 \x01(\r\x12\x0f\n\x07sheetid\x18\x05 \x01(\t\x12\x0e\n\x06refinv\x18\x06 \x01(\x05\x12\x13\n\x0brefinv_slot\x18\x07 \x01(\r\x12\r\n\x05\x65lite\x18\x16 \x01(\t\x12\r\n\x05jewel\x18\x17 \x01(\t\x12\x0e\n\x06\x62inded\x18\x18 \x01(\x05\x12\x0b\n\x03inv\x18\x19 \x01(\x05\x12\x12\n\nexpiration\x18\x1a \x01(\r\x12\x11\n\toper_time\x18\x1b \x01(\r\x12\x11\n\telite_new\x18\x1c \x01(\t\x12!\n\nRuneStatic\x18\" \x01(\x0b\x32\r.PBProperties\x12\x1e\n\x07RuneAdd\x18# \x01(\x0b\x32\r.PBProperties\x12 \n\tStaticPro\x18$ \x01(\x0b\x32\r.PBProperties\x12\x1d\n\x06\x41\x64\x64Pro\x18% \x01(\x0b\x32\r.PBProperties\x12$\n\rRandStaticPro\x18& \x01(\x0b\x32\r.PBProperties\x12!\n\nRandAddPro\x18\' \x01(\x0b\x32\r.PBProperties\x12*\n\x0fLastEnchantType\x18( \x01(\x0e\x32\x11.ELastEnchantType\x12\x15\n\rStaticProStar\x18) \x01(\r\x12\"\n\x0bRuneRandAdd\x18* \x01(\x0b\x32\r.PBProperties\x12 \n\tEndurance\x18+ \x01(\x0b\x32\r.PBProperties\x12\x10\n\x08style_id\x18, \x01(\r\x12\x15\n\x03pet\x18- \x01(\x0b\x32\x08.PBDBPet\x12\x14\n\x0c\x64ye_style_id\x18. \x01(\r\x12\x14\n\x0c\x63\x61n_use_time\x18/ \x01(\r\x12\x16\n\x0e\x65valuate_count\x18\x30 \x01(\r\x12\x14\n\x0cRune_cur_exp\x18\x31 \x01(\r\x12\x10\n\x08\x64\x65sc_key\x18\x32 \x01(\t\x12\x12\n\ndesc_param\x18\x33 \x03(\t\x12)\n\x0f\x65quip_rune_list\x18\x34 \x01(\x0b\x32\x10.PBEquipRuneList\x12,\n\x10treasuremap_info\x18\x35 \x01(\x0b\x32\x12.PBTreasureMapInfo\x12 \n\ndyn_mvalue\x18\x36 \x01(\x0b\x32\x0c.PBMoneyInfo\x12!\n\nattach_pro\x18\x37 \x01(\x0b\x32\r.PBProperties\x12&\n\x0fsave_attach_pro\x18\x38 \x01(\x0b\x32\r.PBProperties\x12\x1f\n\x08wing_pro\x18\x39 \x01(\x0b\x32\r.PBProperties\x12\x12\n\nwing_shape\x18: \x01(\t\x12\x13\n\x0b\x66uzhijiujiu\x18; \x01(\x04\x12\x14\n\x0c\x66uzhi_isused\x18< \x01(\x08\x12\x1d\n\x15soulStar_material_num\x18= \x01(\x05\"+\n\nPBItemList\x12\x1d\n\x0citems_tosave\x18\x01 \x03(\x0b\x32\x07.PBItem\"Q\n\rPBDoneMission\x12\x11\n\tmissionid\x18\x01 \x01(\r\x12\x12\n\nsuccessful\x18\x02 \x01(\r\x12\x19\n\x11last_success_date\x18\x03 \x01(\r\"@\n\x11PBDoneMissionList\x12+\n\x13mission_done_tosave\x18\x01 \x03(\x0b\x32\x0e.PBDoneMission\"W\n\tPBLottery\x12\x12\n\nlottery_id\x18\x01 \x01(\x04\x12\x0f\n\x07sheetid\x18\x02 \x01(\t\x12\x10\n\x08\x62uy_time\x18\x03 \x01(\r\x12\x13\n\x0b\x64\x65lete_flag\x18\x04 \x01(\r\",\n\rPBLotteryList\x12\x1b\n\x07lottery\x18\x01 \x03(\x0b\x32\n.PBLottery\"D\n\x05PBBag\x12\r\n\x05guids\x18\x01 \x03(\x04\x12\x13\n\x0b\x62ought_slot\x18\x02 \x01(\x11\x12\x17\n\x0f\x62ought_runeslot\x18\x03 \x01(\x11\"\x1a\n\x07PBSkill\x12\x0f\n\x07sheetid\x18\x01 \x03(\t\"\x19\n\x06PBBuff\x12\x0f\n\x07\x62uffele\x18\x01 \x03(\t\"\x1a\n\nPBShortcut\x12\x0c\n\x04slot\x18\x01 \x03(\t\"\x1a\n\x08PBCDTime\x12\x0e\n\x06\x63\x64time\x18\x01 \x03(\x05\"\x1e\n\x0bPBBlackList\x12\x0f\n\x07\x63har_id\x18\x01 \x03(\x04\")\n\x12PBDeleteFriendInfo\x12\x13\n\x0b\x66riend_info\x18\x01 \x03(\t\"g\n\x1bPBExcutingTreasureIncidents\x12H\n\x1f\x65xcuting_treasure_incident_info\x18\x01 \x03(\x0b\x32\x1f.PBExcutingTreasureIncidentInfo\"a\n\x1ePBExcutingTreasureIncidentInfo\x12\"\n\x1a\x65xcuting_treasure_incident\x18\x01 \x01(\t\x12\x1b\n\x13start_excuting_time\x18\x02 \x01(\x12\"*\n\nPBBuyBacks\x12\x1c\n\x04item\x18\x01 \x03(\x0b\x32\x0e.PBBuyBackInfo\"X\n\rPBBuyBackInfo\x12\r\n\x05price\x18\x01 \x01(\x11\x12\x12\n\nprice_type\x18\x02 \x01(\x11\x12\x15\n\x04item\x18\x03 \x01(\x0b\x32\x07.PBItem\x12\r\n\x05state\x18\x04 \x01(\x11\"`\n\x0cPBGemEnchase\x12\x12\n\nequip_type\x18\x01 \x01(\r\x12\x12\n\nslot_index\x18\x02 \x01(\r\x12\x13\n\x0bslot_enable\x18\x03 \x01(\r\x12\x13\n\x0bgem_sheetid\x18\x04 \x01(\t\"Z\n\x10PBGemEnchaseList\x12\"\n\x0bgem_enchase\x18\x01 \x03(\x0b\x32\r.PBGemEnchase\x12\"\n\x0bgem_cutting\x18\x02 \x03(\x0b\x32\r.PBGemCutting\"@\n\x11PBCounterInfoList\x12+\n\x13\x63ounter_info_tosave\x18\x01 \x03(\x0b\x32\x0e.PBCounterInfo\"E\n\rPBCounterInfo\x12\x12\n\ncounter_id\x18\x01 \x01(\x04\x12\r\n\x05times\x18\x02 \x01(\r\x12\x11\n\tbuy_times\x18\x03 \x01(\r\"&\n\x10PBCharacterTitle\x12\x12\n\ntitle_info\x18\x01 \x03(\t\"I\n\x0bPBNiuerInfo\x12\x11\n\tcard_info\x18\x01 \x03(\t\x12\x13\n\x0bhave_obtain\x18\x02 \x01(\r\x12\x12\n\nis_in_game\x18\x03 \x01(\r\"<\n\x10PBOfflineExpInfo\x12\x16\n\x0eremain_seconds\x18\x01 \x01(\r\x12\x10\n\x08\x65xp_info\x18\x02 \x01(\t\"}\n\x0fPBDungeonRecord\x12\x12\n\nsheet_name\x18\x01 \x01(\t\x12\x17\n\x0f\x63learance_times\x18\x02 \x01(\x05\x12\x11\n\tbest_star\x18\x03 \x01(\x05\x12\x14\n\x0c\x66\x61stest_time\x18\x04 \x01(\x05\x12\x14\n\x0crewarded_got\x18\x05 \x01(\x08\"\xdb\x01\n\tPBDungeon\x12)\n\x0f\x64ungeon_records\x18\x01 \x03(\x0b\x32\x10.PBDungeonRecord\x12\x33\n\rdungeon_chest\x18\x02 \x03(\x0b\x32\x1c.PBDungeonChapterChestRecord\x12\x1f\n\x17last_dynamic_dungeon_id\x18\x03 \x01(\x04\x12\'\n\x1flast_dynamic_dungeon_gateway_id\x18\x04 \x01(\r\x12$\n\x1clast_dynamic_dungeon_camp_id\x18\x05 \x01(\r\"p\n\x1bPBDungeonChapterChestRecord\x12\x16\n\x0e\x63hest_sheet_id\x18\x01 \x01(\r\x12\x1a\n\x12region_chest_state\x18\x02 \x01(\x11\x12\x1d\n\x15road_chest_state_list\x18\x03 \x03(\x11\"E\n\x11PBShardCharIUInfo\x12\r\n\x05iu_id\x18\x01 \x01(\x04\x12\x0f\n\x07iu_name\x18\x02 \x01(\t\x12\x10\n\x08iu_title\x18\x03 \x01(\r\"\x85\x01\n\x0bPBShardChar\x12\x19\n\x06player\x18\x01 \x01(\x0b\x32\t.PBPlayer\x12\x1f\n\tcharacter\x18\x02 \x01(\x0b\x32\x0c.PBCharacter\x12\x15\n\rlast_shard_id\x18\x03 \x01(\r\x12#\n\x07iu_info\x18\x05 \x01(\x0b\x32\x12.PBShardCharIUInfo\"0\n\x0cPBCharGameOp\x12\x11\n\tgameop_id\x18\x01 \x01(\x11\x12\r\n\x05times\x18\x02 \x01(\x11\"6\n\x10PBCharGameOpList\x12\"\n\x0b\x63har_gameop\x18\x01 \x03(\x0b\x32\r.PBCharGameOp\"7\n\nPBRuneItem\x12\x15\n\x04item\x18\x01 \x01(\x0b\x32\x07.PBItem\x12\x12\n\nslot_index\x18\x02 \x01(\r\"Z\n\nPBRuneSlot\x12\x1e\n\trune_item\x18\x01 \x03(\x0b\x32\x0b.PBRuneItem\x12\x15\n\ropen_slot_num\x18\x02 \x01(\r\x12\x15\n\rcur_lotteryid\x18\x03 \x01(\x11\"P\n\x0ePBMountFashion\x12\x12\n\nis_actived\x18\x01 \x01(\r\x12\x16\n\x0eis_timelimited\x18\x02 \x01(\r\x12\x12\n\nexpiration\x18\x03 \x01(\r\">\n\x12PBOpenSlotPageItem\x12\x0f\n\x07page_id\x18\x01 \x01(\x11\x12\x17\n\x0fslot_id_in_page\x18\x02 \x01(\x11\";\n\x0ePBSoulStarItem\x12\x15\n\x04item\x18\x01 \x01(\x0b\x32\x07.PBItem\x12\x12\n\nslot_index\x18\x02 \x01(\r\":\n\x0ePBSoulStarChip\x12\x16\n\x0esoul_direction\x18\x01 \x01(\r\x12\x10\n\x08left_num\x18\x02 \x01(\x11\"\x93\x01\n\x0ePBSoulStarInfo\x12\'\n\x0esoul_star_item\x18\x01 \x03(\x0b\x32\x0f.PBSoulStarItem\x12,\n\x13soul_star_chip_list\x18\x02 \x03(\x0b\x32\x0f.PBSoulStarChip\x12*\n\ropen_num_list\x18\x03 \x03(\x0b\x32\x13.PBOpenSlotPageItem\"\xb4\x01\n\x07PBMount\x12\x10\n\x08sheet_id\x18\x01 \x01(\r\x12\r\n\x05level\x18\x02 \x01(\x11\x12\x0b\n\x03\x65xp\x18\x03 \x01(\x11\x12\x10\n\x08show_idx\x18\x04 \x01(\x11\x12\x1d\n\x08RuneSlot\x18\x05 \x01(\x0b\x32\x0b.PBRuneSlot\x12&\n\rmount_fashion\x18\x06 \x03(\x0b\x32\x0f.PBMountFashion\x12\"\n\tsoul_star\x18\x07 \x01(\x0b\x32\x0f.PBSoulStarInfo\"]\n\x0bPBMountInfo\x12\x17\n\x05mount\x18\x01 \x03(\x0b\x32\x08.PBMount\x12\x1d\n\x15\x61\x63tivate_mount_slotid\x18\x02 \x01(\x11\x12\x16\n\x0eis_high_flying\x18\x03 \x01(\x08\"6\n\x0cPBQuestGroup\x12\x10\n\x08group_id\x18\x01 \x01(\r\x12\x14\n\x0cgroup_number\x18\x02 \x01(\r\"K\n\x0bPBQuestRand\x12\x10\n\x08group_id\x18\x01 \x01(\r\x12\x14\n\x0cgroup_number\x18\x02 \x01(\r\x12\x14\n\x0c\x63\x61nacc_quest\x18\x03 \x01(\r\"\x1f\n\x0bPBFuncStory\x12\x10\n\x08story_id\x18\x01 \x01(\r\"\x1f\n\x0bPBFuncGuide\x12\x10\n\x08guide_id\x18\x01 \x01(\r\"\'\n\x0fPBFuncPushLevel\x12\x14\n\x0cpushlevel_id\x18\x01 \x01(\r\"\x9a\x01\n\x0ePBFuncOpenInfo\x12\x10\n\x08ui_state\x18\x01 \x03(\x12\x12\x0e\n\x06ui_use\x18\x02 \x01(\x12\x12\x1e\n\x08ui_story\x18\x03 \x03(\x0b\x32\x0c.PBFuncStory\x12\x1e\n\x08ui_guide\x18\x04 \x03(\x0b\x32\x0c.PBFuncGuide\x12&\n\x0cui_pushlevel\x18\x05 \x03(\x0b\x32\x10.PBFuncPushLevel\"R\n\x10PBActivitiesData\x12(\n\x0f\x61\x63tivities_data\x18\x01 \x03(\x0b\x32\x0f.PBActivityData\x12\x14\n\x0c\x61ward_status\x18\x02 \x01(\x04\"-\n\x10PBDailySignState\x12\n\n\x02id\x18\x01 \x01(\x11\x12\r\n\x05state\x18\x02 \x01(\x11\"\x92\x02\n\x12PBSignActivityData\x12\x16\n\x0enewerlogindays\x18\x01 \x01(\r\x12\x17\n\x0fnewersignreward\x18\x02 \x01(\r\x12\x16\n\x0emonthlogindays\x18\x03 \x01(\r\x12\x17\n\x0fmonthsignreward\x18\x04 \x01(\r\x12\x13\n\x0blevelreward\x18\x05 \x01(\x04\x12\x12\n\nonlinetime\x18\x06 \x01(\r\x12\x14\n\x0conlinereward\x18\x07 \x01(\r\x12\x16\n\x0emonthvipreward\x18\x08 \x01(\r\x12\x18\n\x10\x61\x64\x64_entergy_time\x18\t \x01(\r\x12)\n\x0e\x64\x61ilysign_list\x18\n \x03(\x0b\x32\x11.PBDailySignState\"%\n\x0cPBDBTeamData\x12\x15\n\ris_autofollow\x18\x01 \x01(\x11\"\xf8\x01\n\rPBJusticeInfo\x12\x15\n\rjustice_value\x18\x01 \x01(\x11\x12\x15\n\rjustice_level\x18\x02 \x01(\x11\x12\x18\n\x10justice_dayvalue\x18\x03 \x01(\x11\x12\x12\n\nevil_value\x18\x04 \x01(\x11\x12\x12\n\nevil_level\x18\x05 \x01(\x11\x12\x12\n\ngain_times\x18\x06 \x01(\x11\x12\x11\n\tuse_times\x18\x07 \x01(\x11\x12%\n\nkillerList\x18\x08 \x03(\x0b\x32\x11.PBEvilKillerList\x12\x15\n\revil_dayvalue\x18\t \x01(\x11\x12\x12\n\nbkill_time\x18\n \x01(\x11\"Q\n\x10PBEvilKillerList\x12\x10\n\x08killerId\x18\x01 \x01(\x04\x12\x17\n\x0f\x65xpiration_time\x18\x02 \x01(\x11\x12\x12\n\nkill_times\x18\x03 \x01(\x11\"W\n\x13PBNewserverDataInfo\x12\x0b\n\x03\x64\x61y\x18\x01 \x01(\x11\x12\r\n\x05state\x18\x02 \x01(\x11\x12\n\n\x02id\x18\x03 \x01(\x11\x12\x0b\n\x03\x63ur\x18\x04 \x01(\x11\x12\x0b\n\x03max\x18\x05 \x01(\x11\">\n\x13PBNewserverActivity\x12\'\n\tdata_list\x18\x01 \x03(\x0b\x32\x14.PBNewserverDataInfo\"D\n\x17PBNewserverRechargeInfo\x12\x0b\n\x03\x64\x61y\x18\x01 \x01(\x11\x12\r\n\x05mount\x18\x02 \x01(\x11\x12\r\n\x05state\x18\x03 \x01(\x11\"F\n\x13PBNewserverRecharge\x12/\n\rrecharge_list\x18\x01 \x03(\x0b\x32\x18.PBNewserverRechargeInfo\"\xec\x02\n\rPBConsignInfo\x12\x12\n\nconsign_id\x18\x01 \x01(\x04\x12\r\n\x05price\x18\x02 \x01(\x05\x12\x12\n\nprice_type\x18\x03 \x01(\x05\x12\x10\n\x08owner_id\x18\x04 \x01(\x04\x12\x18\n\x10owner_pf_role_id\x18\x05 \x01(\x05\x12\x14\n\x0c\x63onsign_flag\x18\x06 \x01(\x11\x12\x12\n\nsheet_name\x18\x07 \x01(\t\x12\x10\n\x08quantity\x18\x08 \x01(\r\x12\x15\n\x04item\x18\t \x01(\x0b\x32\x07.PBItem\x12\x12\n\nsrc_roleid\x18\n \x01(\r\x12\x16\n\x0esrc_pf_user_id\x18\x0b \x01(\r\x12\x14\n\x0csrc_playerid\x18\x0c \x01(\r\x12\x12\n\nsrc_gameid\x18\r \x01(\r\x12\x10\n\x08\x61\x64\x64_time\x18\x0e \x01(\r\x12\x17\n\x0f\x65xpiration_time\x18\x0f \x01(\r\x12\x14\n\x0c\x61\x63\x63ount_type\x18\x10 \x01(\x11:\x0e\x92\xb5\x18\nconsign_id\"\xe8\x02\n\x0cPBConsignLog\x12\x12\n\nconsign_id\x18\x01 \x01(\x04\x12\r\n\x05price\x18\x02 \x01(\x05\x12\x12\n\nprice_type\x18\x03 \x01(\x05\x12\x10\n\x08owner_id\x18\x04 \x01(\x04\x12\x18\n\x10owner_pf_role_id\x18\x05 \x01(\x05\x12\x14\n\x0c\x63onsign_flag\x18\x06 \x01(\x11\x12\x12\n\nsheet_name\x18\x07 \x01(\t\x12\x10\n\x08quantity\x18\x08 \x01(\r\x12\x15\n\x04item\x18\t \x01(\x0b\x32\x07.PBItem\x12\x12\n\nsrc_roleid\x18\n \x01(\r\x12\x16\n\x0esrc_pf_user_id\x18\x0b \x01(\r\x12\x14\n\x0csrc_playerid\x18\x0c \x01(\r\x12\x12\n\nsrc_gameid\x18\r \x01(\r\x12\x14\n\x0c\x63onsign_time\x18\x0e \x01(\r\x12\x10\n\x08\x61\x64\x64_time\x18\x0f \x01(\r\x12\x14\n\x0c\x61\x63\x63ount_type\x18\x10 \x01(\x11:\x0e\x92\xb5\x18\nconsign_id\"E\n\x10PBConsignHotItem\x12\x10\n\x08sheet_id\x18\x01 \x01(\x05\x12\x11\n\tbuy_times\x18\x02 \x01(\x04:\x0c\x92\xb5\x18\x08sheet_id\"\xad\x01\n\x15PBCharLocalFriendData\x12\'\n\x0b\x65nemy_infos\x18\x01 \x03(\x0b\x32\x12.PBCharFriendEnemy\x12+\n\rcontact_infos\x18\x02 \x03(\x0b\x32\x14.PBCharFriendContact\x12\x12\n\ngiven_list\x18\x03 \x03(\x04\x12\x13\n\x0bgive_energy\x18\x04 \x01(\x11\x12\x15\n\rgather_energy\x18\x05 \x01(\x11\">\n\x14PBCharGuildSkillData\x12&\n\x0bguild_skill\x18\x01 \x03(\x0b\x32\x11.PBLastGuildSkill\"5\n\x10PBLastGuildSkill\x12\x12\n\nsercial_id\x18\x01 \x01(\x11\x12\r\n\x05level\x18\x02 \x01(\x11\"\x8d\x02\n\x10PBCharSingleData\x12\x1a\n\x12\x65xp_config_version\x18\x01 \x01(\x11\x12\x15\n\rchannelreward\x18\x02 \x01(\x04\x12\x12\n\ncompensate\x18\x03 \x01(\x08\x12\x16\n\x0e\x65valuate_count\x18\x04 \x01(\x11\x12\x18\n\x10guild_day_reward\x18\x05 \x01(\r\x12\x11\n\tlast_role\x18\x06 \x01(\x11\x12\x13\n\x0b\x62\x65t_matchid\x18\x07 \x01(\x04\x12\x17\n\x0f\x62\x65t_round_index\x18\x08 \x01(\x11\x12\x13\n\x0bspim_raceid\x18\t \x01(\x04\x12\x14\n\x0cspim_guildid\x18\n \x01(\x04\x12\x14\n\x0clast_savelog\x18\x0b \x01(\r\"f\n\x10PBDBMarriageInfo\x12&\n\rmarriage_info\x18\x01 \x01(\x0b\x32\x0f.PBMarriageInfo\x12\x12\n\nhis_number\x18\x02 \x01(\x11\x12\x16\n\x0emarch_gain_exp\x18\x03 \x01(\x11\"4\n\x0cPBDBHoldInfo\x12\x11\n\tis_shield\x18\x01 \x01(\x08\x12\x11\n\tis_action\x18\x02 \x01(\x08\"\\\n\x0ePBDBCharGmMail\x12\x0f\n\x07mail_id\x18\x01 \x01(\x04\x12\x13\n\x0brecv_status\x18\x02 \x01(\x11\x12\x11\n\trecv_time\x18\x03 \x01(\r\x12\x11\n\tsend_time\x18\x04 \x01(\r\"3\n\x12PBDBCharGmMailList\x12\x1d\n\x04mail\x18\x01 \x03(\x0b\x32\x0f.PBDBCharGmMail\"<\n\x10PBAuthorityDatas\x12(\n\x0e\x61uthority_data\x18\x01 \x03(\x0b\x32\x10.PBAuthorityData\"\x9c\x01\n\x0fPBAuthorityData\x12\x13\n\x0b\x61\x63tivity_id\x18\x01 \x01(\r\x12\x15\n\ractivity_type\x18\x02 \x01(\r\x12\x12\n\nstart_time\x18\x03 \x01(\r\x12\x10\n\x08\x65nd_time\x18\x04 \x01(\r\x12\x0f\n\x07user_id\x18\x05 \x01(\r\x12&\n\rjubaopen_data\x18\x06 \x01(\x0b\x32\x0f.PBJuBaoPenData\"\xa5\x01\n\x0ePBJuBaoPenData\x12\x0f\n\x07role_id\x18\x01 \x01(\r\x12\x17\n\x0f\x61uthority_token\x18\x02 \x01(\x11\x12\x15\n\rpurchase_time\x18\x03 \x01(\r\x12\x18\n\x10last_update_time\x18\x04 \x01(\r\x12\x0c\n\x04\x64\x61ys\x18\x05 \x01(\r\x12*\n\x0fjubaopen_reward\x18\x06 \x03(\x0b\x32\x11.PBJuBaoPenReward\"k\n\x10PBJuBaoPenReward\x12\x0e\n\x06\x64\x61y_th\x18\x01 \x01(\r\x12\x15\n\rreward_status\x18\x02 \x01(\r\x12\x10\n\x08tokename\x18\x03 \x01(\t\x12\x1e\n\x04item\x18\x04 \x03(\x0b\x32\x10.PBJBPRewardItem\"B\n\x0fPBJBPRewardItem\x12\x0f\n\x07sheetid\x18\x01 \x01(\t\x12\r\n\x05\x63ount\x18\x02 \x01(\x11\x12\x0f\n\x07percent\x18\x03 \x01(\x08\"L\n\x10PBNewRoleCornAll\x12%\n\npb_roleone\x18\x01 \x03(\x0b\x32\x11.PBNewRoleCornOne\x12\x11\n\tneed_send\x18\x02 \x01(\x08\"{\n\x10PBNewRoleCornOne\x12\x0e\n\x06\x61\x63t_id\x18\x01 \x01(\x04\x12\x10\n\x08\x62uy_time\x18\x02 \x01(\x04\x12!\n\x06reward\x18\x04 \x03(\x0b\x32\x11.PBJuBaoPenReward\x12\x11\n\tbuy_state\x18\x05 \x01(\r\x12\x0f\n\x07\x62uy_idx\x18\x06 \x01(\r\"_\n\x0cPBOfflineExp\x12\x0f\n\x07has_get\x18\x01 \x01(\x08\x12\x12\n\nfresh_time\x18\x02 \x01(\r\x12*\n\x0fofflineexp_list\x18\x03 \x03(\x0b\x32\x11.PBOfflineExpData\"o\n\x10PBOfflineExpData\x12\x15\n\rofflineexp_id\x18\x01 \x01(\x11\x12\x11\n\texp_value\x18\x02 \x01(\x11\x12\x11\n\tworld_add\x18\x03 \x01(\x11\x12\x0f\n\x07vip_add\x18\x04 \x01(\x11\x12\r\n\x05times\x18\x05 \x01(\x11\"P\n\x0cPBGemCutting\x12\x14\n\x0c\x63utting_type\x18\x01 \x01(\r\x12\x15\n\rcutting_level\x18\x02 \x01(\r\x12\x13\n\x0b\x63utting_exp\x18\x03 \x01(\r\"?\n\x0ePBDBChangeCamp\x12\x18\n\x10\x63hange_camp_time\x18\x01 \x01(\r\x12\x13\n\x0bold_camp_id\x18\x02 \x01(\x11\"*\n\x06PBMute\x12\x0f\n\x07\x63hannel\x18\x01 \x01(\r\x12\x0f\n\x07\x65ndtime\x18\x02 \x01(\r\"\'\n\nPBMuteData\x12\x19\n\x08mutedata\x18\x01 \x03(\x0b\x32\x07.PBMute\";\n\x0bPBDBBoating\x12\x16\n\x0e\x62oating_status\x18\x01 \x01(\x11\x12\x14\n\x0c\x63ollecttimes\x18\x02 \x01(\x11\"\x97\x02\n\x0bPBPotential\x12\x1b\n\x13\x63ur_potential_value\x18\x01 \x01(\x11\x12\x1b\n\x13\x63ur_potential_class\x18\x02 \x01(\x11\x12)\n\x12\x63ur_potential_attr\x18\x03 \x01(\x0b\x32\r.PBProperties\x12*\n\x13last_potential_attr\x18\x04 \x01(\x0b\x32\r.PBProperties\x12*\n\x13temp_potential_attr\x18\x05 \x01(\x0b\x32\r.PBProperties\x12\x1c\n\x14honghuangzhili_state\x18\x06 \x01(\x11\x12-\n\x0e\x61ttrstate_list\x18\x07 \x03(\x0b\x32\x15.PBPotentialAttrState\"g\n\x10PBDBSpanImbattle\x12\x17\n\x0fwatching_status\x18\x01 \x01(\x11\x12\x15\n\rwatching_time\x18\x02 \x01(\r\x12\x10\n\x08match_id\x18\x03 \x01(\x04\x12\x11\n\tbattle_id\x18\x04 \x01(\x04\";\n\x0ePBWardrobeItem\x12\x15\n\x04item\x18\x01 \x01(\x0b\x32\x07.PBItem\x12\x12\n\nslot_index\x18\x02 \x01(\r\"G\n\x0ePBWardrobeSlot\x12\x11\n\topen_slot\x18\x01 \x01(\x11\x12\"\n\titem_list\x18\x02 \x03(\x0b\x32\x0f.PBWardrobeItem\"_\n\x0ePBWardrobeData\x12\x1c\n\x04part\x18\x01 \x01(\x0e\x32\x0e.PBFashionPart\x12\x0c\n\x04type\x18\x02 \x01(\x11\x12!\n\x08\x62\x61g_slot\x18\x03 \x01(\x0b\x32\x0f.PBWardrobeSlot\"o\n\x0cPBDBWardrobe\x12\x13\n\x0buItemIdHead\x18\x01 \x01(\x04\x12\x16\n\x0euItemIdFashion\x18\x02 \x01(\x04\x12\x1d\n\x04\x64\x61ta\x18\x03 \x03(\x0b\x32\x0f.PBWardrobeData\x12\x13\n\x0buItemIdWing\x18\x04 \x01(\x04\"f\n\x12PBDBLoginGiftsData\x12&\n\x0blogin_gifts\x18\x01 \x03(\x0b\x32\x11.PBLoginGiftsData\x12(\n\x0conline_gifts\x18\x02 \x01(\x0b\x32\x12.PBOnlineGiftsData\"z\n\x10PBLoginGiftsData\x12\x13\n\x0b\x61\x63tivity_id\x18\x01 \x01(\r\x12\x18\n\x10last_update_time\x18\x02 \x01(\r\x12\x12\n\nlogin_days\x18\x03 \x01(\r\x12#\n\x06reward\x18\x04 \x03(\x0b\x32\x13.PBLoginGiftsReward\"\x82\x01\n\x12PBLoginGiftsReward\x12\x0e\n\x06\x64\x61y_th\x18\x01 \x01(\r\x12\x15\n\rreward_status\x18\x02 \x01(\r\x12\x13\n\x0b\x61\x63tive_time\x18\x03 \x01(\r\x12\x10\n\x08get_time\x18\x04 \x01(\r\x12\x1e\n\x04item\x18\x05 \x03(\x0b\x32\x10.PBJBPRewardItem\"q\n\x11PBOnlineGetStruct\x12\x13\n\x0bonline_time\x18\x01 \x01(\r\x12\x15\n\rreward_status\x18\x02 \x01(\r\x12\x10\n\x08\x63\x66g_time\x18\x03 \x01(\r\x12\x1e\n\x04item\x18\x04 \x03(\x0b\x32\x10.PBJBPRewardItem\"9\n\x11PBOnlineGiftsData\x12$\n\x08getindex\x18\x01 \x03(\x0b\x32\x12.PBOnlineGetStruct\"B\n\x14PBDBOnearmBanditData\x12\x12\n\nitem_index\x18\x01 \x01(\x11\x12\x16\n\x0emultiple_index\x18\x02 \x01(\x11\"4\n\rPBDBXinfaData\x12#\n\tdata_list\x18\x01 \x03(\x0b\x32\x10.PBXinfaItemData\"F\n\x0fPBXinfaItemData\x12\x0f\n\x07slot_id\x18\x01 \x01(\r\x12\x11\n\tcur_level\x18\x02 \x01(\r\x12\x0f\n\x07\x63ur_exp\x18\x03 \x01(\r\"=\n\x0fPBDBXiuzhenData\x12*\n\rmai_item_list\x18\x01 \x03(\x0b\x32\x13.PBDBXiuzhenmaiItem\"R\n\x0bPBDBxueItem\x12\x0e\n\x06xue_id\x18\x01 \x01(\r\x12\x0f\n\x07\x63ur_pin\x18\x02 \x01(\r\x12\x0f\n\x07\x63ur_exp\x18\x03 \x01(\r\x12\x11\n\tcur_state\x18\x04 \x01(\x08\"M\n\x14PBDBXiuzhenchongItem\x12\x10\n\x08\x63hong_id\x18\x01 \x01(\r\x12#\n\rxue_item_list\x18\x02 \x03(\x0b\x32\x0c.PBDBxueItem\"T\n\x12PBDBXiuzhenmaiItem\x12\x0e\n\x06mai_id\x18\x01 \x01(\r\x12.\n\x0f\x63hong_item_list\x18\x02 \x03(\x0b\x32\x15.PBDBXiuzhenchongItem\">\n\x15PBSerialDayRewardData\x12\x0e\n\x06\x64\x61y_th\x18\x01 \x01(\x11\x12\x15\n\rreward_status\x18\x02 \x01(\r\"x\n\x15PBOldPlayerBackStruct\x12\x11\n\tback_time\x18\x01 \x01(\r\x12\x1b\n\x13\x62\x61\x63k_time_vip_level\x18\x02 \x01(\r\x12/\n\x0fserial_day_data\x18\x03 \x03(\x0b\x32\x16.PBSerialDayRewardData\"K\n\x13PBOldPlayerBackData\x12\x34\n\x14old_player_back_data\x18\x01 \x03(\x0b\x32\x16.PBOldPlayerBackStruct\"a\n\x10PBDBSpanTeamData\x12\x10\n\x08match_id\x18\x01 \x01(\r\x12\x14\n\x0c\x62\x61ttle_count\x18\x02 \x01(\r\x12\x13\n\x0bscore_limit\x18\x03 \x01(\r\x12\x10\n\x08liveness\x18\x04 \x01(\r\"\xef\x01\n\x10PBDBMagicPetData\x12)\n\x0emagic_pet_list\x18\x01 \x03(\x0b\x32\x11.PBDBMagicPetItem\x12+\n\x0eteam_page_list\x18\x02 \x03(\x0b\x32\x13.PBMagicPetTeamPage\x12\x1b\n\x13\x62\x61ttle_magic_pet_id\x18\x03 \x01(\x11\x12\x31\n\x0eskill_use_info\x18\x04 \x03(\x0b\x32\x19.PBDBMagicPetSkillUseInfo\x12\x19\n\x11gift_magic_pet_id\x18\x05 \x01(\x11\x12\x18\n\x10gift_effect_name\x18\x06 \x01(\t\"\xe2\x02\n\x10PBDBMagicPetItem\x12\n\n\x02id\x18\x01 \x01(\x11\x12\x12\n\nsheet_name\x18\x02 \x01(\t\x12\x11\n\tcur_level\x18\x03 \x01(\r\x12\x0f\n\x07\x63ur_exp\x18\x04 \x01(\x11\x12\x0f\n\x07max_exp\x18\x05 \x01(\x11\x12\x12\n\nstar_level\x18\x06 \x01(\r\x12\x14\n\x0c\x62\x61ttle_score\x18\x07 \x01(\x11\x12&\n\x08pro_list\x18\x08 \x03(\x0b\x32\x14.PBDBMagicPetProItem\x12-\n\x0fskill_slot_list\x18\t \x03(\x0b\x32\x14.PBMagicPetSkillSlot\x12$\n\nskill_list\x18\n \x01(\x0b\x32\x10.PBMagicPetSkill\x12\x11\n\tis_unlock\x18\x0b \x01(\x08\x12\x12\n\ngift_level\x18\x0c \x01(\x11\x12\x10\n\x08gift_exp\x18\r \x01(\x12\x12\x19\n\x11gift_battle_score\x18\x0e \x01(\x11\"}\n\x13PBDBMagicPetProItem\x12\x0f\n\x07slot_id\x18\x01 \x01(\x11\x12\x11\n\tfunc_mode\x18\x02 \x01(\x11\x12\x11\n\tfunc_type\x18\x03 \x01(\x11\x12\r\n\x05value\x18\x04 \x01(\x11\x12\x0b\n\x03max\x18\x05 \x01(\x11\x12\x13\n\x0btrain_count\x18\x06 \x01(\x11\"?\n\x18PBDBMagicPetSkillUseInfo\x12\x10\n\x08skill_id\x18\x01 \x01(\x11\x12\x11\n\tuse_count\x18\x02 \x01(\x11\"F\n\x19PBDBCharGuildLivenessData\x12\x10\n\x08liveness\x18\x01 \x01(\r\x12\x17\n\x0flast_reset_time\x18\x02 \x01(\r\"G\n\x17PBDBCharRollingtreeData\x12,\n\x08one_tree\x18\x01 \x03(\x0b\x32\x1a.PBDBCharRollingtreeSingle\"f\n\x19PBDBCharRollingtreeSingle\x12%\n\ttree_data\x18\x01 \x01(\x0b\x32\x12.PBRollingtreeData\x12\x0e\n\x06weight\x18\x02 \x01(\x11\x12\x12\n\nroll_times\x18\x03 \x01(\x11\x42\x02H\x01')
 
 
 
@@ -69,8 +70,8 @@ _PBSTATICITEM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=315,
-  serialized_end=379,
+  serialized_start=336,
+  serialized_end=400,
 )
 
 
@@ -802,6 +803,27 @@ _PBCHARPROPERTY = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='crop_id', full_name='PBCharProperty.crop_id', index=103,
+      number=107, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='last_create_crop_time', full_name='PBCharProperty.last_create_crop_time', index=104,
+      number=108, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='spanteam_score', full_name='PBCharProperty.spanteam_score', index=105,
+      number=109, type=18, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -811,8 +833,8 @@ _PBCHARPROPERTY = descriptor.Descriptor(
   options=descriptor._ParseOptions(descriptor_pb2.MessageOptions(), '\222\265\030\npf_role_id'),
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=382,
-  serialized_end=2483,
+  serialized_start=403,
+  serialized_end=2576,
 )
 
 
@@ -923,8 +945,8 @@ _PBUSERINFO = descriptor.Descriptor(
   options=descriptor._ParseOptions(descriptor_pb2.MessageOptions(), '\222\265\030\npf_user_id'),
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2486,
-  serialized_end=2794,
+  serialized_start=2579,
+  serialized_end=2887,
 )
 
 
@@ -965,8 +987,8 @@ _PBCHOOSECHAR = descriptor.Descriptor(
   options=descriptor._ParseOptions(descriptor_pb2.MessageOptions(), '\222\265\030\npf_user_id'),
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2796,
-  serialized_end=2908,
+  serialized_start=2889,
+  serialized_end=3001,
 )
 
 
@@ -993,8 +1015,8 @@ _PBCHARSUMMARYLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2910,
-  serialized_end=2972,
+  serialized_start=3003,
+  serialized_end=3065,
 )
 
 
@@ -1112,8 +1134,8 @@ _PBCHARSUMMARY = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2975,
-  serialized_end=3243,
+  serialized_start=3068,
+  serialized_end=3336,
 )
 
 
@@ -1161,8 +1183,8 @@ _PBPLAYER = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3246,
-  serialized_end=3380,
+  serialized_start=3339,
+  serialized_end=3473,
 )
 
 
@@ -1203,8 +1225,8 @@ _PBPLAYERBLOB = descriptor.Descriptor(
   options=descriptor._ParseOptions(descriptor_pb2.MessageOptions(), '\222\265\030\npf_user_id'),
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3382,
-  serialized_end=3487,
+  serialized_start=3475,
+  serialized_end=3580,
 )
 
 
@@ -1243,6 +1265,20 @@ _PBPLAYERDATA = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='vip_change_reward', full_name='PBPlayerData.vip_change_reward', index=4,
+      number=8, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='last_vip_version', full_name='PBPlayerData.last_vip_version', index=5,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -1252,8 +1288,8 @@ _PBPLAYERDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3490,
-  serialized_end=3671,
+  serialized_start=3583,
+  serialized_end=3838,
 )
 
 
@@ -1322,8 +1358,50 @@ _PBPLAYERCHARGERECORD = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3674,
-  serialized_end=3842,
+  serialized_start=3841,
+  serialized_end=4009,
+)
+
+
+_PBVIPGETREWARDINFO = descriptor.Descriptor(
+  name='PBVipGetRewardInfo',
+  full_name='PBVipGetRewardInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='version_id', full_name='PBVipGetRewardInfo.version_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='index', full_name='PBVipGetRewardInfo.index', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='ifGetReward', full_name='PBVipGetRewardInfo.ifGetReward', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=4011,
+  serialized_end=4087,
 )
 
 
@@ -1371,8 +1449,8 @@ _PBPLAYERCHARGESIGN = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3844,
-  serialized_end=3965,
+  serialized_start=4089,
+  serialized_end=4210,
 )
 
 
@@ -1413,8 +1491,8 @@ _PBPLAYERCHARGESIGNITEM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3967,
-  serialized_end=4054,
+  serialized_start=4212,
+  serialized_end=4299,
 )
 
 
@@ -1469,8 +1547,50 @@ _PBPLAYERCHARGEREGRESS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4056,
-  serialized_end=4180,
+  serialized_start=4301,
+  serialized_end=4425,
+)
+
+
+_PBPLAYERBINDVIPDATA = descriptor.Descriptor(
+  name='PBPlayerBindVipData',
+  full_name='PBPlayerBindVipData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='act_id', full_name='PBPlayerBindVipData.act_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='act_end_time', full_name='PBPlayerBindVipData.act_end_time', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='ignore_count', full_name='PBPlayerBindVipData.ignore_count', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=4427,
+  serialized_end=4508,
 )
 
 
@@ -1539,8 +1659,8 @@ _PBDBQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4183,
-  serialized_end=4339,
+  serialized_start=4511,
+  serialized_end=4667,
 )
 
 
@@ -1616,8 +1736,8 @@ _PBDBTASK = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4342,
-  serialized_end=4631,
+  serialized_start=4670,
+  serialized_end=4959,
 )
 
 
@@ -1658,8 +1778,8 @@ _PBCHARACTER = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4633,
-  serialized_end=4735,
+  serialized_start=4961,
+  serialized_end=5063,
 )
 
 
@@ -2167,6 +2287,41 @@ _PBCHARBLOB = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='spanteam_data', full_name='PBCharBlob.spanteam_data', index=71,
+      number=77, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='magic_pet_data', full_name='PBCharBlob.magic_pet_data', index=72,
+      number=78, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='guild_liveness_data', full_name='PBCharBlob.guild_liveness_data', index=73,
+      number=79, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='player_bind_vip_data', full_name='PBCharBlob.player_bind_vip_data', index=74,
+      number=80, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='char_rollingtree_data', full_name='PBCharBlob.char_rollingtree_data', index=75,
+      number=81, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -2176,8 +2331,8 @@ _PBCHARBLOB = descriptor.Descriptor(
   options=descriptor._ParseOptions(descriptor_pb2.MessageOptions(), '\222\265\030\npf_role_id'),
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=4738,
-  serialized_end=7571,
+  serialized_start=5066,
+  serialized_end=8150,
 )
 
 
@@ -2204,8 +2359,8 @@ _PBREP = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7573,
-  serialized_end=7608,
+  serialized_start=8152,
+  serialized_end=8187,
 )
 
 
@@ -2246,8 +2401,8 @@ _PBREPCELL = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7610,
-  serialized_end=7696,
+  serialized_start=8189,
+  serialized_end=8275,
 )
 
 
@@ -2295,8 +2450,8 @@ _PBREPBAG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7698,
-  serialized_end=7795,
+  serialized_start=8277,
+  serialized_end=8374,
 )
 
 
@@ -2330,8 +2485,8 @@ _PBQUESTIONDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7797,
-  serialized_end=7893,
+  serialized_start=8376,
+  serialized_end=8472,
 )
 
 
@@ -2372,8 +2527,8 @@ _PBQUESTDAILYINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7895,
-  serialized_end=7986,
+  serialized_start=8474,
+  serialized_end=8565,
 )
 
 
@@ -2428,8 +2583,8 @@ _PBQUESTWISDOMINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=7989,
-  serialized_end=8158,
+  serialized_start=8568,
+  serialized_end=8737,
 )
 
 
@@ -2470,8 +2625,8 @@ _PBWEEKSCOREINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8160,
-  serialized_end=8251,
+  serialized_start=8739,
+  serialized_end=8830,
 )
 
 
@@ -2540,8 +2695,8 @@ _PBWISROUND = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8254,
-  serialized_end=8412,
+  serialized_start=8833,
+  serialized_end=8991,
 )
 
 
@@ -2568,8 +2723,8 @@ _PBCHARCONSUMERECORDCONTAINER = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8414,
-  serialized_end=8488,
+  serialized_start=8993,
+  serialized_end=9067,
 )
 
 
@@ -2638,8 +2793,8 @@ _PBCHARCONSUMERECORD = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8491,
-  serialized_end=8637,
+  serialized_start=9070,
+  serialized_end=9216,
 )
 
 
@@ -2666,8 +2821,8 @@ _PBSKILLINFOLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8639,
-  serialized_end=8691,
+  serialized_start=9218,
+  serialized_end=9270,
 )
 
 
@@ -2771,8 +2926,8 @@ _PBBUFFDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8694,
-  serialized_end=8926,
+  serialized_start=9273,
+  serialized_end=9505,
 )
 
 
@@ -2799,8 +2954,8 @@ _PBALLBUFFDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8928,
-  serialized_end=8975,
+  serialized_start=9507,
+  serialized_end=9554,
 )
 
 
@@ -3107,8 +3262,8 @@ _PBITEM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=8978,
-  serialized_end=10046,
+  serialized_start=9557,
+  serialized_end=10625,
 )
 
 
@@ -3135,8 +3290,8 @@ _PBITEMLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10048,
-  serialized_end=10091,
+  serialized_start=10627,
+  serialized_end=10670,
 )
 
 
@@ -3177,8 +3332,8 @@ _PBDONEMISSION = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10093,
-  serialized_end=10174,
+  serialized_start=10672,
+  serialized_end=10753,
 )
 
 
@@ -3205,8 +3360,8 @@ _PBDONEMISSIONLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10176,
-  serialized_end=10240,
+  serialized_start=10755,
+  serialized_end=10819,
 )
 
 
@@ -3254,8 +3409,8 @@ _PBLOTTERY = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10242,
-  serialized_end=10329,
+  serialized_start=10821,
+  serialized_end=10908,
 )
 
 
@@ -3282,8 +3437,8 @@ _PBLOTTERYLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10331,
-  serialized_end=10375,
+  serialized_start=10910,
+  serialized_end=10954,
 )
 
 
@@ -3324,8 +3479,8 @@ _PBBAG = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10377,
-  serialized_end=10445,
+  serialized_start=10956,
+  serialized_end=11024,
 )
 
 
@@ -3352,8 +3507,8 @@ _PBSKILL = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10447,
-  serialized_end=10473,
+  serialized_start=11026,
+  serialized_end=11052,
 )
 
 
@@ -3380,8 +3535,8 @@ _PBBUFF = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10475,
-  serialized_end=10500,
+  serialized_start=11054,
+  serialized_end=11079,
 )
 
 
@@ -3408,8 +3563,8 @@ _PBSHORTCUT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10502,
-  serialized_end=10528,
+  serialized_start=11081,
+  serialized_end=11107,
 )
 
 
@@ -3436,8 +3591,8 @@ _PBCDTIME = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10530,
-  serialized_end=10556,
+  serialized_start=11109,
+  serialized_end=11135,
 )
 
 
@@ -3464,8 +3619,8 @@ _PBBLACKLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10558,
-  serialized_end=10588,
+  serialized_start=11137,
+  serialized_end=11167,
 )
 
 
@@ -3492,8 +3647,8 @@ _PBDELETEFRIENDINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10590,
-  serialized_end=10631,
+  serialized_start=11169,
+  serialized_end=11210,
 )
 
 
@@ -3520,8 +3675,8 @@ _PBEXCUTINGTREASUREINCIDENTS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10633,
-  serialized_end=10736,
+  serialized_start=11212,
+  serialized_end=11315,
 )
 
 
@@ -3555,8 +3710,8 @@ _PBEXCUTINGTREASUREINCIDENTINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10738,
-  serialized_end=10835,
+  serialized_start=11317,
+  serialized_end=11414,
 )
 
 
@@ -3583,8 +3738,8 @@ _PBBUYBACKS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10837,
-  serialized_end=10879,
+  serialized_start=11416,
+  serialized_end=11458,
 )
 
 
@@ -3632,8 +3787,8 @@ _PBBUYBACKINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10881,
-  serialized_end=10969,
+  serialized_start=11460,
+  serialized_end=11548,
 )
 
 
@@ -3681,8 +3836,8 @@ _PBGEMENCHASE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=10971,
-  serialized_end=11067,
+  serialized_start=11550,
+  serialized_end=11646,
 )
 
 
@@ -3716,8 +3871,8 @@ _PBGEMENCHASELIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=11069,
-  serialized_end=11159,
+  serialized_start=11648,
+  serialized_end=11738,
 )
 
 
@@ -3744,8 +3899,8 @@ _PBCOUNTERINFOLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=11161,
-  serialized_end=11225,
+  serialized_start=11740,
+  serialized_end=11804,
 )
 
 
@@ -3786,8 +3941,8 @@ _PBCOUNTERINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=11227,
-  serialized_end=11296,
+  serialized_start=11806,
+  serialized_end=11875,
 )
 
 
@@ -3814,8 +3969,8 @@ _PBCHARACTERTITLE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=11298,
-  serialized_end=11336,
+  serialized_start=11877,
+  serialized_end=11915,
 )
 
 
@@ -3856,8 +4011,8 @@ _PBNIUERINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=11338,
-  serialized_end=11411,
+  serialized_start=11917,
+  serialized_end=11990,
 )
 
 
@@ -3891,8 +4046,8 @@ _PBOFFLINEEXPINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=11413,
-  serialized_end=11473,
+  serialized_start=11992,
+  serialized_end=12052,
 )
 
 
@@ -3947,8 +4102,8 @@ _PBDUNGEONRECORD = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=11475,
-  serialized_end=11600,
+  serialized_start=12054,
+  serialized_end=12179,
 )
 
 
@@ -4003,8 +4158,8 @@ _PBDUNGEON = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=11603,
-  serialized_end=11822,
+  serialized_start=12182,
+  serialized_end=12401,
 )
 
 
@@ -4045,8 +4200,8 @@ _PBDUNGEONCHAPTERCHESTRECORD = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=11824,
-  serialized_end=11936,
+  serialized_start=12403,
+  serialized_end=12515,
 )
 
 
@@ -4087,8 +4242,8 @@ _PBSHARDCHARIUINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=11938,
-  serialized_end=12007,
+  serialized_start=12517,
+  serialized_end=12586,
 )
 
 
@@ -4136,8 +4291,8 @@ _PBSHARDCHAR = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=12010,
-  serialized_end=12143,
+  serialized_start=12589,
+  serialized_end=12722,
 )
 
 
@@ -4171,8 +4326,8 @@ _PBCHARGAMEOP = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=12145,
-  serialized_end=12193,
+  serialized_start=12724,
+  serialized_end=12772,
 )
 
 
@@ -4199,8 +4354,8 @@ _PBCHARGAMEOPLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=12195,
-  serialized_end=12249,
+  serialized_start=12774,
+  serialized_end=12828,
 )
 
 
@@ -4234,8 +4389,8 @@ _PBRUNEITEM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=12251,
-  serialized_end=12306,
+  serialized_start=12830,
+  serialized_end=12885,
 )
 
 
@@ -4276,8 +4431,8 @@ _PBRUNESLOT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=12308,
-  serialized_end=12398,
+  serialized_start=12887,
+  serialized_end=12977,
 )
 
 
@@ -4318,8 +4473,8 @@ _PBMOUNTFASHION = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=12400,
-  serialized_end=12480,
+  serialized_start=12979,
+  serialized_end=13059,
 )
 
 
@@ -4353,8 +4508,8 @@ _PBOPENSLOTPAGEITEM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=12482,
-  serialized_end=12544,
+  serialized_start=13061,
+  serialized_end=13123,
 )
 
 
@@ -4388,8 +4543,8 @@ _PBSOULSTARITEM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=12546,
-  serialized_end=12605,
+  serialized_start=13125,
+  serialized_end=13184,
 )
 
 
@@ -4423,8 +4578,8 @@ _PBSOULSTARCHIP = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=12607,
-  serialized_end=12665,
+  serialized_start=13186,
+  serialized_end=13244,
 )
 
 
@@ -4465,8 +4620,8 @@ _PBSOULSTARINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=12668,
-  serialized_end=12815,
+  serialized_start=13247,
+  serialized_end=13394,
 )
 
 
@@ -4535,8 +4690,8 @@ _PBMOUNT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=12818,
-  serialized_end=12998,
+  serialized_start=13397,
+  serialized_end=13577,
 )
 
 
@@ -4577,8 +4732,8 @@ _PBMOUNTINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13000,
-  serialized_end=13093,
+  serialized_start=13579,
+  serialized_end=13672,
 )
 
 
@@ -4612,8 +4767,8 @@ _PBQUESTGROUP = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13095,
-  serialized_end=13149,
+  serialized_start=13674,
+  serialized_end=13728,
 )
 
 
@@ -4654,8 +4809,8 @@ _PBQUESTRAND = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13151,
-  serialized_end=13226,
+  serialized_start=13730,
+  serialized_end=13805,
 )
 
 
@@ -4682,8 +4837,8 @@ _PBFUNCSTORY = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13228,
-  serialized_end=13259,
+  serialized_start=13807,
+  serialized_end=13838,
 )
 
 
@@ -4710,8 +4865,8 @@ _PBFUNCGUIDE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13261,
-  serialized_end=13292,
+  serialized_start=13840,
+  serialized_end=13871,
 )
 
 
@@ -4738,8 +4893,8 @@ _PBFUNCPUSHLEVEL = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13294,
-  serialized_end=13333,
+  serialized_start=13873,
+  serialized_end=13912,
 )
 
 
@@ -4794,8 +4949,8 @@ _PBFUNCOPENINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13336,
-  serialized_end=13490,
+  serialized_start=13915,
+  serialized_end=14069,
 )
 
 
@@ -4829,8 +4984,8 @@ _PBACTIVITIESDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13492,
-  serialized_end=13574,
+  serialized_start=14071,
+  serialized_end=14153,
 )
 
 
@@ -4864,8 +5019,8 @@ _PBDAILYSIGNSTATE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13576,
-  serialized_end=13621,
+  serialized_start=14155,
+  serialized_end=14200,
 )
 
 
@@ -4955,8 +5110,8 @@ _PBSIGNACTIVITYDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13624,
-  serialized_end=13898,
+  serialized_start=14203,
+  serialized_end=14477,
 )
 
 
@@ -4983,8 +5138,8 @@ _PBDBTEAMDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13900,
-  serialized_end=13937,
+  serialized_start=14479,
+  serialized_end=14516,
 )
 
 
@@ -5074,8 +5229,8 @@ _PBJUSTICEINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=13940,
-  serialized_end=14188,
+  serialized_start=14519,
+  serialized_end=14767,
 )
 
 
@@ -5116,8 +5271,8 @@ _PBEVILKILLERLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=14190,
-  serialized_end=14271,
+  serialized_start=14769,
+  serialized_end=14850,
 )
 
 
@@ -5172,8 +5327,8 @@ _PBNEWSERVERDATAINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=14273,
-  serialized_end=14360,
+  serialized_start=14852,
+  serialized_end=14939,
 )
 
 
@@ -5200,8 +5355,8 @@ _PBNEWSERVERACTIVITY = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=14362,
-  serialized_end=14424,
+  serialized_start=14941,
+  serialized_end=15003,
 )
 
 
@@ -5242,8 +5397,8 @@ _PBNEWSERVERRECHARGEINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=14426,
-  serialized_end=14494,
+  serialized_start=15005,
+  serialized_end=15073,
 )
 
 
@@ -5270,8 +5425,8 @@ _PBNEWSERVERRECHARGE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=14496,
-  serialized_end=14566,
+  serialized_start=15075,
+  serialized_end=15145,
 )
 
 
@@ -5403,8 +5558,8 @@ _PBCONSIGNINFO = descriptor.Descriptor(
   options=descriptor._ParseOptions(descriptor_pb2.MessageOptions(), '\222\265\030\nconsign_id'),
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=14569,
-  serialized_end=14933,
+  serialized_start=15148,
+  serialized_end=15512,
 )
 
 
@@ -5536,8 +5691,8 @@ _PBCONSIGNLOG = descriptor.Descriptor(
   options=descriptor._ParseOptions(descriptor_pb2.MessageOptions(), '\222\265\030\nconsign_id'),
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=14936,
-  serialized_end=15296,
+  serialized_start=15515,
+  serialized_end=15875,
 )
 
 
@@ -5571,8 +5726,8 @@ _PBCONSIGNHOTITEM = descriptor.Descriptor(
   options=descriptor._ParseOptions(descriptor_pb2.MessageOptions(), '\222\265\030\010sheet_id'),
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=15298,
-  serialized_end=15367,
+  serialized_start=15877,
+  serialized_end=15946,
 )
 
 
@@ -5627,8 +5782,8 @@ _PBCHARLOCALFRIENDDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=15370,
-  serialized_end=15543,
+  serialized_start=15949,
+  serialized_end=16122,
 )
 
 
@@ -5655,8 +5810,8 @@ _PBCHARGUILDSKILLDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=15545,
-  serialized_end=15607,
+  serialized_start=16124,
+  serialized_end=16186,
 )
 
 
@@ -5690,8 +5845,8 @@ _PBLASTGUILDSKILL = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=15609,
-  serialized_end=15662,
+  serialized_start=16188,
+  serialized_end=16241,
 )
 
 
@@ -5788,8 +5943,8 @@ _PBCHARSINGLEDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=15665,
-  serialized_end=15934,
+  serialized_start=16244,
+  serialized_end=16513,
 )
 
 
@@ -5830,8 +5985,8 @@ _PBDBMARRIAGEINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=15936,
-  serialized_end=16038,
+  serialized_start=16515,
+  serialized_end=16617,
 )
 
 
@@ -5865,8 +6020,8 @@ _PBDBHOLDINFO = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16040,
-  serialized_end=16092,
+  serialized_start=16619,
+  serialized_end=16671,
 )
 
 
@@ -5914,8 +6069,8 @@ _PBDBCHARGMMAIL = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16094,
-  serialized_end=16186,
+  serialized_start=16673,
+  serialized_end=16765,
 )
 
 
@@ -5942,8 +6097,8 @@ _PBDBCHARGMMAILLIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16188,
-  serialized_end=16239,
+  serialized_start=16767,
+  serialized_end=16818,
 )
 
 
@@ -5970,8 +6125,8 @@ _PBAUTHORITYDATAS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16241,
-  serialized_end=16301,
+  serialized_start=16820,
+  serialized_end=16880,
 )
 
 
@@ -6033,8 +6188,8 @@ _PBAUTHORITYDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16304,
-  serialized_end=16460,
+  serialized_start=16883,
+  serialized_end=17039,
 )
 
 
@@ -6096,8 +6251,8 @@ _PBJUBAOPENDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16463,
-  serialized_end=16628,
+  serialized_start=17042,
+  serialized_end=17207,
 )
 
 
@@ -6145,8 +6300,8 @@ _PBJUBAOPENREWARD = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16630,
-  serialized_end=16737,
+  serialized_start=17209,
+  serialized_end=17316,
 )
 
 
@@ -6187,8 +6342,8 @@ _PBJBPREWARDITEM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16739,
-  serialized_end=16805,
+  serialized_start=17318,
+  serialized_end=17384,
 )
 
 
@@ -6222,8 +6377,8 @@ _PBNEWROLECORNALL = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16807,
-  serialized_end=16883,
+  serialized_start=17386,
+  serialized_end=17462,
 )
 
 
@@ -6278,8 +6433,8 @@ _PBNEWROLECORNONE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=16885,
-  serialized_end=17008,
+  serialized_start=17464,
+  serialized_end=17587,
 )
 
 
@@ -6320,8 +6475,8 @@ _PBOFFLINEEXP = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17010,
-  serialized_end=17105,
+  serialized_start=17589,
+  serialized_end=17684,
 )
 
 
@@ -6376,8 +6531,8 @@ _PBOFFLINEEXPDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17107,
-  serialized_end=17218,
+  serialized_start=17686,
+  serialized_end=17797,
 )
 
 
@@ -6418,8 +6573,8 @@ _PBGEMCUTTING = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17220,
-  serialized_end=17300,
+  serialized_start=17799,
+  serialized_end=17879,
 )
 
 
@@ -6453,8 +6608,8 @@ _PBDBCHANGECAMP = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17302,
-  serialized_end=17365,
+  serialized_start=17881,
+  serialized_end=17944,
 )
 
 
@@ -6488,8 +6643,8 @@ _PBMUTE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17367,
-  serialized_end=17409,
+  serialized_start=17946,
+  serialized_end=17988,
 )
 
 
@@ -6516,8 +6671,8 @@ _PBMUTEDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17411,
-  serialized_end=17450,
+  serialized_start=17990,
+  serialized_end=18029,
 )
 
 
@@ -6551,8 +6706,8 @@ _PBDBBOATING = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17452,
-  serialized_end=17511,
+  serialized_start=18031,
+  serialized_end=18090,
 )
 
 
@@ -6621,8 +6776,8 @@ _PBPOTENTIAL = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17514,
-  serialized_end=17793,
+  serialized_start=18093,
+  serialized_end=18372,
 )
 
 
@@ -6670,8 +6825,8 @@ _PBDBSPANIMBATTLE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17795,
-  serialized_end=17898,
+  serialized_start=18374,
+  serialized_end=18477,
 )
 
 
@@ -6705,8 +6860,8 @@ _PBWARDROBEITEM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17900,
-  serialized_end=17959,
+  serialized_start=18479,
+  serialized_end=18538,
 )
 
 
@@ -6740,8 +6895,8 @@ _PBWARDROBESLOT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=17961,
-  serialized_end=18032,
+  serialized_start=18540,
+  serialized_end=18611,
 )
 
 
@@ -6782,8 +6937,8 @@ _PBWARDROBEDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18034,
-  serialized_end=18129,
+  serialized_start=18613,
+  serialized_end=18708,
 )
 
 
@@ -6831,8 +6986,8 @@ _PBDBWARDROBE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18131,
-  serialized_end=18242,
+  serialized_start=18710,
+  serialized_end=18821,
 )
 
 
@@ -6866,8 +7021,8 @@ _PBDBLOGINGIFTSDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18244,
-  serialized_end=18346,
+  serialized_start=18823,
+  serialized_end=18925,
 )
 
 
@@ -6915,8 +7070,8 @@ _PBLOGINGIFTSDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18348,
-  serialized_end=18470,
+  serialized_start=18927,
+  serialized_end=19049,
 )
 
 
@@ -6971,8 +7126,8 @@ _PBLOGINGIFTSREWARD = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18473,
-  serialized_end=18603,
+  serialized_start=19052,
+  serialized_end=19182,
 )
 
 
@@ -7020,8 +7175,8 @@ _PBONLINEGETSTRUCT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18605,
-  serialized_end=18718,
+  serialized_start=19184,
+  serialized_end=19297,
 )
 
 
@@ -7048,8 +7203,8 @@ _PBONLINEGIFTSDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18720,
-  serialized_end=18777,
+  serialized_start=19299,
+  serialized_end=19356,
 )
 
 
@@ -7083,8 +7238,8 @@ _PBDBONEARMBANDITDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18779,
-  serialized_end=18845,
+  serialized_start=19358,
+  serialized_end=19424,
 )
 
 
@@ -7111,8 +7266,8 @@ _PBDBXINFADATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18847,
-  serialized_end=18899,
+  serialized_start=19426,
+  serialized_end=19478,
 )
 
 
@@ -7153,8 +7308,8 @@ _PBXINFAITEMDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18901,
-  serialized_end=18971,
+  serialized_start=19480,
+  serialized_end=19550,
 )
 
 
@@ -7181,8 +7336,8 @@ _PBDBXIUZHENDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=18973,
-  serialized_end=19034,
+  serialized_start=19552,
+  serialized_end=19613,
 )
 
 
@@ -7230,8 +7385,8 @@ _PBDBXUEITEM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=19036,
-  serialized_end=19118,
+  serialized_start=19615,
+  serialized_end=19697,
 )
 
 
@@ -7265,8 +7420,8 @@ _PBDBXIUZHENCHONGITEM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=19120,
-  serialized_end=19197,
+  serialized_start=19699,
+  serialized_end=19776,
 )
 
 
@@ -7300,8 +7455,8 @@ _PBDBXIUZHENMAIITEM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=19199,
-  serialized_end=19283,
+  serialized_start=19778,
+  serialized_end=19862,
 )
 
 
@@ -7335,8 +7490,8 @@ _PBSERIALDAYREWARDDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=19285,
-  serialized_end=19347,
+  serialized_start=19864,
+  serialized_end=19926,
 )
 
 
@@ -7377,8 +7532,8 @@ _PBOLDPLAYERBACKSTRUCT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=19349,
-  serialized_end=19469,
+  serialized_start=19928,
+  serialized_end=20048,
 )
 
 
@@ -7405,8 +7560,442 @@ _PBOLDPLAYERBACKDATA = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=19471,
-  serialized_end=19546,
+  serialized_start=20050,
+  serialized_end=20125,
+)
+
+
+_PBDBSPANTEAMDATA = descriptor.Descriptor(
+  name='PBDBSpanTeamData',
+  full_name='PBDBSpanTeamData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='match_id', full_name='PBDBSpanTeamData.match_id', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='battle_count', full_name='PBDBSpanTeamData.battle_count', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='score_limit', full_name='PBDBSpanTeamData.score_limit', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='liveness', full_name='PBDBSpanTeamData.liveness', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=20127,
+  serialized_end=20224,
+)
+
+
+_PBDBMAGICPETDATA = descriptor.Descriptor(
+  name='PBDBMagicPetData',
+  full_name='PBDBMagicPetData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='magic_pet_list', full_name='PBDBMagicPetData.magic_pet_list', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='team_page_list', full_name='PBDBMagicPetData.team_page_list', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='battle_magic_pet_id', full_name='PBDBMagicPetData.battle_magic_pet_id', index=2,
+      number=3, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='skill_use_info', full_name='PBDBMagicPetData.skill_use_info', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='gift_magic_pet_id', full_name='PBDBMagicPetData.gift_magic_pet_id', index=4,
+      number=5, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='gift_effect_name', full_name='PBDBMagicPetData.gift_effect_name', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=20227,
+  serialized_end=20466,
+)
+
+
+_PBDBMAGICPETITEM = descriptor.Descriptor(
+  name='PBDBMagicPetItem',
+  full_name='PBDBMagicPetItem',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='id', full_name='PBDBMagicPetItem.id', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='sheet_name', full_name='PBDBMagicPetItem.sheet_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='cur_level', full_name='PBDBMagicPetItem.cur_level', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='cur_exp', full_name='PBDBMagicPetItem.cur_exp', index=3,
+      number=4, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='max_exp', full_name='PBDBMagicPetItem.max_exp', index=4,
+      number=5, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='star_level', full_name='PBDBMagicPetItem.star_level', index=5,
+      number=6, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='battle_score', full_name='PBDBMagicPetItem.battle_score', index=6,
+      number=7, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='pro_list', full_name='PBDBMagicPetItem.pro_list', index=7,
+      number=8, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='skill_slot_list', full_name='PBDBMagicPetItem.skill_slot_list', index=8,
+      number=9, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='skill_list', full_name='PBDBMagicPetItem.skill_list', index=9,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='is_unlock', full_name='PBDBMagicPetItem.is_unlock', index=10,
+      number=11, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='gift_level', full_name='PBDBMagicPetItem.gift_level', index=11,
+      number=12, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='gift_exp', full_name='PBDBMagicPetItem.gift_exp', index=12,
+      number=13, type=18, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='gift_battle_score', full_name='PBDBMagicPetItem.gift_battle_score', index=13,
+      number=14, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=20469,
+  serialized_end=20823,
+)
+
+
+_PBDBMAGICPETPROITEM = descriptor.Descriptor(
+  name='PBDBMagicPetProItem',
+  full_name='PBDBMagicPetProItem',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='slot_id', full_name='PBDBMagicPetProItem.slot_id', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='func_mode', full_name='PBDBMagicPetProItem.func_mode', index=1,
+      number=2, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='func_type', full_name='PBDBMagicPetProItem.func_type', index=2,
+      number=3, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='value', full_name='PBDBMagicPetProItem.value', index=3,
+      number=4, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='max', full_name='PBDBMagicPetProItem.max', index=4,
+      number=5, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='train_count', full_name='PBDBMagicPetProItem.train_count', index=5,
+      number=6, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=20825,
+  serialized_end=20950,
+)
+
+
+_PBDBMAGICPETSKILLUSEINFO = descriptor.Descriptor(
+  name='PBDBMagicPetSkillUseInfo',
+  full_name='PBDBMagicPetSkillUseInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='skill_id', full_name='PBDBMagicPetSkillUseInfo.skill_id', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='use_count', full_name='PBDBMagicPetSkillUseInfo.use_count', index=1,
+      number=2, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=20952,
+  serialized_end=21015,
+)
+
+
+_PBDBCHARGUILDLIVENESSDATA = descriptor.Descriptor(
+  name='PBDBCharGuildLivenessData',
+  full_name='PBDBCharGuildLivenessData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='liveness', full_name='PBDBCharGuildLivenessData.liveness', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='last_reset_time', full_name='PBDBCharGuildLivenessData.last_reset_time', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=21017,
+  serialized_end=21087,
+)
+
+
+_PBDBCHARROLLINGTREEDATA = descriptor.Descriptor(
+  name='PBDBCharRollingtreeData',
+  full_name='PBDBCharRollingtreeData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='one_tree', full_name='PBDBCharRollingtreeData.one_tree', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=21089,
+  serialized_end=21160,
+)
+
+
+_PBDBCHARROLLINGTREESINGLE = descriptor.Descriptor(
+  name='PBDBCharRollingtreeSingle',
+  full_name='PBDBCharRollingtreeSingle',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='tree_data', full_name='PBDBCharRollingtreeSingle.tree_data', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='weight', full_name='PBDBCharRollingtreeSingle.weight', index=1,
+      number=2, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='roll_times', full_name='PBDBCharRollingtreeSingle.roll_times', index=2,
+      number=3, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=21162,
+  serialized_end=21264,
 )
 
 _PBCHOOSECHAR.fields_by_name['char_summarys'].message_type = _PBCHARSUMMARYLIST
@@ -7419,6 +8008,7 @@ _PBPLAYERDATA.fields_by_name['quest_vip'].message_type = _PBDBQUEST
 _PBPLAYERDATA.fields_by_name['charge_record'].message_type = _PBPLAYERCHARGERECORD
 _PBPLAYERDATA.fields_by_name['charge_sign'].message_type = _PBPLAYERCHARGESIGN
 _PBPLAYERDATA.fields_by_name['charge_regress'].message_type = _PBPLAYERCHARGEREGRESS
+_PBPLAYERDATA.fields_by_name['vip_change_reward'].message_type = _PBVIPGETREWARDINFO
 _PBPLAYERCHARGESIGN.fields_by_name['sign_item'].message_type = _PBPLAYERCHARGESIGNITEM
 _PBDBTASK.fields_by_name['quest_normal'].message_type = _PBDBQUEST
 _PBDBTASK.fields_by_name['quest_daily'].message_type = _PBDBQUEST
@@ -7495,6 +8085,11 @@ _PBCHARBLOB.fields_by_name['onearmbandit_data'].message_type = _PBDBONEARMBANDIT
 _PBCHARBLOB.fields_by_name['xinfa_data'].message_type = _PBDBXINFADATA
 _PBCHARBLOB.fields_by_name['oldplayer_back_data'].message_type = _PBOLDPLAYERBACKDATA
 _PBCHARBLOB.fields_by_name['xiuzhen_data'].message_type = _PBDBXIUZHENDATA
+_PBCHARBLOB.fields_by_name['spanteam_data'].message_type = _PBDBSPANTEAMDATA
+_PBCHARBLOB.fields_by_name['magic_pet_data'].message_type = _PBDBMAGICPETDATA
+_PBCHARBLOB.fields_by_name['guild_liveness_data'].message_type = _PBDBCHARGUILDLIVENESSDATA
+_PBCHARBLOB.fields_by_name['player_bind_vip_data'].message_type = _PBPLAYERBINDVIPDATA
+_PBCHARBLOB.fields_by_name['char_rollingtree_data'].message_type = _PBDBCHARROLLINGTREEDATA
 _PBREP.fields_by_name['pbcell'].message_type = _PBREPCELL
 _PBREPCELL.fields_by_name['rep_bag'].message_type = _PBREPBAG
 _PBREPCELL.fields_by_name['repository_item'].message_type = _PBITEM
@@ -7591,6 +8186,14 @@ _PBDBXIUZHENCHONGITEM.fields_by_name['xue_item_list'].message_type = _PBDBXUEITE
 _PBDBXIUZHENMAIITEM.fields_by_name['chong_item_list'].message_type = _PBDBXIUZHENCHONGITEM
 _PBOLDPLAYERBACKSTRUCT.fields_by_name['serial_day_data'].message_type = _PBSERIALDAYREWARDDATA
 _PBOLDPLAYERBACKDATA.fields_by_name['old_player_back_data'].message_type = _PBOLDPLAYERBACKSTRUCT
+_PBDBMAGICPETDATA.fields_by_name['magic_pet_list'].message_type = _PBDBMAGICPETITEM
+_PBDBMAGICPETDATA.fields_by_name['team_page_list'].message_type = msg_magic_pet_pb2._PBMAGICPETTEAMPAGE
+_PBDBMAGICPETDATA.fields_by_name['skill_use_info'].message_type = _PBDBMAGICPETSKILLUSEINFO
+_PBDBMAGICPETITEM.fields_by_name['pro_list'].message_type = _PBDBMAGICPETPROITEM
+_PBDBMAGICPETITEM.fields_by_name['skill_slot_list'].message_type = msg_magic_pet_pb2._PBMAGICPETSKILLSLOT
+_PBDBMAGICPETITEM.fields_by_name['skill_list'].message_type = msg_magic_pet_pb2._PBMAGICPETSKILL
+_PBDBCHARROLLINGTREEDATA.fields_by_name['one_tree'].message_type = _PBDBCHARROLLINGTREESINGLE
+_PBDBCHARROLLINGTREESINGLE.fields_by_name['tree_data'].message_type = msg_activity_pb2._PBROLLINGTREEDATA
 DESCRIPTOR.message_types_by_name['PBStaticItem'] = _PBSTATICITEM
 DESCRIPTOR.message_types_by_name['PBCharProperty'] = _PBCHARPROPERTY
 DESCRIPTOR.message_types_by_name['PBUserInfo'] = _PBUSERINFO
@@ -7601,9 +8204,11 @@ DESCRIPTOR.message_types_by_name['PBPlayer'] = _PBPLAYER
 DESCRIPTOR.message_types_by_name['PBPlayerBlob'] = _PBPLAYERBLOB
 DESCRIPTOR.message_types_by_name['PBPlayerData'] = _PBPLAYERDATA
 DESCRIPTOR.message_types_by_name['PBPlayerChargeRecord'] = _PBPLAYERCHARGERECORD
+DESCRIPTOR.message_types_by_name['PBVipGetRewardInfo'] = _PBVIPGETREWARDINFO
 DESCRIPTOR.message_types_by_name['PBPlayerChargeSign'] = _PBPLAYERCHARGESIGN
 DESCRIPTOR.message_types_by_name['PBPlayerChargeSignItem'] = _PBPLAYERCHARGESIGNITEM
 DESCRIPTOR.message_types_by_name['PBPlayerChargeRegress'] = _PBPLAYERCHARGEREGRESS
+DESCRIPTOR.message_types_by_name['PBPlayerBindVipData'] = _PBPLAYERBINDVIPDATA
 DESCRIPTOR.message_types_by_name['PBDBQuest'] = _PBDBQUEST
 DESCRIPTOR.message_types_by_name['PBDBTask'] = _PBDBTASK
 DESCRIPTOR.message_types_by_name['PBCharacter'] = _PBCHARACTER
@@ -7723,6 +8328,14 @@ DESCRIPTOR.message_types_by_name['PBDBXiuzhenmaiItem'] = _PBDBXIUZHENMAIITEM
 DESCRIPTOR.message_types_by_name['PBSerialDayRewardData'] = _PBSERIALDAYREWARDDATA
 DESCRIPTOR.message_types_by_name['PBOldPlayerBackStruct'] = _PBOLDPLAYERBACKSTRUCT
 DESCRIPTOR.message_types_by_name['PBOldPlayerBackData'] = _PBOLDPLAYERBACKDATA
+DESCRIPTOR.message_types_by_name['PBDBSpanTeamData'] = _PBDBSPANTEAMDATA
+DESCRIPTOR.message_types_by_name['PBDBMagicPetData'] = _PBDBMAGICPETDATA
+DESCRIPTOR.message_types_by_name['PBDBMagicPetItem'] = _PBDBMAGICPETITEM
+DESCRIPTOR.message_types_by_name['PBDBMagicPetProItem'] = _PBDBMAGICPETPROITEM
+DESCRIPTOR.message_types_by_name['PBDBMagicPetSkillUseInfo'] = _PBDBMAGICPETSKILLUSEINFO
+DESCRIPTOR.message_types_by_name['PBDBCharGuildLivenessData'] = _PBDBCHARGUILDLIVENESSDATA
+DESCRIPTOR.message_types_by_name['PBDBCharRollingtreeData'] = _PBDBCHARROLLINGTREEDATA
+DESCRIPTOR.message_types_by_name['PBDBCharRollingtreeSingle'] = _PBDBCHARROLLINGTREESINGLE
 
 class PBStaticItem(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
@@ -7784,6 +8397,12 @@ class PBPlayerChargeRecord(message.Message):
   
   # @@protoc_insertion_point(class_scope:PBPlayerChargeRecord)
 
+class PBVipGetRewardInfo(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBVIPGETREWARDINFO
+  
+  # @@protoc_insertion_point(class_scope:PBVipGetRewardInfo)
+
 class PBPlayerChargeSign(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
   DESCRIPTOR = _PBPLAYERCHARGESIGN
@@ -7801,6 +8420,12 @@ class PBPlayerChargeRegress(message.Message):
   DESCRIPTOR = _PBPLAYERCHARGEREGRESS
   
   # @@protoc_insertion_point(class_scope:PBPlayerChargeRegress)
+
+class PBPlayerBindVipData(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBPLAYERBINDVIPDATA
+  
+  # @@protoc_insertion_point(class_scope:PBPlayerBindVipData)
 
 class PBDBQuest(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
@@ -8515,5 +9140,53 @@ class PBOldPlayerBackData(message.Message):
   DESCRIPTOR = _PBOLDPLAYERBACKDATA
   
   # @@protoc_insertion_point(class_scope:PBOldPlayerBackData)
+
+class PBDBSpanTeamData(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBDBSPANTEAMDATA
+  
+  # @@protoc_insertion_point(class_scope:PBDBSpanTeamData)
+
+class PBDBMagicPetData(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBDBMAGICPETDATA
+  
+  # @@protoc_insertion_point(class_scope:PBDBMagicPetData)
+
+class PBDBMagicPetItem(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBDBMAGICPETITEM
+  
+  # @@protoc_insertion_point(class_scope:PBDBMagicPetItem)
+
+class PBDBMagicPetProItem(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBDBMAGICPETPROITEM
+  
+  # @@protoc_insertion_point(class_scope:PBDBMagicPetProItem)
+
+class PBDBMagicPetSkillUseInfo(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBDBMAGICPETSKILLUSEINFO
+  
+  # @@protoc_insertion_point(class_scope:PBDBMagicPetSkillUseInfo)
+
+class PBDBCharGuildLivenessData(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBDBCHARGUILDLIVENESSDATA
+  
+  # @@protoc_insertion_point(class_scope:PBDBCharGuildLivenessData)
+
+class PBDBCharRollingtreeData(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBDBCHARROLLINGTREEDATA
+  
+  # @@protoc_insertion_point(class_scope:PBDBCharRollingtreeData)
+
+class PBDBCharRollingtreeSingle(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBDBCHARROLLINGTREESINGLE
+  
+  # @@protoc_insertion_point(class_scope:PBDBCharRollingtreeSingle)
 
 # @@protoc_insertion_point(module_scope)

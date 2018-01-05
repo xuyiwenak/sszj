@@ -77,4 +77,5 @@ def Get_Player_Equip(DB_HOST, DB_USER, DB_PWD, db_name,blob_name,insert_db):
 create_char_zhenyan_table.create_table("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','char_zhenyan')
 #Get_Player_Equip("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','char_blob_first_month','char_zhenyan')
 #Get_Player_Equip("103.244.235.249", 'sszj', 'DR9m_wqsgF8a','data_stat_ss','char_blob_middle_month','char_zhenyan')
-Get_Player_Equip("103.244.235.249", 'sszj','DR9m_wqsgF8a','data_stat_ss','char_blob_last_month','char_zhenyan')
+#Get_Player_Equip("103.244.235.249", 'sszj','DR9m_wqsgF8a','data_stat_ss','char_blob_last_month','char_zhenyan')
+Get_Player_Equip("103.244.235.249", 'sszj','DR9m_wqsgF8a','data_stat_ss','char_blob','char_zhenyan')

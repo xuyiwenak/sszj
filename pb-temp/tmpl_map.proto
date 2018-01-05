@@ -132,6 +132,10 @@ enum PBEScenePlayType
 	eSPT_SpanManorGuardDungeon	= 0x115 ;//[(OptionHint) = "领地保卫战副本"];
 	eSPT_SpanManorArenaDungeon	= 0x116 ;//[(OptionHint) = "领地擂台战副本"];
 	eSPT_SpanManorCityDungeon	= 0x117 ;//[(OptionHint) = "跨服领地副本"];
+	eSPT_SpanTeamDungeon		= 0x118 ;//[(OptionHint) = "跨服组队副本"];
+	eSPT_SpanTeamFinalDungeon	= 0x119 ;//[(OptionHint) = "跨服组队四强副本"];
+	eSPT_SpanMazeDungeon		= 0x120 ;//[(OptionHint) = "跨服迷宫一二层副本"];
+	eSPT_SpanMazeFinalDungeon	= 0x121 ;//[(OptionHint) = "跨服迷宫第三层副本"];
 }
 
 // 逻辑场景配置

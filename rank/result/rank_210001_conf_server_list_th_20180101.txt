@@ -1,0 +1,48 @@
+排行榜level网关210001
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,tstach12xx@gmail.com,100000472,2197,�M??LLsJ�,256100, 103, 1, 3, 0, 216
+210,fahfon175@gmail.com,100000695,3334,???????�???,215022, 103, 2, 3, 0, 1925
+210,15kopsk@gmail.com,100000562,1231,?????,220088, 102, 1, 3, 399, 630
+210,tamzaqq2015@gmail.com,100000371,1252,?7?s?o?Os??,238544, 102, 4, 1, 0, 315
+210,elkosza1995@gmail.com,100000543,1310,?Elkos?,291714, 102, 1, 1, 1841, 81
+210,rosemary_0614@hotmail.com,100000508,1395,?Queen~Bee?,251657, 102, 2, 3, 1917, 13339
+210,adtawood200@gmail.com,100007818,1704,??????,224251, 102, 3, 3, 515, 477
+210,facebook100007362,100007362,2166,CuxDreaM,245734, 102, 3, 3, 0, 396
+210,masterthailand44@gmail.com,100007212,2473,?King~Size?,256041, 102, 3, 3, 543, 2568
+210,xoen1a77@gmail.com,100000527,2994,?u?????�???,238237, 102, 1, 3, 0, 594
+排行榜combat_power网关210001
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,elkosza1995@gmail.com,100000543,1310,?Elkos?,291714, 102, 1, 1, 1841, 81
+210,gggopticbrightz@gmail.com,100002554,5823,???S???,291230, 101, 4, 1, 490, 523
+210,tstach12xx@gmail.com,100000472,2197,�M??LLsJ�,256100, 103, 1, 3, 0, 216
+210,masterthailand44@gmail.com,100007212,2473,?King~Size?,256041, 102, 3, 3, 543, 2568
+210,to_ono@hotmail.com,100001963,1258,??ONOSAN??,255225, 101, 2, 1, 472, 36
+210,rosemary_0614@hotmail.com,100000508,1395,?Queen~Bee?,251657, 102, 2, 3, 1917, 13339
+210,facebook100008999,100008999,4410,lDRl?????l,251419, 101, 4, 2, 0, 125
+210,facebook100007362,100007362,2166,CuxDreaM,245734, 102, 3, 3, 0, 396
+210,gggnoonomnam55@gmail.com,100007559,4976,???????�???,240644, 102, 2, 3, 0, 605
+210,gggbellstanry@gmail.com,100007201,1545,??????e,239284, 96, 3, 3, 412, 216
+排行榜charm_point网关210001
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,rosemary_0614@hotmail.com,100000508,1395,?Queen~Bee?,251657, 102, 2, 3, 1917, 13339
+210,p_a_o_za@hotmail.com,100003125,2178,??????,219141, 100, 4, 3, 124, 10415
+210,facebook100006707,100006707,1599,??????,156029, 90, 2, 2, 0, 9769
+210,ggghan.panudet@gmail.com,100008860,4161,Ajin,176221, 95, 1, 1, 220, 8956
+210,facebook100000442,100000442,1279,?PLOYPLOY,186326, 97, 3, 3, 98, 5461
+210,gggsarunwit2237@gmail.com,100009038,5975,??????????,158701, 86, 4, 3, 228, 4014
+210,bonus8942@gmail.com,100001199,1254,????????,126599, 82, 3, 1, 648, 3330
+210,facebook100009898,100009898,5781,???????,181855, 91, 4, 3, 0, 3262
+210,gggpayungsak6742@gmail.com,100006464,4996,???????,151351, 87, 2, 3, 485, 3120
+210,masterthailand44@gmail.com,100007212,2473,?King~Size?,256041, 102, 3, 3, 543, 2568
+排行榜pvp_score网关210001
+game_id,account,pf_user_id,pf_role_id,pf_user_id,char_name,combat_power,level,role,ss_camp_type,pvp_score,charm_point
+210,rosemary_0614@hotmail.com,100000508,1395,?Queen~Bee?,251657, 102, 2, 3, 1917, 13339
+210,elkosza1995@gmail.com,100000543,1310,?Elkos?,291714, 102, 1, 1, 1841, 81
+210,facebook100007346,100007346,2014,??????,165162, 86, 4, 3, 1692, 0
+210,anuwatp80@gmail.com,100001281,2881,?????,152458, 85, 1, 3, 1536, 0
+210,facebook100005905,100005905,2185,~iKornPS?,136954, 84, 3, 1, 1187, 0
+210,facebook100007141,100007141,2388,?????,218352, 101, 3, 1, 1184, 892
+210,tawee.lamon1@gmail.com,100008335,3198,????????,125277, 85, 3, 1, 1040, 18
+210,tawee.lamonlek@gmail.com,100002236,1777,?????,105415, 85, 4, 1, 1035, 0
+210,gggguzabank22@gmail.com,100001488,1206,�????��,189528, 95, 2, 1, 1033, 18
+210,jellybearly@gmail.com,100000870,1459,??i?i?,194858, 98, 3, 3, 983, 263

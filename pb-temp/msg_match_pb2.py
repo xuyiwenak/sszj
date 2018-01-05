@@ -13,7 +13,7 @@ import msg_team_pb2
 DESCRIPTOR = descriptor.FileDescriptor(
   name='msg_match.proto',
   package='',
-  serialized_pb='\n\x0fmsg_match.proto\x1a\x0emsg_base.proto\x1a\x0emsg_team.proto\"M\n\x12PBMatchingActivity\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\x12\x13\n\x0bsignup_time\x18\x03 \x01(\x04\"\x17\n\x15PBMsgMatchListRequest\"U\n\x16PBMsgMatchListResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12)\n\x0cmatchingList\x18\x02 \x03(\x0b\x32\x13.PBMatchingActivity\"=\n\x17PBMsgMatchConfirmNotice\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\"o\n\x1ePBMsgMatchConfirmAnswerRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\x12)\n\x06\x61nswer\x18\x03 \x01(\x0e\x32\x19.PBMatchConfirmAnswerType\"3\n\x1fPBMsgMatchConfirmAnswerResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"?\n\x19PBMsgMatchSignedUpRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\"p\n\x1aPBMsgMatchSignedUpResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1c\n\ncode_param\x18\x02 \x01(\x0b\x32\x08.PBParam\x12\x11\n\tfunc_type\x18\x03 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x04 \x01(\r\"=\n\x17PBMsgMatchCancelRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\"P\n\x18PBMsgMatchCancelResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tfunc_type\x18\x02 \x01(\x11\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\x11\"A\n\x14PBMsgMatchListNotice\x12)\n\x0cmatchingList\x18\x01 \x03(\x0b\x32\x13.PBMatchingActivity\"*\n\x15PBMsgMatchEnterNotice\x12\x11\n\tact_sheet\x18\x01 \x03(\t\":\n\x14PBMsgPveMatchRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\"k\n\x15PBMsgPveMatchResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1c\n\ncode_param\x18\x02 \x01(\x0b\x32\x08.PBParam\x12\x11\n\tfunc_type\x18\x03 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x04 \x01(\r\"P\n\x19PBMsgPveMatchApplyRequest\x12\x0f\n\x07matchId\x18\x01 \x01(\r\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\"L\n\x1aPBMsgPveMatchApplyResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1c\n\ncode_param\x18\x02 \x01(\x0b\x32\x08.PBParam\"P\n\x19PBMsgPveMatchLeaveRequest\x12\x0f\n\x07matchId\x18\x01 \x01(\r\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\".\n\x1aPBMsgPveMatchLeaveResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"@\n\x1aPBMsgCancelPveMatchRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\"S\n\x1bPBMsgCancelPveMatchResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\" \n\x1ePBMsgPveMatchCallFriendRequest\"3\n\x1fPBMsgPveMatchCallFriendResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"Z\n#PBMsgPveMatchApplyCallFriendRequest\x12\x0f\n\x07matchid\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\x12\x11\n\tfunc_type\x18\x03 \x01(\r\"[\n$PBMsgPveMatchApplyCallFriendResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x12\n\nreasoncode\x18\x02 \x01(\r\x12\r\n\x05param\x18\x03 \x01(\x12\">\n\x18PBMsgGetMatchListRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\"o\n\x19PBMsgGetMatchListResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tfunc_type\x18\x02 \x01(\x11\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\x11\x12\x1c\n\x04team\x18\x04 \x03(\x0b\x32\x0e.PBMsgTeamInfo\"@\n\x1aPBMsgSyncSpanPveTeamNotice\x12\x0f\n\x07matchid\x18\x01 \x01(\r\x12\x11\n\tmembernum\x18\x02 \x01(\r\"4\n PBMsgSyncSpanPveTeamLeaderNotice\x12\x10\n\x08isleader\x18\x01 \x01(\x08*c\n\x18PBMatchConfirmAnswerType\x12\"\n\x1ePBMatchConfirmAnswerType_Agree\x10\x01\x12#\n\x1fPBMatchConfirmAnswerType_Refuse\x10\x02')
+  serialized_pb='\n\x0fmsg_match.proto\x1a\x0emsg_base.proto\x1a\x0emsg_team.proto\"M\n\x12PBMatchingActivity\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\x12\x13\n\x0bsignup_time\x18\x03 \x01(\x04\"\x17\n\x15PBMsgMatchListRequest\"U\n\x16PBMsgMatchListResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12)\n\x0cmatchingList\x18\x02 \x03(\x0b\x32\x13.PBMatchingActivity\"=\n\x17PBMsgMatchConfirmNotice\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\"o\n\x1ePBMsgMatchConfirmAnswerRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\x12)\n\x06\x61nswer\x18\x03 \x01(\x0e\x32\x19.PBMatchConfirmAnswerType\"3\n\x1fPBMsgMatchConfirmAnswerResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"?\n\x19PBMsgMatchSignedUpRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\"p\n\x1aPBMsgMatchSignedUpResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1c\n\ncode_param\x18\x02 \x01(\x0b\x32\x08.PBParam\x12\x11\n\tfunc_type\x18\x03 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x04 \x01(\r\"=\n\x17PBMsgMatchCancelRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\"P\n\x18PBMsgMatchCancelResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tfunc_type\x18\x02 \x01(\x11\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\x11\">\n\x18PBMsgPVPTeamMatchRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\"-\n\x19PBMsgPVPTeamMatchResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"D\n\x1ePBMsgPVPTeamMatchCancelRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\"3\n\x1fPBMsgPVPTeamMatchCancelResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"A\n\x14PBMsgMatchListNotice\x12)\n\x0cmatchingList\x18\x01 \x03(\x0b\x32\x13.PBMatchingActivity\"*\n\x15PBMsgMatchEnterNotice\x12\x11\n\tact_sheet\x18\x01 \x03(\t\":\n\x14PBMsgPveMatchRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\"k\n\x15PBMsgPveMatchResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1c\n\ncode_param\x18\x02 \x01(\x0b\x32\x08.PBParam\x12\x11\n\tfunc_type\x18\x03 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x04 \x01(\r\"P\n\x19PBMsgPveMatchApplyRequest\x12\x0f\n\x07matchId\x18\x01 \x01(\r\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\"L\n\x1aPBMsgPveMatchApplyResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x1c\n\ncode_param\x18\x02 \x01(\x0b\x32\x08.PBParam\"P\n\x19PBMsgPveMatchLeaveRequest\x12\x0f\n\x07matchId\x18\x01 \x01(\r\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\".\n\x1aPBMsgPveMatchLeaveResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"@\n\x1aPBMsgCancelPveMatchRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\"S\n\x1bPBMsgCancelPveMatchResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tfunc_type\x18\x02 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\r\" \n\x1ePBMsgPveMatchCallFriendRequest\"3\n\x1fPBMsgPveMatchCallFriendResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\"Z\n#PBMsgPveMatchApplyCallFriendRequest\x12\x0f\n\x07matchid\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\x12\x11\n\tfunc_type\x18\x03 \x01(\r\"[\n$PBMsgPveMatchApplyCallFriendResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x12\n\nreasoncode\x18\x02 \x01(\r\x12\r\n\x05param\x18\x03 \x01(\x12\">\n\x18PBMsgGetMatchListRequest\x12\x11\n\tfunc_type\x18\x01 \x01(\r\x12\x0f\n\x07\x66unc_id\x18\x02 \x01(\r\"o\n\x19PBMsgGetMatchListResponse\x12\x10\n\x08ret_code\x18\x01 \x01(\x11\x12\x11\n\tfunc_type\x18\x02 \x01(\x11\x12\x0f\n\x07\x66unc_id\x18\x03 \x01(\x11\x12\x1c\n\x04team\x18\x04 \x03(\x0b\x32\x0e.PBMsgTeamInfo\"@\n\x1aPBMsgSyncSpanPveTeamNotice\x12\x0f\n\x07matchid\x18\x01 \x01(\r\x12\x11\n\tmembernum\x18\x02 \x01(\r\"4\n PBMsgSyncSpanPveTeamLeaderNotice\x12\x10\n\x08isleader\x18\x01 \x01(\x08*c\n\x18PBMatchConfirmAnswerType\x12\"\n\x1ePBMatchConfirmAnswerType_Agree\x10\x01\x12#\n\x1fPBMatchConfirmAnswerType_Refuse\x10\x02')
 
 _PBMATCHCONFIRMANSWERTYPE = descriptor.EnumDescriptor(
   name='PBMatchConfirmAnswerType',
@@ -32,8 +32,8 @@ _PBMATCHCONFIRMANSWERTYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2085,
-  serialized_end=2184,
+  serialized_start=2319,
+  serialized_end=2418,
 )
 
 
@@ -406,6 +406,132 @@ _PBMSGMATCHCANCELRESPONSE = descriptor.Descriptor(
 )
 
 
+_PBMSGPVPTEAMMATCHREQUEST = descriptor.Descriptor(
+  name='PBMsgPVPTeamMatchRequest',
+  full_name='PBMsgPVPTeamMatchRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='func_type', full_name='PBMsgPVPTeamMatchRequest.func_type', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='func_id', full_name='PBMsgPVPTeamMatchRequest.func_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=795,
+  serialized_end=857,
+)
+
+
+_PBMSGPVPTEAMMATCHRESPONSE = descriptor.Descriptor(
+  name='PBMsgPVPTeamMatchResponse',
+  full_name='PBMsgPVPTeamMatchResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='ret_code', full_name='PBMsgPVPTeamMatchResponse.ret_code', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=859,
+  serialized_end=904,
+)
+
+
+_PBMSGPVPTEAMMATCHCANCELREQUEST = descriptor.Descriptor(
+  name='PBMsgPVPTeamMatchCancelRequest',
+  full_name='PBMsgPVPTeamMatchCancelRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='func_type', full_name='PBMsgPVPTeamMatchCancelRequest.func_type', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='func_id', full_name='PBMsgPVPTeamMatchCancelRequest.func_id', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=906,
+  serialized_end=974,
+)
+
+
+_PBMSGPVPTEAMMATCHCANCELRESPONSE = descriptor.Descriptor(
+  name='PBMsgPVPTeamMatchCancelResponse',
+  full_name='PBMsgPVPTeamMatchCancelResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='ret_code', full_name='PBMsgPVPTeamMatchCancelResponse.ret_code', index=0,
+      number=1, type=17, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=976,
+  serialized_end=1027,
+)
+
+
 _PBMSGMATCHLISTNOTICE = descriptor.Descriptor(
   name='PBMsgMatchListNotice',
   full_name='PBMsgMatchListNotice',
@@ -429,8 +555,8 @@ _PBMSGMATCHLISTNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=795,
-  serialized_end=860,
+  serialized_start=1029,
+  serialized_end=1094,
 )
 
 
@@ -457,8 +583,8 @@ _PBMSGMATCHENTERNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=862,
-  serialized_end=904,
+  serialized_start=1096,
+  serialized_end=1138,
 )
 
 
@@ -492,8 +618,8 @@ _PBMSGPVEMATCHREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=906,
-  serialized_end=964,
+  serialized_start=1140,
+  serialized_end=1198,
 )
 
 
@@ -541,8 +667,8 @@ _PBMSGPVEMATCHRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=966,
-  serialized_end=1073,
+  serialized_start=1200,
+  serialized_end=1307,
 )
 
 
@@ -583,8 +709,8 @@ _PBMSGPVEMATCHAPPLYREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1075,
-  serialized_end=1155,
+  serialized_start=1309,
+  serialized_end=1389,
 )
 
 
@@ -618,8 +744,8 @@ _PBMSGPVEMATCHAPPLYRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1157,
-  serialized_end=1233,
+  serialized_start=1391,
+  serialized_end=1467,
 )
 
 
@@ -660,8 +786,8 @@ _PBMSGPVEMATCHLEAVEREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1235,
-  serialized_end=1315,
+  serialized_start=1469,
+  serialized_end=1549,
 )
 
 
@@ -688,8 +814,8 @@ _PBMSGPVEMATCHLEAVERESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1317,
-  serialized_end=1363,
+  serialized_start=1551,
+  serialized_end=1597,
 )
 
 
@@ -723,8 +849,8 @@ _PBMSGCANCELPVEMATCHREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1365,
-  serialized_end=1429,
+  serialized_start=1599,
+  serialized_end=1663,
 )
 
 
@@ -765,8 +891,8 @@ _PBMSGCANCELPVEMATCHRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1431,
-  serialized_end=1514,
+  serialized_start=1665,
+  serialized_end=1748,
 )
 
 
@@ -786,8 +912,8 @@ _PBMSGPVEMATCHCALLFRIENDREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1516,
-  serialized_end=1548,
+  serialized_start=1750,
+  serialized_end=1782,
 )
 
 
@@ -814,8 +940,8 @@ _PBMSGPVEMATCHCALLFRIENDRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1550,
-  serialized_end=1601,
+  serialized_start=1784,
+  serialized_end=1835,
 )
 
 
@@ -856,8 +982,8 @@ _PBMSGPVEMATCHAPPLYCALLFRIENDREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1603,
-  serialized_end=1693,
+  serialized_start=1837,
+  serialized_end=1927,
 )
 
 
@@ -898,8 +1024,8 @@ _PBMSGPVEMATCHAPPLYCALLFRIENDRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1695,
-  serialized_end=1786,
+  serialized_start=1929,
+  serialized_end=2020,
 )
 
 
@@ -933,8 +1059,8 @@ _PBMSGGETMATCHLISTREQUEST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1788,
-  serialized_end=1850,
+  serialized_start=2022,
+  serialized_end=2084,
 )
 
 
@@ -982,8 +1108,8 @@ _PBMSGGETMATCHLISTRESPONSE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1852,
-  serialized_end=1963,
+  serialized_start=2086,
+  serialized_end=2197,
 )
 
 
@@ -1017,8 +1143,8 @@ _PBMSGSYNCSPANPVETEAMNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1965,
-  serialized_end=2029,
+  serialized_start=2199,
+  serialized_end=2263,
 )
 
 
@@ -1045,8 +1171,8 @@ _PBMSGSYNCSPANPVETEAMLEADERNOTICE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2031,
-  serialized_end=2083,
+  serialized_start=2265,
+  serialized_end=2317,
 )
 
 _PBMSGMATCHLISTRESPONSE.fields_by_name['matchingList'].message_type = _PBMATCHINGACTIVITY
@@ -1066,6 +1192,10 @@ DESCRIPTOR.message_types_by_name['PBMsgMatchSignedUpRequest'] = _PBMSGMATCHSIGNE
 DESCRIPTOR.message_types_by_name['PBMsgMatchSignedUpResponse'] = _PBMSGMATCHSIGNEDUPRESPONSE
 DESCRIPTOR.message_types_by_name['PBMsgMatchCancelRequest'] = _PBMSGMATCHCANCELREQUEST
 DESCRIPTOR.message_types_by_name['PBMsgMatchCancelResponse'] = _PBMSGMATCHCANCELRESPONSE
+DESCRIPTOR.message_types_by_name['PBMsgPVPTeamMatchRequest'] = _PBMSGPVPTEAMMATCHREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgPVPTeamMatchResponse'] = _PBMSGPVPTEAMMATCHRESPONSE
+DESCRIPTOR.message_types_by_name['PBMsgPVPTeamMatchCancelRequest'] = _PBMSGPVPTEAMMATCHCANCELREQUEST
+DESCRIPTOR.message_types_by_name['PBMsgPVPTeamMatchCancelResponse'] = _PBMSGPVPTEAMMATCHCANCELRESPONSE
 DESCRIPTOR.message_types_by_name['PBMsgMatchListNotice'] = _PBMSGMATCHLISTNOTICE
 DESCRIPTOR.message_types_by_name['PBMsgMatchEnterNotice'] = _PBMSGMATCHENTERNOTICE
 DESCRIPTOR.message_types_by_name['PBMsgPveMatchRequest'] = _PBMSGPVEMATCHREQUEST
@@ -1144,6 +1274,30 @@ class PBMsgMatchCancelResponse(message.Message):
   DESCRIPTOR = _PBMSGMATCHCANCELRESPONSE
   
   # @@protoc_insertion_point(class_scope:PBMsgMatchCancelResponse)
+
+class PBMsgPVPTeamMatchRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGPVPTEAMMATCHREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgPVPTeamMatchRequest)
+
+class PBMsgPVPTeamMatchResponse(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGPVPTEAMMATCHRESPONSE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgPVPTeamMatchResponse)
+
+class PBMsgPVPTeamMatchCancelRequest(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGPVPTEAMMATCHCANCELREQUEST
+  
+  # @@protoc_insertion_point(class_scope:PBMsgPVPTeamMatchCancelRequest)
+
+class PBMsgPVPTeamMatchCancelResponse(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _PBMSGPVPTEAMMATCHCANCELRESPONSE
+  
+  # @@protoc_insertion_point(class_scope:PBMsgPVPTeamMatchCancelResponse)
 
 class PBMsgMatchListNotice(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType

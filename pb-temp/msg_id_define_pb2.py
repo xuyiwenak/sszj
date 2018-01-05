@@ -11,7 +11,7 @@ from google.protobuf import descriptor_pb2
 DESCRIPTOR = descriptor.FileDescriptor(
   name='msg_id_define.proto',
   package='',
-  serialized_pb='\n\x13msg_id_define.proto*\xb0\x08\n\x10\x45GleoModuleIndex\x12\x14\n\x10MOD_SceneManager\x10\x01\x12\x13\n\x0fMOD_PlayerLobby\x10\x02\x12\x13\n\x0fMOD_ItemManager\x10\x03\x12\x14\n\x10MOD_QuestManager\x10\x04\x12\x14\n\x10MOD_SkillManager\x10\x05\x12\x1a\n\x16MOD_MagicWeaponManager\x10\x06\x12\x1a\n\x16MOD_BattlefieldManager\x10\x07\x12\x12\n\x0eMOD_VipManager\x10\x08\x12\x13\n\x0fMOD_ShopManager\x10\t\x12\x12\n\x0eMOD_JobManager\x10\n\x12\x12\n\x0eMOD_GemManager\x10\x0b\x12\x16\n\x12MOD_DungeonManager\x10\x0c\x12\x13\n\x0fMOD_MailManager\x10\r\x12\x14\n\x10MOD_EventManager\x10\x0e\x12\x11\n\rMOD_IUManager\x10\x0f\x12\x14\n\x10MOD_GuildManager\x10\x0f\x12\x17\n\x13MOD_PositionManager\x10\x10\x12\x15\n\x11MOD_CommonManager\x10\x11\x12\x16\n\x12MOD_FashionManager\x10\x12\x12\x1b\n\x17MOD_SpanIMBattleManager\x10\x13\x12\x18\n\x14MOD_RedPacketManager\x10\x14\x12\x14\n\x10MOD_MountManager\x10\x15\x12\x15\n\x11MOD_UIOpenManager\x10\x16\x12\x14\n\x10MOD_FightManager\x10\x17\x12\x18\n\x14MOD_SinglePvPManager\x10\x18\x12\x12\n\x0eMOD_PetManager\x10\x19\x12\x13\n\x0fMOD_TeamManager\x10\x1a\x12\x14\n\x10MOD_MatchManager\x10\x1b\x12\x0e\n\nMOD_Friend\x10\x1c\x12\x13\n\x0fMOD_CangQiongPk\x10\x1d\x12\x14\n\x10MOD_SignActivity\x10\x1e\x12\x0c\n\x08MOD_Hold\x10 \x12\x17\n\x13MOD_RelationManager\x10!\x12\x0f\n\x0bMOD_Channel\x10\"\x12\x0b\n\x07MOD_Rep\x10#\x12\x12\n\x0eMOD_NewRoleAct\x10$\x12\x16\n\x12MOD_GuildDayReward\x10%\x12\x16\n\x12MOD_CharacterTitle\x10&\x12\x12\n\x0eMOD_ActivityEx\x10\'\x12\x0c\n\x08MOD_Luck\x10(\x12\x11\n\rMOD_Potential\x10)\x12\x11\n\rMOD_CouplePVP\x10\x30\x12\x11\n\rMOD_WingTrain\x10\x31\x12\x13\n\x0fMOD_GuildRedBag\x10\x32\x12\r\n\tMOD_Xinfa\x10\x33\x12\x0f\n\x0bMOD_Xiuzhen\x10\x34\x12\x1b\n\x15MOD_DimensionExampler\x10\x80\x80\x01\x12\x18\n\x12MOD_BigWorldBattle\x10\x80\xa0\x01\x12\x15\n\x0fMOD_MsgToClient\x10\x80\xe0\x01*\x97\xe2\x02\n\x0e\x45GleoMessageId\x12\x1b\n\x15MSG_CodeResponse_Mask\x10\x80\x80\x03\x12\x1c\n\x16MSG_SceneReady_Request\x10\x81\x80@\x12\x1f\n\x19MSG_CharPosSubmit_Request\x10\x82\x80@\x12\x19\n\x13MSG_Teleport_Inform\x10\x83\x80\x04\x12\x1f\n\x19MSG_PLAYER_ROLE_BASE_INFO\x10\x84\x80\x04\x12\x1c\n\x16MSG_MessageCode_Notice\x10\x81\x80\x07\x12\x1c\n\x16MSG_SelectChar_Request\x10\x80\x80\x04\x12\x1d\n\x17MSG_SelectChar_Response\x10\x80\xa0\x04\x12\x1c\n\x16MSG_CreateChar_Request\x10\x81\x80\x08\x12\x1c\n\x16MSG_CharSummary_Notice\x10\x82\x80\x08\x12\x1b\n\x15MSG_StartPlay_Request\x10\x83\x80\x08\x12\x1c\n\x16MSG_StartPlay_Response\x10\x83\xa0\x08\x12 \n\x1aMSG_RandomCharName_Request\x10\x84\x80\x08\x12!\n\x1bMSG_RandomCharName_Response\x10\x84\xa0\x08\x12\x1b\n\x15MSG_LoginPos_Response\x10\x85\xa0\x08\x12\x1e\n\x18MSG_CharCountInfo_Notice\x10\x86\x80\x08\x12 \n\x1aMSG_PlayerKickSelf_Request\x10\x87\x80\x08\x12!\n\x1bMSG_PlayerKickSelt_Response\x10\x87\xa0\x08\x12\x1f\n\x19MSG_PlayerBaseInfo_Notice\x10\x88\x80\x08\x12\x1e\n\x18MSG_CLIENT_DATABASE_INIT\x10\x89\x80\x08\x12 \n\x1aMSG_CLIENT_DATABASE_UPDATE\x10\x8a\x80\x08\x12\x1f\n\x18MSG_CharSignalDataNotice\x10\x8b\x80\x80\x01\x12\x16\n\x10MSG_Item_Request\x10\x80\x80\x0c\x12\x17\n\x11MSG_Item_Response\x10\x81\x80\x0c\x12\x15\n\x0fMSG_Inv_Request\x10\x82\x80\x0c\x12\x16\n\x10MSG_Inv_Response\x10\x83\x80\x0c\x12\x17\n\x11MSG_Equip_Request\x10\x84\x80\x0c\x12\x1a\n\x14MSG_ItemAdd_Response\x10\x85\x80\x0c\x12\x19\n\x13MSG_UnEquip_Request\x10\x86\x80\x0c\x12\x19\n\x13MSG_ItemRm_Response\x10\x87\x80\x0c\x12\x1a\n\x14MSG_ItemSell_Request\x10\x88\x80\x0c\x12\x1b\n\x15MSG_ItemMove_Response\x10\x89\x80\x0c\x12\x19\n\x13MSG_ItemUse_Request\x10\x8a\x80\x0c\x12\x1a\n\x14MSG_ItemDis_Response\x10\x8b\x80\x0c\x12\x19\n\x13MSG_ItemDis_Request\x10\x8c\x80\x0c\x12\x1b\n\x15MSG_VitaInfo_Response\x10\x8d\x80\x0c\x12\x1a\n\x14MSG_VitaInfo_Request\x10\x8e\x80\x0c\x12\x17\n\x11MSG_Vita_Response\x10\x8f\x80\x0c\x12\x16\n\x10MSG_Vita_Request\x10\x90\x80\x0c\x12\x1a\n\x14MSG_EchInfo_Response\x10\x91\x80\x0c\x12\x19\n\x13MSG_EchInfo_Request\x10\x92\x80\x0c\x12\x1a\n\x14MSG_Enchant_Response\x10\x93\x80\x0c\x12\x19\n\x13MSG_Enchant_Request\x10\x94\x80\x0c\x12\x1a\n\x14MSG_EvaInfo_Response\x10\x95\x80\x0c\x12\x19\n\x13MSG_EvaInfo_Request\x10\x96\x80\x0c\x12\x1b\n\x15MSG_Evaluate_Response\x10\x97\x80\x0c\x12\x1a\n\x14MSG_Evaluate_Request\x10\x98\x80\x0c\x12\x15\n\x0fMSG_Slot_Inform\x10\x99\x80\x0c\x12\x16\n\x10MSG_Money_Inform\x10\x9a\x80\x0c\x12\x19\n\x13MSG_Combine_Request\x10\x9b\x80\x0c\x12\x1a\n\x14MSG_Combine_Response\x10\x9c\x80\x0c\x12\x18\n\x12MSG_Legacy_Request\x10\x9d\x80\x0c\x12\x19\n\x13MSG_Legacy_Response\x10\x9e\x80\x0c\x12\x18\n\x12MSG_EchOne_Request\x10\x9f\x80\x0c\x12\x19\n\x13MSG_EchOne_Response\x10\xa0\x80\x0c\x12\x19\n\x13MSG_MatComb_Request\x10\xa1\x80\x0c\x12\x1a\n\x14MSG_MatComb_Response\x10\xa2\x80\x0c\x12\x1a\n\x14MSG_ExtenBag_Request\x10\xa3\x80\x0c\x12\x1b\n\x15MSG_ExtenBag_Response\x10\xa4\x80\x0c\x12!\n\x1bMSG_GoldenBagTimes_Response\x10\xa5\x80\x0c\x12\x1f\n\x19MSG_GoldenBagUse_Response\x10\xa6\x80\x0c\x12 \n\x1aMSG_CharNameChange_Request\x10\xa7\x80\x0c\x12!\n\x1bMSG_CharNameChange_Response\x10\xa7\xa0\x0c\x12!\n\x1bMSG_ItemUse_Special_Request\x10\xa8\x80\x0c\x12 \n\x1aMSG_GoldenBagTimes_Request\x10\xa9\x80\x0c\x12\x1a\n\x14MSG_CharInfo_Request\x10\xaa\x80\x0c\x12\x1b\n\x15MSG_CharInfo_Response\x10\xaa\xa0\x0c\x12\x18\n\x12MSG_Item_RequestEX\x10\xab\x80\x0c\x12\x19\n\x13MSG_Item_ResponseEX\x10\xab\xa0\x0c\x12\x1d\n\x17MSG_CombineInfo_Request\x10\xac\x80\x0c\x12\x1e\n\x18MSG_CombineInfo_Response\x10\xac\xa0\x0c\x12\x1d\n\x17MSG_ItemReNew_RequestEX\x10\xad\x80\x0c\x12\x1e\n\x18MSG_ItemReNew_ResponseEX\x10\xae\x80\x0c\x12 \n\x1aMSG_RefreshProperty_Notice\x10\xaf\x80\x0c\x12%\n\x1fMSG_ItemEnduranceNormal_Request\x10\xb0\x80\x0c\x12&\n MSG_ItemEnduranceNormal_Response\x10\xb0\xa0\x0c\x12%\n\x1fMSG_ItemEnduranceXianfu_Request\x10\xb1\x80\x0c\x12&\n MSG_ItemEnduranceXianfu_Response\x10\xb1\xa0\x0c\x12$\n\x1eMSG_ItemEnduranceReset_Request\x10\xb2\x80\x0c\x12%\n\x1fMSG_ItemEnduranceReset_Response\x10\xb2\xa0\x0c\x12\x1e\n\x18MSG_ItemEndurance_Notice\x10\xb3\x80\x0c\x12$\n\x1eMSG_ItemEndurance_Cost_Request\x10\xb4\x80\x0c\x12%\n\x1fMSG_ItemEndurance_Cost_Response\x10\xb4\xa0\x0c\x12\x1a\n\x14MSG_Item_Dye_Request\x10\xb5\x80\x0c\x12\x1b\n\x15MSG_Item_Dye_Response\x10\xb5\xa0\x0c\x12\"\n\x1cMSG_Item_Dye_Replace_Request\x10\xb6\x80\x0c\x12#\n\x1dMSG_Item_Dye_Replace_Response\x10\xb6\xa0\x0c\x12 \n\x1aMSG_Item_Dye_Clear_Request\x10\xb7\x80\x0c\x12!\n\x1bMSG_Item_Dye_Clear_Response\x10\xb7\xa0\x0c\x12\x1a\n\x14MSG_Item_Exp_Request\x10\xb8\x80\x0c\x12\x1b\n\x15MSG_Item_Exp_Response\x10\xb8\xa0\x0c\x12 \n\x1aMSG_Item_OfflineExp_Notice\x10\xb9\x80\x0c\x12\x19\n\x13MSG_OpenGift_Notice\x10\xba\xa0\x0c\x12\x1f\n\x19MSG_PropertyChange_Notice\x10\xbb\xa0\x0c\x12\x1d\n\x17MSG_ReNew_Config_Notice\x10\xbc\xa0\x0c\x12!\n\x1bMSG_EquipRune_Mount_Request\x10\xbd\x80\x0c\x12\"\n\x1cMSG_EquipRune_Mount_Response\x10\xbd\xa0\x0c\x12#\n\x1dMSG_EquipRune_Unmount_Request\x10\xbe\x80\x0c\x12$\n\x1eMSG_EquipRune_Unmount_Response\x10\xbe\xa0\x0c\x12$\n\x1eMSG_EquipRune_Transfer_Request\x10\xbf\x80\x0c\x12%\n\x1fMSG_EquipRune_Transfer_Response\x10\xbf\xa0\x0c\x12$\n\x1eMSG_EquipRune_OpenSlot_Request\x10\xc0\x80\x0c\x12%\n\x1fMSG_EquipRune_OpenSlot_Response\x10\xc0\xa0\x0c\x12\"\n\x1cMSG_ExcuteTreasureMap_Notice\x10\xc1\xa0\x0c\x12\"\n\x1cMSG_IsSearchTreasury_Request\x10\xc2\x80\x0c\x12#\n\x1dMSG_IsSearchTreasury_Response\x10\xc2\xa0\x0c\x12\x1d\n\x17MSG_RankPetInfo_Request\x10\xc3\x80\x0c\x12\x1e\n\x18MSG_RankPetInfo_Response\x10\xc3\xa0\x0c\x12\x1c\n\x16MSG_EquipTrans_Request\x10\xc4\x80\x0c\x12\x1d\n\x17MSG_EquipTrans_Response\x10\xc4\xa0\x0c\x12!\n\x1bMSG_EquipTrans_Cost_Request\x10\xc5\x80\x0c\x12\"\n\x1cMSG_EquipTrans_Cost_Response\x10\xc5\xa0\x0c\x12\x1d\n\x17MSG_EquipAttach_Request\x10\xc6\x80\x0c\x12\x1e\n\x18MSG_EquipAttach_Response\x10\xc6\xa0\x0c\x12(\n\"MSG_AllItemEnduranceNormal_Request\x10\xc7\x80\x0c\x12)\n#MSG_AllItemEnduranceNormal_Response\x10\xc7\xa0\x0c\x12(\n\"MSG_AllItemEnduranceXianfu_Request\x10\xc8\x80\x0c\x12)\n#MSG_AllItemEnduranceXianfu_Response\x10\xc8\xa0\x0c\x12\x19\n\x13MSG_NPCPos_Response\x10\x80\x80\x10\x12\x1d\n\x17MSG_QuestAccept_Request\x10\x81\x80\x10\x12\x1d\n\x17MSG_QuestCommit_Request\x10\x82\x80\x10\x12\x1e\n\x18MSG_QuestAbandon_Request\x10\x83\x80\x10\x12\x1e\n\x18MSG_QuestCanAcc_Response\x10\x84\x80\x10\x12 \n\x1aMSG_QuestAccepted_Response\x10\x85\x80\x10\x12\x18\n\x12MSG_Daily_RESPONSE\x10\x86\x80\x10\x12\x1d\n\x17MSG_DailyCommit_Request\x10\x87\x80\x10\x12\x1d\n\x17MSG_QuestOther_Response\x10\x88\x80\x10\x12\x1b\n\x15MSG_QuestOther_Commit\x10\x89\x80\x10\x12\x1c\n\x16MSG_QuestAward_Ruquest\x10\x90\x80\x10\x12\x1b\n\x15MSG_QuestVIP_Response\x10\x91\x80\x10\x12\x1f\n\x19MSG_QuestVIPAward_Request\x10\x92\x80\x10\x12\"\n\x1cMSG_BindPhoneSuccess_Request\x10\x93\x80\x10\x12\x1f\n\x19MSG_QuestCanAward_Request\x10\x94\x80\x10\x12 \n\x1aMSG_QuestCanAward_Response\x10\x95\x80\x10\x12\x1d\n\x17MSG_QuestGroup_Response\x10\x96\x80\x10\x12\x1c\n\x16MSG_QuestRand_Response\x10\x97\x80\x10\x12#\n\x1dMSG_QuestGroupCanAcc_Response\x10\x98\x80\x10\x12\"\n\x1cMSG_QuestRandCanAcc_Response\x10\x99\x80\x10\x12\x1f\n\x19MSG_QuestTeleport_Request\x10\x9a\x80\x10\x12 \n\x1aMSG_QuestTeleport_Response\x10\x9a\xa0\x10\x12\x1c\n\x16MSG_QuestOther_Request\x10\x9b\x80\x10\x12\"\n\x1cMSG_SkillInfo_Notice_Request\x10\x90\xa0\x14\x12\x1a\n\x14MSG_SkillInfo_Notice\x10\x81\xa0\x14\x12\x1b\n\x15MSG_SkillLvUp_Request\x10\x82\xa0\x14\x12\x1c\n\x16MSG_SkillLvUp_Response\x10\x83\xa0\x14\x12\x1c\n\x16MSG_SkillEquip_Request\x10\x84\xa0\x14\x12\x1d\n\x17MSG_SkillEquip_Response\x10\x85\xa0\x14\x12&\n MSG_MagicWeaponDecompose_Request\x10\x80\x80\x18\x12\'\n!MSG_MagicWeaponDecompose_Response\x10\x80\xa0\x18\x12\'\n!MSG_MagicWeaponFosterInfo_Request\x10\x81\x80\x18\x12(\n\"MSG_MagicWeaponFosterInfo_Response\x10\x81\xa0\x18\x12#\n\x1dMSG_MagicWeaponFoster_Request\x10\x82\x80\x18\x12$\n\x1eMSG_MagicWeaponFoster_Response\x10\x82\xa0\x18\x12)\n#MSG_MagicWeaponFosterAffirm_Request\x10\x83\x80\x18\x12*\n$MSG_MagicWeaponFosterAffirm_Response\x10\x83\xa0\x18\x12+\n%MSG_MagicWeaponSwallowPreview_Request\x10\x84\x80\x18\x12,\n&MSG_MagicWeaponSwallowPreview_Response\x10\x84\xa0\x18\x12$\n\x1eMSG_MagicWeaponSwallow_Request\x10\x85\x80\x18\x12%\n\x1fMSG_MagicWeaponSwallow_Response\x10\x85\xa0\x18\x12%\n\x1fMSG_MagicWeaponBookInfo_Request\x10\x86\x80\x18\x12&\n MSG_MagicWeaponBookInfo_Response\x10\x86\xa0\x18\x12.\n(MSG_MagicWeaponBookActivateGroup_Request\x10\x87\x80\x18\x12/\n)MSG_MagicWeaponBookActivateGroup_Response\x10\x87\xa0\x18\x12)\n#MSG_CallMagicWeaponUseStone_Request\x10\x88\x80\x18\x12*\n$MSG_CallMagicWeaponUseStone_Response\x10\x88\xa0\x18\x12\x1f\n\x19MSG_MagicWeaponOp_Request\x10\x89\x80\x18\x12 \n\x1aMSG_MagicWeaponOp_Response\x10\x89\xa0\x18\x12%\n\x1fMSG_MagicWeaponExchange_Request\x10\x8b\x80\x18\x12&\n MSG_MagicWeaponExchange_Response\x10\x8b\xa0\x18\x12\'\n!MSG_MagicWeaponDebrisInfo_Request\x10\x8c\x80\x18\x12(\n\"MSG_MagicWeaponDebrisInfo_Response\x10\x8c\xa0\x18\x12\'\n!MSG_MagicWeaponTryAdvance_Request\x10\x8d\x80\x18\x12(\n\"MSG_MagicWeaponTryAdvance_Response\x10\x8d\xa0\x18\x12\x1c\n\x16MSG_BtlHarvest_Request\x10\x81\x80\x1c\x12\"\n\x1cMSG_BtlHarvestCancel_Request\x10\x82\x80\x1c\x12#\n\x1dMSG_BtlHarvestStatus_Response\x10\x81\xa0\x1c\x12\x1a\n\x14MSG_BtlMatch_Request\x10\x83\x80\x1c\x12 \n\x1aMSG_BtlMatchCancel_Request\x10\x84\x80\x1c\x12!\n\x1bMSG_BtlMatchStatus_Response\x10\x83\xa0\x1c\x12\x18\n\x12MSG_BtlStat_Inform\x10\x85\x80\x1c\x12\x1c\n\x16MSG_BtlDeliver_Request\x10\x86\x80\x1c\x12\x1d\n\x17MSG_BtlDeliver_Response\x10\x86\xa0\x1c\x12\x1b\n\x15MSG_BtlEndStat_Inform\x10\x87\x80\x1c\x12\x1c\n\x16MSG_BtlInspire_Request\x10\x88\x80\x1c\x12\x1d\n\x17MSG_BtlInspire_Response\x10\x88\xa0\x1c\x12\x15\n\x0fMSG_BtlMatchRes\x10\x8b\x80\x1c\x12\x1a\n\x14MSG_BtlQuery_Request\x10\x8c\x80\x1c\x12#\n\x1dMSG_BtlMatchSendCallFriendURL\x10\x8d\xa0\x1c\x12\x1b\n\x15MSG_BtMatchAFK_Notice\x10\x8e\x80\x1c\x12\x1b\n\x15MSG_LoginGift_Request\x10\x80\x80 \x12\x1c\n\x16MSG_LoginGift_Response\x10\x80\xa0 \x12\x1e\n\x18MSG_GetLoginGift_Request\x10\x81\x80 \x12\x1d\n\x17MSG_Robolet_InfoImpulse\x10\x82\x80 \x12!\n\x1bMSG_QuarterCardGift_Request\x10\x83\x80 \x12\"\n\x1cMSG_QuarterCardGift_Response\x10\x83\xa0 \x12 \n\x1aMSG_QuarterCardInfo_Notice\x10\x84\x80 \x12\x19\n\x13MSG_GiftCard_Notice\x10\x85\x80 \x12!\n\x1bMSG_GiftCard_Reward_Request\x10\x86\x80 \x12\"\n\x1cMSG_GiftCard_Reward_Response\x10\x86\xa0 \x12\x1a\n\x14MSG_ShopList_Request\x10\x81\x80$\x12\x1b\n\x15MSG_ShopList_Response\x10\x81\xa0$\x12\x19\n\x13MSG_ShopBuy_Request\x10\x82\x80$\x12\x1a\n\x14MSG_ShopBuy_Response\x10\x82\xa0$\x12\x1e\n\x18MSG_ShopGoodsSold_Notice\x10\x83\xa0$\x12\x1a\n\x14MSG_ShopInfo_Request\x10\x84\x80$\x12\x1b\n\x15MSG_ShopInfo_Response\x10\x84\xa0$\x12\x1e\n\x18MSG_ShopGoodsBuy_Request\x10\x85\x80$\x12\x1f\n\x19MSG_ShopGoodsBuy_Response\x10\x85\xa0$\x12\x1d\n\x17MSG_ShopRefresh_Request\x10\x86\x80$\x12\x1e\n\x18MSG_ShopRefresh_Response\x10\x86\xa0$\x12\x1e\n\x18MSG_MallGoodsBuy_Request\x10\x87\x80$\x12\x1f\n\x19MSG_MallGoodsBuy_Response\x10\x87\xa0$\x12\x1a\n\x14MSG_MallInfo_Request\x10\x88\x80$\x12\x1b\n\x15MSG_MallInfo_Response\x10\x88\xa0$\x12\x1e\n\x18MSG_BackGoodsBuy_Request\x10\x89\x80$\x12\x1f\n\x19MSG_BackGoodsBuy_Response\x10\x89\xa0$\x12\x1d\n\x17MSG_BuyBackInfo_Request\x10\x8a\x80$\x12\x1e\n\x18MSG_BuyBackInfo_Response\x10\x8a\xa0$\x12\x1e\n\x18MSG_Consign_List_Request\x10\x8b\x80$\x12\x1f\n\x19MSG_Consign_List_Response\x10\x8b\xa0$\x12\x1c\n\x16MSG_Consign_Up_Request\x10\x8c\x80$\x12\x1d\n\x17MSG_Consign_Up_Response\x10\x8c\xa0$\x12\x1e\n\x18MSG_Consign_Down_Request\x10\x8d\x80$\x12\x1f\n\x19MSG_Consign_Down_Response\x10\x8d\xa0$\x12\x1d\n\x17MSG_Consign_Buy_Request\x10\x8e\x80$\x12\x1e\n\x18MSG_Consign_Buy_Response\x10\x8e\xa0$\x12 \n\x1aMSG_Consign_MyList_Request\x10\x8f\x80$\x12!\n\x1bMSG_Consign_MyList_Response\x10\x8f\xa0$\x12\x1d\n\x17MSG_Consign_Tip_Request\x10\x90\x80$\x12\x1e\n\x18MSG_Consign_Tip_Response\x10\x90\xa0$\x12#\n\x1dMSG_Consign_GetReward_Request\x10\x91\x80$\x12$\n\x1eMSG_Consign_GetReward_Response\x10\x91\xa0$\x12#\n\x1dMSG_ExchangeShop_Info_Request\x10\x92\x80$\x12$\n\x1eMSG_ExchangeShop_Info_Response\x10\x92\xa0$\x12!\n\x1bMSG_ExchangeShop_Ex_Request\x10\x93\x80$\x12\"\n\x1cMSG_ExchangeShop_Ex_Response\x10\x93\xa0$\x12 \n\x1aMSG_Consign_Search_Request\x10\x94\x80$\x12!\n\x1bMSG_Consign_Search_Response\x10\x94\xa0$\x12!\n\x1bMSG_Consign_HotSale_Request\x10\x95\x80$\x12\"\n\x1cMSG_Consign_HotSale_Response\x10\x95\xa0$\x12\"\n\x1cMSG_Consign_ShowInfo_Request\x10\x96\x80$\x12#\n\x1dMSG_Consign_ShowInfo_Response\x10\x96\xa0$\x12#\n\x1dMSG_MallGoodsSendGift_Request\x10\x97\x80$\x12$\n\x1eMSG_MallGoodsSendGift_Response\x10\x97\xa0$\x12#\n\x1dMSG_ExchangeShop_List_Request\x10\x98\x80$\x12$\n\x1eMSG_ExchangeShop_List_Response\x10\x98\xa0$\x12\x1b\n\x15MSG_ChangeJob_Request\x10\x81\x80(\x12\x1c\n\x16MSG_ChangeJob_Response\x10\x82\x80(\x12 \n\x1aMSG_CheckTransCamp_Request\x10\x83\x80(\x12!\n\x1bMSG_CheckTransCamp_Response\x10\x83\xa0(\x12!\n\x1bMSG_TransCampSingle_Request\x10\x84\x80(\x12\"\n\x1cMSG_TransCampSingle_Response\x10\x84\xa0(\x12!\n\x1bMSG_TransCampLeader_Request\x10\x85\x80(\x12\"\n\x1cMSG_TransCampLeader_Response\x10\x85\xa0(\x12\x1e\n\x18MSG_TransCampWait_Notice\x10\x86\xa0(\x12\x1f\n\x19MSG_TransMemberOk_Request\x10\x87\x80(\x12 \n\x1aMSG_TransMemberOk_Response\x10\x87\xa0(\x12#\n\x1dMSG_TransMemberCancel_Request\x10\x88\x80(\x12$\n\x1eMSG_TransMemberCancel_Response\x10\x88\xa0(\x12!\n\x1bMSG_TransCampSuccess_Notice\x10\x89\xa0(\x12 \n\x1aMSG_TransCampMember_Notice\x10\x8a\xa0(\x12 \n\x1aMSG_ReadyTransCamp_Request\x10\x8b\x80(\x12!\n\x1bMSG_ReadyTransCamp_Response\x10\x8b\xa0(\x12!\n\x1bMSG_ChangeJob_Query_Request\x10\x8c\x80(\x12\"\n\x1cMSG_ChangeJob_Query_Response\x10\x8c\xa0(\x12\x1a\n\x14MSG_GemState_Request\x10\x81\x80,\x12\x1b\n\x15MSG_GemState_Response\x10\x82\x80,\x12\x1c\n\x16MSG_GemCompose_Request\x10\x83\x80,\x12\x1d\n\x17MSG_GemCompose_Response\x10\x83\x80/\x12!\n\x1bMSG_GemQuickCompose_Request\x10\x84\x80,\x12\"\n\x1cMSG_GemQuickCompose_Response\x10\x85\x80,\x12\x1e\n\x18MSG_GemTransform_Request\x10\x86\x80,\x12\x1f\n\x19MSG_GemTransform_Response\x10\x87\x80,\x12\x1c\n\x16MSG_GemEnchase_Request\x10\x88\x80,\x12\x1d\n\x17MSG_GemEnchase_Response\x10\x89\x80,\x12\x1b\n\x15MSG_GemRemove_Request\x10\x8a\x80,\x12\x1c\n\x16MSG_GemRemove_Response\x10\x8b\x80,\x12\x1b\n\x15MSG_GemUnlock_Request\x10\x8c\x80,\x12\x1c\n\x16MSG_GemUnlock_Response\x10\x8d\x80,\x12\'\n!MSG_GemComposeQuick_Query_Request\x10\x8e\x80,\x12(\n\"MSG_GemComposeQuick_Query_Response\x10\x8f\x80,\x12)\n#MSG_GemComposeQuick_Compose_Request\x10\x90\x80,\x12*\n$MSG_GemComposeQuick_Compose_Response\x10\x91\x80,\x12!\n\x1bMSG_GemCutting_Base_Request\x10\x92\x80,\x12\"\n\x1cMSG_GemCutting_Base_Response\x10\x92\xa0,\x12$\n\x1eMSG_GemCutting_Element_Request\x10\x93\x80,\x12%\n\x1fMSG_GemCutting_Element_Response\x10\x93\xa0,\x12(\n\"MSG_GemCutting_Base_Detail_Request\x10\x94\x80,\x12)\n#MSG_GemCutting_Base_Detail_Response\x10\x94\xa0,\x12+\n%MSG_GemCutting_Element_Detail_Request\x10\x95\x80,\x12,\n&MSG_GemCutting_Element_Detail_Response\x10\x95\xa0,\x12\"\n\x1cMSG_GemCutting_Reset_Request\x10\x96\x80,\x12#\n\x1dMSG_GemCutting_Reset_Response\x10\x96\xa0,\x12 \n\x1aMSG_DungeonRestart_Request\x10\x81\x80\x30\x12\x1d\n\x17MSG_DungeonNext_Request\x10\x82\x80\x30\x12 \n\x1aMSG_DungeonReward_Requrest\x10\x83\x80\x30\x12\x1f\n\x19MSG_DungeonState_Response\x10\x84\x80\x30\x12\x1c\n\x16MSG_Callfriend_Request\x10\x85\x80\x30\x12\x1d\n\x17MSG_Callfriend_Response\x10\x86\x80\x30\x12\x1b\n\x15MSG_ApplyTeam_Request\x10\x87\x80\x30\x12\x1c\n\x16MSG_ApplyTeam_Response\x10\x87\xa0\x30\x12\"\n\x1cMSG_ActivityTeamList_Request\x10\x88\x80\x30\x12#\n\x1dMSG_ActivityTeamList_Response\x10\x89\x80\x30\x12 \n\x1aMSG_ForceApplyTeam_Request\x10\x90\x80\x30\x12!\n\x1bMSG_ForceApplyTeam_Response\x10\x90\xa0\x30\x12 \n\x1aMSG_QuickBuildTeam_Request\x10\x91\x80\x30\x12!\n\x1bMSG_QuickBuildTeam_Response\x10\x92\x80\x30\x12\x1e\n\x18MSG_DungeonEnter_Request\x10\x93\x80\x30\x12\x1f\n\x19MSG_DungeonEnter_Response\x10\x93\xa0\x30\x12\x1e\n\x18MSG_DungeonLeave_Request\x10\x94\x80\x30\x12\x1f\n\x19MSG_DungeonLeave_Response\x10\x94\xa0\x30\x12\x1e\n\x18MSG_DungeonStart_Request\x10\x95\x80\x30\x12\x1f\n\x19MSG_DungeonStart_Response\x10\x95\xa0\x30\x12\x1d\n\x17MSG_DungeonList_Request\x10\x96\x80\x30\x12\x1e\n\x18MSG_DungeonList_Response\x10\x96\xa0\x30\x12 \n\x1aMSG_DungeonSettleUp_Notice\x10\x97\x80\x30\x12\x1d\n\x17MSG_DungeonDraw_Request\x10\x98\x80\x30\x12\x1e\n\x18MSG_DungeonDraw_Response\x10\x98\xa0\x30\x12\x1c\n\x16MSG_DungeonStat_Notice\x10\x99\x80\x30\x12#\n\x1dMSG_DungeonMonsterWave_Notice\x10\x9a\x80\x30\x12,\n&MSG_DungeonRecoverMedicinePrice_Notice\x10\x9b\x80\x30\x12\x1d\n\x17MSG_DungeonRush_Request\x10\x9c\x80\x30\x12\x1e\n\x18MSG_DungeonRush_Response\x10\x9c\xa0\x30\x12\x1b\n\x15MSG_DungeonRun_Notice\x10\x9d\x80\x30\x12\x1e\n\x18MSG_DungeonUnlock_Notice\x10\x9e\x80\x30\x12#\n\x1dMSG_DungeonResetCount_Request\x10\xa0\x80\x30\x12$\n\x1eMSG_DungeonResetCount_Response\x10\xa0\xa0\x30\x12%\n\x1fMSG_DungeonGetRoadChest_Request\x10\xa1\x80\x30\x12&\n MSG_DungeonGetRoadChest_Response\x10\xa1\xa0\x30\x12\'\n!MSG_DungeonGetRegionChest_Request\x10\xa2\x80\x30\x12(\n\"MSG_DungeonGetRegionChest_Response\x10\xa2\xa0\x30\x12 \n\x1aMSG_DungeonOpposite_Notice\x10\xa3\xa0\x30\x12 \n\x1aMSG_DungeonGetInfo_Request\x10\xa4\x80\x30\x12!\n\x1bMSG_DungeonGetInfo_Response\x10\xa4\xa0\x30\x12*\n$MSG_DungeonListBuyEnterTimes_Request\x10\xa5\x80\x30\x12+\n%MSG_DungeonListBuyEnterTimes_Response\x10\xa5\xa0\x30\x12\'\n!MSG_DungeonTeamEnterVerify_Notice\x10\xa6\xa0\x30\x12&\n MSG_DungeonPlayerConfirm_Request\x10\xa7\x80\x30\x12\'\n!MSG_DungeonPlayerConfirm_Response\x10\xa7\xa0\x30\x12\x30\n*MSG_DungeonPlayerRefuseEnterDungeon_Notice\x10\xa8\xa0\x30\x12\x38\n2MSG_DungeonPlayerInconformityEnterCondition_Notice\x10\xa9\xa0\x30\x12\x31\n+MSG_DungeonPlayerConfirmEnterOffline_Notice\x10\xaa\xa0\x30\x12 \n\x1aMSG_DungeonStoryOp_Request\x10\xab\x80\x30\x12!\n\x1bMSG_DungeonStoryOp_Response\x10\xab\xa0\x30\x12#\n\x1dMSG_DungeonClientEvent_Notice\x10\xac\xa0\x30\x12\x1e\n\x18MSG_EGSToAISEvent_Report\x10\xad\xa0\x30\x12\"\n\x1cMSG_EnterDynamicPlace_Report\x10\xae\x80\x30\x12\x1f\n\x19MSG_TeleportPlayer_Notice\x10\xaf\xa0\x30\x12\x1f\n\x19MSG_ProcessCollect_Report\x10\xb0\x80\x30\x12\x1e\n\x18MSG_OpCollection_Request\x10\xb1\x80\x30\x12\x1f\n\x19MSG_OpCollection_Response\x10\xb1\xa0\x30\x12\x1a\n\x14MSG_SpawnBot_Request\x10\xb2\x80\x30\x12\x1b\n\x15MSG_SpawnBot_Response\x10\xb2\xa0\x30\x12,\n&MSG_DungeonPlayerWildBossDmgRankNotice\x10\xb3\xa0\x30\x12(\n\"MSG_DungeonPlayerWildBossDmgNotice\x10\xb4\xa0\x30\x12.\n(MSG_DungeonDisPlayWildBossDmgTableNotice\x10\xb5\xa0\x30\x12)\n#MSG_DungeonWildBossLocation_Request\x10\xb6\x80\x30\x12*\n$MSG_DungeonWildBossLocation_Response\x10\xb7\xa0\x30\x12*\n$MSG_DungeonIsSearchingWildBossNotice\x10\xb8\xa0\x30\x12\x35\n/MSG_DungeonPlayerTooLongNotAttackWildBossNotice\x10\xb9\xa0\x30\x12\x1b\n\x15MSG_EntityKill_Report\x10\xba\x80\x30\x12\x1a\n\x14MSG_SceneFail_Notice\x10\xbb\xa0\x30\x12\x1c\n\x16MSG_BotChangeHp_Notice\x10\xbc\xa0\x30\x12\x1b\n\x15MSG_GroupSpawn_Notice\x10\xbd\xa0\x30\x12$\n\x1eMSG_NewGroupMonsterCome_Notice\x10\xbe\xa0\x30\x12\x19\n\x13MSG_Respawn_Request\x10\xbf\x80\x30\x12\x1a\n\x14MSG_Respawn_Response\x10\xbf\xa0\x30\x12\x1f\n\x19MSG_EntityExeSkill_Report\x10\xc0\x80\x30\x12\x1d\n\x17MSG_AISystemBuff_Notice\x10\xc1\xa0\x30\x12\x1e\n\x18MSG_AISystemSkill_Notice\x10\xc2\xa0\x30\x12 \n\x1aMSG_AIDungeonSettle_Notice\x10\xc3\xa0\x30\x12\x1f\n\x19MSG_StarRatingInfo_Notice\x10\xc4\x80\x30\x12\"\n\x1cMSG_EnterLinkDungeon_Request\x10\xc5\x80\x30\x12#\n\x1dMSG_LinkDungeon_Result_Notice\x10\xc6\xa0\x30\x12\x1e\n\x18MSG_WorldBossRank_Notice\x10\xc7\xa0\x30\x12 \n\x1aMSG_WorldBossResult_Notice\x10\xc8\xa0\x30\x12\x1f\n\x19MSG_WorldBossEnterRequest\x10\xc9\x80\x30\x12 \n\x1aMSG_WorldBossEnterResponse\x10\xc9\xa0\x30\x12\x1e\n\x18MSG_WorldBossOpen_Notice\x10\xd0\xa0\x30\x12$\n\x1eMSG_DungeonContinueKill_Notice\x10\xd1\xa0\x30\x12\x1b\n\x15MSG_MatchEnter_Notice\x10\xd2\xa0\x30\x12!\n\x1bMSG_CancelCollection_Notice\x10\xd3\xa0\x30\x12\x31\n+MSG_DungeonEnterWeddingDungeonDialog_Notice\x10\xd4\xa0\x30\x12,\n&MSG_DungeonEnterWeddingDungeon_Request\x10\xd5\x80\x30\x12-\n\'MSG_DungeonEnterWeddingDungeon_Response\x10\xd5\xa0\x30\x12,\n&MSG_DungeonBuyWeddingPlayerNum_Request\x10\xd6\x80\x30\x12-\n\'MSG_DungeonBuyWeddingPlayerNum_Response\x10\xd6\xa0\x30\x12#\n\x1dMSG_WeddingDungeonInfo_Notice\x10\xd7\xa0\x30\x12\x34\n.MSG_DungeonRequireFriendWeddingDungeon_Request\x10\xd8\x80\x30\x12\x35\n/MSG_DungeonRequireFriendWeddingDungeon_Response\x10\xd8\xa0\x30\x12\x33\n-MSG_DungeonRequireGuildWeddingDungeon_Request\x10\xd9\x80\x30\x12\x34\n.MSG_DungeonRequireGuildWeddingDungeon_Response\x10\xd9\xa0\x30\x12-\n\'MSG_DungeonCreateWeddingDungeon_Request\x10\xda\x80\x30\x12.\n(MSG_DungeonCreateWeddingDungeon_Response\x10\xda\xa0\x30\x12,\n&MSG_DungeonBeginPerformWedding_Request\x10\xdb\x80\x30\x12-\n\'MSG_DungeonBeginPerformWedding_Response\x10\xdb\xa0\x30\x12+\n%MSG_DungeonBeginPerformWedding_Notice\x10\xdc\xa0\x30\x12(\n\"MSG_DungeonBuyWeddingCandy_Request\x10\xdd\x80\x30\x12)\n#MSG_DungeonBuyWeddingCandy_Response\x10\xdd\xa0\x30\x12$\n\x1eMSG_DungeonWeddingDraw_Request\x10\xde\x80\x30\x12%\n\x1fMSG_DungeonWeddingDraw_Response\x10\xde\xa0\x30\x12,\n&MSG_DungeonCreateWeddingDungeon_Notice\x10\xdf\xa0\x30\x12\x1e\n\x18MSG_CharDeathInfo_Notice\x10\xe0\xa0\x30\x12 \n\x1aMSG_OpCollectionEnd_Notice\x10\xe1\xa0\x30\x12\x19\n\x13MSG_OpBench_Request\x10\xe2\x80\x30\x12\x1a\n\x14MSG_OpBench_Response\x10\xe2\xa0\x30\x12\x1d\n\x17MSG_GroupDespawn_Notice\x10\xe3\xa0\x30\x12\x1b\n\x15MSG_AIPetSkill_Notice\x10\xe4\xa0\x30\x12&\n MSG_DungeonBoatingStatus_Request\x10\xf1\x80\x30\x12\'\n!MSG_DungeonBoatingStatus_Response\x10\xf1\xa0\x30\x12#\n\x1dMSG_MultiBoatingStart_Request\x10\xf2\x80\x30\x12$\n\x1eMSG_MultiBoatingStart_Response\x10\xf2\xa0\x30\x12!\n\x1bMSG_MultiBoatingEnd_Request\x10\xf3\x80\x30\x12\"\n\x1cMSG_MultiBoatingEnd_Response\x10\xf3\xa0\x30\x12#\n\x1dMSG_MultiBoatingStatus_Notice\x10\xf4\xa0\x30\x12#\n\x1dMSG_MultiBoatingReply_Request\x10\xf5\x80\x30\x12$\n\x1eMSG_MultiBoatingReply_Response\x10\xf5\xa0\x30\x12\x1e\n\x18MSG_SpanWildScore_Notice\x10\x81\xa1\x30\x12\x1e\n\x18MSG_SpanWildState_Notice\x10\x82\xa1\x30\x12!\n\x1bMSG_GetSpanWildState_Notice\x10\x83\xa1\x30\x12\x1f\n\x19MSG_PetBattleStar_Request\x10\x91\x81\x30\x12\x1e\n\x18MSG_PetBattleStar_Notice\x10\x91\xa1\x30\x12\x1f\n\x19MSG_PetBattleRound_Notice\x10\x92\xa1\x30\x12\x1c\n\x16MSG_SkipBattle_Request\x10\x93\x81\x30\x12\x1d\n\x17MSG_SkipBattle_Response\x10\x93\xa1\x30\x12\'\n!MSG_PetBattle_PvP_SettleUp_Notice\x10\x94\xa1\x30\x12-\n\'MSG_SPMonorBattle_RaceOne_Settle_Notice\x10\xa1\xa1\x30\x12-\n\'MSG_SPMonorBattle_RaceTwo_Settle_Notice\x10\xa2\xa1\x30\x12/\n)MSG_SPMonorBattle_RaceThree_Settle_Notice\x10\xa3\xa1\x30\x12+\n%MSG_SPMonorBattle_RaceOne_Rank_Notice\x10\xa4\xa1\x30\x12+\n%MSG_SPMonorBattle_RaceTwo_Rank_Notice\x10\xa5\xa1\x30\x12-\n\'MSG_SPMonorBattle_RaceThree_Rank_Notice\x10\xa6\xa1\x30\x12\x33\n-MSG_SPMonorBattle_RaceTwo_Capture_Rate_Notice\x10\xa7\xa1\x30\x12/\n)MSG_SPMonorBattle_RaceThree_Fight_Request\x10\xa8\x81\x30\x12\x30\n*MSG_SPMonorBattle_RaceThree_Fight_Response\x10\xa8\xa1\x30\x12\x31\n+MSG_SPMonorBattle_RaceThree_Unfight_Request\x10\xa9\x81\x30\x12\x32\n,MSG_SPMonorBattle_RaceThree_Unfight_Response\x10\xa9\xa1\x30\x12\x35\n/MSG_SPMonorBattle_RaceThree_Fight_Member_Notice\x10\xaa\xa1\x30\x12.\n(MSG_SPMonorBattle_RaceThree_Round_Notice\x10\xab\xa1\x30\x12\x1a\n\x14MSG_MailBox_Response\x10\x81\x80\x34\x12\x19\n\x13MSG_MailBox_Require\x10\x82\x80\x34\x12\x17\n\x11MSG_GmMail_Notice\x10\x83\x80\x34\x12\x1e\n\x18MSG_EventInspire_Request\x10\x85\x80\x38\x12\x1f\n\x19MSG_EventInspire_Response\x10\x86\x80\x38\x12\"\n\x1cMSG_EventSummonStat_Response\x10\x87\x80\x38\x12%\n\x1fMSG_EventSummonEndStat_Response\x10\x88\x80\x38\x12$\n\x1eMSG_EventJuBaoPenState_Request\x10\x89\x80\x38\x12%\n\x1fMSG_EventJuBaoPenState_Response\x10\x8a\x80\x38\x12\'\n!MSG_EventPurchaseJuBaoPen_Request\x10\x8b\x80\x38\x12(\n\"MSG_EventPurchaseJuBaoPen_Response\x10\x8c\x80\x38\x12&\n MSG_EventGetJuBaoPenGift_Request\x10\x8d\x80\x38\x12\'\n!MSG_EventGetJuBaoPenGift_Response\x10\x8e\x80\x38\x12#\n\x1dMSG_EventLivenessInfo_Request\x10\x8f\x80\x38\x12$\n\x1eMSG_EventLivenessInfo_Response\x10\x90\x80\x38\x12(\n\"MSG_EventLivenessGetReward_Request\x10\x91\x80\x38\x12)\n#MSG_EventLivenessGetReward_Response\x10\x92\x80\x38\x12\x1e\n\x18MSG_ActivityEntry_Notice\x10\x93\x80\x38\x12\x1d\n\x17MSG_NewCharacter_Notice\x10\x94\x80\x38\x12\x1f\n\x19MSG_WildActStatus_Request\x10\x95\x80\x38\x12 \n\x1aMSG_WildActStatus_Response\x10\x95\xa0\x38\x12\x1e\n\x18MSG_WildActStatus_Notice\x10\x96\xa0\x38\x12\x1e\n\x18MSG_WildBossInfo_Request\x10\x97\x80\x38\x12\x1d\n\x17MSG_FestActivity_Notice\x10\x98\x80\x38\x12\x1a\n\x14MSG_EventMonsterWave\x10\xa0\x80\x38\x12 \n\x1aMSG_EventMatchPVP_Response\x10\xa1\xa0\x38\x12#\n\x1dMSG_EventJoinActivity_Request\x10\xb0\x80\x38\x12\x1b\n\x15MSG_TowerInfo_Request\x10\xb1\x80\x38\x12\x1c\n\x16MSG_TowerInfo_Response\x10\xb1\xa0\x38\x12$\n\x1eMSG_TowerGetFirstAward_Request\x10\xb2\x80\x38\x12%\n\x1fMSG_TowerGetFirstAward_Response\x10\xb2\xa0\x38\x12$\n\x1eMSG_TowerGetStageAward_Request\x10\xb3\x80\x38\x12%\n\x1fMSG_TowerGetStageAward_Response\x10\xb3\xa0\x38\x12\x1c\n\x16MSG_TowerReset_Request\x10\xb4\x80\x38\x12\x1d\n\x17MSG_TowerReset_Response\x10\xb4\xa0\x38\x12\x1b\n\x15MSG_TowerRush_Request\x10\xb5\x80\x38\x12\x1c\n\x16MSG_TowerRush_Response\x10\xb5\xa0\x38\x12\x1c\n\x16MSG_EnterTower_Request\x10\xb6\x80\x38\x12\x1d\n\x17MSG_EnterTower_Response\x10\xb6\xa0\x38\x12 \n\x1aMSG_TowerDungeonEnd_Notice\x10\xb7\x80\x38\x12 \n\x1aMSG_TowerRushState_Request\x10\xb8\x80\x38\x12!\n\x1bMSG_TowerRushState_Response\x10\xb8\xa0\x38\x12\"\n\x1cMSG_TowerRushClearCD_Request\x10\xb9\x80\x38\x12#\n\x1dMSG_TowerRushClearCD_Response\x10\xb9\xa0\x38\x12\'\n!MSG_EnterTeleportMainCity_Request\x10\xc0\x80\x38\x12(\n\"MSG_EnterTeleportMainCity_Response\x10\xc0\xa0\x38\x12!\n\x1bMSG_TowerRushCancel_Request\x10\xc1\x80\x38\x12\"\n\x1cMSG_TowerRushCancel_Response\x10\xc1\xa0\x38\x12 \n\x1aMSG_TowerRushResult_Notice\x10\xc2\x80\x38\x12\x1d\n\x17MSG_XiuXianInfo_Request\x10\xd0\x80\x38\x12\x1e\n\x18MSG_XiuXianInfo_Response\x10\xd0\xa0\x38\x12\x1a\n\x14MSG_XueWeiUp_Request\x10\xd1\x80\x38\x12\x1b\n\x15MSG_XueWeiUp_Response\x10\xd1\xa0\x38\x12\x17\n\x11MSG_DuJie_Request\x10\xd2\x80\x38\x12\x18\n\x12MSG_DuJie_Response\x10\xd2\xa0\x38\x12 \n\x1aMSG_XiuXianResetCD_Request\x10\xd3\x80\x38\x12!\n\x1bMSG_XiuXianResetCD_Response\x10\xd3\xa0\x38\x12#\n\x1dMSG_WestRegionNPCInfo_Request\x10\xe1\x80\x38\x12$\n\x1eMSG_WestRegionNPCInfo_Response\x10\xe1\xa0\x38\x12!\n\x1bMSG_WestRegionEnter_Request\x10\xe2\x80\x38\x12\"\n\x1cMSG_WestRegionEnter_Response\x10\xe2\xa0\x38\x12\'\n!MSG_EventDailyQuestInform_Request\x10\x80\x81\x38\x12(\n\"MSG_EventDailyQuestInform_Response\x10\x80\xa1\x38\x12\'\n!MSG_EventDailyQuestAnswer_Request\x10\x81\x81\x38\x12(\n\"MSG_EventDailyQuestAnswer_Response\x10\x81\xa1\x38\x12(\n\"MSG_EventWisdomQuestInform_Request\x10\x82\x81\x38\x12)\n#MSG_EventWisdomQuestInform_Response\x10\x82\xa1\x38\x12%\n\x1fMSG_EventWisdomQuestInfo_Notice\x10\x83\xa1\x38\x12%\n\x1fMSG_EventWisdomQuestStat_Notice\x10\x84\xa1\x38\x12\'\n!MSG_EventWisdomQuestResult_Notice\x10\x85\xa1\x38\x12\'\n!MSG_EventWisdomQuestActEnd_Notice\x10\x86\xa1\x38\x12(\n\"MSG_EventWisdomFirstAnswer_Request\x10\x87\x81\x38\x12)\n#MSG_EventWisdomFirstAnswer_Response\x10\x87\xa1\x38\x12)\n#MSG_EventWisdomSecondAnswer_Request\x10\x88\x81\x38\x12*\n$MSG_EventWisdomSecondAnswer_Response\x10\x88\xa1\x38\x12#\n\x1dMSG_EventWisdomCancel_Request\x10\x89\x81\x38\x12$\n\x1eMSG_EventWisdomCancel_Response\x10\x89\xa1\x38\x12 \n\x1aMsG_EventJoinRecord_Notice\x10\x8a\xa1\x38\x12\'\n!MSG_EventQuestRealRankList_Notice\x10\x8b\xa1\x38\x12%\n\x1fMSG_EventWisdomQuestOpen_Notice\x10\x8c\xa1\x38\x12*\n$MSG_EventActivateHappyEncount_Notice\x10\x8d\xa1\x38\x12&\n MSG_ExcutingHappyEncount_Request\x10\x8e\x81\x38\x12\'\n!MSG_ExcutingHappyEncount_Response\x10\x8e\xa1\x38\x12\x1e\n\x18MSG_EventWorship_Request\x10\x8f\x81\x38\x12\x1f\n\x19MSG_EventWorship_Response\x10\x8f\xa1\x38\x12$\n\x1eMSG_EventPlayerStatus_Response\x10\x90\xa1\x38\x12\x1e\n\x18MSG_ManorWorship_Request\x10\x91\x81\x38\x12\x1f\n\x19MSG_ManorWorship_Response\x10\x91\xa1\x38\x12%\n\x1fMSG_ImmortalMembersInfo_Request\x10\xb1\x80<\x12&\n MSG_ImmortalMembersInfo_Response\x10\xb1\xa0<\x12!\n\x1bMSG_ImStore_Giveout_Request\x10\x81\xc0<\x12\"\n\x1cMSG_ImStore_Giveout_Response\x10\x82\xc0<\x12 \n\x1aMSG_ImStore_Operate_Record\x10\x83\xc0<\x12\x1b\n\x15MSG_ImStore_Item_List\x10\x84\xc0<\x12\"\n\x1cMSG_ImStore_ItemInfo_Request\x10\x85\xc0<\x12#\n\x1dMSG_ImStore_ItemInfo_Response\x10\x86\xc0<\x12\x18\n\x12MSG_GuildId_Inform\x10\x81\xa0<\x12\x1d\n\x17MSG_GuildCreate_Request\x10\x81\x80<\x12\x1d\n\x17MSG_GuildSearch_Request\x10\x82\x80<\x12 \n\x1aMSG_GuildApplyJoin_Request\x10\x83\x80<\x12\"\n\x1cMSG_GuildCancelApply_Request\x10\x84\x80<\x12\x1e\n\x18MSG_GuildCreate_Response\x10\x81\x80?\x12\x1e\n\x18MSG_GuildSearch_Response\x10\x82\x80?\x12!\n\x1bMSG_GuildApplyJoin_Response\x10\x83\x80?\x12#\n\x1dMSG_GuildCancelApply_Response\x10\x84\x80?\x12 \n\x1aMSG_GuildQuickJoin_Request\x10\x86\x80<\x12!\n\x1bMSG_GuildQuickJoin_Response\x10\x86\x80?\x12\x1d\n\x17MSG_GuildInvite_Request\x10\x87\x80<\x12\x1e\n\x18MSG_GuildInvite_Response\x10\x87\x80?\x12\x1c\n\x16MSG_GuildInvite_Notice\x10\x88\x80?\x12\x1f\n\x19MSG_Guild_InnerOpIdxStart\x10\x8a\x80<\x12#\n\x1dMSG_GuildApplyConfirm_Request\x10\x8a\x80<\x12$\n\x1eMSG_GuildApplyConfirm_Response\x10\x8a\x80?\x12\x1e\n\x18MSG_GuildKickout_Request\x10\x8b\x80<\x12\x1f\n\x19MSG_GuildKickout_Response\x10\x8b\x80?\x12\x1d\n\x17MSG_GuildModify_Request\x10\x8c\x80<\x12\x1e\n\x18MSG_GuildModify_Response\x10\x8c\x80?\x12#\n\x1dMSG_GuildMemberModify_Request\x10\x8d\x80<\x12$\n\x1eMSG_GuildMemberModify_Response\x10\x8d\x80?\x12\x1d\n\x17MSG_GuildDetail_Request\x10\x8e\x80<\x12\x1e\n\x18MSG_GuildDetail_Response\x10\x8e\x80?\x12\x1f\n\x19MSG_GuildDailyLog_Request\x10\x8f\x80<\x12\x1d\n\x17MSG_GuildDonate_Request\x10\x90\x80<\x12\x1e\n\x18MSG_GuildDonate_Response\x10\x90\x80?\x12#\n\x1dMSG_GuildLeaderChange_Request\x10\x91\x80<\x12$\n\x1eMSG_GuildLeaderChange_Response\x10\x91\x80?\x12!\n\x1bMSG_GuildApplicants_Request\x10\x92\x80<\x12\"\n\x1cMSG_GuildApplicants_Response\x10\x92\x80?\x12 \n\x1aMSG_GuildRecruitAd_Request\x10\x93\x80<\x12!\n\x1bMSG_GuildRecruitAd_Response\x10\x93\x80?\x12\x1b\n\x15MSG_GuildQuit_Request\x10\x94\x80<\x12\x1c\n\x16MSG_GuildQuit_Response\x10\x94\x80?\x12\'\n!MSG_GuildMemberPostChange_Request\x10\x95\x80<\x12(\n\"MSG_GuildMemberPostChange_Response\x10\x95\x80?\x12\x1e\n\x18MSG_GuildLevelup_Request\x10\x96\x80<\x12\x1f\n\x19MSG_GuildLevelup_Response\x10\x96\x80?\x12!\n\x1bMSG_GuildMemberList_Request\x10\x97\x80<\x12\"\n\x1cMSG_GuildMemberList_Response\x10\x97\x80?\x12\x1d\n\x17MSG_GuildPayoff_Request\x10\x98\x80<\x12\x1e\n\x18MSG_GuildPayoff_Response\x10\x98\x80?\x12$\n\x1eMSG_GuildPayoffConfirm_Request\x10\x99\x80<\x12%\n\x1fMSG_GuildPayoffConfirm_Response\x10\x99\x80?\x12\x1d\n\x17MSG_GuildRecord_Request\x10\x9a\x80<\x12\x1e\n\x18MSG_GuildRecord_Response\x10\x9a\x80?\x12\x1e\n\x18MSG_BuildingLvUp_Request\x10\x9b\x80<\x12\x1f\n\x19MSG_BuildingLvUp_Response\x10\x9b\x80?\x12\x1c\n\x16MSG_SkillStudy_Request\x10\x9c\x80<\x12\x1d\n\x17MSG_SkillStudy_Response\x10\x9c\x80?\x12\x1c\n\x16MSG_SkillLearn_Request\x10\x9d\x80<\x12\x1d\n\x17MSG_SkillLearn_Response\x10\x9d\x80?\x12\x1d\n\x17MSG_SkillCDTime_Request\x10\x9e\x80<\x12\x1e\n\x18MSG_SkillCDTime_Response\x10\x9e\x80?\x12 \n\x1aMSG_GuildSkillInfo_Request\x10\x9f\x80<\x12!\n\x1bMSG_GuildSkillInfo_Response\x10\x9f\x80?\x12 \n\x1aMSG_SkillStudyInfo_Request\x10\xa0\x80<\x12!\n\x1bMSG_SkillStudyInfo_Response\x10\xa0\x80?\x12\x1c\n\x16MSG_GuildBless_Request\x10\xa1\x80<\x12\x1d\n\x17MSG_GuildBless_Response\x10\xa1\x80?\x12\x1e\n\x18MSG_EnterDrunkery_Notice\x10\xa2\x80<\x12\x1e\n\x18MSG_LeaveDrunkery_Notice\x10\xa3\x80<\x12\x17\n\x11MSG_Drink_Request\x10\xa4\x80<\x12\x18\n\x12MSG_Drink_Response\x10\xa4\x80?\x12\x1d\n\x17MSG_OpenBanquet_Request\x10\xa5\x80<\x12\x1e\n\x18MSG_OpenBanquet_Response\x10\xa5\x80?\x12\x1a\n\x14MSG_MakeWine_Request\x10\xa6\x80<\x12\x1b\n\x15MSG_MakeWine_Response\x10\xa6\x80?\x12!\n\x1bMSG_MakeWineResetCD_Request\x10\xa7\x80<\x12\"\n\x1cMSG_MakeWineResetCD_Response\x10\xa7\x80?\x12\x1c\n\x16MSG_BeKickouted_Notice\x10\xa8\x80<\x12\x1f\n\x19MSG_OpenGuildBoss_Request\x10\xa9\x80<\x12 \n\x1aMSG_OpenGuildBoss_Response\x10\xa9\x80?\x12\x1e\n\x18MSG_OpenGuildBoss_Notice\x10\xb0\x80<\x12\x1d\n\x17MSG_GuildBossEnd_Notice\x10\xb1\x80<\x12 \n\x1aMSG_GuildBossDamage_Notice\x10\xb2\x80?\x12\x1f\n\x19MSG_EnterGuildBoss_Report\x10\xb3\x80<\x12\x1b\n\x15MSG_ApplyRank_Request\x10\xb4\x80<\x12\x1c\n\x16MSG_ApplyRank_Response\x10\xb4\x80?\x12\x1f\n\x19MSG_GetBattleLord_Request\x10\xb5\x80<\x12 \n\x1aMSG_GetBattleLord_Response\x10\xb5\x80?\x12\x1e\n\x18MSG_JoinIMBattle_Request\x10\xb6\x80<\x12\x1f\n\x19MSG_JoinIMBattle_Response\x10\xb6\x80?\x12\"\n\x1cMSG_BattleDynamicInfo_Notice\x10\xb8\x80?\x12\x1d\n\x17MSG_BattleReward_Notice\x10\xb9\x80?\x12\x1e\n\x18MSG_SetCampMember_Notice\x10\xc0\x80?\x12\x1e\n\x18MSG_AddCampMember_Notice\x10\xc1\x80?\x12!\n\x1bMSG_DeleteCampMember_Notice\x10\xc2\x80?\x12!\n\x1bMSG_ModifyCampMember_Notice\x10\xc3\x80?\x12\x1f\n\x19MSG_MemberKillInfo_Notice\x10\xc4\x80?\x12!\n\x1bMSG_SignGuildBattle_Request\x10\xc5\x80<\x12\"\n\x1cMSG_SignGuildBattle_Response\x10\xc6\x80?\x12!\n\x1bMSG_GuildBossStatus_Request\x10\xc7\x80<\x12\"\n\x1cMSG_GuildBossStatus_Response\x10\xc7\x80?\x12!\n\x1bMSG_ApplyJoinConfirm_Notice\x10\xc8\x80?\x12!\n\x1bMSG_GuildMemberKill_Request\x10\xc9\x80<\x12\"\n\x1cMSG_GuildMemberKill_Response\x10\xc9\x80?\x12(\n\"MSG_GuildMemberHelpTelport_Request\x10\xca\x80<\x12)\n#MSG_GuildMemberHelpTelport_Response\x10\xca\x80?\x12\x1e\n\x18MSG_GuildDismiss_Request\x10\xcb\x80<\x12\x1f\n\x19MSG_GuildDismiss_Response\x10\xcb\x80?\x12$\n\x1eMSG_GuildCancelDismiss_Request\x10\xcc\x80<\x12%\n\x1fMSG_GuildCancelDismiss_Response\x10\xcc\x80?\x12\x1d\n\x17MSG_GuildDismiss_Notice\x10\xcd\x80<\x12 \n\x1aMSG_GuildStore_Info_Notice\x10\xce\xa0<\x12#\n\x1dMSG_GuildStore_Message_Notice\x10\xcf\xa0<\x12\'\n!MSG_GuildStore_GrantGoods_Request\x10\xd0\x80<\x12(\n\"MSG_GuildStore_GrantGoods_Response\x10\xd0\xa0<\x12%\n\x1fMSG_GuildStore_ExtenBag_Request\x10\xd1\x80<\x12&\n MSG_GuildStore_ExtenBag_Response\x10\xd1\xa0<\x12\"\n\x1cMSG_Enter_GuildManor_Request\x10\xe0\x80<\x12#\n\x1dMSG_Enter_GuildManor_Response\x10\xe0\x80?\x12!\n\x1bMSG_Quit_GuildManor_Request\x10\xe1\x80<\x12\"\n\x1cMSG_Quit_GuildManor_Response\x10\xe1\x80?\x12 \n\x1aMSG_Open_GuildFire_Request\x10\xe2\x80<\x12!\n\x1bMSG_Open_GuildFire_Response\x10\xe2\x80?\x12\x1f\n\x19MSG_GuildFire_Time_Notice\x10\xe3\xa0<\x12\x1f\n\x19MSG_Open_GuildFire_Notice\x10\xe4\xa0<\x12 \n\x1aMSG_DynamicNotice_Response\x10\x81\x80\x44\x12\x1a\n\x14MSG_NPCInfo_Response\x10\x82\x80\x44\x12\x16\n\x10MSG_Chat_Require\x10\x83\x80\x44\x12\x17\n\x11MSG_Chat_Response\x10\x84\x80\x44\x12\x1e\n\x18MSG_Chat_Private_Require\x10\x85\x80\x44\x12\x1f\n\x19MSG_Charge_Config_Require\x10\x86\x80\x44\x12 \n\x1aMSG_Charge_Config_Response\x10\x86\xa0\x44\x12 \n\x1aMSG_UpdateCharMoney_Notice\x10\x87\x80\x44\x12\x1a\n\x14MSG_PathFind_Request\x10\x88\x80\x44\x12\x1b\n\x15MSG_PathFind_Response\x10\x88\xa0\x44\x12\x1d\n\x17MSG_NpcTeleport_Request\x10\x89\x80\x44\x12\x1e\n\x18MSG_NpcTeleport_Response\x10\x89\xa0\x44\x12\x1a\n\x14MSG_RankInfo_Request\x10\x8a\x80\x44\x12\x1b\n\x15MSG_CharRank_Response\x10\x8b\x80\x44\x12\x1c\n\x16MSG_GuildRank_Response\x10\x8c\x80\x44\x12\x1f\n\x19MSG_CharMineRank_Response\x10\x8d\x80\x44\x12 \n\x1aMSG_GuildMineRank_Response\x10\x8e\x80\x44\x12\x1c\n\x16MSG_JusticeInfo_Notice\x10\x90\x80\x44\x12 \n\x1aMSG_WorldLevelInfo_Request\x10\x91\x80\x44\x12!\n\x1bMSG_WorldLevelInfo_Response\x10\x91\xa0\x44\x12!\n\x1bMSG_WorldLevelUpdate_Notice\x10\x92\xa0\x44\x12!\n\x1bMSG_ClientLoadRoleOK_Report\x10\x93\x80\x44\x12\x1e\n\x18MSG_ItemTeleport_Request\x10\x94\x80\x44\x12\x1f\n\x19MSG_ItemTeleport_Response\x10\x94\xa0\x44\x12\x1d\n\x17MSG_SomeCharInfo_Notice\x10\x95\x80\x44\x12\x1e\n\x18MSG_ClientInBlock_Report\x10\x96\x80\x44\x12\"\n\x1cMSG_ClientDoSomething_Notice\x10\x97\x80\x44\x12\x17\n\x11MSG_DoCmd_Request\x10\x98\x80\x44\x12 \n\x1aMSG_OfflineExp_Get_Request\x10\x99\x80\x44\x12!\n\x1bMSG_OfflineExp_Get_Response\x10\x99\xa0\x44\x12\x1b\n\x15MSG_OfflineExp_Notice\x10\x9a\x80\x44\x12\x1f\n\x19MSG_PositionUpdate_Report\x10\x9b\x80\x44\x12\x1e\n\x18MSG_PositionSeqId_Notice\x10\x9c\x80\x44\x12\x1f\n\x19MSG_DeleteAllRole_Request\x10\x9d\x80\x44\x12 \n\x1aMSG_DeleteAllRole_Response\x10\x9e\x80\x44\x12!\n\x1bMSG_NpcSpanTeleport_Request\x10\x9f\x80\x44\x12\"\n\x1cMSG_NpcSpanTeleport_Response\x10\x9f\xa0\x44\x12%\n\x1fMSG_CheckMemberTeleport_Request\x10\xa0\x80\x44\x12&\n MSG_CheckMemberTeleport_Response\x10\xa1\xa0\x44\x12#\n\x1dMSG_CheckGateTeleport_Request\x10\xa2\x80\x44\x12$\n\x1eMSG_CheckGateTeleport_Response\x10\xa3\xa0\x44\x12!\n\x1bMSG_MemberSpanWildTP_Notice\x10\xa4\xa0\x44\x12 \n\x1aMSG_AddGateTeleport_Notice\x10\xa5\x80\x44\x12\x1a\n\x14MSG_Rks_Sign_Request\x10\xaa\xa0\x44\x12 \n\x1aMSG_UseFuzhijiujiu_Request\x10\xa6\x80\x44\x12!\n\x1bMSG_UseFuzhijiujiu_Response\x10\xa6\xa0\x44\x12#\n\x1dMSG_ReportFuzhijiujiu_Request\x10\xa7\x80\x44\x12$\n\x1eMSG_ReportFuzhijiujiu_Response\x10\xa7\xa0\x44\x12\x1e\n\x18MSG_FashionTrans_Request\x10\x81\x80H\x12\x1f\n\x19MSG_FashionTrans_Response\x10\x82\x80H\x12 \n\x1aMSG_FashionAdvance_Request\x10\x83\x80H\x12!\n\x1bMSG_FashionAdvance_Response\x10\x84\x80H\x12$\n\x1eMSG_FashionAdvanceCost_Request\x10\x85\x80H\x12%\n\x1fMSG_FashionAdvanceCost_Response\x10\x86\x80H\x12!\n\x1bMSG_WardrobeFashion_Request\x10\xa0\x80H\x12\"\n\x1cMSG_WardrobeFashion_Response\x10\xa1\x80H\x12 \n\x1aMSG_WardrobeHungUP_Request\x10\xa2\x80H\x12!\n\x1bMSG_WardrobeHungUP_Response\x10\xa3\x80H\x12\"\n\x1cMSG_WardrobeHungDown_Request\x10\xa4\x80H\x12#\n\x1dMSG_WardrobeHungDown_Response\x10\xa5\x80H\x12+\n%MSG_WardrobeFashionApplyShape_Request\x10\xa6\x80H\x12,\n&MSG_WardrobeFashionApplyShape_Response\x10\xa7\x80H\x12$\n\x1eMSG_WardrobeSlotUnlock_Request\x10\xa8\x80H\x12%\n\x1fMSG_WardrobeSlotUnlock_Response\x10\xa9\x80H\x12$\n\x1eMSG_WardrobeShapeReset_Request\x10\xb0\x80H\x12%\n\x1fMSG_WardrobeShapeReset_Response\x10\xb1\x80H\x12\x1f\n\x19MSG_WardrobeEquip_Request\x10\xb2\x80H\x12 \n\x1aMSG_WardrobeEquip_Response\x10\xb3\x80H\x12\x1f\n\x19MSG_WardrobeChange_Notice\x10\xc0\x80H\x12 \n\x1aMSG_SPImBattleInfo_Request\x10\x81\x80L\x12!\n\x1bMSG_SPImBattleInfo_Response\x10\x81\xa0L\x12\"\n\x1cMSG_SPImBat_SignInfo_Request\x10\x82\x80L\x12#\n\x1dMSG_SPImBat_SignInfo_Response\x10\x82\xa0L\x12\x1e\n\x18MSG_SPImBat_Sign_Request\x10\x83\x80L\x12\x1f\n\x19MSG_SPImBat_Sign_Response\x10\x83\xa0L\x12\x1f\n\x19MSG_SPImBat_Round_Impulse\x10\x84\x80L\x12\x1f\n\x19MSG_SPImBat_Round_Request\x10\x84\xa0L\x12\x1e\n\x18MSG_SPImBat_Join_Request\x10\x85\x80L\x12\x1f\n\x19MSG_SPImBat_Join_Response\x10\x85\xa0L\x12\"\n\x1cMSG_SPImBat_Battle_Score_Imp\x10\x86\x80L\x12 \n\x1aMSG_SPImBat_Battle_End_Imp\x10\x87\x80L\x12\"\n\x1cMSG_SPImBat_Member_Info_Sync\x10\x88\x80L\x12\"\n\x1cMSG_SPImBat_RankInfo_Request\x10\x89\x80L\x12#\n\x1dMSG_SPImBat_RankInfo_Response\x10\x8a\x80L\x12 \n\x1aMSG_SPImBat_EndInfo_Notice\x10\x8b\x80L\x12!\n\x1bMSG_SPImBat_BetInfo_Request\x10\x8c\x80L\x12\"\n\x1cMSG_SPImBat_BetInfo_Response\x10\x8d\x80L\x12!\n\x1bMSG_SPImBat_Betting_Request\x10\x8e\x80L\x12\"\n\x1cMSG_SPImBat_Betting_Response\x10\x8f\x80L\x12\"\n\x1cMSG_SPImBat_Watching_Request\x10\x90\x80L\x12#\n\x1dMSG_SPImBat_Watching_Response\x10\x90\xa0L\x12%\n\x1fMSG_SPImBat_WatchingInfo_Notice\x10\x91\xa0L\x12\x1e\n\x18MSG_SPImBat_Start_Notice\x10\x92\x80L\x12%\n\x1fMSG_SPIMBat_HistoryRank_Request\x10\x93\x80L\x12&\n MSG_SPIMBat_HistoryRank_Response\x10\x93\xa0L\x12\"\n\x1cMSG_SPMonorBattleInfo_Notice\x10\xa1\xa0L\x12%\n\x1fMSG_SPMonorBat_SignInfo_Request\x10\xa2\x80L\x12&\n MSG_SPMonorBat_SignInfo_Response\x10\xa2\xa0L\x12!\n\x1bMSG_SPMonorBat_Sign_Request\x10\xa3\x80L\x12\"\n\x1cMSG_SPMonorBat_Sign_Response\x10\xa3\xa0L\x12\'\n!MSG_SPMonorBat_MonorFight_Request\x10\xa4\x80L\x12(\n\"MSG_SPMonorBat_MonorFight_Response\x10\xa4\xa0L\x12\'\n!MSG_SPMonorBat_BattleFlag_Request\x10\xa5\x80L\x12(\n\"MSG_SPMonorBat_BattleFlag_Response\x10\xa5\xa0L\x12-\n\'MSG_SPMonorBat_FightForHegemony_Request\x10\xa6\x80L\x12.\n(MSG_SPMonorBat_FightForHegemony_Response\x10\xa6\xa0L\x12(\n\"MSG_SPMonorBat_Enter_Monor_Request\x10\xa7\x80L\x12)\n#MSG_SPMonorBat_Enter_Monor_Response\x10\xa7\xa0L\x12)\n#MSG_SPMonorBat_Watch_Battle_Request\x10\xa8\x80L\x12*\n$MSG_SPMonorBat_Watch_Battle_Response\x10\xa8\xa0L\x12(\n\"MSG_SPMonorBat_EnterBattle_Request\x10\xa9\x80L\x12)\n#MSG_SPMonorBat_EnterBattle_Response\x10\xa9\xa0L\x12+\n%MSG_SPMonorBat_GetMonorReward_Request\x10\xaa\x80L\x12,\n&MSG_SPMonorBat_GetMonorReward_Response\x10\xaa\xa0L\x12,\n&MSG_SPMonorBat_OnCanEnterBattle_Notice\x10\xab\xa0L\x12$\n\x1eMSG_SPMonorBat_GetScore_Notice\x10\xac\xa0L\x12 \n\x1aMSG_RedPacketShake_Request\x10\x81\x80P\x12!\n\x1bMSG_RedPacketShake_Response\x10\x81\xa0P\x12\x1f\n\x19MSG_RedPacketInfo_Request\x10\x82\x80P\x12 \n\x1aMSG_RedPacketInfo_Response\x10\x82\xa0P\x12)\n#MSG_RedPacketWeixinExchange_Request\x10\x83\x80P\x12*\n$MSG_RedPacketWeixinExchange_Response\x10\x83\xa0P\x12\'\n!MSG_RedPacketExchangeInfo_Request\x10\x84\x80P\x12(\n\"MSG_RedPacketExchangeInfo_Response\x10\x84\xa0P\x12%\n\x1fMSG_RedPacketMenpiaoInfo_Notice\x10\x85\x80P\x12\x1b\n\x15MSG_MountInfo_Request\x10\x81\x80T\x12\x1c\n\x16MSG_MountInfo_Response\x10\x81\xa0T\x12\x1e\n\x18MSG_MountLevelUp_Request\x10\x82\x80T\x12\x1f\n\x19MSG_MountLevelUp_Response\x10\x82\xa0T\x12\x1e\n\x18MSG_MountClassUp_Request\x10\x83\x80T\x12\x1f\n\x19MSG_MountClassUp_Response\x10\x83\xa0T\x12\x1d\n\x17MSG_RuneLevelUp_Request\x10\x84\x80T\x12\x1e\n\x18MSG_RuneLevelUp_Response\x10\x84\xa0T\x12!\n\x1bMSG_MountRideOrRest_Request\x10\x87\x80T\x12\"\n\x1cMSG_MountRideOrRest_Response\x10\x87\xa0T\x12!\n\x1bMSG_MountChangeShow_Request\x10\x88\x80T\x12\"\n\x1cMSG_MountChangeShow_Response\x10\x88\xa0T\x12!\n\x1bMSG_MountBuyFashion_Request\x10\x89\x80T\x12\"\n\x1cMSG_MountBuyFashion_Response\x10\x89\xa0T\x12\x1e\n\x18MSG_FashionChange_Notice\x10\x90\xa0T\x12\x1d\n\x17MSG_RuneClassUp_Request\x10\x91\xa0T\x12\x1e\n\x18MSG_RuneClassUp_Response\x10\x92\xa0T\x12\x1d\n\x17MSG_RuneEnchant_Request\x10\x93\xa0T\x12\x1e\n\x18MSG_RuneEnchant_Response\x10\x94\xa0T\x12&\n MSG_MountFashionExchange_Request\x10\x95\xa0T\x12\'\n!MSG_MountFashionExchange_Response\x10\x96\xa0T\x12!\n\x1bMSG_RuneEnchantSave_Request\x10\x97\xa0T\x12\"\n\x1cMSG_RuneEnchantSave_Response\x10\x98\xa0T\x12\x1a\n\x14MSG_MountFly_Request\x10\x99\x80T\x12\x1b\n\x15MSG_MountFly_Response\x10\x99\xa0T\x12\x1d\n\x17MSG_RuneLottery_Request\x10\xa0\x80T\x12\x1e\n\x18MSG_RuneLottery_Response\x10\xa0\xa0T\x12\x1f\n\x19MSG_RuneOneKeyLvUpRequest\x10\xa1\x80T\x12 \n\x1aMSG_RuneOneKeyLvupResponse\x10\xa1\xa0T\x12\x1a\n\x14MSG_RuneMountRequest\x10\xa2\x80T\x12\x1b\n\x15MSG_RuneMountResponse\x10\xa2\xa0T\x12\x1c\n\x16MSG_RuneUnMountRequest\x10\xa3\x80T\x12\x1d\n\x17MSG_RuneUnMountResponse\x10\xa3\xa0T\x12\x1d\n\x17MSG_RuneOpenSlotRequest\x10\xa4\x80T\x12\x1e\n\x18MSG_RuneOpenSlotResponse\x10\xa4\xa0T\x12\x1e\n\x18MSG_RuneLotteryCfgNotice\x10\xa5\x80T\x12\x1e\n\x18MSG_RuneLvUpQueryRequest\x10\xa6\x80T\x12\x1f\n\x19MSG_RuneLvUpQueryResponse\x10\xa6\xa0T\x12!\n\x1bMSG_SoulStarLevelUp_Request\x10\xa7\x80T\x12\"\n\x1cMSG_SoulStarLevelUp_Response\x10\xa7\xa0T\x12\"\n\x1cMSG_SoulStarDecomposeRequest\x10\xa8\x80T\x12#\n\x1dMSG_SoulStarDecomposeResponse\x10\xa8\xa0T\x12!\n\x1bMSG_SoulStarTranfromRequest\x10\xa9\x80T\x12\"\n\x1cMSG_SoulStarTranfromResponse\x10\xa9\xa0T\x12\x1e\n\x18MSG_SoulStarMountRequest\x10\xb0\x80T\x12\x1f\n\x19MSG_SoulStarMountResponse\x10\xb0\xa0T\x12 \n\x1aMSG_SoulStarUnMountRequest\x10\xb2\x80T\x12!\n\x1bMSG_SoulStarUnMountResponse\x10\xb2\xa0T\x12\x1c\n\x16MSG_SoulStarInfoNotice\x10\xb3\xa0T\x12&\n MSG_SoulStarGiftDecomposeRequest\x10\xb4\xa0T\x12\'\n!MSG_SoulStarGiftDecomposeResponse\x10\xb5\xa0T\x12\x1b\n\x15MSG_UIOpenInfo_Notice\x10\x81\xa0X\x12\x18\n\x12MSG_UIStory_Report\x10\x82\x80X\x12\x18\n\x12MSG_UIGuide_Report\x10\x83\x80X\x12\x17\n\x11MSG_UIHide_Notice\x10\x84\x80X\x12\x1c\n\x16MSG_UIPushLevel_Report\x10\x85\x80X\x12\x1c\n\x16MSG_UIPushLevel_Notice\x10\x85\xa0X\x12\x1a\n\x14MSG_UseSkill_Request\x10\x81\x80\\\x12\x1b\n\x15MSG_UseSkill_Response\x10\x81\xa0\\\x12\x1c\n\x16MSG_FightReport_Notice\x10\x82\xa0\\\x12\x18\n\x12MSG_SkillCD_Notice\x10\x83\xa0\\\x12\x1d\n\x17MSG_PetUseSkill_Request\x10\x84\x80\\\x12\x1e\n\x18MSG_PetUseSkill_Response\x10\x84\xa0\\\x12%\n\x1fMSG_MagicWeaponUseSkill_Request\x10\x85\x80\\\x12&\n MSG_MagicWeaponUseSkill_Response\x10\x85\xa0\\\x12#\n\x1dMSG_CLIENT_AUTOBATTLE_Request\x10\x86\x80\\\x12$\n\x1eMSG_CLIENT_AUTOBATTLE_Response\x10\x86\xa0\\\x12+\n%MSG_CancelSpecialBattleStatus_Request\x10\x87\x80\\\x12,\n&MSG_CancelSpecialBattleStatus_Response\x10\x87\xa0\\\x12\x1e\n\x18MSG_SkillCommonCD_Notice\x10\x88\xa0\\\x12!\n\x1bMSG_SkillPropSkillCD_Notice\x10\x89\xa0\\\x12\x1f\n\x19MSG_Buff_Show_Info_Notice\x10\x8a\xa0\\\x12\x1c\n\x16MSG_ArenaMatch_Request\x10\x81\x80`\x12\x1d\n\x17MSG_ArenaMatch_Response\x10\x81\xa0`\x12!\n\x1bMSG_ArenaMatchResult_Notice\x10\x82\x80`\x12\"\n\x1cMSG_ArenaMatchCancel_Request\x10\x83\x80`\x12#\n\x1dMSG_ArenaMatchCancel_Response\x10\x83\xa0`\x12\x1b\n\x15MSG_ArenaOkIn_Request\x10\x84\x80`\x12\x1c\n\x16MSG_ArenaOkIn_Response\x10\x84\xa0`\x12\x1f\n\x19MSG_ArenaCancelIn_Request\x10\x85\x80`\x12 \n\x1aMSG_ArenaCancelIn_Response\x10\x85\xa0`\x12#\n\x1dMSG_SinglePvPCountDown_Notice\x10\x86\x80`\x12&\n MSG_SinglePvPWaitingState_Notice\x10\x87\x80`\x12\x1e\n\x18MSG_ArenaSettleUp_Notice\x10\x88\x80`\x12\"\n\x1cMSG_ArenaGetPvPKills_Request\x10\x89\x80`\x12#\n\x1dMSG_ArenaGetPvPKills_Response\x10\x89\xa0`\x12\x1f\n\x19MSG_SinglePvPEnter_Notice\x10\x8a\x80`\x12!\n\x1bMSG_PlayerPKRequest_Request\x10\x8b\x80`\x12\"\n\x1cMSG_PlayerPKRequest_Response\x10\x8b\x80\x63\x12 \n\x1aMSG_PlayerPKRequest_Notice\x10\x8c\x80\x63\x12!\n\x1bMSG_PlayerPKResponse_Report\x10\x8d\x80`\x12\x1f\n\x19MSG_PlayerPKReject_Notice\x10\x8d\x80\x63\x12\x1f\n\x19MSG_PlayerPKCancel_Report\x10\x8e\x80`\x12\x1f\n\x19MSG_PlayerPKResult_Notice\x10\x8e\x80\x63\x12\x1d\n\x17MSG_PetPosUpdate_Report\x10\x81\x80\x64\x12\x1d\n\x17MSG_PetPosClient_Notice\x10\x81\xa0\x64\x12\x1b\n\x15MSG_PetAcitve_Request\x10\x82\x80\x64\x12\x1c\n\x16MSG_PetAcitve_Response\x10\x82\xa0\x64\x12\x1d\n\x17MSG_PetDeacitve_Request\x10\x83\x80\x64\x12\x1e\n\x18MSG_PetDeacitve_Response\x10\x83\xa0\x64\x12\x18\n\x12MSG_PetList_Notice\x10\x84\xa0\x64\x12\x1b\n\x15MSG_PetDelete_Request\x10\x85\x80\x64\x12\x1c\n\x16MSG_PetDelete_Response\x10\x85\xa0\x64\x12\x1b\n\x15MSG_PetRelive_Request\x10\x86\x80\x64\x12\x1c\n\x16MSG_PetRelive_Response\x10\x86\xa0\x64\x12\x1b\n\x15MSG_PetRename_Request\x10\x87\x80\x64\x12\x1c\n\x16MSG_PetRename_Response\x10\x87\xa0\x64\x12\x19\n\x13MSG_PetGrow_Request\x10\x88\x80\x64\x12\x1a\n\x14MSG_PetGrow_Response\x10\x88\xa0\x64\x12\x1f\n\x19MSG_PetSkillLearn_Request\x10\x89\x80\x64\x12 \n\x1aMSG_PetSkillLearn_Response\x10\x89\xa0\x64\x12 \n\x1aMSG_PetSkillForget_Request\x10\x8a\x80\x64\x12!\n\x1bMSG_PetSkillForget_Response\x10\x8a\xa0\x64\x12\x1b\n\x15MSG_PetEvolve_Request\x10\x8b\x80\x64\x12\x1c\n\x16MSG_PetEvolve_Response\x10\x8b\xa0\x64\x12\x19\n\x13MSG_PetDrug_Request\x10\x8c\x80\x64\x12\x1a\n\x14MSG_PetDrug_Response\x10\x8c\xa0\x64\x12\x1f\n\x19MSG_PetRenascence_Request\x10\x8d\x80\x64\x12 \n\x1aMSG_PetRenascence_Response\x10\x8d\xa0\x64\x12\x1c\n\x16MSG_PetBuySlot_Request\x10\x8e\x80\x64\x12\x1d\n\x17MSG_PetBuySlot_Response\x10\x8e\xa0\x64\x12\x1e\n\x18MSG_PetContainer_Request\x10\x8f\x80\x64\x12\x1f\n\x19MSG_PetContainer_Response\x10\x8f\xa0\x64\x12!\n\x1bMSG_PetSkillReplace_Request\x10\x90\x80\x64\x12\"\n\x1cMSG_PetSkillReplace_Response\x10\x90\xa0\x64\x12\"\n\x1cMSG_PetNewRenascence_Request\x10\x91\x80\x64\x12#\n\x1dMSG_PetNewRenascence_Response\x10\x91\xa0\x64\x12%\n\x1fMSG_PetRenasceneReplace_Request\x10\x92\x80\x64\x12&\n MSG_PetRenasceneReplace_Response\x10\x92\xa0\x64\x12\x1e\n\x18MSG_TakePetGuard_Request\x10\x93\x80\x64\x12\x1f\n\x19MSG_TakePetGuard_Response\x10\x93\xa0\x64\x12\"\n\x1cMSG_TakeBackPetGuard_Request\x10\x94\x80\x64\x12#\n\x1dMSG_TakeBackPetGuard_Response\x10\x94\xa0\x64\x12!\n\x1bMSG_UpLevelPetGuard_Request\x10\x95\x80\x64\x12\"\n\x1cMSG_UpLevelPetGuard_Response\x10\x95\xa0\x64\x12)\n#MSG_QuaryGuardUpBattleScore_Request\x10\x96\x80\x64\x12*\n$MSG_QuaryGuardUpBattleScore_Response\x10\x96\xa0\x64\x12!\n\x1bMSG_PetEquipUpLevel_Request\x10\x97\x80\x64\x12\"\n\x1cMSG_PetEquipUpLevel_Response\x10\x97\xa0\x64\x12!\n\x1bMSG_PetEquipReplace_Request\x10\x98\x80\x64\x12\"\n\x1cMSG_PetEquipReplace_Response\x10\x98\xa0\x64\x12#\n\x1dMSG_SetPetBattleArray_Request\x10\xa0\x80\x64\x12$\n\x1eMSG_SetPetBattleArray_Response\x10\xa0\xa0\x64\x12\"\n\x1cMSG_PetPVEBattleInfo_Request\x10\xa1\x80\x64\x12#\n\x1dMSG_PetPVEBattleInfo_Response\x10\xa1\xa0\x64\x12\"\n\x1cMSG_GetBattlePetList_Request\x10\xa2\x80\x64\x12#\n\x1dMSG_GetBattlePetList_Response\x10\xa2\xa0\x64\x12!\n\x1bMSG_PetTransPreview_Request\x10\xa3\x80\x64\x12\"\n\x1cMSG_PetTransPreview_Response\x10\xa3\xa0\x64\x12\x1f\n\x19MSG_PetTransReady_Request\x10\xa4\x80\x64\x12 \n\x1aMSG_PetTransReady_Response\x10\xa4\xa0\x64\x12\x1a\n\x14MSG_PetTrans_Request\x10\xa5\x80\x64\x12\x1b\n\x15MSG_PetTrans_Response\x10\xa5\xa0\x64\x12\"\n\x1cMSG_PetLegacyPreview_Request\x10\xa6\x80\x64\x12#\n\x1dMSG_PetLegacyPreview_Response\x10\xa6\xa0\x64\x12 \n\x1aMSG_PetLegacyReady_Request\x10\xa7\x80\x64\x12!\n\x1bMSG_PetLegacyReady_Response\x10\xa7\xa0\x64\x12\x1b\n\x15MSG_PetLegacy_Request\x10\xa8\x80\x64\x12\x1c\n\x16MSG_PetLegacy_Response\x10\xa8\xa0\x64\x12\"\n\x1cMSG_PetPVPBattleInfo_Request\x10\xb0\x80\x64\x12#\n\x1dMSG_PetPVPBattleInfo_Response\x10\xb0\xa0\x64\x12#\n\x1dMSG_EnterPetBattlePvP_Request\x10\xb1\x80\x64\x12$\n\x1eMSG_EnterPetBattlePvP_Response\x10\xb1\xa0\x64\x12&\n MSG_FlushPetPvPMatchInfo_Request\x10\xb2\x80\x64\x12\'\n!MSG_FlushPetPvPMatchInfo_Response\x10\xb2\xa0\x64\x12\x1e\n\x18MSG_BattleRecord_Request\x10\xb3\x80\x64\x12\x1f\n\x19MSG_BattleRecord_Response\x10\xb3\xa0\x64\x12\x1f\n\x19MSG_PetGrowthInfo_Request\x10\xb4\x80\x64\x12 \n\x1aMSG_PetGrowthInfo_Response\x10\xb4\xa0\x64\x12\x1b\n\x15MSG_PetGrowth_Request\x10\xb5\x80\x64\x12\x1c\n\x16MSG_PetGrowth_Response\x10\xb5\xa0\x64\x12\x1b\n\x15MSG_TeamBuild_Request\x10\x81\x80h\x12\x1c\n\x16MSG_TeamBuild_Response\x10\x81\xa0h\x12%\n\x1fMSG_TeamBuildOppositeTip_Notice\x10\x82\x80h\x12\x1d\n\x17MSG_TeamDismiss_Request\x10\x83\x80h\x12\x1e\n\x18MSG_TeamDismiss_Response\x10\x83\xa0h\x12\'\n!MSG_TeamDismissOppositeTip_Notice\x10\x84\x80h\x12\"\n\x1cMSG_TeamChangeLeader_Request\x10\x85\x80h\x12#\n\x1dMSG_TeamChangeLeader_Response\x10\x85\xa0h\x12\x1b\n\x15MSG_TeamLeave_Request\x10\x86\x80h\x12\x1c\n\x16MSG_TeamLeave_Response\x10\x86\xa0h\x12%\n\x1fMSG_TeamLeaveOppositeTip_Notice\x10\x87\x80h\x12\x1a\n\x14MSG_TeamKick_Request\x10\x88\x80h\x12\x1b\n\x15MSG_TeamKick_Response\x10\x88\xa0h\x12\x1e\n\x18MSG_TeamProposal_Request\x10\x89\x80h\x12\x1f\n\x19MSG_TeamProposal_Response\x10\x89\xa0h\x12$\n\x1eMSG_TeamProposalExamine_Notice\x10\x8a\x80h\x12+\n%MSG_TeamProposalExamineAnswer_Request\x10\x8b\x80h\x12,\n&MSG_TeamProposalExamineAnswer_Response\x10\x8b\xa0h\x12\x1d\n\x17MSG_TeamProposal_Notice\x10\x8c\x80h\x12$\n\x1eMSG_TeamProposalAnswer_Request\x10\x8d\x80h\x12%\n\x1fMSG_TeamProposalAnswer_Response\x10\x8d\xa0h\x12\x1b\n\x15MSG_TeamApply_Request\x10\x8e\x80h\x12\x1c\n\x16MSG_TeamApply_Response\x10\x8e\xa0h\x12!\n\x1bMSG_TeamApplyAnswer_Request\x10\x8f\x80h\x12\"\n\x1cMSG_TeamApplyAnswer_Response\x10\x8f\xa0h\x12#\n\x1dMSG_TeamBaseDataUpdate_Notice\x10\x90\x80h\x12#\n\x1dMSG_TeamSyncHPMPUpdate_Notice\x10\x91\x80h\x12\x1f\n\x19MSG_TeamFlagUpdate_Notice\x10\x92\x80h\x12 \n\x1aMSG_TeamMemberClear_Notice\x10\x93\x80h\x12$\n\x1eMSG_TeamApplyerBaseData_Notice\x10\x94\x80h\x12!\n\x1bMSG_TeamApplyerClear_Notice\x10\x95\x80h\x12\"\n\x1cMSG_TeamSyncPosUpdate_Notice\x10\x96\x80h\x12 \n\x1aMSG_TeamCallFriend_Request\x10\x97\x80h\x12!\n\x1bMSG_TeamCallFriend_Response\x10\x97\xa0h\x12\x1e\n\x18MSG_TeamJoinCall_Request\x10\x98\x80h\x12\x1f\n\x19MSG_TeamJoinCall_Response\x10\x98\xa0h\x12\"\n\x1cMSG_ScreenPlayerInfo_Request\x10\x99\x80h\x12#\n\x1dMSG_ScreenPlayerInfo_Response\x10\x99\x80k\x12\'\n!MSG_TeamLeaderFollowOrder_Request\x10\x9a\x80h\x12(\n\"MSG_TeamLeaderFollowOrder_Response\x10\x9a\xa0h\x12&\n MSG_TeamLeaderFollowOrder_Notice\x10\x9b\xa0h\x12\'\n!MSG_TeamMemberFollowOrder_Request\x10\x9c\x80h\x12(\n\"MSG_TeamMemberFollowOrder_Response\x10\x9c\xa0h\x12\"\n\x1cMSG_TeamMemberFollow_Request\x10\x9d\x80h\x12#\n\x1dMSG_TeamMemberFollow_Response\x10\x9d\xa0h\x12+\n%MSG_TeamMemberFollowEnterList_Request\x10\x9f\x80h\x12,\n&MSG_TeamMemberFollowEnterList_Response\x10\x9f\xa0h\x12%\n\x1fMSG_TeamMemberFollowInfo_Notice\x10\xa0\xa0h\x12\'\n!MSG_TeamMemberFollowCancel_Report\x10\xa1\x80h\x12&\n MSG_TeamMemberAutoFollow_Request\x10\xa2\x80h\x12\'\n!MSG_TeamMemberAutoFollow_Response\x10\xa2\xa0h\x12%\n\x1fMSG_TeamMemberFollowLose_Report\x10\xa3\x80h\x12&\n MSG_TeamMemberFollowSpeed_Report\x10\xa4\x80h\x12\x1a\n\x14MSG_TeamList_Request\x10\xa5\x80h\x12\x1a\n\x14MSG_TeamList_Reponse\x10\xa5\xa0h\x12 \n\x1aMSG_SetTeamPurpose_Request\x10\xa6\x80h\x12 \n\x1aMSG_SetTeamPurpose_Reponse\x10\xa6\xa0h\x12\x1c\n\x16MSG_TeamPurpose_Notice\x10\xa7\x80h\x12#\n\x1dMSG_TeamSyncBuffUpdate_Notice\x10\xa8\x80h\x12(\n\"MSG_TransportProposalAnswerRequest\x10\xa9\x80h\x12)\n#MSG_TransportProposalAnswerResponse\x10\xa9\xa0h\x12$\n\x1eMSG_TransportApplyagreeRequest\x10\xaa\x80h\x12$\n\x1eMSG_TransportApplyagreeResonse\x10\xab\x80h\x12\x1b\n\x15MSG_CheckMatchRequest\x10\xac\x80h\x12\x1c\n\x16MSG_CheckMatchResponse\x10\xac\xa0h\x12\x1f\n\x19MSG_TransportApplyRequest\x10\xad\x80h\x12\x1f\n\x19MSG_TransportApplyResonse\x10\xad\xa0h\x12\x1c\n\x16MSG_GetLeaderPosNotice\x10\xaf\xa0h\x12\x1b\n\x15MSG_MatchList_Request\x10\x81\x80l\x12\x1c\n\x16MSG_MatchList_Response\x10\x81\xa0l\x12\x1d\n\x17MSG_MatchConfirm_Notice\x10\x82\x80l\x12$\n\x1eMSG_MatchConfirmAnswer_Request\x10\x83\x80l\x12%\n\x1fMSG_MatchConfirmAnswer_Response\x10\x83\xa0l\x12\x1f\n\x19MSG_MatchSignedUp_Request\x10\x84\x80l\x12 \n\x1aMSG_MatchSignedUp_Response\x10\x84\xa0l\x12\x1d\n\x17MSG_MatchCancel_Request\x10\x85\x80l\x12\x1e\n\x18MSG_MatchCancel_Response\x10\x85\xa0l\x12\x1a\n\x14MSG_MatchList_Notice\x10\x86\x80l\x12\x1b\n\x15MSG_MatchTeam_Request\x10\x87\x80l\x12\x1c\n\x16MSG_MatchTeam_Response\x10\x87\xa0l\x12\x1a\n\x14MSG_PveMatch_Request\x10\x88\x80l\x12\x1b\n\x15MSG_PveMatch_Response\x10\x88\xa0l\x12 \n\x1aMSG_CancelPveMatch_Request\x10\x89\x80l\x12!\n\x1bMSG_CancelPveMatch_Response\x10\x89\xa0l\x12\x1f\n\x19MSG_PveMatchApply_Request\x10\x8a\x80l\x12 \n\x1aMSG_PveMatchApply_Response\x10\x8a\xa0l\x12\x1f\n\x19MSG_PveMatchLeave_Request\x10\x8b\x80l\x12 \n\x1aMSG_PveMatchLeave_Response\x10\x8b\xa0l\x12$\n\x1eMSG_PveMatchCallFriend_Request\x10\x8c\x80l\x12%\n\x1fMSG_PveMatchCallFriend_Response\x10\x8c\xa0l\x12\x1e\n\x18MSG_GetMatchList_Request\x10\x8d\x80l\x12\x1f\n\x19MSG_GetMatchList_Response\x10\x8d\xa0l\x12 \n\x1aMSG_SyncSpanPveInfo_Notice\x10\x8e\xa0l\x12)\n#MSG_PveMatchApplyCallFriend_Request\x10\x8f\x80l\x12*\n$MSG_PveMatchApplyCallFriend_Response\x10\x8f\xa0l\x12\x1e\n\x18MSG_GetMatchInfo_Request\x10\x90\x80l\x12\"\n\x1cMSG_SyncSpanPveLeader_Notice\x10\x91\xa0l\x12\x1b\n\x15MSG_ApplyDuel_Request\x10\x92\x80l\x12\x1c\n\x16MSG_ApplyDuel_Response\x10\x92\xa0l\x12\x1c\n\x16MSG_CheckOther_Request\x10\x93\x80l\x12\x1d\n\x17MSG_CheckOhter_Response\x10\x93\xa0l\x12\x18\n\x12MSG_DoDuel_Request\x10\x94\x80l\x12\x19\n\x13MSG_DoDuel_Response\x10\x94\xa0l\x12\x19\n\x13MSG_DuelInfo_Notice\x10\x95\xa0l\x12\"\n\x1cMSG_DuelCreateDungeon_Notice\x10\x96\xa0l\x12\x1c\n\x16MSG_DuelDespise_Notice\x10\x97\xa0l\x12\x1a\n\x14MSG_DuelState_Notice\x10\x98\xa0l\x12\x19\n\x13MSG_DuelMail_Notice\x10\x99\xa0l\x12\x1d\n\x17MSG_DuelSettleUp_Notice\x10\xa0\xa0l\x12\x1e\n\x18MSG_SearchFriend_Request\x10\x81\x80p\x12\x1f\n\x19MSG_SearchFriend_Response\x10\x81\xa0p\x12 \n\x1aMSG_SearchCondtion_Request\x10\x82\x80p\x12!\n\x1bMSG_SearchCondtion_Response\x10\x82\xa0p\x12\x1c\n\x16MSG_AddTFriend_Request\x10\x83\x80p\x12\x1d\n\x17MSG_AddTFriend_Response\x10\x83\xa0p\x12\x1f\n\x19MSG_RemoveTFriend_Request\x10\x84\x80p\x12 \n\x1aMSG_RemoveTFriend_Response\x10\x84\xa0p\x12\x1c\n\x16MSG_AddTFriends_Notice\x10\x85\x80p\x12\x1f\n\x19MSG_RemoveTFriends_Notice\x10\x86\x80p\x12\x1f\n\x19MSG_UpdateTFriends_Notice\x10\x87\x80p\x12\x1b\n\x15MSG_FriendData_Notice\x10\x88\x80p\x12\x1a\n\x14MSG_CharZone_Request\x10\x89\x80p\x12\x1b\n\x15MSG_CharZone_Response\x10\x89\xa0p\x12\x1c\n\x16MSG_MoveTarget_Request\x10\x8a\x80p\x12\x1d\n\x17MSG_MoveTarget_Response\x10\x8a\xa0p\x12!\n\x1bMSG_AddFriendWithAckReuqest\x10\x8b\x80p\x12\"\n\x1cMSG_AddFriendWithAckResponse\x10\x8b\xa0p\x12\"\n\x1cMSG_AddFriendAskTargetNotice\x10\x8c\x80p\x12!\n\x1bMSG_AddFriendInteractNotice\x10\x8c\xa0p\x12\x1d\n\x17MSG_AddFriendAckRequest\x10\x8d\x80p\x12\x1e\n\x18MSG_AddFriendAckResponse\x10\x8d\xa0p\x12\x1d\n\x17MSG_RemoveFriendRequest\x10\x8e\x80p\x12\x1e\n\x18MSG_RemoveFriendResponse\x10\x8e\xa0p\x12\"\n\x1cMSG_FriendGiveEnergy_Request\x10\x8f\x80p\x12#\n\x1dMSG_FriendGiveEnergy_Response\x10\x8f\xa0p\x12$\n\x1eMSG_FriendGatherEnergy_Request\x10\x90\x80p\x12%\n\x1fMSG_FriendGatherEnergy_Response\x10\x90\xa0p\x12 \n\x1aMSG_FriendHeadIcon_Request\x10\x91\x80p\x12!\n\x1bMSG_FriendHeadIcon_Response\x10\x91\xa0p\x12&\n MSG_FriendCheckIconState_Request\x10\x92\x80p\x12\'\n!MSG_FriendCheckIconState_Response\x10\x92\xa0p\x12\"\n\x1cMSG_FriendAddContact_Request\x10\x93\x80p\x12\"\n\x1cMSG_FriendEnergyTimes_Notice\x10\x94\x80p\x12%\n\x1fMSG_RemoveRecentContact_Request\x10\x95\x80p\x12&\n MSG_RemoveRecentContact_Response\x10\x95\xa0p\x12\x1d\n\x17MSG_CangqiongPK_Request\x10\x81\x80t\x12\x1e\n\x18MSG_CangqiongPK_Response\x10\x80\xa0t\x12\x1e\n\x18MSG_CangqiongRank_Notice\x10\x82\x80t\x12 \n\x1aMSG_CangqiongReward_Notice\x10\x83\x80t\x12\"\n\x1cMSG_Sign_NewerReward_Request\x10\x81\x80x\x12#\n\x1dMSG_Sign_NewerReward_Response\x10\x81\xa0x\x12\"\n\x1cMSG_Sign_DailyReward_Request\x10\x82\x80x\x12#\n\x1dMSG_Sign_DailyReward_Response\x10\x82\xa0x\x12%\n\x1fMSG_Sign_DailyVipReward_Request\x10\x83\x80x\x12&\n MSG_Sign_DailyVipReward_Response\x10\x83\xa0x\x12\"\n\x1cMSG_Sign_LevelReward_Request\x10\x84\x80x\x12#\n\x1dMSG_Sign_LevelReward_Response\x10\x84\xa0x\x12#\n\x1dMSG_Sign_OnlineReward_Request\x10\x85\x80x\x12$\n\x1eMSG_Sign_onlineReward_Response\x10\x85\xa0x\x12\'\n!Msg_Sign_DailyRetroactive_Requrst\x10\x86\x80x\x12(\n\"MSG_Sign_DailyRetroactive_Response\x10\x86\xa0x\x12 \n\x1aMsg_sign_PlayerInfo_Notice\x10\x87\xa0x\x12\x1d\n\x17Msg_Sign_Config_Request\x10\x88\x80x\x12\x1e\n\x18MSG_Sign_Config_Response\x10\x88\xa0x\x12\x1f\n\x19MSG_AddEnergyInfo_Request\x10\x89\x80x\x12 \n\x1aMSG_AddEnergyInfo_Response\x10\x89\xa0x\x12\x1b\n\x15MSG_AddEnergy_Request\x10\x90\x80x\x12\x1c\n\x16MSG_AddEnergy_Response\x10\x90\xa0x\x12\x1e\n\x18MSG_VIPAddEnergy_Request\x10\x91\x80x\x12\x1f\n\x19MSG_VIPAddEnergy_Response\x10\x91\xa0x\x12$\n\x1eMSG_NewServer_Activity_Request\x10\x92\x80x\x12%\n\x1fMSG_NewServer_Activity_Response\x10\x92\xa0x\x12)\n#MSG_Newserver_Activity_State_Notice\x10\x93\x80x\x12\'\n!Msg_Newserver_Activity_Cfg_Notice\x10\x94\x80x\x12\"\n\x1cMSG_Newserver_Charge_Request\x10\x95\x80x\x12#\n\x1dMSG_Newserver_Charge_Response\x10\x95\xa0x\x12!\n\x1bMSG_Newserver_Charge_Notice\x10\x96\x80x\x12%\n\x1fMSG_Newserver_ArenaRank_Request\x10\x97\x80x\x12&\n MSG_Newserver_ArenaRank_Response\x10\x97\xa0x\x12\'\n!MSG_Newserver_Recharge_Cfg_Notice\x10\x98\x80x\x12)\n#MSG_Newserver_Recharge_State_Notice\x10\x99\x80x\x12,\n&MSG_Newserver_ShopDiscount_Buy_Request\x10\x9a\x80x\x12-\n\'MSG_Newserver_ShopDiscount_Buy_Response\x10\x9a\xa0x\x12!\n\x1bMSG_Nation_CampUnion_Notice\x10\x81\x80|\x12\x17\n\x10MSG_Hold_Request\x10\x81\x80\x80\x01\x12\x18\n\x11MSG_Hold_Response\x10\x81\xa0\x80\x01\x12\x1a\n\x13MSG_Hold_Ack_Notice\x10\x82\x80\x80\x01\x12\x1b\n\x14MSG_Hold_Ack_Request\x10\x83\x80\x80\x01\x12\x1c\n\x15MSG_Hold_Ack_Response\x10\x83\xa0\x80\x01\x12\x1c\n\x15MSG_Hold_Down_Request\x10\x84\x80\x80\x01\x12\x1d\n\x16MSG_Hold_Down_Response\x10\x84\xa0\x80\x01\x12 \n\x19MSG_Hold_Interrupt_Notice\x10\x85\x80\x80\x01\x12!\n\x1aMSG_Hold_DelAppList_Notice\x10\x86\x80\x80\x01\x12\"\n\x1bMSG_Hold_AutoShield_Request\x10\x87\x80\x80\x01\x12#\n\x1cMSG_Hold_AutoShield_Response\x10\x87\xa0\x80\x01\x12!\n\x1aMSG_Hold_AutoShield_Notice\x10\x88\x80\x80\x01\x12\x1e\n\x17MSG_InterAction_Request\x10\x89\x80\x80\x01\x12\x1f\n\x18MSG_InterAction_Response\x10\x89\xa0\x80\x01\x12$\n\x1dMSG_CancelInterAction_Request\x10\x90\x80\x80\x01\x12%\n\x1eMSG_CancelInterAction_Response\x10\x90\xa0\x80\x01\x12\x1d\n\x16MSG_InterAction_Notice\x10\x91\xa0\x80\x01\x12#\n\x1cMSG_InterActionVerify_Notice\x10\x92\xa0\x80\x01\x12$\n\x1dMSG_InterActionVerify_Request\x10\x93\x80\x80\x01\x12%\n\x1eMSG_InterActionVerify_Response\x10\x93\xa0\x80\x01\x12 \n\x19MSG_InterAction_RequestEx\x10\x94\x80\x80\x01\x12!\n\x1aMSG_Marriage_Ready_Request\x10\x81\x80\x84\x01\x12\"\n\x1bMSG_Marriage_Ready_Response\x10\x81\xa0\x84\x01\x12\"\n\x1bMSG_Marry_LeaderAck_Request\x10\x82\x80\x84\x01\x12#\n\x1cMSG_Marry_LeaderAck_Response\x10\x82\xa0\x84\x01\x12!\n\x1aMSG_Marry_LeaderAck_Notice\x10\x83\xa0\x84\x01\x12\"\n\x1bMSG_Marry_MemberAck_Request\x10\x84\x80\x84\x01\x12#\n\x1cMSG_Marry_MemberAck_Response\x10\x84\xa0\x84\x01\x12%\n\x1eMSG_Marry_MemberCancel_Request\x10\x85\x80\x84\x01\x12&\n\x1fMSG_Marry_MemberCancel_Response\x10\x85\xa0\x84\x01\x12(\n!MSG_DivorceDeal_LeaderAck_Request\x10\x90\x80\x84\x01\x12)\n\"MSG_DivorceDeal_LeaderAck_Response\x10\x90\xa0\x84\x01\x12\'\n MSG_DivorceDeal_LeaderAck_Notice\x10\x91\xa0\x84\x01\x12(\n!MSG_DivorceDeal_MemberAck_Request\x10\x92\x80\x84\x01\x12)\n\"MSG_DivorceDeal_MemberAck_Response\x10\x92\xa0\x84\x01\x12+\n$MSG_DivorceDeal_MemberCancel_Request\x10\x93\x80\x84\x01\x12,\n%MSG_DivorceDeal_MemberCancel_Response\x10\x93\xa0\x84\x01\x12\x1f\n\x18MSG_DivorceForce_Request\x10\x94\x80\x84\x01\x12 \n\x19MSG_DivorceForce_Response\x10\x94\xa0\x84\x01\x12\x1f\n\x18MSG_Marriage_Info_Notice\x10\x95\xa0\x84\x01\x12\x1f\n\x18MSG_Title_Change_Request\x10\xa0\x80\x84\x01\x12 \n\x19MSG_Title_Change_Response\x10\xa0\xa0\x84\x01\x12!\n\x1aMSG_Marriage_March_Request\x10\xb0\x80\x84\x01\x12\"\n\x1bMSG_Marriage_March_Response\x10\xb0\xa0\x84\x01\x12&\n\x1fMSG_Marriage_MarchReady_Request\x10\xb1\x80\x84\x01\x12\'\n MSG_Marriage_MarchReady_Response\x10\xb1\xa0\x84\x01\x12\"\n\x1bMSG_Marriage_Success_Notice\x10\xb2\xa0\x84\x01\x12(\n!MSG_Channel_QQ_Get_Reward_Request\x10\x81\x80\x88\x01\x12)\n\"MSG_Channel_QQ_Get_Reward_Response\x10\x81\xa0\x88\x01\x12-\n&MSG_Channel_QQ_Get_Reward_List_Request\x10\x82\x80\x88\x01\x12.\n\'MSG_Channel_QQ_Get_Reward_List_Response\x10\x82\xa0\x88\x01\x12 \n\x19MSG_Rep_MoveToBag_Request\x10\x81\x80\x8c\x01\x12!\n\x1aMSG_Rep_MoveToBag_Response\x10\x81\xa0\x8c\x01\x12\"\n\x1bMSG_Rep_RecvFromBag_Request\x10\x82\x80\x8c\x01\x12#\n\x1cMSG_Rep_RecvFromBag_Response\x10\x82\xa0\x8c\x01\x12\x1f\n\x18MSG_Rep_OnConnect_Notice\x10\x83\xa0\x8c\x01\x12\x1d\n\x16MSG_Rep_RepInfo_Notice\x10\x84\xa0\x8c\x01\x12 \n\x19MSG_Rep_ChangeRep_Request\x10\x85\x80\x8c\x01\x12!\n\x1aMSG_Rep_ChangeRep_Response\x10\x85\xa0\x8c\x01\x12\x1d\n\x16MSG_Rep_Unlock_Request\x10\x86\x80\x8c\x01\x12\x1e\n\x17MSG_Rep_Unlock_Response\x10\x86\xa0\x8c\x01\x12&\n\x1fMSG_NewRoleAct_GetState_Request\x10\x81\x80\x90\x01\x12\'\n MSG_NewRoleAct_GetState_Response\x10\x81\xa0\x90\x01\x12!\n\x1aMSG_NewRoleAct_Buy_Request\x10\x82\x80\x90\x01\x12\"\n\x1bMSG_NewRoleAct_Buy_Response\x10\x82\xa0\x90\x01\x12\'\n MSG_NewRoleAct_GetReward_Request\x10\x83\x80\x90\x01\x12(\n!MSG_NewRoleAct_GetReward_Response\x10\x83\xa0\x90\x01\x12%\n\x1eMSG_NewRoleAct_SyncInfo_Notice\x10\x84\xa0\x90\x01\x12(\n!MSG_NewRoleAct_SyncActData_Notice\x10\x85\xa0\x90\x01\x12\'\n MSG_Guild_Day_Reward_Info_Notice\x10\x81\xa0\x94\x01\x12\'\n MSG_Guild_Get_Day_Reward_Request\x10\x82\x80\x94\x01\x12(\n!MSG_Guild_Get_Day_Reward_Response\x10\x82\xa0\x94\x01\x12!\n\x1aMSG_CharaceterTitle_Notice\x10\x81\xa0\x98\x01\x12\'\n MSG_ChangeCharacterTitle_Request\x10\x82\x80\x98\x01\x12(\n!MSG_ChangeCharacterTitle_Response\x10\x82\xa0\x98\x01\x12\x1e\n\x17MSG_EventLotteryRequest\x10\x81\x80\x9c\x01\x12\x1f\n\x18MSG_EventLotteryResponse\x10\x82\x80\x9c\x01\x12%\n\x1eMSG_EventLotteryGoodItemNotice\x10\x83\x80\x9c\x01\x12#\n\x1cMSG_ChargeRegressInfo_Notice\x10\x84\x80\x9c\x01\x12%\n\x1eMSG_IgnoreChargeRegress_Report\x10\x85\x80\x9c\x01\x12\"\n\x1bMSG_ActFireworksInfo_Notice\x10\x86\x80\x9c\x01\x12#\n\x1cMSG_ActFireworksInfo_Request\x10\x87\x80\x9c\x01\x12$\n\x1dMSG_ActFireworksInfo_Response\x10\x88\x80\x9c\x01\x12\x1f\n\x18MSG_ClientBtnInfo_Notice\x10\x89\x80\x9c\x01\x12\x1f\n\x18MSG_GateActStatus_Notice\x10\x8a\x80\x9c\x01\x12#\n\x1cMSG_LoginGifts_Status_Notice\x10\x8b\xa0\x9c\x01\x12\'\n MSG_LoginGifts_GetReward_Request\x10\x8c\x80\x9c\x01\x12(\n!MSG_LoginGifts_GetReward_Response\x10\x8c\xa0\x9c\x01\x12%\n\x1eMSG_OnearmBandit_Bless_Request\x10\x92\x80\x9c\x01\x12&\n\x1fMSG_OnearmBandit_Bless_Response\x10\x92\xa0\x9c\x01\x12&\n\x1fMSG_OnearmBandit_Reward_Request\x10\x93\x80\x9c\x01\x12\'\n MSG_OnearmBandit_Reward_Response\x10\x93\xa0\x9c\x01\x12%\n\x1eMSG_OnearmBandit_Record_Notice\x10\x94\x80\x9c\x01\x12$\n\x1dMSG_OnlineGifts_Status_Notice\x10\x8d\xa0\x9c\x01\x12(\n!MSG_OnlineGifts_GetReward_Request\x10\x8e\x80\x9c\x01\x12)\n\"MSG_OnlineGifts_GetReward_Response\x10\x8e\xa0\x9c\x01\x12\x1d\n\x16MSG_GetLuckInfoRequest\x10\x81\x80\xa0\x01\x12\x1e\n\x17MSG_GetLuckInfoResponse\x10\x82\x80\xa0\x01\x12\x1d\n\x16MSG_UpgradeLuckRequest\x10\x83\x80\xa0\x01\x12\x1e\n\x17MSG_UpgradeLuckResponse\x10\x84\x80\xa0\x01\x12\x1e\n\x17MSG_LuckReloadCfgNotice\x10\x85\x80\xa0\x01\x12\x1f\n\x18MSG_PotentialInfo_Notice\x10\x81\x80\xa4\x01\x12 \n\x19MSG_PotentialFeed_Request\x10\x82\x80\xa4\x01\x12!\n\x1aMSG_PotentialFeed_Response\x10\x82\xa0\xa4\x01\x12#\n\x1cMSG_PotentialReplace_Request\x10\x83\x80\xa4\x01\x12$\n\x1dMSG_PotentialReplace_Response\x10\x83\xa0\xa4\x01\x12#\n\x1cMSG_PotentialUpClass_Request\x10\x84\x80\xa4\x01\x12$\n\x1dMSG_PotentialUpClass_Response\x10\x84\xa0\xa4\x01\x12#\n\x1cMSG_PotentialTenFeed_Request\x10\x85\x80\xa4\x01\x12%\n\x1eMSG_PotentialTenFeed_Respoonse\x10\x85\xa0\xa4\x01\x12%\n\x1eMSG_PotentialAttrState_Request\x10\x86\x80\xa4\x01\x12&\n\x1fMSG_PotentialAttrState_Response\x10\x86\xa0\xa4\x01\x12&\n\x1fMSG_PotentialTenReplace_Request\x10\x87\x80\xa4\x01\x12\'\n MSG_PotentialTenReplace_Response\x10\x87\xa0\xa4\x01\x12$\n\x1dMSG_Couplepvp_ActInfo_Request\x10\x81\x80\xc0\x01\x12%\n\x1eMSG_Couplepvp_ActInfo_Response\x10\x81\xa0\xc0\x01\x12\"\n\x1bMSG_Couplepvp_Apply_Request\x10\x82\x80\xc0\x01\x12(\n!MSG_Couplepvp_EnterDungeon_Notice\x10\x83\x80\xc0\x01\x12)\n\"MSG_Couplepvp_EnterDungeon_Request\x10\x84\x80\xc0\x01\x12$\n\x1dMSG_Couplepvp_BattleInfo_Sync\x10\x85\x80\xc0\x01\x12&\n\x1fMSG_Couplepvp_BattleInfo_Result\x10\x86\x80\xc0\x01\x12#\n\x1cMSG_WingTrainAllInfo_Request\x10\x81\x80\xc4\x01\x12$\n\x1dMSG_WingTrainAllInfo_Response\x10\x82\x80\xc4\x01\x12\"\n\x1bMSG_WingTrainUpStar_Request\x10\x83\x80\xc4\x01\x12#\n\x1cMSG_WingTrainUpStar_Response\x10\x84\x80\xc4\x01\x12!\n\x1aMSG_WingTrainUpJie_Request\x10\x85\x80\xc4\x01\x12\"\n\x1bMSG_WingTrainUpJie_Response\x10\x86\x80\xc4\x01\x12(\n!MSG_WingTrainQueryWingPro_Request\x10\x87\x80\xc4\x01\x12)\n\"MSG_WingTrainQueryWingPro_Response\x10\x88\x80\xc4\x01\x12(\n!MSG_WingTrainQueryWingTip_Request\x10\x89\x80\xc4\x01\x12)\n\"MSG_WingTrainQueryWingTip_Response\x10\x8a\x80\xc4\x01\x12\x1e\n\x17MSG_WingTrainInfoNotice\x10\x8b\x80\xc4\x01\x12\x1e\n\x17MSG_RedBag_Send_Request\x10\x81\x80\xc8\x01\x12\x1f\n\x18MSG_RedBag_Send_Response\x10\x81\xa0\xc8\x01\x12\x18\n\x11MSG_RedBag_Notice\x10\x82\x80\xc8\x01\x12\x1e\n\x17MSG_RedBag_List_Request\x10\x83\x80\xc8\x01\x12\x1f\n\x18MSG_RedBag_List_Response\x10\x83\xa0\xc8\x01\x12\x1e\n\x17MSG_RedBag_Open_Request\x10\x84\x80\xc8\x01\x12\x1f\n\x18MSG_RedBag_Open_Response\x10\x84\xa0\xc8\x01\x12\x1f\n\x18MSG_RedBag_Count_Request\x10\x85\x80\xc8\x01\x12 \n\x19MSG_RedBag_Count_Response\x10\x85\xa0\xc8\x01\x12\x1e\n\x17MSG_RedBag_Login_Notice\x10\x86\xa0\xc8\x01\x12\x1d\n\x16MSG_Xinfa_Info_Request\x10\x81\x80\xcc\x01\x12\x1e\n\x17MSG_Xinfa_Info_Response\x10\x81\xa0\xcc\x01\x12 \n\x19MSG_Xinfa_Upgrade_Request\x10\x82\xa0\xcc\x01\x12!\n\x1aMSG_Xinfa_Upgrade_Response\x10\x82\xa0\xcc\x01\x12\x1f\n\x18MSG_Xiuzhen_Info_Request\x10\x81\x80\xd0\x01\x12 \n\x19MSG_Xiuzhen_Info_Response\x10\x81\xa0\xd0\x01\x12\"\n\x1bMSG_Xiuzhen_Upgrade_Request\x10\x82\x80\xd0\x01\x12#\n\x1cMSG_Xiuzhen_Upgrade_Response\x10\x82\xa0\xd0\x01\x12\x1e\n\x17MSG_Xiuzhen_Info_Notice\x10\x83\xa0\xd0\x01\x12\x1c\n\x14MSG_ErrCode_Response\x10\x80\x80\x80\x80\x03\x12!\n\x19MSG_DimensionTest_Require\x10\x81\x80\x80\x80\x04\x12\"\n\x1aMSG_DimensionTest_Response\x10\x82\x80\x80\x80\x04\x12%\n\x1dMSG_DimensionCharJoin_Require\x10\x83\x80\x80\x80\x04\x12&\n\x1eMSG_DimensionCharLeave_Require\x10\x84\x80\x80\x80\x04\x12!\n\x19MSG_DimensionChat_Require\x10\x85\x80\x80\x80\x04\x12\x1f\n\x17MSG_BattleMatch_Request\x10\x81\x80\x80\x80\x05\x12 \n\x18MSG_BattleCancel_Request\x10\x82\x80\x80\x80\x05\x12\x1f\n\x17MSG_BattleQuery_Request\x10\x83\x80\x80\x80\x05\x12#\n\x1bMSG_BigGetMatchInfo_Request\x10\x84\x80\x80\x80\x05\x12\x19\n\x11MSG_Battle_Inform\x10\x81\x80\x80\x80\x07\x12\x1e\n\x16MSG_RankTopPlayerLogin\x10\x82\x80\x80\x80\x07\x42\x02H\x01')
+  serialized_pb='\n\x13msg_id_define.proto*\xe6\x08\n\x10\x45GleoModuleIndex\x12\x14\n\x10MOD_SceneManager\x10\x01\x12\x13\n\x0fMOD_PlayerLobby\x10\x02\x12\x13\n\x0fMOD_ItemManager\x10\x03\x12\x14\n\x10MOD_QuestManager\x10\x04\x12\x14\n\x10MOD_SkillManager\x10\x05\x12\x1a\n\x16MOD_MagicWeaponManager\x10\x06\x12\x1a\n\x16MOD_BattlefieldManager\x10\x07\x12\x12\n\x0eMOD_VipManager\x10\x08\x12\x13\n\x0fMOD_ShopManager\x10\t\x12\x12\n\x0eMOD_JobManager\x10\n\x12\x12\n\x0eMOD_GemManager\x10\x0b\x12\x16\n\x12MOD_DungeonManager\x10\x0c\x12\x13\n\x0fMOD_MailManager\x10\r\x12\x14\n\x10MOD_EventManager\x10\x0e\x12\x11\n\rMOD_IUManager\x10\x0f\x12\x14\n\x10MOD_GuildManager\x10\x0f\x12\x17\n\x13MOD_PositionManager\x10\x10\x12\x15\n\x11MOD_CommonManager\x10\x11\x12\x16\n\x12MOD_FashionManager\x10\x12\x12\x1b\n\x17MOD_SpanIMBattleManager\x10\x13\x12\x18\n\x14MOD_RedPacketManager\x10\x14\x12\x14\n\x10MOD_MountManager\x10\x15\x12\x15\n\x11MOD_UIOpenManager\x10\x16\x12\x14\n\x10MOD_FightManager\x10\x17\x12\x18\n\x14MOD_SinglePvPManager\x10\x18\x12\x12\n\x0eMOD_PetManager\x10\x19\x12\x13\n\x0fMOD_TeamManager\x10\x1a\x12\x14\n\x10MOD_MatchManager\x10\x1b\x12\x0e\n\nMOD_Friend\x10\x1c\x12\x13\n\x0fMOD_CangQiongPk\x10\x1d\x12\x14\n\x10MOD_SignActivity\x10\x1e\x12\x0c\n\x08MOD_Hold\x10 \x12\x17\n\x13MOD_RelationManager\x10!\x12\x0f\n\x0bMOD_Channel\x10\"\x12\x0b\n\x07MOD_Rep\x10#\x12\x12\n\x0eMOD_NewRoleAct\x10$\x12\x16\n\x12MOD_GuildDayReward\x10%\x12\x16\n\x12MOD_CharacterTitle\x10&\x12\x12\n\x0eMOD_ActivityEx\x10\'\x12\x0c\n\x08MOD_Luck\x10(\x12\x11\n\rMOD_Potential\x10)\x12\x11\n\rMOD_CouplePVP\x10\x30\x12\x11\n\rMOD_WingTrain\x10\x31\x12\x13\n\x0fMOD_GuildRedBag\x10\x32\x12\r\n\tMOD_Xinfa\x10\x33\x12\x0f\n\x0bMOD_Xiuzhen\x10\x34\x12\x10\n\x0cMOD_SpanTeam\x10\x35\x12\x10\n\x0cMOD_MagicPet\x10\x36\x12\x10\n\x0cMOD_DpsnMaze\x10\x37\x12\x1b\n\x15MOD_DimensionExampler\x10\x80\x80\x01\x12\x18\n\x12MOD_BigWorldBattle\x10\x80\xa0\x01\x12\x15\n\x0fMOD_MsgToClient\x10\x80\xe0\x01*\xe8\x85\x03\n\x0e\x45GleoMessageId\x12\x1b\n\x15MSG_CodeResponse_Mask\x10\x80\x80\x03\x12\x1c\n\x16MSG_SceneReady_Request\x10\x81\x80@\x12\x1f\n\x19MSG_CharPosSubmit_Request\x10\x82\x80@\x12\x19\n\x13MSG_Teleport_Inform\x10\x83\x80\x04\x12\x1f\n\x19MSG_PLAYER_ROLE_BASE_INFO\x10\x84\x80\x04\x12\x1c\n\x16MSG_MessageCode_Notice\x10\x81\x80\x07\x12\x1c\n\x16MSG_SelectChar_Request\x10\x80\x80\x04\x12\x1d\n\x17MSG_SelectChar_Response\x10\x80\xa0\x04\x12\x1c\n\x16MSG_CreateChar_Request\x10\x81\x80\x08\x12\x1c\n\x16MSG_CharSummary_Notice\x10\x82\x80\x08\x12\x1b\n\x15MSG_StartPlay_Request\x10\x83\x80\x08\x12\x1c\n\x16MSG_StartPlay_Response\x10\x83\xa0\x08\x12 \n\x1aMSG_RandomCharName_Request\x10\x84\x80\x08\x12!\n\x1bMSG_RandomCharName_Response\x10\x84\xa0\x08\x12\x1b\n\x15MSG_LoginPos_Response\x10\x85\xa0\x08\x12\x1e\n\x18MSG_CharCountInfo_Notice\x10\x86\x80\x08\x12 \n\x1aMSG_PlayerKickSelf_Request\x10\x87\x80\x08\x12!\n\x1bMSG_PlayerKickSelt_Response\x10\x87\xa0\x08\x12\x1f\n\x19MSG_PlayerBaseInfo_Notice\x10\x88\x80\x08\x12\x1e\n\x18MSG_CLIENT_DATABASE_INIT\x10\x89\x80\x08\x12 \n\x1aMSG_CLIENT_DATABASE_UPDATE\x10\x8a\x80\x08\x12\x1f\n\x18MSG_CharSignalDataNotice\x10\x8b\x80\x80\x01\x12\x16\n\x10MSG_Item_Request\x10\x80\x80\x0c\x12\x17\n\x11MSG_Item_Response\x10\x81\x80\x0c\x12\x15\n\x0fMSG_Inv_Request\x10\x82\x80\x0c\x12\x16\n\x10MSG_Inv_Response\x10\x83\x80\x0c\x12\x17\n\x11MSG_Equip_Request\x10\x84\x80\x0c\x12\x1a\n\x14MSG_ItemAdd_Response\x10\x85\x80\x0c\x12\x19\n\x13MSG_UnEquip_Request\x10\x86\x80\x0c\x12\x19\n\x13MSG_ItemRm_Response\x10\x87\x80\x0c\x12\x1a\n\x14MSG_ItemSell_Request\x10\x88\x80\x0c\x12\x1b\n\x15MSG_ItemMove_Response\x10\x89\x80\x0c\x12\x19\n\x13MSG_ItemUse_Request\x10\x8a\x80\x0c\x12\x1a\n\x14MSG_ItemDis_Response\x10\x8b\x80\x0c\x12\x19\n\x13MSG_ItemDis_Request\x10\x8c\x80\x0c\x12\x1b\n\x15MSG_VitaInfo_Response\x10\x8d\x80\x0c\x12\x1a\n\x14MSG_VitaInfo_Request\x10\x8e\x80\x0c\x12\x17\n\x11MSG_Vita_Response\x10\x8f\x80\x0c\x12\x16\n\x10MSG_Vita_Request\x10\x90\x80\x0c\x12\x1a\n\x14MSG_EchInfo_Response\x10\x91\x80\x0c\x12\x19\n\x13MSG_EchInfo_Request\x10\x92\x80\x0c\x12\x1a\n\x14MSG_Enchant_Response\x10\x93\x80\x0c\x12\x19\n\x13MSG_Enchant_Request\x10\x94\x80\x0c\x12\x1a\n\x14MSG_EvaInfo_Response\x10\x95\x80\x0c\x12\x19\n\x13MSG_EvaInfo_Request\x10\x96\x80\x0c\x12\x1b\n\x15MSG_Evaluate_Response\x10\x97\x80\x0c\x12\x1a\n\x14MSG_Evaluate_Request\x10\x98\x80\x0c\x12\x15\n\x0fMSG_Slot_Inform\x10\x99\x80\x0c\x12\x16\n\x10MSG_Money_Inform\x10\x9a\x80\x0c\x12\x19\n\x13MSG_Combine_Request\x10\x9b\x80\x0c\x12\x1a\n\x14MSG_Combine_Response\x10\x9c\x80\x0c\x12\x18\n\x12MSG_Legacy_Request\x10\x9d\x80\x0c\x12\x19\n\x13MSG_Legacy_Response\x10\x9e\x80\x0c\x12\x18\n\x12MSG_EchOne_Request\x10\x9f\x80\x0c\x12\x19\n\x13MSG_EchOne_Response\x10\xa0\x80\x0c\x12\x19\n\x13MSG_MatComb_Request\x10\xa1\x80\x0c\x12\x1a\n\x14MSG_MatComb_Response\x10\xa2\x80\x0c\x12\x1a\n\x14MSG_ExtenBag_Request\x10\xa3\x80\x0c\x12\x1b\n\x15MSG_ExtenBag_Response\x10\xa4\x80\x0c\x12!\n\x1bMSG_GoldenBagTimes_Response\x10\xa5\x80\x0c\x12\x1f\n\x19MSG_GoldenBagUse_Response\x10\xa6\x80\x0c\x12 \n\x1aMSG_CharNameChange_Request\x10\xa7\x80\x0c\x12!\n\x1bMSG_CharNameChange_Response\x10\xa7\xa0\x0c\x12!\n\x1bMSG_ItemUse_Special_Request\x10\xa8\x80\x0c\x12 \n\x1aMSG_GoldenBagTimes_Request\x10\xa9\x80\x0c\x12\x1a\n\x14MSG_CharInfo_Request\x10\xaa\x80\x0c\x12\x1b\n\x15MSG_CharInfo_Response\x10\xaa\xa0\x0c\x12\x18\n\x12MSG_Item_RequestEX\x10\xab\x80\x0c\x12\x19\n\x13MSG_Item_ResponseEX\x10\xab\xa0\x0c\x12\x1d\n\x17MSG_CombineInfo_Request\x10\xac\x80\x0c\x12\x1e\n\x18MSG_CombineInfo_Response\x10\xac\xa0\x0c\x12\x1d\n\x17MSG_ItemReNew_RequestEX\x10\xad\x80\x0c\x12\x1e\n\x18MSG_ItemReNew_ResponseEX\x10\xae\x80\x0c\x12 \n\x1aMSG_RefreshProperty_Notice\x10\xaf\x80\x0c\x12%\n\x1fMSG_ItemEnduranceNormal_Request\x10\xb0\x80\x0c\x12&\n MSG_ItemEnduranceNormal_Response\x10\xb0\xa0\x0c\x12%\n\x1fMSG_ItemEnduranceXianfu_Request\x10\xb1\x80\x0c\x12&\n MSG_ItemEnduranceXianfu_Response\x10\xb1\xa0\x0c\x12$\n\x1eMSG_ItemEnduranceReset_Request\x10\xb2\x80\x0c\x12%\n\x1fMSG_ItemEnduranceReset_Response\x10\xb2\xa0\x0c\x12\x1e\n\x18MSG_ItemEndurance_Notice\x10\xb3\x80\x0c\x12$\n\x1eMSG_ItemEndurance_Cost_Request\x10\xb4\x80\x0c\x12%\n\x1fMSG_ItemEndurance_Cost_Response\x10\xb4\xa0\x0c\x12\x1a\n\x14MSG_Item_Dye_Request\x10\xb5\x80\x0c\x12\x1b\n\x15MSG_Item_Dye_Response\x10\xb5\xa0\x0c\x12\"\n\x1cMSG_Item_Dye_Replace_Request\x10\xb6\x80\x0c\x12#\n\x1dMSG_Item_Dye_Replace_Response\x10\xb6\xa0\x0c\x12 \n\x1aMSG_Item_Dye_Clear_Request\x10\xb7\x80\x0c\x12!\n\x1bMSG_Item_Dye_Clear_Response\x10\xb7\xa0\x0c\x12\x1a\n\x14MSG_Item_Exp_Request\x10\xb8\x80\x0c\x12\x1b\n\x15MSG_Item_Exp_Response\x10\xb8\xa0\x0c\x12 \n\x1aMSG_Item_OfflineExp_Notice\x10\xb9\x80\x0c\x12\x19\n\x13MSG_OpenGift_Notice\x10\xba\xa0\x0c\x12\x1f\n\x19MSG_PropertyChange_Notice\x10\xbb\xa0\x0c\x12\x1d\n\x17MSG_ReNew_Config_Notice\x10\xbc\xa0\x0c\x12!\n\x1bMSG_EquipRune_Mount_Request\x10\xbd\x80\x0c\x12\"\n\x1cMSG_EquipRune_Mount_Response\x10\xbd\xa0\x0c\x12#\n\x1dMSG_EquipRune_Unmount_Request\x10\xbe\x80\x0c\x12$\n\x1eMSG_EquipRune_Unmount_Response\x10\xbe\xa0\x0c\x12$\n\x1eMSG_EquipRune_Transfer_Request\x10\xbf\x80\x0c\x12%\n\x1fMSG_EquipRune_Transfer_Response\x10\xbf\xa0\x0c\x12$\n\x1eMSG_EquipRune_OpenSlot_Request\x10\xc0\x80\x0c\x12%\n\x1fMSG_EquipRune_OpenSlot_Response\x10\xc0\xa0\x0c\x12\"\n\x1cMSG_ExcuteTreasureMap_Notice\x10\xc1\xa0\x0c\x12\"\n\x1cMSG_IsSearchTreasury_Request\x10\xc2\x80\x0c\x12#\n\x1dMSG_IsSearchTreasury_Response\x10\xc2\xa0\x0c\x12\x1d\n\x17MSG_RankPetInfo_Request\x10\xc3\x80\x0c\x12\x1e\n\x18MSG_RankPetInfo_Response\x10\xc3\xa0\x0c\x12\x1c\n\x16MSG_EquipTrans_Request\x10\xc4\x80\x0c\x12\x1d\n\x17MSG_EquipTrans_Response\x10\xc4\xa0\x0c\x12!\n\x1bMSG_EquipTrans_Cost_Request\x10\xc5\x80\x0c\x12\"\n\x1cMSG_EquipTrans_Cost_Response\x10\xc5\xa0\x0c\x12\x1d\n\x17MSG_EquipAttach_Request\x10\xc6\x80\x0c\x12\x1e\n\x18MSG_EquipAttach_Response\x10\xc6\xa0\x0c\x12(\n\"MSG_AllItemEnduranceNormal_Request\x10\xc7\x80\x0c\x12)\n#MSG_AllItemEnduranceNormal_Response\x10\xc7\xa0\x0c\x12(\n\"MSG_AllItemEnduranceXianfu_Request\x10\xc8\x80\x0c\x12)\n#MSG_AllItemEnduranceXianfu_Response\x10\xc8\xa0\x0c\x12\"\n\x1cMSG_RankMagicPetInfo_Request\x10\xc9\x80\x0c\x12#\n\x1dMSG_RankMagicPetInfo_Response\x10\xc9\xa0\x0c\x12\x19\n\x13MSG_NPCPos_Response\x10\x80\x80\x10\x12\x1d\n\x17MSG_QuestAccept_Request\x10\x81\x80\x10\x12\x1d\n\x17MSG_QuestCommit_Request\x10\x82\x80\x10\x12\x1e\n\x18MSG_QuestAbandon_Request\x10\x83\x80\x10\x12\x1e\n\x18MSG_QuestCanAcc_Response\x10\x84\x80\x10\x12 \n\x1aMSG_QuestAccepted_Response\x10\x85\x80\x10\x12\x18\n\x12MSG_Daily_RESPONSE\x10\x86\x80\x10\x12\x1d\n\x17MSG_DailyCommit_Request\x10\x87\x80\x10\x12\x1d\n\x17MSG_QuestOther_Response\x10\x88\x80\x10\x12\x1b\n\x15MSG_QuestOther_Commit\x10\x89\x80\x10\x12\x1c\n\x16MSG_QuestAward_Ruquest\x10\x90\x80\x10\x12\x1b\n\x15MSG_QuestVIP_Response\x10\x91\x80\x10\x12\x1f\n\x19MSG_QuestVIPAward_Request\x10\x92\x80\x10\x12\"\n\x1cMSG_BindPhoneSuccess_Request\x10\x93\x80\x10\x12\x1f\n\x19MSG_QuestCanAward_Request\x10\x94\x80\x10\x12 \n\x1aMSG_QuestCanAward_Response\x10\x95\x80\x10\x12\x1d\n\x17MSG_QuestGroup_Response\x10\x96\x80\x10\x12\x1c\n\x16MSG_QuestRand_Response\x10\x97\x80\x10\x12#\n\x1dMSG_QuestGroupCanAcc_Response\x10\x98\x80\x10\x12\"\n\x1cMSG_QuestRandCanAcc_Response\x10\x99\x80\x10\x12\x1f\n\x19MSG_QuestTeleport_Request\x10\x9a\x80\x10\x12 \n\x1aMSG_QuestTeleport_Response\x10\x9a\xa0\x10\x12\x1c\n\x16MSG_QuestOther_Request\x10\x9b\x80\x10\x12\"\n\x1cMSG_SkillInfo_Notice_Request\x10\x90\xa0\x14\x12\x1a\n\x14MSG_SkillInfo_Notice\x10\x81\xa0\x14\x12\x1b\n\x15MSG_SkillLvUp_Request\x10\x82\xa0\x14\x12\x1c\n\x16MSG_SkillLvUp_Response\x10\x83\xa0\x14\x12\x1c\n\x16MSG_SkillEquip_Request\x10\x84\xa0\x14\x12\x1d\n\x17MSG_SkillEquip_Response\x10\x85\xa0\x14\x12&\n MSG_MagicWeaponDecompose_Request\x10\x80\x80\x18\x12\'\n!MSG_MagicWeaponDecompose_Response\x10\x80\xa0\x18\x12\'\n!MSG_MagicWeaponFosterInfo_Request\x10\x81\x80\x18\x12(\n\"MSG_MagicWeaponFosterInfo_Response\x10\x81\xa0\x18\x12#\n\x1dMSG_MagicWeaponFoster_Request\x10\x82\x80\x18\x12$\n\x1eMSG_MagicWeaponFoster_Response\x10\x82\xa0\x18\x12)\n#MSG_MagicWeaponFosterAffirm_Request\x10\x83\x80\x18\x12*\n$MSG_MagicWeaponFosterAffirm_Response\x10\x83\xa0\x18\x12+\n%MSG_MagicWeaponSwallowPreview_Request\x10\x84\x80\x18\x12,\n&MSG_MagicWeaponSwallowPreview_Response\x10\x84\xa0\x18\x12$\n\x1eMSG_MagicWeaponSwallow_Request\x10\x85\x80\x18\x12%\n\x1fMSG_MagicWeaponSwallow_Response\x10\x85\xa0\x18\x12%\n\x1fMSG_MagicWeaponBookInfo_Request\x10\x86\x80\x18\x12&\n MSG_MagicWeaponBookInfo_Response\x10\x86\xa0\x18\x12.\n(MSG_MagicWeaponBookActivateGroup_Request\x10\x87\x80\x18\x12/\n)MSG_MagicWeaponBookActivateGroup_Response\x10\x87\xa0\x18\x12)\n#MSG_CallMagicWeaponUseStone_Request\x10\x88\x80\x18\x12*\n$MSG_CallMagicWeaponUseStone_Response\x10\x88\xa0\x18\x12\x1f\n\x19MSG_MagicWeaponOp_Request\x10\x89\x80\x18\x12 \n\x1aMSG_MagicWeaponOp_Response\x10\x89\xa0\x18\x12%\n\x1fMSG_MagicWeaponExchange_Request\x10\x8b\x80\x18\x12&\n MSG_MagicWeaponExchange_Response\x10\x8b\xa0\x18\x12\'\n!MSG_MagicWeaponDebrisInfo_Request\x10\x8c\x80\x18\x12(\n\"MSG_MagicWeaponDebrisInfo_Response\x10\x8c\xa0\x18\x12\'\n!MSG_MagicWeaponTryAdvance_Request\x10\x8d\x80\x18\x12(\n\"MSG_MagicWeaponTryAdvance_Response\x10\x8d\xa0\x18\x12\x1c\n\x16MSG_BtlHarvest_Request\x10\x81\x80\x1c\x12\"\n\x1cMSG_BtlHarvestCancel_Request\x10\x82\x80\x1c\x12#\n\x1dMSG_BtlHarvestStatus_Response\x10\x81\xa0\x1c\x12\x1a\n\x14MSG_BtlMatch_Request\x10\x83\x80\x1c\x12 \n\x1aMSG_BtlMatchCancel_Request\x10\x84\x80\x1c\x12!\n\x1bMSG_BtlMatchStatus_Response\x10\x83\xa0\x1c\x12\x18\n\x12MSG_BtlStat_Inform\x10\x85\x80\x1c\x12\x1c\n\x16MSG_BtlDeliver_Request\x10\x86\x80\x1c\x12\x1d\n\x17MSG_BtlDeliver_Response\x10\x86\xa0\x1c\x12\x1b\n\x15MSG_BtlEndStat_Inform\x10\x87\x80\x1c\x12\x1c\n\x16MSG_BtlInspire_Request\x10\x88\x80\x1c\x12\x1d\n\x17MSG_BtlInspire_Response\x10\x88\xa0\x1c\x12\x19\n\x13MSG_BtlTeamMatchRes\x10\x8a\x80\x1c\x12\x15\n\x0fMSG_BtlMatchRes\x10\x8b\x80\x1c\x12\x1a\n\x14MSG_BtlQuery_Request\x10\x8c\x80\x1c\x12#\n\x1dMSG_BtlMatchSendCallFriendURL\x10\x8d\xa0\x1c\x12\x1b\n\x15MSG_BtMatchAFK_Notice\x10\x8e\x80\x1c\x12\x1b\n\x15MSG_LoginGift_Request\x10\x80\x80 \x12\x1c\n\x16MSG_LoginGift_Response\x10\x80\xa0 \x12\x1e\n\x18MSG_GetLoginGift_Request\x10\x81\x80 \x12\x1d\n\x17MSG_Robolet_InfoImpulse\x10\x82\x80 \x12!\n\x1bMSG_QuarterCardGift_Request\x10\x83\x80 \x12\"\n\x1cMSG_QuarterCardGift_Response\x10\x83\xa0 \x12 \n\x1aMSG_QuarterCardInfo_Notice\x10\x84\x80 \x12\x19\n\x13MSG_GiftCard_Notice\x10\x85\x80 \x12!\n\x1bMSG_GiftCard_Reward_Request\x10\x86\x80 \x12\"\n\x1cMSG_GiftCard_Reward_Response\x10\x86\xa0 \x12\x1a\n\x14MSG_ShopList_Request\x10\x81\x80$\x12\x1b\n\x15MSG_ShopList_Response\x10\x81\xa0$\x12\x19\n\x13MSG_ShopBuy_Request\x10\x82\x80$\x12\x1a\n\x14MSG_ShopBuy_Response\x10\x82\xa0$\x12\x1e\n\x18MSG_ShopGoodsSold_Notice\x10\x83\xa0$\x12\x1a\n\x14MSG_ShopInfo_Request\x10\x84\x80$\x12\x1b\n\x15MSG_ShopInfo_Response\x10\x84\xa0$\x12\x1e\n\x18MSG_ShopGoodsBuy_Request\x10\x85\x80$\x12\x1f\n\x19MSG_ShopGoodsBuy_Response\x10\x85\xa0$\x12\x1d\n\x17MSG_ShopRefresh_Request\x10\x86\x80$\x12\x1e\n\x18MSG_ShopRefresh_Response\x10\x86\xa0$\x12\x1e\n\x18MSG_MallGoodsBuy_Request\x10\x87\x80$\x12\x1f\n\x19MSG_MallGoodsBuy_Response\x10\x87\xa0$\x12\x1a\n\x14MSG_MallInfo_Request\x10\x88\x80$\x12\x1b\n\x15MSG_MallInfo_Response\x10\x88\xa0$\x12\x1e\n\x18MSG_BackGoodsBuy_Request\x10\x89\x80$\x12\x1f\n\x19MSG_BackGoodsBuy_Response\x10\x89\xa0$\x12\x1d\n\x17MSG_BuyBackInfo_Request\x10\x8a\x80$\x12\x1e\n\x18MSG_BuyBackInfo_Response\x10\x8a\xa0$\x12\x1e\n\x18MSG_Consign_List_Request\x10\x8b\x80$\x12\x1f\n\x19MSG_Consign_List_Response\x10\x8b\xa0$\x12\x1c\n\x16MSG_Consign_Up_Request\x10\x8c\x80$\x12\x1d\n\x17MSG_Consign_Up_Response\x10\x8c\xa0$\x12\x1e\n\x18MSG_Consign_Down_Request\x10\x8d\x80$\x12\x1f\n\x19MSG_Consign_Down_Response\x10\x8d\xa0$\x12\x1d\n\x17MSG_Consign_Buy_Request\x10\x8e\x80$\x12\x1e\n\x18MSG_Consign_Buy_Response\x10\x8e\xa0$\x12 \n\x1aMSG_Consign_MyList_Request\x10\x8f\x80$\x12!\n\x1bMSG_Consign_MyList_Response\x10\x8f\xa0$\x12\x1d\n\x17MSG_Consign_Tip_Request\x10\x90\x80$\x12\x1e\n\x18MSG_Consign_Tip_Response\x10\x90\xa0$\x12#\n\x1dMSG_Consign_GetReward_Request\x10\x91\x80$\x12$\n\x1eMSG_Consign_GetReward_Response\x10\x91\xa0$\x12#\n\x1dMSG_ExchangeShop_Info_Request\x10\x92\x80$\x12$\n\x1eMSG_ExchangeShop_Info_Response\x10\x92\xa0$\x12!\n\x1bMSG_ExchangeShop_Ex_Request\x10\x93\x80$\x12\"\n\x1cMSG_ExchangeShop_Ex_Response\x10\x93\xa0$\x12 \n\x1aMSG_Consign_Search_Request\x10\x94\x80$\x12!\n\x1bMSG_Consign_Search_Response\x10\x94\xa0$\x12!\n\x1bMSG_Consign_HotSale_Request\x10\x95\x80$\x12\"\n\x1cMSG_Consign_HotSale_Response\x10\x95\xa0$\x12\"\n\x1cMSG_Consign_ShowInfo_Request\x10\x96\x80$\x12#\n\x1dMSG_Consign_ShowInfo_Response\x10\x96\xa0$\x12#\n\x1dMSG_MallGoodsSendGift_Request\x10\x97\x80$\x12$\n\x1eMSG_MallGoodsSendGift_Response\x10\x97\xa0$\x12#\n\x1dMSG_ExchangeShop_List_Request\x10\x98\x80$\x12$\n\x1eMSG_ExchangeShop_List_Response\x10\x98\xa0$\x12\x1b\n\x15MSG_ChangeJob_Request\x10\x81\x80(\x12\x1c\n\x16MSG_ChangeJob_Response\x10\x82\x80(\x12 \n\x1aMSG_CheckTransCamp_Request\x10\x83\x80(\x12!\n\x1bMSG_CheckTransCamp_Response\x10\x83\xa0(\x12!\n\x1bMSG_TransCampSingle_Request\x10\x84\x80(\x12\"\n\x1cMSG_TransCampSingle_Response\x10\x84\xa0(\x12!\n\x1bMSG_TransCampLeader_Request\x10\x85\x80(\x12\"\n\x1cMSG_TransCampLeader_Response\x10\x85\xa0(\x12\x1e\n\x18MSG_TransCampWait_Notice\x10\x86\xa0(\x12\x1f\n\x19MSG_TransMemberOk_Request\x10\x87\x80(\x12 \n\x1aMSG_TransMemberOk_Response\x10\x87\xa0(\x12#\n\x1dMSG_TransMemberCancel_Request\x10\x88\x80(\x12$\n\x1eMSG_TransMemberCancel_Response\x10\x88\xa0(\x12!\n\x1bMSG_TransCampSuccess_Notice\x10\x89\xa0(\x12 \n\x1aMSG_TransCampMember_Notice\x10\x8a\xa0(\x12 \n\x1aMSG_ReadyTransCamp_Request\x10\x8b\x80(\x12!\n\x1bMSG_ReadyTransCamp_Response\x10\x8b\xa0(\x12!\n\x1bMSG_ChangeJob_Query_Request\x10\x8c\x80(\x12\"\n\x1cMSG_ChangeJob_Query_Response\x10\x8c\xa0(\x12\x1a\n\x14MSG_GemState_Request\x10\x81\x80,\x12\x1b\n\x15MSG_GemState_Response\x10\x82\x80,\x12\x1c\n\x16MSG_GemCompose_Request\x10\x83\x80,\x12\x1d\n\x17MSG_GemCompose_Response\x10\x83\x80/\x12!\n\x1bMSG_GemQuickCompose_Request\x10\x84\x80,\x12\"\n\x1cMSG_GemQuickCompose_Response\x10\x85\x80,\x12\x1e\n\x18MSG_GemTransform_Request\x10\x86\x80,\x12\x1f\n\x19MSG_GemTransform_Response\x10\x87\x80,\x12\x1c\n\x16MSG_GemEnchase_Request\x10\x88\x80,\x12\x1d\n\x17MSG_GemEnchase_Response\x10\x89\x80,\x12\x1b\n\x15MSG_GemRemove_Request\x10\x8a\x80,\x12\x1c\n\x16MSG_GemRemove_Response\x10\x8b\x80,\x12\x1b\n\x15MSG_GemUnlock_Request\x10\x8c\x80,\x12\x1c\n\x16MSG_GemUnlock_Response\x10\x8d\x80,\x12\'\n!MSG_GemComposeQuick_Query_Request\x10\x8e\x80,\x12(\n\"MSG_GemComposeQuick_Query_Response\x10\x8f\x80,\x12)\n#MSG_GemComposeQuick_Compose_Request\x10\x90\x80,\x12*\n$MSG_GemComposeQuick_Compose_Response\x10\x91\x80,\x12!\n\x1bMSG_GemCutting_Base_Request\x10\x92\x80,\x12\"\n\x1cMSG_GemCutting_Base_Response\x10\x92\xa0,\x12$\n\x1eMSG_GemCutting_Element_Request\x10\x93\x80,\x12%\n\x1fMSG_GemCutting_Element_Response\x10\x93\xa0,\x12(\n\"MSG_GemCutting_Base_Detail_Request\x10\x94\x80,\x12)\n#MSG_GemCutting_Base_Detail_Response\x10\x94\xa0,\x12+\n%MSG_GemCutting_Element_Detail_Request\x10\x95\x80,\x12,\n&MSG_GemCutting_Element_Detail_Response\x10\x95\xa0,\x12\"\n\x1cMSG_GemCutting_Reset_Request\x10\x96\x80,\x12#\n\x1dMSG_GemCutting_Reset_Response\x10\x96\xa0,\x12 \n\x1aMSG_DungeonRestart_Request\x10\x81\x80\x30\x12\x1d\n\x17MSG_DungeonNext_Request\x10\x82\x80\x30\x12 \n\x1aMSG_DungeonReward_Requrest\x10\x83\x80\x30\x12\x1f\n\x19MSG_DungeonState_Response\x10\x84\x80\x30\x12\x1c\n\x16MSG_Callfriend_Request\x10\x85\x80\x30\x12\x1d\n\x17MSG_Callfriend_Response\x10\x86\x80\x30\x12\x1b\n\x15MSG_ApplyTeam_Request\x10\x87\x80\x30\x12\x1c\n\x16MSG_ApplyTeam_Response\x10\x87\xa0\x30\x12\"\n\x1cMSG_ActivityTeamList_Request\x10\x88\x80\x30\x12#\n\x1dMSG_ActivityTeamList_Response\x10\x89\x80\x30\x12 \n\x1aMSG_ForceApplyTeam_Request\x10\x90\x80\x30\x12!\n\x1bMSG_ForceApplyTeam_Response\x10\x90\xa0\x30\x12 \n\x1aMSG_QuickBuildTeam_Request\x10\x91\x80\x30\x12!\n\x1bMSG_QuickBuildTeam_Response\x10\x92\x80\x30\x12\x1e\n\x18MSG_DungeonEnter_Request\x10\x93\x80\x30\x12\x1f\n\x19MSG_DungeonEnter_Response\x10\x93\xa0\x30\x12\x1e\n\x18MSG_DungeonLeave_Request\x10\x94\x80\x30\x12\x1f\n\x19MSG_DungeonLeave_Response\x10\x94\xa0\x30\x12\x1e\n\x18MSG_DungeonStart_Request\x10\x95\x80\x30\x12\x1f\n\x19MSG_DungeonStart_Response\x10\x95\xa0\x30\x12\x1d\n\x17MSG_DungeonList_Request\x10\x96\x80\x30\x12\x1e\n\x18MSG_DungeonList_Response\x10\x96\xa0\x30\x12 \n\x1aMSG_DungeonSettleUp_Notice\x10\x97\x80\x30\x12\x1d\n\x17MSG_DungeonDraw_Request\x10\x98\x80\x30\x12\x1e\n\x18MSG_DungeonDraw_Response\x10\x98\xa0\x30\x12\x1c\n\x16MSG_DungeonStat_Notice\x10\x99\x80\x30\x12#\n\x1dMSG_DungeonMonsterWave_Notice\x10\x9a\x80\x30\x12,\n&MSG_DungeonRecoverMedicinePrice_Notice\x10\x9b\x80\x30\x12\x1d\n\x17MSG_DungeonRush_Request\x10\x9c\x80\x30\x12\x1e\n\x18MSG_DungeonRush_Response\x10\x9c\xa0\x30\x12\x1b\n\x15MSG_DungeonRun_Notice\x10\x9d\x80\x30\x12\x1e\n\x18MSG_DungeonUnlock_Notice\x10\x9e\x80\x30\x12#\n\x1dMSG_DungeonResetCount_Request\x10\xa0\x80\x30\x12$\n\x1eMSG_DungeonResetCount_Response\x10\xa0\xa0\x30\x12%\n\x1fMSG_DungeonGetRoadChest_Request\x10\xa1\x80\x30\x12&\n MSG_DungeonGetRoadChest_Response\x10\xa1\xa0\x30\x12\'\n!MSG_DungeonGetRegionChest_Request\x10\xa2\x80\x30\x12(\n\"MSG_DungeonGetRegionChest_Response\x10\xa2\xa0\x30\x12 \n\x1aMSG_DungeonOpposite_Notice\x10\xa3\xa0\x30\x12 \n\x1aMSG_DungeonGetInfo_Request\x10\xa4\x80\x30\x12!\n\x1bMSG_DungeonGetInfo_Response\x10\xa4\xa0\x30\x12*\n$MSG_DungeonListBuyEnterTimes_Request\x10\xa5\x80\x30\x12+\n%MSG_DungeonListBuyEnterTimes_Response\x10\xa5\xa0\x30\x12\'\n!MSG_DungeonTeamEnterVerify_Notice\x10\xa6\xa0\x30\x12&\n MSG_DungeonPlayerConfirm_Request\x10\xa7\x80\x30\x12\'\n!MSG_DungeonPlayerConfirm_Response\x10\xa7\xa0\x30\x12\x30\n*MSG_DungeonPlayerRefuseEnterDungeon_Notice\x10\xa8\xa0\x30\x12\x38\n2MSG_DungeonPlayerInconformityEnterCondition_Notice\x10\xa9\xa0\x30\x12\x31\n+MSG_DungeonPlayerConfirmEnterOffline_Notice\x10\xaa\xa0\x30\x12 \n\x1aMSG_DungeonStoryOp_Request\x10\xab\x80\x30\x12!\n\x1bMSG_DungeonStoryOp_Response\x10\xab\xa0\x30\x12#\n\x1dMSG_DungeonClientEvent_Notice\x10\xac\xa0\x30\x12\x1e\n\x18MSG_EGSToAISEvent_Report\x10\xad\xa0\x30\x12\"\n\x1cMSG_EnterDynamicPlace_Report\x10\xae\x80\x30\x12\x1f\n\x19MSG_TeleportPlayer_Notice\x10\xaf\xa0\x30\x12\x1f\n\x19MSG_ProcessCollect_Report\x10\xb0\x80\x30\x12\x1e\n\x18MSG_OpCollection_Request\x10\xb1\x80\x30\x12\x1f\n\x19MSG_OpCollection_Response\x10\xb1\xa0\x30\x12\x1a\n\x14MSG_SpawnBot_Request\x10\xb2\x80\x30\x12\x1b\n\x15MSG_SpawnBot_Response\x10\xb2\xa0\x30\x12,\n&MSG_DungeonPlayerWildBossDmgRankNotice\x10\xb3\xa0\x30\x12(\n\"MSG_DungeonPlayerWildBossDmgNotice\x10\xb4\xa0\x30\x12.\n(MSG_DungeonDisPlayWildBossDmgTableNotice\x10\xb5\xa0\x30\x12)\n#MSG_DungeonWildBossLocation_Request\x10\xb6\x80\x30\x12*\n$MSG_DungeonWildBossLocation_Response\x10\xb7\xa0\x30\x12*\n$MSG_DungeonIsSearchingWildBossNotice\x10\xb8\xa0\x30\x12\x35\n/MSG_DungeonPlayerTooLongNotAttackWildBossNotice\x10\xb9\xa0\x30\x12\x1b\n\x15MSG_EntityKill_Report\x10\xba\x80\x30\x12\x1a\n\x14MSG_SceneFail_Notice\x10\xbb\xa0\x30\x12\x1c\n\x16MSG_BotChangeHp_Notice\x10\xbc\xa0\x30\x12\x1b\n\x15MSG_GroupSpawn_Notice\x10\xbd\xa0\x30\x12$\n\x1eMSG_NewGroupMonsterCome_Notice\x10\xbe\xa0\x30\x12\x19\n\x13MSG_Respawn_Request\x10\xbf\x80\x30\x12\x1a\n\x14MSG_Respawn_Response\x10\xbf\xa0\x30\x12\x1f\n\x19MSG_EntityExeSkill_Report\x10\xc0\x80\x30\x12\x1d\n\x17MSG_AISystemBuff_Notice\x10\xc1\xa0\x30\x12\x1e\n\x18MSG_AISystemSkill_Notice\x10\xc2\xa0\x30\x12 \n\x1aMSG_AIDungeonSettle_Notice\x10\xc3\xa0\x30\x12\x1f\n\x19MSG_StarRatingInfo_Notice\x10\xc4\x80\x30\x12\"\n\x1cMSG_EnterLinkDungeon_Request\x10\xc5\x80\x30\x12#\n\x1dMSG_LinkDungeon_Result_Notice\x10\xc6\xa0\x30\x12\x1e\n\x18MSG_WorldBossRank_Notice\x10\xc7\xa0\x30\x12 \n\x1aMSG_WorldBossResult_Notice\x10\xc8\xa0\x30\x12\x1f\n\x19MSG_WorldBossEnterRequest\x10\xc9\x80\x30\x12 \n\x1aMSG_WorldBossEnterResponse\x10\xc9\xa0\x30\x12\x1e\n\x18MSG_WorldBossOpen_Notice\x10\xd0\xa0\x30\x12$\n\x1eMSG_DungeonContinueKill_Notice\x10\xd1\xa0\x30\x12\x1b\n\x15MSG_MatchEnter_Notice\x10\xd2\xa0\x30\x12!\n\x1bMSG_CancelCollection_Notice\x10\xd3\xa0\x30\x12\x31\n+MSG_DungeonEnterWeddingDungeonDialog_Notice\x10\xd4\xa0\x30\x12,\n&MSG_DungeonEnterWeddingDungeon_Request\x10\xd5\x80\x30\x12-\n\'MSG_DungeonEnterWeddingDungeon_Response\x10\xd5\xa0\x30\x12,\n&MSG_DungeonBuyWeddingPlayerNum_Request\x10\xd6\x80\x30\x12-\n\'MSG_DungeonBuyWeddingPlayerNum_Response\x10\xd6\xa0\x30\x12#\n\x1dMSG_WeddingDungeonInfo_Notice\x10\xd7\xa0\x30\x12\x34\n.MSG_DungeonRequireFriendWeddingDungeon_Request\x10\xd8\x80\x30\x12\x35\n/MSG_DungeonRequireFriendWeddingDungeon_Response\x10\xd8\xa0\x30\x12\x33\n-MSG_DungeonRequireGuildWeddingDungeon_Request\x10\xd9\x80\x30\x12\x34\n.MSG_DungeonRequireGuildWeddingDungeon_Response\x10\xd9\xa0\x30\x12-\n\'MSG_DungeonCreateWeddingDungeon_Request\x10\xda\x80\x30\x12.\n(MSG_DungeonCreateWeddingDungeon_Response\x10\xda\xa0\x30\x12,\n&MSG_DungeonBeginPerformWedding_Request\x10\xdb\x80\x30\x12-\n\'MSG_DungeonBeginPerformWedding_Response\x10\xdb\xa0\x30\x12+\n%MSG_DungeonBeginPerformWedding_Notice\x10\xdc\xa0\x30\x12(\n\"MSG_DungeonBuyWeddingCandy_Request\x10\xdd\x80\x30\x12)\n#MSG_DungeonBuyWeddingCandy_Response\x10\xdd\xa0\x30\x12$\n\x1eMSG_DungeonWeddingDraw_Request\x10\xde\x80\x30\x12%\n\x1fMSG_DungeonWeddingDraw_Response\x10\xde\xa0\x30\x12,\n&MSG_DungeonCreateWeddingDungeon_Notice\x10\xdf\xa0\x30\x12\x1e\n\x18MSG_CharDeathInfo_Notice\x10\xe0\xa0\x30\x12 \n\x1aMSG_OpCollectionEnd_Notice\x10\xe1\xa0\x30\x12\x19\n\x13MSG_OpBench_Request\x10\xe2\x80\x30\x12\x1a\n\x14MSG_OpBench_Response\x10\xe2\xa0\x30\x12\x1d\n\x17MSG_GroupDespawn_Notice\x10\xe3\xa0\x30\x12\x1b\n\x15MSG_AIPetSkill_Notice\x10\xe4\xa0\x30\x12&\n MSG_DungeonBoatingStatus_Request\x10\xf1\x80\x30\x12\'\n!MSG_DungeonBoatingStatus_Response\x10\xf1\xa0\x30\x12#\n\x1dMSG_MultiBoatingStart_Request\x10\xf2\x80\x30\x12$\n\x1eMSG_MultiBoatingStart_Response\x10\xf2\xa0\x30\x12!\n\x1bMSG_MultiBoatingEnd_Request\x10\xf3\x80\x30\x12\"\n\x1cMSG_MultiBoatingEnd_Response\x10\xf3\xa0\x30\x12#\n\x1dMSG_MultiBoatingStatus_Notice\x10\xf4\xa0\x30\x12#\n\x1dMSG_MultiBoatingReply_Request\x10\xf5\x80\x30\x12$\n\x1eMSG_MultiBoatingReply_Response\x10\xf5\xa0\x30\x12\x1e\n\x18MSG_SpanWildScore_Notice\x10\x81\xa1\x30\x12\x1e\n\x18MSG_SpanWildState_Notice\x10\x82\xa1\x30\x12!\n\x1bMSG_GetSpanWildState_Notice\x10\x83\xa1\x30\x12\x1f\n\x19MSG_PetBattleStar_Request\x10\x91\x81\x30\x12\x1e\n\x18MSG_PetBattleStar_Notice\x10\x91\xa1\x30\x12\x1f\n\x19MSG_PetBattleRound_Notice\x10\x92\xa1\x30\x12\x1c\n\x16MSG_SkipBattle_Request\x10\x93\x81\x30\x12\x1d\n\x17MSG_SkipBattle_Response\x10\x93\xa1\x30\x12\'\n!MSG_PetBattle_PvP_SettleUp_Notice\x10\x94\xa1\x30\x12-\n\'MSG_SPMonorBattle_RaceOne_Settle_Notice\x10\xa1\xa1\x30\x12-\n\'MSG_SPMonorBattle_RaceTwo_Settle_Notice\x10\xa2\xa1\x30\x12/\n)MSG_SPMonorBattle_RaceThree_Settle_Notice\x10\xa3\xa1\x30\x12+\n%MSG_SPMonorBattle_RaceOne_Rank_Notice\x10\xa4\xa1\x30\x12+\n%MSG_SPMonorBattle_RaceTwo_Rank_Notice\x10\xa5\xa1\x30\x12-\n\'MSG_SPMonorBattle_RaceThree_Rank_Notice\x10\xa6\xa1\x30\x12\x33\n-MSG_SPMonorBattle_RaceTwo_Capture_Rate_Notice\x10\xa7\xa1\x30\x12/\n)MSG_SPMonorBattle_RaceThree_Fight_Request\x10\xa8\x81\x30\x12\x30\n*MSG_SPMonorBattle_RaceThree_Fight_Response\x10\xa8\xa1\x30\x12\x31\n+MSG_SPMonorBattle_RaceThree_Unfight_Request\x10\xa9\x81\x30\x12\x32\n,MSG_SPMonorBattle_RaceThree_Unfight_Response\x10\xa9\xa1\x30\x12\x35\n/MSG_SPMonorBattle_RaceThree_Fight_Member_Notice\x10\xaa\xa1\x30\x12.\n(MSG_SPMonorBattle_RaceThree_Round_Notice\x10\xab\xa1\x30\x12&\n MSG_Guild_WildBossDmgRank_Notice\x10\xac\xa1\x30\x12\x1a\n\x14MSG_MailBox_Response\x10\x81\x80\x34\x12\x19\n\x13MSG_MailBox_Require\x10\x82\x80\x34\x12\x17\n\x11MSG_GmMail_Notice\x10\x83\x80\x34\x12\x1e\n\x18MSG_EventInspire_Request\x10\x85\x80\x38\x12\x1f\n\x19MSG_EventInspire_Response\x10\x86\x80\x38\x12\"\n\x1cMSG_EventSummonStat_Response\x10\x87\x80\x38\x12%\n\x1fMSG_EventSummonEndStat_Response\x10\x88\x80\x38\x12$\n\x1eMSG_EventJuBaoPenState_Request\x10\x89\x80\x38\x12%\n\x1fMSG_EventJuBaoPenState_Response\x10\x8a\x80\x38\x12\'\n!MSG_EventPurchaseJuBaoPen_Request\x10\x8b\x80\x38\x12(\n\"MSG_EventPurchaseJuBaoPen_Response\x10\x8c\x80\x38\x12&\n MSG_EventGetJuBaoPenGift_Request\x10\x8d\x80\x38\x12\'\n!MSG_EventGetJuBaoPenGift_Response\x10\x8e\x80\x38\x12#\n\x1dMSG_EventLivenessInfo_Request\x10\x8f\x80\x38\x12$\n\x1eMSG_EventLivenessInfo_Response\x10\x90\x80\x38\x12(\n\"MSG_EventLivenessGetReward_Request\x10\x91\x80\x38\x12)\n#MSG_EventLivenessGetReward_Response\x10\x92\x80\x38\x12\x1e\n\x18MSG_ActivityEntry_Notice\x10\x93\x80\x38\x12\x1d\n\x17MSG_NewCharacter_Notice\x10\x94\x80\x38\x12\x1f\n\x19MSG_WildActStatus_Request\x10\x95\x80\x38\x12 \n\x1aMSG_WildActStatus_Response\x10\x95\xa0\x38\x12\x1e\n\x18MSG_WildActStatus_Notice\x10\x96\xa0\x38\x12\x1e\n\x18MSG_WildBossInfo_Request\x10\x97\x80\x38\x12\x1d\n\x17MSG_FestActivity_Notice\x10\x98\x80\x38\x12\x1a\n\x14MSG_EventMonsterWave\x10\xa0\x80\x38\x12 \n\x1aMSG_EventMatchPVP_Response\x10\xa1\xa0\x38\x12#\n\x1dMSG_EventJoinActivity_Request\x10\xb0\x80\x38\x12\x1b\n\x15MSG_TowerInfo_Request\x10\xb1\x80\x38\x12\x1c\n\x16MSG_TowerInfo_Response\x10\xb1\xa0\x38\x12$\n\x1eMSG_TowerGetFirstAward_Request\x10\xb2\x80\x38\x12%\n\x1fMSG_TowerGetFirstAward_Response\x10\xb2\xa0\x38\x12$\n\x1eMSG_TowerGetStageAward_Request\x10\xb3\x80\x38\x12%\n\x1fMSG_TowerGetStageAward_Response\x10\xb3\xa0\x38\x12\x1c\n\x16MSG_TowerReset_Request\x10\xb4\x80\x38\x12\x1d\n\x17MSG_TowerReset_Response\x10\xb4\xa0\x38\x12\x1b\n\x15MSG_TowerRush_Request\x10\xb5\x80\x38\x12\x1c\n\x16MSG_TowerRush_Response\x10\xb5\xa0\x38\x12\x1c\n\x16MSG_EnterTower_Request\x10\xb6\x80\x38\x12\x1d\n\x17MSG_EnterTower_Response\x10\xb6\xa0\x38\x12 \n\x1aMSG_TowerDungeonEnd_Notice\x10\xb7\x80\x38\x12 \n\x1aMSG_TowerRushState_Request\x10\xb8\x80\x38\x12!\n\x1bMSG_TowerRushState_Response\x10\xb8\xa0\x38\x12\"\n\x1cMSG_TowerRushClearCD_Request\x10\xb9\x80\x38\x12#\n\x1dMSG_TowerRushClearCD_Response\x10\xb9\xa0\x38\x12\'\n!MSG_EnterTeleportMainCity_Request\x10\xc0\x80\x38\x12(\n\"MSG_EnterTeleportMainCity_Response\x10\xc0\xa0\x38\x12!\n\x1bMSG_TowerRushCancel_Request\x10\xc1\x80\x38\x12\"\n\x1cMSG_TowerRushCancel_Response\x10\xc1\xa0\x38\x12 \n\x1aMSG_TowerRushResult_Notice\x10\xc2\x80\x38\x12\x1d\n\x17MSG_XiuXianInfo_Request\x10\xd0\x80\x38\x12\x1e\n\x18MSG_XiuXianInfo_Response\x10\xd0\xa0\x38\x12\x1a\n\x14MSG_XueWeiUp_Request\x10\xd1\x80\x38\x12\x1b\n\x15MSG_XueWeiUp_Response\x10\xd1\xa0\x38\x12\x17\n\x11MSG_DuJie_Request\x10\xd2\x80\x38\x12\x18\n\x12MSG_DuJie_Response\x10\xd2\xa0\x38\x12 \n\x1aMSG_XiuXianResetCD_Request\x10\xd3\x80\x38\x12!\n\x1bMSG_XiuXianResetCD_Response\x10\xd3\xa0\x38\x12#\n\x1dMSG_WestRegionNPCInfo_Request\x10\xe1\x80\x38\x12$\n\x1eMSG_WestRegionNPCInfo_Response\x10\xe1\xa0\x38\x12!\n\x1bMSG_WestRegionEnter_Request\x10\xe2\x80\x38\x12\"\n\x1cMSG_WestRegionEnter_Response\x10\xe2\xa0\x38\x12\'\n!MSG_EventDailyQuestInform_Request\x10\x80\x81\x38\x12(\n\"MSG_EventDailyQuestInform_Response\x10\x80\xa1\x38\x12\'\n!MSG_EventDailyQuestAnswer_Request\x10\x81\x81\x38\x12(\n\"MSG_EventDailyQuestAnswer_Response\x10\x81\xa1\x38\x12(\n\"MSG_EventWisdomQuestInform_Request\x10\x82\x81\x38\x12)\n#MSG_EventWisdomQuestInform_Response\x10\x82\xa1\x38\x12%\n\x1fMSG_EventWisdomQuestInfo_Notice\x10\x83\xa1\x38\x12%\n\x1fMSG_EventWisdomQuestStat_Notice\x10\x84\xa1\x38\x12\'\n!MSG_EventWisdomQuestResult_Notice\x10\x85\xa1\x38\x12\'\n!MSG_EventWisdomQuestActEnd_Notice\x10\x86\xa1\x38\x12(\n\"MSG_EventWisdomFirstAnswer_Request\x10\x87\x81\x38\x12)\n#MSG_EventWisdomFirstAnswer_Response\x10\x87\xa1\x38\x12)\n#MSG_EventWisdomSecondAnswer_Request\x10\x88\x81\x38\x12*\n$MSG_EventWisdomSecondAnswer_Response\x10\x88\xa1\x38\x12#\n\x1dMSG_EventWisdomCancel_Request\x10\x89\x81\x38\x12$\n\x1eMSG_EventWisdomCancel_Response\x10\x89\xa1\x38\x12 \n\x1aMsG_EventJoinRecord_Notice\x10\x8a\xa1\x38\x12\'\n!MSG_EventQuestRealRankList_Notice\x10\x8b\xa1\x38\x12%\n\x1fMSG_EventWisdomQuestOpen_Notice\x10\x8c\xa1\x38\x12*\n$MSG_EventActivateHappyEncount_Notice\x10\x8d\xa1\x38\x12&\n MSG_ExcutingHappyEncount_Request\x10\x8e\x81\x38\x12\'\n!MSG_ExcutingHappyEncount_Response\x10\x8e\xa1\x38\x12\x1e\n\x18MSG_EventWorship_Request\x10\x8f\x81\x38\x12\x1f\n\x19MSG_EventWorship_Response\x10\x8f\xa1\x38\x12$\n\x1eMSG_EventPlayerStatus_Response\x10\x90\xa1\x38\x12\x1e\n\x18MSG_ManorWorship_Request\x10\x91\x81\x38\x12\x1f\n\x19MSG_ManorWorship_Response\x10\x91\xa1\x38\x12%\n\x1fMSG_ImmortalMembersInfo_Request\x10\xb1\x80<\x12&\n MSG_ImmortalMembersInfo_Response\x10\xb1\xa0<\x12!\n\x1bMSG_ImStore_Giveout_Request\x10\x81\xc0<\x12\"\n\x1cMSG_ImStore_Giveout_Response\x10\x82\xc0<\x12 \n\x1aMSG_ImStore_Operate_Record\x10\x83\xc0<\x12\x1b\n\x15MSG_ImStore_Item_List\x10\x84\xc0<\x12\"\n\x1cMSG_ImStore_ItemInfo_Request\x10\x85\xc0<\x12#\n\x1dMSG_ImStore_ItemInfo_Response\x10\x86\xc0<\x12\x18\n\x12MSG_GuildId_Inform\x10\x81\xa0<\x12\x1d\n\x17MSG_GuildCreate_Request\x10\x81\x80<\x12\x1d\n\x17MSG_GuildSearch_Request\x10\x82\x80<\x12 \n\x1aMSG_GuildApplyJoin_Request\x10\x83\x80<\x12\"\n\x1cMSG_GuildCancelApply_Request\x10\x84\x80<\x12\x1e\n\x18MSG_GuildCreate_Response\x10\x81\x80?\x12\x1e\n\x18MSG_GuildSearch_Response\x10\x82\x80?\x12!\n\x1bMSG_GuildApplyJoin_Response\x10\x83\x80?\x12#\n\x1dMSG_GuildCancelApply_Response\x10\x84\x80?\x12 \n\x1aMSG_GuildQuickJoin_Request\x10\x86\x80<\x12!\n\x1bMSG_GuildQuickJoin_Response\x10\x86\x80?\x12\x1d\n\x17MSG_GuildInvite_Request\x10\x87\x80<\x12\x1e\n\x18MSG_GuildInvite_Response\x10\x87\x80?\x12\x1c\n\x16MSG_GuildInvite_Notice\x10\x88\x80?\x12\x1f\n\x19MSG_Guild_InnerOpIdxStart\x10\x8a\x80<\x12#\n\x1dMSG_GuildApplyConfirm_Request\x10\x8a\x80<\x12$\n\x1eMSG_GuildApplyConfirm_Response\x10\x8a\x80?\x12\x1e\n\x18MSG_GuildKickout_Request\x10\x8b\x80<\x12\x1f\n\x19MSG_GuildKickout_Response\x10\x8b\x80?\x12\x1d\n\x17MSG_GuildModify_Request\x10\x8c\x80<\x12\x1e\n\x18MSG_GuildModify_Response\x10\x8c\x80?\x12#\n\x1dMSG_GuildMemberModify_Request\x10\x8d\x80<\x12$\n\x1eMSG_GuildMemberModify_Response\x10\x8d\x80?\x12\x1d\n\x17MSG_GuildDetail_Request\x10\x8e\x80<\x12\x1e\n\x18MSG_GuildDetail_Response\x10\x8e\x80?\x12\x1f\n\x19MSG_GuildDailyLog_Request\x10\x8f\x80<\x12\x1d\n\x17MSG_GuildDonate_Request\x10\x90\x80<\x12\x1e\n\x18MSG_GuildDonate_Response\x10\x90\x80?\x12#\n\x1dMSG_GuildLeaderChange_Request\x10\x91\x80<\x12$\n\x1eMSG_GuildLeaderChange_Response\x10\x91\x80?\x12!\n\x1bMSG_GuildApplicants_Request\x10\x92\x80<\x12\"\n\x1cMSG_GuildApplicants_Response\x10\x92\x80?\x12 \n\x1aMSG_GuildRecruitAd_Request\x10\x93\x80<\x12!\n\x1bMSG_GuildRecruitAd_Response\x10\x93\x80?\x12\x1b\n\x15MSG_GuildQuit_Request\x10\x94\x80<\x12\x1c\n\x16MSG_GuildQuit_Response\x10\x94\x80?\x12\'\n!MSG_GuildMemberPostChange_Request\x10\x95\x80<\x12(\n\"MSG_GuildMemberPostChange_Response\x10\x95\x80?\x12\x1e\n\x18MSG_GuildLevelup_Request\x10\x96\x80<\x12\x1f\n\x19MSG_GuildLevelup_Response\x10\x96\x80?\x12!\n\x1bMSG_GuildMemberList_Request\x10\x97\x80<\x12\"\n\x1cMSG_GuildMemberList_Response\x10\x97\x80?\x12\x1d\n\x17MSG_GuildPayoff_Request\x10\x98\x80<\x12\x1e\n\x18MSG_GuildPayoff_Response\x10\x98\x80?\x12$\n\x1eMSG_GuildPayoffConfirm_Request\x10\x99\x80<\x12%\n\x1fMSG_GuildPayoffConfirm_Response\x10\x99\x80?\x12\x1d\n\x17MSG_GuildRecord_Request\x10\x9a\x80<\x12\x1e\n\x18MSG_GuildRecord_Response\x10\x9a\x80?\x12\x1e\n\x18MSG_BuildingLvUp_Request\x10\x9b\x80<\x12\x1f\n\x19MSG_BuildingLvUp_Response\x10\x9b\x80?\x12\x1c\n\x16MSG_SkillStudy_Request\x10\x9c\x80<\x12\x1d\n\x17MSG_SkillStudy_Response\x10\x9c\x80?\x12\x1c\n\x16MSG_SkillLearn_Request\x10\x9d\x80<\x12\x1d\n\x17MSG_SkillLearn_Response\x10\x9d\x80?\x12\x1d\n\x17MSG_SkillCDTime_Request\x10\x9e\x80<\x12\x1e\n\x18MSG_SkillCDTime_Response\x10\x9e\x80?\x12 \n\x1aMSG_GuildSkillInfo_Request\x10\x9f\x80<\x12!\n\x1bMSG_GuildSkillInfo_Response\x10\x9f\x80?\x12 \n\x1aMSG_SkillStudyInfo_Request\x10\xa0\x80<\x12!\n\x1bMSG_SkillStudyInfo_Response\x10\xa0\x80?\x12\x1c\n\x16MSG_GuildBless_Request\x10\xa1\x80<\x12\x1d\n\x17MSG_GuildBless_Response\x10\xa1\x80?\x12\x1e\n\x18MSG_EnterDrunkery_Notice\x10\xa2\x80<\x12\x1e\n\x18MSG_LeaveDrunkery_Notice\x10\xa3\x80<\x12\x17\n\x11MSG_Drink_Request\x10\xa4\x80<\x12\x18\n\x12MSG_Drink_Response\x10\xa4\x80?\x12\x1d\n\x17MSG_OpenBanquet_Request\x10\xa5\x80<\x12\x1e\n\x18MSG_OpenBanquet_Response\x10\xa5\x80?\x12\x1a\n\x14MSG_MakeWine_Request\x10\xa6\x80<\x12\x1b\n\x15MSG_MakeWine_Response\x10\xa6\x80?\x12!\n\x1bMSG_MakeWineResetCD_Request\x10\xa7\x80<\x12\"\n\x1cMSG_MakeWineResetCD_Response\x10\xa7\x80?\x12\x1c\n\x16MSG_BeKickouted_Notice\x10\xa8\x80<\x12\x1f\n\x19MSG_OpenGuildBoss_Request\x10\xa9\x80<\x12 \n\x1aMSG_OpenGuildBoss_Response\x10\xa9\x80?\x12\x1e\n\x18MSG_OpenGuildBoss_Notice\x10\xb0\x80<\x12\x1d\n\x17MSG_GuildBossEnd_Notice\x10\xb1\x80<\x12 \n\x1aMSG_GuildBossDamage_Notice\x10\xb2\x80?\x12\x1f\n\x19MSG_EnterGuildBoss_Report\x10\xb3\x80<\x12\x1b\n\x15MSG_ApplyRank_Request\x10\xb4\x80<\x12\x1c\n\x16MSG_ApplyRank_Response\x10\xb4\x80?\x12\x1f\n\x19MSG_GetBattleLord_Request\x10\xb5\x80<\x12 \n\x1aMSG_GetBattleLord_Response\x10\xb5\x80?\x12\x1e\n\x18MSG_JoinIMBattle_Request\x10\xb6\x80<\x12\x1f\n\x19MSG_JoinIMBattle_Response\x10\xb6\x80?\x12\"\n\x1cMSG_BattleDynamicInfo_Notice\x10\xb8\x80?\x12\x1d\n\x17MSG_BattleReward_Notice\x10\xb9\x80?\x12\x1e\n\x18MSG_SetCampMember_Notice\x10\xc0\x80?\x12\x1e\n\x18MSG_AddCampMember_Notice\x10\xc1\x80?\x12!\n\x1bMSG_DeleteCampMember_Notice\x10\xc2\x80?\x12!\n\x1bMSG_ModifyCampMember_Notice\x10\xc3\x80?\x12\x1f\n\x19MSG_MemberKillInfo_Notice\x10\xc4\x80?\x12!\n\x1bMSG_SignGuildBattle_Request\x10\xc5\x80<\x12\"\n\x1cMSG_SignGuildBattle_Response\x10\xc6\x80?\x12!\n\x1bMSG_GuildBossStatus_Request\x10\xc7\x80<\x12\"\n\x1cMSG_GuildBossStatus_Response\x10\xc7\x80?\x12!\n\x1bMSG_ApplyJoinConfirm_Notice\x10\xc8\x80?\x12!\n\x1bMSG_GuildMemberKill_Request\x10\xc9\x80<\x12\"\n\x1cMSG_GuildMemberKill_Response\x10\xc9\x80?\x12(\n\"MSG_GuildMemberHelpTelport_Request\x10\xca\x80<\x12)\n#MSG_GuildMemberHelpTelport_Response\x10\xca\x80?\x12\x1e\n\x18MSG_GuildDismiss_Request\x10\xcb\x80<\x12\x1f\n\x19MSG_GuildDismiss_Response\x10\xcb\x80?\x12$\n\x1eMSG_GuildCancelDismiss_Request\x10\xcc\x80<\x12%\n\x1fMSG_GuildCancelDismiss_Response\x10\xcc\x80?\x12\x1d\n\x17MSG_GuildDismiss_Notice\x10\xcd\x80<\x12 \n\x1aMSG_GuildStore_Info_Notice\x10\xce\xa0<\x12#\n\x1dMSG_GuildStore_Message_Notice\x10\xcf\xa0<\x12\'\n!MSG_GuildStore_GrantGoods_Request\x10\xd0\x80<\x12(\n\"MSG_GuildStore_GrantGoods_Response\x10\xd0\xa0<\x12%\n\x1fMSG_GuildStore_ExtenBag_Request\x10\xd1\x80<\x12&\n MSG_GuildStore_ExtenBag_Response\x10\xd1\xa0<\x12\"\n\x1cMSG_Enter_GuildManor_Request\x10\xe0\x80<\x12#\n\x1dMSG_Enter_GuildManor_Response\x10\xe0\x80?\x12!\n\x1bMSG_Quit_GuildManor_Request\x10\xe1\x80<\x12\"\n\x1cMSG_Quit_GuildManor_Response\x10\xe1\x80?\x12 \n\x1aMSG_Open_GuildFire_Request\x10\xe2\x80<\x12!\n\x1bMSG_Open_GuildFire_Response\x10\xe2\x80?\x12\x1f\n\x19MSG_GuildFire_Time_Notice\x10\xe3\xa0<\x12\x1f\n\x19MSG_Open_GuildFire_Notice\x10\xe4\xa0<\x12%\n\x1fMSG_Guild_Liveness_Info_Request\x10\xe5\x80<\x12&\n MSG_Guild_Liveness_Info_Response\x10\xe5\xa0<\x12+\n%MSG_Guild_Liveness_Get_Reward_Request\x10\xe6\x80<\x12,\n&MSG_Guild_Liveness_Get_Reward_Response\x10\xe6\xa0<\x12 \n\x1aMSG_DynamicNotice_Response\x10\x81\x80\x44\x12\x1a\n\x14MSG_NPCInfo_Response\x10\x82\x80\x44\x12\x16\n\x10MSG_Chat_Require\x10\x83\x80\x44\x12\x17\n\x11MSG_Chat_Response\x10\x84\x80\x44\x12\x1e\n\x18MSG_Chat_Private_Require\x10\x85\x80\x44\x12\x1f\n\x19MSG_Charge_Config_Require\x10\x86\x80\x44\x12 \n\x1aMSG_Charge_Config_Response\x10\x86\xa0\x44\x12 \n\x1aMSG_UpdateCharMoney_Notice\x10\x87\x80\x44\x12\x1a\n\x14MSG_PathFind_Request\x10\x88\x80\x44\x12\x1b\n\x15MSG_PathFind_Response\x10\x88\xa0\x44\x12\x1d\n\x17MSG_NpcTeleport_Request\x10\x89\x80\x44\x12\x1e\n\x18MSG_NpcTeleport_Response\x10\x89\xa0\x44\x12\x1a\n\x14MSG_RankInfo_Request\x10\x8a\x80\x44\x12\x1b\n\x15MSG_CharRank_Response\x10\x8b\x80\x44\x12\x1c\n\x16MSG_GuildRank_Response\x10\x8c\x80\x44\x12\x1f\n\x19MSG_CharMineRank_Response\x10\x8d\x80\x44\x12 \n\x1aMSG_GuildMineRank_Response\x10\x8e\x80\x44\x12\x1c\n\x16MSG_JusticeInfo_Notice\x10\x90\x80\x44\x12 \n\x1aMSG_WorldLevelInfo_Request\x10\x91\x80\x44\x12!\n\x1bMSG_WorldLevelInfo_Response\x10\x91\xa0\x44\x12!\n\x1bMSG_WorldLevelUpdate_Notice\x10\x92\xa0\x44\x12!\n\x1bMSG_ClientLoadRoleOK_Report\x10\x93\x80\x44\x12\x1e\n\x18MSG_ItemTeleport_Request\x10\x94\x80\x44\x12\x1f\n\x19MSG_ItemTeleport_Response\x10\x94\xa0\x44\x12\x1d\n\x17MSG_SomeCharInfo_Notice\x10\x95\x80\x44\x12\x1e\n\x18MSG_ClientInBlock_Report\x10\x96\x80\x44\x12\"\n\x1cMSG_ClientDoSomething_Notice\x10\x97\x80\x44\x12\x17\n\x11MSG_DoCmd_Request\x10\x98\x80\x44\x12 \n\x1aMSG_OfflineExp_Get_Request\x10\x99\x80\x44\x12!\n\x1bMSG_OfflineExp_Get_Response\x10\x99\xa0\x44\x12\x1b\n\x15MSG_OfflineExp_Notice\x10\x9a\x80\x44\x12\x1f\n\x19MSG_PositionUpdate_Report\x10\x9b\x80\x44\x12\x1e\n\x18MSG_PositionSeqId_Notice\x10\x9c\x80\x44\x12\x1f\n\x19MSG_DeleteAllRole_Request\x10\x9d\x80\x44\x12 \n\x1aMSG_DeleteAllRole_Response\x10\x9e\x80\x44\x12!\n\x1bMSG_NpcSpanTeleport_Request\x10\x9f\x80\x44\x12\"\n\x1cMSG_NpcSpanTeleport_Response\x10\x9f\xa0\x44\x12%\n\x1fMSG_CheckMemberTeleport_Request\x10\xa0\x80\x44\x12&\n MSG_CheckMemberTeleport_Response\x10\xa1\xa0\x44\x12#\n\x1dMSG_CheckGateTeleport_Request\x10\xa2\x80\x44\x12$\n\x1eMSG_CheckGateTeleport_Response\x10\xa3\xa0\x44\x12!\n\x1bMSG_MemberSpanWildTP_Notice\x10\xa4\xa0\x44\x12 \n\x1aMSG_AddGateTeleport_Notice\x10\xa5\x80\x44\x12\x1a\n\x14MSG_Rks_Sign_Request\x10\xaa\xa0\x44\x12 \n\x1aMSG_UseFuzhijiujiu_Request\x10\xa6\x80\x44\x12!\n\x1bMSG_UseFuzhijiujiu_Response\x10\xa6\xa0\x44\x12#\n\x1dMSG_ReportFuzhijiujiu_Request\x10\xa7\x80\x44\x12$\n\x1eMSG_ReportFuzhijiujiu_Response\x10\xa7\xa0\x44\x12\x1e\n\x18MSG_FashionTrans_Request\x10\x81\x80H\x12\x1f\n\x19MSG_FashionTrans_Response\x10\x82\x80H\x12 \n\x1aMSG_FashionAdvance_Request\x10\x83\x80H\x12!\n\x1bMSG_FashionAdvance_Response\x10\x84\x80H\x12$\n\x1eMSG_FashionAdvanceCost_Request\x10\x85\x80H\x12%\n\x1fMSG_FashionAdvanceCost_Response\x10\x86\x80H\x12!\n\x1bMSG_WardrobeFashion_Request\x10\xa0\x80H\x12\"\n\x1cMSG_WardrobeFashion_Response\x10\xa1\x80H\x12 \n\x1aMSG_WardrobeHungUP_Request\x10\xa2\x80H\x12!\n\x1bMSG_WardrobeHungUP_Response\x10\xa3\x80H\x12\"\n\x1cMSG_WardrobeHungDown_Request\x10\xa4\x80H\x12#\n\x1dMSG_WardrobeHungDown_Response\x10\xa5\x80H\x12+\n%MSG_WardrobeFashionApplyShape_Request\x10\xa6\x80H\x12,\n&MSG_WardrobeFashionApplyShape_Response\x10\xa7\x80H\x12$\n\x1eMSG_WardrobeSlotUnlock_Request\x10\xa8\x80H\x12%\n\x1fMSG_WardrobeSlotUnlock_Response\x10\xa9\x80H\x12$\n\x1eMSG_WardrobeShapeReset_Request\x10\xb0\x80H\x12%\n\x1fMSG_WardrobeShapeReset_Response\x10\xb1\x80H\x12\x1f\n\x19MSG_WardrobeEquip_Request\x10\xb2\x80H\x12 \n\x1aMSG_WardrobeEquip_Response\x10\xb3\x80H\x12\x1f\n\x19MSG_WardrobeChange_Notice\x10\xc0\x80H\x12 \n\x1aMSG_SPImBattleInfo_Request\x10\x81\x80L\x12!\n\x1bMSG_SPImBattleInfo_Response\x10\x81\xa0L\x12\"\n\x1cMSG_SPImBat_SignInfo_Request\x10\x82\x80L\x12#\n\x1dMSG_SPImBat_SignInfo_Response\x10\x82\xa0L\x12\x1e\n\x18MSG_SPImBat_Sign_Request\x10\x83\x80L\x12\x1f\n\x19MSG_SPImBat_Sign_Response\x10\x83\xa0L\x12\x1f\n\x19MSG_SPImBat_Round_Impulse\x10\x84\x80L\x12\x1f\n\x19MSG_SPImBat_Round_Request\x10\x84\xa0L\x12\x1e\n\x18MSG_SPImBat_Join_Request\x10\x85\x80L\x12\x1f\n\x19MSG_SPImBat_Join_Response\x10\x85\xa0L\x12\"\n\x1cMSG_SPImBat_Battle_Score_Imp\x10\x86\x80L\x12 \n\x1aMSG_SPImBat_Battle_End_Imp\x10\x87\x80L\x12\"\n\x1cMSG_SPImBat_Member_Info_Sync\x10\x88\x80L\x12\"\n\x1cMSG_SPImBat_RankInfo_Request\x10\x89\x80L\x12#\n\x1dMSG_SPImBat_RankInfo_Response\x10\x8a\x80L\x12 \n\x1aMSG_SPImBat_EndInfo_Notice\x10\x8b\x80L\x12!\n\x1bMSG_SPImBat_BetInfo_Request\x10\x8c\x80L\x12\"\n\x1cMSG_SPImBat_BetInfo_Response\x10\x8d\x80L\x12!\n\x1bMSG_SPImBat_Betting_Request\x10\x8e\x80L\x12\"\n\x1cMSG_SPImBat_Betting_Response\x10\x8f\x80L\x12\"\n\x1cMSG_SPImBat_Watching_Request\x10\x90\x80L\x12#\n\x1dMSG_SPImBat_Watching_Response\x10\x90\xa0L\x12%\n\x1fMSG_SPImBat_WatchingInfo_Notice\x10\x91\xa0L\x12\x1e\n\x18MSG_SPImBat_Start_Notice\x10\x92\x80L\x12%\n\x1fMSG_SPIMBat_HistoryRank_Request\x10\x93\x80L\x12&\n MSG_SPIMBat_HistoryRank_Response\x10\x93\xa0L\x12\"\n\x1cMSG_SPMonorBattleInfo_Notice\x10\xa1\xa0L\x12%\n\x1fMSG_SPMonorBat_SignInfo_Request\x10\xa2\x80L\x12&\n MSG_SPMonorBat_SignInfo_Response\x10\xa2\xa0L\x12!\n\x1bMSG_SPMonorBat_Sign_Request\x10\xa3\x80L\x12\"\n\x1cMSG_SPMonorBat_Sign_Response\x10\xa3\xa0L\x12\'\n!MSG_SPMonorBat_MonorFight_Request\x10\xa4\x80L\x12(\n\"MSG_SPMonorBat_MonorFight_Response\x10\xa4\xa0L\x12\'\n!MSG_SPMonorBat_BattleFlag_Request\x10\xa5\x80L\x12(\n\"MSG_SPMonorBat_BattleFlag_Response\x10\xa5\xa0L\x12-\n\'MSG_SPMonorBat_FightForHegemony_Request\x10\xa6\x80L\x12.\n(MSG_SPMonorBat_FightForHegemony_Response\x10\xa6\xa0L\x12(\n\"MSG_SPMonorBat_Enter_Monor_Request\x10\xa7\x80L\x12)\n#MSG_SPMonorBat_Enter_Monor_Response\x10\xa7\xa0L\x12)\n#MSG_SPMonorBat_Watch_Battle_Request\x10\xa8\x80L\x12*\n$MSG_SPMonorBat_Watch_Battle_Response\x10\xa8\xa0L\x12(\n\"MSG_SPMonorBat_EnterBattle_Request\x10\xa9\x80L\x12)\n#MSG_SPMonorBat_EnterBattle_Response\x10\xa9\xa0L\x12+\n%MSG_SPMonorBat_GetMonorReward_Request\x10\xaa\x80L\x12,\n&MSG_SPMonorBat_GetMonorReward_Response\x10\xaa\xa0L\x12,\n&MSG_SPMonorBat_OnCanEnterBattle_Notice\x10\xab\xa0L\x12$\n\x1eMSG_SPMonorBat_GetScore_Notice\x10\xac\xa0L\x12 \n\x1aMSG_RedPacketShake_Request\x10\x81\x80P\x12!\n\x1bMSG_RedPacketShake_Response\x10\x81\xa0P\x12\x1f\n\x19MSG_RedPacketInfo_Request\x10\x82\x80P\x12 \n\x1aMSG_RedPacketInfo_Response\x10\x82\xa0P\x12)\n#MSG_RedPacketWeixinExchange_Request\x10\x83\x80P\x12*\n$MSG_RedPacketWeixinExchange_Response\x10\x83\xa0P\x12\'\n!MSG_RedPacketExchangeInfo_Request\x10\x84\x80P\x12(\n\"MSG_RedPacketExchangeInfo_Response\x10\x84\xa0P\x12%\n\x1fMSG_RedPacketMenpiaoInfo_Notice\x10\x85\x80P\x12\x1b\n\x15MSG_MountInfo_Request\x10\x81\x80T\x12\x1c\n\x16MSG_MountInfo_Response\x10\x81\xa0T\x12\x1e\n\x18MSG_MountLevelUp_Request\x10\x82\x80T\x12\x1f\n\x19MSG_MountLevelUp_Response\x10\x82\xa0T\x12\x1e\n\x18MSG_MountClassUp_Request\x10\x83\x80T\x12\x1f\n\x19MSG_MountClassUp_Response\x10\x83\xa0T\x12\x1d\n\x17MSG_RuneLevelUp_Request\x10\x84\x80T\x12\x1e\n\x18MSG_RuneLevelUp_Response\x10\x84\xa0T\x12!\n\x1bMSG_MountRideOrRest_Request\x10\x87\x80T\x12\"\n\x1cMSG_MountRideOrRest_Response\x10\x87\xa0T\x12!\n\x1bMSG_MountChangeShow_Request\x10\x88\x80T\x12\"\n\x1cMSG_MountChangeShow_Response\x10\x88\xa0T\x12!\n\x1bMSG_MountBuyFashion_Request\x10\x89\x80T\x12\"\n\x1cMSG_MountBuyFashion_Response\x10\x89\xa0T\x12\x1e\n\x18MSG_FashionChange_Notice\x10\x90\xa0T\x12\x1d\n\x17MSG_RuneClassUp_Request\x10\x91\xa0T\x12\x1e\n\x18MSG_RuneClassUp_Response\x10\x92\xa0T\x12\x1d\n\x17MSG_RuneEnchant_Request\x10\x93\xa0T\x12\x1e\n\x18MSG_RuneEnchant_Response\x10\x94\xa0T\x12&\n MSG_MountFashionExchange_Request\x10\x95\xa0T\x12\'\n!MSG_MountFashionExchange_Response\x10\x96\xa0T\x12!\n\x1bMSG_RuneEnchantSave_Request\x10\x97\xa0T\x12\"\n\x1cMSG_RuneEnchantSave_Response\x10\x98\xa0T\x12\x1a\n\x14MSG_MountFly_Request\x10\x99\x80T\x12\x1b\n\x15MSG_MountFly_Response\x10\x99\xa0T\x12\x1d\n\x17MSG_RuneLottery_Request\x10\xa0\x80T\x12\x1e\n\x18MSG_RuneLottery_Response\x10\xa0\xa0T\x12\x1f\n\x19MSG_RuneOneKeyLvUpRequest\x10\xa1\x80T\x12 \n\x1aMSG_RuneOneKeyLvupResponse\x10\xa1\xa0T\x12\x1a\n\x14MSG_RuneMountRequest\x10\xa2\x80T\x12\x1b\n\x15MSG_RuneMountResponse\x10\xa2\xa0T\x12\x1c\n\x16MSG_RuneUnMountRequest\x10\xa3\x80T\x12\x1d\n\x17MSG_RuneUnMountResponse\x10\xa3\xa0T\x12\x1d\n\x17MSG_RuneOpenSlotRequest\x10\xa4\x80T\x12\x1e\n\x18MSG_RuneOpenSlotResponse\x10\xa4\xa0T\x12\x1e\n\x18MSG_RuneLotteryCfgNotice\x10\xa5\x80T\x12\x1e\n\x18MSG_RuneLvUpQueryRequest\x10\xa6\x80T\x12\x1f\n\x19MSG_RuneLvUpQueryResponse\x10\xa6\xa0T\x12!\n\x1bMSG_SoulStarLevelUp_Request\x10\xa7\x80T\x12\"\n\x1cMSG_SoulStarLevelUp_Response\x10\xa7\xa0T\x12\"\n\x1cMSG_SoulStarDecomposeRequest\x10\xa8\x80T\x12#\n\x1dMSG_SoulStarDecomposeResponse\x10\xa8\xa0T\x12!\n\x1bMSG_SoulStarTranfromRequest\x10\xa9\x80T\x12\"\n\x1cMSG_SoulStarTranfromResponse\x10\xa9\xa0T\x12\x1e\n\x18MSG_SoulStarMountRequest\x10\xb0\x80T\x12\x1f\n\x19MSG_SoulStarMountResponse\x10\xb0\xa0T\x12 \n\x1aMSG_SoulStarUnMountRequest\x10\xb2\x80T\x12!\n\x1bMSG_SoulStarUnMountResponse\x10\xb2\xa0T\x12\x1c\n\x16MSG_SoulStarInfoNotice\x10\xb3\xa0T\x12&\n MSG_SoulStarGiftDecomposeRequest\x10\xb4\xa0T\x12\'\n!MSG_SoulStarGiftDecomposeResponse\x10\xb5\xa0T\x12\x1b\n\x15MSG_UIOpenInfo_Notice\x10\x81\xa0X\x12\x18\n\x12MSG_UIStory_Report\x10\x82\x80X\x12\x18\n\x12MSG_UIGuide_Report\x10\x83\x80X\x12\x17\n\x11MSG_UIHide_Notice\x10\x84\x80X\x12\x1c\n\x16MSG_UIPushLevel_Report\x10\x85\x80X\x12\x1c\n\x16MSG_UIPushLevel_Notice\x10\x85\xa0X\x12\x1a\n\x14MSG_UseSkill_Request\x10\x81\x80\\\x12\x1b\n\x15MSG_UseSkill_Response\x10\x81\xa0\\\x12\x1c\n\x16MSG_FightReport_Notice\x10\x82\xa0\\\x12\x18\n\x12MSG_SkillCD_Notice\x10\x83\xa0\\\x12\x1d\n\x17MSG_PetUseSkill_Request\x10\x84\x80\\\x12\x1e\n\x18MSG_PetUseSkill_Response\x10\x84\xa0\\\x12%\n\x1fMSG_MagicWeaponUseSkill_Request\x10\x85\x80\\\x12&\n MSG_MagicWeaponUseSkill_Response\x10\x85\xa0\\\x12#\n\x1dMSG_CLIENT_AUTOBATTLE_Request\x10\x86\x80\\\x12$\n\x1eMSG_CLIENT_AUTOBATTLE_Response\x10\x86\xa0\\\x12+\n%MSG_CancelSpecialBattleStatus_Request\x10\x87\x80\\\x12,\n&MSG_CancelSpecialBattleStatus_Response\x10\x87\xa0\\\x12\x1e\n\x18MSG_SkillCommonCD_Notice\x10\x88\xa0\\\x12!\n\x1bMSG_SkillPropSkillCD_Notice\x10\x89\xa0\\\x12\x1f\n\x19MSG_Buff_Show_Info_Notice\x10\x8a\xa0\\\x12\x1c\n\x16MSG_ArenaMatch_Request\x10\x81\x80`\x12\x1d\n\x17MSG_ArenaMatch_Response\x10\x81\xa0`\x12!\n\x1bMSG_ArenaMatchResult_Notice\x10\x82\x80`\x12\"\n\x1cMSG_ArenaMatchCancel_Request\x10\x83\x80`\x12#\n\x1dMSG_ArenaMatchCancel_Response\x10\x83\xa0`\x12\x1b\n\x15MSG_ArenaOkIn_Request\x10\x84\x80`\x12\x1c\n\x16MSG_ArenaOkIn_Response\x10\x84\xa0`\x12\x1f\n\x19MSG_ArenaCancelIn_Request\x10\x85\x80`\x12 \n\x1aMSG_ArenaCancelIn_Response\x10\x85\xa0`\x12#\n\x1dMSG_SinglePvPCountDown_Notice\x10\x86\x80`\x12&\n MSG_SinglePvPWaitingState_Notice\x10\x87\x80`\x12\x1e\n\x18MSG_ArenaSettleUp_Notice\x10\x88\x80`\x12\"\n\x1cMSG_ArenaGetPvPKills_Request\x10\x89\x80`\x12#\n\x1dMSG_ArenaGetPvPKills_Response\x10\x89\xa0`\x12\x1f\n\x19MSG_SinglePvPEnter_Notice\x10\x8a\x80`\x12!\n\x1bMSG_PlayerPKRequest_Request\x10\x8b\x80`\x12\"\n\x1cMSG_PlayerPKRequest_Response\x10\x8b\x80\x63\x12 \n\x1aMSG_PlayerPKRequest_Notice\x10\x8c\x80\x63\x12!\n\x1bMSG_PlayerPKResponse_Report\x10\x8d\x80`\x12\x1f\n\x19MSG_PlayerPKReject_Notice\x10\x8d\x80\x63\x12\x1f\n\x19MSG_PlayerPKCancel_Report\x10\x8e\x80`\x12\x1f\n\x19MSG_PlayerPKResult_Notice\x10\x8e\x80\x63\x12\x1d\n\x17MSG_PetPosUpdate_Report\x10\x81\x80\x64\x12\x1d\n\x17MSG_PetPosClient_Notice\x10\x81\xa0\x64\x12\x1b\n\x15MSG_PetAcitve_Request\x10\x82\x80\x64\x12\x1c\n\x16MSG_PetAcitve_Response\x10\x82\xa0\x64\x12\x1d\n\x17MSG_PetDeacitve_Request\x10\x83\x80\x64\x12\x1e\n\x18MSG_PetDeacitve_Response\x10\x83\xa0\x64\x12\x18\n\x12MSG_PetList_Notice\x10\x84\xa0\x64\x12\x1b\n\x15MSG_PetDelete_Request\x10\x85\x80\x64\x12\x1c\n\x16MSG_PetDelete_Response\x10\x85\xa0\x64\x12\x1b\n\x15MSG_PetRelive_Request\x10\x86\x80\x64\x12\x1c\n\x16MSG_PetRelive_Response\x10\x86\xa0\x64\x12\x1b\n\x15MSG_PetRename_Request\x10\x87\x80\x64\x12\x1c\n\x16MSG_PetRename_Response\x10\x87\xa0\x64\x12\x19\n\x13MSG_PetGrow_Request\x10\x88\x80\x64\x12\x1a\n\x14MSG_PetGrow_Response\x10\x88\xa0\x64\x12\x1f\n\x19MSG_PetSkillLearn_Request\x10\x89\x80\x64\x12 \n\x1aMSG_PetSkillLearn_Response\x10\x89\xa0\x64\x12 \n\x1aMSG_PetSkillForget_Request\x10\x8a\x80\x64\x12!\n\x1bMSG_PetSkillForget_Response\x10\x8a\xa0\x64\x12\x1b\n\x15MSG_PetEvolve_Request\x10\x8b\x80\x64\x12\x1c\n\x16MSG_PetEvolve_Response\x10\x8b\xa0\x64\x12\x19\n\x13MSG_PetDrug_Request\x10\x8c\x80\x64\x12\x1a\n\x14MSG_PetDrug_Response\x10\x8c\xa0\x64\x12\x1f\n\x19MSG_PetRenascence_Request\x10\x8d\x80\x64\x12 \n\x1aMSG_PetRenascence_Response\x10\x8d\xa0\x64\x12\x1c\n\x16MSG_PetBuySlot_Request\x10\x8e\x80\x64\x12\x1d\n\x17MSG_PetBuySlot_Response\x10\x8e\xa0\x64\x12\x1e\n\x18MSG_PetContainer_Request\x10\x8f\x80\x64\x12\x1f\n\x19MSG_PetContainer_Response\x10\x8f\xa0\x64\x12!\n\x1bMSG_PetSkillReplace_Request\x10\x90\x80\x64\x12\"\n\x1cMSG_PetSkillReplace_Response\x10\x90\xa0\x64\x12\"\n\x1cMSG_PetNewRenascence_Request\x10\x91\x80\x64\x12#\n\x1dMSG_PetNewRenascence_Response\x10\x91\xa0\x64\x12%\n\x1fMSG_PetRenasceneReplace_Request\x10\x92\x80\x64\x12&\n MSG_PetRenasceneReplace_Response\x10\x92\xa0\x64\x12\x1e\n\x18MSG_TakePetGuard_Request\x10\x93\x80\x64\x12\x1f\n\x19MSG_TakePetGuard_Response\x10\x93\xa0\x64\x12\"\n\x1cMSG_TakeBackPetGuard_Request\x10\x94\x80\x64\x12#\n\x1dMSG_TakeBackPetGuard_Response\x10\x94\xa0\x64\x12!\n\x1bMSG_UpLevelPetGuard_Request\x10\x95\x80\x64\x12\"\n\x1cMSG_UpLevelPetGuard_Response\x10\x95\xa0\x64\x12)\n#MSG_QuaryGuardUpBattleScore_Request\x10\x96\x80\x64\x12*\n$MSG_QuaryGuardUpBattleScore_Response\x10\x96\xa0\x64\x12!\n\x1bMSG_PetEquipUpLevel_Request\x10\x97\x80\x64\x12\"\n\x1cMSG_PetEquipUpLevel_Response\x10\x97\xa0\x64\x12!\n\x1bMSG_PetEquipReplace_Request\x10\x98\x80\x64\x12\"\n\x1cMSG_PetEquipReplace_Response\x10\x98\xa0\x64\x12#\n\x1dMSG_SetPetBattleArray_Request\x10\xa0\x80\x64\x12$\n\x1eMSG_SetPetBattleArray_Response\x10\xa0\xa0\x64\x12\"\n\x1cMSG_PetPVEBattleInfo_Request\x10\xa1\x80\x64\x12#\n\x1dMSG_PetPVEBattleInfo_Response\x10\xa1\xa0\x64\x12\"\n\x1cMSG_GetBattlePetList_Request\x10\xa2\x80\x64\x12#\n\x1dMSG_GetBattlePetList_Response\x10\xa2\xa0\x64\x12!\n\x1bMSG_PetTransPreview_Request\x10\xa3\x80\x64\x12\"\n\x1cMSG_PetTransPreview_Response\x10\xa3\xa0\x64\x12\x1f\n\x19MSG_PetTransReady_Request\x10\xa4\x80\x64\x12 \n\x1aMSG_PetTransReady_Response\x10\xa4\xa0\x64\x12\x1a\n\x14MSG_PetTrans_Request\x10\xa5\x80\x64\x12\x1b\n\x15MSG_PetTrans_Response\x10\xa5\xa0\x64\x12\"\n\x1cMSG_PetLegacyPreview_Request\x10\xa6\x80\x64\x12#\n\x1dMSG_PetLegacyPreview_Response\x10\xa6\xa0\x64\x12 \n\x1aMSG_PetLegacyReady_Request\x10\xa7\x80\x64\x12!\n\x1bMSG_PetLegacyReady_Response\x10\xa7\xa0\x64\x12\x1b\n\x15MSG_PetLegacy_Request\x10\xa8\x80\x64\x12\x1c\n\x16MSG_PetLegacy_Response\x10\xa8\xa0\x64\x12\"\n\x1cMSG_PetPVPBattleInfo_Request\x10\xb0\x80\x64\x12#\n\x1dMSG_PetPVPBattleInfo_Response\x10\xb0\xa0\x64\x12#\n\x1dMSG_EnterPetBattlePvP_Request\x10\xb1\x80\x64\x12$\n\x1eMSG_EnterPetBattlePvP_Response\x10\xb1\xa0\x64\x12&\n MSG_FlushPetPvPMatchInfo_Request\x10\xb2\x80\x64\x12\'\n!MSG_FlushPetPvPMatchInfo_Response\x10\xb2\xa0\x64\x12\x1e\n\x18MSG_BattleRecord_Request\x10\xb3\x80\x64\x12\x1f\n\x19MSG_BattleRecord_Response\x10\xb3\xa0\x64\x12\x1f\n\x19MSG_PetGrowthInfo_Request\x10\xb4\x80\x64\x12 \n\x1aMSG_PetGrowthInfo_Response\x10\xb4\xa0\x64\x12\x1b\n\x15MSG_PetGrowth_Request\x10\xb5\x80\x64\x12\x1c\n\x16MSG_PetGrowth_Response\x10\xb5\xa0\x64\x12\x1b\n\x15MSG_TeamBuild_Request\x10\x81\x80h\x12\x1c\n\x16MSG_TeamBuild_Response\x10\x81\xa0h\x12%\n\x1fMSG_TeamBuildOppositeTip_Notice\x10\x82\x80h\x12\x1d\n\x17MSG_TeamDismiss_Request\x10\x83\x80h\x12\x1e\n\x18MSG_TeamDismiss_Response\x10\x83\xa0h\x12\'\n!MSG_TeamDismissOppositeTip_Notice\x10\x84\x80h\x12\"\n\x1cMSG_TeamChangeLeader_Request\x10\x85\x80h\x12#\n\x1dMSG_TeamChangeLeader_Response\x10\x85\xa0h\x12\x1b\n\x15MSG_TeamLeave_Request\x10\x86\x80h\x12\x1c\n\x16MSG_TeamLeave_Response\x10\x86\xa0h\x12%\n\x1fMSG_TeamLeaveOppositeTip_Notice\x10\x87\x80h\x12\x1a\n\x14MSG_TeamKick_Request\x10\x88\x80h\x12\x1b\n\x15MSG_TeamKick_Response\x10\x88\xa0h\x12\x1e\n\x18MSG_TeamProposal_Request\x10\x89\x80h\x12\x1f\n\x19MSG_TeamProposal_Response\x10\x89\xa0h\x12$\n\x1eMSG_TeamProposalExamine_Notice\x10\x8a\x80h\x12+\n%MSG_TeamProposalExamineAnswer_Request\x10\x8b\x80h\x12,\n&MSG_TeamProposalExamineAnswer_Response\x10\x8b\xa0h\x12\x1d\n\x17MSG_TeamProposal_Notice\x10\x8c\x80h\x12$\n\x1eMSG_TeamProposalAnswer_Request\x10\x8d\x80h\x12%\n\x1fMSG_TeamProposalAnswer_Response\x10\x8d\xa0h\x12\x1b\n\x15MSG_TeamApply_Request\x10\x8e\x80h\x12\x1c\n\x16MSG_TeamApply_Response\x10\x8e\xa0h\x12!\n\x1bMSG_TeamApplyAnswer_Request\x10\x8f\x80h\x12\"\n\x1cMSG_TeamApplyAnswer_Response\x10\x8f\xa0h\x12#\n\x1dMSG_TeamBaseDataUpdate_Notice\x10\x90\x80h\x12#\n\x1dMSG_TeamSyncHPMPUpdate_Notice\x10\x91\x80h\x12\x1f\n\x19MSG_TeamFlagUpdate_Notice\x10\x92\x80h\x12 \n\x1aMSG_TeamMemberClear_Notice\x10\x93\x80h\x12$\n\x1eMSG_TeamApplyerBaseData_Notice\x10\x94\x80h\x12!\n\x1bMSG_TeamApplyerClear_Notice\x10\x95\x80h\x12\"\n\x1cMSG_TeamSyncPosUpdate_Notice\x10\x96\x80h\x12 \n\x1aMSG_TeamCallFriend_Request\x10\x97\x80h\x12!\n\x1bMSG_TeamCallFriend_Response\x10\x97\xa0h\x12\x1e\n\x18MSG_TeamJoinCall_Request\x10\x98\x80h\x12\x1f\n\x19MSG_TeamJoinCall_Response\x10\x98\xa0h\x12\"\n\x1cMSG_ScreenPlayerInfo_Request\x10\x99\x80h\x12#\n\x1dMSG_ScreenPlayerInfo_Response\x10\x99\x80k\x12\'\n!MSG_TeamLeaderFollowOrder_Request\x10\x9a\x80h\x12(\n\"MSG_TeamLeaderFollowOrder_Response\x10\x9a\xa0h\x12&\n MSG_TeamLeaderFollowOrder_Notice\x10\x9b\xa0h\x12\'\n!MSG_TeamMemberFollowOrder_Request\x10\x9c\x80h\x12(\n\"MSG_TeamMemberFollowOrder_Response\x10\x9c\xa0h\x12\"\n\x1cMSG_TeamMemberFollow_Request\x10\x9d\x80h\x12#\n\x1dMSG_TeamMemberFollow_Response\x10\x9d\xa0h\x12+\n%MSG_TeamMemberFollowEnterList_Request\x10\x9f\x80h\x12,\n&MSG_TeamMemberFollowEnterList_Response\x10\x9f\xa0h\x12%\n\x1fMSG_TeamMemberFollowInfo_Notice\x10\xa0\xa0h\x12\'\n!MSG_TeamMemberFollowCancel_Report\x10\xa1\x80h\x12&\n MSG_TeamMemberAutoFollow_Request\x10\xa2\x80h\x12\'\n!MSG_TeamMemberAutoFollow_Response\x10\xa2\xa0h\x12%\n\x1fMSG_TeamMemberFollowLose_Report\x10\xa3\x80h\x12&\n MSG_TeamMemberFollowSpeed_Report\x10\xa4\x80h\x12\x1a\n\x14MSG_TeamList_Request\x10\xa5\x80h\x12\x1a\n\x14MSG_TeamList_Reponse\x10\xa5\xa0h\x12 \n\x1aMSG_SetTeamPurpose_Request\x10\xa6\x80h\x12 \n\x1aMSG_SetTeamPurpose_Reponse\x10\xa6\xa0h\x12\x1c\n\x16MSG_TeamPurpose_Notice\x10\xa7\x80h\x12#\n\x1dMSG_TeamSyncBuffUpdate_Notice\x10\xa8\x80h\x12(\n\"MSG_TransportProposalAnswerRequest\x10\xa9\x80h\x12)\n#MSG_TransportProposalAnswerResponse\x10\xa9\xa0h\x12$\n\x1eMSG_TransportApplyagreeRequest\x10\xaa\x80h\x12$\n\x1eMSG_TransportApplyagreeResonse\x10\xab\x80h\x12\x1b\n\x15MSG_CheckMatchRequest\x10\xac\x80h\x12\x1c\n\x16MSG_CheckMatchResponse\x10\xac\xa0h\x12\x1f\n\x19MSG_TransportApplyRequest\x10\xad\x80h\x12\x1f\n\x19MSG_TransportApplyResonse\x10\xad\xa0h\x12\x1c\n\x16MSG_GetLeaderPosNotice\x10\xaf\xa0h\x12\x1f\n\x19MSG_CheckTeamMatchRequest\x10\xb0\x80h\x12 \n\x1aMSG_CheckTeamMatchResponse\x10\xb0\xa0h\x12\"\n\x1cMSG_TeamPVPMatchStatusNotice\x10\xb1\xa0h\x12\x1b\n\x15MSG_MatchList_Request\x10\x81\x80l\x12\x1c\n\x16MSG_MatchList_Response\x10\x81\xa0l\x12\x1d\n\x17MSG_MatchConfirm_Notice\x10\x82\x80l\x12$\n\x1eMSG_MatchConfirmAnswer_Request\x10\x83\x80l\x12%\n\x1fMSG_MatchConfirmAnswer_Response\x10\x83\xa0l\x12\x1f\n\x19MSG_MatchSignedUp_Request\x10\x84\x80l\x12 \n\x1aMSG_MatchSignedUp_Response\x10\x84\xa0l\x12\x1d\n\x17MSG_MatchCancel_Request\x10\x85\x80l\x12\x1e\n\x18MSG_MatchCancel_Response\x10\x85\xa0l\x12\x1a\n\x14MSG_MatchList_Notice\x10\x86\x80l\x12\x1b\n\x15MSG_MatchTeam_Request\x10\x87\x80l\x12\x1c\n\x16MSG_MatchTeam_Response\x10\x87\xa0l\x12\x1a\n\x14MSG_PveMatch_Request\x10\x88\x80l\x12\x1b\n\x15MSG_PveMatch_Response\x10\x88\xa0l\x12 \n\x1aMSG_CancelPveMatch_Request\x10\x89\x80l\x12!\n\x1bMSG_CancelPveMatch_Response\x10\x89\xa0l\x12\x1f\n\x19MSG_PveMatchApply_Request\x10\x8a\x80l\x12 \n\x1aMSG_PveMatchApply_Response\x10\x8a\xa0l\x12\x1f\n\x19MSG_PveMatchLeave_Request\x10\x8b\x80l\x12 \n\x1aMSG_PveMatchLeave_Response\x10\x8b\xa0l\x12$\n\x1eMSG_PveMatchCallFriend_Request\x10\x8c\x80l\x12%\n\x1fMSG_PveMatchCallFriend_Response\x10\x8c\xa0l\x12\x1e\n\x18MSG_GetMatchList_Request\x10\x8d\x80l\x12\x1f\n\x19MSG_GetMatchList_Response\x10\x8d\xa0l\x12 \n\x1aMSG_SyncSpanPveInfo_Notice\x10\x8e\xa0l\x12)\n#MSG_PveMatchApplyCallFriend_Request\x10\x8f\x80l\x12*\n$MSG_PveMatchApplyCallFriend_Response\x10\x8f\xa0l\x12\x1e\n\x18MSG_GetMatchInfo_Request\x10\x90\x80l\x12\"\n\x1cMSG_SyncSpanPveLeader_Notice\x10\x91\xa0l\x12\x1b\n\x15MSG_ApplyDuel_Request\x10\x92\x80l\x12\x1c\n\x16MSG_ApplyDuel_Response\x10\x92\xa0l\x12\x1c\n\x16MSG_CheckOther_Request\x10\x93\x80l\x12\x1d\n\x17MSG_CheckOhter_Response\x10\x93\xa0l\x12\x18\n\x12MSG_DoDuel_Request\x10\x94\x80l\x12\x19\n\x13MSG_DoDuel_Response\x10\x94\xa0l\x12\x19\n\x13MSG_DuelInfo_Notice\x10\x95\xa0l\x12\"\n\x1cMSG_DuelCreateDungeon_Notice\x10\x96\xa0l\x12\x1c\n\x16MSG_DuelDespise_Notice\x10\x97\xa0l\x12\x1a\n\x14MSG_DuelState_Notice\x10\x98\xa0l\x12\x19\n\x13MSG_DuelMail_Notice\x10\x99\xa0l\x12\x1d\n\x17MSG_DuelSettleUp_Notice\x10\xa0\xa0l\x12\x1e\n\x18MSG_PVPTeamMatch_Request\x10\xa1\x80l\x12\x1f\n\x19MSG_PVPTeamMatch_Response\x10\xa1\xa0l\x12%\n\x1fMSG_PVPTeamMatch_Cancel_Request\x10\xa2\x80l\x12&\n MSG_PVPTeamMatch_Cancel_Response\x10\xa2\xa0l\x12\x1e\n\x18MSG_SearchFriend_Request\x10\x81\x80p\x12\x1f\n\x19MSG_SearchFriend_Response\x10\x81\xa0p\x12 \n\x1aMSG_SearchCondtion_Request\x10\x82\x80p\x12!\n\x1bMSG_SearchCondtion_Response\x10\x82\xa0p\x12\x1c\n\x16MSG_AddTFriend_Request\x10\x83\x80p\x12\x1d\n\x17MSG_AddTFriend_Response\x10\x83\xa0p\x12\x1f\n\x19MSG_RemoveTFriend_Request\x10\x84\x80p\x12 \n\x1aMSG_RemoveTFriend_Response\x10\x84\xa0p\x12\x1c\n\x16MSG_AddTFriends_Notice\x10\x85\x80p\x12\x1f\n\x19MSG_RemoveTFriends_Notice\x10\x86\x80p\x12\x1f\n\x19MSG_UpdateTFriends_Notice\x10\x87\x80p\x12\x1b\n\x15MSG_FriendData_Notice\x10\x88\x80p\x12\x1a\n\x14MSG_CharZone_Request\x10\x89\x80p\x12\x1b\n\x15MSG_CharZone_Response\x10\x89\xa0p\x12\x1c\n\x16MSG_MoveTarget_Request\x10\x8a\x80p\x12\x1d\n\x17MSG_MoveTarget_Response\x10\x8a\xa0p\x12!\n\x1bMSG_AddFriendWithAckReuqest\x10\x8b\x80p\x12\"\n\x1cMSG_AddFriendWithAckResponse\x10\x8b\xa0p\x12\"\n\x1cMSG_AddFriendAskTargetNotice\x10\x8c\x80p\x12!\n\x1bMSG_AddFriendInteractNotice\x10\x8c\xa0p\x12\x1d\n\x17MSG_AddFriendAckRequest\x10\x8d\x80p\x12\x1e\n\x18MSG_AddFriendAckResponse\x10\x8d\xa0p\x12\x1d\n\x17MSG_RemoveFriendRequest\x10\x8e\x80p\x12\x1e\n\x18MSG_RemoveFriendResponse\x10\x8e\xa0p\x12\"\n\x1cMSG_FriendGiveEnergy_Request\x10\x8f\x80p\x12#\n\x1dMSG_FriendGiveEnergy_Response\x10\x8f\xa0p\x12$\n\x1eMSG_FriendGatherEnergy_Request\x10\x90\x80p\x12%\n\x1fMSG_FriendGatherEnergy_Response\x10\x90\xa0p\x12 \n\x1aMSG_FriendHeadIcon_Request\x10\x91\x80p\x12!\n\x1bMSG_FriendHeadIcon_Response\x10\x91\xa0p\x12&\n MSG_FriendCheckIconState_Request\x10\x92\x80p\x12\'\n!MSG_FriendCheckIconState_Response\x10\x92\xa0p\x12\"\n\x1cMSG_FriendAddContact_Request\x10\x93\x80p\x12\"\n\x1cMSG_FriendEnergyTimes_Notice\x10\x94\x80p\x12%\n\x1fMSG_RemoveRecentContact_Request\x10\x95\x80p\x12&\n MSG_RemoveRecentContact_Response\x10\x95\xa0p\x12\x1d\n\x17MSG_CangqiongPK_Request\x10\x81\x80t\x12\x1e\n\x18MSG_CangqiongPK_Response\x10\x80\xa0t\x12\x1e\n\x18MSG_CangqiongRank_Notice\x10\x82\x80t\x12 \n\x1aMSG_CangqiongReward_Notice\x10\x83\x80t\x12\"\n\x1cMSG_Sign_NewerReward_Request\x10\x81\x80x\x12#\n\x1dMSG_Sign_NewerReward_Response\x10\x81\xa0x\x12\"\n\x1cMSG_Sign_DailyReward_Request\x10\x82\x80x\x12#\n\x1dMSG_Sign_DailyReward_Response\x10\x82\xa0x\x12%\n\x1fMSG_Sign_DailyVipReward_Request\x10\x83\x80x\x12&\n MSG_Sign_DailyVipReward_Response\x10\x83\xa0x\x12\"\n\x1cMSG_Sign_LevelReward_Request\x10\x84\x80x\x12#\n\x1dMSG_Sign_LevelReward_Response\x10\x84\xa0x\x12#\n\x1dMSG_Sign_OnlineReward_Request\x10\x85\x80x\x12$\n\x1eMSG_Sign_onlineReward_Response\x10\x85\xa0x\x12\'\n!Msg_Sign_DailyRetroactive_Requrst\x10\x86\x80x\x12(\n\"MSG_Sign_DailyRetroactive_Response\x10\x86\xa0x\x12 \n\x1aMsg_sign_PlayerInfo_Notice\x10\x87\xa0x\x12\x1d\n\x17Msg_Sign_Config_Request\x10\x88\x80x\x12\x1e\n\x18MSG_Sign_Config_Response\x10\x88\xa0x\x12\x1f\n\x19MSG_AddEnergyInfo_Request\x10\x89\x80x\x12 \n\x1aMSG_AddEnergyInfo_Response\x10\x89\xa0x\x12\x1b\n\x15MSG_AddEnergy_Request\x10\x90\x80x\x12\x1c\n\x16MSG_AddEnergy_Response\x10\x90\xa0x\x12\x1e\n\x18MSG_VIPAddEnergy_Request\x10\x91\x80x\x12\x1f\n\x19MSG_VIPAddEnergy_Response\x10\x91\xa0x\x12$\n\x1eMSG_NewServer_Activity_Request\x10\x92\x80x\x12%\n\x1fMSG_NewServer_Activity_Response\x10\x92\xa0x\x12)\n#MSG_Newserver_Activity_State_Notice\x10\x93\x80x\x12\'\n!Msg_Newserver_Activity_Cfg_Notice\x10\x94\x80x\x12\"\n\x1cMSG_Newserver_Charge_Request\x10\x95\x80x\x12#\n\x1dMSG_Newserver_Charge_Response\x10\x95\xa0x\x12!\n\x1bMSG_Newserver_Charge_Notice\x10\x96\x80x\x12%\n\x1fMSG_Newserver_ArenaRank_Request\x10\x97\x80x\x12&\n MSG_Newserver_ArenaRank_Response\x10\x97\xa0x\x12\'\n!MSG_Newserver_Recharge_Cfg_Notice\x10\x98\x80x\x12)\n#MSG_Newserver_Recharge_State_Notice\x10\x99\x80x\x12,\n&MSG_Newserver_ShopDiscount_Buy_Request\x10\x9a\x80x\x12-\n\'MSG_Newserver_ShopDiscount_Buy_Response\x10\x9a\xa0x\x12!\n\x1bMSG_Nation_CampUnion_Notice\x10\x81\x80|\x12\x17\n\x10MSG_Hold_Request\x10\x81\x80\x80\x01\x12\x18\n\x11MSG_Hold_Response\x10\x81\xa0\x80\x01\x12\x1a\n\x13MSG_Hold_Ack_Notice\x10\x82\x80\x80\x01\x12\x1b\n\x14MSG_Hold_Ack_Request\x10\x83\x80\x80\x01\x12\x1c\n\x15MSG_Hold_Ack_Response\x10\x83\xa0\x80\x01\x12\x1c\n\x15MSG_Hold_Down_Request\x10\x84\x80\x80\x01\x12\x1d\n\x16MSG_Hold_Down_Response\x10\x84\xa0\x80\x01\x12 \n\x19MSG_Hold_Interrupt_Notice\x10\x85\x80\x80\x01\x12!\n\x1aMSG_Hold_DelAppList_Notice\x10\x86\x80\x80\x01\x12\"\n\x1bMSG_Hold_AutoShield_Request\x10\x87\x80\x80\x01\x12#\n\x1cMSG_Hold_AutoShield_Response\x10\x87\xa0\x80\x01\x12!\n\x1aMSG_Hold_AutoShield_Notice\x10\x88\x80\x80\x01\x12\x1e\n\x17MSG_InterAction_Request\x10\x89\x80\x80\x01\x12\x1f\n\x18MSG_InterAction_Response\x10\x89\xa0\x80\x01\x12$\n\x1dMSG_CancelInterAction_Request\x10\x90\x80\x80\x01\x12%\n\x1eMSG_CancelInterAction_Response\x10\x90\xa0\x80\x01\x12\x1d\n\x16MSG_InterAction_Notice\x10\x91\xa0\x80\x01\x12#\n\x1cMSG_InterActionVerify_Notice\x10\x92\xa0\x80\x01\x12$\n\x1dMSG_InterActionVerify_Request\x10\x93\x80\x80\x01\x12%\n\x1eMSG_InterActionVerify_Response\x10\x93\xa0\x80\x01\x12 \n\x19MSG_InterAction_RequestEx\x10\x94\x80\x80\x01\x12!\n\x1aMSG_Marriage_Ready_Request\x10\x81\x80\x84\x01\x12\"\n\x1bMSG_Marriage_Ready_Response\x10\x81\xa0\x84\x01\x12\"\n\x1bMSG_Marry_LeaderAck_Request\x10\x82\x80\x84\x01\x12#\n\x1cMSG_Marry_LeaderAck_Response\x10\x82\xa0\x84\x01\x12!\n\x1aMSG_Marry_LeaderAck_Notice\x10\x83\xa0\x84\x01\x12\"\n\x1bMSG_Marry_MemberAck_Request\x10\x84\x80\x84\x01\x12#\n\x1cMSG_Marry_MemberAck_Response\x10\x84\xa0\x84\x01\x12%\n\x1eMSG_Marry_MemberCancel_Request\x10\x85\x80\x84\x01\x12&\n\x1fMSG_Marry_MemberCancel_Response\x10\x85\xa0\x84\x01\x12(\n!MSG_DivorceDeal_LeaderAck_Request\x10\x90\x80\x84\x01\x12)\n\"MSG_DivorceDeal_LeaderAck_Response\x10\x90\xa0\x84\x01\x12\'\n MSG_DivorceDeal_LeaderAck_Notice\x10\x91\xa0\x84\x01\x12(\n!MSG_DivorceDeal_MemberAck_Request\x10\x92\x80\x84\x01\x12)\n\"MSG_DivorceDeal_MemberAck_Response\x10\x92\xa0\x84\x01\x12+\n$MSG_DivorceDeal_MemberCancel_Request\x10\x93\x80\x84\x01\x12,\n%MSG_DivorceDeal_MemberCancel_Response\x10\x93\xa0\x84\x01\x12\x1f\n\x18MSG_DivorceForce_Request\x10\x94\x80\x84\x01\x12 \n\x19MSG_DivorceForce_Response\x10\x94\xa0\x84\x01\x12\x1f\n\x18MSG_Marriage_Info_Notice\x10\x95\xa0\x84\x01\x12\x1f\n\x18MSG_Title_Change_Request\x10\xa0\x80\x84\x01\x12 \n\x19MSG_Title_Change_Response\x10\xa0\xa0\x84\x01\x12!\n\x1aMSG_Marriage_March_Request\x10\xb0\x80\x84\x01\x12\"\n\x1bMSG_Marriage_March_Response\x10\xb0\xa0\x84\x01\x12&\n\x1fMSG_Marriage_MarchReady_Request\x10\xb1\x80\x84\x01\x12\'\n MSG_Marriage_MarchReady_Response\x10\xb1\xa0\x84\x01\x12\"\n\x1bMSG_Marriage_Success_Notice\x10\xb2\xa0\x84\x01\x12(\n!MSG_Channel_QQ_Get_Reward_Request\x10\x81\x80\x88\x01\x12)\n\"MSG_Channel_QQ_Get_Reward_Response\x10\x81\xa0\x88\x01\x12-\n&MSG_Channel_QQ_Get_Reward_List_Request\x10\x82\x80\x88\x01\x12.\n\'MSG_Channel_QQ_Get_Reward_List_Response\x10\x82\xa0\x88\x01\x12 \n\x19MSG_Rep_MoveToBag_Request\x10\x81\x80\x8c\x01\x12!\n\x1aMSG_Rep_MoveToBag_Response\x10\x81\xa0\x8c\x01\x12\"\n\x1bMSG_Rep_RecvFromBag_Request\x10\x82\x80\x8c\x01\x12#\n\x1cMSG_Rep_RecvFromBag_Response\x10\x82\xa0\x8c\x01\x12\x1f\n\x18MSG_Rep_OnConnect_Notice\x10\x83\xa0\x8c\x01\x12\x1d\n\x16MSG_Rep_RepInfo_Notice\x10\x84\xa0\x8c\x01\x12 \n\x19MSG_Rep_ChangeRep_Request\x10\x85\x80\x8c\x01\x12!\n\x1aMSG_Rep_ChangeRep_Response\x10\x85\xa0\x8c\x01\x12\x1d\n\x16MSG_Rep_Unlock_Request\x10\x86\x80\x8c\x01\x12\x1e\n\x17MSG_Rep_Unlock_Response\x10\x86\xa0\x8c\x01\x12&\n\x1fMSG_NewRoleAct_GetState_Request\x10\x81\x80\x90\x01\x12\'\n MSG_NewRoleAct_GetState_Response\x10\x81\xa0\x90\x01\x12!\n\x1aMSG_NewRoleAct_Buy_Request\x10\x82\x80\x90\x01\x12\"\n\x1bMSG_NewRoleAct_Buy_Response\x10\x82\xa0\x90\x01\x12\'\n MSG_NewRoleAct_GetReward_Request\x10\x83\x80\x90\x01\x12(\n!MSG_NewRoleAct_GetReward_Response\x10\x83\xa0\x90\x01\x12%\n\x1eMSG_NewRoleAct_SyncInfo_Notice\x10\x84\xa0\x90\x01\x12(\n!MSG_NewRoleAct_SyncActData_Notice\x10\x85\xa0\x90\x01\x12\'\n MSG_Guild_Day_Reward_Info_Notice\x10\x81\xa0\x94\x01\x12\'\n MSG_Guild_Get_Day_Reward_Request\x10\x82\x80\x94\x01\x12(\n!MSG_Guild_Get_Day_Reward_Response\x10\x82\xa0\x94\x01\x12!\n\x1aMSG_CharaceterTitle_Notice\x10\x81\xa0\x98\x01\x12\'\n MSG_ChangeCharacterTitle_Request\x10\x82\x80\x98\x01\x12(\n!MSG_ChangeCharacterTitle_Response\x10\x82\xa0\x98\x01\x12\x1e\n\x17MSG_EventLotteryRequest\x10\x81\x80\x9c\x01\x12\x1f\n\x18MSG_EventLotteryResponse\x10\x82\x80\x9c\x01\x12%\n\x1eMSG_EventLotteryGoodItemNotice\x10\x83\x80\x9c\x01\x12#\n\x1cMSG_ChargeRegressInfo_Notice\x10\x84\x80\x9c\x01\x12%\n\x1eMSG_IgnoreChargeRegress_Report\x10\x85\x80\x9c\x01\x12\"\n\x1bMSG_ActFireworksInfo_Notice\x10\x86\x80\x9c\x01\x12#\n\x1cMSG_ActFireworksInfo_Request\x10\x87\x80\x9c\x01\x12$\n\x1dMSG_ActFireworksInfo_Response\x10\x88\x80\x9c\x01\x12\x1f\n\x18MSG_ClientBtnInfo_Notice\x10\x89\x80\x9c\x01\x12\x1f\n\x18MSG_GateActStatus_Notice\x10\x8a\x80\x9c\x01\x12#\n\x1cMSG_LoginGifts_Status_Notice\x10\x8b\xa0\x9c\x01\x12\'\n MSG_LoginGifts_GetReward_Request\x10\x8c\x80\x9c\x01\x12(\n!MSG_LoginGifts_GetReward_Response\x10\x8c\xa0\x9c\x01\x12%\n\x1eMSG_OnearmBandit_Bless_Request\x10\x92\x80\x9c\x01\x12&\n\x1fMSG_OnearmBandit_Bless_Response\x10\x92\xa0\x9c\x01\x12&\n\x1fMSG_OnearmBandit_Reward_Request\x10\x93\x80\x9c\x01\x12\'\n MSG_OnearmBandit_Reward_Response\x10\x93\xa0\x9c\x01\x12%\n\x1eMSG_OnearmBandit_Record_Notice\x10\x94\x80\x9c\x01\x12$\n\x1dMSG_OnlineGifts_Status_Notice\x10\x8d\xa0\x9c\x01\x12(\n!MSG_OnlineGifts_GetReward_Request\x10\x8e\x80\x9c\x01\x12)\n\"MSG_OnlineGifts_GetReward_Response\x10\x8e\xa0\x9c\x01\x12 \n\x19MSG_BindVip_Status_Notice\x10\xa0\xa0\x9c\x01\x12 \n\x19MSG_BindVip_Ignore_Report\x10\xa1\x80\x9c\x01\x12\x1e\n\x17MSG_Rollingtree_Request\x10\xb1\x80\x9c\x01\x12\x1d\n\x16MSG_Rollingtree_Notice\x10\xb2\xa0\x9c\x01\x12\x1d\n\x16MSG_GetLuckInfoRequest\x10\x81\x80\xa0\x01\x12\x1e\n\x17MSG_GetLuckInfoResponse\x10\x82\x80\xa0\x01\x12\x1d\n\x16MSG_UpgradeLuckRequest\x10\x83\x80\xa0\x01\x12\x1e\n\x17MSG_UpgradeLuckResponse\x10\x84\x80\xa0\x01\x12\x1e\n\x17MSG_LuckReloadCfgNotice\x10\x85\x80\xa0\x01\x12\x1f\n\x18MSG_PotentialInfo_Notice\x10\x81\x80\xa4\x01\x12 \n\x19MSG_PotentialFeed_Request\x10\x82\x80\xa4\x01\x12!\n\x1aMSG_PotentialFeed_Response\x10\x82\xa0\xa4\x01\x12#\n\x1cMSG_PotentialReplace_Request\x10\x83\x80\xa4\x01\x12$\n\x1dMSG_PotentialReplace_Response\x10\x83\xa0\xa4\x01\x12#\n\x1cMSG_PotentialUpClass_Request\x10\x84\x80\xa4\x01\x12$\n\x1dMSG_PotentialUpClass_Response\x10\x84\xa0\xa4\x01\x12#\n\x1cMSG_PotentialTenFeed_Request\x10\x85\x80\xa4\x01\x12%\n\x1eMSG_PotentialTenFeed_Respoonse\x10\x85\xa0\xa4\x01\x12%\n\x1eMSG_PotentialAttrState_Request\x10\x86\x80\xa4\x01\x12&\n\x1fMSG_PotentialAttrState_Response\x10\x86\xa0\xa4\x01\x12&\n\x1fMSG_PotentialTenReplace_Request\x10\x87\x80\xa4\x01\x12\'\n MSG_PotentialTenReplace_Response\x10\x87\xa0\xa4\x01\x12$\n\x1dMSG_Couplepvp_ActInfo_Request\x10\x81\x80\xc0\x01\x12%\n\x1eMSG_Couplepvp_ActInfo_Response\x10\x81\xa0\xc0\x01\x12\"\n\x1bMSG_Couplepvp_Apply_Request\x10\x82\x80\xc0\x01\x12(\n!MSG_Couplepvp_EnterDungeon_Notice\x10\x83\x80\xc0\x01\x12)\n\"MSG_Couplepvp_EnterDungeon_Request\x10\x84\x80\xc0\x01\x12$\n\x1dMSG_Couplepvp_BattleInfo_Sync\x10\x85\x80\xc0\x01\x12&\n\x1fMSG_Couplepvp_BattleInfo_Result\x10\x86\x80\xc0\x01\x12#\n\x1cMSG_WingTrainAllInfo_Request\x10\x81\x80\xc4\x01\x12$\n\x1dMSG_WingTrainAllInfo_Response\x10\x82\x80\xc4\x01\x12\"\n\x1bMSG_WingTrainUpStar_Request\x10\x83\x80\xc4\x01\x12#\n\x1cMSG_WingTrainUpStar_Response\x10\x84\x80\xc4\x01\x12!\n\x1aMSG_WingTrainUpJie_Request\x10\x85\x80\xc4\x01\x12\"\n\x1bMSG_WingTrainUpJie_Response\x10\x86\x80\xc4\x01\x12(\n!MSG_WingTrainQueryWingPro_Request\x10\x87\x80\xc4\x01\x12)\n\"MSG_WingTrainQueryWingPro_Response\x10\x88\x80\xc4\x01\x12(\n!MSG_WingTrainQueryWingTip_Request\x10\x89\x80\xc4\x01\x12)\n\"MSG_WingTrainQueryWingTip_Response\x10\x8a\x80\xc4\x01\x12\x1e\n\x17MSG_WingTrainInfoNotice\x10\x8b\x80\xc4\x01\x12\x1e\n\x17MSG_RedBag_Send_Request\x10\x81\x80\xc8\x01\x12\x1f\n\x18MSG_RedBag_Send_Response\x10\x81\xa0\xc8\x01\x12\x18\n\x11MSG_RedBag_Notice\x10\x82\x80\xc8\x01\x12\x1e\n\x17MSG_RedBag_List_Request\x10\x83\x80\xc8\x01\x12\x1f\n\x18MSG_RedBag_List_Response\x10\x83\xa0\xc8\x01\x12\x1e\n\x17MSG_RedBag_Open_Request\x10\x84\x80\xc8\x01\x12\x1f\n\x18MSG_RedBag_Open_Response\x10\x84\xa0\xc8\x01\x12\x1f\n\x18MSG_RedBag_Count_Request\x10\x85\x80\xc8\x01\x12 \n\x19MSG_RedBag_Count_Response\x10\x85\xa0\xc8\x01\x12\x1e\n\x17MSG_RedBag_Login_Notice\x10\x86\xa0\xc8\x01\x12\x1d\n\x16MSG_Xinfa_Info_Request\x10\x81\x80\xcc\x01\x12\x1e\n\x17MSG_Xinfa_Info_Response\x10\x81\xa0\xcc\x01\x12 \n\x19MSG_Xinfa_Upgrade_Request\x10\x82\xa0\xcc\x01\x12!\n\x1aMSG_Xinfa_Upgrade_Response\x10\x82\xa0\xcc\x01\x12\x1f\n\x18MSG_Xiuzhen_Info_Request\x10\x81\x80\xd0\x01\x12 \n\x19MSG_Xiuzhen_Info_Response\x10\x81\xa0\xd0\x01\x12\"\n\x1bMSG_Xiuzhen_Upgrade_Request\x10\x82\x80\xd0\x01\x12#\n\x1cMSG_Xiuzhen_Upgrade_Response\x10\x82\xa0\xd0\x01\x12\x1e\n\x17MSG_Xiuzhen_Info_Notice\x10\x83\xa0\xd0\x01\x12&\n\x1fMSG_SpanTeam_CreateCrop_Request\x10\x81\x80\xd4\x01\x12\'\n MSG_SpanTeam_CreateCrop_Response\x10\x81\xa0\xd4\x01\x12%\n\x1eMSG_SpanTeam_CropsList_Request\x10\x82\x80\xd4\x01\x12&\n\x1fMSG_SpanTeam_CropsList_Response\x10\x82\xa0\xd4\x01\x12)\n\"MSG_SpanTeam_ApplyJoinCrop_Request\x10\x83\x80\xd4\x01\x12*\n#MSG_SpanTeam_ApplyJoinCrop_Response\x10\x83\xa0\xd4\x01\x12$\n\x1dMSG_SpanTeam_JoinCrops_Notice\x10\x84\xa0\xd4\x01\x12%\n\x1eMSG_SpanTeam_JoinCrops_Request\x10\x85\x80\xd4\x01\x12&\n\x1fMSG_SpanTeam_JoinCrops_Response\x10\x85\xa0\xd4\x01\x12$\n\x1dMSG_SpanTeam_CropInfo_Request\x10\x86\x80\xd4\x01\x12%\n\x1eMSG_SpanTeam_CropInfo_Response\x10\x86\xa0\xd4\x01\x12(\n!MSG_SpanTeam_InviteFriend_Request\x10\x87\x80\xd4\x01\x12)\n\"MSG_SpanTeam_InviteFriend_Response\x10\x87\xa0\xd4\x01\x12%\n\x1eMSG_SpanTeam_CropInvite_Notice\x10\x88\xa0\xd4\x01\x12(\n!MSG_SpanTeam_InviteAnswer_Request\x10\x89\x80\xd4\x01\x12)\n\"MSG_SpanTeam_InviteAnswer_Response\x10\x89\xa0\xd4\x01\x12(\n!MSG_SpanTeam_InviteExamine_Notice\x10\x90\xa0\xd4\x01\x12)\n\"MSG_SpanTeam_LeaderExamine_Request\x10\x91\x80\xd4\x01\x12*\n#MSG_SpanTeam_LeaderExamine_Response\x10\x91\xa0\xd4\x01\x12(\n!MSG_SpanTeam_ChangeLeader_Request\x10\x92\x80\xd4\x01\x12)\n\"MSG_SpanTeam_ChangeLeader_Response\x10\x92\xa0\xd4\x01\x12#\n\x1cMSG_SpanTeam_KickOut_Request\x10\x93\x80\xd4\x01\x12$\n\x1dMSG_SpanTeam_KickOut_Response\x10\x93\xa0\xd4\x01\x12*\n#MSG_SpanTeam_DisbandedCrops_Request\x10\x94\x80\xd4\x01\x12+\n$MSG_SpanTeam_DisbandedCrops_Response\x10\x94\xa0\xd4\x01\x12$\n\x1dMSG_SpanTeam_ExitCrop_Request\x10\x95\x80\xd4\x01\x12%\n\x1eMSG_SpanTeam_ExitCrop_Response\x10\x95\xa0\xd4\x01\x12&\n\x1fMSG_SpanTeam_MyCropInfo_Request\x10\x96\x80\xd4\x01\x12\'\n MSG_SpanTeam_MyCropInfo_Response\x10\x96\xa0\xd4\x01\x12%\n\x1eMSG_SpanTeam_MyCropInfo_Notice\x10\x97\xa0\xd4\x01\x12%\n\x1eMSG_SpanTeam_Battle_End_Notice\x10\x98\xa0\xd4\x01\x12*\n#MSG_SpanTeam_FinalBattle_End_Notice\x10\x99\xa0\xd4\x01\x12!\n\x1aMSG_SpanTeam_Battle_Notice\x10\xa0\xa0\xd4\x01\x12&\n\x1fMSG_SpanTeam_FinalBattle_Notice\x10\xa1\xa0\xd4\x01\x12(\n!MSG_SpanTeam_CropRankList_Request\x10\xa2\x80\xd4\x01\x12)\n\"MSG_SpanTeam_CropRankList_Response\x10\xa2\xa0\xd4\x01\x12&\n\x1fMSG_SpanTeam_FinalMatch_Request\x10\xa3\x80\xd4\x01\x12\'\n MSG_SpanTeam_FinalMatch_Response\x10\xa3\xa0\xd4\x01\x12&\n\x1fMSG_SpanTeam_FinalWatch_Request\x10\xa4\x80\xd4\x01\x12\'\n MSG_SpanTeam_FinalWatch_Response\x10\xa4\xa0\xd4\x01\x12(\n!MSG_SpanTeam_Battle_Status_Notice\x10\xa5\xa0\xd4\x01\x12+\n$MSG_SpanTeam_FightTable_Info_Request\x10\xa6\x80\xd4\x01\x12,\n%MSG_SpanTeam_FightTable_Info_Response\x10\xa6\xa0\xd4\x01\x12*\n#MSG_SpanTeam_Start_Matching_Request\x10\xa7\x80\xd4\x01\x12+\n$MSG_SpanTeam_Start_Matching_Response\x10\xa7\xa0\xd4\x01\x12-\n&MSG_SpanTeam_GetReady_Matching_Request\x10\xa8\x80\xd4\x01\x12.\n\'MSG_SpanTeam_GetReady_Matching_Response\x10\xa8\xa0\xd4\x01\x12\'\n MSG_SpanTeam_Ready_Status_Notice\x10\xa9\xa0\xd4\x01\x12-\n&MSG_SpanTeam_GetLivenessReward_Request\x10\xb0\x80\xd4\x01\x12.\n\'MSG_SpanTeam_GetLivenessReward_Response\x10\xb0\xa0\xd4\x01\x12$\n\x1dMSG_SpanTeam_Liveness_Request\x10\xb1\x80\xd4\x01\x12%\n\x1eMSG_SpanTeam_Liveness_Response\x10\xb1\xa0\xd4\x01\x12%\n\x1eMSG_SpanTeam_CropsRank_Request\x10\xb2\x80\xd4\x01\x12&\n\x1fMSG_SpanTeam_CropsRank_Response\x10\xb2\xa0\xd4\x01\x12\'\n MSG_SpanTeam_Member_Ready_Notice\x10\xb3\xa0\xd4\x01\x12)\n\"MSG_SpanTeam_CancelMatchingRequest\x10\xb4\x80\xd4\x01\x12*\n#MSG_SpanTeam_CancelMatchingResponse\x10\xb4\xa0\xd4\x01\x12&\n\x1fMSG_SpanTeam_CancelReadyRequest\x10\xb5\x80\xd4\x01\x12\'\n MSG_SpanTeam_CancelReadyResponse\x10\xb5\xa0\xd4\x01\x12 \n\x19MSG_MagicPet_Info_Request\x10\x81\x80\xd8\x01\x12!\n\x1aMSG_MagicPet_Info_Response\x10\x81\xa0\xd8\x01\x12\"\n\x1bMSG_MagicPet_Active_Request\x10\x82\x80\xd8\x01\x12#\n\x1cMSG_MagicPet_Active_Response\x10\x82\xa0\xd8\x01\x12#\n\x1cMSG_MagicPet_Upgrade_Request\x10\x83\x80\xd8\x01\x12$\n\x1dMSG_MagicPet_Upgrade_Response\x10\x83\xa0\xd8\x01\x12\"\n\x1bMSG_MagicPet_StarUp_Request\x10\x84\x80\xd8\x01\x12#\n\x1cMSG_MagicPet_StarUp_Response\x10\x84\xa0\xd8\x01\x12$\n\x1dMSG_MagicPet_ProTrain_Request\x10\x85\x80\xd8\x01\x12%\n\x1eMSG_MagicPet_ProTrain_Response\x10\x85\xa0\xd8\x01\x12*\n#MSG_MagicPet_SkillSlotTrain_Request\x10\x86\x80\xd8\x01\x12+\n$MSG_MagicPet_SkillSlotTrain_Response\x10\x86\xa0\xd8\x01\x12\"\n\x1bMSG_MagicPet_Battle_Request\x10\x87\x80\xd8\x01\x12#\n\x1cMSG_MagicPet_Battle_Response\x10\x87\xa0\xd8\x01\x12 \n\x19MSG_MagicPet_Rest_Request\x10\x88\x80\xd8\x01\x12!\n\x1aMSG_MagicPet_Rest_Response\x10\x88\xa0\xd8\x01\x12$\n\x1dMSG_MagicPet_JoinTeam_Request\x10\x89\x80\xd8\x01\x12%\n\x1eMSG_MagicPet_JoinTeam_Response\x10\x89\xa0\xd8\x01\x12$\n\x1dMSG_MagicPet_ExitTeam_Request\x10\x90\x80\xd8\x01\x12%\n\x1eMSG_MagicPet_ExitTeam_Response\x10\x90\xa0\xd8\x01\x12*\n#MSG_MagicPet_TeamSlot_Change_Notice\x10\x91\xa0\xd8\x01\x12(\n!MSG_MagicPet_SlotEquiment_Request\x10\x92\x80\xd8\x01\x12)\n\"MSG_MagicPet_SlotEquiment_Response\x10\x92\xa0\xd8\x01\x12.\n\'MSG_MagicPet_SlotRemoveEquiment_Request\x10\x93\x80\xd8\x01\x12/\n(MSG_MagicPet_SlotRemoveEquiment_Response\x10\x93\xa0\xd8\x01\x12$\n\x1dMSG_MagicPet_TeamSlot_Request\x10\x94\x80\xd8\x01\x12!\n\x1aMSG_MagicPet_Apply_Request\x10\x95\x80\xd8\x01\x12\"\n\x1bMSG_MagicPet_Apply_Response\x10\x95\xa0\xd8\x01\x12%\n\x1eMSG_MagicPet_UpOrBreak_Request\x10\x96\x80\xd8\x01\x12&\n\x1fMSG_MagicPet_UpOrBreak_Response\x10\x96\xa0\xd8\x01\x12\"\n\x1bMSG_SpanMaze_SignUp_Request\x10\x81\x80\xdc\x01\x12#\n\x1cMSG_SpanMaze_SignUp_Response\x10\x81\xa0\xdc\x01\x12!\n\x1aMSG_SpanMaze_Enter_Request\x10\x82\x80\xdc\x01\x12\"\n\x1bMSG_SpanMaze_Enter_Response\x10\x82\xa0\xdc\x01\x12\'\n MSG_SpanMaze_EnterDungeon_Notice\x10\x83\xa0\xdc\x01\x12\x1c\n\x14MSG_ErrCode_Response\x10\x80\x80\x80\x80\x03\x12!\n\x19MSG_DimensionTest_Require\x10\x81\x80\x80\x80\x04\x12\"\n\x1aMSG_DimensionTest_Response\x10\x82\x80\x80\x80\x04\x12%\n\x1dMSG_DimensionCharJoin_Require\x10\x83\x80\x80\x80\x04\x12&\n\x1eMSG_DimensionCharLeave_Require\x10\x84\x80\x80\x80\x04\x12!\n\x19MSG_DimensionChat_Require\x10\x85\x80\x80\x80\x04\x12\x1f\n\x17MSG_BattleMatch_Request\x10\x81\x80\x80\x80\x05\x12 \n\x18MSG_BattleCancel_Request\x10\x82\x80\x80\x80\x05\x12\x1f\n\x17MSG_BattleQuery_Request\x10\x83\x80\x80\x80\x05\x12#\n\x1bMSG_BigGetMatchInfo_Request\x10\x84\x80\x80\x80\x05\x12\"\n\x1aMSG_BattleTeamMatchRequest\x10\x85\x80\x80\x80\x05\x12$\n\x1cMSG_BattleTeamCancel_Request\x10\x86\x80\x80\x80\x05\x12\x19\n\x11MSG_Battle_Inform\x10\x81\x80\x80\x80\x07\x12\x1e\n\x16MSG_RankTopPlayerLogin\x10\x82\x80\x80\x80\x07\x42\x02H\x01')
 
 _EGLEOMODULEINDEX = descriptor.EnumDescriptor(
   name='EGleoModuleIndex',
@@ -204,22 +204,34 @@ _EGLEOMODULEINDEX = descriptor.EnumDescriptor(
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MOD_DimensionExampler', index=46, number=16384,
+      name='MOD_SpanTeam', index=46, number=53,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MOD_BigWorldBattle', index=47, number=20480,
+      name='MOD_MagicPet', index=47, number=54,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MOD_MsgToClient', index=48, number=28672,
+      name='MOD_DpsnMaze', index=48, number=55,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MOD_DimensionExampler', index=49, number=16384,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MOD_BigWorldBattle', index=50, number=20480,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MOD_MsgToClient', index=51, number=28672,
       options=None,
       type=None),
   ],
   containing_type=None,
   options=None,
   serialized_start=24,
-  serialized_end=1096,
+  serialized_end=1150,
 )
 
 
@@ -702,4730 +714,5190 @@ _EGLEOMESSAGEID = descriptor.EnumDescriptor(
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_NPCPos_Response', index=118, number=262144,
+      name='MSG_RankMagicPetInfo_Request', index=118, number=196681,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuestAccept_Request', index=119, number=262145,
+      name='MSG_RankMagicPetInfo_Response', index=119, number=200777,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuestCommit_Request', index=120, number=262146,
+      name='MSG_NPCPos_Response', index=120, number=262144,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuestAbandon_Request', index=121, number=262147,
+      name='MSG_QuestAccept_Request', index=121, number=262145,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuestCanAcc_Response', index=122, number=262148,
+      name='MSG_QuestCommit_Request', index=122, number=262146,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuestAccepted_Response', index=123, number=262149,
+      name='MSG_QuestAbandon_Request', index=123, number=262147,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Daily_RESPONSE', index=124, number=262150,
+      name='MSG_QuestCanAcc_Response', index=124, number=262148,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DailyCommit_Request', index=125, number=262151,
+      name='MSG_QuestAccepted_Response', index=125, number=262149,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuestOther_Response', index=126, number=262152,
+      name='MSG_Daily_RESPONSE', index=126, number=262150,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuestOther_Commit', index=127, number=262153,
+      name='MSG_DailyCommit_Request', index=127, number=262151,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuestAward_Ruquest', index=128, number=262160,
+      name='MSG_QuestOther_Response', index=128, number=262152,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuestVIP_Response', index=129, number=262161,
+      name='MSG_QuestOther_Commit', index=129, number=262153,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuestVIPAward_Request', index=130, number=262162,
+      name='MSG_QuestAward_Ruquest', index=130, number=262160,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BindPhoneSuccess_Request', index=131, number=262163,
+      name='MSG_QuestVIP_Response', index=131, number=262161,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuestCanAward_Request', index=132, number=262164,
+      name='MSG_QuestVIPAward_Request', index=132, number=262162,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuestCanAward_Response', index=133, number=262165,
+      name='MSG_BindPhoneSuccess_Request', index=133, number=262163,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuestGroup_Response', index=134, number=262166,
+      name='MSG_QuestCanAward_Request', index=134, number=262164,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuestRand_Response', index=135, number=262167,
+      name='MSG_QuestCanAward_Response', index=135, number=262165,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuestGroupCanAcc_Response', index=136, number=262168,
+      name='MSG_QuestGroup_Response', index=136, number=262166,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuestRandCanAcc_Response', index=137, number=262169,
+      name='MSG_QuestRand_Response', index=137, number=262167,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuestTeleport_Request', index=138, number=262170,
+      name='MSG_QuestGroupCanAcc_Response', index=138, number=262168,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuestTeleport_Response', index=139, number=266266,
+      name='MSG_QuestRandCanAcc_Response', index=139, number=262169,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuestOther_Request', index=140, number=262171,
+      name='MSG_QuestTeleport_Request', index=140, number=262170,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SkillInfo_Notice_Request', index=141, number=331792,
+      name='MSG_QuestTeleport_Response', index=141, number=266266,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SkillInfo_Notice', index=142, number=331777,
+      name='MSG_QuestOther_Request', index=142, number=262171,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SkillLvUp_Request', index=143, number=331778,
+      name='MSG_SkillInfo_Notice_Request', index=143, number=331792,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SkillLvUp_Response', index=144, number=331779,
+      name='MSG_SkillInfo_Notice', index=144, number=331777,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SkillEquip_Request', index=145, number=331780,
+      name='MSG_SkillLvUp_Request', index=145, number=331778,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SkillEquip_Response', index=146, number=331781,
+      name='MSG_SkillLvUp_Response', index=146, number=331779,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponDecompose_Request', index=147, number=393216,
+      name='MSG_SkillEquip_Request', index=147, number=331780,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponDecompose_Response', index=148, number=397312,
+      name='MSG_SkillEquip_Response', index=148, number=331781,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponFosterInfo_Request', index=149, number=393217,
+      name='MSG_MagicWeaponDecompose_Request', index=149, number=393216,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponFosterInfo_Response', index=150, number=397313,
+      name='MSG_MagicWeaponDecompose_Response', index=150, number=397312,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponFoster_Request', index=151, number=393218,
+      name='MSG_MagicWeaponFosterInfo_Request', index=151, number=393217,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponFoster_Response', index=152, number=397314,
+      name='MSG_MagicWeaponFosterInfo_Response', index=152, number=397313,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponFosterAffirm_Request', index=153, number=393219,
+      name='MSG_MagicWeaponFoster_Request', index=153, number=393218,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponFosterAffirm_Response', index=154, number=397315,
+      name='MSG_MagicWeaponFoster_Response', index=154, number=397314,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponSwallowPreview_Request', index=155, number=393220,
+      name='MSG_MagicWeaponFosterAffirm_Request', index=155, number=393219,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponSwallowPreview_Response', index=156, number=397316,
+      name='MSG_MagicWeaponFosterAffirm_Response', index=156, number=397315,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponSwallow_Request', index=157, number=393221,
+      name='MSG_MagicWeaponSwallowPreview_Request', index=157, number=393220,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponSwallow_Response', index=158, number=397317,
+      name='MSG_MagicWeaponSwallowPreview_Response', index=158, number=397316,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponBookInfo_Request', index=159, number=393222,
+      name='MSG_MagicWeaponSwallow_Request', index=159, number=393221,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponBookInfo_Response', index=160, number=397318,
+      name='MSG_MagicWeaponSwallow_Response', index=160, number=397317,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponBookActivateGroup_Request', index=161, number=393223,
+      name='MSG_MagicWeaponBookInfo_Request', index=161, number=393222,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponBookActivateGroup_Response', index=162, number=397319,
+      name='MSG_MagicWeaponBookInfo_Response', index=162, number=397318,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CallMagicWeaponUseStone_Request', index=163, number=393224,
+      name='MSG_MagicWeaponBookActivateGroup_Request', index=163, number=393223,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CallMagicWeaponUseStone_Response', index=164, number=397320,
+      name='MSG_MagicWeaponBookActivateGroup_Response', index=164, number=397319,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponOp_Request', index=165, number=393225,
+      name='MSG_CallMagicWeaponUseStone_Request', index=165, number=393224,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponOp_Response', index=166, number=397321,
+      name='MSG_CallMagicWeaponUseStone_Response', index=166, number=397320,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponExchange_Request', index=167, number=393227,
+      name='MSG_MagicWeaponOp_Request', index=167, number=393225,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponExchange_Response', index=168, number=397323,
+      name='MSG_MagicWeaponOp_Response', index=168, number=397321,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponDebrisInfo_Request', index=169, number=393228,
+      name='MSG_MagicWeaponExchange_Request', index=169, number=393227,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponDebrisInfo_Response', index=170, number=397324,
+      name='MSG_MagicWeaponExchange_Response', index=170, number=397323,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponTryAdvance_Request', index=171, number=393229,
+      name='MSG_MagicWeaponDebrisInfo_Request', index=171, number=393228,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponTryAdvance_Response', index=172, number=397325,
+      name='MSG_MagicWeaponDebrisInfo_Response', index=172, number=397324,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BtlHarvest_Request', index=173, number=458753,
+      name='MSG_MagicWeaponTryAdvance_Request', index=173, number=393229,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BtlHarvestCancel_Request', index=174, number=458754,
+      name='MSG_MagicWeaponTryAdvance_Response', index=174, number=397325,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BtlHarvestStatus_Response', index=175, number=462849,
+      name='MSG_BtlHarvest_Request', index=175, number=458753,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BtlMatch_Request', index=176, number=458755,
+      name='MSG_BtlHarvestCancel_Request', index=176, number=458754,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BtlMatchCancel_Request', index=177, number=458756,
+      name='MSG_BtlHarvestStatus_Response', index=177, number=462849,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BtlMatchStatus_Response', index=178, number=462851,
+      name='MSG_BtlMatch_Request', index=178, number=458755,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BtlStat_Inform', index=179, number=458757,
+      name='MSG_BtlMatchCancel_Request', index=179, number=458756,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BtlDeliver_Request', index=180, number=458758,
+      name='MSG_BtlMatchStatus_Response', index=180, number=462851,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BtlDeliver_Response', index=181, number=462854,
+      name='MSG_BtlStat_Inform', index=181, number=458757,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BtlEndStat_Inform', index=182, number=458759,
+      name='MSG_BtlDeliver_Request', index=182, number=458758,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BtlInspire_Request', index=183, number=458760,
+      name='MSG_BtlDeliver_Response', index=183, number=462854,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BtlInspire_Response', index=184, number=462856,
+      name='MSG_BtlEndStat_Inform', index=184, number=458759,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BtlMatchRes', index=185, number=458763,
+      name='MSG_BtlInspire_Request', index=185, number=458760,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BtlQuery_Request', index=186, number=458764,
+      name='MSG_BtlInspire_Response', index=186, number=462856,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BtlMatchSendCallFriendURL', index=187, number=462861,
+      name='MSG_BtlTeamMatchRes', index=187, number=458762,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BtMatchAFK_Notice', index=188, number=458766,
+      name='MSG_BtlMatchRes', index=188, number=458763,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_LoginGift_Request', index=189, number=524288,
+      name='MSG_BtlQuery_Request', index=189, number=458764,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_LoginGift_Response', index=190, number=528384,
+      name='MSG_BtlMatchSendCallFriendURL', index=190, number=462861,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GetLoginGift_Request', index=191, number=524289,
+      name='MSG_BtMatchAFK_Notice', index=191, number=458766,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Robolet_InfoImpulse', index=192, number=524290,
+      name='MSG_LoginGift_Request', index=192, number=524288,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuarterCardGift_Request', index=193, number=524291,
+      name='MSG_LoginGift_Response', index=193, number=528384,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuarterCardGift_Response', index=194, number=528387,
+      name='MSG_GetLoginGift_Request', index=194, number=524289,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuarterCardInfo_Notice', index=195, number=524292,
+      name='MSG_Robolet_InfoImpulse', index=195, number=524290,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GiftCard_Notice', index=196, number=524293,
+      name='MSG_QuarterCardGift_Request', index=196, number=524291,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GiftCard_Reward_Request', index=197, number=524294,
+      name='MSG_QuarterCardGift_Response', index=197, number=528387,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GiftCard_Reward_Response', index=198, number=528390,
+      name='MSG_QuarterCardInfo_Notice', index=198, number=524292,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ShopList_Request', index=199, number=589825,
+      name='MSG_GiftCard_Notice', index=199, number=524293,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ShopList_Response', index=200, number=593921,
+      name='MSG_GiftCard_Reward_Request', index=200, number=524294,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ShopBuy_Request', index=201, number=589826,
+      name='MSG_GiftCard_Reward_Response', index=201, number=528390,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ShopBuy_Response', index=202, number=593922,
+      name='MSG_ShopList_Request', index=202, number=589825,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ShopGoodsSold_Notice', index=203, number=593923,
+      name='MSG_ShopList_Response', index=203, number=593921,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ShopInfo_Request', index=204, number=589828,
+      name='MSG_ShopBuy_Request', index=204, number=589826,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ShopInfo_Response', index=205, number=593924,
+      name='MSG_ShopBuy_Response', index=205, number=593922,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ShopGoodsBuy_Request', index=206, number=589829,
+      name='MSG_ShopGoodsSold_Notice', index=206, number=593923,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ShopGoodsBuy_Response', index=207, number=593925,
+      name='MSG_ShopInfo_Request', index=207, number=589828,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ShopRefresh_Request', index=208, number=589830,
+      name='MSG_ShopInfo_Response', index=208, number=593924,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ShopRefresh_Response', index=209, number=593926,
+      name='MSG_ShopGoodsBuy_Request', index=209, number=589829,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MallGoodsBuy_Request', index=210, number=589831,
+      name='MSG_ShopGoodsBuy_Response', index=210, number=593925,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MallGoodsBuy_Response', index=211, number=593927,
+      name='MSG_ShopRefresh_Request', index=211, number=589830,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MallInfo_Request', index=212, number=589832,
+      name='MSG_ShopRefresh_Response', index=212, number=593926,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MallInfo_Response', index=213, number=593928,
+      name='MSG_MallGoodsBuy_Request', index=213, number=589831,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BackGoodsBuy_Request', index=214, number=589833,
+      name='MSG_MallGoodsBuy_Response', index=214, number=593927,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BackGoodsBuy_Response', index=215, number=593929,
+      name='MSG_MallInfo_Request', index=215, number=589832,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BuyBackInfo_Request', index=216, number=589834,
+      name='MSG_MallInfo_Response', index=216, number=593928,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BuyBackInfo_Response', index=217, number=593930,
+      name='MSG_BackGoodsBuy_Request', index=217, number=589833,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Consign_List_Request', index=218, number=589835,
+      name='MSG_BackGoodsBuy_Response', index=218, number=593929,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Consign_List_Response', index=219, number=593931,
+      name='MSG_BuyBackInfo_Request', index=219, number=589834,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Consign_Up_Request', index=220, number=589836,
+      name='MSG_BuyBackInfo_Response', index=220, number=593930,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Consign_Up_Response', index=221, number=593932,
+      name='MSG_Consign_List_Request', index=221, number=589835,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Consign_Down_Request', index=222, number=589837,
+      name='MSG_Consign_List_Response', index=222, number=593931,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Consign_Down_Response', index=223, number=593933,
+      name='MSG_Consign_Up_Request', index=223, number=589836,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Consign_Buy_Request', index=224, number=589838,
+      name='MSG_Consign_Up_Response', index=224, number=593932,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Consign_Buy_Response', index=225, number=593934,
+      name='MSG_Consign_Down_Request', index=225, number=589837,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Consign_MyList_Request', index=226, number=589839,
+      name='MSG_Consign_Down_Response', index=226, number=593933,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Consign_MyList_Response', index=227, number=593935,
+      name='MSG_Consign_Buy_Request', index=227, number=589838,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Consign_Tip_Request', index=228, number=589840,
+      name='MSG_Consign_Buy_Response', index=228, number=593934,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Consign_Tip_Response', index=229, number=593936,
+      name='MSG_Consign_MyList_Request', index=229, number=589839,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Consign_GetReward_Request', index=230, number=589841,
+      name='MSG_Consign_MyList_Response', index=230, number=593935,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Consign_GetReward_Response', index=231, number=593937,
+      name='MSG_Consign_Tip_Request', index=231, number=589840,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ExchangeShop_Info_Request', index=232, number=589842,
+      name='MSG_Consign_Tip_Response', index=232, number=593936,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ExchangeShop_Info_Response', index=233, number=593938,
+      name='MSG_Consign_GetReward_Request', index=233, number=589841,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ExchangeShop_Ex_Request', index=234, number=589843,
+      name='MSG_Consign_GetReward_Response', index=234, number=593937,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ExchangeShop_Ex_Response', index=235, number=593939,
+      name='MSG_ExchangeShop_Info_Request', index=235, number=589842,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Consign_Search_Request', index=236, number=589844,
+      name='MSG_ExchangeShop_Info_Response', index=236, number=593938,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Consign_Search_Response', index=237, number=593940,
+      name='MSG_ExchangeShop_Ex_Request', index=237, number=589843,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Consign_HotSale_Request', index=238, number=589845,
+      name='MSG_ExchangeShop_Ex_Response', index=238, number=593939,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Consign_HotSale_Response', index=239, number=593941,
+      name='MSG_Consign_Search_Request', index=239, number=589844,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Consign_ShowInfo_Request', index=240, number=589846,
+      name='MSG_Consign_Search_Response', index=240, number=593940,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Consign_ShowInfo_Response', index=241, number=593942,
+      name='MSG_Consign_HotSale_Request', index=241, number=589845,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MallGoodsSendGift_Request', index=242, number=589847,
+      name='MSG_Consign_HotSale_Response', index=242, number=593941,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MallGoodsSendGift_Response', index=243, number=593943,
+      name='MSG_Consign_ShowInfo_Request', index=243, number=589846,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ExchangeShop_List_Request', index=244, number=589848,
+      name='MSG_Consign_ShowInfo_Response', index=244, number=593942,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ExchangeShop_List_Response', index=245, number=593944,
+      name='MSG_MallGoodsSendGift_Request', index=245, number=589847,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ChangeJob_Request', index=246, number=655361,
+      name='MSG_MallGoodsSendGift_Response', index=246, number=593943,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ChangeJob_Response', index=247, number=655362,
+      name='MSG_ExchangeShop_List_Request', index=247, number=589848,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CheckTransCamp_Request', index=248, number=655363,
+      name='MSG_ExchangeShop_List_Response', index=248, number=593944,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CheckTransCamp_Response', index=249, number=659459,
+      name='MSG_ChangeJob_Request', index=249, number=655361,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TransCampSingle_Request', index=250, number=655364,
+      name='MSG_ChangeJob_Response', index=250, number=655362,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TransCampSingle_Response', index=251, number=659460,
+      name='MSG_CheckTransCamp_Request', index=251, number=655363,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TransCampLeader_Request', index=252, number=655365,
+      name='MSG_CheckTransCamp_Response', index=252, number=659459,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TransCampLeader_Response', index=253, number=659461,
+      name='MSG_TransCampSingle_Request', index=253, number=655364,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TransCampWait_Notice', index=254, number=659462,
+      name='MSG_TransCampSingle_Response', index=254, number=659460,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TransMemberOk_Request', index=255, number=655367,
+      name='MSG_TransCampLeader_Request', index=255, number=655365,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TransMemberOk_Response', index=256, number=659463,
+      name='MSG_TransCampLeader_Response', index=256, number=659461,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TransMemberCancel_Request', index=257, number=655368,
+      name='MSG_TransCampWait_Notice', index=257, number=659462,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TransMemberCancel_Response', index=258, number=659464,
+      name='MSG_TransMemberOk_Request', index=258, number=655367,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TransCampSuccess_Notice', index=259, number=659465,
+      name='MSG_TransMemberOk_Response', index=259, number=659463,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TransCampMember_Notice', index=260, number=659466,
+      name='MSG_TransMemberCancel_Request', index=260, number=655368,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ReadyTransCamp_Request', index=261, number=655371,
+      name='MSG_TransMemberCancel_Response', index=261, number=659464,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ReadyTransCamp_Response', index=262, number=659467,
+      name='MSG_TransCampSuccess_Notice', index=262, number=659465,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ChangeJob_Query_Request', index=263, number=655372,
+      name='MSG_TransCampMember_Notice', index=263, number=659466,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ChangeJob_Query_Response', index=264, number=659468,
+      name='MSG_ReadyTransCamp_Request', index=264, number=655371,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemState_Request', index=265, number=720897,
+      name='MSG_ReadyTransCamp_Response', index=265, number=659467,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemState_Response', index=266, number=720898,
+      name='MSG_ChangeJob_Query_Request', index=266, number=655372,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemCompose_Request', index=267, number=720899,
+      name='MSG_ChangeJob_Query_Response', index=267, number=659468,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemCompose_Response', index=268, number=770051,
+      name='MSG_GemState_Request', index=268, number=720897,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemQuickCompose_Request', index=269, number=720900,
+      name='MSG_GemState_Response', index=269, number=720898,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemQuickCompose_Response', index=270, number=720901,
+      name='MSG_GemCompose_Request', index=270, number=720899,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemTransform_Request', index=271, number=720902,
+      name='MSG_GemCompose_Response', index=271, number=770051,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemTransform_Response', index=272, number=720903,
+      name='MSG_GemQuickCompose_Request', index=272, number=720900,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemEnchase_Request', index=273, number=720904,
+      name='MSG_GemQuickCompose_Response', index=273, number=720901,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemEnchase_Response', index=274, number=720905,
+      name='MSG_GemTransform_Request', index=274, number=720902,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemRemove_Request', index=275, number=720906,
+      name='MSG_GemTransform_Response', index=275, number=720903,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemRemove_Response', index=276, number=720907,
+      name='MSG_GemEnchase_Request', index=276, number=720904,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemUnlock_Request', index=277, number=720908,
+      name='MSG_GemEnchase_Response', index=277, number=720905,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemUnlock_Response', index=278, number=720909,
+      name='MSG_GemRemove_Request', index=278, number=720906,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemComposeQuick_Query_Request', index=279, number=720910,
+      name='MSG_GemRemove_Response', index=279, number=720907,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemComposeQuick_Query_Response', index=280, number=720911,
+      name='MSG_GemUnlock_Request', index=280, number=720908,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemComposeQuick_Compose_Request', index=281, number=720912,
+      name='MSG_GemUnlock_Response', index=281, number=720909,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemComposeQuick_Compose_Response', index=282, number=720913,
+      name='MSG_GemComposeQuick_Query_Request', index=282, number=720910,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemCutting_Base_Request', index=283, number=720914,
+      name='MSG_GemComposeQuick_Query_Response', index=283, number=720911,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemCutting_Base_Response', index=284, number=725010,
+      name='MSG_GemComposeQuick_Compose_Request', index=284, number=720912,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemCutting_Element_Request', index=285, number=720915,
+      name='MSG_GemComposeQuick_Compose_Response', index=285, number=720913,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemCutting_Element_Response', index=286, number=725011,
+      name='MSG_GemCutting_Base_Request', index=286, number=720914,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemCutting_Base_Detail_Request', index=287, number=720916,
+      name='MSG_GemCutting_Base_Response', index=287, number=725010,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemCutting_Base_Detail_Response', index=288, number=725012,
+      name='MSG_GemCutting_Element_Request', index=288, number=720915,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemCutting_Element_Detail_Request', index=289, number=720917,
+      name='MSG_GemCutting_Element_Response', index=289, number=725011,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemCutting_Element_Detail_Response', index=290, number=725013,
+      name='MSG_GemCutting_Base_Detail_Request', index=290, number=720916,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemCutting_Reset_Request', index=291, number=720918,
+      name='MSG_GemCutting_Base_Detail_Response', index=291, number=725012,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GemCutting_Reset_Response', index=292, number=725014,
+      name='MSG_GemCutting_Element_Detail_Request', index=292, number=720917,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonRestart_Request', index=293, number=786433,
+      name='MSG_GemCutting_Element_Detail_Response', index=293, number=725013,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonNext_Request', index=294, number=786434,
+      name='MSG_GemCutting_Reset_Request', index=294, number=720918,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonReward_Requrest', index=295, number=786435,
+      name='MSG_GemCutting_Reset_Response', index=295, number=725014,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonState_Response', index=296, number=786436,
+      name='MSG_DungeonRestart_Request', index=296, number=786433,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Callfriend_Request', index=297, number=786437,
+      name='MSG_DungeonNext_Request', index=297, number=786434,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Callfriend_Response', index=298, number=786438,
+      name='MSG_DungeonReward_Requrest', index=298, number=786435,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ApplyTeam_Request', index=299, number=786439,
+      name='MSG_DungeonState_Response', index=299, number=786436,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ApplyTeam_Response', index=300, number=790535,
+      name='MSG_Callfriend_Request', index=300, number=786437,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ActivityTeamList_Request', index=301, number=786440,
+      name='MSG_Callfriend_Response', index=301, number=786438,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ActivityTeamList_Response', index=302, number=786441,
+      name='MSG_ApplyTeam_Request', index=302, number=786439,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ForceApplyTeam_Request', index=303, number=786448,
+      name='MSG_ApplyTeam_Response', index=303, number=790535,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ForceApplyTeam_Response', index=304, number=790544,
+      name='MSG_ActivityTeamList_Request', index=304, number=786440,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuickBuildTeam_Request', index=305, number=786449,
+      name='MSG_ActivityTeamList_Response', index=305, number=786441,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuickBuildTeam_Response', index=306, number=786450,
+      name='MSG_ForceApplyTeam_Request', index=306, number=786448,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonEnter_Request', index=307, number=786451,
+      name='MSG_ForceApplyTeam_Response', index=307, number=790544,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonEnter_Response', index=308, number=790547,
+      name='MSG_QuickBuildTeam_Request', index=308, number=786449,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonLeave_Request', index=309, number=786452,
+      name='MSG_QuickBuildTeam_Response', index=309, number=786450,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonLeave_Response', index=310, number=790548,
+      name='MSG_DungeonEnter_Request', index=310, number=786451,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonStart_Request', index=311, number=786453,
+      name='MSG_DungeonEnter_Response', index=311, number=790547,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonStart_Response', index=312, number=790549,
+      name='MSG_DungeonLeave_Request', index=312, number=786452,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonList_Request', index=313, number=786454,
+      name='MSG_DungeonLeave_Response', index=313, number=790548,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonList_Response', index=314, number=790550,
+      name='MSG_DungeonStart_Request', index=314, number=786453,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonSettleUp_Notice', index=315, number=786455,
+      name='MSG_DungeonStart_Response', index=315, number=790549,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonDraw_Request', index=316, number=786456,
+      name='MSG_DungeonList_Request', index=316, number=786454,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonDraw_Response', index=317, number=790552,
+      name='MSG_DungeonList_Response', index=317, number=790550,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonStat_Notice', index=318, number=786457,
+      name='MSG_DungeonSettleUp_Notice', index=318, number=786455,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonMonsterWave_Notice', index=319, number=786458,
+      name='MSG_DungeonDraw_Request', index=319, number=786456,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonRecoverMedicinePrice_Notice', index=320, number=786459,
+      name='MSG_DungeonDraw_Response', index=320, number=790552,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonRush_Request', index=321, number=786460,
+      name='MSG_DungeonStat_Notice', index=321, number=786457,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonRush_Response', index=322, number=790556,
+      name='MSG_DungeonMonsterWave_Notice', index=322, number=786458,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonRun_Notice', index=323, number=786461,
+      name='MSG_DungeonRecoverMedicinePrice_Notice', index=323, number=786459,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonUnlock_Notice', index=324, number=786462,
+      name='MSG_DungeonRush_Request', index=324, number=786460,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonResetCount_Request', index=325, number=786464,
+      name='MSG_DungeonRush_Response', index=325, number=790556,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonResetCount_Response', index=326, number=790560,
+      name='MSG_DungeonRun_Notice', index=326, number=786461,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonGetRoadChest_Request', index=327, number=786465,
+      name='MSG_DungeonUnlock_Notice', index=327, number=786462,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonGetRoadChest_Response', index=328, number=790561,
+      name='MSG_DungeonResetCount_Request', index=328, number=786464,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonGetRegionChest_Request', index=329, number=786466,
+      name='MSG_DungeonResetCount_Response', index=329, number=790560,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonGetRegionChest_Response', index=330, number=790562,
+      name='MSG_DungeonGetRoadChest_Request', index=330, number=786465,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonOpposite_Notice', index=331, number=790563,
+      name='MSG_DungeonGetRoadChest_Response', index=331, number=790561,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonGetInfo_Request', index=332, number=786468,
+      name='MSG_DungeonGetRegionChest_Request', index=332, number=786466,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonGetInfo_Response', index=333, number=790564,
+      name='MSG_DungeonGetRegionChest_Response', index=333, number=790562,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonListBuyEnterTimes_Request', index=334, number=786469,
+      name='MSG_DungeonOpposite_Notice', index=334, number=790563,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonListBuyEnterTimes_Response', index=335, number=790565,
+      name='MSG_DungeonGetInfo_Request', index=335, number=786468,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonTeamEnterVerify_Notice', index=336, number=790566,
+      name='MSG_DungeonGetInfo_Response', index=336, number=790564,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonPlayerConfirm_Request', index=337, number=786471,
+      name='MSG_DungeonListBuyEnterTimes_Request', index=337, number=786469,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonPlayerConfirm_Response', index=338, number=790567,
+      name='MSG_DungeonListBuyEnterTimes_Response', index=338, number=790565,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonPlayerRefuseEnterDungeon_Notice', index=339, number=790568,
+      name='MSG_DungeonTeamEnterVerify_Notice', index=339, number=790566,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonPlayerInconformityEnterCondition_Notice', index=340, number=790569,
+      name='MSG_DungeonPlayerConfirm_Request', index=340, number=786471,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonPlayerConfirmEnterOffline_Notice', index=341, number=790570,
+      name='MSG_DungeonPlayerConfirm_Response', index=341, number=790567,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonStoryOp_Request', index=342, number=786475,
+      name='MSG_DungeonPlayerRefuseEnterDungeon_Notice', index=342, number=790568,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonStoryOp_Response', index=343, number=790571,
+      name='MSG_DungeonPlayerInconformityEnterCondition_Notice', index=343, number=790569,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonClientEvent_Notice', index=344, number=790572,
+      name='MSG_DungeonPlayerConfirmEnterOffline_Notice', index=344, number=790570,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EGSToAISEvent_Report', index=345, number=790573,
+      name='MSG_DungeonStoryOp_Request', index=345, number=786475,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EnterDynamicPlace_Report', index=346, number=786478,
+      name='MSG_DungeonStoryOp_Response', index=346, number=790571,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeleportPlayer_Notice', index=347, number=790575,
+      name='MSG_DungeonClientEvent_Notice', index=347, number=790572,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ProcessCollect_Report', index=348, number=786480,
+      name='MSG_EGSToAISEvent_Report', index=348, number=790573,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OpCollection_Request', index=349, number=786481,
+      name='MSG_EnterDynamicPlace_Report', index=349, number=786478,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OpCollection_Response', index=350, number=790577,
+      name='MSG_TeleportPlayer_Notice', index=350, number=790575,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SpawnBot_Request', index=351, number=786482,
+      name='MSG_ProcessCollect_Report', index=351, number=786480,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SpawnBot_Response', index=352, number=790578,
+      name='MSG_OpCollection_Request', index=352, number=786481,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonPlayerWildBossDmgRankNotice', index=353, number=790579,
+      name='MSG_OpCollection_Response', index=353, number=790577,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonPlayerWildBossDmgNotice', index=354, number=790580,
+      name='MSG_SpawnBot_Request', index=354, number=786482,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonDisPlayWildBossDmgTableNotice', index=355, number=790581,
+      name='MSG_SpawnBot_Response', index=355, number=790578,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonWildBossLocation_Request', index=356, number=786486,
+      name='MSG_DungeonPlayerWildBossDmgRankNotice', index=356, number=790579,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonWildBossLocation_Response', index=357, number=790583,
+      name='MSG_DungeonPlayerWildBossDmgNotice', index=357, number=790580,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonIsSearchingWildBossNotice', index=358, number=790584,
+      name='MSG_DungeonDisPlayWildBossDmgTableNotice', index=358, number=790581,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonPlayerTooLongNotAttackWildBossNotice', index=359, number=790585,
+      name='MSG_DungeonWildBossLocation_Request', index=359, number=786486,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EntityKill_Report', index=360, number=786490,
+      name='MSG_DungeonWildBossLocation_Response', index=360, number=790583,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SceneFail_Notice', index=361, number=790587,
+      name='MSG_DungeonIsSearchingWildBossNotice', index=361, number=790584,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BotChangeHp_Notice', index=362, number=790588,
+      name='MSG_DungeonPlayerTooLongNotAttackWildBossNotice', index=362, number=790585,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GroupSpawn_Notice', index=363, number=790589,
+      name='MSG_EntityKill_Report', index=363, number=786490,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_NewGroupMonsterCome_Notice', index=364, number=790590,
+      name='MSG_SceneFail_Notice', index=364, number=790587,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Respawn_Request', index=365, number=786495,
+      name='MSG_BotChangeHp_Notice', index=365, number=790588,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Respawn_Response', index=366, number=790591,
+      name='MSG_GroupSpawn_Notice', index=366, number=790589,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EntityExeSkill_Report', index=367, number=786496,
+      name='MSG_NewGroupMonsterCome_Notice', index=367, number=790590,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_AISystemBuff_Notice', index=368, number=790593,
+      name='MSG_Respawn_Request', index=368, number=786495,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_AISystemSkill_Notice', index=369, number=790594,
+      name='MSG_Respawn_Response', index=369, number=790591,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_AIDungeonSettle_Notice', index=370, number=790595,
+      name='MSG_EntityExeSkill_Report', index=370, number=786496,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_StarRatingInfo_Notice', index=371, number=786500,
+      name='MSG_AISystemBuff_Notice', index=371, number=790593,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EnterLinkDungeon_Request', index=372, number=786501,
+      name='MSG_AISystemSkill_Notice', index=372, number=790594,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_LinkDungeon_Result_Notice', index=373, number=790598,
+      name='MSG_AIDungeonSettle_Notice', index=373, number=790595,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WorldBossRank_Notice', index=374, number=790599,
+      name='MSG_StarRatingInfo_Notice', index=374, number=786500,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WorldBossResult_Notice', index=375, number=790600,
+      name='MSG_EnterLinkDungeon_Request', index=375, number=786501,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WorldBossEnterRequest', index=376, number=786505,
+      name='MSG_LinkDungeon_Result_Notice', index=376, number=790598,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WorldBossEnterResponse', index=377, number=790601,
+      name='MSG_WorldBossRank_Notice', index=377, number=790599,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WorldBossOpen_Notice', index=378, number=790608,
+      name='MSG_WorldBossResult_Notice', index=378, number=790600,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonContinueKill_Notice', index=379, number=790609,
+      name='MSG_WorldBossEnterRequest', index=379, number=786505,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MatchEnter_Notice', index=380, number=790610,
+      name='MSG_WorldBossEnterResponse', index=380, number=790601,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CancelCollection_Notice', index=381, number=790611,
+      name='MSG_WorldBossOpen_Notice', index=381, number=790608,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonEnterWeddingDungeonDialog_Notice', index=382, number=790612,
+      name='MSG_DungeonContinueKill_Notice', index=382, number=790609,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonEnterWeddingDungeon_Request', index=383, number=786517,
+      name='MSG_MatchEnter_Notice', index=383, number=790610,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonEnterWeddingDungeon_Response', index=384, number=790613,
+      name='MSG_CancelCollection_Notice', index=384, number=790611,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonBuyWeddingPlayerNum_Request', index=385, number=786518,
+      name='MSG_DungeonEnterWeddingDungeonDialog_Notice', index=385, number=790612,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonBuyWeddingPlayerNum_Response', index=386, number=790614,
+      name='MSG_DungeonEnterWeddingDungeon_Request', index=386, number=786517,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WeddingDungeonInfo_Notice', index=387, number=790615,
+      name='MSG_DungeonEnterWeddingDungeon_Response', index=387, number=790613,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonRequireFriendWeddingDungeon_Request', index=388, number=786520,
+      name='MSG_DungeonBuyWeddingPlayerNum_Request', index=388, number=786518,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonRequireFriendWeddingDungeon_Response', index=389, number=790616,
+      name='MSG_DungeonBuyWeddingPlayerNum_Response', index=389, number=790614,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonRequireGuildWeddingDungeon_Request', index=390, number=786521,
+      name='MSG_WeddingDungeonInfo_Notice', index=390, number=790615,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonRequireGuildWeddingDungeon_Response', index=391, number=790617,
+      name='MSG_DungeonRequireFriendWeddingDungeon_Request', index=391, number=786520,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonCreateWeddingDungeon_Request', index=392, number=786522,
+      name='MSG_DungeonRequireFriendWeddingDungeon_Response', index=392, number=790616,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonCreateWeddingDungeon_Response', index=393, number=790618,
+      name='MSG_DungeonRequireGuildWeddingDungeon_Request', index=393, number=786521,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonBeginPerformWedding_Request', index=394, number=786523,
+      name='MSG_DungeonRequireGuildWeddingDungeon_Response', index=394, number=790617,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonBeginPerformWedding_Response', index=395, number=790619,
+      name='MSG_DungeonCreateWeddingDungeon_Request', index=395, number=786522,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonBeginPerformWedding_Notice', index=396, number=790620,
+      name='MSG_DungeonCreateWeddingDungeon_Response', index=396, number=790618,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonBuyWeddingCandy_Request', index=397, number=786525,
+      name='MSG_DungeonBeginPerformWedding_Request', index=397, number=786523,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonBuyWeddingCandy_Response', index=398, number=790621,
+      name='MSG_DungeonBeginPerformWedding_Response', index=398, number=790619,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonWeddingDraw_Request', index=399, number=786526,
+      name='MSG_DungeonBeginPerformWedding_Notice', index=399, number=790620,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonWeddingDraw_Response', index=400, number=790622,
+      name='MSG_DungeonBuyWeddingCandy_Request', index=400, number=786525,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonCreateWeddingDungeon_Notice', index=401, number=790623,
+      name='MSG_DungeonBuyWeddingCandy_Response', index=401, number=790621,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CharDeathInfo_Notice', index=402, number=790624,
+      name='MSG_DungeonWeddingDraw_Request', index=402, number=786526,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OpCollectionEnd_Notice', index=403, number=790625,
+      name='MSG_DungeonWeddingDraw_Response', index=403, number=790622,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OpBench_Request', index=404, number=786530,
+      name='MSG_DungeonCreateWeddingDungeon_Notice', index=404, number=790623,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OpBench_Response', index=405, number=790626,
+      name='MSG_CharDeathInfo_Notice', index=405, number=790624,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GroupDespawn_Notice', index=406, number=790627,
+      name='MSG_OpCollectionEnd_Notice', index=406, number=790625,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_AIPetSkill_Notice', index=407, number=790628,
+      name='MSG_OpBench_Request', index=407, number=786530,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonBoatingStatus_Request', index=408, number=786545,
+      name='MSG_OpBench_Response', index=408, number=790626,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DungeonBoatingStatus_Response', index=409, number=790641,
+      name='MSG_GroupDespawn_Notice', index=409, number=790627,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MultiBoatingStart_Request', index=410, number=786546,
+      name='MSG_AIPetSkill_Notice', index=410, number=790628,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MultiBoatingStart_Response', index=411, number=790642,
+      name='MSG_DungeonBoatingStatus_Request', index=411, number=786545,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MultiBoatingEnd_Request', index=412, number=786547,
+      name='MSG_DungeonBoatingStatus_Response', index=412, number=790641,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MultiBoatingEnd_Response', index=413, number=790643,
+      name='MSG_MultiBoatingStart_Request', index=413, number=786546,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MultiBoatingStatus_Notice', index=414, number=790644,
+      name='MSG_MultiBoatingStart_Response', index=414, number=790642,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MultiBoatingReply_Request', index=415, number=786549,
+      name='MSG_MultiBoatingEnd_Request', index=415, number=786547,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MultiBoatingReply_Response', index=416, number=790645,
+      name='MSG_MultiBoatingEnd_Response', index=416, number=790643,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SpanWildScore_Notice', index=417, number=790657,
+      name='MSG_MultiBoatingStatus_Notice', index=417, number=790644,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SpanWildState_Notice', index=418, number=790658,
+      name='MSG_MultiBoatingReply_Request', index=418, number=786549,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GetSpanWildState_Notice', index=419, number=790659,
+      name='MSG_MultiBoatingReply_Response', index=419, number=790645,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetBattleStar_Request', index=420, number=786577,
+      name='MSG_SpanWildScore_Notice', index=420, number=790657,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetBattleStar_Notice', index=421, number=790673,
+      name='MSG_SpanWildState_Notice', index=421, number=790658,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetBattleRound_Notice', index=422, number=790674,
+      name='MSG_GetSpanWildState_Notice', index=422, number=790659,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SkipBattle_Request', index=423, number=786579,
+      name='MSG_PetBattleStar_Request', index=423, number=786577,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SkipBattle_Response', index=424, number=790675,
+      name='MSG_PetBattleStar_Notice', index=424, number=790673,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetBattle_PvP_SettleUp_Notice', index=425, number=790676,
+      name='MSG_PetBattleRound_Notice', index=425, number=790674,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBattle_RaceOne_Settle_Notice', index=426, number=790689,
+      name='MSG_SkipBattle_Request', index=426, number=786579,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBattle_RaceTwo_Settle_Notice', index=427, number=790690,
+      name='MSG_SkipBattle_Response', index=427, number=790675,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBattle_RaceThree_Settle_Notice', index=428, number=790691,
+      name='MSG_PetBattle_PvP_SettleUp_Notice', index=428, number=790676,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBattle_RaceOne_Rank_Notice', index=429, number=790692,
+      name='MSG_SPMonorBattle_RaceOne_Settle_Notice', index=429, number=790689,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBattle_RaceTwo_Rank_Notice', index=430, number=790693,
+      name='MSG_SPMonorBattle_RaceTwo_Settle_Notice', index=430, number=790690,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBattle_RaceThree_Rank_Notice', index=431, number=790694,
+      name='MSG_SPMonorBattle_RaceThree_Settle_Notice', index=431, number=790691,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBattle_RaceTwo_Capture_Rate_Notice', index=432, number=790695,
+      name='MSG_SPMonorBattle_RaceOne_Rank_Notice', index=432, number=790692,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBattle_RaceThree_Fight_Request', index=433, number=786600,
+      name='MSG_SPMonorBattle_RaceTwo_Rank_Notice', index=433, number=790693,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBattle_RaceThree_Fight_Response', index=434, number=790696,
+      name='MSG_SPMonorBattle_RaceThree_Rank_Notice', index=434, number=790694,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBattle_RaceThree_Unfight_Request', index=435, number=786601,
+      name='MSG_SPMonorBattle_RaceTwo_Capture_Rate_Notice', index=435, number=790695,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBattle_RaceThree_Unfight_Response', index=436, number=790697,
+      name='MSG_SPMonorBattle_RaceThree_Fight_Request', index=436, number=786600,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBattle_RaceThree_Fight_Member_Notice', index=437, number=790698,
+      name='MSG_SPMonorBattle_RaceThree_Fight_Response', index=437, number=790696,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBattle_RaceThree_Round_Notice', index=438, number=790699,
+      name='MSG_SPMonorBattle_RaceThree_Unfight_Request', index=438, number=786601,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MailBox_Response', index=439, number=851969,
+      name='MSG_SPMonorBattle_RaceThree_Unfight_Response', index=439, number=790697,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MailBox_Require', index=440, number=851970,
+      name='MSG_SPMonorBattle_RaceThree_Fight_Member_Notice', index=440, number=790698,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GmMail_Notice', index=441, number=851971,
+      name='MSG_SPMonorBattle_RaceThree_Round_Notice', index=441, number=790699,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventInspire_Request', index=442, number=917509,
+      name='MSG_Guild_WildBossDmgRank_Notice', index=442, number=790700,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventInspire_Response', index=443, number=917510,
+      name='MSG_MailBox_Response', index=443, number=851969,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventSummonStat_Response', index=444, number=917511,
+      name='MSG_MailBox_Require', index=444, number=851970,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventSummonEndStat_Response', index=445, number=917512,
+      name='MSG_GmMail_Notice', index=445, number=851971,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventJuBaoPenState_Request', index=446, number=917513,
+      name='MSG_EventInspire_Request', index=446, number=917509,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventJuBaoPenState_Response', index=447, number=917514,
+      name='MSG_EventInspire_Response', index=447, number=917510,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventPurchaseJuBaoPen_Request', index=448, number=917515,
+      name='MSG_EventSummonStat_Response', index=448, number=917511,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventPurchaseJuBaoPen_Response', index=449, number=917516,
+      name='MSG_EventSummonEndStat_Response', index=449, number=917512,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventGetJuBaoPenGift_Request', index=450, number=917517,
+      name='MSG_EventJuBaoPenState_Request', index=450, number=917513,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventGetJuBaoPenGift_Response', index=451, number=917518,
+      name='MSG_EventJuBaoPenState_Response', index=451, number=917514,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventLivenessInfo_Request', index=452, number=917519,
+      name='MSG_EventPurchaseJuBaoPen_Request', index=452, number=917515,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventLivenessInfo_Response', index=453, number=917520,
+      name='MSG_EventPurchaseJuBaoPen_Response', index=453, number=917516,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventLivenessGetReward_Request', index=454, number=917521,
+      name='MSG_EventGetJuBaoPenGift_Request', index=454, number=917517,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventLivenessGetReward_Response', index=455, number=917522,
+      name='MSG_EventGetJuBaoPenGift_Response', index=455, number=917518,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ActivityEntry_Notice', index=456, number=917523,
+      name='MSG_EventLivenessInfo_Request', index=456, number=917519,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_NewCharacter_Notice', index=457, number=917524,
+      name='MSG_EventLivenessInfo_Response', index=457, number=917520,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WildActStatus_Request', index=458, number=917525,
+      name='MSG_EventLivenessGetReward_Request', index=458, number=917521,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WildActStatus_Response', index=459, number=921621,
+      name='MSG_EventLivenessGetReward_Response', index=459, number=917522,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WildActStatus_Notice', index=460, number=921622,
+      name='MSG_ActivityEntry_Notice', index=460, number=917523,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WildBossInfo_Request', index=461, number=917527,
+      name='MSG_NewCharacter_Notice', index=461, number=917524,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FestActivity_Notice', index=462, number=917528,
+      name='MSG_WildActStatus_Request', index=462, number=917525,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventMonsterWave', index=463, number=917536,
+      name='MSG_WildActStatus_Response', index=463, number=921621,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventMatchPVP_Response', index=464, number=921633,
+      name='MSG_WildActStatus_Notice', index=464, number=921622,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventJoinActivity_Request', index=465, number=917552,
+      name='MSG_WildBossInfo_Request', index=465, number=917527,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TowerInfo_Request', index=466, number=917553,
+      name='MSG_FestActivity_Notice', index=466, number=917528,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TowerInfo_Response', index=467, number=921649,
+      name='MSG_EventMonsterWave', index=467, number=917536,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TowerGetFirstAward_Request', index=468, number=917554,
+      name='MSG_EventMatchPVP_Response', index=468, number=921633,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TowerGetFirstAward_Response', index=469, number=921650,
+      name='MSG_EventJoinActivity_Request', index=469, number=917552,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TowerGetStageAward_Request', index=470, number=917555,
+      name='MSG_TowerInfo_Request', index=470, number=917553,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TowerGetStageAward_Response', index=471, number=921651,
+      name='MSG_TowerInfo_Response', index=471, number=921649,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TowerReset_Request', index=472, number=917556,
+      name='MSG_TowerGetFirstAward_Request', index=472, number=917554,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TowerReset_Response', index=473, number=921652,
+      name='MSG_TowerGetFirstAward_Response', index=473, number=921650,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TowerRush_Request', index=474, number=917557,
+      name='MSG_TowerGetStageAward_Request', index=474, number=917555,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TowerRush_Response', index=475, number=921653,
+      name='MSG_TowerGetStageAward_Response', index=475, number=921651,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EnterTower_Request', index=476, number=917558,
+      name='MSG_TowerReset_Request', index=476, number=917556,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EnterTower_Response', index=477, number=921654,
+      name='MSG_TowerReset_Response', index=477, number=921652,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TowerDungeonEnd_Notice', index=478, number=917559,
+      name='MSG_TowerRush_Request', index=478, number=917557,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TowerRushState_Request', index=479, number=917560,
+      name='MSG_TowerRush_Response', index=479, number=921653,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TowerRushState_Response', index=480, number=921656,
+      name='MSG_EnterTower_Request', index=480, number=917558,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TowerRushClearCD_Request', index=481, number=917561,
+      name='MSG_EnterTower_Response', index=481, number=921654,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TowerRushClearCD_Response', index=482, number=921657,
+      name='MSG_TowerDungeonEnd_Notice', index=482, number=917559,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EnterTeleportMainCity_Request', index=483, number=917568,
+      name='MSG_TowerRushState_Request', index=483, number=917560,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EnterTeleportMainCity_Response', index=484, number=921664,
+      name='MSG_TowerRushState_Response', index=484, number=921656,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TowerRushCancel_Request', index=485, number=917569,
+      name='MSG_TowerRushClearCD_Request', index=485, number=917561,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TowerRushCancel_Response', index=486, number=921665,
+      name='MSG_TowerRushClearCD_Response', index=486, number=921657,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TowerRushResult_Notice', index=487, number=917570,
+      name='MSG_EnterTeleportMainCity_Request', index=487, number=917568,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_XiuXianInfo_Request', index=488, number=917584,
+      name='MSG_EnterTeleportMainCity_Response', index=488, number=921664,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_XiuXianInfo_Response', index=489, number=921680,
+      name='MSG_TowerRushCancel_Request', index=489, number=917569,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_XueWeiUp_Request', index=490, number=917585,
+      name='MSG_TowerRushCancel_Response', index=490, number=921665,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_XueWeiUp_Response', index=491, number=921681,
+      name='MSG_TowerRushResult_Notice', index=491, number=917570,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DuJie_Request', index=492, number=917586,
+      name='MSG_XiuXianInfo_Request', index=492, number=917584,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DuJie_Response', index=493, number=921682,
+      name='MSG_XiuXianInfo_Response', index=493, number=921680,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_XiuXianResetCD_Request', index=494, number=917587,
+      name='MSG_XueWeiUp_Request', index=494, number=917585,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_XiuXianResetCD_Response', index=495, number=921683,
+      name='MSG_XueWeiUp_Response', index=495, number=921681,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WestRegionNPCInfo_Request', index=496, number=917601,
+      name='MSG_DuJie_Request', index=496, number=917586,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WestRegionNPCInfo_Response', index=497, number=921697,
+      name='MSG_DuJie_Response', index=497, number=921682,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WestRegionEnter_Request', index=498, number=917602,
+      name='MSG_XiuXianResetCD_Request', index=498, number=917587,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WestRegionEnter_Response', index=499, number=921698,
+      name='MSG_XiuXianResetCD_Response', index=499, number=921683,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventDailyQuestInform_Request', index=500, number=917632,
+      name='MSG_WestRegionNPCInfo_Request', index=500, number=917601,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventDailyQuestInform_Response', index=501, number=921728,
+      name='MSG_WestRegionNPCInfo_Response', index=501, number=921697,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventDailyQuestAnswer_Request', index=502, number=917633,
+      name='MSG_WestRegionEnter_Request', index=502, number=917602,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventDailyQuestAnswer_Response', index=503, number=921729,
+      name='MSG_WestRegionEnter_Response', index=503, number=921698,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventWisdomQuestInform_Request', index=504, number=917634,
+      name='MSG_EventDailyQuestInform_Request', index=504, number=917632,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventWisdomQuestInform_Response', index=505, number=921730,
+      name='MSG_EventDailyQuestInform_Response', index=505, number=921728,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventWisdomQuestInfo_Notice', index=506, number=921731,
+      name='MSG_EventDailyQuestAnswer_Request', index=506, number=917633,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventWisdomQuestStat_Notice', index=507, number=921732,
+      name='MSG_EventDailyQuestAnswer_Response', index=507, number=921729,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventWisdomQuestResult_Notice', index=508, number=921733,
+      name='MSG_EventWisdomQuestInform_Request', index=508, number=917634,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventWisdomQuestActEnd_Notice', index=509, number=921734,
+      name='MSG_EventWisdomQuestInform_Response', index=509, number=921730,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventWisdomFirstAnswer_Request', index=510, number=917639,
+      name='MSG_EventWisdomQuestInfo_Notice', index=510, number=921731,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventWisdomFirstAnswer_Response', index=511, number=921735,
+      name='MSG_EventWisdomQuestStat_Notice', index=511, number=921732,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventWisdomSecondAnswer_Request', index=512, number=917640,
+      name='MSG_EventWisdomQuestResult_Notice', index=512, number=921733,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventWisdomSecondAnswer_Response', index=513, number=921736,
+      name='MSG_EventWisdomQuestActEnd_Notice', index=513, number=921734,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventWisdomCancel_Request', index=514, number=917641,
+      name='MSG_EventWisdomFirstAnswer_Request', index=514, number=917639,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventWisdomCancel_Response', index=515, number=921737,
+      name='MSG_EventWisdomFirstAnswer_Response', index=515, number=921735,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MsG_EventJoinRecord_Notice', index=516, number=921738,
+      name='MSG_EventWisdomSecondAnswer_Request', index=516, number=917640,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventQuestRealRankList_Notice', index=517, number=921739,
+      name='MSG_EventWisdomSecondAnswer_Response', index=517, number=921736,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventWisdomQuestOpen_Notice', index=518, number=921740,
+      name='MSG_EventWisdomCancel_Request', index=518, number=917641,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventActivateHappyEncount_Notice', index=519, number=921741,
+      name='MSG_EventWisdomCancel_Response', index=519, number=921737,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ExcutingHappyEncount_Request', index=520, number=917646,
+      name='MsG_EventJoinRecord_Notice', index=520, number=921738,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ExcutingHappyEncount_Response', index=521, number=921742,
+      name='MSG_EventQuestRealRankList_Notice', index=521, number=921739,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventWorship_Request', index=522, number=917647,
+      name='MSG_EventWisdomQuestOpen_Notice', index=522, number=921740,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventWorship_Response', index=523, number=921743,
+      name='MSG_EventActivateHappyEncount_Notice', index=523, number=921741,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventPlayerStatus_Response', index=524, number=921744,
+      name='MSG_ExcutingHappyEncount_Request', index=524, number=917646,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ManorWorship_Request', index=525, number=917649,
+      name='MSG_ExcutingHappyEncount_Response', index=525, number=921742,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ManorWorship_Response', index=526, number=921745,
+      name='MSG_EventWorship_Request', index=526, number=917647,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ImmortalMembersInfo_Request', index=527, number=983089,
+      name='MSG_EventWorship_Response', index=527, number=921743,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ImmortalMembersInfo_Response', index=528, number=987185,
+      name='MSG_EventPlayerStatus_Response', index=528, number=921744,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ImStore_Giveout_Request', index=529, number=991233,
+      name='MSG_ManorWorship_Request', index=529, number=917649,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ImStore_Giveout_Response', index=530, number=991234,
+      name='MSG_ManorWorship_Response', index=530, number=921745,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ImStore_Operate_Record', index=531, number=991235,
+      name='MSG_ImmortalMembersInfo_Request', index=531, number=983089,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ImStore_Item_List', index=532, number=991236,
+      name='MSG_ImmortalMembersInfo_Response', index=532, number=987185,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ImStore_ItemInfo_Request', index=533, number=991237,
+      name='MSG_ImStore_Giveout_Request', index=533, number=991233,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ImStore_ItemInfo_Response', index=534, number=991238,
+      name='MSG_ImStore_Giveout_Response', index=534, number=991234,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildId_Inform', index=535, number=987137,
+      name='MSG_ImStore_Operate_Record', index=535, number=991235,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildCreate_Request', index=536, number=983041,
+      name='MSG_ImStore_Item_List', index=536, number=991236,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildSearch_Request', index=537, number=983042,
+      name='MSG_ImStore_ItemInfo_Request', index=537, number=991237,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildApplyJoin_Request', index=538, number=983043,
+      name='MSG_ImStore_ItemInfo_Response', index=538, number=991238,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildCancelApply_Request', index=539, number=983044,
+      name='MSG_GuildId_Inform', index=539, number=987137,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildCreate_Response', index=540, number=1032193,
+      name='MSG_GuildCreate_Request', index=540, number=983041,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildSearch_Response', index=541, number=1032194,
+      name='MSG_GuildSearch_Request', index=541, number=983042,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildApplyJoin_Response', index=542, number=1032195,
+      name='MSG_GuildApplyJoin_Request', index=542, number=983043,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildCancelApply_Response', index=543, number=1032196,
+      name='MSG_GuildCancelApply_Request', index=543, number=983044,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildQuickJoin_Request', index=544, number=983046,
+      name='MSG_GuildCreate_Response', index=544, number=1032193,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildQuickJoin_Response', index=545, number=1032198,
+      name='MSG_GuildSearch_Response', index=545, number=1032194,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildInvite_Request', index=546, number=983047,
+      name='MSG_GuildApplyJoin_Response', index=546, number=1032195,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildInvite_Response', index=547, number=1032199,
+      name='MSG_GuildCancelApply_Response', index=547, number=1032196,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildInvite_Notice', index=548, number=1032200,
+      name='MSG_GuildQuickJoin_Request', index=548, number=983046,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Guild_InnerOpIdxStart', index=549, number=983050,
+      name='MSG_GuildQuickJoin_Response', index=549, number=1032198,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildApplyConfirm_Request', index=550, number=983050,
+      name='MSG_GuildInvite_Request', index=550, number=983047,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildApplyConfirm_Response', index=551, number=1032202,
+      name='MSG_GuildInvite_Response', index=551, number=1032199,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildKickout_Request', index=552, number=983051,
+      name='MSG_GuildInvite_Notice', index=552, number=1032200,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildKickout_Response', index=553, number=1032203,
+      name='MSG_Guild_InnerOpIdxStart', index=553, number=983050,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildModify_Request', index=554, number=983052,
+      name='MSG_GuildApplyConfirm_Request', index=554, number=983050,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildModify_Response', index=555, number=1032204,
+      name='MSG_GuildApplyConfirm_Response', index=555, number=1032202,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildMemberModify_Request', index=556, number=983053,
+      name='MSG_GuildKickout_Request', index=556, number=983051,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildMemberModify_Response', index=557, number=1032205,
+      name='MSG_GuildKickout_Response', index=557, number=1032203,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildDetail_Request', index=558, number=983054,
+      name='MSG_GuildModify_Request', index=558, number=983052,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildDetail_Response', index=559, number=1032206,
+      name='MSG_GuildModify_Response', index=559, number=1032204,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildDailyLog_Request', index=560, number=983055,
+      name='MSG_GuildMemberModify_Request', index=560, number=983053,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildDonate_Request', index=561, number=983056,
+      name='MSG_GuildMemberModify_Response', index=561, number=1032205,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildDonate_Response', index=562, number=1032208,
+      name='MSG_GuildDetail_Request', index=562, number=983054,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildLeaderChange_Request', index=563, number=983057,
+      name='MSG_GuildDetail_Response', index=563, number=1032206,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildLeaderChange_Response', index=564, number=1032209,
+      name='MSG_GuildDailyLog_Request', index=564, number=983055,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildApplicants_Request', index=565, number=983058,
+      name='MSG_GuildDonate_Request', index=565, number=983056,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildApplicants_Response', index=566, number=1032210,
+      name='MSG_GuildDonate_Response', index=566, number=1032208,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildRecruitAd_Request', index=567, number=983059,
+      name='MSG_GuildLeaderChange_Request', index=567, number=983057,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildRecruitAd_Response', index=568, number=1032211,
+      name='MSG_GuildLeaderChange_Response', index=568, number=1032209,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildQuit_Request', index=569, number=983060,
+      name='MSG_GuildApplicants_Request', index=569, number=983058,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildQuit_Response', index=570, number=1032212,
+      name='MSG_GuildApplicants_Response', index=570, number=1032210,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildMemberPostChange_Request', index=571, number=983061,
+      name='MSG_GuildRecruitAd_Request', index=571, number=983059,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildMemberPostChange_Response', index=572, number=1032213,
+      name='MSG_GuildRecruitAd_Response', index=572, number=1032211,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildLevelup_Request', index=573, number=983062,
+      name='MSG_GuildQuit_Request', index=573, number=983060,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildLevelup_Response', index=574, number=1032214,
+      name='MSG_GuildQuit_Response', index=574, number=1032212,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildMemberList_Request', index=575, number=983063,
+      name='MSG_GuildMemberPostChange_Request', index=575, number=983061,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildMemberList_Response', index=576, number=1032215,
+      name='MSG_GuildMemberPostChange_Response', index=576, number=1032213,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildPayoff_Request', index=577, number=983064,
+      name='MSG_GuildLevelup_Request', index=577, number=983062,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildPayoff_Response', index=578, number=1032216,
+      name='MSG_GuildLevelup_Response', index=578, number=1032214,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildPayoffConfirm_Request', index=579, number=983065,
+      name='MSG_GuildMemberList_Request', index=579, number=983063,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildPayoffConfirm_Response', index=580, number=1032217,
+      name='MSG_GuildMemberList_Response', index=580, number=1032215,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildRecord_Request', index=581, number=983066,
+      name='MSG_GuildPayoff_Request', index=581, number=983064,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildRecord_Response', index=582, number=1032218,
+      name='MSG_GuildPayoff_Response', index=582, number=1032216,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BuildingLvUp_Request', index=583, number=983067,
+      name='MSG_GuildPayoffConfirm_Request', index=583, number=983065,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BuildingLvUp_Response', index=584, number=1032219,
+      name='MSG_GuildPayoffConfirm_Response', index=584, number=1032217,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SkillStudy_Request', index=585, number=983068,
+      name='MSG_GuildRecord_Request', index=585, number=983066,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SkillStudy_Response', index=586, number=1032220,
+      name='MSG_GuildRecord_Response', index=586, number=1032218,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SkillLearn_Request', index=587, number=983069,
+      name='MSG_BuildingLvUp_Request', index=587, number=983067,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SkillLearn_Response', index=588, number=1032221,
+      name='MSG_BuildingLvUp_Response', index=588, number=1032219,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SkillCDTime_Request', index=589, number=983070,
+      name='MSG_SkillStudy_Request', index=589, number=983068,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SkillCDTime_Response', index=590, number=1032222,
+      name='MSG_SkillStudy_Response', index=590, number=1032220,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildSkillInfo_Request', index=591, number=983071,
+      name='MSG_SkillLearn_Request', index=591, number=983069,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildSkillInfo_Response', index=592, number=1032223,
+      name='MSG_SkillLearn_Response', index=592, number=1032221,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SkillStudyInfo_Request', index=593, number=983072,
+      name='MSG_SkillCDTime_Request', index=593, number=983070,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SkillStudyInfo_Response', index=594, number=1032224,
+      name='MSG_SkillCDTime_Response', index=594, number=1032222,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildBless_Request', index=595, number=983073,
+      name='MSG_GuildSkillInfo_Request', index=595, number=983071,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildBless_Response', index=596, number=1032225,
+      name='MSG_GuildSkillInfo_Response', index=596, number=1032223,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EnterDrunkery_Notice', index=597, number=983074,
+      name='MSG_SkillStudyInfo_Request', index=597, number=983072,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_LeaveDrunkery_Notice', index=598, number=983075,
+      name='MSG_SkillStudyInfo_Response', index=598, number=1032224,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Drink_Request', index=599, number=983076,
+      name='MSG_GuildBless_Request', index=599, number=983073,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Drink_Response', index=600, number=1032228,
+      name='MSG_GuildBless_Response', index=600, number=1032225,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OpenBanquet_Request', index=601, number=983077,
+      name='MSG_EnterDrunkery_Notice', index=601, number=983074,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OpenBanquet_Response', index=602, number=1032229,
+      name='MSG_LeaveDrunkery_Notice', index=602, number=983075,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MakeWine_Request', index=603, number=983078,
+      name='MSG_Drink_Request', index=603, number=983076,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MakeWine_Response', index=604, number=1032230,
+      name='MSG_Drink_Response', index=604, number=1032228,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MakeWineResetCD_Request', index=605, number=983079,
+      name='MSG_OpenBanquet_Request', index=605, number=983077,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MakeWineResetCD_Response', index=606, number=1032231,
+      name='MSG_OpenBanquet_Response', index=606, number=1032229,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BeKickouted_Notice', index=607, number=983080,
+      name='MSG_MakeWine_Request', index=607, number=983078,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OpenGuildBoss_Request', index=608, number=983081,
+      name='MSG_MakeWine_Response', index=608, number=1032230,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OpenGuildBoss_Response', index=609, number=1032233,
+      name='MSG_MakeWineResetCD_Request', index=609, number=983079,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OpenGuildBoss_Notice', index=610, number=983088,
+      name='MSG_MakeWineResetCD_Response', index=610, number=1032231,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildBossEnd_Notice', index=611, number=983089,
+      name='MSG_BeKickouted_Notice', index=611, number=983080,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildBossDamage_Notice', index=612, number=1032242,
+      name='MSG_OpenGuildBoss_Request', index=612, number=983081,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EnterGuildBoss_Report', index=613, number=983091,
+      name='MSG_OpenGuildBoss_Response', index=613, number=1032233,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ApplyRank_Request', index=614, number=983092,
+      name='MSG_OpenGuildBoss_Notice', index=614, number=983088,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ApplyRank_Response', index=615, number=1032244,
+      name='MSG_GuildBossEnd_Notice', index=615, number=983089,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GetBattleLord_Request', index=616, number=983093,
+      name='MSG_GuildBossDamage_Notice', index=616, number=1032242,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GetBattleLord_Response', index=617, number=1032245,
+      name='MSG_EnterGuildBoss_Report', index=617, number=983091,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_JoinIMBattle_Request', index=618, number=983094,
+      name='MSG_ApplyRank_Request', index=618, number=983092,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_JoinIMBattle_Response', index=619, number=1032246,
+      name='MSG_ApplyRank_Response', index=619, number=1032244,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BattleDynamicInfo_Notice', index=620, number=1032248,
+      name='MSG_GetBattleLord_Request', index=620, number=983093,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BattleReward_Notice', index=621, number=1032249,
+      name='MSG_GetBattleLord_Response', index=621, number=1032245,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SetCampMember_Notice', index=622, number=1032256,
+      name='MSG_JoinIMBattle_Request', index=622, number=983094,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_AddCampMember_Notice', index=623, number=1032257,
+      name='MSG_JoinIMBattle_Response', index=623, number=1032246,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DeleteCampMember_Notice', index=624, number=1032258,
+      name='MSG_BattleDynamicInfo_Notice', index=624, number=1032248,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ModifyCampMember_Notice', index=625, number=1032259,
+      name='MSG_BattleReward_Notice', index=625, number=1032249,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MemberKillInfo_Notice', index=626, number=1032260,
+      name='MSG_SetCampMember_Notice', index=626, number=1032256,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SignGuildBattle_Request', index=627, number=983109,
+      name='MSG_AddCampMember_Notice', index=627, number=1032257,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SignGuildBattle_Response', index=628, number=1032262,
+      name='MSG_DeleteCampMember_Notice', index=628, number=1032258,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildBossStatus_Request', index=629, number=983111,
+      name='MSG_ModifyCampMember_Notice', index=629, number=1032259,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildBossStatus_Response', index=630, number=1032263,
+      name='MSG_MemberKillInfo_Notice', index=630, number=1032260,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ApplyJoinConfirm_Notice', index=631, number=1032264,
+      name='MSG_SignGuildBattle_Request', index=631, number=983109,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildMemberKill_Request', index=632, number=983113,
+      name='MSG_SignGuildBattle_Response', index=632, number=1032262,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildMemberKill_Response', index=633, number=1032265,
+      name='MSG_GuildBossStatus_Request', index=633, number=983111,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildMemberHelpTelport_Request', index=634, number=983114,
+      name='MSG_GuildBossStatus_Response', index=634, number=1032263,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildMemberHelpTelport_Response', index=635, number=1032266,
+      name='MSG_ApplyJoinConfirm_Notice', index=635, number=1032264,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildDismiss_Request', index=636, number=983115,
+      name='MSG_GuildMemberKill_Request', index=636, number=983113,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildDismiss_Response', index=637, number=1032267,
+      name='MSG_GuildMemberKill_Response', index=637, number=1032265,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildCancelDismiss_Request', index=638, number=983116,
+      name='MSG_GuildMemberHelpTelport_Request', index=638, number=983114,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildCancelDismiss_Response', index=639, number=1032268,
+      name='MSG_GuildMemberHelpTelport_Response', index=639, number=1032266,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildDismiss_Notice', index=640, number=983117,
+      name='MSG_GuildDismiss_Request', index=640, number=983115,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildStore_Info_Notice', index=641, number=987214,
+      name='MSG_GuildDismiss_Response', index=641, number=1032267,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildStore_Message_Notice', index=642, number=987215,
+      name='MSG_GuildCancelDismiss_Request', index=642, number=983116,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildStore_GrantGoods_Request', index=643, number=983120,
+      name='MSG_GuildCancelDismiss_Response', index=643, number=1032268,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildStore_GrantGoods_Response', index=644, number=987216,
+      name='MSG_GuildDismiss_Notice', index=644, number=983117,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildStore_ExtenBag_Request', index=645, number=983121,
+      name='MSG_GuildStore_Info_Notice', index=645, number=987214,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildStore_ExtenBag_Response', index=646, number=987217,
+      name='MSG_GuildStore_Message_Notice', index=646, number=987215,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Enter_GuildManor_Request', index=647, number=983136,
+      name='MSG_GuildStore_GrantGoods_Request', index=647, number=983120,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Enter_GuildManor_Response', index=648, number=1032288,
+      name='MSG_GuildStore_GrantGoods_Response', index=648, number=987216,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Quit_GuildManor_Request', index=649, number=983137,
+      name='MSG_GuildStore_ExtenBag_Request', index=649, number=983121,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Quit_GuildManor_Response', index=650, number=1032289,
+      name='MSG_GuildStore_ExtenBag_Response', index=650, number=987217,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Open_GuildFire_Request', index=651, number=983138,
+      name='MSG_Enter_GuildManor_Request', index=651, number=983136,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Open_GuildFire_Response', index=652, number=1032290,
+      name='MSG_Enter_GuildManor_Response', index=652, number=1032288,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildFire_Time_Notice', index=653, number=987235,
+      name='MSG_Quit_GuildManor_Request', index=653, number=983137,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Open_GuildFire_Notice', index=654, number=987236,
+      name='MSG_Quit_GuildManor_Response', index=654, number=1032289,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DynamicNotice_Response', index=655, number=1114113,
+      name='MSG_Open_GuildFire_Request', index=655, number=983138,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_NPCInfo_Response', index=656, number=1114114,
+      name='MSG_Open_GuildFire_Response', index=656, number=1032290,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Chat_Require', index=657, number=1114115,
+      name='MSG_GuildFire_Time_Notice', index=657, number=987235,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Chat_Response', index=658, number=1114116,
+      name='MSG_Open_GuildFire_Notice', index=658, number=987236,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Chat_Private_Require', index=659, number=1114117,
+      name='MSG_Guild_Liveness_Info_Request', index=659, number=983141,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Charge_Config_Require', index=660, number=1114118,
+      name='MSG_Guild_Liveness_Info_Response', index=660, number=987237,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Charge_Config_Response', index=661, number=1118214,
+      name='MSG_Guild_Liveness_Get_Reward_Request', index=661, number=983142,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_UpdateCharMoney_Notice', index=662, number=1114119,
+      name='MSG_Guild_Liveness_Get_Reward_Response', index=662, number=987238,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PathFind_Request', index=663, number=1114120,
+      name='MSG_DynamicNotice_Response', index=663, number=1114113,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PathFind_Response', index=664, number=1118216,
+      name='MSG_NPCInfo_Response', index=664, number=1114114,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_NpcTeleport_Request', index=665, number=1114121,
+      name='MSG_Chat_Require', index=665, number=1114115,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_NpcTeleport_Response', index=666, number=1118217,
+      name='MSG_Chat_Response', index=666, number=1114116,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RankInfo_Request', index=667, number=1114122,
+      name='MSG_Chat_Private_Require', index=667, number=1114117,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CharRank_Response', index=668, number=1114123,
+      name='MSG_Charge_Config_Require', index=668, number=1114118,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildRank_Response', index=669, number=1114124,
+      name='MSG_Charge_Config_Response', index=669, number=1118214,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CharMineRank_Response', index=670, number=1114125,
+      name='MSG_UpdateCharMoney_Notice', index=670, number=1114119,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GuildMineRank_Response', index=671, number=1114126,
+      name='MSG_PathFind_Request', index=671, number=1114120,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_JusticeInfo_Notice', index=672, number=1114128,
+      name='MSG_PathFind_Response', index=672, number=1118216,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WorldLevelInfo_Request', index=673, number=1114129,
+      name='MSG_NpcTeleport_Request', index=673, number=1114121,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WorldLevelInfo_Response', index=674, number=1118225,
+      name='MSG_NpcTeleport_Response', index=674, number=1118217,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WorldLevelUpdate_Notice', index=675, number=1118226,
+      name='MSG_RankInfo_Request', index=675, number=1114122,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ClientLoadRoleOK_Report', index=676, number=1114131,
+      name='MSG_CharRank_Response', index=676, number=1114123,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ItemTeleport_Request', index=677, number=1114132,
+      name='MSG_GuildRank_Response', index=677, number=1114124,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ItemTeleport_Response', index=678, number=1118228,
+      name='MSG_CharMineRank_Response', index=678, number=1114125,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SomeCharInfo_Notice', index=679, number=1114133,
+      name='MSG_GuildMineRank_Response', index=679, number=1114126,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ClientInBlock_Report', index=680, number=1114134,
+      name='MSG_JusticeInfo_Notice', index=680, number=1114128,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ClientDoSomething_Notice', index=681, number=1114135,
+      name='MSG_WorldLevelInfo_Request', index=681, number=1114129,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DoCmd_Request', index=682, number=1114136,
+      name='MSG_WorldLevelInfo_Response', index=682, number=1118225,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OfflineExp_Get_Request', index=683, number=1114137,
+      name='MSG_WorldLevelUpdate_Notice', index=683, number=1118226,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OfflineExp_Get_Response', index=684, number=1118233,
+      name='MSG_ClientLoadRoleOK_Report', index=684, number=1114131,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OfflineExp_Notice', index=685, number=1114138,
+      name='MSG_ItemTeleport_Request', index=685, number=1114132,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PositionUpdate_Report', index=686, number=1114139,
+      name='MSG_ItemTeleport_Response', index=686, number=1118228,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PositionSeqId_Notice', index=687, number=1114140,
+      name='MSG_SomeCharInfo_Notice', index=687, number=1114133,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DeleteAllRole_Request', index=688, number=1114141,
+      name='MSG_ClientInBlock_Report', index=688, number=1114134,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DeleteAllRole_Response', index=689, number=1114142,
+      name='MSG_ClientDoSomething_Notice', index=689, number=1114135,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_NpcSpanTeleport_Request', index=690, number=1114143,
+      name='MSG_DoCmd_Request', index=690, number=1114136,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_NpcSpanTeleport_Response', index=691, number=1118239,
+      name='MSG_OfflineExp_Get_Request', index=691, number=1114137,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CheckMemberTeleport_Request', index=692, number=1114144,
+      name='MSG_OfflineExp_Get_Response', index=692, number=1118233,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CheckMemberTeleport_Response', index=693, number=1118241,
+      name='MSG_OfflineExp_Notice', index=693, number=1114138,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CheckGateTeleport_Request', index=694, number=1114146,
+      name='MSG_PositionUpdate_Report', index=694, number=1114139,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CheckGateTeleport_Response', index=695, number=1118243,
+      name='MSG_PositionSeqId_Notice', index=695, number=1114140,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MemberSpanWildTP_Notice', index=696, number=1118244,
+      name='MSG_DeleteAllRole_Request', index=696, number=1114141,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_AddGateTeleport_Notice', index=697, number=1114149,
+      name='MSG_DeleteAllRole_Response', index=697, number=1114142,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Rks_Sign_Request', index=698, number=1118250,
+      name='MSG_NpcSpanTeleport_Request', index=698, number=1114143,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_UseFuzhijiujiu_Request', index=699, number=1114150,
+      name='MSG_NpcSpanTeleport_Response', index=699, number=1118239,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_UseFuzhijiujiu_Response', index=700, number=1118246,
+      name='MSG_CheckMemberTeleport_Request', index=700, number=1114144,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ReportFuzhijiujiu_Request', index=701, number=1114151,
+      name='MSG_CheckMemberTeleport_Response', index=701, number=1118241,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ReportFuzhijiujiu_Response', index=702, number=1118247,
+      name='MSG_CheckGateTeleport_Request', index=702, number=1114146,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FashionTrans_Request', index=703, number=1179649,
+      name='MSG_CheckGateTeleport_Response', index=703, number=1118243,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FashionTrans_Response', index=704, number=1179650,
+      name='MSG_MemberSpanWildTP_Notice', index=704, number=1118244,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FashionAdvance_Request', index=705, number=1179651,
+      name='MSG_AddGateTeleport_Notice', index=705, number=1114149,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FashionAdvance_Response', index=706, number=1179652,
+      name='MSG_Rks_Sign_Request', index=706, number=1118250,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FashionAdvanceCost_Request', index=707, number=1179653,
+      name='MSG_UseFuzhijiujiu_Request', index=707, number=1114150,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FashionAdvanceCost_Response', index=708, number=1179654,
+      name='MSG_UseFuzhijiujiu_Response', index=708, number=1118246,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WardrobeFashion_Request', index=709, number=1179680,
+      name='MSG_ReportFuzhijiujiu_Request', index=709, number=1114151,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WardrobeFashion_Response', index=710, number=1179681,
+      name='MSG_ReportFuzhijiujiu_Response', index=710, number=1118247,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WardrobeHungUP_Request', index=711, number=1179682,
+      name='MSG_FashionTrans_Request', index=711, number=1179649,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WardrobeHungUP_Response', index=712, number=1179683,
+      name='MSG_FashionTrans_Response', index=712, number=1179650,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WardrobeHungDown_Request', index=713, number=1179684,
+      name='MSG_FashionAdvance_Request', index=713, number=1179651,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WardrobeHungDown_Response', index=714, number=1179685,
+      name='MSG_FashionAdvance_Response', index=714, number=1179652,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WardrobeFashionApplyShape_Request', index=715, number=1179686,
+      name='MSG_FashionAdvanceCost_Request', index=715, number=1179653,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WardrobeFashionApplyShape_Response', index=716, number=1179687,
+      name='MSG_FashionAdvanceCost_Response', index=716, number=1179654,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WardrobeSlotUnlock_Request', index=717, number=1179688,
+      name='MSG_WardrobeFashion_Request', index=717, number=1179680,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WardrobeSlotUnlock_Response', index=718, number=1179689,
+      name='MSG_WardrobeFashion_Response', index=718, number=1179681,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WardrobeShapeReset_Request', index=719, number=1179696,
+      name='MSG_WardrobeHungUP_Request', index=719, number=1179682,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WardrobeShapeReset_Response', index=720, number=1179697,
+      name='MSG_WardrobeHungUP_Response', index=720, number=1179683,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WardrobeEquip_Request', index=721, number=1179698,
+      name='MSG_WardrobeHungDown_Request', index=721, number=1179684,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WardrobeEquip_Response', index=722, number=1179699,
+      name='MSG_WardrobeHungDown_Response', index=722, number=1179685,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WardrobeChange_Notice', index=723, number=1179712,
+      name='MSG_WardrobeFashionApplyShape_Request', index=723, number=1179686,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBattleInfo_Request', index=724, number=1245185,
+      name='MSG_WardrobeFashionApplyShape_Response', index=724, number=1179687,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBattleInfo_Response', index=725, number=1249281,
+      name='MSG_WardrobeSlotUnlock_Request', index=725, number=1179688,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_SignInfo_Request', index=726, number=1245186,
+      name='MSG_WardrobeSlotUnlock_Response', index=726, number=1179689,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_SignInfo_Response', index=727, number=1249282,
+      name='MSG_WardrobeShapeReset_Request', index=727, number=1179696,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_Sign_Request', index=728, number=1245187,
+      name='MSG_WardrobeShapeReset_Response', index=728, number=1179697,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_Sign_Response', index=729, number=1249283,
+      name='MSG_WardrobeEquip_Request', index=729, number=1179698,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_Round_Impulse', index=730, number=1245188,
+      name='MSG_WardrobeEquip_Response', index=730, number=1179699,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_Round_Request', index=731, number=1249284,
+      name='MSG_WardrobeChange_Notice', index=731, number=1179712,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_Join_Request', index=732, number=1245189,
+      name='MSG_SPImBattleInfo_Request', index=732, number=1245185,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_Join_Response', index=733, number=1249285,
+      name='MSG_SPImBattleInfo_Response', index=733, number=1249281,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_Battle_Score_Imp', index=734, number=1245190,
+      name='MSG_SPImBat_SignInfo_Request', index=734, number=1245186,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_Battle_End_Imp', index=735, number=1245191,
+      name='MSG_SPImBat_SignInfo_Response', index=735, number=1249282,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_Member_Info_Sync', index=736, number=1245192,
+      name='MSG_SPImBat_Sign_Request', index=736, number=1245187,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_RankInfo_Request', index=737, number=1245193,
+      name='MSG_SPImBat_Sign_Response', index=737, number=1249283,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_RankInfo_Response', index=738, number=1245194,
+      name='MSG_SPImBat_Round_Impulse', index=738, number=1245188,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_EndInfo_Notice', index=739, number=1245195,
+      name='MSG_SPImBat_Round_Request', index=739, number=1249284,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_BetInfo_Request', index=740, number=1245196,
+      name='MSG_SPImBat_Join_Request', index=740, number=1245189,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_BetInfo_Response', index=741, number=1245197,
+      name='MSG_SPImBat_Join_Response', index=741, number=1249285,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_Betting_Request', index=742, number=1245198,
+      name='MSG_SPImBat_Battle_Score_Imp', index=742, number=1245190,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_Betting_Response', index=743, number=1245199,
+      name='MSG_SPImBat_Battle_End_Imp', index=743, number=1245191,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_Watching_Request', index=744, number=1245200,
+      name='MSG_SPImBat_Member_Info_Sync', index=744, number=1245192,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_Watching_Response', index=745, number=1249296,
+      name='MSG_SPImBat_RankInfo_Request', index=745, number=1245193,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_WatchingInfo_Notice', index=746, number=1249297,
+      name='MSG_SPImBat_RankInfo_Response', index=746, number=1245194,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPImBat_Start_Notice', index=747, number=1245202,
+      name='MSG_SPImBat_EndInfo_Notice', index=747, number=1245195,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPIMBat_HistoryRank_Request', index=748, number=1245203,
+      name='MSG_SPImBat_BetInfo_Request', index=748, number=1245196,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPIMBat_HistoryRank_Response', index=749, number=1249299,
+      name='MSG_SPImBat_BetInfo_Response', index=749, number=1245197,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBattleInfo_Notice', index=750, number=1249313,
+      name='MSG_SPImBat_Betting_Request', index=750, number=1245198,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBat_SignInfo_Request', index=751, number=1245218,
+      name='MSG_SPImBat_Betting_Response', index=751, number=1245199,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBat_SignInfo_Response', index=752, number=1249314,
+      name='MSG_SPImBat_Watching_Request', index=752, number=1245200,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBat_Sign_Request', index=753, number=1245219,
+      name='MSG_SPImBat_Watching_Response', index=753, number=1249296,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBat_Sign_Response', index=754, number=1249315,
+      name='MSG_SPImBat_WatchingInfo_Notice', index=754, number=1249297,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBat_MonorFight_Request', index=755, number=1245220,
+      name='MSG_SPImBat_Start_Notice', index=755, number=1245202,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBat_MonorFight_Response', index=756, number=1249316,
+      name='MSG_SPIMBat_HistoryRank_Request', index=756, number=1245203,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBat_BattleFlag_Request', index=757, number=1245221,
+      name='MSG_SPIMBat_HistoryRank_Response', index=757, number=1249299,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBat_BattleFlag_Response', index=758, number=1249317,
+      name='MSG_SPMonorBattleInfo_Notice', index=758, number=1249313,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBat_FightForHegemony_Request', index=759, number=1245222,
+      name='MSG_SPMonorBat_SignInfo_Request', index=759, number=1245218,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBat_FightForHegemony_Response', index=760, number=1249318,
+      name='MSG_SPMonorBat_SignInfo_Response', index=760, number=1249314,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBat_Enter_Monor_Request', index=761, number=1245223,
+      name='MSG_SPMonorBat_Sign_Request', index=761, number=1245219,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBat_Enter_Monor_Response', index=762, number=1249319,
+      name='MSG_SPMonorBat_Sign_Response', index=762, number=1249315,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBat_Watch_Battle_Request', index=763, number=1245224,
+      name='MSG_SPMonorBat_MonorFight_Request', index=763, number=1245220,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBat_Watch_Battle_Response', index=764, number=1249320,
+      name='MSG_SPMonorBat_MonorFight_Response', index=764, number=1249316,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBat_EnterBattle_Request', index=765, number=1245225,
+      name='MSG_SPMonorBat_BattleFlag_Request', index=765, number=1245221,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBat_EnterBattle_Response', index=766, number=1249321,
+      name='MSG_SPMonorBat_BattleFlag_Response', index=766, number=1249317,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBat_GetMonorReward_Request', index=767, number=1245226,
+      name='MSG_SPMonorBat_FightForHegemony_Request', index=767, number=1245222,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBat_GetMonorReward_Response', index=768, number=1249322,
+      name='MSG_SPMonorBat_FightForHegemony_Response', index=768, number=1249318,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBat_OnCanEnterBattle_Notice', index=769, number=1249323,
+      name='MSG_SPMonorBat_Enter_Monor_Request', index=769, number=1245223,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SPMonorBat_GetScore_Notice', index=770, number=1249324,
+      name='MSG_SPMonorBat_Enter_Monor_Response', index=770, number=1249319,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RedPacketShake_Request', index=771, number=1310721,
+      name='MSG_SPMonorBat_Watch_Battle_Request', index=771, number=1245224,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RedPacketShake_Response', index=772, number=1314817,
+      name='MSG_SPMonorBat_Watch_Battle_Response', index=772, number=1249320,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RedPacketInfo_Request', index=773, number=1310722,
+      name='MSG_SPMonorBat_EnterBattle_Request', index=773, number=1245225,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RedPacketInfo_Response', index=774, number=1314818,
+      name='MSG_SPMonorBat_EnterBattle_Response', index=774, number=1249321,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RedPacketWeixinExchange_Request', index=775, number=1310723,
+      name='MSG_SPMonorBat_GetMonorReward_Request', index=775, number=1245226,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RedPacketWeixinExchange_Response', index=776, number=1314819,
+      name='MSG_SPMonorBat_GetMonorReward_Response', index=776, number=1249322,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RedPacketExchangeInfo_Request', index=777, number=1310724,
+      name='MSG_SPMonorBat_OnCanEnterBattle_Notice', index=777, number=1249323,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RedPacketExchangeInfo_Response', index=778, number=1314820,
+      name='MSG_SPMonorBat_GetScore_Notice', index=778, number=1249324,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RedPacketMenpiaoInfo_Notice', index=779, number=1310725,
+      name='MSG_RedPacketShake_Request', index=779, number=1310721,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MountInfo_Request', index=780, number=1376257,
+      name='MSG_RedPacketShake_Response', index=780, number=1314817,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MountInfo_Response', index=781, number=1380353,
+      name='MSG_RedPacketInfo_Request', index=781, number=1310722,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MountLevelUp_Request', index=782, number=1376258,
+      name='MSG_RedPacketInfo_Response', index=782, number=1314818,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MountLevelUp_Response', index=783, number=1380354,
+      name='MSG_RedPacketWeixinExchange_Request', index=783, number=1310723,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MountClassUp_Request', index=784, number=1376259,
+      name='MSG_RedPacketWeixinExchange_Response', index=784, number=1314819,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MountClassUp_Response', index=785, number=1380355,
+      name='MSG_RedPacketExchangeInfo_Request', index=785, number=1310724,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneLevelUp_Request', index=786, number=1376260,
+      name='MSG_RedPacketExchangeInfo_Response', index=786, number=1314820,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneLevelUp_Response', index=787, number=1380356,
+      name='MSG_RedPacketMenpiaoInfo_Notice', index=787, number=1310725,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MountRideOrRest_Request', index=788, number=1376263,
+      name='MSG_MountInfo_Request', index=788, number=1376257,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MountRideOrRest_Response', index=789, number=1380359,
+      name='MSG_MountInfo_Response', index=789, number=1380353,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MountChangeShow_Request', index=790, number=1376264,
+      name='MSG_MountLevelUp_Request', index=790, number=1376258,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MountChangeShow_Response', index=791, number=1380360,
+      name='MSG_MountLevelUp_Response', index=791, number=1380354,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MountBuyFashion_Request', index=792, number=1376265,
+      name='MSG_MountClassUp_Request', index=792, number=1376259,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MountBuyFashion_Response', index=793, number=1380361,
+      name='MSG_MountClassUp_Response', index=793, number=1380355,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FashionChange_Notice', index=794, number=1380368,
+      name='MSG_RuneLevelUp_Request', index=794, number=1376260,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneClassUp_Request', index=795, number=1380369,
+      name='MSG_RuneLevelUp_Response', index=795, number=1380356,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneClassUp_Response', index=796, number=1380370,
+      name='MSG_MountRideOrRest_Request', index=796, number=1376263,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneEnchant_Request', index=797, number=1380371,
+      name='MSG_MountRideOrRest_Response', index=797, number=1380359,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneEnchant_Response', index=798, number=1380372,
+      name='MSG_MountChangeShow_Request', index=798, number=1376264,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MountFashionExchange_Request', index=799, number=1380373,
+      name='MSG_MountChangeShow_Response', index=799, number=1380360,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MountFashionExchange_Response', index=800, number=1380374,
+      name='MSG_MountBuyFashion_Request', index=800, number=1376265,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneEnchantSave_Request', index=801, number=1380375,
+      name='MSG_MountBuyFashion_Response', index=801, number=1380361,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneEnchantSave_Response', index=802, number=1380376,
+      name='MSG_FashionChange_Notice', index=802, number=1380368,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MountFly_Request', index=803, number=1376281,
+      name='MSG_RuneClassUp_Request', index=803, number=1380369,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MountFly_Response', index=804, number=1380377,
+      name='MSG_RuneClassUp_Response', index=804, number=1380370,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneLottery_Request', index=805, number=1376288,
+      name='MSG_RuneEnchant_Request', index=805, number=1380371,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneLottery_Response', index=806, number=1380384,
+      name='MSG_RuneEnchant_Response', index=806, number=1380372,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneOneKeyLvUpRequest', index=807, number=1376289,
+      name='MSG_MountFashionExchange_Request', index=807, number=1380373,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneOneKeyLvupResponse', index=808, number=1380385,
+      name='MSG_MountFashionExchange_Response', index=808, number=1380374,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneMountRequest', index=809, number=1376290,
+      name='MSG_RuneEnchantSave_Request', index=809, number=1380375,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneMountResponse', index=810, number=1380386,
+      name='MSG_RuneEnchantSave_Response', index=810, number=1380376,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneUnMountRequest', index=811, number=1376291,
+      name='MSG_MountFly_Request', index=811, number=1376281,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneUnMountResponse', index=812, number=1380387,
+      name='MSG_MountFly_Response', index=812, number=1380377,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneOpenSlotRequest', index=813, number=1376292,
+      name='MSG_RuneLottery_Request', index=813, number=1376288,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneOpenSlotResponse', index=814, number=1380388,
+      name='MSG_RuneLottery_Response', index=814, number=1380384,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneLotteryCfgNotice', index=815, number=1376293,
+      name='MSG_RuneOneKeyLvUpRequest', index=815, number=1376289,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneLvUpQueryRequest', index=816, number=1376294,
+      name='MSG_RuneOneKeyLvupResponse', index=816, number=1380385,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RuneLvUpQueryResponse', index=817, number=1380390,
+      name='MSG_RuneMountRequest', index=817, number=1376290,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SoulStarLevelUp_Request', index=818, number=1376295,
+      name='MSG_RuneMountResponse', index=818, number=1380386,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SoulStarLevelUp_Response', index=819, number=1380391,
+      name='MSG_RuneUnMountRequest', index=819, number=1376291,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SoulStarDecomposeRequest', index=820, number=1376296,
+      name='MSG_RuneUnMountResponse', index=820, number=1380387,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SoulStarDecomposeResponse', index=821, number=1380392,
+      name='MSG_RuneOpenSlotRequest', index=821, number=1376292,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SoulStarTranfromRequest', index=822, number=1376297,
+      name='MSG_RuneOpenSlotResponse', index=822, number=1380388,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SoulStarTranfromResponse', index=823, number=1380393,
+      name='MSG_RuneLotteryCfgNotice', index=823, number=1376293,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SoulStarMountRequest', index=824, number=1376304,
+      name='MSG_RuneLvUpQueryRequest', index=824, number=1376294,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SoulStarMountResponse', index=825, number=1380400,
+      name='MSG_RuneLvUpQueryResponse', index=825, number=1380390,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SoulStarUnMountRequest', index=826, number=1376306,
+      name='MSG_SoulStarLevelUp_Request', index=826, number=1376295,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SoulStarUnMountResponse', index=827, number=1380402,
+      name='MSG_SoulStarLevelUp_Response', index=827, number=1380391,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SoulStarInfoNotice', index=828, number=1380403,
+      name='MSG_SoulStarDecomposeRequest', index=828, number=1376296,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SoulStarGiftDecomposeRequest', index=829, number=1380404,
+      name='MSG_SoulStarDecomposeResponse', index=829, number=1380392,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SoulStarGiftDecomposeResponse', index=830, number=1380405,
+      name='MSG_SoulStarTranfromRequest', index=830, number=1376297,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_UIOpenInfo_Notice', index=831, number=1445889,
+      name='MSG_SoulStarTranfromResponse', index=831, number=1380393,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_UIStory_Report', index=832, number=1441794,
+      name='MSG_SoulStarMountRequest', index=832, number=1376304,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_UIGuide_Report', index=833, number=1441795,
+      name='MSG_SoulStarMountResponse', index=833, number=1380400,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_UIHide_Notice', index=834, number=1441796,
+      name='MSG_SoulStarUnMountRequest', index=834, number=1376306,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_UIPushLevel_Report', index=835, number=1441797,
+      name='MSG_SoulStarUnMountResponse', index=835, number=1380402,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_UIPushLevel_Notice', index=836, number=1445893,
+      name='MSG_SoulStarInfoNotice', index=836, number=1380403,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_UseSkill_Request', index=837, number=1507329,
+      name='MSG_SoulStarGiftDecomposeRequest', index=837, number=1380404,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_UseSkill_Response', index=838, number=1511425,
+      name='MSG_SoulStarGiftDecomposeResponse', index=838, number=1380405,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FightReport_Notice', index=839, number=1511426,
+      name='MSG_UIOpenInfo_Notice', index=839, number=1445889,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SkillCD_Notice', index=840, number=1511427,
+      name='MSG_UIStory_Report', index=840, number=1441794,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetUseSkill_Request', index=841, number=1507332,
+      name='MSG_UIGuide_Report', index=841, number=1441795,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetUseSkill_Response', index=842, number=1511428,
+      name='MSG_UIHide_Notice', index=842, number=1441796,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponUseSkill_Request', index=843, number=1507333,
+      name='MSG_UIPushLevel_Report', index=843, number=1441797,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MagicWeaponUseSkill_Response', index=844, number=1511429,
+      name='MSG_UIPushLevel_Notice', index=844, number=1445893,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CLIENT_AUTOBATTLE_Request', index=845, number=1507334,
+      name='MSG_UseSkill_Request', index=845, number=1507329,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CLIENT_AUTOBATTLE_Response', index=846, number=1511430,
+      name='MSG_UseSkill_Response', index=846, number=1511425,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CancelSpecialBattleStatus_Request', index=847, number=1507335,
+      name='MSG_FightReport_Notice', index=847, number=1511426,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CancelSpecialBattleStatus_Response', index=848, number=1511431,
+      name='MSG_SkillCD_Notice', index=848, number=1511427,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SkillCommonCD_Notice', index=849, number=1511432,
+      name='MSG_PetUseSkill_Request', index=849, number=1507332,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SkillPropSkillCD_Notice', index=850, number=1511433,
+      name='MSG_PetUseSkill_Response', index=850, number=1511428,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Buff_Show_Info_Notice', index=851, number=1511434,
+      name='MSG_MagicWeaponUseSkill_Request', index=851, number=1507333,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ArenaMatch_Request', index=852, number=1572865,
+      name='MSG_MagicWeaponUseSkill_Response', index=852, number=1511429,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ArenaMatch_Response', index=853, number=1576961,
+      name='MSG_CLIENT_AUTOBATTLE_Request', index=853, number=1507334,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ArenaMatchResult_Notice', index=854, number=1572866,
+      name='MSG_CLIENT_AUTOBATTLE_Response', index=854, number=1511430,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ArenaMatchCancel_Request', index=855, number=1572867,
+      name='MSG_CancelSpecialBattleStatus_Request', index=855, number=1507335,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ArenaMatchCancel_Response', index=856, number=1576963,
+      name='MSG_CancelSpecialBattleStatus_Response', index=856, number=1511431,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ArenaOkIn_Request', index=857, number=1572868,
+      name='MSG_SkillCommonCD_Notice', index=857, number=1511432,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ArenaOkIn_Response', index=858, number=1576964,
+      name='MSG_SkillPropSkillCD_Notice', index=858, number=1511433,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ArenaCancelIn_Request', index=859, number=1572869,
+      name='MSG_Buff_Show_Info_Notice', index=859, number=1511434,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ArenaCancelIn_Response', index=860, number=1576965,
+      name='MSG_ArenaMatch_Request', index=860, number=1572865,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SinglePvPCountDown_Notice', index=861, number=1572870,
+      name='MSG_ArenaMatch_Response', index=861, number=1576961,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SinglePvPWaitingState_Notice', index=862, number=1572871,
+      name='MSG_ArenaMatchResult_Notice', index=862, number=1572866,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ArenaSettleUp_Notice', index=863, number=1572872,
+      name='MSG_ArenaMatchCancel_Request', index=863, number=1572867,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ArenaGetPvPKills_Request', index=864, number=1572873,
+      name='MSG_ArenaMatchCancel_Response', index=864, number=1576963,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ArenaGetPvPKills_Response', index=865, number=1576969,
+      name='MSG_ArenaOkIn_Request', index=865, number=1572868,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SinglePvPEnter_Notice', index=866, number=1572874,
+      name='MSG_ArenaOkIn_Response', index=866, number=1576964,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PlayerPKRequest_Request', index=867, number=1572875,
+      name='MSG_ArenaCancelIn_Request', index=867, number=1572869,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PlayerPKRequest_Response', index=868, number=1622027,
+      name='MSG_ArenaCancelIn_Response', index=868, number=1576965,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PlayerPKRequest_Notice', index=869, number=1622028,
+      name='MSG_SinglePvPCountDown_Notice', index=869, number=1572870,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PlayerPKResponse_Report', index=870, number=1572877,
+      name='MSG_SinglePvPWaitingState_Notice', index=870, number=1572871,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PlayerPKReject_Notice', index=871, number=1622029,
+      name='MSG_ArenaSettleUp_Notice', index=871, number=1572872,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PlayerPKCancel_Report', index=872, number=1572878,
+      name='MSG_ArenaGetPvPKills_Request', index=872, number=1572873,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PlayerPKResult_Notice', index=873, number=1622030,
+      name='MSG_ArenaGetPvPKills_Response', index=873, number=1576969,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetPosUpdate_Report', index=874, number=1638401,
+      name='MSG_SinglePvPEnter_Notice', index=874, number=1572874,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetPosClient_Notice', index=875, number=1642497,
+      name='MSG_PlayerPKRequest_Request', index=875, number=1572875,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetAcitve_Request', index=876, number=1638402,
+      name='MSG_PlayerPKRequest_Response', index=876, number=1622027,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetAcitve_Response', index=877, number=1642498,
+      name='MSG_PlayerPKRequest_Notice', index=877, number=1622028,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetDeacitve_Request', index=878, number=1638403,
+      name='MSG_PlayerPKResponse_Report', index=878, number=1572877,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetDeacitve_Response', index=879, number=1642499,
+      name='MSG_PlayerPKReject_Notice', index=879, number=1622029,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetList_Notice', index=880, number=1642500,
+      name='MSG_PlayerPKCancel_Report', index=880, number=1572878,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetDelete_Request', index=881, number=1638405,
+      name='MSG_PlayerPKResult_Notice', index=881, number=1622030,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetDelete_Response', index=882, number=1642501,
+      name='MSG_PetPosUpdate_Report', index=882, number=1638401,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetRelive_Request', index=883, number=1638406,
+      name='MSG_PetPosClient_Notice', index=883, number=1642497,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetRelive_Response', index=884, number=1642502,
+      name='MSG_PetAcitve_Request', index=884, number=1638402,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetRename_Request', index=885, number=1638407,
+      name='MSG_PetAcitve_Response', index=885, number=1642498,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetRename_Response', index=886, number=1642503,
+      name='MSG_PetDeacitve_Request', index=886, number=1638403,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetGrow_Request', index=887, number=1638408,
+      name='MSG_PetDeacitve_Response', index=887, number=1642499,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetGrow_Response', index=888, number=1642504,
+      name='MSG_PetList_Notice', index=888, number=1642500,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetSkillLearn_Request', index=889, number=1638409,
+      name='MSG_PetDelete_Request', index=889, number=1638405,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetSkillLearn_Response', index=890, number=1642505,
+      name='MSG_PetDelete_Response', index=890, number=1642501,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetSkillForget_Request', index=891, number=1638410,
+      name='MSG_PetRelive_Request', index=891, number=1638406,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetSkillForget_Response', index=892, number=1642506,
+      name='MSG_PetRelive_Response', index=892, number=1642502,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetEvolve_Request', index=893, number=1638411,
+      name='MSG_PetRename_Request', index=893, number=1638407,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetEvolve_Response', index=894, number=1642507,
+      name='MSG_PetRename_Response', index=894, number=1642503,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetDrug_Request', index=895, number=1638412,
+      name='MSG_PetGrow_Request', index=895, number=1638408,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetDrug_Response', index=896, number=1642508,
+      name='MSG_PetGrow_Response', index=896, number=1642504,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetRenascence_Request', index=897, number=1638413,
+      name='MSG_PetSkillLearn_Request', index=897, number=1638409,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetRenascence_Response', index=898, number=1642509,
+      name='MSG_PetSkillLearn_Response', index=898, number=1642505,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetBuySlot_Request', index=899, number=1638414,
+      name='MSG_PetSkillForget_Request', index=899, number=1638410,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetBuySlot_Response', index=900, number=1642510,
+      name='MSG_PetSkillForget_Response', index=900, number=1642506,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetContainer_Request', index=901, number=1638415,
+      name='MSG_PetEvolve_Request', index=901, number=1638411,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetContainer_Response', index=902, number=1642511,
+      name='MSG_PetEvolve_Response', index=902, number=1642507,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetSkillReplace_Request', index=903, number=1638416,
+      name='MSG_PetDrug_Request', index=903, number=1638412,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetSkillReplace_Response', index=904, number=1642512,
+      name='MSG_PetDrug_Response', index=904, number=1642508,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetNewRenascence_Request', index=905, number=1638417,
+      name='MSG_PetRenascence_Request', index=905, number=1638413,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetNewRenascence_Response', index=906, number=1642513,
+      name='MSG_PetRenascence_Response', index=906, number=1642509,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetRenasceneReplace_Request', index=907, number=1638418,
+      name='MSG_PetBuySlot_Request', index=907, number=1638414,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetRenasceneReplace_Response', index=908, number=1642514,
+      name='MSG_PetBuySlot_Response', index=908, number=1642510,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TakePetGuard_Request', index=909, number=1638419,
+      name='MSG_PetContainer_Request', index=909, number=1638415,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TakePetGuard_Response', index=910, number=1642515,
+      name='MSG_PetContainer_Response', index=910, number=1642511,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TakeBackPetGuard_Request', index=911, number=1638420,
+      name='MSG_PetSkillReplace_Request', index=911, number=1638416,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TakeBackPetGuard_Response', index=912, number=1642516,
+      name='MSG_PetSkillReplace_Response', index=912, number=1642512,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_UpLevelPetGuard_Request', index=913, number=1638421,
+      name='MSG_PetNewRenascence_Request', index=913, number=1638417,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_UpLevelPetGuard_Response', index=914, number=1642517,
+      name='MSG_PetNewRenascence_Response', index=914, number=1642513,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuaryGuardUpBattleScore_Request', index=915, number=1638422,
+      name='MSG_PetRenasceneReplace_Request', index=915, number=1638418,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_QuaryGuardUpBattleScore_Response', index=916, number=1642518,
+      name='MSG_PetRenasceneReplace_Response', index=916, number=1642514,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetEquipUpLevel_Request', index=917, number=1638423,
+      name='MSG_TakePetGuard_Request', index=917, number=1638419,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetEquipUpLevel_Response', index=918, number=1642519,
+      name='MSG_TakePetGuard_Response', index=918, number=1642515,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetEquipReplace_Request', index=919, number=1638424,
+      name='MSG_TakeBackPetGuard_Request', index=919, number=1638420,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetEquipReplace_Response', index=920, number=1642520,
+      name='MSG_TakeBackPetGuard_Response', index=920, number=1642516,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SetPetBattleArray_Request', index=921, number=1638432,
+      name='MSG_UpLevelPetGuard_Request', index=921, number=1638421,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SetPetBattleArray_Response', index=922, number=1642528,
+      name='MSG_UpLevelPetGuard_Response', index=922, number=1642517,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetPVEBattleInfo_Request', index=923, number=1638433,
+      name='MSG_QuaryGuardUpBattleScore_Request', index=923, number=1638422,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetPVEBattleInfo_Response', index=924, number=1642529,
+      name='MSG_QuaryGuardUpBattleScore_Response', index=924, number=1642518,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GetBattlePetList_Request', index=925, number=1638434,
+      name='MSG_PetEquipUpLevel_Request', index=925, number=1638423,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GetBattlePetList_Response', index=926, number=1642530,
+      name='MSG_PetEquipUpLevel_Response', index=926, number=1642519,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetTransPreview_Request', index=927, number=1638435,
+      name='MSG_PetEquipReplace_Request', index=927, number=1638424,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetTransPreview_Response', index=928, number=1642531,
+      name='MSG_PetEquipReplace_Response', index=928, number=1642520,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetTransReady_Request', index=929, number=1638436,
+      name='MSG_SetPetBattleArray_Request', index=929, number=1638432,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetTransReady_Response', index=930, number=1642532,
+      name='MSG_SetPetBattleArray_Response', index=930, number=1642528,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetTrans_Request', index=931, number=1638437,
+      name='MSG_PetPVEBattleInfo_Request', index=931, number=1638433,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetTrans_Response', index=932, number=1642533,
+      name='MSG_PetPVEBattleInfo_Response', index=932, number=1642529,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetLegacyPreview_Request', index=933, number=1638438,
+      name='MSG_GetBattlePetList_Request', index=933, number=1638434,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetLegacyPreview_Response', index=934, number=1642534,
+      name='MSG_GetBattlePetList_Response', index=934, number=1642530,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetLegacyReady_Request', index=935, number=1638439,
+      name='MSG_PetTransPreview_Request', index=935, number=1638435,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetLegacyReady_Response', index=936, number=1642535,
+      name='MSG_PetTransPreview_Response', index=936, number=1642531,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetLegacy_Request', index=937, number=1638440,
+      name='MSG_PetTransReady_Request', index=937, number=1638436,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetLegacy_Response', index=938, number=1642536,
+      name='MSG_PetTransReady_Response', index=938, number=1642532,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetPVPBattleInfo_Request', index=939, number=1638448,
+      name='MSG_PetTrans_Request', index=939, number=1638437,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetPVPBattleInfo_Response', index=940, number=1642544,
+      name='MSG_PetTrans_Response', index=940, number=1642533,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EnterPetBattlePvP_Request', index=941, number=1638449,
+      name='MSG_PetLegacyPreview_Request', index=941, number=1638438,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EnterPetBattlePvP_Response', index=942, number=1642545,
+      name='MSG_PetLegacyPreview_Response', index=942, number=1642534,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FlushPetPvPMatchInfo_Request', index=943, number=1638450,
+      name='MSG_PetLegacyReady_Request', index=943, number=1638439,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FlushPetPvPMatchInfo_Response', index=944, number=1642546,
+      name='MSG_PetLegacyReady_Response', index=944, number=1642535,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BattleRecord_Request', index=945, number=1638451,
+      name='MSG_PetLegacy_Request', index=945, number=1638440,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BattleRecord_Response', index=946, number=1642547,
+      name='MSG_PetLegacy_Response', index=946, number=1642536,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetGrowthInfo_Request', index=947, number=1638452,
+      name='MSG_PetPVPBattleInfo_Request', index=947, number=1638448,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetGrowthInfo_Response', index=948, number=1642548,
+      name='MSG_PetPVPBattleInfo_Response', index=948, number=1642544,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetGrowth_Request', index=949, number=1638453,
+      name='MSG_EnterPetBattlePvP_Request', index=949, number=1638449,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PetGrowth_Response', index=950, number=1642549,
+      name='MSG_EnterPetBattlePvP_Response', index=950, number=1642545,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamBuild_Request', index=951, number=1703937,
+      name='MSG_FlushPetPvPMatchInfo_Request', index=951, number=1638450,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamBuild_Response', index=952, number=1708033,
+      name='MSG_FlushPetPvPMatchInfo_Response', index=952, number=1642546,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamBuildOppositeTip_Notice', index=953, number=1703938,
+      name='MSG_BattleRecord_Request', index=953, number=1638451,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamDismiss_Request', index=954, number=1703939,
+      name='MSG_BattleRecord_Response', index=954, number=1642547,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamDismiss_Response', index=955, number=1708035,
+      name='MSG_PetGrowthInfo_Request', index=955, number=1638452,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamDismissOppositeTip_Notice', index=956, number=1703940,
+      name='MSG_PetGrowthInfo_Response', index=956, number=1642548,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamChangeLeader_Request', index=957, number=1703941,
+      name='MSG_PetGrowth_Request', index=957, number=1638453,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamChangeLeader_Response', index=958, number=1708037,
+      name='MSG_PetGrowth_Response', index=958, number=1642549,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamLeave_Request', index=959, number=1703942,
+      name='MSG_TeamBuild_Request', index=959, number=1703937,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamLeave_Response', index=960, number=1708038,
+      name='MSG_TeamBuild_Response', index=960, number=1708033,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamLeaveOppositeTip_Notice', index=961, number=1703943,
+      name='MSG_TeamBuildOppositeTip_Notice', index=961, number=1703938,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamKick_Request', index=962, number=1703944,
+      name='MSG_TeamDismiss_Request', index=962, number=1703939,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamKick_Response', index=963, number=1708040,
+      name='MSG_TeamDismiss_Response', index=963, number=1708035,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamProposal_Request', index=964, number=1703945,
+      name='MSG_TeamDismissOppositeTip_Notice', index=964, number=1703940,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamProposal_Response', index=965, number=1708041,
+      name='MSG_TeamChangeLeader_Request', index=965, number=1703941,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamProposalExamine_Notice', index=966, number=1703946,
+      name='MSG_TeamChangeLeader_Response', index=966, number=1708037,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamProposalExamineAnswer_Request', index=967, number=1703947,
+      name='MSG_TeamLeave_Request', index=967, number=1703942,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamProposalExamineAnswer_Response', index=968, number=1708043,
+      name='MSG_TeamLeave_Response', index=968, number=1708038,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamProposal_Notice', index=969, number=1703948,
+      name='MSG_TeamLeaveOppositeTip_Notice', index=969, number=1703943,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamProposalAnswer_Request', index=970, number=1703949,
+      name='MSG_TeamKick_Request', index=970, number=1703944,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamProposalAnswer_Response', index=971, number=1708045,
+      name='MSG_TeamKick_Response', index=971, number=1708040,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamApply_Request', index=972, number=1703950,
+      name='MSG_TeamProposal_Request', index=972, number=1703945,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamApply_Response', index=973, number=1708046,
+      name='MSG_TeamProposal_Response', index=973, number=1708041,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamApplyAnswer_Request', index=974, number=1703951,
+      name='MSG_TeamProposalExamine_Notice', index=974, number=1703946,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamApplyAnswer_Response', index=975, number=1708047,
+      name='MSG_TeamProposalExamineAnswer_Request', index=975, number=1703947,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamBaseDataUpdate_Notice', index=976, number=1703952,
+      name='MSG_TeamProposalExamineAnswer_Response', index=976, number=1708043,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamSyncHPMPUpdate_Notice', index=977, number=1703953,
+      name='MSG_TeamProposal_Notice', index=977, number=1703948,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamFlagUpdate_Notice', index=978, number=1703954,
+      name='MSG_TeamProposalAnswer_Request', index=978, number=1703949,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamMemberClear_Notice', index=979, number=1703955,
+      name='MSG_TeamProposalAnswer_Response', index=979, number=1708045,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamApplyerBaseData_Notice', index=980, number=1703956,
+      name='MSG_TeamApply_Request', index=980, number=1703950,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamApplyerClear_Notice', index=981, number=1703957,
+      name='MSG_TeamApply_Response', index=981, number=1708046,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamSyncPosUpdate_Notice', index=982, number=1703958,
+      name='MSG_TeamApplyAnswer_Request', index=982, number=1703951,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamCallFriend_Request', index=983, number=1703959,
+      name='MSG_TeamApplyAnswer_Response', index=983, number=1708047,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamCallFriend_Response', index=984, number=1708055,
+      name='MSG_TeamBaseDataUpdate_Notice', index=984, number=1703952,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamJoinCall_Request', index=985, number=1703960,
+      name='MSG_TeamSyncHPMPUpdate_Notice', index=985, number=1703953,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamJoinCall_Response', index=986, number=1708056,
+      name='MSG_TeamFlagUpdate_Notice', index=986, number=1703954,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ScreenPlayerInfo_Request', index=987, number=1703961,
+      name='MSG_TeamMemberClear_Notice', index=987, number=1703955,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ScreenPlayerInfo_Response', index=988, number=1753113,
+      name='MSG_TeamApplyerBaseData_Notice', index=988, number=1703956,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamLeaderFollowOrder_Request', index=989, number=1703962,
+      name='MSG_TeamApplyerClear_Notice', index=989, number=1703957,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamLeaderFollowOrder_Response', index=990, number=1708058,
+      name='MSG_TeamSyncPosUpdate_Notice', index=990, number=1703958,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamLeaderFollowOrder_Notice', index=991, number=1708059,
+      name='MSG_TeamCallFriend_Request', index=991, number=1703959,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamMemberFollowOrder_Request', index=992, number=1703964,
+      name='MSG_TeamCallFriend_Response', index=992, number=1708055,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamMemberFollowOrder_Response', index=993, number=1708060,
+      name='MSG_TeamJoinCall_Request', index=993, number=1703960,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamMemberFollow_Request', index=994, number=1703965,
+      name='MSG_TeamJoinCall_Response', index=994, number=1708056,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamMemberFollow_Response', index=995, number=1708061,
+      name='MSG_ScreenPlayerInfo_Request', index=995, number=1703961,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamMemberFollowEnterList_Request', index=996, number=1703967,
+      name='MSG_ScreenPlayerInfo_Response', index=996, number=1753113,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamMemberFollowEnterList_Response', index=997, number=1708063,
+      name='MSG_TeamLeaderFollowOrder_Request', index=997, number=1703962,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamMemberFollowInfo_Notice', index=998, number=1708064,
+      name='MSG_TeamLeaderFollowOrder_Response', index=998, number=1708058,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamMemberFollowCancel_Report', index=999, number=1703969,
+      name='MSG_TeamLeaderFollowOrder_Notice', index=999, number=1708059,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamMemberAutoFollow_Request', index=1000, number=1703970,
+      name='MSG_TeamMemberFollowOrder_Request', index=1000, number=1703964,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamMemberAutoFollow_Response', index=1001, number=1708066,
+      name='MSG_TeamMemberFollowOrder_Response', index=1001, number=1708060,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamMemberFollowLose_Report', index=1002, number=1703971,
+      name='MSG_TeamMemberFollow_Request', index=1002, number=1703965,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamMemberFollowSpeed_Report', index=1003, number=1703972,
+      name='MSG_TeamMemberFollow_Response', index=1003, number=1708061,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamList_Request', index=1004, number=1703973,
+      name='MSG_TeamMemberFollowEnterList_Request', index=1004, number=1703967,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamList_Reponse', index=1005, number=1708069,
+      name='MSG_TeamMemberFollowEnterList_Response', index=1005, number=1708063,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SetTeamPurpose_Request', index=1006, number=1703974,
+      name='MSG_TeamMemberFollowInfo_Notice', index=1006, number=1708064,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SetTeamPurpose_Reponse', index=1007, number=1708070,
+      name='MSG_TeamMemberFollowCancel_Report', index=1007, number=1703969,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamPurpose_Notice', index=1008, number=1703975,
+      name='MSG_TeamMemberAutoFollow_Request', index=1008, number=1703970,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TeamSyncBuffUpdate_Notice', index=1009, number=1703976,
+      name='MSG_TeamMemberAutoFollow_Response', index=1009, number=1708066,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TransportProposalAnswerRequest', index=1010, number=1703977,
+      name='MSG_TeamMemberFollowLose_Report', index=1010, number=1703971,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TransportProposalAnswerResponse', index=1011, number=1708073,
+      name='MSG_TeamMemberFollowSpeed_Report', index=1011, number=1703972,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TransportApplyagreeRequest', index=1012, number=1703978,
+      name='MSG_TeamList_Request', index=1012, number=1703973,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TransportApplyagreeResonse', index=1013, number=1703979,
+      name='MSG_TeamList_Reponse', index=1013, number=1708069,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CheckMatchRequest', index=1014, number=1703980,
+      name='MSG_SetTeamPurpose_Request', index=1014, number=1703974,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CheckMatchResponse', index=1015, number=1708076,
+      name='MSG_SetTeamPurpose_Reponse', index=1015, number=1708070,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TransportApplyRequest', index=1016, number=1703981,
+      name='MSG_TeamPurpose_Notice', index=1016, number=1703975,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_TransportApplyResonse', index=1017, number=1708077,
+      name='MSG_TeamSyncBuffUpdate_Notice', index=1017, number=1703976,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GetLeaderPosNotice', index=1018, number=1708079,
+      name='MSG_TransportProposalAnswerRequest', index=1018, number=1703977,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MatchList_Request', index=1019, number=1769473,
+      name='MSG_TransportProposalAnswerResponse', index=1019, number=1708073,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MatchList_Response', index=1020, number=1773569,
+      name='MSG_TransportApplyagreeRequest', index=1020, number=1703978,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MatchConfirm_Notice', index=1021, number=1769474,
+      name='MSG_TransportApplyagreeResonse', index=1021, number=1703979,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MatchConfirmAnswer_Request', index=1022, number=1769475,
+      name='MSG_CheckMatchRequest', index=1022, number=1703980,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MatchConfirmAnswer_Response', index=1023, number=1773571,
+      name='MSG_CheckMatchResponse', index=1023, number=1708076,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MatchSignedUp_Request', index=1024, number=1769476,
+      name='MSG_TransportApplyRequest', index=1024, number=1703981,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MatchSignedUp_Response', index=1025, number=1773572,
+      name='MSG_TransportApplyResonse', index=1025, number=1708077,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MatchCancel_Request', index=1026, number=1769477,
+      name='MSG_GetLeaderPosNotice', index=1026, number=1708079,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MatchCancel_Response', index=1027, number=1773573,
+      name='MSG_CheckTeamMatchRequest', index=1027, number=1703984,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MatchList_Notice', index=1028, number=1769478,
+      name='MSG_CheckTeamMatchResponse', index=1028, number=1708080,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MatchTeam_Request', index=1029, number=1769479,
+      name='MSG_TeamPVPMatchStatusNotice', index=1029, number=1708081,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MatchTeam_Response', index=1030, number=1773575,
+      name='MSG_MatchList_Request', index=1030, number=1769473,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PveMatch_Request', index=1031, number=1769480,
+      name='MSG_MatchList_Response', index=1031, number=1773569,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PveMatch_Response', index=1032, number=1773576,
+      name='MSG_MatchConfirm_Notice', index=1032, number=1769474,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CancelPveMatch_Request', index=1033, number=1769481,
+      name='MSG_MatchConfirmAnswer_Request', index=1033, number=1769475,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CancelPveMatch_Response', index=1034, number=1773577,
+      name='MSG_MatchConfirmAnswer_Response', index=1034, number=1773571,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PveMatchApply_Request', index=1035, number=1769482,
+      name='MSG_MatchSignedUp_Request', index=1035, number=1769476,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PveMatchApply_Response', index=1036, number=1773578,
+      name='MSG_MatchSignedUp_Response', index=1036, number=1773572,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PveMatchLeave_Request', index=1037, number=1769483,
+      name='MSG_MatchCancel_Request', index=1037, number=1769477,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PveMatchLeave_Response', index=1038, number=1773579,
+      name='MSG_MatchCancel_Response', index=1038, number=1773573,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PveMatchCallFriend_Request', index=1039, number=1769484,
+      name='MSG_MatchList_Notice', index=1039, number=1769478,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PveMatchCallFriend_Response', index=1040, number=1773580,
+      name='MSG_MatchTeam_Request', index=1040, number=1769479,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GetMatchList_Request', index=1041, number=1769485,
+      name='MSG_MatchTeam_Response', index=1041, number=1773575,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GetMatchList_Response', index=1042, number=1773581,
+      name='MSG_PveMatch_Request', index=1042, number=1769480,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SyncSpanPveInfo_Notice', index=1043, number=1773582,
+      name='MSG_PveMatch_Response', index=1043, number=1773576,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PveMatchApplyCallFriend_Request', index=1044, number=1769487,
+      name='MSG_CancelPveMatch_Request', index=1044, number=1769481,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PveMatchApplyCallFriend_Response', index=1045, number=1773583,
+      name='MSG_CancelPveMatch_Response', index=1045, number=1773577,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GetMatchInfo_Request', index=1046, number=1769488,
+      name='MSG_PveMatchApply_Request', index=1046, number=1769482,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SyncSpanPveLeader_Notice', index=1047, number=1773585,
+      name='MSG_PveMatchApply_Response', index=1047, number=1773578,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ApplyDuel_Request', index=1048, number=1769490,
+      name='MSG_PveMatchLeave_Request', index=1048, number=1769483,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ApplyDuel_Response', index=1049, number=1773586,
+      name='MSG_PveMatchLeave_Response', index=1049, number=1773579,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CheckOther_Request', index=1050, number=1769491,
+      name='MSG_PveMatchCallFriend_Request', index=1050, number=1769484,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CheckOhter_Response', index=1051, number=1773587,
+      name='MSG_PveMatchCallFriend_Response', index=1051, number=1773580,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DoDuel_Request', index=1052, number=1769492,
+      name='MSG_GetMatchList_Request', index=1052, number=1769485,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DoDuel_Response', index=1053, number=1773588,
+      name='MSG_GetMatchList_Response', index=1053, number=1773581,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DuelInfo_Notice', index=1054, number=1773589,
+      name='MSG_SyncSpanPveInfo_Notice', index=1054, number=1773582,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DuelCreateDungeon_Notice', index=1055, number=1773590,
+      name='MSG_PveMatchApplyCallFriend_Request', index=1055, number=1769487,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DuelDespise_Notice', index=1056, number=1773591,
+      name='MSG_PveMatchApplyCallFriend_Response', index=1056, number=1773583,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DuelState_Notice', index=1057, number=1773592,
+      name='MSG_GetMatchInfo_Request', index=1057, number=1769488,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DuelMail_Notice', index=1058, number=1773593,
+      name='MSG_SyncSpanPveLeader_Notice', index=1058, number=1773585,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DuelSettleUp_Notice', index=1059, number=1773600,
+      name='MSG_ApplyDuel_Request', index=1059, number=1769490,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SearchFriend_Request', index=1060, number=1835009,
+      name='MSG_ApplyDuel_Response', index=1060, number=1773586,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SearchFriend_Response', index=1061, number=1839105,
+      name='MSG_CheckOther_Request', index=1061, number=1769491,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SearchCondtion_Request', index=1062, number=1835010,
+      name='MSG_CheckOhter_Response', index=1062, number=1773587,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_SearchCondtion_Response', index=1063, number=1839106,
+      name='MSG_DoDuel_Request', index=1063, number=1769492,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_AddTFriend_Request', index=1064, number=1835011,
+      name='MSG_DoDuel_Response', index=1064, number=1773588,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_AddTFriend_Response', index=1065, number=1839107,
+      name='MSG_DuelInfo_Notice', index=1065, number=1773589,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RemoveTFriend_Request', index=1066, number=1835012,
+      name='MSG_DuelCreateDungeon_Notice', index=1066, number=1773590,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RemoveTFriend_Response', index=1067, number=1839108,
+      name='MSG_DuelDespise_Notice', index=1067, number=1773591,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_AddTFriends_Notice', index=1068, number=1835013,
+      name='MSG_DuelState_Notice', index=1068, number=1773592,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RemoveTFriends_Notice', index=1069, number=1835014,
+      name='MSG_DuelMail_Notice', index=1069, number=1773593,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_UpdateTFriends_Notice', index=1070, number=1835015,
+      name='MSG_DuelSettleUp_Notice', index=1070, number=1773600,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FriendData_Notice', index=1071, number=1835016,
+      name='MSG_PVPTeamMatch_Request', index=1071, number=1769505,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CharZone_Request', index=1072, number=1835017,
+      name='MSG_PVPTeamMatch_Response', index=1072, number=1773601,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CharZone_Response', index=1073, number=1839113,
+      name='MSG_PVPTeamMatch_Cancel_Request', index=1073, number=1769506,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MoveTarget_Request', index=1074, number=1835018,
+      name='MSG_PVPTeamMatch_Cancel_Response', index=1074, number=1773602,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_MoveTarget_Response', index=1075, number=1839114,
+      name='MSG_SearchFriend_Request', index=1075, number=1835009,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_AddFriendWithAckReuqest', index=1076, number=1835019,
+      name='MSG_SearchFriend_Response', index=1076, number=1839105,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_AddFriendWithAckResponse', index=1077, number=1839115,
+      name='MSG_SearchCondtion_Request', index=1077, number=1835010,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_AddFriendAskTargetNotice', index=1078, number=1835020,
+      name='MSG_SearchCondtion_Response', index=1078, number=1839106,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_AddFriendInteractNotice', index=1079, number=1839116,
+      name='MSG_AddTFriend_Request', index=1079, number=1835011,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_AddFriendAckRequest', index=1080, number=1835021,
+      name='MSG_AddTFriend_Response', index=1080, number=1839107,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_AddFriendAckResponse', index=1081, number=1839117,
+      name='MSG_RemoveTFriend_Request', index=1081, number=1835012,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RemoveFriendRequest', index=1082, number=1835022,
+      name='MSG_RemoveTFriend_Response', index=1082, number=1839108,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RemoveFriendResponse', index=1083, number=1839118,
+      name='MSG_AddTFriends_Notice', index=1083, number=1835013,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FriendGiveEnergy_Request', index=1084, number=1835023,
+      name='MSG_RemoveTFriends_Notice', index=1084, number=1835014,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FriendGiveEnergy_Response', index=1085, number=1839119,
+      name='MSG_UpdateTFriends_Notice', index=1085, number=1835015,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FriendGatherEnergy_Request', index=1086, number=1835024,
+      name='MSG_FriendData_Notice', index=1086, number=1835016,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FriendGatherEnergy_Response', index=1087, number=1839120,
+      name='MSG_CharZone_Request', index=1087, number=1835017,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FriendHeadIcon_Request', index=1088, number=1835025,
+      name='MSG_CharZone_Response', index=1088, number=1839113,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FriendHeadIcon_Response', index=1089, number=1839121,
+      name='MSG_MoveTarget_Request', index=1089, number=1835018,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FriendCheckIconState_Request', index=1090, number=1835026,
+      name='MSG_MoveTarget_Response', index=1090, number=1839114,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FriendCheckIconState_Response', index=1091, number=1839122,
+      name='MSG_AddFriendWithAckReuqest', index=1091, number=1835019,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FriendAddContact_Request', index=1092, number=1835027,
+      name='MSG_AddFriendWithAckResponse', index=1092, number=1839115,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_FriendEnergyTimes_Notice', index=1093, number=1835028,
+      name='MSG_AddFriendAskTargetNotice', index=1093, number=1835020,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RemoveRecentContact_Request', index=1094, number=1835029,
+      name='MSG_AddFriendInteractNotice', index=1094, number=1839116,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RemoveRecentContact_Response', index=1095, number=1839125,
+      name='MSG_AddFriendAckRequest', index=1095, number=1835021,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CangqiongPK_Request', index=1096, number=1900545,
+      name='MSG_AddFriendAckResponse', index=1096, number=1839117,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CangqiongPK_Response', index=1097, number=1904640,
+      name='MSG_RemoveFriendRequest', index=1097, number=1835022,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CangqiongRank_Notice', index=1098, number=1900546,
+      name='MSG_RemoveFriendResponse', index=1098, number=1839118,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CangqiongReward_Notice', index=1099, number=1900547,
+      name='MSG_FriendGiveEnergy_Request', index=1099, number=1835023,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Sign_NewerReward_Request', index=1100, number=1966081,
+      name='MSG_FriendGiveEnergy_Response', index=1100, number=1839119,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Sign_NewerReward_Response', index=1101, number=1970177,
+      name='MSG_FriendGatherEnergy_Request', index=1101, number=1835024,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Sign_DailyReward_Request', index=1102, number=1966082,
+      name='MSG_FriendGatherEnergy_Response', index=1102, number=1839120,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Sign_DailyReward_Response', index=1103, number=1970178,
+      name='MSG_FriendHeadIcon_Request', index=1103, number=1835025,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Sign_DailyVipReward_Request', index=1104, number=1966083,
+      name='MSG_FriendHeadIcon_Response', index=1104, number=1839121,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Sign_DailyVipReward_Response', index=1105, number=1970179,
+      name='MSG_FriendCheckIconState_Request', index=1105, number=1835026,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Sign_LevelReward_Request', index=1106, number=1966084,
+      name='MSG_FriendCheckIconState_Response', index=1106, number=1839122,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Sign_LevelReward_Response', index=1107, number=1970180,
+      name='MSG_FriendAddContact_Request', index=1107, number=1835027,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Sign_OnlineReward_Request', index=1108, number=1966085,
+      name='MSG_FriendEnergyTimes_Notice', index=1108, number=1835028,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Sign_onlineReward_Response', index=1109, number=1970181,
+      name='MSG_RemoveRecentContact_Request', index=1109, number=1835029,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='Msg_Sign_DailyRetroactive_Requrst', index=1110, number=1966086,
+      name='MSG_RemoveRecentContact_Response', index=1110, number=1839125,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Sign_DailyRetroactive_Response', index=1111, number=1970182,
+      name='MSG_CangqiongPK_Request', index=1111, number=1900545,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='Msg_sign_PlayerInfo_Notice', index=1112, number=1970183,
+      name='MSG_CangqiongPK_Response', index=1112, number=1904640,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='Msg_Sign_Config_Request', index=1113, number=1966088,
+      name='MSG_CangqiongRank_Notice', index=1113, number=1900546,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Sign_Config_Response', index=1114, number=1970184,
+      name='MSG_CangqiongReward_Notice', index=1114, number=1900547,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_AddEnergyInfo_Request', index=1115, number=1966089,
+      name='MSG_Sign_NewerReward_Request', index=1115, number=1966081,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_AddEnergyInfo_Response', index=1116, number=1970185,
+      name='MSG_Sign_NewerReward_Response', index=1116, number=1970177,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_AddEnergy_Request', index=1117, number=1966096,
+      name='MSG_Sign_DailyReward_Request', index=1117, number=1966082,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_AddEnergy_Response', index=1118, number=1970192,
+      name='MSG_Sign_DailyReward_Response', index=1118, number=1970178,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_VIPAddEnergy_Request', index=1119, number=1966097,
+      name='MSG_Sign_DailyVipReward_Request', index=1119, number=1966083,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_VIPAddEnergy_Response', index=1120, number=1970193,
+      name='MSG_Sign_DailyVipReward_Response', index=1120, number=1970179,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_NewServer_Activity_Request', index=1121, number=1966098,
+      name='MSG_Sign_LevelReward_Request', index=1121, number=1966084,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_NewServer_Activity_Response', index=1122, number=1970194,
+      name='MSG_Sign_LevelReward_Response', index=1122, number=1970180,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Newserver_Activity_State_Notice', index=1123, number=1966099,
+      name='MSG_Sign_OnlineReward_Request', index=1123, number=1966085,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='Msg_Newserver_Activity_Cfg_Notice', index=1124, number=1966100,
+      name='MSG_Sign_onlineReward_Response', index=1124, number=1970181,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Newserver_Charge_Request', index=1125, number=1966101,
+      name='Msg_Sign_DailyRetroactive_Requrst', index=1125, number=1966086,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Newserver_Charge_Response', index=1126, number=1970197,
+      name='MSG_Sign_DailyRetroactive_Response', index=1126, number=1970182,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Newserver_Charge_Notice', index=1127, number=1966102,
+      name='Msg_sign_PlayerInfo_Notice', index=1127, number=1970183,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Newserver_ArenaRank_Request', index=1128, number=1966103,
+      name='Msg_Sign_Config_Request', index=1128, number=1966088,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Newserver_ArenaRank_Response', index=1129, number=1970199,
+      name='MSG_Sign_Config_Response', index=1129, number=1970184,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Newserver_Recharge_Cfg_Notice', index=1130, number=1966104,
+      name='MSG_AddEnergyInfo_Request', index=1130, number=1966089,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Newserver_Recharge_State_Notice', index=1131, number=1966105,
+      name='MSG_AddEnergyInfo_Response', index=1131, number=1970185,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Newserver_ShopDiscount_Buy_Request', index=1132, number=1966106,
+      name='MSG_AddEnergy_Request', index=1132, number=1966096,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Newserver_ShopDiscount_Buy_Response', index=1133, number=1970202,
+      name='MSG_AddEnergy_Response', index=1133, number=1970192,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Nation_CampUnion_Notice', index=1134, number=2031617,
+      name='MSG_VIPAddEnergy_Request', index=1134, number=1966097,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Hold_Request', index=1135, number=2097153,
+      name='MSG_VIPAddEnergy_Response', index=1135, number=1970193,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Hold_Response', index=1136, number=2101249,
+      name='MSG_NewServer_Activity_Request', index=1136, number=1966098,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Hold_Ack_Notice', index=1137, number=2097154,
+      name='MSG_NewServer_Activity_Response', index=1137, number=1970194,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Hold_Ack_Request', index=1138, number=2097155,
+      name='MSG_Newserver_Activity_State_Notice', index=1138, number=1966099,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Hold_Ack_Response', index=1139, number=2101251,
+      name='Msg_Newserver_Activity_Cfg_Notice', index=1139, number=1966100,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Hold_Down_Request', index=1140, number=2097156,
+      name='MSG_Newserver_Charge_Request', index=1140, number=1966101,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Hold_Down_Response', index=1141, number=2101252,
+      name='MSG_Newserver_Charge_Response', index=1141, number=1970197,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Hold_Interrupt_Notice', index=1142, number=2097157,
+      name='MSG_Newserver_Charge_Notice', index=1142, number=1966102,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Hold_DelAppList_Notice', index=1143, number=2097158,
+      name='MSG_Newserver_ArenaRank_Request', index=1143, number=1966103,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Hold_AutoShield_Request', index=1144, number=2097159,
+      name='MSG_Newserver_ArenaRank_Response', index=1144, number=1970199,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Hold_AutoShield_Response', index=1145, number=2101255,
+      name='MSG_Newserver_Recharge_Cfg_Notice', index=1145, number=1966104,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Hold_AutoShield_Notice', index=1146, number=2097160,
+      name='MSG_Newserver_Recharge_State_Notice', index=1146, number=1966105,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_InterAction_Request', index=1147, number=2097161,
+      name='MSG_Newserver_ShopDiscount_Buy_Request', index=1147, number=1966106,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_InterAction_Response', index=1148, number=2101257,
+      name='MSG_Newserver_ShopDiscount_Buy_Response', index=1148, number=1970202,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CancelInterAction_Request', index=1149, number=2097168,
+      name='MSG_Nation_CampUnion_Notice', index=1149, number=2031617,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CancelInterAction_Response', index=1150, number=2101264,
+      name='MSG_Hold_Request', index=1150, number=2097153,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_InterAction_Notice', index=1151, number=2101265,
+      name='MSG_Hold_Response', index=1151, number=2101249,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_InterActionVerify_Notice', index=1152, number=2101266,
+      name='MSG_Hold_Ack_Notice', index=1152, number=2097154,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_InterActionVerify_Request', index=1153, number=2097171,
+      name='MSG_Hold_Ack_Request', index=1153, number=2097155,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_InterActionVerify_Response', index=1154, number=2101267,
+      name='MSG_Hold_Ack_Response', index=1154, number=2101251,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_InterAction_RequestEx', index=1155, number=2097172,
+      name='MSG_Hold_Down_Request', index=1155, number=2097156,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Marriage_Ready_Request', index=1156, number=2162689,
+      name='MSG_Hold_Down_Response', index=1156, number=2101252,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Marriage_Ready_Response', index=1157, number=2166785,
+      name='MSG_Hold_Interrupt_Notice', index=1157, number=2097157,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Marry_LeaderAck_Request', index=1158, number=2162690,
+      name='MSG_Hold_DelAppList_Notice', index=1158, number=2097158,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Marry_LeaderAck_Response', index=1159, number=2166786,
+      name='MSG_Hold_AutoShield_Request', index=1159, number=2097159,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Marry_LeaderAck_Notice', index=1160, number=2166787,
+      name='MSG_Hold_AutoShield_Response', index=1160, number=2101255,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Marry_MemberAck_Request', index=1161, number=2162692,
+      name='MSG_Hold_AutoShield_Notice', index=1161, number=2097160,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Marry_MemberAck_Response', index=1162, number=2166788,
+      name='MSG_InterAction_Request', index=1162, number=2097161,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Marry_MemberCancel_Request', index=1163, number=2162693,
+      name='MSG_InterAction_Response', index=1163, number=2101257,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Marry_MemberCancel_Response', index=1164, number=2166789,
+      name='MSG_CancelInterAction_Request', index=1164, number=2097168,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DivorceDeal_LeaderAck_Request', index=1165, number=2162704,
+      name='MSG_CancelInterAction_Response', index=1165, number=2101264,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DivorceDeal_LeaderAck_Response', index=1166, number=2166800,
+      name='MSG_InterAction_Notice', index=1166, number=2101265,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DivorceDeal_LeaderAck_Notice', index=1167, number=2166801,
+      name='MSG_InterActionVerify_Notice', index=1167, number=2101266,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DivorceDeal_MemberAck_Request', index=1168, number=2162706,
+      name='MSG_InterActionVerify_Request', index=1168, number=2097171,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DivorceDeal_MemberAck_Response', index=1169, number=2166802,
+      name='MSG_InterActionVerify_Response', index=1169, number=2101267,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DivorceDeal_MemberCancel_Request', index=1170, number=2162707,
+      name='MSG_InterAction_RequestEx', index=1170, number=2097172,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DivorceDeal_MemberCancel_Response', index=1171, number=2166803,
+      name='MSG_Marriage_Ready_Request', index=1171, number=2162689,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DivorceForce_Request', index=1172, number=2162708,
+      name='MSG_Marriage_Ready_Response', index=1172, number=2166785,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DivorceForce_Response', index=1173, number=2166804,
+      name='MSG_Marry_LeaderAck_Request', index=1173, number=2162690,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Marriage_Info_Notice', index=1174, number=2166805,
+      name='MSG_Marry_LeaderAck_Response', index=1174, number=2166786,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Title_Change_Request', index=1175, number=2162720,
+      name='MSG_Marry_LeaderAck_Notice', index=1175, number=2166787,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Title_Change_Response', index=1176, number=2166816,
+      name='MSG_Marry_MemberAck_Request', index=1176, number=2162692,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Marriage_March_Request', index=1177, number=2162736,
+      name='MSG_Marry_MemberAck_Response', index=1177, number=2166788,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Marriage_March_Response', index=1178, number=2166832,
+      name='MSG_Marry_MemberCancel_Request', index=1178, number=2162693,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Marriage_MarchReady_Request', index=1179, number=2162737,
+      name='MSG_Marry_MemberCancel_Response', index=1179, number=2166789,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Marriage_MarchReady_Response', index=1180, number=2166833,
+      name='MSG_DivorceDeal_LeaderAck_Request', index=1180, number=2162704,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Marriage_Success_Notice', index=1181, number=2166834,
+      name='MSG_DivorceDeal_LeaderAck_Response', index=1181, number=2166800,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Channel_QQ_Get_Reward_Request', index=1182, number=2228225,
+      name='MSG_DivorceDeal_LeaderAck_Notice', index=1182, number=2166801,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Channel_QQ_Get_Reward_Response', index=1183, number=2232321,
+      name='MSG_DivorceDeal_MemberAck_Request', index=1183, number=2162706,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Channel_QQ_Get_Reward_List_Request', index=1184, number=2228226,
+      name='MSG_DivorceDeal_MemberAck_Response', index=1184, number=2166802,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Channel_QQ_Get_Reward_List_Response', index=1185, number=2232322,
+      name='MSG_DivorceDeal_MemberCancel_Request', index=1185, number=2162707,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Rep_MoveToBag_Request', index=1186, number=2293761,
+      name='MSG_DivorceDeal_MemberCancel_Response', index=1186, number=2166803,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Rep_MoveToBag_Response', index=1187, number=2297857,
+      name='MSG_DivorceForce_Request', index=1187, number=2162708,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Rep_RecvFromBag_Request', index=1188, number=2293762,
+      name='MSG_DivorceForce_Response', index=1188, number=2166804,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Rep_RecvFromBag_Response', index=1189, number=2297858,
+      name='MSG_Marriage_Info_Notice', index=1189, number=2166805,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Rep_OnConnect_Notice', index=1190, number=2297859,
+      name='MSG_Title_Change_Request', index=1190, number=2162720,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Rep_RepInfo_Notice', index=1191, number=2297860,
+      name='MSG_Title_Change_Response', index=1191, number=2166816,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Rep_ChangeRep_Request', index=1192, number=2293765,
+      name='MSG_Marriage_March_Request', index=1192, number=2162736,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Rep_ChangeRep_Response', index=1193, number=2297861,
+      name='MSG_Marriage_March_Response', index=1193, number=2166832,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Rep_Unlock_Request', index=1194, number=2293766,
+      name='MSG_Marriage_MarchReady_Request', index=1194, number=2162737,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Rep_Unlock_Response', index=1195, number=2297862,
+      name='MSG_Marriage_MarchReady_Response', index=1195, number=2166833,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_NewRoleAct_GetState_Request', index=1196, number=2359297,
+      name='MSG_Marriage_Success_Notice', index=1196, number=2166834,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_NewRoleAct_GetState_Response', index=1197, number=2363393,
+      name='MSG_Channel_QQ_Get_Reward_Request', index=1197, number=2228225,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_NewRoleAct_Buy_Request', index=1198, number=2359298,
+      name='MSG_Channel_QQ_Get_Reward_Response', index=1198, number=2232321,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_NewRoleAct_Buy_Response', index=1199, number=2363394,
+      name='MSG_Channel_QQ_Get_Reward_List_Request', index=1199, number=2228226,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_NewRoleAct_GetReward_Request', index=1200, number=2359299,
+      name='MSG_Channel_QQ_Get_Reward_List_Response', index=1200, number=2232322,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_NewRoleAct_GetReward_Response', index=1201, number=2363395,
+      name='MSG_Rep_MoveToBag_Request', index=1201, number=2293761,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_NewRoleAct_SyncInfo_Notice', index=1202, number=2363396,
+      name='MSG_Rep_MoveToBag_Response', index=1202, number=2297857,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_NewRoleAct_SyncActData_Notice', index=1203, number=2363397,
+      name='MSG_Rep_RecvFromBag_Request', index=1203, number=2293762,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Guild_Day_Reward_Info_Notice', index=1204, number=2428929,
+      name='MSG_Rep_RecvFromBag_Response', index=1204, number=2297858,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Guild_Get_Day_Reward_Request', index=1205, number=2424834,
+      name='MSG_Rep_OnConnect_Notice', index=1205, number=2297859,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Guild_Get_Day_Reward_Response', index=1206, number=2428930,
+      name='MSG_Rep_RepInfo_Notice', index=1206, number=2297860,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_CharaceterTitle_Notice', index=1207, number=2494465,
+      name='MSG_Rep_ChangeRep_Request', index=1207, number=2293765,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ChangeCharacterTitle_Request', index=1208, number=2490370,
+      name='MSG_Rep_ChangeRep_Response', index=1208, number=2297861,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ChangeCharacterTitle_Response', index=1209, number=2494466,
+      name='MSG_Rep_Unlock_Request', index=1209, number=2293766,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventLotteryRequest', index=1210, number=2555905,
+      name='MSG_Rep_Unlock_Response', index=1210, number=2297862,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventLotteryResponse', index=1211, number=2555906,
+      name='MSG_NewRoleAct_GetState_Request', index=1211, number=2359297,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_EventLotteryGoodItemNotice', index=1212, number=2555907,
+      name='MSG_NewRoleAct_GetState_Response', index=1212, number=2363393,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ChargeRegressInfo_Notice', index=1213, number=2555908,
+      name='MSG_NewRoleAct_Buy_Request', index=1213, number=2359298,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_IgnoreChargeRegress_Report', index=1214, number=2555909,
+      name='MSG_NewRoleAct_Buy_Response', index=1214, number=2363394,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ActFireworksInfo_Notice', index=1215, number=2555910,
+      name='MSG_NewRoleAct_GetReward_Request', index=1215, number=2359299,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ActFireworksInfo_Request', index=1216, number=2555911,
+      name='MSG_NewRoleAct_GetReward_Response', index=1216, number=2363395,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ActFireworksInfo_Response', index=1217, number=2555912,
+      name='MSG_NewRoleAct_SyncInfo_Notice', index=1217, number=2363396,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ClientBtnInfo_Notice', index=1218, number=2555913,
+      name='MSG_NewRoleAct_SyncActData_Notice', index=1218, number=2363397,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GateActStatus_Notice', index=1219, number=2555914,
+      name='MSG_Guild_Day_Reward_Info_Notice', index=1219, number=2428929,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_LoginGifts_Status_Notice', index=1220, number=2560011,
+      name='MSG_Guild_Get_Day_Reward_Request', index=1220, number=2424834,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_LoginGifts_GetReward_Request', index=1221, number=2555916,
+      name='MSG_Guild_Get_Day_Reward_Response', index=1221, number=2428930,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_LoginGifts_GetReward_Response', index=1222, number=2560012,
+      name='MSG_CharaceterTitle_Notice', index=1222, number=2494465,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OnearmBandit_Bless_Request', index=1223, number=2555922,
+      name='MSG_ChangeCharacterTitle_Request', index=1223, number=2490370,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OnearmBandit_Bless_Response', index=1224, number=2560018,
+      name='MSG_ChangeCharacterTitle_Response', index=1224, number=2494466,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OnearmBandit_Reward_Request', index=1225, number=2555923,
+      name='MSG_EventLotteryRequest', index=1225, number=2555905,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OnearmBandit_Reward_Response', index=1226, number=2560019,
+      name='MSG_EventLotteryResponse', index=1226, number=2555906,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OnearmBandit_Record_Notice', index=1227, number=2555924,
+      name='MSG_EventLotteryGoodItemNotice', index=1227, number=2555907,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OnlineGifts_Status_Notice', index=1228, number=2560013,
+      name='MSG_ChargeRegressInfo_Notice', index=1228, number=2555908,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OnlineGifts_GetReward_Request', index=1229, number=2555918,
+      name='MSG_IgnoreChargeRegress_Report', index=1229, number=2555909,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_OnlineGifts_GetReward_Response', index=1230, number=2560014,
+      name='MSG_ActFireworksInfo_Notice', index=1230, number=2555910,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GetLuckInfoRequest', index=1231, number=2621441,
+      name='MSG_ActFireworksInfo_Request', index=1231, number=2555911,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_GetLuckInfoResponse', index=1232, number=2621442,
+      name='MSG_ActFireworksInfo_Response', index=1232, number=2555912,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_UpgradeLuckRequest', index=1233, number=2621443,
+      name='MSG_ClientBtnInfo_Notice', index=1233, number=2555913,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_UpgradeLuckResponse', index=1234, number=2621444,
+      name='MSG_GateActStatus_Notice', index=1234, number=2555914,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_LuckReloadCfgNotice', index=1235, number=2621445,
+      name='MSG_LoginGifts_Status_Notice', index=1235, number=2560011,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PotentialInfo_Notice', index=1236, number=2686977,
+      name='MSG_LoginGifts_GetReward_Request', index=1236, number=2555916,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PotentialFeed_Request', index=1237, number=2686978,
+      name='MSG_LoginGifts_GetReward_Response', index=1237, number=2560012,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PotentialFeed_Response', index=1238, number=2691074,
+      name='MSG_OnearmBandit_Bless_Request', index=1238, number=2555922,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PotentialReplace_Request', index=1239, number=2686979,
+      name='MSG_OnearmBandit_Bless_Response', index=1239, number=2560018,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PotentialReplace_Response', index=1240, number=2691075,
+      name='MSG_OnearmBandit_Reward_Request', index=1240, number=2555923,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PotentialUpClass_Request', index=1241, number=2686980,
+      name='MSG_OnearmBandit_Reward_Response', index=1241, number=2560019,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PotentialUpClass_Response', index=1242, number=2691076,
+      name='MSG_OnearmBandit_Record_Notice', index=1242, number=2555924,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PotentialTenFeed_Request', index=1243, number=2686981,
+      name='MSG_OnlineGifts_Status_Notice', index=1243, number=2560013,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PotentialTenFeed_Respoonse', index=1244, number=2691077,
+      name='MSG_OnlineGifts_GetReward_Request', index=1244, number=2555918,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PotentialAttrState_Request', index=1245, number=2686982,
+      name='MSG_OnlineGifts_GetReward_Response', index=1245, number=2560014,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PotentialAttrState_Response', index=1246, number=2691078,
+      name='MSG_BindVip_Status_Notice', index=1246, number=2560032,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PotentialTenReplace_Request', index=1247, number=2686983,
+      name='MSG_BindVip_Ignore_Report', index=1247, number=2555937,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_PotentialTenReplace_Response', index=1248, number=2691079,
+      name='MSG_Rollingtree_Request', index=1248, number=2555953,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Couplepvp_ActInfo_Request', index=1249, number=3145729,
+      name='MSG_Rollingtree_Notice', index=1249, number=2560050,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Couplepvp_ActInfo_Response', index=1250, number=3149825,
+      name='MSG_GetLuckInfoRequest', index=1250, number=2621441,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Couplepvp_Apply_Request', index=1251, number=3145730,
+      name='MSG_GetLuckInfoResponse', index=1251, number=2621442,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Couplepvp_EnterDungeon_Notice', index=1252, number=3145731,
+      name='MSG_UpgradeLuckRequest', index=1252, number=2621443,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Couplepvp_EnterDungeon_Request', index=1253, number=3145732,
+      name='MSG_UpgradeLuckResponse', index=1253, number=2621444,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Couplepvp_BattleInfo_Sync', index=1254, number=3145733,
+      name='MSG_LuckReloadCfgNotice', index=1254, number=2621445,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Couplepvp_BattleInfo_Result', index=1255, number=3145734,
+      name='MSG_PotentialInfo_Notice', index=1255, number=2686977,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WingTrainAllInfo_Request', index=1256, number=3211265,
+      name='MSG_PotentialFeed_Request', index=1256, number=2686978,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WingTrainAllInfo_Response', index=1257, number=3211266,
+      name='MSG_PotentialFeed_Response', index=1257, number=2691074,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WingTrainUpStar_Request', index=1258, number=3211267,
+      name='MSG_PotentialReplace_Request', index=1258, number=2686979,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WingTrainUpStar_Response', index=1259, number=3211268,
+      name='MSG_PotentialReplace_Response', index=1259, number=2691075,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WingTrainUpJie_Request', index=1260, number=3211269,
+      name='MSG_PotentialUpClass_Request', index=1260, number=2686980,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WingTrainUpJie_Response', index=1261, number=3211270,
+      name='MSG_PotentialUpClass_Response', index=1261, number=2691076,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WingTrainQueryWingPro_Request', index=1262, number=3211271,
+      name='MSG_PotentialTenFeed_Request', index=1262, number=2686981,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WingTrainQueryWingPro_Response', index=1263, number=3211272,
+      name='MSG_PotentialTenFeed_Respoonse', index=1263, number=2691077,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WingTrainQueryWingTip_Request', index=1264, number=3211273,
+      name='MSG_PotentialAttrState_Request', index=1264, number=2686982,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WingTrainQueryWingTip_Response', index=1265, number=3211274,
+      name='MSG_PotentialAttrState_Response', index=1265, number=2691078,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_WingTrainInfoNotice', index=1266, number=3211275,
+      name='MSG_PotentialTenReplace_Request', index=1266, number=2686983,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RedBag_Send_Request', index=1267, number=3276801,
+      name='MSG_PotentialTenReplace_Response', index=1267, number=2691079,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RedBag_Send_Response', index=1268, number=3280897,
+      name='MSG_Couplepvp_ActInfo_Request', index=1268, number=3145729,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RedBag_Notice', index=1269, number=3276802,
+      name='MSG_Couplepvp_ActInfo_Response', index=1269, number=3149825,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RedBag_List_Request', index=1270, number=3276803,
+      name='MSG_Couplepvp_Apply_Request', index=1270, number=3145730,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RedBag_List_Response', index=1271, number=3280899,
+      name='MSG_Couplepvp_EnterDungeon_Notice', index=1271, number=3145731,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RedBag_Open_Request', index=1272, number=3276804,
+      name='MSG_Couplepvp_EnterDungeon_Request', index=1272, number=3145732,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RedBag_Open_Response', index=1273, number=3280900,
+      name='MSG_Couplepvp_BattleInfo_Sync', index=1273, number=3145733,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RedBag_Count_Request', index=1274, number=3276805,
+      name='MSG_Couplepvp_BattleInfo_Result', index=1274, number=3145734,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RedBag_Count_Response', index=1275, number=3280901,
+      name='MSG_WingTrainAllInfo_Request', index=1275, number=3211265,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RedBag_Login_Notice', index=1276, number=3280902,
+      name='MSG_WingTrainAllInfo_Response', index=1276, number=3211266,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Xinfa_Info_Request', index=1277, number=3342337,
+      name='MSG_WingTrainUpStar_Request', index=1277, number=3211267,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Xinfa_Info_Response', index=1278, number=3346433,
+      name='MSG_WingTrainUpStar_Response', index=1278, number=3211268,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Xinfa_Upgrade_Request', index=1279, number=3346434,
+      name='MSG_WingTrainUpJie_Request', index=1279, number=3211269,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Xinfa_Upgrade_Response', index=1280, number=3346434,
+      name='MSG_WingTrainUpJie_Response', index=1280, number=3211270,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Xiuzhen_Info_Request', index=1281, number=3407873,
+      name='MSG_WingTrainQueryWingPro_Request', index=1281, number=3211271,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Xiuzhen_Info_Response', index=1282, number=3411969,
+      name='MSG_WingTrainQueryWingPro_Response', index=1282, number=3211272,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Xiuzhen_Upgrade_Request', index=1283, number=3407874,
+      name='MSG_WingTrainQueryWingTip_Request', index=1283, number=3211273,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Xiuzhen_Upgrade_Response', index=1284, number=3411970,
+      name='MSG_WingTrainQueryWingTip_Response', index=1284, number=3211274,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Xiuzhen_Info_Notice', index=1285, number=3411971,
+      name='MSG_WingTrainInfoNotice', index=1285, number=3211275,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_ErrCode_Response', index=1286, number=805306368,
+      name='MSG_RedBag_Send_Request', index=1286, number=3276801,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DimensionTest_Require', index=1287, number=1073741825,
+      name='MSG_RedBag_Send_Response', index=1287, number=3280897,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DimensionTest_Response', index=1288, number=1073741826,
+      name='MSG_RedBag_Notice', index=1288, number=3276802,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DimensionCharJoin_Require', index=1289, number=1073741827,
+      name='MSG_RedBag_List_Request', index=1289, number=3276803,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DimensionCharLeave_Require', index=1290, number=1073741828,
+      name='MSG_RedBag_List_Response', index=1290, number=3280899,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_DimensionChat_Require', index=1291, number=1073741829,
+      name='MSG_RedBag_Open_Request', index=1291, number=3276804,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BattleMatch_Request', index=1292, number=1342177281,
+      name='MSG_RedBag_Open_Response', index=1292, number=3280900,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BattleCancel_Request', index=1293, number=1342177282,
+      name='MSG_RedBag_Count_Request', index=1293, number=3276805,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BattleQuery_Request', index=1294, number=1342177283,
+      name='MSG_RedBag_Count_Response', index=1294, number=3280901,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_BigGetMatchInfo_Request', index=1295, number=1342177284,
+      name='MSG_RedBag_Login_Notice', index=1295, number=3280902,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_Battle_Inform', index=1296, number=1879048193,
+      name='MSG_Xinfa_Info_Request', index=1296, number=3342337,
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='MSG_RankTopPlayerLogin', index=1297, number=1879048194,
+      name='MSG_Xinfa_Info_Response', index=1297, number=3346433,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_Xinfa_Upgrade_Request', index=1298, number=3346434,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_Xinfa_Upgrade_Response', index=1299, number=3346434,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_Xiuzhen_Info_Request', index=1300, number=3407873,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_Xiuzhen_Info_Response', index=1301, number=3411969,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_Xiuzhen_Upgrade_Request', index=1302, number=3407874,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_Xiuzhen_Upgrade_Response', index=1303, number=3411970,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_Xiuzhen_Info_Notice', index=1304, number=3411971,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_CreateCrop_Request', index=1305, number=3473409,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_CreateCrop_Response', index=1306, number=3477505,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_CropsList_Request', index=1307, number=3473410,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_CropsList_Response', index=1308, number=3477506,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_ApplyJoinCrop_Request', index=1309, number=3473411,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_ApplyJoinCrop_Response', index=1310, number=3477507,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_JoinCrops_Notice', index=1311, number=3477508,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_JoinCrops_Request', index=1312, number=3473413,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_JoinCrops_Response', index=1313, number=3477509,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_CropInfo_Request', index=1314, number=3473414,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_CropInfo_Response', index=1315, number=3477510,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_InviteFriend_Request', index=1316, number=3473415,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_InviteFriend_Response', index=1317, number=3477511,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_CropInvite_Notice', index=1318, number=3477512,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_InviteAnswer_Request', index=1319, number=3473417,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_InviteAnswer_Response', index=1320, number=3477513,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_InviteExamine_Notice', index=1321, number=3477520,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_LeaderExamine_Request', index=1322, number=3473425,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_LeaderExamine_Response', index=1323, number=3477521,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_ChangeLeader_Request', index=1324, number=3473426,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_ChangeLeader_Response', index=1325, number=3477522,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_KickOut_Request', index=1326, number=3473427,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_KickOut_Response', index=1327, number=3477523,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_DisbandedCrops_Request', index=1328, number=3473428,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_DisbandedCrops_Response', index=1329, number=3477524,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_ExitCrop_Request', index=1330, number=3473429,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_ExitCrop_Response', index=1331, number=3477525,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_MyCropInfo_Request', index=1332, number=3473430,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_MyCropInfo_Response', index=1333, number=3477526,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_MyCropInfo_Notice', index=1334, number=3477527,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_Battle_End_Notice', index=1335, number=3477528,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_FinalBattle_End_Notice', index=1336, number=3477529,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_Battle_Notice', index=1337, number=3477536,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_FinalBattle_Notice', index=1338, number=3477537,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_CropRankList_Request', index=1339, number=3473442,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_CropRankList_Response', index=1340, number=3477538,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_FinalMatch_Request', index=1341, number=3473443,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_FinalMatch_Response', index=1342, number=3477539,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_FinalWatch_Request', index=1343, number=3473444,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_FinalWatch_Response', index=1344, number=3477540,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_Battle_Status_Notice', index=1345, number=3477541,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_FightTable_Info_Request', index=1346, number=3473446,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_FightTable_Info_Response', index=1347, number=3477542,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_Start_Matching_Request', index=1348, number=3473447,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_Start_Matching_Response', index=1349, number=3477543,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_GetReady_Matching_Request', index=1350, number=3473448,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_GetReady_Matching_Response', index=1351, number=3477544,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_Ready_Status_Notice', index=1352, number=3477545,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_GetLivenessReward_Request', index=1353, number=3473456,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_GetLivenessReward_Response', index=1354, number=3477552,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_Liveness_Request', index=1355, number=3473457,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_Liveness_Response', index=1356, number=3477553,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_CropsRank_Request', index=1357, number=3473458,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_CropsRank_Response', index=1358, number=3477554,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_Member_Ready_Notice', index=1359, number=3477555,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_CancelMatchingRequest', index=1360, number=3473460,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_CancelMatchingResponse', index=1361, number=3477556,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_CancelReadyRequest', index=1362, number=3473461,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanTeam_CancelReadyResponse', index=1363, number=3477557,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_Info_Request', index=1364, number=3538945,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_Info_Response', index=1365, number=3543041,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_Active_Request', index=1366, number=3538946,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_Active_Response', index=1367, number=3543042,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_Upgrade_Request', index=1368, number=3538947,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_Upgrade_Response', index=1369, number=3543043,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_StarUp_Request', index=1370, number=3538948,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_StarUp_Response', index=1371, number=3543044,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_ProTrain_Request', index=1372, number=3538949,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_ProTrain_Response', index=1373, number=3543045,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_SkillSlotTrain_Request', index=1374, number=3538950,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_SkillSlotTrain_Response', index=1375, number=3543046,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_Battle_Request', index=1376, number=3538951,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_Battle_Response', index=1377, number=3543047,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_Rest_Request', index=1378, number=3538952,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_Rest_Response', index=1379, number=3543048,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_JoinTeam_Request', index=1380, number=3538953,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_JoinTeam_Response', index=1381, number=3543049,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_ExitTeam_Request', index=1382, number=3538960,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_ExitTeam_Response', index=1383, number=3543056,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_TeamSlot_Change_Notice', index=1384, number=3543057,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_SlotEquiment_Request', index=1385, number=3538962,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_SlotEquiment_Response', index=1386, number=3543058,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_SlotRemoveEquiment_Request', index=1387, number=3538963,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_SlotRemoveEquiment_Response', index=1388, number=3543059,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_TeamSlot_Request', index=1389, number=3538964,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_Apply_Request', index=1390, number=3538965,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_Apply_Response', index=1391, number=3543061,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_UpOrBreak_Request', index=1392, number=3538966,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_MagicPet_UpOrBreak_Response', index=1393, number=3543062,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanMaze_SignUp_Request', index=1394, number=3604481,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanMaze_SignUp_Response', index=1395, number=3608577,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanMaze_Enter_Request', index=1396, number=3604482,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanMaze_Enter_Response', index=1397, number=3608578,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_SpanMaze_EnterDungeon_Notice', index=1398, number=3608579,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_ErrCode_Response', index=1399, number=805306368,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_DimensionTest_Require', index=1400, number=1073741825,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_DimensionTest_Response', index=1401, number=1073741826,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_DimensionCharJoin_Require', index=1402, number=1073741827,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_DimensionCharLeave_Require', index=1403, number=1073741828,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_DimensionChat_Require', index=1404, number=1073741829,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BattleMatch_Request', index=1405, number=1342177281,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BattleCancel_Request', index=1406, number=1342177282,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BattleQuery_Request', index=1407, number=1342177283,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BigGetMatchInfo_Request', index=1408, number=1342177284,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BattleTeamMatchRequest', index=1409, number=1342177285,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_BattleTeamCancel_Request', index=1410, number=1342177286,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_Battle_Inform', index=1411, number=1879048193,
+      options=None,
+      type=None),
+    descriptor.EnumValueDescriptor(
+      name='MSG_RankTopPlayerLogin', index=1412, number=1879048194,
       options=None,
       type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=1100,
-  serialized_end=46435,
+  serialized_start=1154,
+  serialized_end=51050,
 )
 
 
@@ -5475,6 +5947,9 @@ MOD_WingTrain = 49
 MOD_GuildRedBag = 50
 MOD_Xinfa = 51
 MOD_Xiuzhen = 52
+MOD_SpanTeam = 53
+MOD_MagicPet = 54
+MOD_DpsnMaze = 55
 MOD_DimensionExampler = 16384
 MOD_BigWorldBattle = 20480
 MOD_MsgToClient = 28672
@@ -5596,6 +6071,8 @@ MSG_AllItemEnduranceNormal_Request = 196679
 MSG_AllItemEnduranceNormal_Response = 200775
 MSG_AllItemEnduranceXianfu_Request = 196680
 MSG_AllItemEnduranceXianfu_Response = 200776
+MSG_RankMagicPetInfo_Request = 196681
+MSG_RankMagicPetInfo_Response = 200777
 MSG_NPCPos_Response = 262144
 MSG_QuestAccept_Request = 262145
 MSG_QuestCommit_Request = 262146
@@ -5663,6 +6140,7 @@ MSG_BtlDeliver_Response = 462854
 MSG_BtlEndStat_Inform = 458759
 MSG_BtlInspire_Request = 458760
 MSG_BtlInspire_Response = 462856
+MSG_BtlTeamMatchRes = 458762
 MSG_BtlMatchRes = 458763
 MSG_BtlQuery_Request = 458764
 MSG_BtlMatchSendCallFriendURL = 462861
@@ -5917,6 +6395,7 @@ MSG_SPMonorBattle_RaceThree_Unfight_Request = 786601
 MSG_SPMonorBattle_RaceThree_Unfight_Response = 790697
 MSG_SPMonorBattle_RaceThree_Fight_Member_Notice = 790698
 MSG_SPMonorBattle_RaceThree_Round_Notice = 790699
+MSG_Guild_WildBossDmgRank_Notice = 790700
 MSG_MailBox_Response = 851969
 MSG_MailBox_Require = 851970
 MSG_GmMail_Notice = 851971
@@ -6133,6 +6612,10 @@ MSG_Open_GuildFire_Request = 983138
 MSG_Open_GuildFire_Response = 1032290
 MSG_GuildFire_Time_Notice = 987235
 MSG_Open_GuildFire_Notice = 987236
+MSG_Guild_Liveness_Info_Request = 983141
+MSG_Guild_Liveness_Info_Response = 987237
+MSG_Guild_Liveness_Get_Reward_Request = 983142
+MSG_Guild_Liveness_Get_Reward_Response = 987238
 MSG_DynamicNotice_Response = 1114113
 MSG_NPCInfo_Response = 1114114
 MSG_Chat_Require = 1114115
@@ -6497,6 +6980,9 @@ MSG_CheckMatchResponse = 1708076
 MSG_TransportApplyRequest = 1703981
 MSG_TransportApplyResonse = 1708077
 MSG_GetLeaderPosNotice = 1708079
+MSG_CheckTeamMatchRequest = 1703984
+MSG_CheckTeamMatchResponse = 1708080
+MSG_TeamPVPMatchStatusNotice = 1708081
 MSG_MatchList_Request = 1769473
 MSG_MatchList_Response = 1773569
 MSG_MatchConfirm_Notice = 1769474
@@ -6538,6 +7024,10 @@ MSG_DuelDespise_Notice = 1773591
 MSG_DuelState_Notice = 1773592
 MSG_DuelMail_Notice = 1773593
 MSG_DuelSettleUp_Notice = 1773600
+MSG_PVPTeamMatch_Request = 1769505
+MSG_PVPTeamMatch_Response = 1773601
+MSG_PVPTeamMatch_Cancel_Request = 1769506
+MSG_PVPTeamMatch_Cancel_Response = 1773602
 MSG_SearchFriend_Request = 1835009
 MSG_SearchFriend_Response = 1839105
 MSG_SearchCondtion_Request = 1835010
@@ -6709,6 +7199,10 @@ MSG_OnearmBandit_Record_Notice = 2555924
 MSG_OnlineGifts_Status_Notice = 2560013
 MSG_OnlineGifts_GetReward_Request = 2555918
 MSG_OnlineGifts_GetReward_Response = 2560014
+MSG_BindVip_Status_Notice = 2560032
+MSG_BindVip_Ignore_Report = 2555937
+MSG_Rollingtree_Request = 2555953
+MSG_Rollingtree_Notice = 2560050
 MSG_GetLuckInfoRequest = 2621441
 MSG_GetLuckInfoResponse = 2621442
 MSG_UpgradeLuckRequest = 2621443
@@ -6764,6 +7258,100 @@ MSG_Xiuzhen_Info_Response = 3411969
 MSG_Xiuzhen_Upgrade_Request = 3407874
 MSG_Xiuzhen_Upgrade_Response = 3411970
 MSG_Xiuzhen_Info_Notice = 3411971
+MSG_SpanTeam_CreateCrop_Request = 3473409
+MSG_SpanTeam_CreateCrop_Response = 3477505
+MSG_SpanTeam_CropsList_Request = 3473410
+MSG_SpanTeam_CropsList_Response = 3477506
+MSG_SpanTeam_ApplyJoinCrop_Request = 3473411
+MSG_SpanTeam_ApplyJoinCrop_Response = 3477507
+MSG_SpanTeam_JoinCrops_Notice = 3477508
+MSG_SpanTeam_JoinCrops_Request = 3473413
+MSG_SpanTeam_JoinCrops_Response = 3477509
+MSG_SpanTeam_CropInfo_Request = 3473414
+MSG_SpanTeam_CropInfo_Response = 3477510
+MSG_SpanTeam_InviteFriend_Request = 3473415
+MSG_SpanTeam_InviteFriend_Response = 3477511
+MSG_SpanTeam_CropInvite_Notice = 3477512
+MSG_SpanTeam_InviteAnswer_Request = 3473417
+MSG_SpanTeam_InviteAnswer_Response = 3477513
+MSG_SpanTeam_InviteExamine_Notice = 3477520
+MSG_SpanTeam_LeaderExamine_Request = 3473425
+MSG_SpanTeam_LeaderExamine_Response = 3477521
+MSG_SpanTeam_ChangeLeader_Request = 3473426
+MSG_SpanTeam_ChangeLeader_Response = 3477522
+MSG_SpanTeam_KickOut_Request = 3473427
+MSG_SpanTeam_KickOut_Response = 3477523
+MSG_SpanTeam_DisbandedCrops_Request = 3473428
+MSG_SpanTeam_DisbandedCrops_Response = 3477524
+MSG_SpanTeam_ExitCrop_Request = 3473429
+MSG_SpanTeam_ExitCrop_Response = 3477525
+MSG_SpanTeam_MyCropInfo_Request = 3473430
+MSG_SpanTeam_MyCropInfo_Response = 3477526
+MSG_SpanTeam_MyCropInfo_Notice = 3477527
+MSG_SpanTeam_Battle_End_Notice = 3477528
+MSG_SpanTeam_FinalBattle_End_Notice = 3477529
+MSG_SpanTeam_Battle_Notice = 3477536
+MSG_SpanTeam_FinalBattle_Notice = 3477537
+MSG_SpanTeam_CropRankList_Request = 3473442
+MSG_SpanTeam_CropRankList_Response = 3477538
+MSG_SpanTeam_FinalMatch_Request = 3473443
+MSG_SpanTeam_FinalMatch_Response = 3477539
+MSG_SpanTeam_FinalWatch_Request = 3473444
+MSG_SpanTeam_FinalWatch_Response = 3477540
+MSG_SpanTeam_Battle_Status_Notice = 3477541
+MSG_SpanTeam_FightTable_Info_Request = 3473446
+MSG_SpanTeam_FightTable_Info_Response = 3477542
+MSG_SpanTeam_Start_Matching_Request = 3473447
+MSG_SpanTeam_Start_Matching_Response = 3477543
+MSG_SpanTeam_GetReady_Matching_Request = 3473448
+MSG_SpanTeam_GetReady_Matching_Response = 3477544
+MSG_SpanTeam_Ready_Status_Notice = 3477545
+MSG_SpanTeam_GetLivenessReward_Request = 3473456
+MSG_SpanTeam_GetLivenessReward_Response = 3477552
+MSG_SpanTeam_Liveness_Request = 3473457
+MSG_SpanTeam_Liveness_Response = 3477553
+MSG_SpanTeam_CropsRank_Request = 3473458
+MSG_SpanTeam_CropsRank_Response = 3477554
+MSG_SpanTeam_Member_Ready_Notice = 3477555
+MSG_SpanTeam_CancelMatchingRequest = 3473460
+MSG_SpanTeam_CancelMatchingResponse = 3477556
+MSG_SpanTeam_CancelReadyRequest = 3473461
+MSG_SpanTeam_CancelReadyResponse = 3477557
+MSG_MagicPet_Info_Request = 3538945
+MSG_MagicPet_Info_Response = 3543041
+MSG_MagicPet_Active_Request = 3538946
+MSG_MagicPet_Active_Response = 3543042
+MSG_MagicPet_Upgrade_Request = 3538947
+MSG_MagicPet_Upgrade_Response = 3543043
+MSG_MagicPet_StarUp_Request = 3538948
+MSG_MagicPet_StarUp_Response = 3543044
+MSG_MagicPet_ProTrain_Request = 3538949
+MSG_MagicPet_ProTrain_Response = 3543045
+MSG_MagicPet_SkillSlotTrain_Request = 3538950
+MSG_MagicPet_SkillSlotTrain_Response = 3543046
+MSG_MagicPet_Battle_Request = 3538951
+MSG_MagicPet_Battle_Response = 3543047
+MSG_MagicPet_Rest_Request = 3538952
+MSG_MagicPet_Rest_Response = 3543048
+MSG_MagicPet_JoinTeam_Request = 3538953
+MSG_MagicPet_JoinTeam_Response = 3543049
+MSG_MagicPet_ExitTeam_Request = 3538960
+MSG_MagicPet_ExitTeam_Response = 3543056
+MSG_MagicPet_TeamSlot_Change_Notice = 3543057
+MSG_MagicPet_SlotEquiment_Request = 3538962
+MSG_MagicPet_SlotEquiment_Response = 3543058
+MSG_MagicPet_SlotRemoveEquiment_Request = 3538963
+MSG_MagicPet_SlotRemoveEquiment_Response = 3543059
+MSG_MagicPet_TeamSlot_Request = 3538964
+MSG_MagicPet_Apply_Request = 3538965
+MSG_MagicPet_Apply_Response = 3543061
+MSG_MagicPet_UpOrBreak_Request = 3538966
+MSG_MagicPet_UpOrBreak_Response = 3543062
+MSG_SpanMaze_SignUp_Request = 3604481
+MSG_SpanMaze_SignUp_Response = 3608577
+MSG_SpanMaze_Enter_Request = 3604482
+MSG_SpanMaze_Enter_Response = 3608578
+MSG_SpanMaze_EnterDungeon_Notice = 3608579
 MSG_ErrCode_Response = 805306368
 MSG_DimensionTest_Require = 1073741825
 MSG_DimensionTest_Response = 1073741826
@@ -6774,6 +7362,8 @@ MSG_BattleMatch_Request = 1342177281
 MSG_BattleCancel_Request = 1342177282
 MSG_BattleQuery_Request = 1342177283
 MSG_BigGetMatchInfo_Request = 1342177284
+MSG_BattleTeamMatchRequest = 1342177285
+MSG_BattleTeamCancel_Request = 1342177286
 MSG_Battle_Inform = 1879048193
 MSG_RankTopPlayerLogin = 1879048194
 

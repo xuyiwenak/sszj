@@ -70,4 +70,4 @@ def online_data2db(DB_HOST, DB_USER, DB_PWD, db_name, server_list,insert_dbname,
     dest_cur.close()
     dest_conn.close()
 create_activity_table.create_table('103.244.235.249', 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss', 'log_activity')
-online_data2db("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','conf_server_list_2','log_activity','2017-08-01 00:00:00','2017-08-31 23:59:59')
+online_data2db("103.244.235.249", 'sszj', 'DR9m_wqsgF8a', 'data_stat_ss','conf_server_list_2','log_activity','2017-09-01 00:00:00','2017-09-30 23:59:59')
